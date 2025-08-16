@@ -1529,105 +1529,105 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 @font-face {
   font-family: 'RigidSquare-Bold';
-  src: url('/fonts/rigid-square/RigidSquare-Bold.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-Bold.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-Bold.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-Bold.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-Bold.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-Bold.eot') format('eot');
 }
 .rs-bold {
   font-family: 'RigidSquare-Bold', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-BoldItalic';
-  src: url('/fonts/rigid-square/RigidSquare-BoldItalic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-BoldItalic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-BoldItalic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-BoldItalic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-BoldItalic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-BoldItalic.eot') format('eot');
 }
 .rs-bold-italic {
   font-family: 'RigidSquare-BoldItalic', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-ExtraBold';
-  src: url('/fonts/rigid-square/RigidSquare-ExtraBold.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-ExtraBold.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-ExtraBold.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-ExtraBold.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-ExtraBold.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-ExtraBold.eot') format('eot');
 }
 .rs-extra-bold {
   font-family: 'RigidSquare-ExtraBold', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-ExtraBoldItalic';
-  src: url('/fonts/rigid-square/RigidSquare-ExtraBoldItalic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-ExtraBoldItalic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-ExtraBoldItalic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-ExtraBoldItalic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-ExtraBoldItalic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-ExtraBoldItalic.eot') format('eot');
 }
 .rs-extra-bold-italic {
   font-family: 'RigidSquare-ExtraBoldItalic', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-ExtraLight';
-  src: url('/fonts/rigid-square/RigidSquare-ExtraLight.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-ExtraLight.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-ExtraLight.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-ExtraLight.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-ExtraLight.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-ExtraLight.eot') format('eot');
 }
 .rs-extra-light {
   font-family: 'RigidSquare-ExtraLight', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-ExtraLightItalic';
-  src: url('/fonts/rigid-square/RigidSquare-ExtraLightItalic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-ExtraLightItalic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-ExtraLightItalic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-ExtraLightItalic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-ExtraLightItalic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-ExtraLightItalic.eot') format('eot');
 }
 .rs-extra-light-italic {
   font-family: 'RigidSquare-ExtraLightItalic', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-Italic';
-  src: url('/fonts/rigid-square/RigidSquare-Italic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-Italic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-Italic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-Italic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-Italic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-Italic.eot') format('eot');
 }
 .rs-italic {
   font-family: 'RigidSquare-Italic', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-Light';
-  src: url('/fonts/rigid-square/RigidSquare-Light.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-Light.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-Light.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-Light.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-Light.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-Light.eot') format('eot');
 }
 .rs-light {
   font-family: 'RigidSquare-Light', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-LightItalic';
-  src: url('/fonts/rigid-square/RigidSquare-LightItalic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-LightItalic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-LightItalic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-LightItalic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-LightItalic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-LightItalic.eot') format('eot');
 }
 .rs-light-italic {
   font-family: 'RigidSquare-LightItalic', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-Regular';
-  src: url('/fonts/RigidSquare-Regular.woff2') format('woff2'), url('/fonts/RigidSquare-Regular.woff') format('woff'), url('/fonts/RigidSquare-Regular.eot') format('eot');
+  src: url('../fonts/RigidSquare-Regular.woff2') format('woff2'), url('../fonts/RigidSquare-Regular.woff') format('woff'), url('../fonts/RigidSquare-Regular.eot') format('eot');
 }
 .rs-regular {
   font-family: 'RigidSquare-Regular', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-SemiBold';
-  src: url('/fonts/rigid-square/RigidSquare-SemiBold.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-SemiBold.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-SemiBold.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-SemiBold.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-SemiBold.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-SemiBold.eot') format('eot');
 }
 .rs-semi-bold {
   font-family: 'RigidSquare-SemiBold', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-SemiBoldItalic';
-  src: url('/fonts/rigid-square/RigidSquare-SemiBoldItalic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-SemiBoldItalic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-SemiBoldItalic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-SemiBoldItalic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-SemiBoldItalic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-SemiBoldItalic.eot') format('eot');
 }
 .rs-semi-bold-italic {
   font-family: 'RigidSquare-SemiBoldItalic', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-Thin';
-  src: url('/fonts/rigid-square/RigidSquare-Thin.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-Thin.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-Thin.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-Thin.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-Thin.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-Thin.eot') format('eot');
 }
 .rs-thin {
   font-family: 'RigidSquare-Thin', sans-serif;
 }
 @font-face {
   font-family: 'RigidSquare-ThinItalic';
-  src: url('/fonts/rigid-square/RigidSquare-ThinItalic.woff2') format('woff2'), url('/fonts/rigid-square/RigidSquare-ThinItalic.woff') format('woff'), url('/fonts/rigid-square/RigidSquare-ThinItalic.eot') format('eot');
+  src: url('../fonts/rigid-square/RigidSquare-ThinItalic.woff2') format('woff2'), url('../fonts/rigid-square/RigidSquare-ThinItalic.woff') format('woff'), url('../fonts/rigid-square/RigidSquare-ThinItalic.eot') format('eot');
 }
 .rs-thin-italic {
   font-family: 'RigidSquare-ThinItalic', sans-serif;
 }
 @font-face {
   font-family: 'kauka';
-  src: url('/fonts/kauka/kauka-regular.woff2') format('woff2'), url('/fonts/kauka/kauka-regular.woff') format('woff'), url('/fonts/kauka/kauka-regular.eot') format('eot');
+  src: url('../fonts/kauka/kauka-regular.woff2') format('woff2'), url('../fonts/kauka/kauka-regular.woff') format('woff'), url('../fonts/kauka/kauka-regular.eot') format('eot');
 }
 .kauka-text {
   font-family: 'kauka', sans-serif;
