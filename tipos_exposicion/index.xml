@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tipos_exposicion on KAUKA - ES</title><link>/tipos_exposicion/</link><description>Recent content in Tipos_exposicion on KAUKA - ES</description><generator>Hugo</generator><language>es-co</language><lastBuildDate>Sat, 16 Aug 2025 10:37:31 +0000</lastBuildDate><atom:link href="/tipos_exposicion/index.xml" rel="self" type="application/rss+xml"/><item><title>Cubo Blanco</title><link>/tipos_exposicion/cubo-blanco/</link><pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate><guid>/tipos_exposicion/cubo-blanco/</guid><description/></item><item><title>Espacio Público</title><link>/tipos_exposicion/espacio-p%C3%BAblico/</link><pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate><guid>/tipos_exposicion/espacio-p%C3%BAblico/</guid><description/></item><item><title>In Situ</title><link>/tipos_exposicion/in-situ/</link><pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate><guid>/tipos_exposicion/in-situ/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tipos_exposicion on KAUKA - ES</title>
+    <link>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/</link>
+    <description>Recent content in Tipos_exposicion on KAUKA - ES</description>
+    <generator>Hugo</generator>
+    <language>es-co</language>
+    <lastBuildDate>Sat, 16 Aug 2025 10:37:31 +0000</lastBuildDate>
+    <atom:link href="https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cubo Blanco</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/cubo-blanco/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/cubo-blanco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Espacio Público</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/espacio-p%C3%BAblico/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/espacio-p%C3%BAblico/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>In Situ</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/in-situ/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/in-situ/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

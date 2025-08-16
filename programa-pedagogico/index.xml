@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programa pedagógico on KAUKA - ES</title><link>/programa-pedagogico/</link><description>Recent content in Programa pedagógico on KAUKA - ES</description><generator>Hugo</generator><language>es-co</language><lastBuildDate/><atom:link href="/programa-pedagogico/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programa pedagógico on KAUKA - ES</title>
+    <link>https://relampagoproyecto.github.io/kauka-dev/programa-pedagogico/</link>
+    <description>Recent content in Programa pedagógico on KAUKA - ES</description>
+    <generator>Hugo</generator>
+    <language>es-co</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://relampagoproyecto.github.io/kauka-dev/programa-pedagogico/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

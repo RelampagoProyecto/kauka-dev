@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Agenda on KAUKA - ES</title><link>/agenda/</link><description>Recent content in Agenda on KAUKA - ES</description><generator>Hugo</generator><language>es-co</language><lastBuildDate/><atom:link href="/agenda/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agenda on KAUKA - ES</title>
+    <link>https://relampagoproyecto.github.io/kauka-dev/agenda/</link>
+    <description>Recent content in Agenda on KAUKA - ES</description>
+    <generator>Hugo</generator>
+    <language>es-co</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://relampagoproyecto.github.io/kauka-dev/agenda/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
