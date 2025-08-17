@@ -258,6 +258,12 @@
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+  .top-17 {
+    top: calc(var(--spacing) * 17);
+  }
+  .top-40 {
+    top: calc(var(--spacing) * 40);
+  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
@@ -592,6 +598,9 @@
   .h-full {
     height: 100%;
   }
+  .h-screen {
+    height: 100vh;
+  }
   .min-h-\[216px\] {
     min-height: 216px;
   }
@@ -681,6 +690,9 @@
   }
   .resize {
     resize: both;
+  }
+  .scroll-mt-38 {
+    scroll-margin-top: calc(var(--spacing) * 38);
   }
   .grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1651,7 +1663,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 @font-face {
   font-family: 'kauka';
-  src: url('../fonts/kauka/kauka-regular.woff2') format('woff2'), url('../fonts/kauka/kauka-regular.woff') format('woff'), url('../fonts/kauka/kauka-regular.eot') format('eot');
+  src: url('../fonts/kauka/kauka-Regular.woff2') format('woff2'), url('../fonts/kauka/kauka-Regular.woff') format('woff'), url('../fonts/kauka/kauka-Regular.eot') format('eot');
 }
 .kauka-text {
   font-family: 'kauka', sans-serif;
