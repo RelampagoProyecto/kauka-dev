@@ -396,18 +396,6 @@
                 href="https://relampagoproyecto.github.io/kauka-dev/en/programa-pedagogico/"
                 />
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/en/tipos_exposicion/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-co"
-                href="https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://relampagoproyecto.github.io/kauka-dev/en/tipos_exposicion/"
-                />
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/en/recorridos/</loc>
     <xhtml:link
                 rel="alternate"
@@ -418,6 +406,18 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://relampagoproyecto.github.io/kauka-dev/en/recorridos/"
+                />
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/en/tipos_exposicion/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-co"
+                href="https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://relampagoproyecto.github.io/kauka-dev/en/tipos_exposicion/"
                 />
   </url>
 </urlset>
