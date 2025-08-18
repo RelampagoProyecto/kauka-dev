@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.78 31.27">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        mix-blend-mode: multiply;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Contenido">
+        <path class="cls-2" d="M0,15.59L11.43,0l11.35,15.59-11.35,15.68L0,15.59ZM17.91,15.63l-6.48-8.93-6.57,8.93,6.57,8.93,6.48-8.93Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

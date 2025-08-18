@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/en/</loc>
+    <lastmod>2025-08-18T00:32:43+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-co"
+                href="https://relampagoproyecto.github.io/kauka-dev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://relampagoproyecto.github.io/kauka-dev/en/"
+                />
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/en/territorio/</loc>
+    <lastmod>2025-08-18T00:32:43+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-co"
+                href="https://relampagoproyecto.github.io/kauka-dev/territorio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://relampagoproyecto.github.io/kauka-dev/en/territorio/"
+                />
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/en/programa-curatorial/</loc>
     <lastmod>2025-08-06T02:01:02+00:00</lastmod>
     <xhtml:link
@@ -13,19 +39,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://relampagoproyecto.github.io/kauka-dev/en/programa-curatorial/"
-                />
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/en/</loc>
-    <lastmod>2025-08-06T02:01:02+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-co"
-                href="https://relampagoproyecto.github.io/kauka-dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://relampagoproyecto.github.io/kauka-dev/en/"
                 />
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/en/programa-curatorial/editorial/test-one/</loc>
@@ -381,18 +394,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://relampagoproyecto.github.io/kauka-dev/en/programa-pedagogico/"
-                />
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/en/territorio/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-co"
-                href="https://relampagoproyecto.github.io/kauka-dev/territorio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://relampagoproyecto.github.io/kauka-dev/en/territorio/"
                 />
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/en/tipos_exposicion/</loc>

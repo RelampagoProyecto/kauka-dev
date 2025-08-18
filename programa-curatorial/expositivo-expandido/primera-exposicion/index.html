@@ -185,7 +185,7 @@
 
 <script>
   let indexURL = "https://relampagoproyecto.github.io/kauka-dev/searchindex.json";
-  let includeSectionsInSearch = ["agenda","","territorio","programa-curatorial","programa-curatorial","asambleas","programa-curatorial","programa-curatorial","programa-curatorial","programa-curatorial","artistas","encuentro-de-otros-mundos","programa-pedagogico","artistas","componentes","tipos_exposicion","tipos_exposicion","componentes","tipos_exposicion","programa-curatorial","tipos_exposicion","programa-curatorial","artistas","informacion-general","artistas","artistas","artistas","artistas","asambleas","artistas","programa-curatorial","programa-curatorial","programa-curatorial","informacion-general","informacion-general","categories","programa-pedagogico","lugares","programa-pedagogico","recorridos","tags"];
+  let includeSectionsInSearch = ["","territorio","agenda","programa-curatorial","programa-curatorial","asambleas","programa-curatorial","programa-curatorial","programa-curatorial","programa-curatorial","artistas","encuentro-de-otros-mundos","programa-pedagogico","artistas","componentes","tipos_exposicion","tipos_exposicion","componentes","tipos_exposicion","programa-curatorial","tipos_exposicion","programa-curatorial","artistas","informacion-general","asambleas","artistas","artistas","artistas","artistas","artistas","programa-curatorial","programa-curatorial","programa-curatorial","informacion-general","informacion-general","categories","programa-pedagogico","lugares","programa-pedagogico","recorridos","tags"];
   let search_no_results = "No hay resultados";
   let search_initial_message = "Escriba lo que quiere buscar";
 </script>
@@ -822,41 +822,40 @@
     <main>
       <section class="grid grid-cols-12 gap-3 gap-y-0 mp-10">
         
-
-  <div class="col-span-12 
-    grid subgrid grid-cols-subgrid  
-    bg-gray-100 py-4 mb-10">
-    <div class="col-start-2 col-span-9 text-right">
-    
-    
+  <div
+    class="subgrid col-span-12 mb-10 grid grid-cols-subgrid bg-gray-100 py-4">
+    <div class="col-span-9 col-start-2 text-right">
       
-        <a 
-          href="/kauka-dev/tipos_exposicion/cubo-blanco/"
-          class=""
-        >Cubo blanco
+      
+        
+          <a
+            href="/kauka-dev/tipos_exposicion/cubo-blanco/"
+            class=""
+            >Cubo blanco
               ,
-            </a>
-      
-        <a 
-          href="/kauka-dev/tipos_exposicion/in-situ/"
-          class=""
-        >In situ
+            </a
+          >
+        
+          <a
+            href="/kauka-dev/tipos_exposicion/in-situ/"
+            class=""
+            >In situ
               ,
-            </a>
+            </a
+          >
+        
+          <a
+            href="/kauka-dev/tipos_exposicion/espacio-p%c3%bablico/"
+            class=""
+            >Espacio público</a
+          >
+        
       
-        <a 
-          href="/kauka-dev/tipos_exposicion/espacio-p%c3%bablico/"
-          class=""
-        >Espacio público</a>
-      
-    
     </div>
   </div>
 
-  <div class="col-span-10 col-start-2 
-    rs-semi-bold text-7xl text-black
-    break-words max-w-full 
-    mb-10">
+  <div
+    class="rs-semi-bold col-span-10 col-start-2 mb-10 max-w-full break-words text-7xl text-black">
     Proyecto Ipsum
   </div>
 
@@ -870,49 +869,48 @@
   </div>
 </div>
 
-  <div class="grid grid-cols-subgrid col-span-12 
-    bg-gray-100 py-4 mb-0">
 
-    <div class="col-start-2 col-span-5 
-      rs-semi-bold text-6xl text-black">
-      <span>03</span><br>
-      <span>11</span><br>
-      <span>2025</span><br>
+  <div
+    class="relative col-span-12 mb-0 grid min-h-60 grid-cols-subgrid bg-gray-100 py-4">
+    <div
+      class="rs-semi-bold relative z-30 col-span-5 col-start-2 text-6xl text-black">
+      <span>03</span><br />
+      <span>11</span><br />
+      <span>2025</span><br />
     </div>
 
-    <div class="col-span-5 col-end-12 
-      rs-semi-bold text-right text-6xl text-black">
-      <span>01</span><br>
-      <span>12</span><br>
-      <span>2025</span><br>
+    <div
+      class="rs-semi-bold relative z-10 z-30 col-span-5 col-end-12 text-right text-6xl text-black">
+      <span>01</span><br />
+      <span>12</span><br />
+      <span>2025</span><br />
     </div>
 
-    <div class="col-start-2 col-span-4
-      rs-semi-bold text-xl text-black 
-      mb-5 mt-5">
-      <div class="rs-light text-xs">
-        Sede/lugar
-      </div>
+    <div
+      class="rs-semi-bold relative z-30 col-span-5 col-start-2 mb-5 mt-5 text-xl text-black">
+      <div class="rs-light text-xs">Sede/lugar</div>
       Lorem ipsum dolor sit amet
-      <br>
+      <br />
       Calle 43 # 16 bis 43
     </div>
-    
-    <div class="col-span-4 col-end-12 
-      rs-semi-bold text-right text-black text-xl
-      mb-5 mt-5">
-      <div class="rs-light text-xs">
-        Hora
+
+    <div
+      class="rs-semi-bold relative z-20 col-span-5 col-end-12 mb-5 mt-5 text-right text-xl text-black">
+      <div class="rs-light text-xs">Hora</div>
+      <div>7:00 p.m.</div>
+      <div
+        class="pc-buttons h-50 left-15 w-33 absolute top-20 flex justify-center bg-gray-600 text-white">
+        <div class="my-auto">Agenda</div>
       </div>
-      7:00 p.m.
+      <div
+        class="pc-buttons h-50 w-33 absolute -left-1 top-44 flex justify-center bg-gray-900 text-white">
+        <div class="my-auto">Mapa</div>
+      </div>
     </div>
 
-    <div class="col-start-2 col-span-4 
-      mb-10">
+    <div class="relative z-10 col-span-5 col-start-2 mb-10">
       
-        <div class="rs-light text-xs">
-          Participantes / autor
-        </div>
+        <div class="rs-light text-xs">Participantes / autor</div>
         <ul>
           
           
@@ -922,101 +920,104 @@
             
             
             
-            
-              
               <li class="leading-tight">
-                <a class="rs-light text-sm text-black
-                  hover:underline" 
+                <a
+                  class="rs-light text-sm text-black hover:underline"
                   href="/kauka-dev/artistas/andr%C3%A9s-fresneda/">
                   Andrés Fresneda
                 </a>
-              </li>  
+              </li>
             
           
             
             
             
             
-            
-              
               <li class="leading-tight">
-                <a class="rs-light text-sm text-black
-                  hover:underline" 
+                <a
+                  class="rs-light text-sm text-black hover:underline"
                   href="/kauka-dev/artistas/fernando-votero/">
                   Fernando Votero
                 </a>
-              </li>  
+              </li>
             
           
             
             
             
             
-            
-              
               <li class="leading-tight">
-                <a class="rs-light text-sm text-black
-                  hover:underline" 
+                <a
+                  class="rs-light text-sm text-black hover:underline"
                   href="/kauka-dev/artistas/gabriel-zea/">
                   Gabriel Zea
                 </a>
-              </li>  
+              </li>
             
           
             
             
             
             
-            
-              
               <li class="leading-tight">
-                <a class="rs-light text-sm text-black
-                  hover:underline" 
+                <a
+                  class="rs-light text-sm text-black hover:underline"
                   href="/kauka-dev/artistas/jaime-hern%C3%A1ndez/">
                   Jaime Hernández
                 </a>
-              </li>  
+              </li>
             
           
             
             
             
             
-            
-              
               <li class="leading-tight">
-                <a class="rs-light text-sm text-black
-                  hover:underline" 
+                <a
+                  class="rs-light text-sm text-black hover:underline"
                   href="/kauka-dev/artistas/pedro-de-los-palotes/">
                   Pedro De Los Palotes
                 </a>
-              </li>  
+              </li>
             
           
             
             
             
             
-            
-              
               <li class="leading-tight">
-                <a class="rs-light text-sm text-black
-                  hover:underline" 
+                <a
+                  class="rs-light text-sm text-black hover:underline"
                   href="/kauka-dev/artistas/valeria-giraldo/">
                   Valeria Giraldo
                 </a>
-              </li>  
+              </li>
             
           
+        </ul>
       
     </div>
-    <div class="col-span-4 col-end-12 
-      mb-10">
-      botones
-  </div>
-  <div class="col-span-12">
-    
+    <div class="z-2 absolute">
+      <div
+        class="w-50 h-74 absolute left-0 top-0 justify-center bg-white"
+        style="clip-path: polygon(34% 100%, 0% 66%, 66% 0%, 100% 34%)"></div>
+    </div>
+    <div class="z-2 absolute">
+      <div
+        class="left-50 w-50 h-74 absolute top-0 justify-center bg-white"
+        style="clip-path: polygon(66% 100%, 0% 34%, 34% 0%, 100% 66%)"></div>
+    </div>
+    <div class="z-2 absolute">
+      <div
+        class="w-50 top-74 h-74 absolute left-0 justify-center bg-white"
+        style="clip-path: polygon(0% 34%, 34% 0%, 100% 66%, 66% 100%)"></div>
+    </div>
+
+    <div
+      class="rs-semi-bold relative col-span-6 col-end-13 mb-10 h-64 text-white"></div>
+    <div class="col-span-12">
       
+        
 
 
 
@@ -1488,9 +1489,9 @@
 </div>
 
 
-    
-  </div>      
-
+      
+    </div>
+  </div>
 
       </section>
     </main>

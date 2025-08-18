@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Territory on KAUKA - EN</title>
+    <title>Territorio on KAUKA - EN</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/en/territorio/</link>
-    <description>Recent content in Territory on KAUKA - EN</description>
+    <description>Recent content in Territorio on KAUKA - EN</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/en/territorio/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

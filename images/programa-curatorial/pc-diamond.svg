@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.13 33.05">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #ccc;
+        mix-blend-mode: multiply;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Figuras">
+        <path class="cls-2" d="M12.15,33.05L0,16.53,12.15,0l11.98,16.53-11.98,16.53Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

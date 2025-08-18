@@ -2,21 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/agenda/</loc>
-    <lastmod>2025-08-16T10:57:25+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://relampagoproyecto.github.io/kauka-dev/en/agenda/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-co"
-                href="https://relampagoproyecto.github.io/kauka-dev/agenda/"
-                />
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/</loc>
-    <lastmod>2025-08-16T10:57:25+00:00</lastmod>
+    <lastmod>2025-08-18T02:54:47+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -29,7 +16,7 @@
                 />
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/territorio/</loc>
-    <lastmod>2025-08-16T10:56:55+00:00</lastmod>
+    <lastmod>2025-08-18T02:54:47+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -39,6 +26,19 @@
                 rel="alternate"
                 hreflang="es-co"
                 href="https://relampagoproyecto.github.io/kauka-dev/territorio/"
+                />
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/agenda/</loc>
+    <lastmod>2025-08-16T10:57:25+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://relampagoproyecto.github.io/kauka-dev/en/agenda/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-co"
+                href="https://relampagoproyecto.github.io/kauka-dev/agenda/"
                 />
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/</loc>
@@ -254,6 +254,19 @@
                 href="https://relampagoproyecto.github.io/kauka-dev/informacion-general/"
                 />
   </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/asambleas/una-asamblea/</loc>
+    <lastmod>2025-08-17T22:41:55+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://relampagoproyecto.github.io/kauka-dev/en/asambleas/una-asamblea/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-co"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/una-asamblea/"
+                />
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/artistas/andr%C3%A9s-fresneda/</loc>
     <lastmod>2025-08-13T23:04:47+00:00</lastmod>
   </url><url>
@@ -275,19 +288,6 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/artistas/pedro-de-los-palotes/</loc>
     <lastmod>2025-08-16T10:15:25+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/asambleas/una-asamblea/</loc>
-    <lastmod>2025-07-23T18:49:55-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://relampagoproyecto.github.io/kauka-dev/en/asambleas/una-asamblea/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-co"
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/una-asamblea/"
-                />
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/artistas/valeria-giraldo/</loc>
     <lastmod>2025-07-23T18:49:55-05:00</lastmod>
