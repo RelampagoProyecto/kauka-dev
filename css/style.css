@@ -14,7 +14,9 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-yellow-200: oklch(94.5% 0.129 101.54);
     --color-green-200: oklch(92.5% 0.084 155.995);
+    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-blue-200: oklch(88.2% 0.059 254.128);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-pink-200: oklch(89.9% 0.061 343.231);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
@@ -281,8 +283,8 @@
   .top-44 {
     top: calc(var(--spacing) * 44);
   }
-  .top-74 {
-    top: calc(var(--spacing) * 74);
+  .top-\[19\%\] {
+    top: 19%;
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
@@ -292,6 +294,9 @@
   }
   .right-10 {
     right: calc(var(--spacing) * 10);
+  }
+  .right-\[50\%\] {
+    right: 50%;
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -310,6 +315,9 @@
   }
   .left-50 {
     left: calc(var(--spacing) * 50);
+  }
+  .left-\[50\%\] {
+    left: 50%;
   }
   .z-0 {
     z-index: 0;
@@ -669,17 +677,17 @@
   .h-110 {
     height: calc(var(--spacing) * 110);
   }
+  .h-\[19\%\] {
+    height: 19%;
+  }
   .h-full {
     height: 100%;
   }
   .h-screen {
     height: 100vh;
   }
-  .max-h-\[32vh\] {
-    max-height: 32vh;
-  }
-  .max-h-\[38vh\] {
-    max-height: 38vh;
+  .max-h-\[50vh\] {
+    max-height: 50vh;
   }
   .min-h-20 {
     min-height: calc(var(--spacing) * 20);
@@ -762,6 +770,9 @@
   }
   .w-\[30px\] {
     width: 30px;
+  }
+  .w-\[50\%\] {
+    width: 50%;
   }
   .w-full {
     width: 100%;
@@ -891,6 +902,9 @@
   .border-border {
     border-color: var(--color-border);
   }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
   .bg-body {
     background-color: var(--color-body);
   }
@@ -918,11 +932,17 @@
   .bg-gray-950 {
     background-color: var(--color-gray-950);
   }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
   .bg-light {
     background-color: var(--color-light);
   }
   .bg-primary {
     background-color: var(--color-primary);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
   .bg-white {
     background-color: var(--color-white);
