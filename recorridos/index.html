@@ -837,8 +837,11 @@
       <section class="grid grid-cols-12 gap-3 gap-y-0 mp-10">
         
   <div
-  class="bg-white relative col-span-12 pt-10">
-  <div class="absolute inset-0 z-0 col-span-12 h-full pt-10">
+  id="section-container"
+  class="bg-white relative col-span-12 h-full pt-10">
+  <div
+    id="section-bg-img"
+    class="absolute inset-0 top-0 z-0 col-span-12 flex h-full items-start justify-center pt-10">
     
     
       
@@ -908,7 +911,7 @@
         loading="lazy"
         decoding="async"
         alt=""
-        class=" img"
+        class="&lt;nil&gt; self-start! img"
         width=""
         height="" />
     
@@ -937,6 +940,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  
+  function setBgImgHeight() {
+    const sectionHeight =
+      document.getElementById("section-container").offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const bgImg = document.querySelector("#section-bg-img img");
+    if (bgImg) {
+      if (sectionHeight > viewportHeight) {
+        bgImg.style.height = viewportHeight + "px";
+      } else {
+        bgImg.style.height = sectionHeight - 20 + "px";
+      }
+    }
+  }
+  window.addEventListener("resize", setBgImgHeight);
+  window.addEventListener("DOMContentLoaded", setBgImgHeight);
+</script>
 
 
   
