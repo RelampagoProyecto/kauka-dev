@@ -1098,6 +1098,9 @@
   .text-\[12px\] {
     font-size: 12px;
   }
+  .text-\[clamp\(2rem\,0\.63vw\,4rem\)\] {
+    font-size: clamp(2rem, 0.63vw, 4rem);
+  }
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);

@@ -962,7 +962,7 @@
     id="
       home-content
     "
-    class="subgrid text-4xl rs-light text-white relative inset-0 z-10 mb-5 grid grid-cols-12 gap-4">
+    class="section-info subgrid rs-light text-white relative inset-0 z-10 mb-5 grid grid-cols-12 gap-4 text-[clamp(2rem,0.63vw,4rem)] leading-tight">
     <div class="col-span-10 col-start-2">
       
         <p>Lorem <strong>ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed <strong>diam</strong> nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat <strong>volutpat</strong>. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor. Lorem <strong>ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet <strong>dolore</strong> magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor.</p>
@@ -994,6 +994,46 @@
       }
     }
   }
+
+  
+  function updateFontSize() {
+    const sectionInfo = document.querySelector(".section-info");
+    if (!sectionInfo) return;
+
+    
+    const vw = window.innerWidth;
+
+    
+    const minVw = 320;
+    const maxVw = 639;
+    const minSize = 2; 
+    const maxSize = 4; 
+
+    
+    
+    let calculatedSizeRem;
+
+    if (vw <= minVw) {
+      calculatedSizeRem = minSize;
+    } else if (vw >= maxVw) {
+      calculatedSizeRem = maxSize;
+    } else {
+      calculatedSizeRem =
+        minSize + ((maxSize - minSize) * (vw - minVw)) / (maxVw - minVw);
+    }
+
+    
+    sectionInfo.style.fontSize = `${calculatedSizeRem}rem`;
+
+    
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", updateFontSize);
+
+  
+  window.addEventListener("resize", updateFontSize);
+
   window.addEventListener("resize", setBgImgHeight);
   window.addEventListener("DOMContentLoaded", setBgImgHeight);
 </script>

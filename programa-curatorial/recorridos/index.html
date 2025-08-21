@@ -851,7 +851,7 @@
 
   <div
     id=""
-    class="subgrid text-3xl rs-light text-black relative inset-0 z-10 mb-5 grid grid-cols-12 gap-4">
+    class="section-info subgrid rs-light text-black relative inset-0 z-10 mb-5 grid grid-cols-12 gap-4 text-[clamp(2rem,0.63vw,4rem)] leading-tight">
     <div class="col-span-10 col-start-2">
       
         <p>rutrum augue vel, fringilla est. Integer gravida sollicitudin massa vel ullamcorper. Aliquam sit amet malesuada est. Duis quis tellus eu nulla eleifend lacinia. Proin justo ligula, dapibus quis pharetra non, mattis at urna. Quisque ultricies, dolor non dictum blandit, elit leo iaculis leo, id sagittis lorem dolor ut elit. Morbi egestas elit et arcu posuere lacinia. Pellentesque in convallis tellus, eu tincidunt erat. Sed in finibus enim, id sagittis massa. Vestibulum justo libero, feugiat sed orci vel, ullamcorper convallis elit. Cras fermentum neque sit amet neque finibus bibendum. Etiam malesuada ut nibh non ultricies.</p>
@@ -879,6 +879,46 @@
       }
     }
   }
+
+  
+  function updateFontSize() {
+    const sectionInfo = document.querySelector(".section-info");
+    if (!sectionInfo) return;
+
+    
+    const vw = window.innerWidth;
+
+    
+    const minVw = 320;
+    const maxVw = 639;
+    const minSize = 2; 
+    const maxSize = 4; 
+
+    
+    
+    let calculatedSizeRem;
+
+    if (vw <= minVw) {
+      calculatedSizeRem = minSize;
+    } else if (vw >= maxVw) {
+      calculatedSizeRem = maxSize;
+    } else {
+      calculatedSizeRem =
+        minSize + ((maxSize - minSize) * (vw - minVw)) / (maxVw - minVw);
+    }
+
+    
+    sectionInfo.style.fontSize = `${calculatedSizeRem}rem`;
+
+    
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", updateFontSize);
+
+  
+  window.addEventListener("resize", updateFontSize);
+
   window.addEventListener("resize", setBgImgHeight);
   window.addEventListener("DOMContentLoaded", setBgImgHeight);
 </script>
