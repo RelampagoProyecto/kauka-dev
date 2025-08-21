@@ -839,10 +839,10 @@
         
   <div
   id="section-container"
-  class=" relative col-span-12 h-full pt-10">
+  class=" relative col-span-12 h-full pt-12">
   <div
     id="section-bg-img"
-    class="absolute inset-0 top-0 z-0 col-span-12 flex h-full items-start justify-center pt-10">
+    class="fixed inset-0 z-0 col-span-12 flex h-full items-start justify-center pt-10">
     
     
   </div>
@@ -865,15 +865,54 @@
 <script>
   
   function setBgImgHeight() {
-    const sectionHeight =
-      document.getElementById("section-container").offsetHeight;
-    const viewportHeight = window.innerHeight;
+    const sectionContainer = document.getElementById("section-container");
+    if (!sectionContainer) return;
+
+    const sectionHeight = sectionContainer.offsetHeight;
+    const containerRect = sectionContainer.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
     const bgImg = document.querySelector("#section-bg-img img");
+
     if (bgImg) {
-      if (sectionHeight > viewportHeight) {
-        bgImg.style.height = viewportHeight + "px";
-      } else {
-        bgImg.style.height = sectionHeight - 20 + "px";
+      
+      const vwBasedHeight = viewportWidth * 1;
+
+      
+      const finalHeight = Math.min(vwBasedHeight, sectionHeight);
+
+      
+      bgImg.style.height = finalHeight + "px";
+      bgImg.style.objectFit = "cover";
+
+      
+      const bgContainer = document.getElementById("section-bg-img");
+      if (bgContainer) {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const containerTop = sectionContainer.offsetTop;
+        const containerBottom = containerTop + sectionHeight;
+        const imgHeight = bgImg.offsetHeight;
+        const margin = 110;
+        const topPosition = "5rem";
+
+        
+        const scrollThreshold = containerBottom - imgHeight - margin;
+
+        console.log(
+          `sY: ${scrollY} sT: ${scrollThreshold} top: ${scrollThreshold - containerTop}px`,
+        );
+        if (scrollY <= containerTop) {
+          
+          bgContainer.style.position = "fixed";
+          bgContainer.style.top = topPosition;
+        } else if (scrollY >= scrollThreshold) {
+          
+          bgContainer.style.position = "absolute";
+          bgContainer.style.top = `${scrollThreshold - containerTop + 64}px`;
+        } else {
+          
+          bgContainer.style.position = "fixed";
+          bgContainer.style.top = topPosition;
+        }
       }
     }
   }
@@ -907,18 +946,19 @@
 
     
     sectionInfo.style.fontSize = `${calculatedSizeRem}rem`;
+    sectionInfo.style.lineHeight = `${calculatedSizeRem}rem`;
 
     
   }
 
   
   document.addEventListener("DOMContentLoaded", updateFontSize);
+  window.addEventListener("DOMContentLoaded", setBgImgHeight);
 
   
   window.addEventListener("resize", updateFontSize);
-
   window.addEventListener("resize", setBgImgHeight);
-  window.addEventListener("DOMContentLoaded", setBgImgHeight);
+  window.addEventListener("scroll", setBgImgHeight);
 </script>
 
 
