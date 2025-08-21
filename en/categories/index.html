@@ -338,24 +338,25 @@
 
 
     
-    <header
-  class="header sticky top-0 z-30 bg-gray-950">
-  <nav class="navbar container">
+    <header id="nav" class="header sticky top-0 z-40 cursor-pointer bg-gray-950">
+  <nav class="navbar grid grid-cols-12 gap-4 gap-y-0">
     
-    <div class="order-0">
-      
-      <a class="navbar-brand text-white font-semibold block rs-bold" href="/kauka-dev/en/">
-        CATEGORIES
-      </a>
+    <div
+      class="order-0 navbar-brand rs-bold col-span-9 col-start-2 block text-white">
+      CATEGORIES
     </div>
     
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1">
-      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+      class="text-text-dark order-3 flex items-center lg:order-1 lg:hidden dark:text-white">
+      <svg id="show-button" class="block h-6 fill-current" viewBox="0 0 40 40">
         <title>Menu Open</title>
-        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.64 19.41">
+        <svg
+          id="Layer_2"
+          data-name="Layer 2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 18.64 19.41">
           <defs>
             <style>
               .cls-1 {
@@ -364,13 +365,19 @@
             </style>
           </defs>
           <g id="Menu">
-            <path class="cls-1" d="M2.86,7.77l-1.41,1.94-1.44-1.94h2.86ZM2.86,11.65H0l1.44-1.94,1.41,1.94ZM4.27,5.82l-1.41,1.94-1.44-1.94h2.86ZM4.27,13.59H1.41l1.44-1.94,1.41,1.94ZM5.69,3.88l-1.41,1.94-1.44-1.94h2.86ZM5.69,15.53h-2.86l1.44-1.94,1.41,1.94ZM7.1,1.94l-1.41,1.94-1.44-1.94h2.86ZM7.1,17.47h-2.86l1.44-1.94,1.41,1.94ZM8.51,0l-1.41,1.94-1.44-1.94h2.86ZM8.51,19.41h-2.86l1.44-1.94,1.41,1.94ZM10.12,0h2.86l-1.44,1.94-1.41-1.94ZM10.12,19.41l1.41-1.94,1.44,1.94h-2.86ZM11.54,1.94h2.86l-1.44,1.94-1.41-1.94ZM11.54,17.47l1.41-1.94,1.44,1.94h-2.86ZM12.95,3.88h2.86l-1.44,1.94-1.41-1.94ZM12.95,15.53l1.41-1.94,1.44,1.94h-2.86ZM14.37,5.82h2.86l-1.44,1.94-1.41-1.94ZM14.37,13.59l1.41-1.94,1.44,1.94h-2.86ZM15.78,7.77h2.86l-1.44,1.94-1.41-1.94ZM15.78,11.65l1.41-1.94,1.44,1.94h-2.86Z"/>
+            <path
+              class="cls-1"
+              d="M2.86,7.77l-1.41,1.94-1.44-1.94h2.86ZM2.86,11.65H0l1.44-1.94,1.41,1.94ZM4.27,5.82l-1.41,1.94-1.44-1.94h2.86ZM4.27,13.59H1.41l1.44-1.94,1.41,1.94ZM5.69,3.88l-1.41,1.94-1.44-1.94h2.86ZM5.69,15.53h-2.86l1.44-1.94,1.41,1.94ZM7.1,1.94l-1.41,1.94-1.44-1.94h2.86ZM7.1,17.47h-2.86l1.44-1.94,1.41,1.94ZM8.51,0l-1.41,1.94-1.44-1.94h2.86ZM8.51,19.41h-2.86l1.44-1.94,1.41,1.94ZM10.12,0h2.86l-1.44,1.94-1.41-1.94ZM10.12,19.41l1.41-1.94,1.44,1.94h-2.86ZM11.54,1.94h2.86l-1.44,1.94-1.41-1.94ZM11.54,17.47l1.41-1.94,1.44,1.94h-2.86ZM12.95,3.88h2.86l-1.44,1.94-1.41-1.94ZM12.95,15.53l1.41-1.94,1.44,1.94h-2.86ZM14.37,5.82h2.86l-1.44,1.94-1.41-1.94ZM14.37,13.59l1.41-1.94,1.44,1.94h-2.86ZM15.78,7.77h2.86l-1.44,1.94-1.41-1.94ZM15.78,11.65l1.41-1.94,1.44,1.94h-2.86Z" />
           </g>
         </svg>
       </svg>
-      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+      <svg id="hide-button" class="hidden h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Close</title>
-        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.64 19.41">
+        <svg
+          id="Layer_2"
+          data-name="Layer 2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 18.64 19.41">
           <defs>
             <style>
               .cls-1 {
@@ -379,7 +386,9 @@
             </style>
           </defs>
           <g id="Menu">
-            <path class="cls-1" d="M2.86,7.77l-1.41,1.94-1.44-1.94h2.86ZM2.86,11.65H0l1.44-1.94,1.41,1.94ZM4.27,5.82l-1.41,1.94-1.44-1.94h2.86ZM4.27,13.59H1.41l1.44-1.94,1.41,1.94ZM5.69,3.88l-1.41,1.94-1.44-1.94h2.86ZM5.69,15.53h-2.86l1.44-1.94,1.41,1.94ZM7.1,1.94l-1.41,1.94-1.44-1.94h2.86ZM7.1,17.47h-2.86l1.44-1.94,1.41,1.94ZM8.51,0l-1.41,1.94-1.44-1.94h2.86ZM8.51,19.41h-2.86l1.44-1.94,1.41,1.94ZM10.12,0h2.86l-1.44,1.94-1.41-1.94ZM10.12,19.41l1.41-1.94,1.44,1.94h-2.86ZM11.54,1.94h2.86l-1.44,1.94-1.41-1.94ZM11.54,17.47l1.41-1.94,1.44,1.94h-2.86ZM12.95,3.88h2.86l-1.44,1.94-1.41-1.94ZM12.95,15.53l1.41-1.94,1.44,1.94h-2.86ZM14.37,5.82h2.86l-1.44,1.94-1.41-1.94ZM14.37,13.59l1.41-1.94,1.44,1.94h-2.86ZM15.78,7.77h2.86l-1.44,1.94-1.41-1.94ZM15.78,11.65l1.41-1.94,1.44,1.94h-2.86Z"/>
+            <path
+              class="cls-1"
+              d="M2.86,7.77l-1.41,1.94-1.44-1.94h2.86ZM2.86,11.65H0l1.44-1.94,1.41,1.94ZM4.27,5.82l-1.41,1.94-1.44-1.94h2.86ZM4.27,13.59H1.41l1.44-1.94,1.41,1.94ZM5.69,3.88l-1.41,1.94-1.44-1.94h2.86ZM5.69,15.53h-2.86l1.44-1.94,1.41,1.94ZM7.1,1.94l-1.41,1.94-1.44-1.94h2.86ZM7.1,17.47h-2.86l1.44-1.94,1.41,1.94ZM8.51,0l-1.41,1.94-1.44-1.94h2.86ZM8.51,19.41h-2.86l1.44-1.94,1.41,1.94ZM10.12,0h2.86l-1.44,1.94-1.41-1.94ZM10.12,19.41l1.41-1.94,1.44,1.94h-2.86ZM11.54,1.94h2.86l-1.44,1.94-1.41-1.94ZM11.54,17.47l1.41-1.94,1.44,1.94h-2.86ZM12.95,3.88h2.86l-1.44,1.94-1.41-1.94ZM12.95,15.53l1.41-1.94,1.44,1.94h-2.86ZM14.37,5.82h2.86l-1.44,1.94-1.41-1.94ZM14.37,13.59l1.41-1.94,1.44,1.94h-2.86ZM15.78,7.77h2.86l-1.44,1.94-1.41-1.94ZM15.78,11.65l1.41-1.94,1.44,1.94h-2.86Z" />
           </g>
         </svg>
       </svg>
@@ -389,14 +398,14 @@
     
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      class="navbar-nav order-3 col-span-10 col-start-2 mt-6 hidden h-dvh pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
       
       
         
         
         
         
-          <li class="nav-item nav-dropdown group relative">
+          <li class="nav-item nav-dropdown group relative mb-12">
             <span
               class="nav-link 
                 
@@ -418,13 +427,21 @@
                 
                 
                 
-               inline-flex items-center rs-bold">
+               rs-bold inline-flex items-center">
               <a href="/en/kauka-dev/programa-curatorial">
                 Curatorial program
               </a>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              <svg class="ml-4 h-4 w-4" viewBox="0 0 9.82 6.67">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
+                <g id="">
+                  <polygon class="cls-1" points="0 0 9.82 0 4.86 6.67 0 0" />
+                </g>
               </svg>
             </span>
             <ul
@@ -432,7 +449,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -443,7 +460,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -454,7 +471,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -465,7 +482,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -476,7 +493,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -493,7 +510,7 @@
         
         
         
-          <li class="nav-item nav-dropdown group relative">
+          <li class="nav-item nav-dropdown group relative mb-12">
             <span
               class="nav-link 
                 
@@ -503,13 +520,21 @@
                 
                 
                 
-               inline-flex items-center rs-bold">
+               rs-bold inline-flex items-center">
               <a href="/en/kauka-dev/programa-pedagogico">
                 Pedagogic program
               </a>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              <svg class="ml-4 h-4 w-4" viewBox="0 0 9.82 6.67">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
+                <g id="">
+                  <polygon class="cls-1" points="0 0 9.82 0 4.86 6.67 0 0" />
+                </g>
               </svg>
             </span>
             <ul
@@ -517,7 +542,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -528,7 +553,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -545,19 +570,27 @@
         
         
         
-          <li class="nav-item nav-dropdown group relative">
+          <li class="nav-item nav-dropdown group relative mb-12">
             <span
               class="nav-link 
                 
                 
                 
-               inline-flex items-center rs-bold">
+               rs-bold inline-flex items-center">
               <a href="/en/kauka-dev/asambleas">
                 Assemblies
               </a>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              <svg class="ml-4 h-4 w-4" viewBox="0 0 9.82 6.67">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
+                <g id="">
+                  <polygon class="cls-1" points="0 0 9.82 0 4.86 6.67 0 0" />
+                </g>
               </svg>
             </span>
             <ul
@@ -565,7 +598,7 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light">
+                <li class="nav-dropdown-item rs-light pl-10">
                   <a
                     class="nav-dropdown-link "
                     
@@ -582,7 +615,7 @@
         
         
         
-          <li class="nav-item rs-bold">
+          <li class="nav-item rs-bold mb-12">
             <a
               class="nav-link "
               
@@ -596,7 +629,7 @@
         
         
         
-          <li class="nav-item rs-bold">
+          <li class="nav-item rs-bold mb-12">
             <a
               class="nav-link "
               
@@ -610,7 +643,7 @@
         
         
         
-          <li class="nav-item rs-bold">
+          <li class="nav-item rs-bold mb-12">
             <a
               class="nav-link "
               
@@ -624,7 +657,7 @@
         
         
         
-          <li class="nav-item rs-bold">
+          <li class="nav-item rs-bold mb-12">
             <a
               class="nav-link "
               
@@ -638,7 +671,7 @@
         
         
         
-          <li class="nav-item rs-bold">
+          <li class="nav-item rs-bold mb-12">
             <a
               class="nav-link "
               
@@ -648,77 +681,20 @@
           </li>
         
       
-      
-      
-        
-          <li>
-            <button
-              aria-label="search"
-              class="border-border text-white hover:text-primary
-              text-xl cursor-pointer
-              
-                lg:border-r-0 lg:pr-0
-              "
-              data-target="search-modal">
-              <i class="fa-solid fa-search"></i>
-            </button>
-          </li>
-        
-      
-      <li>
-        
-
-
-
-
-
-
-
-  
-
-  
-
-
-
-  
-
-  
-
-
-<select class="mr-5 pl-2 py-1 dark:bg-darkmode-light rounded" onchange="location = this.value">
-  
-    
-    
-    
-      <option
-        id="es"
-        value="https://relampagoproyecto.github.io/kauka-dev/categories/"
-      
-        >
-        Español
-      </option>
-    
-  
-    
-    
-    
-      <option
-        id="en"
-        value="https://relampagoproyecto.github.io/kauka-dev/en/categories/"
-      
-        selected
-      
-        >
-        English
-      </option>
-    
-  
-</select>
-
-      </li>
     </ul>
   </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+
+  document.addEventListener("click", (e) => {
+    const isClickInsideNavbar = e.target.closest(".navbar-brand");
+    if (isClickInsideNavbar) {
+      toggle.checked = !toggle.checked;
+    }
+  });
+</script>
 
     
 
@@ -833,7 +809,7 @@
 
 
     <main>
-      <section class="grid grid-cols-12 gap-3 gap-y-0 mp-10">
+      <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0">
         
   <section>
   <div class="container text-center">
@@ -896,7 +872,6 @@
 
     
     
-
 
     
     
