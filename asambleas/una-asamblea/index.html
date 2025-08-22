@@ -800,9 +800,9 @@
     id="info-container"
     class="bg-gray-300 relative col-span-12 mb-0 grid min-h-60 grid-cols-subgrid py-4">
     <div
-      id="info-bg-img"
-      class="absolute inset-0 z-0 col-span-12 flex h-full justify-center">
-      
+  id="bg-img"
+  class=" absolute inset-0 z-0 col-span-12 flex h-full justify-center">
+  
 
 
 
@@ -877,7 +877,37 @@
   
 
 
-    </div>
+</div>
+
+<script>
+  function setBgSvgHeight() {
+    const sectionContainer = document.getElementById("info-container");
+    if (!sectionContainer) return;
+
+    const sectionHeight = sectionContainer.offsetHeight;
+    const viewportWidth = window.innerWidth;
+    const bgImg = document.querySelector("#bg-img img");
+
+    if (bgImg) {
+      
+      const vwBasedHeight = viewportWidth * 1;
+
+      
+      const finalHeight = Math.min(vwBasedHeight, sectionHeight);
+
+      
+      bgImg.style.height = finalHeight + "px";
+      bgImg.style.objectFit = "cover";
+    }
+  }
+
+    
+    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
+
+    
+    window.addEventListener("resize", setBgSvgHeight);
+</script>
+
     <div
       class="rs-semi-bold relative z-20 col-span-5 col-start-2 text-6xl text-black">
       <span>03</span><br />
