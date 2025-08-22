@@ -6,13 +6,20 @@
     <description>Recent content in Componentes on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate>Sat, 16 Aug 2025 10:37:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Aug 2025 22:41:55 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/componentes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Expositivo Expandido</title>
       <link>https://relampagoproyecto.github.io/kauka-dev/componentes/expositivo-expandido/</link>
       <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/componentes/expositivo-expandido/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asamblea</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/componentes/asamblea/</link>
+      <pubDate>Wed, 23 Jul 2025 18:49:55 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/componentes/asamblea/</guid>
       <description></description>
     </item>
   </channel>

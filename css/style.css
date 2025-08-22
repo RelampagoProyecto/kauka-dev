@@ -1083,6 +1083,10 @@
     font-size: var(--text-9xl);
     line-height: var(--tw-leading, var(--text-9xl--line-height));
   }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
@@ -1103,6 +1107,9 @@
   }
   .text-\[clamp\(2rem\,0\.63vw\,4rem\)\] {
     font-size: clamp(2rem, 0.63vw, 4rem);
+  }
+  .text-base {
+    font-size: var(--text-base);
   }
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);

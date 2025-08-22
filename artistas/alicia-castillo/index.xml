@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alicia Castillo on KAUKA</title>
+    <link>https://relampagoproyecto.github.io/kauka-dev/artistas/alicia-castillo/</link>
+    <description>Recent content in Alicia Castillo on KAUKA</description>
+    <generator>Hugo</generator>
+    <language>es-co</language>
+    <lastBuildDate>Sun, 17 Aug 2025 22:41:55 +0000</lastBuildDate>
+    <atom:link href="https://relampagoproyecto.github.io/kauka-dev/artistas/alicia-castillo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 Asamblea</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/asambleas/una-asamblea/</link>
+      <pubDate>Wed, 23 Jul 2025 18:49:55 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/asambleas/una-asamblea/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

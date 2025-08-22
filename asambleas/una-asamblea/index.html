@@ -178,7 +178,7 @@
 
 <script>
   let indexURL = "https://relampagoproyecto.github.io/kauka-dev/searchindex.json";
-  let includeSectionsInSearch = ["","territorio","agenda","programa-curatorial","programa-curatorial","asambleas","programa-curatorial","programa-curatorial","programa-curatorial","programa-curatorial","artistas","encuentro-de-otros-mundos","programa-pedagogico","artistas","componentes","tipos_exposicion","tipos_exposicion","componentes","tipos_exposicion","programa-curatorial","tipos_exposicion","programa-curatorial","artistas","informacion-general","asambleas","artistas","artistas","artistas","artistas","artistas","programa-curatorial","programa-curatorial","programa-curatorial","informacion-general","informacion-general","categories","programa-pedagogico","kauka","lugares","programa-pedagogico","recorridos","tags"];
+  let includeSectionsInSearch = ["","territorio","agenda","programa-curatorial","programa-curatorial","asambleas","programa-curatorial","programa-curatorial","programa-curatorial","programa-curatorial","artistas","encuentro-de-otros-mundos","programa-pedagogico","artistas","componentes","tipos_exposicion","tipos_exposicion","componentes","tipos_exposicion","programa-curatorial","tipos_exposicion","programa-curatorial","artistas","informacion-general","asambleas","artistas","artistas","artistas","componentes","artistas","artistas","artistas","artistas","artistas","artistas","artistas","artistas","artistas","artistas","programa-curatorial","programa-curatorial","programa-curatorial","informacion-general","informacion-general","categories","programa-pedagogico","kauka","lugares","programa-pedagogico","recorridos","tags"];
   let search_no_results = "No hay resultados";
   let search_initial_message = "Escriba lo que quiere buscar";
 </script>
@@ -797,8 +797,11 @@
   </div>
 
   <div
+    id="info-container"
     class="bg-gray-300 relative col-span-12 mb-0 grid min-h-60 grid-cols-subgrid py-4">
-    <div class="absolute inset-0 z-0 col-span-12 h-full">
+    <div
+      id="info-bg-img"
+      class="absolute inset-0 z-0 col-span-12 flex h-full justify-center">
       
 
 
@@ -895,23 +898,151 @@
     </div>
     <div
       class="rs-light relative z-20 col-span-10 col-start-2 text-sm text-black">
-      <div class="rs-light text-xs">Participantes/autor:</div>
       
-        <div>Adolfo Albán Achinte y Jorge Llanos (afrodescendientes - Consejo Comunitario El Tuno, Patía)</div>
+  
+  <div class="rs-light text-xs">Participantes / autor</div>
+  <ul>
+    
+    
+    
+    
       
-        <div>Alicia Castillo (afrodescendiente - Centro de memoria afrocultural Casa del Cacao / Puerto Tejada)</div>
       
-        <div>Elena Hinestroza (afrodescendiente - Azotea de la abuela / Santa María de Timbiquí)</div>
       
-        <div>Emelda Jiménez (pueblo Yanakuna - Macizo caucano)</div>
       
-        <div>Luis Yonda (pueblo Nasa - Sa’th Tama Kiwe)</div>
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/adolfo-alb%C3%A1n-achinte/">
+            Adolfo Albán Achinte
+          </a>
+        </li>
       
-        <div>Taita Lorenzo Tunubalá Hurtado (pueblo Misak - Wampia)</div>
+    
       
-        <div>Twiggy Escobar (comunidad LGBTIQ&#43; - Twiggy Fundación - Cali)</div>
       
-      <br />
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/alicia-castillo/">
+            Alicia Castillo
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/elena-hinestroza/">
+            Elena Hinestroza
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/emelda-jim%C3%A9nez/">
+            Emelda Jiménez
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/jorge-llanos/">
+            Jorge Llanos
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/luis-yonda/">
+            Luis Yonda
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/taita-lorenzo-tunubal%C3%A1-hurtado/">
+            Taita Lorenzo Tunubalá Hurtado
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="leading-tight">
+          <a
+            class="rs-light text-base text-black hover:underline"
+            href="/kauka-dev/artistas/twiggy-escobar/">
+            Twiggy Escobar
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+  </ul>
+
+
     </div>
   </div>
   <div
@@ -1020,6 +1151,92 @@
           <div class="swiper-slide zoomable">
             
               <a
+                href="/kauka-dev/images/artistas/test/tmp-1%202.png"
+                class="glightbox"
+                style="display: block;">
+                <img
+                  loading="lazy"
+                  src="/kauka-dev/images/artistas/test/tmp-1%202_hu_5ce714065ebbf55e.png"
+                  class="img"
+                  style="margin: 0"
+                  alt="/images/artistas/test/tmp-1 2.png"
+                  onerror="this.onerror='null';this.src='\/kauka-dev\/images\/artistas\/test\/tmp-1%202_hu_5ce714065ebbf55e.png'" />
+              </a>
+            
+          </div>
+        
+      
+        
+        
+        
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  
+  
+  
+
+
+  
+  
+    
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+    
+    
+      
+      
+        
+        
+      
+    
+
+
+    
+  
+
+
+  
+
+
+          
+          
+
+
+          <div class="swiper-slide zoomable">
+            
+              <a
                 href="/kauka-dev/images/artistas/test/tmp-1.png"
                 class="glightbox"
                 style="display: block;">
@@ -1030,6 +1247,92 @@
                   style="margin: 0"
                   alt="/images/artistas/test/tmp-1.png"
                   onerror="this.onerror='null';this.src='\/kauka-dev\/images\/artistas\/test\/tmp-1_hu_80379234ba226012.png'" />
+              </a>
+            
+          </div>
+        
+      
+        
+        
+        
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  
+  
+  
+
+
+  
+  
+    
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+    
+    
+      
+      
+        
+        
+      
+    
+
+
+    
+  
+
+
+  
+
+
+          
+          
+
+
+          <div class="swiper-slide zoomable">
+            
+              <a
+                href="/kauka-dev/images/artistas/test/tmp-2-1.png"
+                class="glightbox"
+                style="display: block;">
+                <img
+                  loading="lazy"
+                  src="/kauka-dev/images/artistas/test/tmp-2-1_hu_6a00dfa8b76b31c9.png"
+                  class="img"
+                  style="margin: 0"
+                  alt="/images/artistas/test/tmp-2-1.png"
+                  onerror="this.onerror='null';this.src='\/kauka-dev\/images\/artistas\/test\/tmp-2-1_hu_6a00dfa8b76b31c9.png'" />
               </a>
             
           </div>
@@ -1379,6 +1682,92 @@
           </div>
         
       
+        
+        
+        
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  
+  
+  
+
+
+  
+  
+    
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+    
+    
+      
+      
+        
+        
+      
+    
+
+
+    
+  
+
+
+  
+
+
+          
+          
+
+
+          <div class="swiper-slide zoomable">
+            
+              <a
+                href="/kauka-dev/images/artistas/test/tmp-6.png"
+                class="glightbox"
+                style="display: block;">
+                <img
+                  loading="lazy"
+                  src="/kauka-dev/images/artistas/test/tmp-6_hu_6a00dfa8b76b31c9.png"
+                  class="img"
+                  style="margin: 0"
+                  alt="/images/artistas/test/tmp-6.png"
+                  onerror="this.onerror='null';this.src='\/kauka-dev\/images\/artistas\/test\/tmp-6_hu_6a00dfa8b76b31c9.png'" />
+              </a>
+            
+          </div>
+        
+      
 
 
       
@@ -1402,6 +1791,35 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
   </div>
+
+  <script>
+    function setBgSvgHeight() {
+      const sectionContainer = document.getElementById("info-container");
+      if (!sectionContainer) return;
+
+      const sectionHeight = sectionContainer.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const bgImg = document.querySelector("#info-bg-img img");
+
+      if (bgImg) {
+        
+        const vwBasedHeight = viewportWidth * 1;
+
+        
+        const finalHeight = Math.min(vwBasedHeight, sectionHeight);
+
+        
+        bgImg.style.height = finalHeight + "px";
+        bgImg.style.objectFit = "cover";
+      }
+    }
+
+    
+    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
+
+    
+    window.addEventListener("resize", setBgSvgHeight);
+  </script>
 
       </section>
     </main>
