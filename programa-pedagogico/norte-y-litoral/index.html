@@ -339,7 +339,10 @@
     
     <div
       class="order-0 navbar-brand rs-bold col-span-9 col-start-2 block text-white">
-      NORTE Y LITORAL
+      
+      
+        NORTE Y LITORAL
+      
     </div>
     
     <input id="nav-toggle" type="checkbox" class="hidden" />
@@ -796,10 +799,10 @@
 
   <div
   id="section-container"
-  class=" relative col-span-12 h-full pt-12">
+  class=" relative col-span-12 pt-12">
   <div
     id="section-bg-img"
-    class="fixed inset-0 z-0 col-span-12 flex h-full items-start justify-center pt-10">
+    class="absolute inset-0 z-0 flex h-full items-start justify-center pt-10">
     
     
   </div>
@@ -825,50 +828,76 @@
     const sectionContainer = document.getElementById("section-container");
     if (!sectionContainer) return;
 
-    const sectionHeight = sectionContainer.offsetHeight;
-    const containerRect = sectionContainer.getBoundingClientRect();
+    
+    const sectionInfo = document.querySelector(".section-info");
+    const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
+
+    
+    const adjustedSectionHeight =
+      contentHeight > 0 ? contentHeight : sectionContainer.offsetHeight;
+
     const viewportWidth = window.innerWidth;
     const bgImg = document.querySelector("#section-bg-img img");
 
     if (bgImg) {
       
-      const vwBasedHeight = viewportWidth * 1;
+      const contentBasedHeight = adjustedSectionHeight + 10; 
+      const vwBasedHeight = viewportWidth * 0.95; 
 
       
-      const finalHeight = Math.min(vwBasedHeight, sectionHeight);
+      const finalHeight = Math.min(vwBasedHeight, contentBasedHeight);
 
       
       bgImg.style.height = finalHeight + "px";
+      bgImg.style.maxHeight = finalHeight + "px"; 
       bgImg.style.objectFit = "cover";
+    }
+  }
+
+  function updateOnScroll() {
+    const bgContainer = document.getElementById("section-bg-img");
+    const sectionContainer = document.getElementById("section-container");
+    const bgImg = document.querySelector("#section-bg-img img");
+
+    if (!bgContainer || !sectionContainer || !bgImg) return;
+
+    const scrollY = window.scrollY || window.pageYOffset;
+    const containerTop = sectionContainer.offsetTop;
+    const containerHeight = sectionContainer.offsetHeight;
+    const containerBottom = containerTop + containerHeight;
+    const imgHeight = bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
+    const margin = 50; 
+    const topPosition = "5rem";
+
+    
+    const scrollThreshold = containerBottom - imgHeight - margin;
+
+    
+
+    if (scrollY <= containerTop) {
+      
+      bgImg.style.position = "fixed";
+      bgImg.style.top = topPosition;
+      bgImg.style.bottom = "auto"; 
+    } else if (scrollY >= scrollThreshold) {
+      
+      bgImg.style.position = "fixed";
 
       
-      const bgContainer = document.getElementById("section-bg-img");
-      if (bgContainer) {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const containerTop = sectionContainer.offsetTop;
-        const containerBottom = containerTop + sectionHeight;
-        const imgHeight = bgImg.offsetHeight;
-        const margin = 110;
-        const topPosition = "5rem";
+      
+      const scrollDiff = scrollY - scrollThreshold;
+      const newTopValue = parseFloat(topPosition) - scrollDiff;
 
-        
-        const scrollThreshold = containerBottom - imgHeight - margin;
+      
 
-        
-        if (scrollY <= containerTop) {
-          
-          bgContainer.style.position = "fixed";
-          bgContainer.style.top = topPosition;
-        } else if (scrollY >= scrollThreshold) {
-          
-          bgContainer.style.position = "absolute";
-          bgContainer.style.top = `${scrollThreshold - containerTop + 64}px`;
-        } else {
-          
-          bgContainer.style.position = "fixed";
-          bgContainer.style.top = topPosition;
-        }
-      }
+      
+      bgImg.style.top = `${newTopValue}px`;
+      bgImg.style.bottom = "auto"; 
+    } else {
+      
+      bgImg.style.position = "fixed";
+      bgImg.style.top = topPosition;
+      bgImg.style.bottom = "auto"; 
     }
   }
 
@@ -907,13 +936,21 @@
   }
 
   
-  document.addEventListener("DOMContentLoaded", updateFontSize);
-  window.addEventListener("DOMContentLoaded", setBgImgHeight);
+  document.addEventListener("DOMContentLoaded", () => {
+    updateFontSize();
+    setBgImgHeight();
+    updateOnScroll(); 
+  });
 
   
-  window.addEventListener("resize", updateFontSize);
-  window.addEventListener("resize", setBgImgHeight);
-  window.addEventListener("scroll", setBgImgHeight);
+  window.addEventListener("resize", () => {
+    updateFontSize();
+    setBgImgHeight();
+    updateOnScroll(); 
+  });
+
+  
+  window.addEventListener("scroll", updateOnScroll);
 </script>
 
 
@@ -924,6 +961,34 @@
 
     
     
+      
+
+
+<footer class="col-span-10 col-start-2 bg-gray-600">
+  
+<div
+  class="col-span-12 grid grid-cols-subgrid 
+  
+  gap-4
+
+  top-17 sticky z-30 bg-gray-600 py-5 ">
+
+  <div class="col-span-10 col-start-2 bg-gray-600">
+    <button
+      aria-label="search"
+      class="border-border hover:text-primary 
+        lg:border-r-0 lg:pr-0
+       cursor-pointer text-xl text-white"
+      data-target="search-modal">
+      <i class="fa-solid fa-search"></i>
+    </button>
+  </div>
+  
+</div>
+</footer>
+
+    
+
 
     
     
