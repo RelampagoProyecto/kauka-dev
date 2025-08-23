@@ -1880,6 +1880,31 @@
     randomArtistLink.classList.add("kauka-text");
 
     
+    function updateBackgroundImage(letter) {
+      const bgImg = document.querySelector("#bg-img img");
+      if (letter && bgImg) {
+        bgImg.src = `../img/kauka-svg/up/${letter}.svg`;
+      }
+    }
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const linkKeys = document.querySelectorAll(".link-key");
+      if (linkKeys.length > 0) {
+        
+        const randomIndex = Math.floor(Math.random() * linkKeys.length);
+        const randomLinkKey = linkKeys[randomIndex];
+
+        
+        const href = randomLinkKey.getAttribute("href");
+        const letter = href ? href.replace("#key-", "") : null;
+
+        
+        updateBackgroundImage(letter);
+      }
+    });
+
+    
     const linkKeys = document.querySelectorAll(".link-key");
     linkKeys.forEach((toggler) => {
       
@@ -1887,13 +1912,10 @@
         
         const href = e.target.getAttribute("href");
         const letter = href ? href.replace("#key-", "") : null;
-        const bgImg = document.querySelector("#bg-img img");
 
         
         
-        if (letter && bgImg) {
-          bgImg.src = `/img/kauka-svg/up/${letter}.svg`;
-        }
+        updateBackgroundImage(letter);
 
         e.target.classList.toggle("text-black");
         
