@@ -855,8 +855,14 @@
   .gap-y-0 {
     row-gap: calc(var(--spacing) * 0);
   }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
   .overflow-x-scroll {
     overflow-x: scroll;
+  }
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -1854,6 +1860,13 @@ input#nav-toggle:checked ~ #nav-menu {
   }
   blockquote > p {
     margin-block: calc(var(--spacing) * 0) !important;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 @layer components {

@@ -1033,18 +1033,19 @@
 
 
 
-  <div class="col-span-12 mb-10">
+  <div class="col-span-12">
     
 <div
+  id="scroll-container"
   class="col-span-12 grid grid-cols-subgrid 
   
-  .Gap
+  gap-0
 
-  place-items-center overflow-x-scroll grid-flow-col">
+  place-items-center overflow-x-auto grid-flow-col scroll-smooth scrollbar-hide">
 
 
     
-  <div class="col-span-2 w-full min-w-10">
+  <div class="panel col-span-2 w-full min-w-10">
     
 
 
@@ -1142,7 +1143,7 @@
       
     
     
-  <div class="col-span-2 w-full min-w-10">
+  <div class="panel col-span-2 w-full min-w-10">
     
 
 
@@ -1224,6 +1225,28 @@
 </div>
   </div>
 
+  <script>
+    let startY = 0;
+    const container = document.getElementById("scroll-container");
+    container.addEventListener("wheel", function (e) {
+      
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY;
+      }
+    });
+
+    container.addEventListener("touchstart", function (e) {
+      startY = e.touches[0].clientY;
+    });
+
+    container.addEventListener("touchmove", function (e) {
+      const deltaY = e.touches[0].clientY - startY;
+      container.scrollLeft -= deltaY; 
+      startY = e.touches[0].clientY;
+    });
+  </script>
+
       </section>
     </main>
 
@@ -1235,6 +1258,7 @@
 <footer class="col-span-10 col-start-2 bg-gray-600">
   
 <div
+  
   class="col-span-12 grid grid-cols-subgrid 
   
   gap-4
