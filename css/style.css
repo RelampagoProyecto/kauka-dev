@@ -654,6 +654,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
   .h-74 {
     height: calc(var(--spacing) * 74);
   }
@@ -1639,11 +1642,38 @@
     }
   }
 }
-input#nav-toggle:checked + label #show-button {
+input#nav-toggle:checked + label #show-button-all {
   display: none;
 }
-input#nav-toggle:checked + label #hide-button {
+input#nav-toggle:checked + label #show-button-sm {
+  display: none;
+}
+input#nav-toggle:checked + label #show-button-md {
+  display: none;
+}
+input#nav-toggle:checked + label #hide-button-all {
   display: block;
+  @media (width >= 40rem) {
+    display: none;
+  }
+}
+input#nav-toggle:checked + label #hide-button-sm {
+  display: none;
+  @media (width >= 40rem) {
+    display: block;
+  }
+  @media (width >= 48rem) {
+    display: none;
+  }
+}
+input#nav-toggle:checked + label #hide-button-md {
+  display: none;
+  @media (width >= 48rem) {
+    display: block;
+  }
+  @media (width >= 64rem) {
+    display: none;
+  }
 }
 input#nav-toggle:checked ~ #nav-menu {
   display: block;
@@ -2664,8 +2694,6 @@ input#nav-toggle:checked ~ #nav-menu {
     display: block;
     cursor: pointer;
     padding-block: calc(var(--spacing) * 2);
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
     color: var(--color-white);
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -2681,16 +2709,6 @@ input#nav-toggle:checked ~ #nav-menu {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 3);
     }
-    &:where(.dark, .dark *) {
-      color: var(--color-darkmode-text-dark);
-    }
-    &:where(.dark, .dark *) {
-      &:hover {
-        @media (hover: hover) {
-          color: var(--color-darkmode-primary);
-        }
-      }
-    }
   }
   .nav-dropdown {
     margin-right: calc(var(--spacing) * 0);
@@ -2705,11 +2723,7 @@ input#nav-toggle:checked ~ #nav-menu {
     z-index: 10;
     display: none;
     min-width: 180px;
-    border-radius: 0.25rem;
-    background-color: var(--color-gray-950);
     padding: calc(var(--spacing) * 4);
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     @media (width >= 64rem) {
       visibility: hidden;
     }
