@@ -320,7 +320,7 @@
   <nav class="navbar grid grid-cols-12 gap-4 gap-y-0">
     
     <div
-      class="order-0 navbar-brand rs-bold col-span-9 col-start-2 block text-white">
+      class="order-0 navbar-brand rs-bold col-span-9 col-start-2 block text-2xl text-white lg:col-span-2 lg:col-start-1 lg:pl-5 lg:text-3xl">
       
         
           INFORMACIÓN GENERAL
@@ -328,13 +328,14 @@
       
     </div>
     
-    <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label
-      for="nav-toggle"
-      class="text-text-dark order-3 flex items-center lg:order-1 lg:hidden dark:text-white">
-      
+    <div class="col-span-1 col-end-12 flex items-center lg:hidden">
+      <input id="nav-toggle" type="checkbox" class="hidden" />
+      <label
+        for="nav-toggle"
+        class="text-text-dark order-3 w-full lg:order-1 lg:hidden dark:text-white">
+        
   
-    <svg id="show-button-all" class="block sm:hidden h-7 fill-current" viewBox="0 0 40 40">
+    <svg id="show-button-all" class="block sm:hidden h-7 fill-current h-full w-full" viewBox="0 0 20 20">
       <title>Abrir menú</title>
       <defs>
         <style>
@@ -353,10 +354,10 @@
   
   
 
-      
+        
   
   
-    <svg id="show-button-sm" class="hidden sm:block md:hidden h-6 fill-current" viewBox="0 0 40 40">
+    <svg id="show-button-sm" class="hidden sm:block md:hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
       <title>Abrir menú</title>
       <defs>
         <style>
@@ -374,11 +375,11 @@
   
   
 
-      
+        
   
   
   
-    <svg id="show-button-md" class="hidden md:block lg:hidden h-6 fill-current" viewBox="0 0 40 40">
+    <svg id="show-button-md" class="hidden md:block lg:hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
       <title>Abrir menú</title>
       <defs>
         <style>
@@ -396,9 +397,9 @@
   
 
 
-      
+        
   
-    <svg id="hide-button-all" class="hidden h-6 fill-current" viewBox="0 0 40 40">
+    <svg id="hide-button-all" class="hidden h-6 fill-current h-full w-full" viewBox="0 0 20 20">
       <title>Cerrar menú</title>
       <defs>
         <style>
@@ -417,10 +418,10 @@
   
   
 
-      
+        
   
   
-    <svg id="hide-button-sm" class="hidden h-6 fill-current" viewBox="0 0 40 40">
+    <svg id="hide-button-sm" class="hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
       <title>Cerrar menú</title>
       <defs>
         <style>
@@ -438,11 +439,11 @@
   
   
 
-      
+        
   
   
   
-    <svg id="hide-button-md" class="hidden h-6 fill-current" viewBox="0 0 40 40">
+    <svg id="hide-button-md" class="hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
       <title>Cerrar menú</title>
       <defs>
         <style>
@@ -459,20 +460,24 @@
     </svg>
   
 
-    </label>
+      </label>
+    </div>
     
-
+    <div
+      id="nav-overlay"
+      class="pointer-events-none absolute top-6 z-50 col-span-12 h-20 w-full lg:top-1"></div>
     
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 col-span-10 col-start-2 mt-6 hidden h-dvh pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      class="order-3 col-span-10 col-start-2 mt-6 hidden h-dvh pb-6 lg:top-10 lg:order-1 lg:col-start-4 lg:col-end-13 lg:mt-0 lg:flex lg:h-5 lg:w-auto lg:place-items-center lg:space-x-2 lg:pb-0 xl:space-x-8">
       
       
         
         
         
         
-          <li class="nav-item nav-dropdown group relative mb-12">
+          <li
+            class="nav-item nav-dropdown group relative mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <span
               class="nav-link 
                 
@@ -482,7 +487,7 @@
               <a href="/kauka-dev/asambleas">
                 Asambleas
               </a>
-              <svg class="ml-4 h-4 w-4" viewBox="0 0 9.82 6.67">
+              <svg class="ml-4 h-4 w-4 lg:hidden" viewBox="0 0 9.82 6.67">
                 <defs>
                   <style>
                     .cls-1 {
@@ -500,7 +505,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -517,7 +523,8 @@
         
         
         
-          <li class="nav-item nav-dropdown group relative mb-12">
+          <li
+            class="nav-item nav-dropdown group relative mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <span
               class="nav-link 
                 
@@ -543,7 +550,7 @@
               <a href="/kauka-dev/programa-curatorial">
                 Programa curatorial
               </a>
-              <svg class="ml-4 h-4 w-4" viewBox="0 0 9.82 6.67">
+              <svg class="ml-4 h-4 w-4 lg:hidden" viewBox="0 0 9.82 6.67">
                 <defs>
                   <style>
                     .cls-1 {
@@ -561,7 +568,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -572,7 +580,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -583,7 +592,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -594,7 +604,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -605,7 +616,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -622,7 +634,8 @@
         
         
         
-          <li class="nav-item nav-dropdown group relative mb-12">
+          <li
+            class="nav-item nav-dropdown group relative mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <span
               class="nav-link 
                 
@@ -636,7 +649,7 @@
               <a href="/kauka-dev/programa-pedagogico">
                 Programa pedagógico
               </a>
-              <svg class="ml-4 h-4 w-4" viewBox="0 0 9.82 6.67">
+              <svg class="ml-4 h-4 w-4 lg:hidden" viewBox="0 0 9.82 6.67">
                 <defs>
                   <style>
                     .cls-1 {
@@ -654,7 +667,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -665,7 +679,8 @@
               
                 
                 
-                <li class="nav-dropdown-item rs-light pl-10">
+                <li
+                  class="nav-dropdown-item rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
                   <a
                     class="nav-dropdown-link "
                     
@@ -682,12 +697,13 @@
         
         
         
-          <li class="nav-item rs-bold mb-12">
+          <li
+            class="nav-item rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <a
               class="nav-link "
               
               href="/kauka-dev/encuentro-de-otros-mundos"
-              >Encuentro de otros mundos</a
+              >Encuentros de otros mundos</a
             >
           </li>
         
@@ -696,7 +712,8 @@
         
         
         
-          <li class="nav-item rs-bold mb-12">
+          <li
+            class="nav-item rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <a
               class="nav-link "
               
@@ -710,7 +727,8 @@
         
         
         
-          <li class="nav-item rs-bold mb-12">
+          <li
+            class="nav-item rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <a
               class="nav-link "
               
@@ -724,7 +742,8 @@
         
         
         
-          <li class="nav-item rs-bold mb-12">
+          <li
+            class="nav-item rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
             <a
               class="nav-link "
               
@@ -735,16 +754,25 @@
         
       
     </ul>
+    <div class="bg-home col-span-12 mt-4 h-9 w-full lg:top-1"></div>
   </nav>
 </header>
 
 <script>
   const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
 
   document.addEventListener("click", (e) => {
     const isClickInsideNavbar = e.target.closest(".navbar-brand");
     if (isClickInsideNavbar) {
       toggle.checked = !toggle.checked;
+    }
+    if (toggle.checked) {
+      menu.classList.remove("hidden");
+      menu.classList.add("block");
+    } else {
+      menu.classList.add("hidden");
+      menu.classList.remove("block");
     }
   });
 </script>
