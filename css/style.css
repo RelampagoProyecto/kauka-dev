@@ -720,6 +720,9 @@
   .min-h-\[440px\] {
     min-height: 440px;
   }
+  .min-h-\[640px\] {
+    min-height: 640px;
+  }
   .min-h-full {
     min-height: 100%;
   }
@@ -848,6 +851,9 @@
   }
   .items-center {
     align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
   }
   .items-start {
     align-items: flex-start;
@@ -1959,6 +1965,12 @@ input#nav-toggle:checked + label #hide-button-md {
   color: #d5a24a;
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
+}
+.bg-home-componentes {
+  background-color: #d5a24a;
+}
+.text-dark-brown {
+  color: #3f2812;
 }
 .bg-home-extra-content div > div > p {
   margin-top: calc(var(--spacing) * 5);
