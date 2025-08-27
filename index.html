@@ -2100,7 +2100,7 @@
     
 
     function fetchProgramaCuratorial() {
-      return fetch("/programa-curatorial/index.json")
+      return fetch("https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/index.json")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
