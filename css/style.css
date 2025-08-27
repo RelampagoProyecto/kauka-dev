@@ -717,6 +717,9 @@
   .min-h-\[216px\] {
     min-height: 216px;
   }
+  .min-h-\[320px\] {
+    min-height: 320px;
+  }
   .min-h-\[440px\] {
     min-height: 440px;
   }
@@ -1209,6 +1212,9 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .text-white\! {
+    color: var(--color-white) !important;
   }
   .capitalize {
     text-transform: capitalize;
@@ -1971,6 +1977,15 @@ input#nav-toggle:checked + label #hide-button-md {
 }
 .text-dark-brown {
   color: #3f2812;
+}
+.multiply {
+  mix-blend-mode: multiply;
+}
+.bg-dark-brown {
+  background-color: #3f2812;
+}
+.bg-home-artistas {
+  background-color: #bd4f35;
 }
 .bg-home-extra-content div > div > p {
   margin-top: calc(var(--spacing) * 5);
