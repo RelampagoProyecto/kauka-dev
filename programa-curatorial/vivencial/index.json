@@ -1,0 +1,22 @@
+
+[{
+  "title": "Proyecto Ipsum",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/primera-exposicion/",
+  "inicio": {
+    "dia": "03",
+    "mes": "11",
+    "año": "2025"
+  },
+  "hora": "7:00 p.m.",
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
+  }},{
+  "title": "Una prueba de FM",
+  "url": "/kauka-dev/programa-curatorial/editorial/test-one/"},{
+  "title": "Primera Publicacion",
+  "url": "/kauka-dev/programa-curatorial/editorial/primera-publicacion/"},{
+  "title": "Segunda Publicacion",
+  "url": "/kauka-dev/programa-curatorial/editorial/otra-publicacion/"},{
+  "title": "Primer Comadreo",
+  "url": "/kauka-dev/programa-curatorial/vivencial/primer-comadreo/"}]
