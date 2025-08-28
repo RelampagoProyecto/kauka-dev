@@ -64,6 +64,7 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -349,6 +350,12 @@
   }
   .z-50 {
     z-index: 50;
+  }
+  .z-\[50\] {
+    z-index: 50;
+  }
+  .z-\[51\] {
+    z-index: 51;
   }
   .order-0 {
     order: 0;
@@ -681,6 +688,9 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-64 {
+    height: calc(var(--spacing) * 64);
+  }
   .h-74 {
     height: calc(var(--spacing) * 74);
   }
@@ -704,6 +714,9 @@
   }
   .h-screen {
     height: 100vh;
+  }
+  .max-h-full {
+    max-height: 100%;
   }
   .min-h-20 {
     min-height: calc(var(--spacing) * 20);
@@ -781,6 +794,9 @@
   .w-4 {
     width: calc(var(--spacing) * 4);
   }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
   .w-15 {
     width: calc(var(--spacing) * 15);
   }
@@ -814,6 +830,12 @@
   .col {
     flex: 1 0 0%;
   }
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-none {
+    flex: none;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -845,6 +867,9 @@
   }
   .grid-cols-subgrid {
     grid-template-columns: subgrid;
+  }
+  .flex-col {
+    flex-direction: column;
   }
   .place-content-end-safe {
     place-content: safe end;
@@ -897,6 +922,9 @@
   .gap-y-0 {
     row-gap: calc(var(--spacing) * 0);
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .overflow-x-auto {
     overflow-x: auto;
   }
@@ -912,6 +940,9 @@
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
@@ -925,6 +956,12 @@
   }
   .border-border {
     border-color: var(--color-border);
+  }
+  .bg-black\/50 {
+    background-color: color-mix(in srgb, #000 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
+    }
   }
   .bg-body {
     background-color: var(--color-body);
@@ -981,6 +1018,9 @@
   }
   .fill-current {
     fill: currentcolor;
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
@@ -1243,10 +1283,26 @@
     --tw-invert: invert(100%);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
   .\[clip-path\:polygon\(50\%_0\%\,100\%_50\%\,50\%_100\%\,0\%_50\%\)\] {
     clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
@@ -1256,6 +1312,16 @@
   }
   .gx-5 {
     --bs-gutter-x: 3rem;
+  }
+  .hover\:bg-black\/75 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #000 75%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-black) 75%, transparent);
+        }
+      }
+    }
   }
   .hover\:bg-light {
     &:hover {
@@ -1995,6 +2061,24 @@ input#nav-toggle:checked + label #hide-button-md {
 }
 .pc-buttons {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+#home-componentes {
+  position: relative;
+  will-change: transform;
+}
+#componentes-container {
+  will-change: transform;
+  transform: translateZ(0);
+}
+.home-componente {
+  will-change: transform;
+  transform: translateZ(0);
+}
+body {
+  overflow-x: hidden;
+}
+* {
+  scroll-behavior: smooth;
 }
 @layer base {
   html {
@@ -4045,6 +4129,14 @@ input#nav-toggle:checked + label #hide-button-md {
   syntax: "*";
   inherits: false;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-content {
   syntax: "*";
   initial-value: "";
@@ -4093,6 +4185,8 @@ input#nav-toggle:checked + label #hide-button-md {
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
       --tw-content: "";
     }
   }
