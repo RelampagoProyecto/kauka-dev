@@ -939,7 +939,7 @@
     }
 
     
-    header.addEventListener('mouseenter', function() {
+    function showOverlay() {
       const toggle = document.getElementById("nav-toggle");
       
       if (!toggle.checked) {
@@ -947,14 +947,28 @@
         navOverlay.classList.add('block');
         
       }
-    });
+    }
 
     
-    header.addEventListener('mouseleave', function() {
+    function hideOverlay() {
       navOverlay.classList.add('hidden');
       navOverlay.classList.remove('block');
       
-    });
+    }
+
+    
+    header.addEventListener('mouseenter', showOverlay);
+    header.addEventListener('mouseleave', hideOverlay);
+
+    
+    header.addEventListener('touchstart', function(e) {
+      
+      e.preventDefault();
+      showOverlay();
+    }, { passive: false });
+
+    header.addEventListener('touchend', hideOverlay);
+    header.addEventListener('touchcancel', hideOverlay);
   }
 
   
