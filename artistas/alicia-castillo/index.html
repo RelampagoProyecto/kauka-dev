@@ -957,9 +957,15 @@
     
     header.addEventListener('touchstart', function(e) {
       
-      e.preventDefault();
-      showOverlay();
-    }, { passive: false });
+      
+      const isMenuToggle = e.target.closest('#nav-toggle') || e.target.closest('label[for="nav-toggle"]');
+      const isNavLink = e.target.closest('.nav-link') || e.target.closest('.navbar-brand');
+
+      if (!isMenuToggle && !isNavLink) {
+        
+        showOverlay();
+      }
+    }, { passive: true });
 
     header.addEventListener('touchend', hideOverlay);
     header.addEventListener('touchcancel', hideOverlay);
