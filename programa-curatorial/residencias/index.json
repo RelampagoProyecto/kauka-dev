@@ -11,7 +11,8 @@
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
-  }},{
+  },
+  "notas": "Aforo limitado"},{
   "title": "Una prueba de FM",
   "url": "/kauka-dev/programa-curatorial/editorial/test-one/"},{
   "title": "Primera Publicacion",

@@ -317,13 +317,23 @@
 
 
 
+
+
 <header
   id="nav"
   class="header  sticky top-0 z-40 cursor-pointer"
   style="background-color: #b5477d">
   
   
-  <nav class="navbar grid grid-cols-12 gap-4 gap-y-0">
+  
+  
+  
+  <div
+    id="nav-overlay"
+    class="pointer-events-none absolute inset-0 z-50 mb-auto hidden h-full w-full"></div>
+  
+  
+  <nav class="navbar grid grid-cols-12 gap-4 gap-y-0 pb-5">
     
     
     <div
@@ -510,12 +520,6 @@
 
       </label>
     </div>
-
-    
-    
-    <div
-      id="nav-overlay"
-      class="pointer-events-none absolute top-4 z-50 col-span-12 h-10 w-full sm:top-6 lg:top-1"></div>
 
     
     
@@ -878,10 +882,12 @@
 
 
 
+
 <script>
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("nav-menu");
 
+  
   
   document.addEventListener("click", (e) => {
     
@@ -890,18 +896,67 @@
       toggle.checked = !toggle.checked;
     }
 
+    const navOverlay = document.getElementById('nav-overlay');
+
+    
     
     if (toggle.checked) {
+      
       menu.classList.remove("hidden");
       menu.classList.add("block");
+      
+      if (navOverlay) {
+        navOverlay.classList.add("hidden");
+        navOverlay.classList.remove("block");
+      }
     } else {
+      
       menu.classList.add("hidden");
       menu.classList.remove("block");
+      
+      if (navOverlay) {
+        const header = document.getElementById('nav');
+        if (header && header.matches(':hover')) {
+          navOverlay.classList.remove("hidden");
+          navOverlay.classList.add("block");
+        }
+      }
     }
   });
-</script>
 
+  
 
+  function initializeNavOverlayHover() {
+    const header = document.getElementById('nav');
+    const navOverlay = document.getElementById('nav-overlay');
+
+    if (!header || !navOverlay) {
+      
+      return;
+    }
+
+    
+    header.addEventListener('mouseenter', function() {
+      const toggle = document.getElementById("nav-toggle");
+      
+      if (!toggle.checked) {
+        navOverlay.classList.remove('hidden');
+        navOverlay.classList.add('block');
+        
+      }
+    });
+
+    
+    header.addEventListener('mouseleave', function() {
+      navOverlay.classList.add('hidden');
+      navOverlay.classList.remove('block');
+      
+    });
+  }
+
+  
+  document.addEventListener('DOMContentLoaded', initializeNavOverlayHover);
+</script> 
 
 
 
@@ -1623,14 +1678,15 @@
     
     <div
       id="home-content"
-      class="section-info subgrid rs-light relative inset-0 z-20 mb-5 grid grid-cols-12 gap-4 hyphens-auto text-[11vw] leading-[10.8vw] text-black">
+      class="section-info subgrid rs-light text-dark-brown relative inset-0 z-20 mb-5 grid grid-cols-12 gap-4 hyphens-auto text-[11vw] leading-[10.8vw]">
       <div class="col-span-10 col-start-2">
         <p>
           Lorem <strong>ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed <strong>diam</strong> nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat <strong>volutpat</strong>. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor.</p>
 
         
         
-          <div class="rs-semi-bold mb-5 mt-5 text-right text-[15vw] text-black">
+          <div
+            class="rs-semi-bold text-dark-brown mb-5 mt-5 text-right text-[15vw]">
             2025
           </div>
         
@@ -1663,16 +1719,19 @@
   
   <div
     id="home-project"
-    class="bg-home-project rs-light relative z-30 col-span-12 min-h-[440px] text-base leading-tight text-white">
+    class="bg-home-project rs-light relative z-30 col-span-12 aspect-[8/11] min-h-[440px] text-base leading-tight text-white">
     
     <div
+      id="home-project-back-diamond"
+      class="pointer-events-none absolute inset-0 z-10 [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]"></div>
+    <div
       id="home-project-diamond"
-      class="pointer-events-none absolute inset-0 z-20 [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]"></div>
+      class="pointer-events-none absolute inset-0 z-30 hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]"></div>
 
     
     <div
       id="home-project-container"
-      class="subgrid col-span-12 grid grid-cols-12 gap-4 gap-y-0"></div>
+      class="subgrid relative z-20 col-span-12 grid grid-cols-12 gap-4 gap-y-0"></div>
   </div>
 
   
@@ -2086,7 +2145,7 @@
   <div
     id="home-artistas"
     class="bg-home-artistas z-20 col-span-12 min-h-[640px] text-base leading-tight text-white">
-    <div class="min-h-[320px]">
+    <div class="relative min-h-[320px]">
       
 
 
@@ -2162,7 +2221,13 @@
   
 
 
+      <div
+        id="home-artistas-label"
+        class="rs-semi-bold absolute inset-0 flex items-center justify-center text-3xl text-white">
+        Artistas
+      </div>
     </div>
+
     
       <div
         class="subgrid bg-dark-brown col-span-12 grid grid-cols-12 items-end gap-4 gap-y-0">
@@ -2401,7 +2466,7 @@
         <div
           id="home-project-titulo"
           class="rs-semi-bold col-span-10 col-start-2 mb-10 mt-2 text-[18vw] leading-[14vw] text-white break-words hyphens-auto">
-          <a href="${event.url || '#'}" class="hover:underline">${event.title}</a>
+          ${event.title}
         </div>
         <div id="home-project-lugar" class="col-span-5 col-start-2">
           ${event.lugar ? `<div class="rs-light text-xs">Sede/lugar</div>` : ''}
@@ -2417,6 +2482,9 @@
             ${event.notas || ''}
         </div>
       `;
+
+      
+      initializeProjectClickHandler(event.url);
     }
 
 
@@ -2433,11 +2501,11 @@
 
       
       container.innerHTML = `
-        <div class="artist-slideshow relative overflow-hidden bg-gray-900" style="height: 75vw; max-height: 75vh;">
+        <div class="artist-slideshow relative overflow-hidden bg-dark-brown" style="height: 75vw; max-height: 75vh;">
           \x3C!-- Slideshow container -->
           <div class="slideshow-track flex transition-transform duration-500 ease-in-out h-full" style="width: ${imagesToShow.length * 100}%">
             ${imagesToShow.map(imagen => `
-              <div class="slide w-full h-full flex items-center">
+              <div class="slide w-full h-full flex justify-center">
                 <img
                   src="${getResponsiveImageUrl(imagen)}"
                   alt="${imagen.name}"
@@ -2450,12 +2518,12 @@
 
           \x3C!-- Navigation arrows overlay -->
           <div class="slideshow-arrows pointer-events-none absolute inset-0 flex items-end justify-between px-4 pb-10 z-[50]">
-            <div class="slideshow-prev bg-black/50 text-white rounded-full hover:bg-black/75 w-10 h-10 flex items-center justify-center cursor-pointer z-[51]" style="pointer-events: auto !important; ${imagesToShow.length <= 1 ? 'display:none;' : ''}">
+            <div class="slideshow-prev text-white w-10 h-10 flex items-center justify-center cursor-pointer z-[51]" style="pointer-events: auto !important; ${imagesToShow.length <= 1 ? 'display:none;' : ''}">
               <svg class="w-10 h-10" viewBox="0 0 12.07 17.75">
                 <polygon class="fill-current" points="0 8.96 12.07 0 12.07 17.75 0 8.96"/>
               </svg>
             </div>
-            <div class="slideshow-next bg-black/50 text-white rounded-full hover:bg-black/75 w-10 h-10 flex items-center justify-center cursor-pointer z-[51]" style="pointer-events: auto !important; ${imagesToShow.length <= 1 ? 'display:none;' : ''}">
+            <div class="slideshow-next text-white w-10 h-10 flex items-center justify-center cursor-pointer z-[51]" style="pointer-events: auto !important; ${imagesToShow.length <= 1 ? 'display:none;' : ''}">
               <svg class="w-10 h-10" viewBox="0 0 12.07 17.75">
                 <polygon class="fill-current" points="0 17.75 0 0 12.07 8.96 0 17.75"/>
               </svg>
@@ -2494,8 +2562,8 @@
         
         gsap.to(track, {
           x: `${translateX}%`,
-          duration: 0.5,
-          ease: "power2.out"
+          duration: 0.1,
+          ease: "circle.out"
         });
       }
 
@@ -2629,6 +2697,67 @@
       
       initializeComponentesHorizontalScroll();
     });
+
+    
+
+    function initializeProjectClickHandler(eventUrl) {
+      const homeProject = document.getElementById('home-project');
+
+      if (!homeProject || !eventUrl) {
+        
+        return;
+      }
+
+      
+      const newHomeProject = homeProject.cloneNode(true);
+      homeProject.parentNode.replaceChild(newHomeProject, homeProject);
+
+      
+      newHomeProject.style.cursor = 'pointer';
+
+      
+      newHomeProject.addEventListener('click', function(e) {
+        
+        e.preventDefault();
+
+        
+
+        
+        window.location.href = eventUrl;
+      });
+
+      
+      initializeProjectDiamondHover();
+
+      
+    }
+
+    
+
+    function initializeProjectDiamondHover() {
+      const homeProject = document.getElementById('home-project');
+      const projectDiamond = document.getElementById('home-project-diamond');
+
+      if (!homeProject || !projectDiamond) {
+        
+        return;
+      }
+
+      homeProject.addEventListener('mouseenter', function() {
+        projectDiamond.classList.remove('hidden');
+        
+      });
+
+      homeProject.addEventListener('mouseleave', function() {
+        projectDiamond.classList.add('hidden');
+        
+      });
+
+      
+      homeProject.addEventListener('touchstart', () => diamond.classList.remove('hidden'));
+      homeProject.addEventListener('touchend', () => diamond.classList.add('hidden'));
+      homeProject.addEventListener('touchcancel', () => diamond.classList.add('hidden'));
+    }
 
     
 

@@ -316,6 +316,8 @@
 
 
 
+
+
 <header
   id="nav"
   class="header 
@@ -324,7 +326,15 @@
   >
   
   
-  <nav class="navbar grid grid-cols-12 gap-4 gap-y-0">
+  
+  
+  
+  <div
+    id="nav-overlay"
+    class="pointer-events-none absolute inset-0 z-50 mb-auto hidden h-full w-full"></div>
+  
+  
+  <nav class="navbar grid grid-cols-12 gap-4 gap-y-0 pb-5">
     
     
     <div
@@ -511,12 +521,6 @@
 
       </label>
     </div>
-
-    
-    
-    <div
-      id="nav-overlay"
-      class="pointer-events-none absolute top-4 z-50 col-span-12 h-10 w-full sm:top-6 lg:top-1"></div>
 
     
     
@@ -879,10 +883,12 @@
 
 
 
+
 <script>
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("nav-menu");
 
+  
   
   document.addEventListener("click", (e) => {
     
@@ -891,18 +897,67 @@
       toggle.checked = !toggle.checked;
     }
 
+    const navOverlay = document.getElementById('nav-overlay');
+
+    
     
     if (toggle.checked) {
+      
       menu.classList.remove("hidden");
       menu.classList.add("block");
+      
+      if (navOverlay) {
+        navOverlay.classList.add("hidden");
+        navOverlay.classList.remove("block");
+      }
     } else {
+      
       menu.classList.add("hidden");
       menu.classList.remove("block");
+      
+      if (navOverlay) {
+        const header = document.getElementById('nav');
+        if (header && header.matches(':hover')) {
+          navOverlay.classList.remove("hidden");
+          navOverlay.classList.add("block");
+        }
+      }
     }
   });
-</script>
 
+  
 
+  function initializeNavOverlayHover() {
+    const header = document.getElementById('nav');
+    const navOverlay = document.getElementById('nav-overlay');
+
+    if (!header || !navOverlay) {
+      
+      return;
+    }
+
+    
+    header.addEventListener('mouseenter', function() {
+      const toggle = document.getElementById("nav-toggle");
+      
+      if (!toggle.checked) {
+        navOverlay.classList.remove('hidden');
+        navOverlay.classList.add('block');
+        
+      }
+    });
+
+    
+    header.addEventListener('mouseleave', function() {
+      navOverlay.classList.add('hidden');
+      navOverlay.classList.remove('block');
+      
+    });
+  }
+
+  
+  document.addEventListener('DOMContentLoaded', initializeNavOverlayHover);
+</script> 
 
 
 
