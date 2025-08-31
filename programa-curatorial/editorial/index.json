@@ -14,10 +14,54 @@
   },
   "notas": "Aforo limitado"},{
   "title": "Una prueba de FM",
-  "url": "/kauka-dev/programa-curatorial/editorial/test-one/"},{
+  "url": "/kauka-dev/programa-curatorial/editorial/test-one/",
+  "inicio": {
+    "dia": "03",
+    "mes": "11",
+    "año": "2025"
+  },
+  "hora": "7:00 p.m.",
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
+  },
+  "notas": "Aforo limitado"},{
   "title": "Primera Publicacion",
-  "url": "/kauka-dev/programa-curatorial/editorial/primera-publicacion/"},{
+  "url": "/kauka-dev/programa-curatorial/editorial/primera-publicacion/",
+  "inicio": {
+    "dia": "03",
+    "mes": "11",
+    "año": "2025"
+  },
+  "hora": "7:00 p.m.",
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
+  },
+  "notas": "Aforo limitado"},{
   "title": "Segunda Publicacion",
-  "url": "/kauka-dev/programa-curatorial/editorial/otra-publicacion/"},{
+  "url": "/kauka-dev/programa-curatorial/editorial/otra-publicacion/",
+  "inicio": {
+    "dia": "03",
+    "mes": "11",
+    "año": "2025"
+  },
+  "hora": "7:00 p.m.",
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
+  },
+  "notas": "Aforo limitado"},{
   "title": "Primer Comadreo",
-  "url": "/kauka-dev/programa-curatorial/vivencial/primer-comadreo/"}]
+  "url": "/kauka-dev/programa-curatorial/vivencial/primer-comadreo/",
+  "inicio": {
+    "dia": "03",
+    "mes": "11",
+    "año": "2025"
+  },
+  "hora": "7:00 p.m.",
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
+  },
+  "notas": "Aforo limitado"}]
