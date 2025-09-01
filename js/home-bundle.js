@@ -471,7 +471,7 @@ function renderArtistGallery(artist, containerId, maxImages = 6) {
 
   // Create slideshow HTML structure
   container.innerHTML = `
-    <div class="artist-slideshow relative overflow-hidden bg-dark-brown" style="height: 75vw; max-height: 75vh;">
+    <div class="artist-slideshow relative overflow-hidden bg-dark-brown">
       <!-- Slideshow container -->
       <div class="slideshow-track flex transition-transform duration-500 ease-in-out h-full" style="width: ${imagesToShow.length * 100}%">
         ${imagesToShow
@@ -493,13 +493,13 @@ function renderArtistGallery(artist, containerId, maxImages = 6) {
       <!-- Navigation arrows overlay -->
       <div class="slideshow-arrows pointer-events-none absolute inset-0 flex items-end justify-between px-4 pb-10 z-[50]">
         <div class="slideshow-prev text-white w-10 h-10 flex items-center justify-center cursor-pointer z-[51]" style="pointer-events: auto !important; ${imagesToShow.length <= 1 ? "display:none;" : ""}">
-          <svg class="w-10 h-10" viewBox="0 0 12.07 17.75">
-            <polygon class="fill-current" points="0 8.96 12.07 0 12.07 17.75 0 8.96"/>
+          <svg class="w-10 h-10" viewBox="0 0 33.41 35.51">
+            <path fill='#75c75f' d="M33.41,0v7.01s-23.45,10.74-23.45,10.74l23.45,10.74v7.01S0,20.11,0,20.11v-4.72S33.41,0,33.41,0Z"/>
           </svg>
         </div>
         <div class="slideshow-next text-white w-10 h-10 flex items-center justify-center cursor-pointer z-[51]" style="pointer-events: auto !important; ${imagesToShow.length <= 1 ? "display:none;" : ""}">
-          <svg class="w-10 h-10" viewBox="0 0 12.07 17.75">
-            <polygon class="fill-current" points="0 17.75 0 0 12.07 8.96 0 17.75"/>
+          <svg class="w-10 h-10" viewBox="0 0 33.41 35.51">
+            <path fill="#75c75f" d="M33.41,15.39v4.72L0,35.51v-7.01l23.45-10.74L0,7.01V0l33.41,15.39Z"/>
           </svg>
         </div>
       </div>
@@ -702,10 +702,40 @@ function initHorizontalScroll(
   );
   console.log("[HorizontalScroll] Options:", options);
 
+  // Check if we should disable horizontal scroll on medium breakpoints and up
+  function shouldDisableHorizontalScroll() {
+    // Check if window width is medium (768px) or larger
+    return window.innerWidth >= 768;
+  }
+
+  // If horizontal scroll should be disabled, return early
+  if (shouldDisableHorizontalScroll()) {
+    console.log(
+      "[HorizontalScroll] Disabled on medium breakpoints and up (>= 768px)"
+    );
+    return null;
+  }
+
+  // Get header height
+  const header = document.querySelector("#nav");
+  const headerHeight = header ? header.offsetHeight : 0;
+  console.log("[HorizontalScroll] Header height:", headerHeight + "px");
+
+  // Set container height to fill remaining viewport
+  const homeContainer = document.querySelector(selector);
+  if (homeContainer) {
+    const remainingHeight = `calc(100vh - ${headerHeight}px)`;
+    homeContainer.style.minHeight = remainingHeight;
+    console.log(
+      "[HorizontalScroll] Container min-height set to:",
+      remainingHeight
+    );
+  }
+
   // Default options
   const defaultOptions = {
     trigger: selector,
-    start: "top top",
+    start: `top ${headerHeight}px`,
     end: () =>
       "+=" +
       (document.querySelector(scrollableElementSelector).scrollWidth -
@@ -820,27 +850,57 @@ function initHomeHorizontalScroll() {
     return;
   }
 
-  // Initialize the horizontal scroll for home page componentes section
-  const horizontalScroll = initHorizontalScroll(
-    "#home-componentes",
-    "#componentes-container",
-    {
-      onUpdate: (self) => {
-        // Custom update logic for home page if needed
-        console.log(
-          `[HomeHorizontalScroll] Progress: ${self.progress.toFixed(3)}`
-        );
-      },
-    }
-  );
+  let horizontalScroll = null;
 
-  // Store reference globally for debugging
-  if (horizontalScroll) {
-    window.homeHorizontalScroll = horizontalScroll;
-    console.log(
-      "[HorizontalScroll] Home horizontal scroll initialized and stored globally"
-    );
+  // Function to initialize or destroy horizontal scroll based on screen size
+  function handleHorizontalScroll() {
+    const shouldDisable = window.innerWidth >= 768;
+
+    if (shouldDisable && horizontalScroll) {
+      console.log(
+        "[HorizontalScroll] Destroying horizontal scroll for medium+ breakpoint"
+      );
+      horizontalScroll.kill();
+      horizontalScroll = null;
+    } else if (!shouldDisable && !horizontalScroll) {
+      console.log(
+        "[HorizontalScroll] Creating horizontal scroll for small breakpoint"
+      );
+      // Initialize the horizontal scroll for home page componentes section
+      horizontalScroll = initHorizontalScroll(
+        "#home-componentes",
+        "#componentes-container",
+        {
+          onUpdate: (self) => {
+            // Custom update logic for home page if needed
+            console.log(
+              `[HomeHorizontalScroll] Progress: ${self.progress.toFixed(3)}`
+            );
+          },
+        }
+      );
+
+      // Store reference globally for debugging
+      if (horizontalScroll) {
+        window.homeHorizontalScroll = horizontalScroll;
+        console.log(
+          "[HorizontalScroll] Home horizontal scroll initialized and stored globally"
+        );
+      }
+    }
   }
+
+  // Initialize based on current screen size
+  handleHorizontalScroll();
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      handleHorizontalScroll();
+    }, 250); // Debounce resize events
+  });
 
   return horizontalScroll;
 }
