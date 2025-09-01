@@ -246,7 +246,7 @@ function positionSectionBackground() {
 
   // For SVG images, just calculate immediately since they load quickly
   // For other images, check if they're loaded
-  if (visibleImg.src.includes(".svg") || isImageLoaded(visibleImg)) {
+  if (isImageLoaded(visibleImg)) {
     console.log(
       "[BackgroundPositioner] Image ready (SVG or already loaded), calculating position immediately"
     );
