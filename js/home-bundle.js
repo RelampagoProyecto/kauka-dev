@@ -943,9 +943,12 @@ function initHomePage() {
     console.warn("[Home] initHomeHorizontalScroll function not available");
   }
 
+  // Get base URL from global config if available
+  const baseURL = window.KAUKA_CONFIG ? window.KAUKA_CONFIG.baseURL : "";
+
   // Load and display artists
   if (typeof fetchArtists === "function") {
-    fetchArtists()
+    fetchArtists(baseURL)
       .then((artists) => {
         if (artists && artists.length > 0) {
           console.log(`[Home] Loaded ${artists.length} artists`);
