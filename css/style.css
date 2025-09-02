@@ -955,11 +955,20 @@
   .bg-body {
     background-color: var(--color-body);
   }
+  .bg-bright-green {
+    background-color: var(--color-bright-green);
+  }
   .bg-dark-brown {
     background-color: rgb(52, 4, 0);
   }
   .bg-deep-pink {
-    background-color: rgb(208, 69, 128);
+    background-color: var(--color-deep-pink);
+  }
+  .bg-editorial {
+    background-color: var(--color-dark-chocolate);
+  }
+  .bg-expositivo {
+    background-color: var(--color-deep-pink);
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
@@ -986,7 +995,7 @@
     background-color: var(--color-gray-950);
   }
   .bg-home {
-    background-color: rgb(217, 78, 48);
+    background-color: var(--color-burnt-orange);
   }
   .bg-home-artistas {
     background-color: rgb(217, 78, 48);
@@ -1001,13 +1010,25 @@
     background-color: rgb(176, 9, 3);
   }
   .bg-home-project {
-    background-color: rgb(208, 69, 128);
+    background-color: var(--color-deep-pink);
   }
   .bg-light {
     background-color: var(--color-light);
   }
   .bg-primary {
     background-color: var(--color-primary);
+  }
+  .bg-programa-curatorial {
+    background-color: var(--color-golden-yellow);
+  }
+  .bg-recorridos {
+    background-color: var(--color-burnt-orange);
+  }
+  .bg-residencias {
+    background-color: var(--color-teal);
+  }
+  .bg-vivencial {
+    background-color: var(--color-dark-forest-green);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -1294,7 +1315,7 @@
     color: var(--color-black);
   }
   .text-dark-brown {
-    color: rgb(68, 34, 8);
+    color: var(--color-dark-chocolate);
   }
   .text-gray-500 {
     color: var(--color-gray-500);
@@ -2110,6 +2131,15 @@ input#nav-toggle:checked + label #hide-button-md {
     background-color: var(--color-darkmode-primary) !important;
   }
 }
+:root {
+  --color-burnt-orange: rgb(217, 78, 48);
+  --color-deep-pink: rgb(208, 69, 128);
+  --color-dark-forest-green: rgb(25, 80, 46);
+  --color-dark-chocolate: rgb(68, 34, 8);
+  --color-teal: rgb(4, 144, 172);
+  --color-golden-yellow: rgb(230, 165, 65);
+  --color-bright-green: rgb(41, 200, 86);
+}
 @font-face {
   font-family: "RigidSquare-Bold";
   src: url("../fonts/rigid-square/RigidSquare-Bold.woff2") format("woff2"), url("../fonts/rigid-square/RigidSquare-Bold.woff") format("woff"), url("../fonts/rigid-square/RigidSquare-Bold.eot") format("eot");
@@ -2221,7 +2251,7 @@ body {
   position: relative;
   z-index: 0;
   grid-column: span 12 / span 12;
-  background-color: rgb(217, 78, 48);
+  background-color: var(--color-burnt-orange);
   padding-top: calc(var(--spacing) * 15);
   @media (width >= 40rem) {
     padding-top: 311px;
@@ -2441,7 +2471,7 @@ body {
 }
 .home-content-text {
   font-family: "RigidSquare-Light", sans-serif;
-  color: rgb(68, 34, 8);
+  color: var(--color-dark-chocolate);
   position: relative;
   inset: calc(var(--spacing) * 0);
   z-index: 20;
@@ -2506,7 +2536,7 @@ body {
   text-align: right;
   font-family: "RigidSquare-SemiBold", sans-serif;
   font-size: 15vw;
-  color: rgb(68, 34, 8);
+  color: var(--color-dark-chocolate);
   @media (width >= 40rem) {
     margin-top: calc(var(--spacing) * 25);
   }
@@ -2574,7 +2604,7 @@ body {
   z-index: 30;
   grid-column: span 12 / span 12;
   min-height: 440px;
-  background-color: rgb(208, 69, 128);
+  background-color: var(--color-deep-pink);
   font-family: "RigidSquare-Light", sans-serif;
   display: grid;
   grid-template-columns: subgrid;
@@ -2782,7 +2812,7 @@ body {
   font-size: var(--text-base);
   --tw-leading: var(--leading-tight);
   line-height: var(--leading-tight);
-  color: rgb(68, 34, 8);
+  color: var(--color-dark-chocolate);
 }
 .home-componentes-container {
   display: flex;
@@ -4084,7 +4114,6 @@ body {
     }
   }
   #nav-overlay {
-    background-color: #75c75f;
     mix-blend-mode: multiply;
   }
   .btn {
