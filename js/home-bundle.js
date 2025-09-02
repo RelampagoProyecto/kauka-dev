@@ -166,6 +166,7 @@ function positionSectionBackground() {
 
     const homeImgRect = homeImg.getBoundingClientRect();
     const homeImgBottom = homeImgRect.bottom + window.scrollY;
+    const spacer = 12;
 
     console.log("[BackgroundPositioner] Home image dimensions:", {
       rect: homeImgRect,
@@ -174,7 +175,7 @@ function positionSectionBackground() {
     });
 
     // Set the top position of the section background image
-    sectionBgImg.style.top = `${homeImgBottom}px`;
+    sectionBgImg.style.top = `${homeImgBottom + spacer}px`;
 
     // Show the background image with smooth fade-in
     sectionBgImg.style.opacity = "1";
@@ -246,7 +247,7 @@ function positionSectionBackground() {
 
   // For SVG images, just calculate immediately since they load quickly
   // For other images, check if they're loaded
-  if (isImageLoaded(visibleImg)) {
+  if (visibleImg.src.includes(".svg") || isImageLoaded(visibleImg)) {
     console.log(
       "[BackgroundPositioner] Image ready (SVG or already loaded), calculating position immediately"
     );

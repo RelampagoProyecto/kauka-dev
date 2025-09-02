@@ -3,12 +3,11 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #8f3b28ff;
+        fill: rgb(206,57,33);
       }
 
       .cls-2 {
-        mix-blend-mode: multiply;
-        opacity: .4;
+
       }
 
       .cls-3 {
