@@ -723,7 +723,7 @@ function initHorizontalScroll(
   console.log("[HorizontalScroll] Header height:", headerHeight + "px");
 
   // Set container height to fill remaining viewport
-  const homeContainer = document.querySelector(selector);
+  const homeContainer = document.querySelector(".home-componente");
   if (homeContainer) {
     const remainingHeight = `calc(100vh - ${headerHeight}px)`;
     homeContainer.style.minHeight = remainingHeight;
