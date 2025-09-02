@@ -13,6 +13,21 @@
   
   "imagenes_dir": "/images/artistas/test",
   "imagenes": [{
+      "name": "/images/artistas/test/montana.png",
+      "original": {
+        "src": "/kauka-dev/images/artistas/test/montana.png",
+        "width": 1537,
+        "height": 1025
+      },
+      "responsive": {
+        "all": "/kauka-dev/images/artistas/test/montana_hu_ebf319b42be6a5d6.webp",
+        "sm": "/kauka-dev/images/artistas/test/montana_hu_77026ebd0e96b2a2.webp",
+        "md": "/kauka-dev/images/artistas/test/montana_hu_327dfff9cd443448.webp",
+        "lg": "/kauka-dev/images/artistas/test/montana_hu_27f63f1a60b0e027.webp",
+        "xl": "/kauka-dev/images/artistas/test/montana_hu_8fb0ae5314d46d9a.webp",
+        "2xl": "/kauka-dev/images/artistas/test/montana_hu_4c037e0fe831daa1.webp"
+      }
+    },{
       "name": "/images/artistas/test/tmp-1 2.png",
       "original": {
         "src": "/kauka-dev/images/artistas/test/tmp-1%202.png",
@@ -144,6 +159,21 @@
   
   "imagenes_dir": "/images/artistas/test",
   "imagenes": [{
+      "name": "/images/artistas/test/montana.png",
+      "original": {
+        "src": "/kauka-dev/images/artistas/test/montana.png",
+        "width": 1537,
+        "height": 1025
+      },
+      "responsive": {
+        "all": "/kauka-dev/images/artistas/test/montana_hu_ebf319b42be6a5d6.webp",
+        "sm": "/kauka-dev/images/artistas/test/montana_hu_77026ebd0e96b2a2.webp",
+        "md": "/kauka-dev/images/artistas/test/montana_hu_327dfff9cd443448.webp",
+        "lg": "/kauka-dev/images/artistas/test/montana_hu_27f63f1a60b0e027.webp",
+        "xl": "/kauka-dev/images/artistas/test/montana_hu_8fb0ae5314d46d9a.webp",
+        "2xl": "/kauka-dev/images/artistas/test/montana_hu_4c037e0fe831daa1.webp"
+      }
+    },{
       "name": "/images/artistas/test/tmp-1 2.png",
       "original": {
         "src": "/kauka-dev/images/artistas/test/tmp-1%202.png",

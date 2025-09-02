@@ -482,7 +482,7 @@ function renderArtistGallery(artist, containerId, maxImages = 6) {
             <img
               src="${getResponsiveImageUrl(imagen)}"
               alt="${imagen.name}"
-              class="max-w-full max-h-full object-contain cursor-pointer"
+              class="max-w-full min-w-full object-cover cursor-pointer"
               onclick="window.location.href='${artist.url}'"
             />
           </div>
