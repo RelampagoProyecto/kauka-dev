@@ -696,7 +696,7 @@ function initHorizontalScroll(
   scrollableElementSelector,
   options = {}
 ) {
-  console.log("[HorizontalScroll] Initializing for selector:", selector);
+  console.log("[HorizontalScroll] Initializing for selector:aaa", selector);
   console.log(
     "[HorizontalScroll] Scrollable element selector:",
     scrollableElementSelector
@@ -841,7 +841,7 @@ function initHorizontalScroll(
 /**
  * Initialize home page horizontal scroll
  */
-function initHomeHorizontalScroll() {
+function initHomeHorizontalScroll(outer, inner) {
   console.log("[HorizontalScroll] Initializing home page horizontal scroll");
 
   // Wait for DOM to be ready
@@ -868,18 +868,14 @@ function initHomeHorizontalScroll() {
         "[HorizontalScroll] Creating horizontal scroll for small breakpoint"
       );
       // Initialize the horizontal scroll for home page componentes section
-      horizontalScroll = initHorizontalScroll(
-        "#home-componentes",
-        "#componentes-container",
-        {
-          onUpdate: (self) => {
-            // Custom update logic for home page if needed
-            console.log(
-              `[HomeHorizontalScroll] Progress: ${self.progress.toFixed(3)}`
-            );
-          },
-        }
-      );
+      horizontalScroll = initHorizontalScroll(outer, inner, {
+        onUpdate: (self) => {
+          // Custom update logic for home page if needed
+          console.log(
+            `[HomeHorizontalScroll] Progress: ${self.progress.toFixed(3)}`
+          );
+        },
+      });
 
       // Store reference globally for debugging
       if (horizontalScroll) {
@@ -939,7 +935,7 @@ function initHomePage() {
 
   // Initialize horizontal scroll
   if (typeof initHomeHorizontalScroll === "function") {
-    initHomeHorizontalScroll();
+    initHomeHorizontalScroll("#home-componentes", "#componentes-container");
   } else {
     console.warn("[Home] initHomeHorizontalScroll function not available");
   }

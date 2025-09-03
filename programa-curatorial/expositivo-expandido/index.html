@@ -1051,15 +1051,12 @@
         
   <div
   id="section-container"
-  class="bg-gray-500 relative col-span-12 pt-12">
-  <div
-    id="section-bg-img"
-    class="absolute inset-0 z-0 flex h-full items-start justify-center pt-10">
+  class="section-info-container bg-expositivo">
+  <div id="section-bg-img" class="section-info-bg-container">
     
     
       
       
-
         
 
 
@@ -1124,7 +1121,7 @@
         loading="lazy"
         decoding="async"
         alt=""
-        class="top-17 fixed img"
+        class="section-info-bg-image img"
         width=""
         height="" />
     
@@ -1139,17 +1136,16 @@
     
   </div>
 
-  <div
-    id=""
-    class="section-info subgrid text-black relative inset-0 z-10 mb-5 grid grid-cols-12 gap-4 font-rs-light text-[clamp(2rem,0.63vw,4rem)] leading-tight">
-    <div class="col-span-10 col-start-2">
+  <div class="section-info-content text-white">
+    <div class="section-info-title">
+      EXPOSITIVO EXPANDIDO
+    </div>
+    <div class="section-info-text-column">
       
         <p>rutrum augue vel, fringilla est. Integer gravida sollicitudin massa vel ullamcorper. Aliquam sit amet malesuada est. Duis quis tellus eu nulla eleifend lacinia. Proin justo ligula, dapibus quis pharetra non, mattis at urna. Quisque ultricies, dolor non dictum blandit, elit leo iaculis leo, id sagittis lorem dolor ut elit. Morbi egestas elit et arcu posuere lacinia. Pellentesque in convallis tellus, eu tincidunt erat. Sed in finibus enim, id sagittis massa. Vestibulum justo libero, feugiat sed orci vel, ullamcorper convallis elit. Cras fermentum neque sit amet neque finibus bibendum. Etiam malesuada ut nibh non ultricies.</p>
 
       
 
-      
-      
     </div>
   </div>
 </div>
@@ -1161,7 +1157,7 @@
     if (!sectionContainer) return;
 
     
-    const sectionInfo = document.querySelector(".section-info");
+    const sectionInfo = document.querySelector(".section-info-content");
     const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
 
     
@@ -1197,9 +1193,10 @@
     const containerTop = sectionContainer.offsetTop;
     const containerHeight = sectionContainer.offsetHeight;
     const containerBottom = containerTop + containerHeight;
-    const imgHeight = bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
-    const margin = 50; 
-    const topPosition = "5rem";
+    const imgHeight =
+      bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
+    const margin = 160; 
+    const topPosition = "10rem";
 
     
     const scrollThreshold = containerBottom - imgHeight - margin;
@@ -1208,25 +1205,27 @@
 
     if (scrollY <= containerTop) {
       
+      bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+      bgImg.classList.add("section-info-fixed-top");
       bgImg.style.position = "fixed";
       bgImg.style.top = topPosition;
       bgImg.style.bottom = "auto"; 
     } else if (scrollY >= scrollThreshold) {
       
+      bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
       bgImg.style.position = "fixed";
 
       
-      
       const scrollDiff = scrollY - scrollThreshold;
-      const newTopValue = parseFloat(topPosition) - scrollDiff;
-
-      
+      const newTopValue = parseFloat(topPosition) - scrollDiff + margin - 10;
 
       
       bgImg.style.top = `${newTopValue}px`;
       bgImg.style.bottom = "auto"; 
     } else {
       
+      bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+      bgImg.classList.add("section-info-fixed-top");
       bgImg.style.position = "fixed";
       bgImg.style.top = topPosition;
       bgImg.style.bottom = "auto"; 
@@ -1234,49 +1233,13 @@
   }
 
   
-  function updateFontSize() {
-    const sectionInfo = document.querySelector(".section-info");
-    if (!sectionInfo) return;
-
-    
-    const vw = window.innerWidth;
-
-    
-    const minVw = 320;
-    const maxVw = 639;
-    const minSize = 2; 
-    const maxSize = 4; 
-
-    
-    
-    let calculatedSizeRem;
-
-    if (vw <= minVw) {
-      calculatedSizeRem = minSize;
-    } else if (vw >= maxVw) {
-      calculatedSizeRem = maxSize;
-    } else {
-      calculatedSizeRem =
-        minSize + ((maxSize - minSize) * (vw - minVw)) / (maxVw - minVw);
-    }
-
-    
-    sectionInfo.style.fontSize = `${calculatedSizeRem}rem`;
-    sectionInfo.style.lineHeight = `${calculatedSizeRem}rem`;
-
-    
-  }
-
-  
   document.addEventListener("DOMContentLoaded", () => {
-    updateFontSize();
     setBgImgHeight();
     updateOnScroll(); 
   });
 
   
   window.addEventListener("resize", () => {
-    updateFontSize();
     setBgImgHeight();
     updateOnScroll(); 
   });
@@ -1293,7 +1256,7 @@
   
   gap-4
 
-  bg-gray-500 pb-10 pt-5">
+  bg-expositivo pb-10 pt-5">
 
   
     

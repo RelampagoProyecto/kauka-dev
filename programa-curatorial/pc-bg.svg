@@ -7,11 +7,10 @@
       }
 
       .cls-2 {
-        mix-blend-mode: multiply;
       }
 
       .cls-3 {
-        fill: #b3b3b3;
+        fill: rgb(217, 139, 32);
       }
     </style>
   </defs>
