@@ -559,9 +559,6 @@
   .mb-28 {
     margin-bottom: calc(var(--spacing) * 28);
   }
-  .mb-auto {
-    margin-bottom: auto;
-  }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
@@ -4232,7 +4229,10 @@ body {
     }
   }
   .header {
-    background-color: var(--color-body);
+    position: sticky;
+    top: calc(var(--spacing) * 0);
+    z-index: 40;
+    cursor: pointer;
     padding-top: calc(var(--spacing) * 6);
     @media (width >= 40rem) {
       padding-block: calc(var(--spacing) * 1);
@@ -4240,9 +4240,16 @@ body {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 6);
     }
-    &:where(.dark, .dark *) {
-      background-color: var(--color-darkmode-body);
-    }
+  }
+  .nav-overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: calc(var(--spacing) * 0);
+    z-index: 50;
+    margin-bottom: auto;
+    display: none;
+    height: 100%;
+    width: 100%;
   }
   .navbar {
     position: relative;
