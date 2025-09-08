@@ -1051,8 +1051,9 @@
 
 
     <main>
-      <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0">
+      <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
+  
   <div
   id="section-container"
   class="section-info-container bg-recorridos">
@@ -1061,10 +1062,86 @@
     
       
       
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/programa-curatorial/recorridos/rec-bg.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="section-info-bg-image img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+      
     
   </div>
 
-  <div class="section-info-content text-black">
+  <div class="section-info-content text-white">
     <div class="section-info-title">
       RECORRIDOS
     </div>
@@ -1177,241 +1254,15 @@
 </script>
 
 
-
-  <div id="pc-componentes" class="col-span-12 overflow-hidden">
-    <div id="pc-componentes-container" class="pc-componentes-container">
-      
-  <div
-    class="pc-diamond-spacer pc-componente-base pc-componente bg-programa-curatorial">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/programa-curatorial/pc-diamond-red.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class=" img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-
-
+  <div class="project-list-container bg-recorridos">
+    <div class="project-list-column">
       
       
       
       
-  <div
-    class="pc-diamond-spacer pc-componente-base pc-componente bg-residencias">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/programa-curatorial/pc-diamond-blue.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class=" img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-
     </div>
   </div>
-
-  <div
-    id="pc-componentes-container-desktop"
-    class="pc-componentes-container-desktop">
-    
-    <div
-      class="pc-componente-desktop pc-componente-extra bg-recorridos">
-      <div
-        class="pc-componente-diamond-desktop bg-recorridos"></div>
-      <div class="pc-componente-link-desktop">
-        <span class="text-programa-curatorial">Hidden</span>
-      </div>
-    </div>
-  </div>
-
-  
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  
-  
-  
-
-  
-  
-
-
-  <script src="/kauka-dev/js/pc-bundle.js"></script>
-  <script>
-    
-  window.KAUKA_CONFIG = {
-    baseURL: "https:\/\/relampagoproyecto.github.io\/kauka-dev\/",
-    debug:  false 
-  };
-
-  
-  console.log('Programa curatorial page initialization triggered from template');
-
-  
-
-function initPage() {
-  console.log("[Programa Curatorial] Initializing home page functionality");
-
-  
-  window.KAUKA_DEBUG = true;
-
-  
-  if (typeof initHomeHorizontalScroll === "function") {
-    initHomeHorizontalScroll("#pc-componentes",
-          "#pc-componentes-container",);
-  } else {
-    console.warn("[Programa Curatorial] initHomeHorizontalScroll function not available");
-  }
-
-  console.log("[Programa Curatorial] Home page initialization complete");
-}
-
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initPage);
-} else {
-  initPage();
-}
-
-  </script>
 
       </section>
     </main>

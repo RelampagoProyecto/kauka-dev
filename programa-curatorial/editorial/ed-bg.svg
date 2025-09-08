@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 271.74 372.25">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: rgb(40,12,1);
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Figuras">
+        <path class="cls-2" d="M136.8,372.25L0,186.12,136.8,0l134.94,186.12-134.94,186.12Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
