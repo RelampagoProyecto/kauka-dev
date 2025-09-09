@@ -1055,46 +1055,252 @@
     <main>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
-  <section>
-  <div class="container text-center">
-    <div
-      class="from-body to-light dark:from-darkmode-body dark:to-darkmode-light rounded-2xl bg-gradient-to-b px-8 py-14">
-      <h1>Agenda</h1>
+  <div id="calendar" class="col-span-12"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'multiMonthYear',
+    timeZone: 'America/Bogota',
+    locale: 'es',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listDay'
+    },
+    
+    allDaySlot: true,
+    allDayText: 'Todo el día',
+    slotEventOverlap: false,
+    
+    viewDidMount: function(info) {
+      if (info.view.type === 'timeGridDay') {
+        var allDaySection = info.el.querySelector('.fc-all-day');
+        var timeSlotsSection = info.el.querySelector('.fc-time-grid');
+        if (allDaySection && timeSlotsSection) {
+          timeSlotsSection.parentNode.appendChild(allDaySection);
+        }
+      }
+    },
+    dateClick: function(info) {
+      
+      calendar.changeView('timeGridDay', info.date);
+    },
+    
+    events: [
+      
+      
       
 
-
-
-
-<ul class="mt-6 inline-flex space-x-1 capitalize">
-  <li>
-    <a class="text-primary dark:text-darkmode-primary" href="https://relampagoproyecto.github.io/kauka-dev/">
-      Home
-    </a>
-    <span class="inlin-block mr-1">/</span>
-  </li>
-  
-    
-  
-  <li>
-    <span class="text-primary dark:text-darkmode-primary">
-      Agenda
-    </span>
-  </li>
-</ul>
-
-    </div>
-  </div>
-</section>
-
-
-
-  <section class="section">
-    <div class="container">
-      <ul class="text-center">
+      {
+        title: 'Proyecto Ipsum',
+        start: '2025-09-01T18:00:00',
+        end: '2025-09-20T18:00:00',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/expositivo-expandido\/cuarta-exposicion\/',
         
-      </ul>
-    </div>
-  </section>
+          allDay: true,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Proyecto Ipsum',
+        start: '2025-09-05T18:00:00',
+        end: '2025-09-10T18:00:00',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/expositivo-expandido\/primera-exposicion\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Proyecto Ipsum',
+        start: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        end: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/expositivo-expandido\/tercera-exposicion\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Proyecto Ipsum 2',
+        start: '2025-09-10T08:00:00',
+        end: '2025-09-10T18:00:00',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/expositivo-expandido\/segunda-exposicion\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Una prueba de FM',
+        start: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        end: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/editorial\/test-one\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: '1 Asamblea',
+        start: '2025-09-15T09:00:00',
+        end: '2025-09-15T12:00:00',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/asambleas\/una-asamblea\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#3b82f6',
+        borderColor: '#1d4ed8',
+        textColor: '#ffffff',
+        classNames: ['asambleas-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Primera Publicacion',
+        start: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        end: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/editorial\/primera-publicacion\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Segunda Publicacion',
+        start: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        end: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/editorial\/otra-publicacion\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+      
+      
+
+      {
+        title: 'Primer Comadreo',
+        start: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        end: '%!s(\u003cnil\u003e)T%!s(\u003cnil\u003e)',
+        url: 'https:\/\/relampagoproyecto.github.io\/kauka-dev\/programa-curatorial\/vivencial\/primer-comadreo\/',
+        
+          allDay: false,
+        
+        
+        backgroundColor: '#e11d48',
+        borderColor: '#be185d',
+        textColor: '#ffffff',
+        classNames: ['programa-curatorial-event']
+        
+      },
+      
+    ]
+  });
+  calendar.render();
+});
+</script>
+
+  <style>
+     
+    .programa-curatorial-event {
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .programa-curatorial-event::before {
+      content: "🎨 ";
+    }
+
+    .asambleas-event {
+      font-style: italic;
+      border-radius: 8px;
+      border: 2px solid #1d4ed8 !important;
+    }
+
+    .asambleas-event::before {
+      content: "🏛️ ";
+    }
+
+     
+    .programa-curatorial-event:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+
+    .asambleas-event:hover {
+      opacity: 0.8;
+      box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3);
+    }
+  </style>
 
       </section>
     </main>
