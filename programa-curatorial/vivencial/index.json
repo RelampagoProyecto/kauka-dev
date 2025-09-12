@@ -2,12 +2,6 @@
 [{
   "title": "Proyecto Ipsum",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/cuarta-exposicion/",
-  "inicio": {
-    "dia": "03",
-    "mes": "11",
-    "año": "2025"
-  },
-  "hora": "7:00 p.m.",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
@@ -15,12 +9,6 @@
   "notas": "Aforo limitado"},{
   "title": "Proyecto Ipsum",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/primera-exposicion/",
-  "inicio": {
-    "dia": "03",
-    "mes": "11",
-    "año": "2025"
-  },
-  "hora": "7:00 p.m.",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
@@ -28,12 +16,6 @@
   "notas": "Aforo limitado"},{
   "title": "Proyecto Ipsum",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/tercera-exposicion/",
-  "inicio": {
-    "dia": "03",
-    "mes": "11",
-    "año": "2025"
-  },
-  "hora": "7:00 p.m.",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
@@ -41,12 +23,6 @@
   "notas": "Aforo limitado"},{
   "title": "Proyecto Ipsum 2",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/segunda-exposicion/",
-  "inicio": {
-    "dia": "03",
-    "mes": "11",
-    "año": "2025"
-  },
-  "hora": "7:00 p.m.",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
@@ -67,12 +43,6 @@
   "notas": "Aforo limitado"},{
   "title": "Primera Publicacion",
   "url": "/kauka-dev/programa-curatorial/editorial/primera-publicacion/",
-  "inicio": {
-    "dia": "03",
-    "mes": "11",
-    "año": "2025"
-  },
-  "hora": "7:00 p.m.",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
@@ -93,12 +63,20 @@
   "notas": "Aforo limitado"},{
   "title": "Primer Comadreo",
   "url": "/kauka-dev/programa-curatorial/vivencial/primer-comadreo/",
-  "inicio": {
-    "dia": "03",
-    "mes": "11",
-    "año": "2025"
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
   },
-  "hora": "7:00 p.m.",
+  "notas": "Aforo limitado"},{
+  "title": "Primer recorrido",
+  "url": "/kauka-dev/programa-curatorial/recorridos/primer-recorrido/",
+  "lugar": {
+    "nombre": "Lorem ipsum dolor sit amet",
+    "direccion": "Calle 43 # 16 bis 43"
+  },
+  "notas": "Aforo limitado"},{
+  "title": "Primera residencia",
+  "url": "/kauka-dev/programa-curatorial/residencias/primera-residencia/",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"

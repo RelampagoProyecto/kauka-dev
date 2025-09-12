@@ -56,22 +56,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <base href="https://relampagoproyecto.github.io/kauka-dev/lugares/" />
 
 
@@ -168,46 +152,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
     
     
 <meta http-equiv="x-dns-prefetch-control" content="on" />
-<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
 <link rel="preconnect" href="//cdnjs.cloudflare.com" />
-<link rel="preconnect" href="//www.googletagmanager.com" />
-<link rel="preconnect" href="//www.google-analytics.com" />
-<link rel="dns-prefetch" href="https://use.fontawesome.com" />
-<link rel="dns-prefetch" href="//ajax.googleapis.com" />
 <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-<link rel="dns-prefetch" href="//www.googletagmanager.com" />
-<link rel="dns-prefetch" href="//www.google-analytics.com" />
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-<link rel="dns-prefetch" href="//connect.facebook.net" />
-<link rel="dns-prefetch" href="//platform.linkedin.com" />
-<link rel="dns-prefetch" href="//platform.twitter.com" />
-
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<script>
-  (function () {
-    const googleFont = document.createElement("link");
-    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
-    googleFont.type = "text/css";
-    googleFont.rel = "stylesheet";
-    document.head.appendChild(googleFont);
-  })();
-</script>
+<link rel="preconnect" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//cdnjs.jsdelivr.net" />
 
 
 
@@ -215,35 +166,13 @@
 
 
   
-    
-      
-    
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+       />
   
-
-  
-    
-      
-    
-  
-
-  
-    
-      
-    
-  
-
-  
-    
-      
-    
-  
-
-  
-    
-      
-    
-  
-
 
 
 
@@ -264,12 +193,7 @@
   rel="stylesheet" />
 
 
-<link
-  rel="stylesheet"
-  href="/kauka-dev/css/style-lazy.css"
-  integrity=""
-  media="print"
-  onload="this.media='all'; this.onload=null;" />
+
 
 
   </head>
@@ -300,763 +224,12 @@
     
     
 
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-
-
-
-<header
-  id="nav"
-  class="header 
-    bg-gray-950
-   ">
-  
-  
-  
-  
-  
-  <div id="nav-overlay" class="bg-bright-green nav-overlay"></div>
-  
-  
-  <nav class="navbar grid grid-cols-12 gap-4 gap-y-0 pb-5 sm:pb-1">
-    
-    
-    <div
-      class="order-0 navbar-brand font-rs-bold col-span-9 col-start-2 block text-2xl text-white sm:pt-2 lg:col-span-2 lg:col-start-1 lg:pl-5 lg:pt-px lg:text-3xl">
-      <span class="lg:hidden">
-        
-          LUGARES
-        
-      </span>
-
-      <span class="hidden lg:block">
-        KAUKA
-      </span>
-    </div>
-
-    
-    
-    <div class="col-span-1 col-end-12 flex items-center sm:pt-2 lg:hidden">
-      <input id="nav-toggle" type="checkbox" class="hidden" />
-      <label
-        for="nav-toggle"
-        class="text-text-dark order-3 w-full lg:order-1 lg:hidden dark:text-white">
-        
-        
-        
-  
-  
-    <svg id="show-button-all" class="block sm:hidden h-7 fill-current h-full w-full" viewBox="0 0 20 20">
-      <title>Abrir menú</title>
-      <defs>
-        <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style>
-      </defs>
-      
-      <g id="Menu">
-        <path
-          class="cls-1"
-          d="M2.86,7.77l-1.41,1.94-1.44-1.94h2.86ZM2.86,11.65H0l1.44-1.94,1.41,1.94ZM4.27,5.82l-1.41,1.94-1.44-1.94h2.86ZM4.27,13.59H1.41l1.44-1.94,1.41,1.94ZM5.69,3.88l-1.41,1.94-1.44-1.94h2.86ZM5.69,15.53h-2.86l1.44-1.94,1.41,1.94ZM7.1,1.94l-1.41,1.94-1.44-1.94h2.86ZM7.1,17.47h-2.86l1.44-1.94,1.41,1.94ZM8.51,0l-1.41,1.94-1.44-1.94h2.86ZM8.51,19.41h-2.86l1.44-1.94,1.41,1.94ZM10.12,0h2.86l-1.44,1.94-1.41-1.94ZM10.12,19.41l1.41-1.94,1.44,1.94h-2.86ZM11.54,1.94h2.86l-1.44,1.94-1.41-1.94ZM11.54,17.47l1.41-1.94,1.44,1.94h-2.86ZM12.95,3.88h2.86l-1.44,1.94-1.41-1.94ZM12.95,15.53l1.41-1.94,1.44,1.94h-2.86ZM14.37,5.82h2.86l-1.44,1.94-1.41-1.94ZM14.37,13.59l1.41-1.94,1.44,1.94h-2.86ZM15.78,7.77h2.86l-1.44,1.94-1.41-1.94ZM15.78,11.65l1.41-1.94,1.44,1.94h-2.86Z" />
-      </g>
-    </svg>
-  
-
-  
-  
-
-  
-  
-
-        
-        
-  
-  
-
-  
-  
-    <svg id="show-button-sm" class="hidden sm:block md:hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
-      <title>Abrir menú</title>
-      <defs>
-        <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style>
-      </defs>
-      
-      <g id="Menu">
-        <path
-          class="cls-1"
-          d="M0,18.27l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM5.26,10.98l2.71-3.7,2.6,3.7-2.6,3.59-2.71-3.59ZM5.26,18.27l2.71-3.7,2.6,3.7-2.6,3.59-2.71-3.59ZM5.26,25.55l2.71-3.7,2.6,3.7-2.6,3.59-2.71-3.59ZM10.57,3.7l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,10.98l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,18.27l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,25.55l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,32.84l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM15.82,10.98l2.65-3.7,2.71,3.7-2.71,3.59-2.65-3.59ZM15.82,18.27l2.65-3.7,2.71,3.7-2.71,3.59-2.65-3.59ZM15.82,25.55l2.65-3.7,2.71,3.7-2.71,3.59-2.65-3.59ZM21.18,18.27l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59Z" />
-      </g>
-    </svg>
-  
-
-  
-  
-
-        
-        
-  
-  
-
-  
-  
-
-  
-  
-    <svg id="show-button-md" class="hidden md:block lg:hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
-      <title>Abrir menú</title>
-      <defs>
-        <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style>
-      </defs>
-      
-      <g id="Menu">
-        <path
-          class="cls-1"
-          d="M2.7,18.24l2.65,3.64H0l2.7-3.64ZM0,14.6h5.35l-2.65,3.64-2.7-3.64ZM5.35,21.88l2.65,3.64H2.65l2.7-3.64ZM2.65,10.97h5.35l-2.65,3.64-2.7-3.64ZM4.73,18.76h25.47l-1.82,2.55H6.55l-1.82-2.55ZM4.73,17.67l1.82-2.55h21.83l1.82,2.55H4.73ZM8,25.52l2.65,3.64h-5.35l2.7-3.64ZM5.3,7.33h5.35l-2.65,3.64-2.7-3.64ZM7.33,22.4l20.27.05-1.87,2.55v.05l-16.53-.05-1.87-2.6ZM7.33,14.03l1.87-2.6,16.53-.05v.05l1.87,2.55-20.27.05ZM10.65,29.16l2.65,3.64h-5.35l2.7-3.64ZM7.95,3.69h5.35l-2.65,3.64-2.7-3.64ZM9.98,26.04h15.02l-1.87,2.6h-11.28l-1.87-2.6ZM9.98,10.39l1.87-2.6h11.28l1.87,2.6h-15.02ZM13.31,32.79l2.65,3.64h-5.35l2.7-3.64ZM10.6.05h5.35l-2.65,3.64L10.6.05ZM12.63,29.68h9.72l-1.87,2.6h-5.98l-1.87-2.6ZM12.63,6.76l1.87-2.6h5.98l1.87,2.6h-9.72ZM15.23,33.31h4.52l-2.23,3.12-2.29-3.12ZM15.23,3.12l2.29-3.12,2.23,3.12h-4.52ZM21.62,32.79l2.7,3.64h-5.35l2.65-3.64ZM18.97.05h5.35l-2.7,3.64L18.97.05ZM24.27,29.16l2.7,3.64h-5.35l2.65-3.64ZM21.62,3.69h5.35l-2.7,3.64-2.65-3.64ZM26.92,25.52l2.7,3.64h-5.35l2.65-3.64ZM24.27,7.33h5.35l-2.7,3.64-2.65-3.64ZM29.57,21.88l2.7,3.64h-5.35l2.65-3.64ZM26.92,10.97h5.35l-2.7,3.64-2.65-3.64ZM32.22,18.24l2.7,3.64h-5.35l2.65-3.64ZM29.57,14.6h5.35l-2.7,3.64-2.65-3.64Z" />
-      </g>
-    </svg>
-  
-
-
-        
-        
-  
-  
-    <svg id="hide-button-all" class="hidden h-6 fill-current h-full w-full" viewBox="0 0 20 20">
-      <title>Cerrar menú</title>
-      <defs>
-        <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style>
-      </defs>
-      
-      <g id="Menu">
-        <path
-          class="cls-1"
-          d="M2.86,7.77l-1.41,1.94-1.44-1.94h2.86ZM2.86,11.65H0l1.44-1.94,1.41,1.94ZM4.27,5.82l-1.41,1.94-1.44-1.94h2.86ZM4.27,13.59H1.41l1.44-1.94,1.41,1.94ZM5.69,3.88l-1.41,1.94-1.44-1.94h2.86ZM5.69,15.53h-2.86l1.44-1.94,1.41,1.94ZM7.1,1.94l-1.41,1.94-1.44-1.94h2.86ZM7.1,17.47h-2.86l1.44-1.94,1.41,1.94ZM8.51,0l-1.41,1.94-1.44-1.94h2.86ZM8.51,19.41h-2.86l1.44-1.94,1.41,1.94ZM10.12,0h2.86l-1.44,1.94-1.41-1.94ZM10.12,19.41l1.41-1.94,1.44,1.94h-2.86ZM11.54,1.94h2.86l-1.44,1.94-1.41-1.94ZM11.54,17.47l1.41-1.94,1.44,1.94h-2.86ZM12.95,3.88h2.86l-1.44,1.94-1.41-1.94ZM12.95,15.53l1.41-1.94,1.44,1.94h-2.86ZM14.37,5.82h2.86l-1.44,1.94-1.41-1.94ZM14.37,13.59l1.41-1.94,1.44,1.94h-2.86ZM15.78,7.77h2.86l-1.44,1.94-1.41-1.94ZM15.78,11.65l1.41-1.94,1.44,1.94h-2.86Z" />
-      </g>
-    </svg>
-  
-
-  
-  
-
-  
-  
-
-        
-  
-  
-
-  
-  
-    <svg id="hide-button-sm" class="hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
-      <title>Cerrar menú</title>
-      <defs>
-        <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style>
-      </defs>
-      
-      <g id="Menu">
-        <path
-          class="cls-1"
-          d="M0,18.27l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM5.26,10.98l2.71-3.7,2.6,3.7-2.6,3.59-2.71-3.59ZM5.26,18.27l2.71-3.7,2.6,3.7-2.6,3.59-2.71-3.59ZM5.26,25.55l2.71-3.7,2.6,3.7-2.6,3.59-2.71-3.59ZM10.57,3.7l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,10.98l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,18.27l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,25.55l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM10.57,32.84l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59ZM15.82,10.98l2.65-3.7,2.71,3.7-2.71,3.59-2.65-3.59ZM15.82,18.27l2.65-3.7,2.71,3.7-2.71,3.59-2.65-3.59ZM15.82,25.55l2.65-3.7,2.71,3.7-2.71,3.59-2.65-3.59ZM21.18,18.27l2.65-3.7,2.6,3.7-2.6,3.59-2.65-3.59Z" />
-      </g>
-    </svg>
-  
-
-  
-  
-
-        
-  
-  
-
-  
-  
-
-  
-  
-    <svg id="hide-button-md" class="hidden h-6 fill-current h-full w-full" viewBox="0 0 40 40">
-      <title>Cerrar menú</title>
-      <defs>
-        <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style>
-      </defs>
-      
-      <g id="Menu">
-        <path
-          class="cls-1"
-          d="M2.7,18.24l2.65,3.64H0l2.7-3.64ZM0,14.6h5.35l-2.65,3.64-2.7-3.64ZM5.35,21.88l2.65,3.64H2.65l2.7-3.64ZM2.65,10.97h5.35l-2.65,3.64-2.7-3.64ZM4.73,18.76h25.47l-1.82,2.55H6.55l-1.82-2.55ZM4.73,17.67l1.82-2.55h21.83l1.82,2.55H4.73ZM8,25.52l2.65,3.64h-5.35l2.7-3.64ZM5.3,7.33h5.35l-2.65,3.64-2.7-3.64ZM7.33,22.4l20.27.05-1.87,2.55v.05l-16.53-.05-1.87-2.6ZM7.33,14.03l1.87-2.6,16.53-.05v.05l1.87,2.55-20.27.05ZM10.65,29.16l2.65,3.64h-5.35l2.7-3.64ZM7.95,3.69h5.35l-2.65,3.64-2.7-3.64ZM9.98,26.04h15.02l-1.87,2.6h-11.28l-1.87-2.6ZM9.98,10.39l1.87-2.6h11.28l1.87,2.6h-15.02ZM13.31,32.79l2.65,3.64h-5.35l2.7-3.64ZM10.6.05h5.35l-2.65,3.64L10.6.05ZM12.63,29.68h9.72l-1.87,2.6h-5.98l-1.87-2.6ZM12.63,6.76l1.87-2.6h5.98l1.87,2.6h-9.72ZM15.23,33.31h4.52l-2.23,3.12-2.29-3.12ZM15.23,3.12l2.29-3.12,2.23,3.12h-4.52ZM21.62,32.79l2.7,3.64h-5.35l2.65-3.64ZM18.97.05h5.35l-2.7,3.64L18.97.05ZM24.27,29.16l2.7,3.64h-5.35l2.65-3.64ZM21.62,3.69h5.35l-2.7,3.64-2.65-3.64ZM26.92,25.52l2.7,3.64h-5.35l2.65-3.64ZM24.27,7.33h5.35l-2.7,3.64-2.65-3.64ZM29.57,21.88l2.7,3.64h-5.35l2.65-3.64ZM26.92,10.97h5.35l-2.7,3.64-2.65-3.64ZM32.22,18.24l2.7,3.64h-5.35l2.65-3.64ZM29.57,14.6h5.35l-2.7,3.64-2.65-3.64Z" />
-      </g>
-    </svg>
-  
-
-      </label>
-    </div>
-
-    
-    
-    <ul
-      id="nav-menu"
-      class="order-3 col-span-10 col-start-2 mt-6 hidden h-dvh pb-6 lg:top-10 lg:order-1 lg:col-start-4 lg:col-end-13 lg:mt-0 lg:flex lg:h-5 lg:w-auto lg:place-items-center lg:space-x-2 lg:pb-0 xl:space-x-8">
-      
-      
-      
-      
-        
-        
-        
-
-        
-        
-        
-          <li
-            class="nav-item nav-dropdown group relative mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <span
-              class="nav-link 
-                
-                
-                
-               font-rs-bold inline-flex items-center">
-              <a href="/kauka-dev/asambleas">
-                Asambleas
-              </a>
-              
-              <svg class="ml-4 h-4 w-4 lg:hidden" viewBox="0 0 9.82 6.67">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #fff;
-                    }
-                  </style>
-                </defs>
-                <g id="">
-                  <polygon class="cls-1" points="0 0 9.82 0 4.86 6.67 0 0" />
-                </g>
-              </svg>
-            </span>
-
-            
-            
-            <ul
-              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/asambleas/una-asamblea">
-                    Asamblea 1
-                  </a>
-                </li>
-              
-            </ul>
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          <li
-            class="nav-item nav-dropdown group relative mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <span
-              class="nav-link 
-                
-                
-                
-              
-                
-                
-                
-              
-                
-                
-                
-              
-                
-                
-                
-              
-                
-                
-                
-               font-rs-bold inline-flex items-center">
-              <a href="/kauka-dev/programa-curatorial">
-                Programa curatorial
-              </a>
-              
-              <svg class="ml-4 h-4 w-4 lg:hidden" viewBox="0 0 9.82 6.67">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #fff;
-                    }
-                  </style>
-                </defs>
-                <g id="">
-                  <polygon class="cls-1" points="0 0 9.82 0 4.86 6.67 0 0" />
-                </g>
-              </svg>
-            </span>
-
-            
-            
-            <ul
-              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-curatorial/expositivo-expandido">
-                    Expositivo expandido
-                  </a>
-                </li>
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-curatorial/vivencial">
-                    Vivencial
-                  </a>
-                </li>
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-curatorial/editorial">
-                    Editorial
-                  </a>
-                </li>
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-curatorial/residencias">
-                    Residencias
-                  </a>
-                </li>
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-curatorial/recorridos">
-                    Recorridos
-                  </a>
-                </li>
-              
-            </ul>
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          <li
-            class="nav-item nav-dropdown group relative mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <span
-              class="nav-link 
-                
-                
-                
-              
-                
-                
-                
-               font-rs-bold inline-flex items-center">
-              <a href="/kauka-dev/programa-pedagogico">
-                Programa pedagógico
-              </a>
-              
-              <svg class="ml-4 h-4 w-4 lg:hidden" viewBox="0 0 9.82 6.67">
-                <defs>
-                  <style>
-                    .cls-1 {
-                      fill: #fff;
-                    }
-                  </style>
-                </defs>
-                <g id="">
-                  <polygon class="cls-1" points="0 0 9.82 0 4.86 6.67 0 0" />
-                </g>
-              </svg>
-            </span>
-
-            
-            
-            <ul
-              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-pedagogico/norte-y-litoral">
-                    Norte y litoral
-                  </a>
-                </li>
-              
-                
-                
-                <li
-                  class="nav-dropdown-item font-rs-light pl-10 lg:hidden lg:text-center lg:leading-tight">
-                  <a
-                    class="nav-dropdown-link "
-                    
-                    
-                    
-                    href="/kauka-dev/programa-pedagogico/centro-y-sur">
-                    Centro y sur
-                  </a>
-                </li>
-              
-            </ul>
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          
-          
-          <li
-            class="nav-item font-rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <a
-              class="nav-link "
-              
-              
-              
-              href="/kauka-dev/encuentro-de-otros-mundos"
-              >Encuentros de otros mundos</a
-            >
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          
-          
-          <li
-            class="nav-item font-rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <a
-              class="nav-link "
-              
-              
-              
-              href="/kauka-dev/artistas"
-              >Artistas</a
-            >
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          
-          
-          <li
-            class="nav-item font-rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <a
-              class="nav-link "
-              
-              
-              
-              href="/kauka-dev/agenda"
-              >Agenda</a
-            >
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          
-          
-          <li
-            class="nav-item font-rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <a
-              class="nav-link "
-              
-              
-              
-              href="/kauka-dev/kauka"
-              >KAUKA</a
-            >
-          </li>
-        
-      
-        
-        
-        
-
-        
-        
-        
-          
-          
-          <li
-            class="nav-item font-rs-bold mb-12 lg:mb-2 lg:text-center lg:leading-tight">
-            <a
-              class="nav-link "
-              
-              
-              
-              href="/kauka-dev/aliados"
-              >Aliados</a
-            >
-          </li>
-        
-      
-    </ul>
-  </nav>
-</header>
-
-
-
-
-<script>
-  const toggle = document.getElementById("nav-toggle");
-  const menu = document.getElementById("nav-menu");
-
-  
-  
-  document.addEventListener("click", (e) => {
-    
-    const isClickInsideNavbar = e.target.closest(".navbar-brand");
-    if (isClickInsideNavbar) {
-      toggle.checked = !toggle.checked;
-    }
-
-    const navOverlay = document.getElementById('nav-overlay');
-
-    
-    
-    if (toggle.checked) {
-      
-      menu.classList.remove("hidden");
-      menu.classList.add("block");
-      
-      if (navOverlay) {
-        navOverlay.classList.add("hidden");
-        navOverlay.classList.remove("block");
-      }
-    } else {
-      
-      menu.classList.add("hidden");
-      menu.classList.remove("block");
-      
-      if (navOverlay) {
-        const header = document.getElementById('nav');
-        if (header && header.matches(':hover')) {
-          navOverlay.classList.remove("hidden");
-          navOverlay.classList.add("block");
-        }
-      }
-    }
-  });
-
-  
-
-  function initializeNavOverlayHover() {
-    const header = document.getElementById('nav');
-    const navOverlay = document.getElementById('nav-overlay');
-
-    if (!header || !navOverlay) {
-      
-      return;
-    }
-
-    
-    function showOverlay() {
-      const toggle = document.getElementById("nav-toggle");
-      
-      if (!toggle.checked) {
-        navOverlay.classList.remove('hidden');
-        navOverlay.classList.add('block');
-        
-      }
-    }
-
-    
-    function hideOverlay() {
-      navOverlay.classList.add('hidden');
-      navOverlay.classList.remove('block');
-      
-    }
-
-    
-    header.addEventListener('mouseenter', showOverlay);
-    header.addEventListener('mouseleave', hideOverlay);
-
-    
-    header.addEventListener('touchstart', function(e) {
-      
-      
-      const isMenuToggle = e.target.closest('#nav-toggle') || e.target.closest('label[for="nav-toggle"]');
-      const isNavLink = e.target.closest('.nav-link') || e.target.closest('.navbar-brand');
-
-      if (!isMenuToggle && !isNavLink) {
-        
-        showOverlay();
-      }
-    }, { passive: true });
-
-    header.addEventListener('touchend', hideOverlay);
-    header.addEventListener('touchcancel', hideOverlay);
-  }
-
-  
-  document.addEventListener('DOMContentLoaded', initializeNavOverlayHover);
-</script> 
-
-
-
-
-
-
-
-
-
     <main>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <section>
   <div class="container text-center">
-    <div
-      class="from-body to-light dark:from-darkmode-body dark:to-darkmode-light rounded-2xl bg-gradient-to-b px-8 py-14">
+    <div class="from-body to-light rounded-2xl bg-gradient-to-b px-8 py-14">
       <h1>Lugares</h1>
       
 
@@ -1065,7 +238,7 @@
 
 <ul class="mt-6 inline-flex space-x-1 capitalize">
   <li>
-    <a class="text-primary dark:text-darkmode-primary" href="https://relampagoproyecto.github.io/kauka-dev/">
+    <a class="text-primary" href="https://relampagoproyecto.github.io/kauka-dev/">
       Home
     </a>
     <span class="inlin-block mr-1">/</span>
@@ -1074,7 +247,7 @@
     
   
   <li>
-    <span class="text-primary dark:text-darkmode-primary">
+    <span class="text-primary">
       Lugares
     </span>
   </li>
@@ -1083,6 +256,7 @@
     </div>
   </div>
 </section>
+
 
 
   <section class="section">
@@ -1123,45 +297,31 @@
 
 
   
-    
-      
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      type="application/javascript"
+      ></script>
   
 
   
-    
-      
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      type="application/javascript"
+      ></script>
   
 
   
-    
-      
-    
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      type="application/javascript"
+      ></script>
   
 
   
-    
-      
-    
-  
-
-  
-    
-      
-    
-  
-
-  
-    
-      
-    
-  
-
-  
-    
-      
-    
+    <script
+      src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"
+      type="application/javascript"
+      ></script>
   
 
   
@@ -1199,27 +359,6 @@
 <script>
   if ('serviceWorker' in navigator){navigator.serviceWorker.register("/kauka-dev/service-worker.js");}
 </script>
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
 
 
   </body>
