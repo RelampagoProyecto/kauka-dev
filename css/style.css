@@ -2894,9 +2894,13 @@
   .home-componente-tmp {
     display: grid;
     grid-template-columns: subgrid;
+    row-gap: calc(var(--spacing) * 0);
+    padding-bottom: var(--clamp-48-96);
+  }
+  .home-componente-image-container {
+    grid-column: span 12 / span 12;
   }
   .home-componente-image {
-    height: calc(var(--spacing) * 64);
     width: 100%;
     object-fit: cover;
   }
@@ -2908,10 +2912,9 @@
     align-items: flex-end;
     gap: calc(var(--spacing) * 4);
     row-gap: calc(var(--spacing) * 0);
-    padding-top: var(--clamp-24-48);
-    padding-bottom: var(--clamp-48-96);
   }
   .home-componente-title {
+    padding-top: var(--clamp-24-48);
     grid-column: span 10 / span 10;
     grid-column-start: 2;
     margin-bottom: 6px;
