@@ -201,7 +201,7 @@
 
   </head>
 
-  <body>
+  <body class="">
     
     
       
@@ -227,7 +227,9 @@
     
     
 
-    <main>
+    <main 
+  bg-home
+>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -772,7 +774,6 @@
 
 
   </div>
-
   
   <div class="home-content-images-grid">
     
@@ -3110,6 +3111,8 @@
 
 
 
+
+
 <script src="/kauka-dev/js/home-bundle.js"></script>
 <script>
   
@@ -3154,7 +3157,9 @@
   };
 
   
-  console.log('Home page initialization triggered from template');
+  if (window.Debug && window.KAUKA_CONFIG.debug) {
+    Debug.log("[Template]", "Home page initialization triggered from template");
+  }
 </script> 
 
 

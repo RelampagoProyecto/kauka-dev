@@ -1,4 +1,88 @@
 /**
+ * Debug Utility for KAUKA
+ * Provides conditional console logging based on KAUKA_CONFIG.debug setting
+ * Prevents console.log execution in production builds
+ */
+
+/**
+ * Debug logger that only outputs when debug mode is enabled
+ * @param {string} level - Log level: 'log', 'warn', 'error', 'debug', 'info'
+ * @param {string} module - Module name (e.g., '[Home]', '[Gallery]')
+ * @param {...any} args - Arguments to pass to console
+ */
+function debugLog(level, module, ...args) {
+  // Check if KAUKA_CONFIG exists and debug is enabled
+  if (
+    typeof window !== "undefined" &&
+    window.KAUKA_CONFIG &&
+    window.KAUKA_CONFIG.debug === true
+  ) {
+    // Ensure the console method exists
+    if (console && typeof console[level] === "function") {
+      console[level](module, ...args);
+    }
+  }
+}
+
+/**
+ * Debug utility object with different log levels
+ */
+const Debug = {
+  /**
+   * Log informational messages
+   * @param {string} module - Module name
+   * @param {...any} args - Arguments to log
+   */
+  log: (module, ...args) => debugLog("log", module, ...args),
+
+  /**
+   * Log warning messages
+   * @param {string} module - Module name
+   * @param {...any} args - Arguments to log
+   */
+  warn: (module, ...args) => debugLog("warn", module, ...args),
+
+  /**
+   * Log error messages
+   * @param {string} module - Module name
+   * @param {...any} args - Arguments to log
+   */
+  error: (module, ...args) => debugLog("error", module, ...args),
+
+  /**
+   * Log debug messages
+   * @param {string} module - Module name
+   * @param {...any} args - Arguments to log
+   */
+  debug: (module, ...args) => debugLog("debug", module, ...args),
+
+  /**
+   * Log info messages
+   * @param {string} module - Module name
+   * @param {...any} args - Arguments to log
+   */
+  info: (module, ...args) => debugLog("info", module, ...args),
+
+  /**
+   * Check if debug mode is enabled
+   * @returns {boolean} True if debug mode is enabled
+   */
+  isEnabled: () => {
+    return (
+      typeof window !== "undefined" &&
+      window.KAUKA_CONFIG &&
+      window.KAUKA_CONFIG.debug === true
+    );
+  },
+};
+
+// Export for use in other modules
+if (typeof window !== "undefined") {
+  window.Debug = Debug;
+}
+
+;
+/**
  * Breakpoint utilities for responsive behavior
  * Matches Tailwind CSS breakpoints
  */
@@ -98,11 +182,11 @@ function fetchProgramaCuratorial(baseURL = "") {
       return response.json();
     })
     .then((data) => {
-      if (window.KAUKA_DEBUG) console.log("Programa Curatorial data:", data);
+      Debug.log("[API]", "Programa Curatorial data:", data);
       return data;
     })
     .catch((error) => {
-      console.error("Error fetching programa-curatorial data:", error);
+      Debug.error("[API]", "Error fetching programa-curatorial data:", error);
       return [];
     });
 }
@@ -121,455 +205,255 @@ function fetchArtists(baseURL = "") {
       return response.json();
     })
     .then((data) => {
-      if (window.KAUKA_DEBUG)
-        console.log(`Found ${data.length} artists with image galleries`);
+      Debug.log("[API]", `Found ${data.length} artists with image galleries`);
       return data;
     })
     .catch((error) => {
-      console.error("Error fetching artists data:", error);
+      Debug.error("[API]", "Error fetching artists data:", error);
       return [];
     });
 }
 
 ;
 /**
- * Background positioning component for section backgrounds
+ * Extra Content Section Scroll Animation
+ * Implements GSAP scroll animations when .home-extra-content-section enters viewport
  */
+
+// Wait for images to load before calculating positions
+function waitForImageLoad(img) {
+  return new Promise((resolve) => {
+    if (img.complete && img.naturalHeight > 0) {
+      resolve();
+    } else {
+      img.addEventListener("load", resolve);
+      img.addEventListener("error", resolve); // Resolve even on error
+    }
+  });
+}
 
 /**
- * Position section background image based on home image bottom
- * Calculates the bottom position of #home-img and sets it as top position for #section-bg-img
- * Waits for the visible image to fully load before calculating position
+ * Get the currently visible image from responsive image set
  */
-function positionSectionBackground() {
-  console.log("[BackgroundPositioner] Starting position calculation");
+function getCurrentVisibleImage() {
+  const images = document.querySelectorAll("#home-img img");
 
-  // Ensure DOM is ready
-  if (document.readyState === "loading") {
-    console.log(
-      "[BackgroundPositioner] DOM not ready, waiting for DOMContentLoaded"
-    );
-    document.addEventListener("DOMContentLoaded", positionSectionBackground);
+  for (const img of images) {
+    const computedStyle = window.getComputedStyle(img);
+    if (computedStyle.display !== "none") {
+      Debug.log(`[BgImageScroll] Found visible image: ${img.src}`);
+      return img;
+    }
+  }
+
+  // Fallback to first image if none are detected as visible
+  Debug.warn("[BgImageScroll] No visible image detected, using first image");
+  return images[0] || null;
+}
+
+/**
+ * Get breakpoint-specific scroll trigger settings
+ */
+function getBreakpointScrollSettings() {
+  const width = window.innerWidth;
+
+  // Define breakpoints matching Tailwind's defaults
+  if (width >= 1536) {
+    // 2xl
+    return {
+      start: "top 30%",
+      end: "bottom 10%",
+    };
+  } else if (width >= 1280) {
+    // xl
+    return {
+      start: "top 25%",
+      end: "bottom 5%",
+    };
+  } else if (width >= 1024) {
+    // lg
+    return {
+      start: "top 20%",
+      end: "bottom 0%",
+    };
+  } else if (width >= 768) {
+    // md
+    return {
+      start: "top 15%",
+      end: "bottom -5%",
+    };
+  } else if (width >= 640) {
+    // sm
+    return {
+      start: "top 10%",
+      end: "bottom -10%",
+    };
+  } else {
+    // base (mobile)
+    return {
+      start: "top 5%",
+      end: "bottom -15%",
+    };
+  }
+}
+
+/**
+ * Initialize scroll animations for the extra content section
+ */
+async function initBgImageScroll() {
+  Debug.log("[BgImageScroll] Initializing scroll animations");
+
+  // Check if GSAP and ScrollTrigger are available
+  if (typeof gsap === "undefined") {
+    Debug.error("[BgImageScroll] GSAP is not available");
     return;
   }
 
-  const homeImg = document.getElementById("home-img");
-  const sectionBgImg = document.getElementById("section-bg-img");
-  const extraContentSection = document.querySelector(
-    ".home-extra-content-section"
-  );
+  if (typeof ScrollTrigger === "undefined") {
+    Debug.error("[BgImageScroll] ScrollTrigger is not available");
+    return;
+  }
 
-  if (!homeImg || !sectionBgImg) {
-    console.warn("[BackgroundPositioner] Elements not found:", {
-      homeImg: !!homeImg,
-      sectionBgImg: !!sectionBgImg,
-    });
+  // Wait for DOM elements to be available
+  const bgImage = document.querySelector(".home-content-bg-image");
+  const extraContentSection = document.querySelector("#home-content");
+  const logo = getCurrentVisibleImage();
+  // Get breakpoint-specific settings
+  const scrollSettings = getBreakpointScrollSettings();
+
+  if (!bgImage) {
+    Debug.error("[BgImageScroll] .home-extra-content-section not found");
     return;
   }
 
   if (!extraContentSection) {
-    console.warn(
-      "[BackgroundPositioner] Extra content section not found, falling back to simple behavior"
-    );
+    Debug.error("[BgImageScroll] .home-extra-content-column not found");
+    return;
   }
 
-  console.log("[BackgroundPositioner] Found elements:", {
-    homeImg,
-    sectionBgImg,
-    extraContentSection: !!extraContentSection,
+  if (!logo) {
+    Debug.error("[BgImageScroll] #home-image not found");
+  }
+
+  Debug.log("[BgImageScroll] Elements found:", {
+    bgImage,
+    extraContentSection,
+    logo: logo.src,
   });
 
-  // Store initial position and following state
-  let initialPosition = null;
-  let isFollowingScroll = false;
+  // Wait for the visible logo image to fully load
+  await waitForImageLoad(logo);
 
-  // Visibility offset - start following this many pixels before section enters viewport
-  const visibilityOffset = 380;
+  // Use requestAnimationFrame to ensure layout is settled
+  requestAnimationFrame(() => {
+    const sectionContainer = document.body;
+    const containerRect = sectionContainer.getBoundingClientRect();
+    const logoRect = logo.getBoundingClientRect();
 
-  // Function to calculate and set position
-  function calculatePosition() {
-    console.log("[BackgroundPositioner] Calculating position...");
+    // Calculate relative Y position (cross-browser consistent)
+    const relativeY = logoRect.top - containerRect.top + logoRect.height;
 
-    // Wait a bit longer for layout to stabilize
-    setTimeout(() => {
-      const homeImgRect = homeImg.getBoundingClientRect();
-      const homeImgBottom = homeImgRect.bottom + window.scrollY;
-      const spacer = 12;
+    Debug.log(
+      `[BgImageScroll] Logo dimensions: ${logoRect.width}x${logoRect.height}`
+    );
+    Debug.log(`[BgImageScroll] relativeY: ${relativeY}px`);
 
-      console.log("[BackgroundPositioner] Home image dimensions:", {
-        rect: homeImgRect,
-        scrollY: window.scrollY,
-        calculatedBottom: homeImgBottom,
-        homeImgOffsetTop: homeImg.offsetTop,
-        homeImgOffsetHeight: homeImg.offsetHeight,
-      });
+    // Proceed with GSAP animation setup
+    const offset = 20;
 
-      // Double-check by also using offset properties for better accuracy
-      const alternativeBottom = homeImg.offsetTop + homeImg.offsetHeight;
+    gsap.set(bgImage, {
+      y: relativeY + offset,
+    });
 
-      console.log("[BackgroundPositioner] Alternative calculation:", {
-        alternativeBottom,
-        difference: Math.abs(homeImgBottom - alternativeBottom),
-      });
+    // Add the ready class to show the image
+    bgImage.classList.add("ready");
+    // Create scroll-triggered animation
+    const scrollAnimation = gsap.timeline({
+      scrollTrigger: {
+        // Add an ID for easier reference
+        id: "bgImageScroll",
+        trigger: extraContentSection,
+        start: scrollSettings.start,
+        end: scrollSettings.end,
+        scrub: 1, // Smooth scrubbing tied to scroll position
+        pin: false,
+        anticipatePin: 0,
+        invalidateOnRefresh: true,
 
-      // Use the more accurate calculation
-      const finalBottom = Math.max(homeImgBottom, alternativeBottom);
-
-      // Check if the background image is fixed positioned
-      const bgComputedStyle = window.getComputedStyle(sectionBgImg);
-      const isFixed = bgComputedStyle.position === "fixed";
-
-      console.log("[BackgroundPositioner] Element positioning:", {
-        position: bgComputedStyle.position,
-        isFixed: isFixed,
-      });
-
-      // Calculate initial position and scroll threshold
-      if (isFixed) {
-        // For fixed positioning, calculate what the position would be if loaded from scroll position 0
-        // We need the viewport position the home image would have at scroll 0
-        const homeImgBottomAtScrollZero =
-          homeImg.offsetTop + homeImg.offsetHeight - window.scrollY;
-        initialPosition = homeImgBottomAtScrollZero + spacer;
-        console.log(
-          `[BackgroundPositioner] Fixed element initial position (corrected for scroll): ${initialPosition}px`
-        );
-      } else {
-        // For absolute/relative positioning, use document coordinates (not affected by scroll)
-        initialPosition = finalBottom + spacer;
-        console.log(
-          `[BackgroundPositioner] Absolute element initial position: ${initialPosition}px`
-        );
-      }
-
-      // Set the initial position
-      sectionBgImg.style.top = `${initialPosition}px`;
-
-      // Check if we should already be following scroll on page load (e.g., page loaded from scrolled position)
-      if (extraContentSection) {
-        const extraContentRect = extraContentSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        const isExtraContentVisible =
-          extraContentRect.top < viewportHeight + visibilityOffset &&
-          extraContentRect.bottom > 0;
-
-        if (isExtraContentVisible) {
-          console.log(
-            "[BackgroundPositioner] Extra content visible on load, starting to follow immediately"
+        // Handle resize events to update breakpoint settings
+        onRefresh: () => {
+          Debug.log(
+            "[BgImageScroll] ScrollTrigger refreshed for new breakpoint"
           );
-          isFollowingScroll = true;
+          const newSettings = getBreakpointScrollSettings();
+          const scrollTriggerInstance = ScrollTrigger.getById("bgImageScroll");
 
-          // Update position to follow extra content section
-          if (isFixed) {
-            const extraContentTopViewport = extraContentRect.top;
-            const bgImageHeight =
-              sectionBgImg.offsetHeight ||
-              sectionBgImg.getBoundingClientRect().height;
-            const topPosition = extraContentTopViewport - bgImageHeight;
-            sectionBgImg.style.top = `${topPosition}px`;
-            console.log(
-              `[BackgroundPositioner] Initial position updated to follow (fixed): ${topPosition}px`
-            );
-          } else {
-            const extraContentTopInDocument = extraContentSection.offsetTop;
-            const bgImageHeight =
-              sectionBgImg.offsetHeight ||
-              sectionBgImg.getBoundingClientRect().height;
-            const topPosition = extraContentTopInDocument - bgImageHeight;
-            sectionBgImg.style.top = `${topPosition}px`;
-            console.log(
-              `[BackgroundPositioner] Initial position updated to follow (absolute): ${topPosition}px`
-            );
+          if (
+            scrollTriggerInstance &&
+            scrollTriggerInstance.vars.scrollTrigger
+          ) {
+            scrollTriggerInstance.vars.scrollTrigger.start = newSettings.start;
+            scrollTriggerInstance.vars.scrollTrigger.end = newSettings.end;
+            // Force ScrollTrigger to recalculate with new values
+            scrollTriggerInstance.refresh();
           }
-        }
-      }
+        },
+        onEnter: () => {
+          Debug.log("[BgImageScroll] Section entered viewport");
+        },
+        onLeave: () => {
+          Debug.log("[BgImageScroll] Section left viewport");
+        },
+        onEnterBack: () => {
+          Debug.log(
+            "[BgImageScroll] Section re-entered viewport (scrolling up)"
+          );
+        },
+        onLeaveBack: () => {
+          Debug.log("[BgImageScroll] Section left viewport (scrolling up)");
+        },
+        onUpdate: (self) => {
+          Debug.log(
+            `[BgImageScroll] Progress: ${self.progress.toFixed(3)}, Direction: ${self.direction}`
+          );
+        },
+      },
+    });
 
-      // Show the background image with smooth fade-in
-      sectionBgImg.style.opacity = "1";
-
-      console.log(
-        `[BackgroundPositioner] Section background positioned and made visible at: ${initialPosition}px`
-      );
-
-      // Verify the styles were applied
-      const computedStyle = window.getComputedStyle(sectionBgImg);
-      console.log("[BackgroundPositioner] Applied styles:", {
-        top: sectionBgImg.style.top,
-        opacity: sectionBgImg.style.opacity,
-        computedTop: computedStyle.top,
-        computedOpacity: computedStyle.opacity,
+    // Add animations to timeline
+    scrollAnimation
+      // Fade in and slide up content
+      .to(bgImage, {
+        y: -600,
+        ease: "power2.out",
       });
 
-      // Add resize handler to recalculate position on window resize
-      // Remove any existing listener first
-      if (window.backgroundPositionerResize) {
-        window.removeEventListener("resize", window.backgroundPositionerResize);
-      }
+    Debug.log("[BgImageScroll] Scroll animation created");
 
-      window.backgroundPositionerResize = function () {
-        console.log(
-          "[BackgroundPositioner] Window resized, recalculating position"
-        );
-        // Recalculate with a small delay to let layout settle
-        setTimeout(() => {
-          // Check positioning type again as it might change with responsive styles
-          const resizeComputedStyle = window.getComputedStyle(sectionBgImg);
-          const isFixed = resizeComputedStyle.position === "fixed";
+    // Store reference globally for debugging
+    window.extraContentScrollAnimation = scrollAnimation;
 
-          // Recalculate initial position
-          if (isFixed) {
-            // For fixed positioning, calculate what the position would be if at scroll position 0
-            const homeImgBottomAtScrollZero =
-              homeImg.offsetTop + homeImg.offsetHeight - window.scrollY;
-            initialPosition = homeImgBottomAtScrollZero + spacer;
-          } else {
-            const homeImgBottom = homeImg.offsetTop + homeImg.offsetHeight;
-            initialPosition = homeImgBottom + spacer;
-          }
-
-          // Check if extra content section is visible and update position accordingly
-          if (extraContentSection) {
-            const extraContentRect =
-              extraContentSection.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            const isExtraContentVisible =
-              extraContentRect.top < viewportHeight + visibilityOffset &&
-              extraContentRect.bottom > 0;
-
-            if (isExtraContentVisible) {
-              // Extra content is visible - align with it
-              if (isFixed) {
-                const extraContentTopViewport = extraContentRect.top;
-                const bgImageHeight =
-                  sectionBgImg.offsetHeight ||
-                  sectionBgImg.getBoundingClientRect().height;
-                const topPosition = extraContentTopViewport - bgImageHeight;
-                sectionBgImg.style.top = `${topPosition}px`;
-                console.log(
-                  `[BackgroundPositioner] Resize - following extra content (fixed): ${topPosition}px`
-                );
-              } else {
-                const extraContentTopInDocument = extraContentSection.offsetTop;
-                const bgImageHeight =
-                  sectionBgImg.offsetHeight ||
-                  sectionBgImg.getBoundingClientRect().height;
-                const topPosition = extraContentTopInDocument - bgImageHeight;
-                sectionBgImg.style.top = `${topPosition}px`;
-                console.log(
-                  `[BackgroundPositioner] Resize - following extra content (absolute): ${topPosition}px`
-                );
-              }
-              isFollowingScroll = true;
-            } else {
-              // Extra content not visible - use initial position
-              sectionBgImg.style.top = `${initialPosition}px`;
-              isFollowingScroll = false;
-              console.log(
-                `[BackgroundPositioner] Resize - reset to initial position: ${initialPosition}px`
-              );
-            }
-          } else {
-            // No extra content section - use initial position
-            sectionBgImg.style.top = `${initialPosition}px`;
-            isFollowingScroll = false;
-          }
-
-          console.log("[BackgroundPositioner] Resize recalculation complete:", {
-            initialPosition,
-            isFollowingScroll,
-          });
-        }, 100);
-      };
-
-      window.addEventListener("resize", window.backgroundPositionerResize);
-
-      // Add scroll handler to update position on scroll
-      // Remove any existing scroll listener first
-      if (window.backgroundPositionerScroll) {
-        window.removeEventListener("scroll", window.backgroundPositionerScroll);
-      }
-
-      window.backgroundPositionerScroll = function () {
-        // Use requestAnimationFrame for smooth scroll performance
-        if (!window.backgroundPositionerScrollPending) {
-          window.backgroundPositionerScrollPending = true;
-          requestAnimationFrame(() => {
-            if (extraContentSection) {
-              // Check if extra content section is visible in viewport
-              const extraContentRect =
-                extraContentSection.getBoundingClientRect();
-              const viewportHeight = window.innerHeight;
-
-              // Section is visible if it's top edge is above the bottom of viewport (with offset)
-              // and its bottom edge is below the top of viewport
-              const isExtraContentVisible =
-                extraContentRect.top < viewportHeight + visibilityOffset &&
-                extraContentRect.bottom > 0;
-
-              console.log("[BackgroundPositioner] Viewport visibility check:", {
-                extraContentTop: extraContentRect.top,
-                extraContentBottom: extraContentRect.bottom,
-                viewportHeight,
-                visibilityOffset,
-                effectiveThreshold: viewportHeight + visibilityOffset,
-                isVisible: isExtraContentVisible,
-              });
-
-              if (isExtraContentVisible) {
-                // Extra content is visible - align bottom of bg image with top of extra content
-                const scrollComputedStyle =
-                  window.getComputedStyle(sectionBgImg);
-                const isFixed = scrollComputedStyle.position === "fixed";
-
-                if (isFixed) {
-                  const extraContentTopViewport = extraContentRect.top;
-                  const bgImageHeight =
-                    sectionBgImg.offsetHeight ||
-                    sectionBgImg.getBoundingClientRect().height;
-                  const topPosition = extraContentTopViewport - bgImageHeight;
-
-                  sectionBgImg.style.top = `${topPosition}px`;
-
-                  console.log(
-                    "[BackgroundPositioner] Following extra content (fixed):",
-                    {
-                      extraContentTopViewport,
-                      bgImageHeight,
-                      topPosition,
-                    }
-                  );
-                } else {
-                  const extraContentTopInDocument =
-                    extraContentSection.offsetTop;
-                  const bgImageHeight =
-                    sectionBgImg.offsetHeight ||
-                    sectionBgImg.getBoundingClientRect().height;
-                  const topPosition = extraContentTopInDocument - bgImageHeight;
-
-                  sectionBgImg.style.top = `${topPosition}px`;
-
-                  console.log(
-                    "[BackgroundPositioner] Following extra content (absolute):",
-                    {
-                      extraContentTopInDocument,
-                      bgImageHeight,
-                      topPosition,
-                    }
-                  );
-                }
-
-                if (!isFollowingScroll) {
-                  isFollowingScroll = true;
-                  console.log(
-                    "[BackgroundPositioner] Started following - extra content is visible"
-                  );
-                }
-              } else {
-                // Extra content is not visible - keep initial position
-                if (isFollowingScroll) {
-                  sectionBgImg.style.top = `${initialPosition}px`;
-                  isFollowingScroll = false;
-                  console.log(
-                    "[BackgroundPositioner] Stopped following - extra content not visible, reset to initial position:",
-                    initialPosition
-                  );
-                }
-              }
-            }
-
-            window.backgroundPositionerScrollPending = false;
-          });
-        }
-      };
-
-      window.addEventListener("scroll", window.backgroundPositionerScroll, {
-        passive: true,
-      });
-    }, 100); // Increased delay for better stability
-  }
-
-  // Find the currently visible image (not hidden)
-  const visibleImg = homeImg.querySelector("img:not(.hidden)");
-
-  if (!visibleImg) {
-    // No visible image found, calculate immediately
-    console.log(
-      "[BackgroundPositioner] No visible image found, calculating position immediately"
-    );
-    calculatePosition();
-    return;
-  }
-
-  console.log(`[BackgroundPositioner] Found visible image: ${visibleImg.src}`);
-  console.log("[BackgroundPositioner] Image details:", {
-    complete: visibleImg.complete,
-    naturalHeight: visibleImg.naturalHeight,
-    naturalWidth: visibleImg.naturalWidth,
-    src: visibleImg.src,
+    return scrollAnimation;
   });
+}
 
-  // Check if isImageLoaded function is available
-  if (typeof isImageLoaded !== "function") {
-    console.warn(
-      "[BackgroundPositioner] isImageLoaded function not available, using fallback logic"
-    );
-    // Fallback: assume image is loaded if it's complete and has dimensions
-    if (
-      visibleImg.complete &&
-      (visibleImg.naturalHeight > 0 || visibleImg.src.includes(".svg"))
-    ) {
-      console.log(
-        "[BackgroundPositioner] Image appears loaded (fallback check), calculating position"
-      );
-      // Use longer delay for SVGs in fallback mode too
-      const delay = visibleImg.src.includes(".svg") ? 200 : 50;
-      setTimeout(calculatePosition, delay);
-    } else {
-      console.log(
-        "[BackgroundPositioner] Image not loaded (fallback check), waiting for load event"
-      );
-      const onLoad = function () {
-        console.log("[BackgroundPositioner] Image load event fired");
-        setTimeout(calculatePosition, 50);
-        visibleImg.removeEventListener("load", onLoad);
-        visibleImg.removeEventListener("error", onLoad);
-      };
+/**
+ * Initialize extra content scroll animations when DOM is ready
+ */
+function initBgImageScrollOnReady() {
+  Debug.log("[BgImageScroll] Checking DOM ready state");
 
-      visibleImg.addEventListener("load", onLoad);
-      visibleImg.addEventListener("error", onLoad);
-    }
-    return;
-  }
-
-  // For SVG images, wait a bit longer for layout to stabilize
-  // For other images, check if they're loaded
-  if (visibleImg.src.includes(".svg")) {
-    console.log(
-      "[BackgroundPositioner] SVG image found, waiting for layout stabilization"
-    );
-    // Use a longer timeout for SVGs to ensure the layout is stable
-    setTimeout(calculatePosition, 200);
-  } else if (isImageLoaded(visibleImg)) {
-    console.log(
-      "[BackgroundPositioner] Regular image already loaded, calculating position"
-    );
-    setTimeout(calculatePosition, 50);
+  if (document.readyState === "loading") {
+    Debug.log("[BgImageScroll] DOM still loading, waiting...");
+    document.addEventListener("DOMContentLoaded", initBgImageScroll);
   } else {
-    console.log("[BackgroundPositioner] Waiting for image to load...");
-    // Wait for the image to load
-    const onLoad = function () {
-      console.log(
-        "[BackgroundPositioner] Visible image loaded, calculating position"
-      );
-      setTimeout(calculatePosition, 50);
-      visibleImg.removeEventListener("load", onLoad);
-      visibleImg.removeEventListener("error", onLoad);
-    };
-
-    visibleImg.addEventListener("load", onLoad);
-    visibleImg.addEventListener("error", onLoad); // Handle errors too
+    Debug.log("[BgImageScroll] DOM ready, initializing immediately");
+    initBgImageScroll();
   }
 }
+
+// Auto-initialize when script loads
+initBgImageScrollOnReady();
 
 ;
 /**
@@ -581,27 +465,30 @@ function positionSectionBackground() {
  * Initialize all home page functionality
  */
 function initHomePage() {
-  console.log("[Home] Initializing home page functionality");
-
-  // Set debug mode
-  window.KAUKA_DEBUG = true;
+  Debug.log("[Home]", "Initializing home page functionality");
 
   // Populate dynamic background images if image data is available
   if (window.KAUKA_CONFIG && window.KAUKA_CONFIG.componenteUno) {
-    console.log("[Home] Populating dynamic background images");
+    Debug.log("[Home]", "Populating dynamic background images");
 
     if (typeof getRandomImage === "function") {
       getRandomImage(window.KAUKA_CONFIG.componenteUno, "section-img-one");
       getRandomImage(window.KAUKA_CONFIG.componenteDos, "section-img-two");
       getRandomImage(window.KAUKA_CONFIG.componenteTres, "section-img-three");
-      console.log("[Home] Dynamic images populated");
+      Debug.log("[Home]", "Dynamic images populated");
     } else {
-      console.warn("[Home] getRandomImage function not available");
+      Debug.warn("[Home]", "getRandomImage function not available");
     }
   } else {
-    console.warn("[Home] Image configuration not available in KAUKA_CONFIG");
+    Debug.warn("[Home]", "Image configuration not available in KAUKA_CONFIG");
   }
 
+  // Initialize bg scroll
+  if (typeof initBgImageScrollOnReady === "function") {
+    initBgImageScrollOnReady();
+  } else {
+    Debug.warn("[HOME]", "initBgImageOnReady function not available");
+  }
   // Initialize horizontal scroll
   // if (typeof initHomeHorizontalScroll === "function") {
   //   initHomeHorizontalScroll("#home-componentes", "#componentes-container");
@@ -640,22 +527,22 @@ function initHomePage() {
   // }
 
   // Position background images
-  if (typeof positionSectionBackground === "function") {
-    positionSectionBackground();
+  // if (typeof positionSectionBackground === "function") {
+  //   positionSectionBackground();
 
-    console.log("[Home] Background positioning initialized");
-  } else {
-    console.warn("[Home] positionSectionBackground function not available");
-  }
+  //   Debug.log("[Home]", "Background positioning initialized");
+  // } else {
+  //   Debug.warn("[Home]", "positionSectionBackground function not available");
+  // }
 
   // Initialize project showcase
   // if (typeof initProjectShowcase === "function") {
   //   initProjectShowcase();
   // } else {
-  //   console.warn("[Home] initProjectShowcase function not available");
+  //   Debug.warn("[Home]", "initProjectShowcase function not available");
   // }
 
-  console.log("[Home] Home page initialization complete");
+  Debug.log("[Home]", "Home page initialization complete");
 }
 
 // Initialize when DOM is ready
