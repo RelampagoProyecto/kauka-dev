@@ -369,6 +369,7 @@ async function initBgImageScroll() {
 
     // Add the ready class to show the image
     bgImage.classList.add("ready");
+
     // Create scroll-triggered animation
     const scrollAnimation = gsap.timeline({
       scrollTrigger: {
@@ -381,6 +382,7 @@ async function initBgImageScroll() {
         pin: false,
         anticipatePin: 0,
         invalidateOnRefresh: true,
+        refreshPriority: -90, // Ensure this refreshes before other ScrollTriggers
 
         // Handle resize events to update breakpoint settings
         onRefresh: () => {
@@ -443,6 +445,7 @@ async function initBgImageScroll() {
  * Initialize extra content scroll animations when DOM is ready
  */
 function initBgImageScrollOnReady() {
+  window.scrollTo(0, 0);
   Debug.log("[BgImageScroll] Checking DOM ready state");
 
   if (document.readyState === "loading") {
