@@ -363,6 +363,8 @@ async function initBgImageScroll() {
 
     gsap.set(bgImage, {
       y: relativeY + offset,
+      z: 0,
+      zIndex: 0,
     });
 
     // Add the ready class to show the image
