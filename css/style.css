@@ -795,8 +795,14 @@
   .bg-burnt-orange {
     background-color: var(--color-burnt-orange);
   }
+  .bg-coffee-brown {
+    background-color: var(--color-coffee-brown);
+  }
   .bg-dark-brown {
     background-color: rgb(52, 4, 0);
+  }
+  .bg-dark-forest-green {
+    background-color: var(--color-dark-forest-green);
   }
   .bg-deep-pink {
     background-color: var(--color-deep-pink);
@@ -832,10 +838,10 @@
     background-color: var(--color-burnt-orange);
   }
   .bg-home-artistas {
-    background-color: rgb(217, 78, 48);
+    background-color: var(--color-burnt-orange);
   }
   .bg-home-componentes {
-    background-color: rgb(230, 165, 65);
+    background-color: var(--color-golden-yellow);
   }
   .bg-home-componentes-alt {
     background-color: rgb(217, 139, 32);
@@ -1598,6 +1604,7 @@
   --color-golden-yellow: rgb(230, 165, 65);
   --color-bright-green: rgb(41, 200, 86);
   --color-dark-cyan: rgb(2, 144, 173);
+  --color-coffee-brown: rgb(94, 65, 46);
   --clamp-10-20: clamp(10px, 3.125vw, 20px);
   --clamp-12-24: clamp(12px, 3.75vw, 24px);
   --clamp-16-32: clamp(16px, 5vw, 32px);
@@ -1843,7 +1850,7 @@
     gap: calc(var(--spacing) * 4);
     row-gap: calc(var(--spacing) * 0);
     @media (width >= 64rem) {
-      align-items: flex-end;
+      align-items: baseline;
     }
   }
   .navbar-brand {
@@ -2094,6 +2101,16 @@
       padding-top: calc(var(--spacing) * 2);
     }
   }
+  .nav-dropdown:last-of-type > .nav-dropdown-list {
+    @media (width >= 64rem) {
+      left: calc(var(--spacing) * -12);
+    }
+  }
+  .nav-dropdown:last-of-type > .nav-dropdown-list > .nav-dropdown-item {
+    @media (width >= 64rem) {
+      text-align: right;
+    }
+  }
   .nav-dropdown-item {
     &:not(:last-child) {
       margin-top: 0;
@@ -2250,7 +2267,7 @@
     z-index: 10;
     grid-column: span 12 / span 12;
     min-height: 78px;
-    background-color: rgb(217, 78, 48);
+    background-color: var(--color-burnt-orange);
     @media (width >= 64rem) {
       min-height: 129px;
     }
@@ -2264,7 +2281,7 @@
       height: 97px;
     }
     @media (width >= 96rem) {
-      background-color: rgb(217, 78, 48);
+      background-color: var(--color-burnt-orange);
     }
   }
   .home-footer-md-content {
@@ -3353,7 +3370,7 @@
   }
   .home-componentes-desktop-container {
     display: none;
-    background-color: rgb(230, 165, 65);
+    background-color: var(--color-golden-yellow);
     @media (width >= 48rem) {
       display: block;
     }
@@ -3471,7 +3488,7 @@
   .home-artistas-section {
     z-index: 20;
     grid-column: span 12 / span 12;
-    background-color: rgb(217, 78, 48);
+    background-color: var(--color-burnt-orange);
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
     --tw-leading: var(--leading-tight);

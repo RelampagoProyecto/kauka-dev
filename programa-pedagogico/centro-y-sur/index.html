@@ -268,8 +268,6 @@
 
 
 
-  
-
 
 
 
@@ -279,19 +277,19 @@
 <header
   id="nav"
   class="header  
-    bg-deep-pink
+    bg-residencias
   ">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-bright-green nav-overlay"></div>
+  <div id="nav-overlay" class="bg-deep-pink nav-overlay"></div>
   
   
   <nav
     class="navbar  
-      bg-deep-pink
+      bg-residencias
     ">
     
     
@@ -303,7 +301,8 @@
       </div>
 
       <div class="navbar-brand-lg-up">
-        
+        <a href="/">
+          
 <svg
   class="nav-brand-logo-all"
   data-name="Layer 2"
@@ -1939,6 +1938,7 @@
   </g>
 </svg>
 
+        </a>
       </div>
     </div>
 
@@ -2063,7 +2063,7 @@
                   
                   
                 ">
-                <a href="/kauka-dev/asambleas">
+                <a href="/kauka-dev/kauka">
                   47SNA
                 </a>
               </div>
@@ -2095,7 +2095,7 @@
                       
                       
                       
-                      href="/kauka-dev/asambleas/una-asamblea">
+                      href="/kauka-dev/kauka">
                       Sobre este salón
                     </a>
                   </li>
@@ -2108,7 +2108,7 @@
                       
                       
                       
-                      href="/kauka-dev/asambleas/una-asamblea">
+                      href="/kauka-dev/kauka">
                       Equipo curatorial
                     </a>
                   </li>
@@ -2369,7 +2369,7 @@
                 
                 
                 
-                href="/kauka-dev/artistas"
+                href="/kauka-dev/invitadxs"
                 >INVITADOS</a
               >
             </li>
@@ -2425,7 +2425,7 @@
                       
                       
                       
-                      href="/kauka-dev/programa-pedagogico/norte-y-litoral">
+                      href="/kauka-dev/agenda">
                       Programación
                     </a>
                   </li>
@@ -2438,7 +2438,7 @@
                       
                       
                       
-                      href="/kauka-dev/programa-pedagogico/centro-y-sur">
+                      href="/kauka-dev/agenda/aliados">
                       Eventos de aliados
                     </a>
                   </li>
@@ -2455,156 +2455,27 @@
 
 
 
+
+
+<script src="/kauka-dev/js/header-bundle.js"></script>
+
 <script>
-  const toggle = document.getElementById("nav-toggle");
-  const menu = document.getElementById("navbar-menu-container");
+window.KAUKA_CONFIG = {
+  baseURL: "https:\/\/relampagoproyecto.github.io\/kauka-dev\/",
+  debug:  false 
+}
 
-  
-  
-  document.addEventListener("click", (e) => {
-    
-    const isClickInsideNavbar = e.target.closest(".navbar-brand");
-    if (isClickInsideNavbar) {
-      toggle.checked = !toggle.checked;
-    }
 
-    const navOverlay = document.getElementById('nav-overlay');
+Debug.log("[Header]", "Header initialization triggered");
 
-    
-    
-    if (toggle.checked) {
-      
-      menu.classList.remove("hidden");
-      menu.classList.add("block");
-    } else {
-      
-      menu.classList.add("hidden");
-      menu.classList.remove("block");
-    }
-  });
 
-  
-
-  function initializeNavOverlayHover() {
-    const header = document.getElementById('nav');
-    const navOverlay = document.getElementById('nav-overlay');
-
-    if (!header || !navOverlay) {
-      
-      return;
-    }
-
-    
-    function showOverlay() {
-      const toggle = document.getElementById("nav-toggle");
-      navOverlay.classList.remove('hidden');
-      navOverlay.classList.add('block');
-      
-    }
-
-    
-    function hideOverlay() {
-      navOverlay.classList.add('hidden');
-      navOverlay.classList.remove('block');
-      
-    }
-
-    
-    header.addEventListener('mouseenter', showOverlay);
-    header.addEventListener('mouseleave', hideOverlay);
-
-    
-    header.addEventListener('touchstart', function(e) {
-      
-      
-      const isMenuToggle = e.target.closest('#nav-toggle') || e.target.closest('label[for="nav-toggle"]');
-      const isNavLink = e.target.closest('.nav-link') || e.target.closest('.navbar-brand');
-
-      if (!isMenuToggle && !isNavLink) {
-        
-        showOverlay();
-      }
-    }, { passive: true });
-
-    header.addEventListener('touchend', hideOverlay);
-    header.addEventListener('touchcancel', hideOverlay);
-  }
-
-  
-  document.addEventListener('DOMContentLoaded', initializeNavOverlayHover);
-
-  
-
-  function initializeDropdownToggle() {
-    const diamonds = document.querySelectorAll('.nav-link-diamond');
-
-    
-
-    diamonds.forEach((diamond, index) => {
-      
-
-      diamond.addEventListener('click', function(e) {
-        
-        e.preventDefault();
-        e.stopPropagation();
-
-        
-        const parentDropdown = this.closest('.nav-dropdown');
-        const dropdownList = parentDropdown ? parentDropdown.querySelector('.nav-dropdown-list') : null;
-
-        
-        
-
-        if (dropdownList) {
-          
-          const isCurrentlyVisible = dropdownList.classList.contains('lg:flex');
-
-          
-          const allDropdowns = document.querySelectorAll('.nav-dropdown-list');
-          allDropdowns.forEach(dropdown => {
-            if (dropdown !== dropdownList) {
-              dropdown.classList.remove('lg:flex');
-              dropdown.classList.add('lg:hidden');
-            }
-          });
-
-          
-          if (isCurrentlyVisible) {
-            dropdownList.classList.remove('lg:flex');
-            dropdownList.classList.add('lg:hidden');
-            
-          } else {
-            dropdownList.classList.add('lg:flex');
-            dropdownList.classList.remove('lg:hidden');
-            
-          }
-        }
-      });
-
-      
-      diamond.style.cursor = 'pointer';
-      diamond.style.pointerEvents = 'auto';
-    });
-
-    
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-dropdown')) {
-        const allDropdowns = document.querySelectorAll('.nav-dropdown-list');
-        allDropdowns.forEach(dropdown => {
-          dropdown.classList.remove('lg:flex');
-          dropdown.classList.add('lg:hidden');
-        });
-      }
-    });
-  }
-
-  
-  document.addEventListener('DOMContentLoaded', initializeDropdownToggle);
+if (typeof initHeaderOnReady === "function") {
+  initHeaderOnReady();
+  Debug.log("[Header]", "Header ready");
+} else {
+  Debug.warn("[Header]", "initHeaderOnReady function not available");
+}
 </script> 
-
-
-
-
 
 
 
