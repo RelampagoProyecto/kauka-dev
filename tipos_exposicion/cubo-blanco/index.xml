@@ -9,6 +9,34 @@
     <lastBuildDate>Fri, 19 Sep 2025 19:23:39 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/tipos_exposicion/cubo-blanco/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Aliados primer evento</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/agenda/aliados/evento-uno/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/agenda/aliados/evento-uno/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aliados segundo evento</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/agenda/aliados/evento-dos/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/agenda/aliados/evento-dos/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Encuentro primer evento</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentro-de-otros-mundos/evento-uno/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentro-de-otros-mundos/evento-uno/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Encuentro segundo evento</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentro-de-otros-mundos/evento-dos/</link>
+      <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentro-de-otros-mundos/evento-dos/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Proyecto Ipsum</title>
       <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/cuarta-exposicion/</link>
       <pubDate>Thu, 07 Aug 2025 19:37:20 +0000</pubDate>

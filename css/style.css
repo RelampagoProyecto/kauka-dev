@@ -1468,12 +1468,6 @@
       }
     }
   }
-  .lg\:border-r-0 {
-    @media (width >= 64rem) {
-      border-right-style: var(--tw-border-style);
-      border-right-width: 0px;
-    }
-  }
   .lg\:bg-green-200 {
     @media (width >= 64rem) {
       background-color: var(--color-green-200);
@@ -1482,11 +1476,6 @@
   .lg\:pt-\[318px\] {
     @media (width >= 64rem) {
       padding-top: 318px;
-    }
-  }
-  .lg\:pr-0 {
-    @media (width >= 64rem) {
-      padding-right: calc(var(--spacing) * 0);
     }
   }
   .lg\:pb-0 {
