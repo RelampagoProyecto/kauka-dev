@@ -4742,6 +4742,8 @@
     }
   }
   .proyecto-info-gente-container {
+    position: relative;
+    z-index: 10;
     grid-column: span 12 / span 12;
     display: grid;
     grid-template-columns: subgrid;
@@ -4750,6 +4752,8 @@
     }
   }
   .proyecto-info-gente-container-desktop {
+    position: relative;
+    z-index: 10;
     display: none;
     grid-template-columns: subgrid;
     @media (width >= 48rem) {

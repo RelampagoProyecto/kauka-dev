@@ -2485,54 +2485,210 @@ if (typeof initHeaderOnReady === "function") {
     <main class="">
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
-  <section>
-  <div class="container text-center">
-    <div class="from-body to-light rounded-2xl bg-gradient-to-b px-8 py-14">
-      <h1>Jaime Hernández</h1>
-      
-
-
-
-
-<ul class="mt-6 inline-flex space-x-1 capitalize">
-  <li>
-    <a class="text-primary" href="https://relampagoproyecto.github.io/kauka-dev/">
-      Home
-    </a>
-    <span class="inlin-block mr-1">/</span>
-  </li>
-  
-    
-  
-    
-      <li>
-        <a class="text-primary" href="/kauka-dev/invitadxs/">
-          Artistas
-        </a>
-        <span class="inlin-block mr-1">/</span>
-      </li>
-    
-  
-  <li>
-    <span class="text-primary">
+  <div class="col-span-12 grid subgrid grid-cols-subgrid 
+  bg-gray-500 text-white">
+  <div class="col-span-10 col-start-2 
+    break-words max-w-full pt-10 pb-5">
+    <span class="kauka-text text-7xl leading-5">
       Jaime Hernández
     </span>
-  </li>
-</ul>
-
-    </div>
   </div>
-</section>
+</div>
+
+  
+    <div class="page-content-container bg-gray-500 text-white">
+  <div class="page-content-text">
+    <p>bla bla</p>
+
+  </div>
+</div>
+
+  
+
+  
+    <div
+      id="bio-container"
+      class="relative col-span-12 mb-0 h-full min-h-[216px] bg-gray-300">
+      <div
+  id="bg-img"
+  class=" absolute inset-0 z-0 col-span-12 flex h-full justify-center">
+  
 
 
 
-  <section class="section">
-    <div class="container">
-      <ul class="text-center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/artistas/a-bio-bg.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class=" img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+</div>
+
+<script>
+  function setBgSvgHeight() {
+    const sectionContainer = document.getElementById("bio-container");
+    if (!sectionContainer) return;
+
+    const sectionHeight = sectionContainer.offsetHeight;
+    const viewportWidth = window.innerWidth;
+    const bgImg = document.querySelector("#bg-img img");
+
+    if (bgImg) {
+      
+      const vwBasedHeight = viewportWidth * 1;
+
+      
+      const finalHeight = Math.min(vwBasedHeight, sectionHeight);
+
+      
+      bgImg.style.height = finalHeight + "px";
+      bgImg.style.objectFit = "cover";
+    }
+  }
+
+    
+    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
+
+    
+    window.addEventListener("resize", setBgSvgHeight);
+</script>
+
+
+      
+<div
+  
+  class="col-span-12 grid subgrid  grid-cols-12
+  
+  gap-4
+
+  relative inset-0 z-0 gap-y-0">
+
+      <div
+        class="font-rs-semi-bold col-span-7 col-start-2 text-5xl/10 text-white">
+        Cali
+      </div>
+      <div
+        class="text-5xl/12 font-rs-semi-bold col-span-3 col-end-12 max-w-full break-words text-right text-white">
+        1979
+      </div>
+      <div
+        class="font-rs-semi-bold inset-0 z-10 col-span-2 col-end-12 text-right text-6xl leading-7 text-white">
+        -
+      </div>
+      <div class="col-span-5 col-start-2">
         
-      </ul>
+
+        
+
+        
+      </div>
+      
+</div>
     </div>
-  </section>
+  
+
+  
+
+  
+<div
+  
+  class="col-span-12 grid subgrid  grid-cols-12
+  
+  gap-4
+
+  pb-15 gap-y-0 bg-gray-950 text-white">
+
+  <div class="font-rs-semi-bold col-span-10 col-start-2 mt-10 text-7xl">↘</div>
+  <div class="col-span-6 col-end-12 text-white">
+    
+    
+      
+      
+    
+      
+      
+        <div class="mb-5">
+          <div class="font-rs-light text-sm text-white">expositivo expandido:</div>
+          
+            <div
+              class="font-rs-semi-bold max-w-full break-words text-xl leading-5 text-white">
+              <a href="/kauka-dev/programa-curatorial/expositivo-expandido/cuarta-exposicion/">Proyecto Ipsum</a>
+            </div>
+          
+        </div>
+      
+    
+      
+      
+    
+  </div>
+  
+</div>
 
       </section>
     </main>

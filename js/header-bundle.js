@@ -90,25 +90,25 @@ function initHeaderToggle() {
   // UPDATED: Enhanced to coordinate nav overlay visibility with menu state
   document.addEventListener("click", (e) => {
     // Toggle menu when clicking on navbar brand/title
-    const isClickInsideNavbar = e.target.closest(".navbar-brand");
+    const isClickInsideNavbar = e.target.closest(".navbar");
+    // Debug.log(`[Header] isClickInsideNavbar: ${isClickInsideNavbar}`);
     if (isClickInsideNavbar) {
       toggle.checked = !toggle.checked;
-    }
-
-    const navOverlay = document.getElementById("nav-overlay");
-
-    // Show/hide menu based on toggle state
-    // CHANGE: Added nav overlay state management
-    if (toggle.checked) {
-      // Show mobile menu
-      menu.classList.remove("hidden");
-      menu.classList.add("block");
-      Debug.log("[Header] Mobile menu shown");
-    } else {
-      // Hide mobile menu
-      menu.classList.add("hidden");
-      menu.classList.remove("block");
-      Debug.log("[Header] Mobile menu hidden");
+      Debug.log(`[Header] toggle: ${toggle.checked}`);
+      const navOverlay = document.getElementById("nav-overlay");
+      // Show/hide menu based on toggle state
+      // CHANGE: Added nav overlay state management
+      if (toggle.checked) {
+        // Show mobile menu
+        menu.classList.remove("hidden");
+        menu.classList.add("block");
+        Debug.log("[Header] Mobile menu shown");
+      } else {
+        // Hide mobile menu
+        menu.classList.add("hidden");
+        menu.classList.remove("block");
+        Debug.log("[Header] Mobile menu hidden");
+      }
     }
   });
 }
