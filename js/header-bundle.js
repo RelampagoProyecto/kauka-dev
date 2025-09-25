@@ -85,6 +85,7 @@ if (typeof window !== "undefined") {
 function initHeaderToggle() {
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("navbar-menu-container");
+  const navOverlay = document.getElementById("nav-overlay");
 
   // Handle click events for menu toggle
   // UPDATED: Enhanced to coordinate nav overlay visibility with menu state
@@ -102,11 +103,17 @@ function initHeaderToggle() {
         // Show mobile menu
         menu.classList.remove("hidden");
         menu.classList.add("block");
+        navOverlay.classList.remove("hidden");
+        navOverlay.classList.add("block");
+        navOverlay.classList.add("h-dvh");
         Debug.log("[Header] Mobile menu shown");
       } else {
         // Hide mobile menu
         menu.classList.add("hidden");
         menu.classList.remove("block");
+        navOverlay.classList.remove("h-dvh");
+        navOverlay.classList.remove("block");
+        navOverlay.classList.add("hidden");
         Debug.log("[Header] Mobile menu hidden");
       }
     }
@@ -156,24 +163,24 @@ function initializeNavOverlayHover() {
   header.addEventListener("mouseleave", hideOverlay);
 
   // MOBILE: Touch events
-  header.addEventListener(
-    "touchstart",
-    function (e) {
-      // Only prevent default for overlay interaction, not for menu functionality
-      // Check if the touch is not on interactive elements like menu toggle
-      const isMenuToggle =
-        e.target.closest("#nav-toggle") ||
-        e.target.closest('label[for="nav-toggle"]');
-      const isNavLink =
-        e.target.closest(".nav-link") || e.target.closest(".navbar-brand");
-
-      if (!isMenuToggle && !isNavLink) {
-        // Only prevent default for non-interactive overlay touches
-        showOverlay();
-      }
-    },
-    { passive: true }
-  );
+  // header.addEventListener(
+  //   "touchstart",
+  //   function (e) {
+  //     // Only prevent default for overlay interaction, not for menu functionality
+  //     // Check if the touch is not on interactive elements like menu toggle
+  //     const isMenuToggle =
+  //       e.target.closest("#nav-toggle") ||
+  //       e.target.closest('label[for="nav-toggle"]');
+  //     const isNavLink =
+  //       e.target.closest(".nav-link") || e.target.closest(".navbar-brand");
+  //     if (isMenuToggle) {
+  //       // Only prevent default for non-interactive overlay touches
+  //       Debug.log("here");
+  //       showOverlay();
+  //     }
+  //   },
+  //   { passive: true }
+  // );
 
   header.addEventListener("touchend", hideOverlay);
   header.addEventListener("touchcancel", hideOverlay);
@@ -259,9 +266,12 @@ function initializeDropdownToggle() {
   document.addEventListener("click", function (e) {
     if (!e.target.closest(".nav-dropdown")) {
       const allDropdowns = document.querySelectorAll(".nav-dropdown-list");
+      // get navbar height
+      const navInitialH = 54;
+      navbar.style.height = `${navInitialH}px`;
       allDropdowns.forEach((dropdown) => {
         dropdown.classList.remove("lg:flex");
-        dropdown.classList.add("lg:hidden");
+        dropdown.classList.add("hidden");
       });
     }
   });

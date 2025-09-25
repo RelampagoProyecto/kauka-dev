@@ -1855,7 +1855,7 @@
   }
   .navbar-brand {
     order: 0;
-    grid-column: span 4 / span 4;
+    grid-column: span 6 / span 6;
     grid-column-start: 2;
     padding-block: 12px;
     font-family: "RigidSquare-Bold", sans-serif;
@@ -1876,6 +1876,8 @@
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .navbar-brand-all-to-md {
+    font-size: 12px;
+    color: var(--color-white);
     @media (width >= 64rem) {
       display: none;
     }
