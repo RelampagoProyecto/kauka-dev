@@ -56,7 +56,7 @@
 
 
 
-  <base href="https://relampagoproyecto.github.io/kauka-dev/componentes/asamblea/" />
+  <base href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-1/" />
 
 
 
@@ -64,8 +64,10 @@
 
 
 
+  
 
-<title>KAUKA</title>
+
+<title>Asamblea</title>
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-<meta property="og:title" content="KAUKA" />
+<meta property="og:title" content="Asamblea" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/componentes/asamblea/" />
+<meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-1/" />
 
 
-<meta name="twitter:title" content="KAUKA" />
+<meta name="twitter:title" content="Asamblea" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -265,8 +267,6 @@
 
 
 
-  
-
 
 
 
@@ -275,27 +275,29 @@
 
 <header
   id="nav"
-  class="header 
-    bg-gray-950
-   ">
+  class="header  
+    bg-coffee-brown
+  ">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-bright-green nav-overlay"></div>
+  <div id="nav-overlay" class="bg-programa-curatorial nav-overlay"></div>
   
   
   <nav
-    class="navbar 
-      bg-gray-950
-     ">
+    class="navbar  
+      bg-coffee-brown
+    ">
     
     
     <div class="navbar-brand">
       <div class="navbar-brand-all-to-md">
         
-          Asamblea
+          
+            Asambleas
+          
         
       </div>
 
@@ -2038,9 +2040,9 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container 
-        bg-gray-950
-        hidden lg:inline-grid">
+      class="navbar-menu-container  
+        bg-coffee-brown
+       hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -2490,120 +2492,193 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="">
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
-        
-  <section>
-  <div class="container text-center">
-    <div class="from-body to-light rounded-2xl bg-gradient-to-b px-8 py-14">
-      <h1>Asamblea</h1>
+        <div
+    class="text-3xl text-black font-rs-light col-span-10 col-start-2 my-10 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    
+  </div>
+
+  <div
+    id="info-container"
+    class="bg-gray-300 relative col-span-12 mb-0 grid min-h-60 grid-cols-subgrid py-4">
+    <div
+  id="bg-img"
+  class=" absolute inset-0 z-0 col-span-12 flex h-full justify-center">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
       
+    
 
 
+    
+    
 
 
-<ul class="mt-6 inline-flex space-x-1 capitalize">
-  <li>
-    <a class="text-primary" href="https://relampagoproyecto.github.io/kauka-dev/">
-      Home
-    </a>
-    <span class="inlin-block mr-1">/</span>
-  </li>
-  
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/asambleas/asamblea-bg.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class=" img"
+        width=""
+        height="" />
+    
     
   
-    
-      <li>
-        <a class="text-primary" href="/kauka-dev/componentes/">
-          Componentes
-        </a>
-        <span class="inlin-block mr-1">/</span>
-      </li>
-    
+
+
   
-  <li>
-    <span class="text-primary">
-      Asamblea
-    </span>
-  </li>
-</ul>
+
+
+</div>
+
+<script>
+  function setBgSvgHeight() {
+    const sectionContainer = document.getElementById("info-container");
+    if (!sectionContainer) return;
+
+    const sectionHeight = sectionContainer.offsetHeight;
+    const viewportWidth = window.innerWidth;
+    const bgImg = document.querySelector("#bg-img img");
+
+    if (bgImg) {
+      
+      const vwBasedHeight = viewportWidth * 1;
+
+      
+      const finalHeight = Math.min(vwBasedHeight, sectionHeight);
+
+      
+      bgImg.style.height = finalHeight + "px";
+      bgImg.style.objectFit = "cover";
+    }
+  }
+
+    
+    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
+
+    
+    window.addEventListener("resize", setBgSvgHeight);
+</script>
+
+    <div
+      class="font-rs-semi-bold relative z-20 col-span-5 col-start-2 text-6xl text-black">
+      <span>03</span><br />
+      <span>11</span><br />
+      <span>2025</span><br />
+    </div>
+    <div
+      class="font-rs-semi-bold relative z-20 col-span-5 col-start-2 text-xl text-black">
+      <div class="font-rs-light text-xs">Hora</div>
+      <div>7:00 p.m.</div>
+    </div>
+    <div
+      class="font-rs-semi-bold relative z-20 col-span-5 col-end-12 text-xl text-black">
+      <div class="font-rs-light text-xs">Sede/lugar</div>
+      Lorem ipsum dolor sit amet
+      <br />
+      Calle 43 # 16 bis 43
+    </div>
+    <div
+      class="font-rs-light relative z-20 col-span-10 col-start-2 text-sm text-black">
+      
 
     </div>
   </div>
-</section>
+  <div
+    class="font-rs-light col-span-12 grid grid-cols-subgrid gap-4 bg-gray-950 py-10 leading-tight text-white">
+    <div class="col-span-10 col-start-2"><p><strong>Desarrollo de los temas:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+  </div>
+  <div class="col-span-12">
+    
+  </div>
+  <div
+    class="font-rs-light col-span-12 grid grid-cols-subgrid gap-4 bg-gray-300 py-10 leading-tight text-black">
+    <div class="col-span-10 col-start-2"><p><strong>Propuestas:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+  </div>
 
+  <script>
+    function setBgSvgHeight() {
+      const sectionContainer = document.getElementById("info-container");
+      if (!sectionContainer) return;
 
+      const sectionHeight = sectionContainer.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const bgImg = document.querySelector("#info-bg-img img");
 
-  <section class="section">
-    <div class="container">
-      <div class="row gx-5">
+      if (bgImg) {
         
-        <div class="lg:col-8">
-          <div class="row">
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/asambleas/asamblea-1/">
-      Asamblea
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/asamblea-1/">
-    Leer más
-  </a>
-</div>
+        const vwBasedHeight = viewportWidth * 1;
 
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/asambleas/asamblea-2/">
-      Asamblea
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/asamblea-2/">
-    Leer más
-  </a>
-</div>
+        
+        const finalHeight = Math.min(vwBasedHeight, sectionHeight);
 
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/asambleas/asamblea-3/">
-      Asamblea
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/asamblea-3/">
-    Leer más
-  </a>
-</div>
+        
+        bgImg.style.height = finalHeight + "px";
+        bgImg.style.objectFit = "cover";
+      }
+    }
 
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    
+    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
+
+    
+    window.addEventListener("resize", setBgSvgHeight);
+  </script>
 
       </section>
     </main>
