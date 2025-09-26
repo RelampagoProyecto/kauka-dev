@@ -20,33 +20,33 @@
   
   "icons": [
     {
-      "src": "/kauka-dev/images/favicon_hu_ada4d6987aec59b8.png",
+      "src": "/kauka-dev/images/favicon_hu_dc53d0bba9613321.png",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "/kauka-dev/images/favicon_hu_a7a18ade5a6f7824.png",
+      "src": "/kauka-dev/images/favicon_hu_d9a8918c351ccbf.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "/kauka-dev/images/favicon_hu_b3fafd8fff740aa7.png",
+      "src": "/kauka-dev/images/favicon_hu_7ef4d84f39742816.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "/kauka-dev/images/favicon_hu_f1bf37c48a086c7d.png",
+      "src": "/kauka-dev/images/favicon_hu_bc95819d1e6f6d43.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/kauka-dev/images/favicon_hu_a386466df22da910.png",
+      "src": "/kauka-dev/images/favicon_hu_5a14284b0024f51a.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/kauka-dev/images/favicon_hu_1b6fbea47e2dd2ee.png",
+      "src": "/kauka-dev/images/favicon_hu_661d3bb88335bf41.png",
       "sizes": "512x512",
       "type": "image/png"
     }
