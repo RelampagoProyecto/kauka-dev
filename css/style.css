@@ -11,6 +11,7 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-yellow-200: oklch(94.5% 0.129 101.54);
     --color-green-200: oklch(92.5% 0.084 155.995);
+    --color-teal-500: oklch(70.4% 0.14 182.503);
     --color-blue-200: oklch(88.2% 0.059 254.128);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-pink-200: oklch(89.9% 0.061 343.231);
@@ -3660,10 +3661,15 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: 600ms;
     transition-duration: 600ms;
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 288.7 413.01'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B isolation: isolate; %7D .cls-2 %7B mix-blend-mode: multiply; %7D .cls-3 %7B fill: %23d5a24a; %7D %3C/style%3E%3C/defs%3E%3Cg class='cls-1'%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Figuras'%3E%3Cg class='cls-2'%3E%3Cpath class='cls-3' d='M20.62,171.45h247.46l20.62,28.87H0l20.62-28.87ZM0,212.69h288.7l-20.62,28.87H20.62L0,212.69ZM54.2,124.32l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM54.2,289.29l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM110.77,47.13h67.76l21.21,29.46h-110.18l21.21-29.46ZM89.56,336.42h110.18l-21.21,29.46h-67.76l-21.21-29.46ZM114.3,124.32l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM114.3,289.29l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM144.94,0l25.33,35.35h-51.26L144.94,0ZM119.01,377.66h51.26l-25.33,35.35-25.93-35.35ZM173.81,124.32l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65ZM173.81,289.29l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
   .agenda-container.visible::before {
     opacity: 100%;
+  }
+  .agenda-principal::before {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 288.7 413.01'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B isolation: isolate; %7D .cls-2 %7B mix-blend-mode: multiply; %7D .cls-3 %7B fill: %23d5a24a; %7D %3C/style%3E%3C/defs%3E%3Cg class='cls-1'%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Figuras'%3E%3Cg class='cls-2'%3E%3Cpath class='cls-3' d='M20.62,171.45h247.46l20.62,28.87H0l20.62-28.87ZM0,212.69h288.7l-20.62,28.87H20.62L0,212.69ZM54.2,124.32l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM54.2,289.29l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM110.77,47.13h67.76l21.21,29.46h-110.18l21.21-29.46ZM89.56,336.42h110.18l-21.21,29.46h-67.76l-21.21-29.46ZM114.3,124.32l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM114.3,289.29l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM144.94,0l25.33,35.35h-51.26L144.94,0ZM119.01,377.66h51.26l-25.33,35.35-25.93-35.35ZM173.81,124.32l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65ZM173.81,289.29l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .agenda-encuentros::before {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 288.7 413.01'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B isolation: isolate; %7D .cls-2 %7B mix-blend-mode: multiply; %7D .cls-3 %7B fill: %23d5a24a; %7D %3C/style%3E%3C/defs%3E%3Cg class='cls-1'%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Figuras'%3E%3Cg class='cls-2'%3E%3Cpath class='cls-3' d='M20.62,171.45h247.46l20.62,28.87H0l20.62-28.87ZM0,212.69h288.7l-20.62,28.87H20.62L0,212.69ZM54.2,124.32l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM54.2,289.29l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM110.77,47.13h67.76l21.21,29.46h-110.18l21.21-29.46ZM89.56,336.42h110.18l-21.21,29.46h-67.76l-21.21-29.46ZM114.3,124.32l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM114.3,289.29l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM144.94,0l25.33,35.35h-51.26L144.94,0ZM119.01,377.66h51.26l-25.33,35.35-25.93-35.35ZM173.81,124.32l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65ZM173.81,289.29l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
   .fc-toolbar-title {
     font-family: "RigidSquare-SemiBold", sans-serif;
@@ -3712,6 +3718,32 @@
     font-family: "RigidSquare-SemiBold", sans-serif !important;
     font-size: 12px !important;
   }
+  .agenda-principal {
+    & .fc-listWeek-view {
+      background-color: var(--color-burnt-orange) !important;
+    }
+    & .fc-cell-shaded {
+      background-color: var(--color-dark-cyan) !important;
+    }
+    & .fc-list-event {
+      background-color: var(--color-burnt-orange) !important;
+    }
+    & .fc-list-event:hover td {
+      background-color: var(--color-burnt-orange) !important;
+      mix-blend-mode: multiply !important;
+    }
+  }
+  .agenda-encuentros {
+    & .fc-listWeek-view {
+      background-color: var(--color-teal-500) !important;
+    }
+    & .fc-list-event {
+      background-color: var(--color-bright-green) !important;
+    }
+    & .fc-list-event:hover td {
+      background-color: var(--color-burnt-orange) !important;
+    }
+  }
   .fc-theme-standard {
     & td, & th {
       border: none !important;
@@ -3720,14 +3752,8 @@
       border: none !important;
     }
   }
-  .fc {
-    & .fc-cell-shaded {
-      background-color: var(--color-dark-cyan) !important;
-    }
-  }
   .fc-list-event {
     list-style-type: none !important;
-    background-color: var(--color-burnt-orange) !important;
     color: var(--color-white);
   }
   .fc-list-event-time {
