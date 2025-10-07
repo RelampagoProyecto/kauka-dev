@@ -3405,6 +3405,92 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+  
+
+  
+  
+
+  
+  
+    
+    
+
+    
+  
+
+  
+  <div class="pagefind-search-container bg-bright-green text-black">
+    <div class="pagefind-search-wrapper bg-bright-green">
+      <div id="search" class="pagefind-search-element"></div>
+    </div>
+  </div>
+
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+      new PagefindUI({
+        element: "#search",
+        showSubResults: true,
+        translations: {
+          placeholder: "Buscar...",
+          clear_search: "Limpiar",
+          load_more: "Cargar más resultados",
+          search_label: "Buscar en este sitio",
+          filters_label: "Filtros",
+          zero_results: "No se encontraron resultados para [SEARCH_TERM]",
+          many_results: "[COUNT] resultados para [SEARCH_TERM]",
+          one_result: "[COUNT] resultado para [SEARCH_TERM]",
+          alt_search:
+            "No se encontraron resultados para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] en su lugar",
+          search_suggestion:
+            "No se encontraron resultados para [SEARCH_TERM]. Intenta una de las siguientes búsquedas:",
+          searching: "Buscando [SEARCH_TERM]...",
+        },
+      });
+
+      
+      const searchContainer = document.querySelector(
+        ".pagefind-search-container"
+      );
+      const searchInput = document.querySelector(".pagefind-ui__search-input");
+
+      if (searchContainer && searchInput) {
+        
+        searchInput.addEventListener("focus", () => {
+          searchContainer.classList.add("is-active");
+        });
+
+        
+        searchInput.addEventListener("blur", (e) => {
+          setTimeout(() => {
+            const hasResults = document.querySelector(".pagefind-ui__results");
+            if (!hasResults || !hasResults.children.length) {
+              searchContainer.classList.remove("is-active");
+            }
+          }, 200);
+        });
+
+        
+        document.addEventListener("click", (e) => {
+          if (!searchContainer.contains(e.target)) {
+            searchContainer.classList.remove("is-active");
+          }
+        });
+      }
+    });
+  </script>
+
+
+
+
+    
+    
+
+
+
   
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
