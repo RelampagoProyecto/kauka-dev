@@ -2504,124 +2504,15 @@ if (typeof initHeaderOnReady === "function") {
   <div
     id="info-container"
     class="asamblea-single-info bg-white">
-    <div
-  id="bg-img"
-  class=" absolute inset-0 z-0 col-span-12 flex h-full justify-center">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/asambleas/asamblea-bg.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class=" img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-</div>
-
-<script>
-  function setBgSvgHeight() {
-    const sectionContainer = document.getElementById("info-container");
-    if (!sectionContainer) return;
-
-    const sectionHeight = sectionContainer.offsetHeight;
-    const viewportWidth = window.innerWidth;
-    const bgImg = document.querySelector("#bg-img img");
-
-    if (bgImg) {
-      
-      const vwBasedHeight = viewportWidth * 1;
-
-      
-      const finalHeight = Math.min(vwBasedHeight, sectionHeight);
-
-      
-      bgImg.style.height = finalHeight + "px";
-      bgImg.style.objectFit = "cover";
-    }
-  }
-
-    
-    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
-
-    
-    window.addEventListener("resize", setBgSvgHeight);
-</script>
-
-
-
     <div class="asamblea-single-fecha">
-      <span>03</span><br />
-      <span>11</span><br />
-      <span>2025</span><br />
+      <div class="asamblea-single-fecha-container">
+        <span>
+          03/11/2025
+        </span>
+      </div>
     </div>
 
-    <div class="asamblea-single-hora">
+    <div class="asamblea-single-hora-desktop">
       <div class="asamblea-single-label">Hora</div>
       <div>7:00 p.m.</div>
     </div>
@@ -2630,6 +2521,11 @@ if (typeof initHeaderOnReady === "function") {
       <div class="asamblea-single-label">Sede/lugar</div>
       Lorem ipsum dolor sit amet<br />
       Calle 43 # 16 bis 43
+    </div>
+
+    <div class="asamblea-single-hora">
+      <div class="asamblea-single-label">Hora</div>
+      <div>7:00 p.m.</div>
     </div>
 
     <div class="asamblea-single-participantes">
@@ -2766,6 +2662,30 @@ if (typeof initHeaderOnReady === "function") {
 
     </div>
   </div>
+
+  
+  
+    <div class="asamblea-links-container">
+      <div class="asamblea-diamonds-left"></div>
+      <div class="asamblea-links-diamond">
+        
+          <a href="/agenda-asamblea-1.pdf">Agenda</a>
+        
+      </div>
+      <div class="asamblea-links-diamond">
+        
+          <a
+            href="https://maps.google.com/?q=Calle&#43;43&#43;16&#43;bis&#43;43"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Mapa</a
+          >
+        
+      </div>
+      <div class="asamblea-diamonds-right"></div>
+    </div>
+  
+
 
   
   <div class="asamblea-single-section asamblea-single-desarrollo">

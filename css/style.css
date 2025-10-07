@@ -3812,89 +3812,328 @@
     position: relative;
     grid-column: span 12 / span 12;
     display: grid;
+    aspect-ratio: 320/438;
+    grid-auto-rows: min-content;
     grid-template-columns: subgrid;
-    min-height: calc(var(--spacing) * 60);
-    padding-block: 48px;
+    background-color: var(--color-white);
+    color: var(--color-dark-chocolate);
     @media (width >= 48rem) {
-      padding-block: 72px;
+      height: 567px;
     }
+    @media (width >= 64rem) {
+      height: 523px;
+    }
+  }
+  .asamblea-single-info::before {
+    position: absolute;
+    inset: calc(var(--spacing) * 0);
+    z-index: 0;
+    grid-column: span 12 / span 12;
+    background-size: cover;
+    background-repeat: no-repeat;
+    --tw-content: '';
+    content: var(--tw-content);
+    @media (width >= 40rem) {
+      z-index: 0;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 1;
+    }
+    @media (width >= 48rem) {
+      background-repeat: repeat;
+    }
+    @media (width >= 64rem) {
+      grid-column: span 10 / span 10;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 2;
+    }
+    @media (width >= 64rem) {
+      background-repeat: repeat-x;
+    }
+    @media (width >= 80rem) {
+      grid-column: span 12 / span 12;
+    }
+    @media (width >= 80rem) {
+      background-position: -137px;
+    }
+    @media (width >= 80rem) {
+      background-repeat: repeat;
+    }
+    background-image: url("/images/asambleas/asamblea-bg.svg");
+    background-size: auto 100%;
   }
   .asamblea-single-fecha {
     position: relative;
-    z-index: 20;
+    grid-column: span 12 / span 12;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: subgrid;
+    color: var(--color-dark-chocolate);
+  }
+  .asamblea-single-fecha-container {
+    position: relative;
+    grid-column: span 12 / span 12;
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-block: 5px;
+    @media (width >= 40rem) {
+      padding-block: 6px;
+    }
+    @media (width >= 48rem) {
+      padding-block: 7px;
+    }
+    @media (width >= 64rem) {
+      padding-block: 8px;
+    }
+    @media (width >= 80rem) {
+      padding-block: 9px;
+    }
+    @media (width >= 96rem) {
+      padding-block: 10px;
+    }
+    background-color: var(--asamblea-fecha-bg-color, rgba(199, 89, 62, 0.9));
+  }
+  .asamblea-single-fecha span {
+    position: relative;
+    z-index: 10;
+    grid-column: span 10 / span 10;
+    grid-column-start: 3;
     font-family: "RigidSquare-SemiBold", sans-serif;
+    color: var(--color-dark-chocolate);
+    font-size: 43px;
+    --tw-leading: 45px;
+    line-height: 45px;
+    @media (width >= 40rem) {
+      font-size: 52px;
+    }
+    @media (width >= 40rem) {
+      --tw-leading: 54px;
+      line-height: 54px;
+    }
+    @media (width >= 48rem) {
+      font-size: 64px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: 70px;
+      line-height: 70px;
+    }
+    @media (width >= 64rem) {
+      font-size: 60px;
+    }
+    @media (width >= 64rem) {
+      --tw-leading: 65px;
+      line-height: 65px;
+    }
+    @media (width >= 80rem) {
+      font-size: 68px;
+    }
+    @media (width >= 80rem) {
+      --tw-leading: 72px;
+      line-height: 72px;
+    }
+    @media (width >= 96rem) {
+      font-size: 86px;
+    }
+    @media (width >= 96rem) {
+      --tw-leading: 90px;
+      line-height: 90px;
+    }
+    color: var(--asamblea-fecha-text-color, currentColor);
+  }
+  .asamblea-single-lugar {
+    z-index: 10;
+    grid-column: span 5 / span 5;
+    grid-column-start: 2;
+    @media (width >= 48rem) {
+      grid-column: span 3 / span 3;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 2;
+    }
+    @media (width >= 80rem) {
+      grid-column: span 3 / span 3;
+    }
+    @media (width >= 80rem) {
+      grid-column-start: 3;
+    }
+    margin-top: 36px;
+    @media (width >= 40rem) {
+      margin-top: 72px;
+    }
+    @media (width >= 48rem) {
+      margin-top: 28px;
+    }
+  }
+  .asamblea-single-lugar::first-line {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-size: var(--clamp-16-32);
+    line-height: var(--clamp-16-32);
+    @media (width >= 48rem) {
+      font-size: 22px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: 25px;
+      line-height: 25px;
+    }
+  }
+  .asamblea-single-hora {
+    z-index: 10;
+    grid-column: span 4 / span 4;
+    grid-column-start: 7;
+    @media (width >= 48rem) {
+      display: none;
+    }
+    margin-top: 36px;
+    @media (width >= 40rem) {
+      margin-top: 72px;
+    }
+  }
+  .asamblea-single-hora > div:last-child {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-size: var(--clamp-16-32);
+    line-height: var(--clamp-16-32);
+  }
+  .asamblea-single-hora-desktop {
+    display: none;
+    @media (width >= 48rem) {
+      z-index: 10;
+    }
+    @media (width >= 48rem) {
+      grid-column: span 3 / span 3;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 2;
+    }
+    @media (width >= 48rem) {
+      display: block;
+    }
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 80rem) {
+      grid-column: span 3 / span 3;
+    }
+    @media (width >= 80rem) {
+      grid-column-start: 5;
+    }
+    @media (width >= 48rem) {
+      margin-top: 58px;
+    }
+  }
+  .asamblea-single-hora-desktop > div:last-child {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    @media (width >= 48rem) {
+      font-size: 22px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: 25px;
+      line-height: 25px;
+    }
+  }
+  .asamblea-single-label {
+    font-family: "RigidSquare-Light", sans-serif;
+    font-size: var(--clamp-10-20);
+    line-height: var(--clamp-10-20);
+    @media (width >= 48rem) {
+      font-size: 14px;
+    }
+    @media (width >= 96rem) {
+      font-size: 17px;
+    }
+    margin-bottom: 8px;
+  }
+  .asamblea-single-participantes {
+    position: relative;
+    z-index: 10;
     grid-column: span 10 / span 10;
     grid-column-start: 2;
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
     }
     @media (width >= 48rem) {
-      grid-column-start: 2;
+      grid-column-start: 5;
     }
-    font-size: 48px;
-    --tw-leading: 1;
-    line-height: 1;
-    color: var(--color-black);
-    @media (width >= 48rem) {
-      font-size: 72px;
-    }
-  }
-  .asamblea-single-hora {
-    position: relative;
-    z-index: 20;
-    font-family: "RigidSquare-SemiBold", sans-serif;
-    grid-column: span 5 / span 5;
-    grid-column-start: 2;
-    @media (width >= 48rem) {
+    @media (width >= 64rem) {
       grid-column: span 3 / span 3;
     }
-    @media (width >= 48rem) {
+    @media (width >= 64rem) {
       grid-column-start: 6;
     }
-    margin-top: 24px;
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-    color: var(--color-black);
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 0);
-    }
-  }
-  .asamblea-single-lugar {
-    position: relative;
-    z-index: 20;
-    font-family: "RigidSquare-SemiBold", sans-serif;
-    grid-column: span 5 / span 5;
-    grid-column-start: 7;
-    @media (width >= 48rem) {
+    @media (width >= 80rem) {
       grid-column: span 3 / span 3;
     }
-    @media (width >= 48rem) {
-      grid-column-start: 9;
+    @media (width >= 80rem) {
+      grid-column-start: 5;
     }
-    margin-top: 24px;
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-    color: var(--color-black);
+    margin-top: 48px;
+    @media (width >= 48rem) {
+      margin-top: 28px;
+    }
+    font-size: var(--clamp-12-24);
+    line-height: var(--clamp-12-24);
+  }
+  .asamblea-links-container {
+    grid-column: span 12 / span 12;
+    display: flex;
+    flex-direction: row;
+    height: var(--clamp-88-178);
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 0);
     }
+    @media (width >= 48rem) {
+      height: 114px;
+    }
+    @media (width >= 64rem) {
+      height: 112px;
+    }
+    @media (width >= 96rem) {
+      height: 134px;
+    }
+    background-color: var(--asamblea-links-bg-color, #c7593e);
   }
-  .asamblea-single-label {
-    margin-bottom: 8px;
-    font-family: "RigidSquare-Light", sans-serif;
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
+  .asamblea-links-diamond {
+    place-content: center;
+    background-image: url("data:image/svg+xml;utf8,<svg height='100%' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 454.15 624.6'><polygon points='227.08 0 0 312.3 227.08 624.6 454.15 312.3 227.08 0' fill='rgb(255,255,255)'/></svg>");
+    width: var(--clamp-64-131);
+    @media (width >= 48rem) {
+      width: 82px;
+    }
+    @media (width >= 96rem) {
+      width: 98px;
+    }
   }
-  .asamblea-single-participantes {
-    position: relative;
-    z-index: 20;
-    font-family: "RigidSquare-Light", sans-serif;
-    grid-column: span 10 / span 10;
-    grid-column-start: 2;
-    margin-top: 48px;
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-    color: var(--color-black);
+  .asamblea-diamonds-left {
+    height: 100%;
+    flex: 1;
+    flex-grow: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg height='100%' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 454.15 624.6'><polygon points='227.08 0 0 312.3 227.08 624.6 454.15 312.3 227.08 0' fill='rgb(255,255,255)'/></svg>");
+    background-position: right;
+  }
+  .asamblea-diamonds-right {
+    height: 100%;
+    flex: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg height='100%' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 454.15 624.6'><polygon points='227.08 0 0 312.3 227.08 624.6 454.15 312.3 227.08 0' fill='rgb(255,255,255)'/></svg>");
+  }
+  .asamblea-links-diamond > a {
+    display: block;
+    text-align: center;
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-size: var(--clamp-10-20);
+    line-height: var(--clamp-10-20);
+    @media (width >= 48rem) {
+      font-size: 10px;
+    }
+    @media (width >= 64rem) {
+      font-size: 12px;
+    }
+    @media (width >= 96rem) {
+      font-size: 14px;
+    }
+    color: var(--asamblea-links-text-color, #4a2c2a);
   }
   .asamblea-single-section {
     grid-column: span 12 / span 12;
