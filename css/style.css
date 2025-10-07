@@ -3812,13 +3812,18 @@
     position: relative;
     grid-column: span 12 / span 12;
     display: grid;
-    aspect-ratio: 320/438;
+    aspect-ratio: 320/440;
     grid-auto-rows: min-content;
     grid-template-columns: subgrid;
+    column-gap: calc(var(--spacing) * 0);
     background-color: var(--color-white);
     color: var(--color-dark-chocolate);
+    height: 440px;
+    @media (width >= 40rem) {
+      height: 881px;
+    }
     @media (width >= 48rem) {
-      height: 567px;
+      height: 470px;
     }
     @media (width >= 64rem) {
       height: 523px;
@@ -3830,17 +3835,21 @@
     z-index: 0;
     grid-column: span 12 / span 12;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     --tw-content: '';
     content: var(--tw-content);
-    @media (width >= 40rem) {
-      z-index: 0;
-    }
     @media (width >= 48rem) {
       grid-column-start: 1;
     }
     @media (width >= 48rem) {
-      background-repeat: repeat;
+      grid-column-end: 12;
+    }
+    @media (width >= 48rem) {
+      margin-left: 30px;
+    }
+    @media (width >= 48rem) {
+      background-repeat: repeat-x;
     }
     @media (width >= 64rem) {
       grid-column: span 10 / span 10;
@@ -3848,17 +3857,11 @@
     @media (width >= 64rem) {
       grid-column-start: 2;
     }
-    @media (width >= 64rem) {
-      background-repeat: repeat-x;
-    }
     @media (width >= 80rem) {
       grid-column: span 12 / span 12;
     }
     @media (width >= 80rem) {
       background-position: -137px;
-    }
-    @media (width >= 80rem) {
-      background-repeat: repeat;
     }
     background-image: url("/images/asambleas/asamblea-bg.svg");
     background-size: auto 100%;
@@ -5342,6 +5345,7 @@
     z-index: 10;
     grid-column: span 12 / span 12;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     --tw-content: '';
     content: var(--tw-content);
