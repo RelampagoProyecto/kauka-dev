@@ -1675,7 +1675,7 @@
 }
 @font-face {
   font-family: "RigidSquare-Regular";
-  src: url("../fonts/RigidSquare-Regular.woff2") format("woff2"), url("../fonts/RigidSquare-Regular.woff") format("woff"), url("../fonts/RigidSquare-Regular.eot") format("eot");
+  src: url("../fonts/rigid-square/RigidSquare-Regular.woff2") format("woff2"), url("../fonts/rigid-square/RigidSquare-Regular.woff") format("woff"), url("../fonts/rigid-square/RigidSquare-Regular.eot") format("eot");
 }
 @font-face {
   font-family: "RigidSquare-SemiBold";
@@ -4572,40 +4572,23 @@
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 6);
     }
-    min-height: 100vh;
   }
   .invitadxs-bg-container {
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     inset: calc(var(--spacing) * 0);
     z-index: 0;
     grid-column: span 12 / span 12;
     grid-column-start: 1;
     display: grid;
     grid-template-columns: subgrid;
-    padding-top: 24px;
-    @media (width >= 40rem) {
-      padding-top: 48px;
-    }
-    @media (width >= 48rem) {
-      padding-top: 57px;
-    }
-    @media (width >= 64rem) {
-      padding-top: 38px;
-    }
-    @media (width >= 80rem) {
-      padding-top: 48px;
-    }
-    @media (width >= 96rem) {
-      padding-top: 29px;
-    }
   }
   .invitadxs-bg-image {
     grid-column: span 12 / span 12;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    max-height: 100vh;
     object-fit: cover;
-    opacity: 0.15;
+    opacity: 0.4;
   }
   .invitadxs-bg-image--left {
     @media (width >= 64rem) {
@@ -4628,12 +4611,12 @@
     }
   }
   .invitadxs-sidebar {
-    position: relative;
+    position: fixed;
     z-index: 10;
-    grid-column: span 1 / span 1;
-    grid-column-start: 2;
     padding-bottom: calc(var(--spacing) * 10);
     padding-left: calc(var(--spacing) * 6);
+    top: 6rem;
+    left: calc((100vw - 100%) / 2 + (100% / 12 * 1) + 1.5rem);
   }
   .invitadxs-letter-item {
     transition-property: all;
@@ -4643,10 +4626,9 @@
     transition-duration: 300ms;
   }
   .invitadxs-letter-link {
-    padding-top: calc(var(--spacing) * 3);
-    font-family: "RigidSquare-SemiBold", sans-serif;
-    font-size: 17px;
-    color: var(--color-black);
+    font-family: "RigidSquare-Bold", sans-serif;
+    font-size: 24px;
+    color: var(--color-dark-forest-green);
     opacity: 25%;
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -4698,7 +4680,7 @@
   .invitadxs-artists-group {
     display: grid;
     row-gap: calc(var(--spacing) * 2);
-    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-family: "RigidSquare-Regular", sans-serif;
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
@@ -4733,9 +4715,9 @@
   .kauka-text {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-    color: var(--color-black);
+    color: var(--color-dark-forest-green);
     opacity: 100%;
-    -webkit-text-stroke: 0.5px black;
+    -webkit-text-stroke: 0.5px bg-vivencial;
     animation: subtleGlow 3s ease-in-out infinite;
   }
   @keyframes subtleGlow {
