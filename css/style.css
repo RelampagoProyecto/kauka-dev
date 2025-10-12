@@ -2496,7 +2496,10 @@
     grid-column: span 12 / span 12;
     display: grid;
     grid-template-columns: subgrid;
-    padding-bottom: var(--clamp-home-pb);
+    padding-bottom: 50px;
+    @media (width >= 48rem) {
+      padding-bottom: 60px;
+    }
     padding-top: var(--clamp-48-96);
     @media (width >= 48rem) {
       padding-top: 115px;
@@ -2504,20 +2507,11 @@
     @media (width >= 64rem) {
       padding-top: 77px;
     }
-    @media (width >= 64rem) {
-      padding-bottom: 328px;
-    }
     @media (width >= 80rem) {
       padding-top: 96px;
     }
-    @media (width >= 80rem) {
-      padding-bottom: 410px;
-    }
     @media (width >= 96rem) {
       padding-top: 116px;
-    }
-    @media (width >= 96rem) {
-      padding-bottom: 493px;
     }
   }
   .home-img {
@@ -2549,6 +2543,8 @@
     grid-column-start: 2;
     margin-top: var(--clamp-12-24);
     background-color: var(--color-deep-pink);
+    align-items: center;
+    justify-content: flex-start;
   }
   .home-footer-image {
     width: clamp(209px, 65.3125vw, 418px);
@@ -2611,12 +2607,11 @@
     z-index: 20;
     grid-column: span 10 / span 10;
     grid-column-start: 2;
-    margin-top: var(--clamp-12-24);
     @media (width >= 48rem) {
       height: 147px;
     }
     @media (width >= 48rem) {
-      padding-top: 135px;
+      padding-top: 50px;
     }
     @media (width >= 64rem) {
       margin-top: calc(10px * -1);
@@ -2630,6 +2625,8 @@
     @media (width >= 96rem) {
       height: 284px;
     }
+    align-items: center;
+    justify-content: flex-start;
   }
   .multiply {
     mix-blend-mode: multiply;
@@ -5010,7 +5007,7 @@
     min-height: 216px;
   }
   .asamblearios-term-bio-ciudad {
-    grid-column: span 7 / span 7;
+    grid-column: span 6 / span 6;
     grid-column-start: 2;
     font-family: "RigidSquare-SemiBold", sans-serif;
     color: var(--color-dark-chocolate);
@@ -5025,7 +5022,7 @@
     }
   }
   .asamblearios-term-bio-año {
-    grid-column: span 2 / span 2;
+    grid-column: span 3 / span 3;
     grid-column-end: 12;
     max-width: 100%;
     text-align: right;
@@ -5042,7 +5039,7 @@
       grid-column-end: 12;
     }
     @media (width >= 80rem) {
-      grid-column-end: 10;
+      grid-column-end: 11;
     }
   }
   .asamblearios-term-bio-separator {
@@ -5064,7 +5061,7 @@
     }
   }
   .asamblearios-term-redes {
-    grid-column: span 5 / span 5;
+    grid-column: span 7 / span 7;
     grid-column-start: 2;
   }
   .asamblearios-term-redes-label {
