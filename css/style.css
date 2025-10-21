@@ -4161,7 +4161,7 @@
     font-family: "RigidSquare-SemiBold", sans-serif;
     font-size: var(--clamp-12-24);
     @media (width >= 48rem) {
-      font-size: 19px;
+      font-size: 24px;
     }
     padding-bottom: calc(var(--spacing) * 2);
     @media (width >= 48rem) {
