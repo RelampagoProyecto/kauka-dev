@@ -3705,7 +3705,7 @@
       line-height: 20px;
     }
     @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 16);
+      padding-top: calc(var(--spacing) * 8);
     }
     @media (width >= 64rem) {
       padding-bottom: calc(var(--spacing) * 4);
@@ -3714,13 +3714,16 @@
       grid-column: span 5 / span 5;
     }
     @media (width >= 80rem) {
-      grid-column-start: 2;
+      grid-column-start: 1;
     }
     @media (width >= 80rem) {
-      padding-top: calc(var(--spacing) * 18);
+      padding-top: calc(var(--spacing) * 8);
     }
     @media (width >= 80rem) {
       padding-bottom: calc(var(--spacing) * 4);
+    }
+    @media (width >= 80rem) {
+      padding-left: calc(var(--spacing) * 16);
     }
     @media (width >= 80rem) {
       font-size: 58px;
@@ -3730,10 +3733,7 @@
       line-height: 56px;
     }
     @media (width >= 96rem) {
-      grid-column-start: 2;
-    }
-    @media (width >= 96rem) {
-      padding-top: calc(var(--spacing) * 20);
+      padding-left: calc(var(--spacing) * 20);
     }
     @media (width >= 96rem) {
       font-size: 64px;
@@ -3766,7 +3766,10 @@
       grid-column: span 5 / span 5;
     }
     @media (width >= 80rem) {
-      grid-column-start: 2;
+      grid-column-start: 1;
+    }
+    @media (width >= 80rem) {
+      padding-left: calc(var(--spacing) * 16);
     }
     @media (width >= 80rem) {
       font-size: 16px;
@@ -3774,6 +3777,9 @@
     @media (width >= 80rem) {
       --tw-leading: 20px;
       line-height: 20px;
+    }
+    @media (width >= 96rem) {
+      padding-left: calc(var(--spacing) * 20);
     }
     padding-bottom: calc(var(--spacing) * 1);
     @media (width >= 48rem) {
@@ -3825,20 +3831,20 @@
   .home-componentes-text {
     grid-column: span 7 / span 7;
     grid-column-end: 12;
-    text-align: justify;
+    text-align: left;
     font-family: "RigidSquare-Light", sans-serif;
     margin-bottom: calc(var(--spacing) * 6);
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
     }
     @media (width >= 48rem) {
-      grid-column-start: 2;
+      grid-column-start: 3;
     }
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 0);
     }
     @media (width >= 48rem) {
-      margin-bottom: calc(var(--spacing) * 4);
+      margin-bottom: calc(var(--spacing) * 8);
     }
     @media (width >= 48rem) {
       font-size: 16px;
@@ -3851,22 +3857,28 @@
       grid-column: span 4 / span 4;
     }
     @media (width >= 64rem) {
-      grid-column-start: 2;
-    }
-    @media (width >= 80rem) {
-      grid-column: span 4 / span 4;
-    }
-    @media (width >= 80rem) {
       grid-column-start: 3;
+    }
+    @media (width >= 64rem) {
+      margin-bottom: calc(var(--spacing) * 10);
+    }
+    @media (width >= 80rem) {
+      grid-column: span 3 / span 3;
+    }
+    @media (width >= 80rem) {
+      grid-column-start: 4;
+    }
+    @media (width >= 80rem) {
+      margin-bottom: calc(var(--spacing) * 12);
     }
     @media (width >= 80rem) {
       padding-right: calc(var(--spacing) * 8);
     }
     @media (width >= 96rem) {
-      grid-column: span 4 / span 4;
+      grid-column: span 3 / span 3;
     }
     @media (width >= 96rem) {
-      grid-column-start: 3;
+      grid-column-start: 4;
     }
     @media (width >= 96rem) {
       margin-bottom: calc(var(--spacing) * 10);
@@ -3874,15 +3886,12 @@
     @media (width >= 96rem) {
       padding-right: calc(var(--spacing) * 12);
     }
-    @media (width >= 96rem) {
-      padding-left: calc(var(--spacing) * 4);
-    }
   }
   .home-componentes-text strong {
     margin-top: calc(var(--spacing) * 4);
     margin-bottom: calc(var(--spacing) * 2);
     display: block;
-    font-family: "RigidSquare-Regular", sans-serif;
+    font-family: "RigidSquare-SemiBold", sans-serif;
   }
   .home-componentes-text br + br {
     display: block;
@@ -3946,10 +3955,10 @@
       margin-top: calc(var(--spacing) * 0);
     }
     @media (width >= 80rem) {
-      padding-bottom: calc(var(--spacing) * 4);
+      padding-bottom: calc(var(--spacing) * 12);
     }
     @media (width >= 96rem) {
-      padding-bottom: calc(var(--spacing) * 4);
+      padding-bottom: calc(var(--spacing) * 10);
     }
     grid-auto-rows: min-content;
   }
@@ -4135,6 +4144,39 @@
     }
     @media (width >= 96rem) {
       grid-column-start: 2;
+    }
+  }
+  .home-artistas-intro {
+    margin-bottom: calc(var(--spacing) * 6);
+    font-family: "RigidSquare-Light", sans-serif;
+    font-size: var(--clamp-12-24);
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 8);
+    }
+    @media (width >= 48rem) {
+      font-size: 19px;
+    }
+  }
+  .home-artista-nombre {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-size: var(--clamp-12-24);
+    @media (width >= 48rem) {
+      font-size: 19px;
+    }
+    padding-bottom: calc(var(--spacing) * 2);
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 3);
+    }
+  }
+  .home-artista-descripcion {
+    font-family: "RigidSquare-Light", sans-serif;
+    font-size: var(--clamp-12-24);
+    @media (width >= 48rem) {
+      font-size: 19px;
+    }
+    padding-bottom: calc(var(--spacing) * 4);
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 6);
     }
   }
   .agenda-container {
