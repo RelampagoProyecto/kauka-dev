@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.15 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -183,9 +183,7 @@
     ::placeholder {
       color: currentcolor;
       @supports (color: color-mix(in lab, red, red)) {
-        & {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
+        color: color-mix(in oklab, currentcolor 50%, transparent);
       }
     }
   }
@@ -1192,9 +1190,7 @@
       @media (hover: hover) {
         color: color-mix(in srgb, #fff 70%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
-          & {
-            color: color-mix(in oklab, var(--color-white) 70%, transparent);
-          }
+          color: color-mix(in oklab, var(--color-white) 70%, transparent);
         }
       }
     }
@@ -2981,9 +2977,7 @@
     border-width: 1px;
     border-color: color-mix(in srgb, #fff 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      & {
-        border-color: color-mix(in oklab, var(--color-white) 25%, transparent);
-      }
+      border-color: color-mix(in oklab, var(--color-white) 25%, transparent);
     }
     @media (width >= 48rem) {
       border-style: var(--tw-border-style);
@@ -2996,9 +2990,7 @@
     @media (width >= 48rem) {
       border-color: color-mix(in srgb, #fff 40%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
-        & {
-          border-color: color-mix(in oklab, var(--color-white) 40%, transparent);
-        }
+        border-color: color-mix(in oklab, var(--color-white) 40%, transparent);
       }
     }
   }
@@ -5265,9 +5257,7 @@
       @media (hover: hover) {
         color: color-mix(in srgb, #fff 80%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
-          & {
-            color: color-mix(in oklab, var(--color-white) 80%, transparent);
-          }
+          color: color-mix(in oklab, var(--color-white) 80%, transparent);
         }
       }
     }
@@ -5517,9 +5507,7 @@
       @media (hover: hover) {
         color: color-mix(in srgb, #fff 80%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
-          & {
-            color: color-mix(in oklab, var(--color-white) 80%, transparent);
-          }
+          color: color-mix(in oklab, var(--color-white) 80%, transparent);
         }
       }
     }
@@ -6013,9 +6001,7 @@
       @media (hover: hover) {
         color: color-mix(in srgb, #fff 70%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
-          & {
-            color: color-mix(in oklab, var(--color-white) 70%, transparent);
-          }
+          color: color-mix(in oklab, var(--color-white) 70%, transparent);
         }
       }
     }
@@ -6032,9 +6018,7 @@
     line-height: var(--leading-relaxed);
     color: color-mix(in srgb, #fff 80%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      & {
-        color: color-mix(in oklab, var(--color-white) 80%, transparent);
-      }
+      color: color-mix(in oklab, var(--color-white) 80%, transparent);
     }
   }
   .asambleas-list-grid-desktop {
