@@ -400,10 +400,26 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".swiper", {
+    const swiper = new Swiper(".kauka-gallery.swiper", {
       
       direction: "horizontal",
       loop: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+
+      
+      breakpoints: {
+        
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        
+        1536: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
 
       
       autoplay: {

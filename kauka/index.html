@@ -322,7 +322,7 @@
     </div>
     <div class="section-info-text-column">
       
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus a dui at pretium. Fusce convallis aliquam volutpat. Morbi at nulla lacinia, rutrum augue vel, fringilla est. Integer gravida sollicitudin massa vel ullamcorper. Aliquam sit amet malesuada est. Duis quis tellus eu nulla eleifend lacinia. Proin justo ligula, dapibus quis pharetra non, mattis at urna. Quisque ultricies, dolor non dictum blandit, elit leo iaculis leo, id sagittis lorem dolor ut elit. Morbi egestas elit et arcu posuere lacinia. Pellentesque in convallis tellus, eu tincidunt erat. Sed in finibus enim, id sagittis massa. Vestibulum justo libero, feugiat sed orci vel, ullamcorper convallis elit. Cras fermentum neque sit amet neque finibus bibendum. Etiam malesuada ut nibh non ultricies.
+        La propuesta curatorial KAUKA, asamblea de mundos posibles es un proceso vivo, afectivo, colectivo, diverso, político, asambleario, orgánico y enraizado en la ancestralidad del territorio. Resuena y establece conexión con procesos artísticos comunitarios del adentro y el afuera de la región, desbordando lo que se ha configurado colonialmente como departamento y nación. Los modos de hacer de este 47 Salón Nacional de Artistas responden a lógicas situadas a través de modelos colaborativos en lo curatorial y lo operativo, a la vez que aspira al intercambio en red para el fortalecimiento y continuidad de procesos locales más allá del salón.
       
 
     </div>
@@ -429,30 +429,224 @@
 
   
 
+  
+    <div class="kauka-gallery-row">
+      <div class="kauka-gallery-wrapper">
+        
 
-  <div class="z-10 col-span-12 mb-10 grid grid-cols-subgrid gap-4">
-    <div class="col-span-10 col-start-2 font-rs-light text-xs leading-tight"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.</p>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.</p>
 
+
+
+
+  <div class="kauka-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+
+  
+  
+  
+  
+  
+
+
+  <picture >
+    
+    
+
+    
+    <img
+      src="/kauka-dev/kauka/galeria/Carolina.webp"
+      
+      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+      alt="galeria/Carolina.webp"
+      loading="lazy"
+      width="212"
+      height="292" />
+  </picture>
+
+
+        </div>
+      
+        <div class="swiper-slide">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+    
+    
+      
+      
+      
+
+      
+      
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+
+  
+  
+  
+  
+  
+
+
+  <picture >
+    
+    
+      <source
+        srcset="/kauka-dev/kauka/galeria/Kauka_1_hu_8addc2d0d1fc3af1.webp 320w"
+        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+        type="image/webp" />
+    
+
+    
+    <img
+      src="/kauka-dev/kauka/galeria/Kauka_1.jpg"
+      srcset="/kauka-dev/kauka/galeria/Kauka_1_hu_144cd82e1b0108f5.jpg 320w"
+      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+      alt="galeria/Kauka_1.jpg"
+      loading="lazy"
+      width="321"
+      height="373" />
+  </picture>
+
+
+        </div>
       
     </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 
-  <div class="col-span-12 grid grid-cols-subgrid gap-4 bg-gray-300">
-    <div class="col-span-10 col-start-2 py-5 font-rs-semi-bold text-5xl">
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".kauka-gallery.swiper", {
       
-        Equipo
+      direction: "horizontal",
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+
       
+      breakpoints: {
+        
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        
+        1536: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+
+      
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+
+      
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
+
+      </div>
     </div>
-  </div>
+  <div class="kauka-secondary-content">
+      <div class="kauka-secondary-text">
+        <p>KAUKA, asamblea de mundos posibles se plantea como alternativa a las formas centralizadas, jerárquicas y racializadas con las que opera gran parte del sistema del arte contemporáneo generando un espacio para la creación de otros mundos posibles donde se reconozca la diversidad de saberes, cuerpos y espiritualidades, y donde el arte se entienda como una práctica colectiva y territorial.</p>
+<p>Kauka, en nam-trik, significa ‘Madre de los bosques’. En los idiomas originarios, las toponimias se asignan según la función ecológica que los caracteriza: son el verbo con el que el territorio se nombra a sí mismo. Este territorio se nombra a sí mismo como cuerpo vivo.</p>
 
-  
-  
-  
-  
-  
-
-  
+      </div>
+    </div>
     
     
       
@@ -462,674 +656,426 @@
       
     
 
-    
-      <div
-  id="container-0"
-  class="
-    bg-gray-950
-   link-cont  col-span-12 grid grid-cols-subgrid gap-4">
-  <div
-    class="
-      col-span-2
-     col-start-2">
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/kauka/crew-active.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class="h-full img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-  <div
-    class="
-      col-span-6 flex justify-center
-     start-3 text-center font-rs-semi-bold text-xl text-white">
-    <button
-      mapto="map-0"
-      
-      
-      container="container-0"
-      class="section-button">
-      Curatorial
-    </button>
-  </div>
-  <div
-    class="
-      col-span-2
-     col-end-12">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/kauka/crew-active.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class=" img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-</div>
-
-    
-      <div
-  id="container-1"
-  class="
-    bg-gray-300
-   link-cont  col-span-12 grid grid-cols-subgrid gap-4">
-  <div
-    class="
-      col-span-2
-     col-start-2">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/kauka/crew-active.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class="h-full img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-  <div
-    class="
-      col-span-6 flex justify-center
-     start-3 text-center font-rs-semi-bold text-xl text-white">
-    <button
-      mapto="map-1"
-      
-      
-      container="container-1"
-      class="section-button">
-      Pedagogía
-    </button>
-  </div>
-  <div
-    class="
-      col-span-2
-     col-end-12">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/kauka/crew-active.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class=" img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-</div>
-
-    
-      <div
-  id="container-2"
-  class="
-    bg-gray-300
-   link-cont  col-span-12 grid grid-cols-subgrid gap-4">
-  <div
-    class="
-      col-span-2
-     col-start-2">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/kauka/crew-active.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class="h-full img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-  <div
-    class="
-      col-span-6 flex justify-center
-     start-3 text-center font-rs-semi-bold text-xl text-white">
-    <button
-      mapto="map-2"
-      
-      
-      container="container-2"
-      class="section-button">
-      Producción
-    </button>
-  </div>
-  <div
-    class="
-      col-span-2
-     col-end-12">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      <img
-        src="/kauka-dev/images/kauka/crew-active.svg"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        class=" img"
-        width=""
-        height="" />
-    
-    
-  
-
-
-  
-
-
-  </div>
-</div>
-
-    
-
-    
-      <div
-        id="container-curatorial"
-        class="bg-gray-300 col-span-12 mb-5">
+    <div class="kauka-team">
+      <div class="kauka-team-title">Equipos</div>
+      <div class="kauka-team-groups">
         
-          
-            <div
-              id="curatorial-0"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Eblin Grueso
-              </div>
+          <section
+            class="kauka-team-group"
+            id="equipo-curatorial"
+            data-team-type="curatorial">
+            <header class="kauka-team-group-title">
+              Curatorial
+            </header>
+            <div class="kauka-team-group-description">
+              El equipo curatorial del 47 Salón Nacional de Artistas - KAUKA, asamblea de mundos posibles reúne diversas trayectorias y experiencias que se entrelazan en torno a la investigación, creación y gestión cultural desde perspectivas decoloniales y comunitarias.
 
+            </div>
+            <div class="kauka-team-members">
               
-                <div class="absolute right-1/2 min-h-full w-1/3 bg-white"></div>
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Eblin Grueso
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Eblin Grueso"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
+              
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Carolina Chacón Bernal
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Carolina Chacón Bernal"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
+              
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Curador Dolor Sit Amet
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Curador Dolor Sit Amet"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
               
             </div>
-          
+          </section>
         
-          
-            <div
-              id="curatorial-1"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Curador Lorem Ipsum
-              </div>
-
+          <section
+            class="kauka-team-group"
+            id="equipo-pedagogia"
+            data-team-type="pedagogia">
+            <header class="kauka-team-group-title">
+              Pedagogía
+            </header>
+            <div class="kauka-team-group-description">
               
-                <div
-                  class="absolute left-1/2 top-0 z-10 min-h-full w-1/3 bg-white"></div>
+
+            </div>
+            <div class="kauka-team-members">
+              
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Pedagogía Lorem Ipsum
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Pedagogía Lorem Ipsum"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
+              
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Pedagogía Dolor Sit Amet
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Pedagogía Dolor Sit Amet"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
               
             </div>
-          
+          </section>
         
-          
-            <div
-              id="curatorial-2"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Curador Dolor Sit Amet
-              </div>
-
+          <section
+            class="kauka-team-group"
+            id="equipo-produccion"
+            data-team-type="produccion">
+            <header class="kauka-team-group-title">
+              Producción
+            </header>
+            <div class="kauka-team-group-description">
               
-                <div class="absolute right-1/2 min-h-full w-1/3 bg-white"></div>
+
+            </div>
+            <div class="kauka-team-members">
+              
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Producción Lorem Ipsum
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Producción Lorem Ipsum"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
+              
+                
+                  <article class="kauka-team-member">
+                    
+                    <div class="kauka-team-member-name">
+                      Producción Dolor Sit Amet
+                    </div>
+
+                    
+                    <div class="kauka-team-member-svg-wrapper">
+                      
+                      <svg
+                        class="kauka-team-member-svg"
+                        viewBox="0 0 200 200"
+                        preserveAspectRatio="xMidYMid meet">
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="20,50 30,60 20,70 10,60" />
+
+                        
+                        <polygon
+                          class="rombo-decorativo"
+                          points="180,130 190,140 180,150 170,140" />
+
+                        
+                        <polygon
+                          class="rombo-principal"
+                          points="100,30 170,100 100,170 30,100" />
+                      </svg>
+
+                      
+                      <div class="kauka-team-member-image-wrapper">
+                        
+                          
+                          
+                          
+                            
+                          
+                          <img
+                            class="kauka-team-member-image"
+                            src="/kauka/galeria/Carolina.webp"
+                            alt="Producción Dolor Sit Amet"
+                            loading="lazy" />
+                        
+
+
+                        <div class="kauka-team-member-overlay"></div>
+                      </div>
+                    </div>
+                  </article>
+                
               
             </div>
-          
+          </section>
         
       </div>
-    
-      <div
-        id="container-pedaogogia"
-        class="bg-gray-300 col-span-12 mb-5">
-        
-          
-            <div
-              id="pedaogogia-0"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Pedagogía Lorem Ipsum
-              </div>
-
-              
-                <div class="absolute right-1/2 min-h-full w-1/3 bg-white"></div>
-              
-            </div>
-          
-        
-          
-            <div
-              id="pedaogogia-1"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Pedagogía Dolor Sit Amet
-              </div>
-
-              
-                <div
-                  class="absolute left-1/2 top-0 z-10 min-h-full w-1/3 bg-white"></div>
-              
-            </div>
-          
-        
-      </div>
-    
-      <div
-        id="container-produccion"
-        class="bg-gray-300 col-span-12 mb-5">
-        
-          
-            <div
-              id="produccion-0"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Producción Lorem Ipsum
-              </div>
-
-              
-                <div class="absolute right-1/2 min-h-full w-1/3 bg-white"></div>
-              
-            </div>
-          
-        
-          
-            <div
-              id="produccion-1"
-              class="place-content-end-safe relative mb-5 grid min-h-40 grid-cols-12 font-rs-semi-bold text-4xl">
-              <div class="z-21 col-span-6 col-start-4 text-center">
-                Producción Dolor Sit Amet
-              </div>
-
-              
-                <div
-                  class="absolute left-1/2 top-0 z-10 min-h-full w-1/3 bg-white"></div>
-              
-            </div>
-          
-        
-      </div>
-    
-
+    </div>
   
-
 
       </section>
     </main>
