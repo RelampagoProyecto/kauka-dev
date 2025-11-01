@@ -604,6 +604,9 @@
   .h-110 {
     height: calc(var(--spacing) * 110);
   }
+  .h-auto {
+    height: auto;
+  }
   .h-dvh {
     height: 100dvh;
   }
@@ -615,6 +618,9 @@
   }
   .min-h-20 {
     min-height: calc(var(--spacing) * 20);
+  }
+  .min-h-\[clamp\(300px\,50vw\,400px\)\] {
+    min-height: clamp(300px, 50vw, 400px);
   }
   .form-input {
     width: 100%;
@@ -691,6 +697,9 @@
   .items-start {
     align-items: flex-start;
   }
+  .items-stretch {
+    align-items: stretch;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -732,6 +741,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-visible {
+    overflow: visible;
   }
   .overflow-x-scroll {
     overflow-x: scroll;
@@ -849,6 +861,9 @@
   }
   .fill-current {
     fill: currentcolor;
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
@@ -1296,6 +1311,11 @@
       display: none;
     }
   }
+  .md\:min-h-\[350px\] {
+    @media (width >= 48rem) {
+      min-height: 350px;
+    }
+  }
   .md\:bg-yellow-200 {
     @media (width >= 48rem) {
       background-color: var(--color-yellow-200);
@@ -1441,6 +1461,11 @@
       height: calc(var(--spacing) * 5);
     }
   }
+  .lg\:min-h-\[400px\] {
+    @media (width >= 64rem) {
+      min-height: 400px;
+    }
+  }
   .lg\:w-auto {
     @media (width >= 64rem) {
       width: auto;
@@ -1534,6 +1559,11 @@
   .xl\:hidden {
     @media (width >= 80rem) {
       display: none;
+    }
+  }
+  .xl\:min-h-\[450px\] {
+    @media (width >= 80rem) {
+      min-height: 450px;
     }
   }
   .xl\:space-x-8 {
@@ -5535,18 +5565,18 @@
     grid-template-columns: subgrid;
     --tw-border-style: none;
     border-style: none;
-    padding-top: clamp(72px, 22.5vw, 144px);
+    padding-top: clamp(24px, 7.5vw, 48px);
     @media (width >= 48rem) {
-      padding-top: 137px;
+      padding-top: 58px;
     }
     @media (width >= 64rem) {
-      padding-top: 231px;
+      padding-top: 38px;
     }
     @media (width >= 80rem) {
-      padding-top: 289px;
+      padding-top: 48px;
     }
     @media (width >= 96rem) {
-      padding-top: 348px;
+      padding-top: 29px;
     }
   }
   .section-info-bg-container {
@@ -5785,12 +5815,38 @@
   .kauka-secondary-text {
     grid-column: span 10 / span 10;
     grid-column-start: 2;
-    display: grid;
     gap: clamp(18px, 5vw, 36px);
     font-family: "RigidSquare-Light", sans-serif;
     font-size: 18px;
     --tw-leading: 18px;
     line-height: 18px;
+    @media (width >= 64rem) {
+      display: grid;
+    }
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (width >= 64rem) {
+      column-gap: calc(var(--spacing) * 24);
+    }
+    @media (width >= 80rem) {
+      grid-column: span 8 / span 8;
+    }
+    @media (width >= 80rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 80rem) {
+      column-gap: calc(var(--spacing) * 16);
+    }
+    @media (width >= 96rem) {
+      grid-column: span 7 / span 7;
+    }
+    @media (width >= 96rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 96rem) {
+      column-gap: calc(var(--spacing) * 34);
+    }
     hyphens: auto;
   }
   .kauka-team {
