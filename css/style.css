@@ -5902,6 +5902,21 @@
     display: grid;
     grid-template-columns: subgrid;
     row-gap: clamp(40px, 8vw, 60px);
+    @media (width >= 48rem) {
+      grid-column: span 12 / span 12;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 1;
+    }
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(13, minmax(0, 1fr));
+    }
+    @media (width >= 64rem) {
+      grid-column: span 10 / span 10;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 2;
+    }
   }
   .kauka-mobile-only {
     display: block;
@@ -5915,27 +5930,35 @@
       display: block;
     }
   }
-  .kauka-rombo {
+  .kauka-team-member {
     position: relative;
-    align-self: center;
+    grid-column: span 12 / span 12;
+    display: grid;
+    @media (width >= 48rem) {
+      grid-column: span 6 / span 6;
+    }
+    @media (width >= 64rem) {
+      grid-column: span 3 / span 3;
+    }
   }
-  .kauka-rombo img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
+  .kauka-team-member-image-wrapper {
+    position: relative;
+    grid-column: span 8 / span 8;
+    grid-column-start: 3;
   }
-  .kauka-rombo-left {
-    grid-column: span 2 / span 2;
-    grid-column-start: 1;
+  .kauka-team-member {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
-  .kauka-rombo-right {
-    grid-column: span 2 / span 2;
-    grid-column-start: 11;
-  }
-  .kauka-rombo-left img, .kauka-rombo-right img {
-    height: clamp(300px, 60vw, 609px);
-  }
-  .kauka-rombo-start {
+  .kauka-rombo-inline {
+    display: none;
+    @media (width >= 48rem) {
+      display: block;
+    }
     @media (width >= 48rem) {
       grid-column: span 1 / span 1;
     }
@@ -5943,44 +5966,34 @@
       grid-column-start: 1;
     }
   }
-  .kauka-rombo-center {
-    @media (width >= 48rem) {
-      grid-column: span 1 / span 1;
-    }
-    @media (width >= 48rem) {
-      grid-column-start: 7;
-    }
-  }
-  .kauka-rombo-end {
-    @media (width >= 48rem) {
-      grid-column: span 1 / span 1;
-    }
-    @media (width >= 48rem) {
-      grid-column-start: 13;
-    }
-  }
-  .kauka-rombo-start img, .kauka-rombo-center img, .kauka-rombo-end img {
+  .kauka-rombo-inline img {
     height: clamp(354px, 10vw, 470px);
+    height: auto;
+    width: 100%;
+    object-fit: contain;
   }
-  .kauka-team-member {
-    position: relative;
-    grid-column: span 12 / span 12;
-    display: grid;
-    grid-template-columns: subgrid;
+  .kauka-team-member-image-wrapper {
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 2;
     }
     @media (width >= 64rem) {
       grid-column: span 3 / span 3;
     }
+    @media (width >= 64rem) {
+      grid-column-start: 2;
+    }
   }
-  .kauka-team-member:last-child:nth-child(odd) {
-    @media (width >= 48rem) {
-      grid-column: span 6 / span 6;
-    }
-    @media (width >= 48rem) {
-      grid-column-start: 4;
-    }
+  .kauka-team-member-image-wrapper a, .kauka-team-member-image-wrapper > div {
+    position: relative;
+    display: block;
+  }
+  .kauka-team-member-image-wrapper img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
   }
   .kauka-team-member-name {
     position: absolute;
@@ -6026,31 +6039,34 @@
       grid-column-start: 2;
     }
   }
-  .kauka-team-member-image-wrapper {
-    position: relative;
-    grid-column: span 8 / span 8;
-    grid-column-start: 3;
+  .kauka-rombo-trail {
     @media (width >= 48rem) {
-      grid-column: span 5 / span 5;
-    }
-    @media (width >= 48rem) {
-      grid-column-start: 1;
+      grid-column: span 1 / span 1;
     }
     @media (width >= 64rem) {
-      grid-column: span 5 / span 5;
-    }
-    @media (width >= 64rem) {
-      grid-column-start: 1;
+      grid-column: span 1 / span 1;
     }
   }
-  .kauka-team-member-image-wrapper a, .kauka-team-member-image-wrapper > div {
-    position: relative;
-    display: block;
-  }
-  .kauka-team-member-image-wrapper img {
+  .kauka-rombo-trail img {
+    height: clamp(354px, 10vw, 470px);
     height: auto;
     width: 100%;
     object-fit: contain;
+  }
+  .kauka-rombo {
+    position: relative;
+    align-self: center;
+  }
+  .kauka-rombo-left {
+    grid-column: span 2 / span 2;
+    grid-column-start: 1;
+  }
+  .kauka-rombo-right {
+    grid-column: span 2 / span 2;
+    grid-column-start: 11;
+  }
+  .kauka-rombo-left img, .kauka-rombo-right img {
+    height: clamp(300px, 60vw, 609px);
   }
   .page-content-container {
     grid-column: span 12 / span 12;
