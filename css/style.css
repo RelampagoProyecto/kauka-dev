@@ -2261,7 +2261,7 @@
   }
   @media (min-width: 640px) {
     .pagefind-search-container {
-      transform: translateY(calc(100% - 55px));
+      transform: translateY(calc(100% - 45px));
     }
   }
   @media (min-width: 768px) {
@@ -2271,38 +2271,38 @@
   }
   @media (min-width: 1024px) {
     .pagefind-search-container {
-      transform: translateY(calc(100% - 70px));
+      transform: translateY(calc(100% - 50px));
     }
   }
   @media (min-width: 1280px) {
     .pagefind-search-container {
-      transform: translateY(calc(100% - 80px));
+      transform: translateY(calc(100% - 50px));
     }
   }
   .pagefind-search-container.is-active {
     transform: translateY(0);
   }
   .pagefind-search-container:hover {
-    transform: translateY(calc(100% - 55px));
+    transform: translateY(calc(100% - 50px));
   }
   @media (min-width: 640px) {
     .pagefind-search-container:hover {
-      transform: translateY(calc(100% - 60px));
+      transform: translateY(calc(100% - 50px));
     }
   }
   @media (min-width: 768px) {
     .pagefind-search-container:hover {
-      transform: translateY(calc(100% - 65px));
+      transform: translateY(calc(100% - 50px));
     }
   }
   @media (min-width: 1024px) {
     .pagefind-search-container:hover {
-      transform: translateY(calc(100% - 75px));
+      transform: translateY(calc(100% - 55px));
     }
   }
   @media (min-width: 1280px) {
     .pagefind-search-container:hover {
-      transform: translateY(calc(100% - 85px));
+      transform: translateY(calc(100% - 55px));
     }
   }
   .pagefind-search-container.is-active:hover {
@@ -5855,6 +5855,9 @@
     grid-column: span 12 / span 12;
     display: grid;
     grid-template-columns: subgrid;
+    padding: 20px;
+    --tw-leading: calc(var(--spacing) * 0);
+    line-height: calc(var(--spacing) * 0);
     row-gap: clamp(24px, 6vw, 48px);
     @media (width >= 48rem) {
       row-gap: 24px;
@@ -5871,8 +5874,14 @@
     @media (width >= 48rem) {
       padding-top: 58px;
     }
+    @media (width >= 48rem) {
+      padding-bottom: 58px;
+    }
     @media (width >= 64rem) {
       padding-top: 38px;
+    }
+    @media (width >= 64rem) {
+      padding-bottom: 20px;
     }
     font-size: clamp(18px, 4.5vw, 32px);
     letter-spacing: 0.16em;
@@ -5908,6 +5917,9 @@
     }
     @media (width >= 48rem) {
       grid-column-start: 1;
+    }
+    @media (width >= 48rem) {
+      row-gap: 20px;
     }
     @media (width >= 64rem) {
       grid-column: span 11 / span 11;
@@ -6038,7 +6050,7 @@
       grid-column: span 2 / span 2;
     }
     @media (width >= 48rem) {
-      grid-column-start: 2;
+      grid-column-start: 1;
     }
     @media (width >= 64rem) {
       top: auto;
