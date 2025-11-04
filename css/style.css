@@ -2206,8 +2206,10 @@
     --result-link: rgb(68, 34, 8);
     --result-link-hover: rgb(217, 78, 48);
     --result-excerpt: rgb(75, 85, 99);
-    --clear-button: rgb(156, 163, 175);
+    --clear-button: rgba(0, 0, 0, 0.4);
+    --clear-button-bg: rgba(0, 0, 0, 0.05);
     --clear-button-hover: rgb(217, 78, 48);
+    --clear-button-bg-hover: rgba(217, 78, 48, 0.1);
     --message-text: rgb(107, 114, 128);
     --icon-filter: none;
   }
@@ -2221,8 +2223,10 @@
     --result-link: rgb(255, 255, 255);
     --result-link-hover: rgb(255, 255, 255);
     --result-excerpt: rgba(255, 255, 255, 0.8);
-    --clear-button: rgb(255, 255, 255);
-    --clear-button-hover: rgba(255, 255, 255, 0.8);
+    --clear-button: rgba(255, 255, 255, 0.6);
+    --clear-button-bg: rgba(255, 255, 255, 0.1);
+    --clear-button-hover: rgb(255, 255, 255);
+    --clear-button-bg-hover: rgba(255, 255, 255, 0.2);
     --message-text: rgba(255, 255, 255, 0.8);
     --icon-filter: brightness(0) invert(1);
   }
@@ -2236,8 +2240,10 @@
     --result-link: rgb(0, 0, 0);
     --result-link-hover: rgb(0, 0, 0);
     --result-excerpt: rgba(0, 0, 0, 0.7);
-    --clear-button: rgb(0, 0, 0);
-    --clear-button-hover: rgba(0, 0, 0, 0.8);
+    --clear-button: rgba(0, 0, 0, 0.5);
+    --clear-button-bg: rgba(0, 0, 0, 0.05);
+    --clear-button-hover: rgb(0, 0, 0);
+    --clear-button-bg-hover: rgba(0, 0, 0, 0.1);
     --message-text: rgba(0, 0, 0, 0.7);
     --icon-filter: none;
   }
@@ -2332,13 +2338,12 @@
     border-radius: var(--radius-lg);
     padding-inline: calc(var(--spacing) * 4);
     padding-block: calc(var(--spacing) * 3);
-    font-family: "RigidSquare-Regular", sans-serif;
     border: none !important;
     background: transparent !important;
     color: var(--input-text) !important;
     font-size: clamp(14px, 2.5vw, 18px) !important;
     line-height: 1.5 !important;
-    font-family: "rs-regular", sans-serif !important;
+    font-family: var(--input-font, "RigidSquare-Regular", sans-serif) !important;
   }
   .pagefind-ui__search-input::placeholder {
     color: var(--input-placeholder) !important;
@@ -2375,7 +2380,7 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: 200ms;
     transition-duration: 200ms;
-    font-family: "rs-regular", sans-serif !important;
+    font-family: "RigidSquare-Regular", sans-serif !important;
     font-size: clamp(14px, 2.2vw, 18px) !important;
     line-height: 1.4 !important;
     color: var(--result-link) !important;
@@ -2398,15 +2403,33 @@
     color: var(--result-excerpt) !important;
   }
   .pagefind-ui__search-clear {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: 200ms;
     transition-duration: 200ms;
+    font-family: var(--search-font, "kauka", sans-serif) !important;
+    font-size: clamp(32px, 3vw, 40px) !important;
+    line-height: 1 !important;
     color: var(--clear-button) !important;
+    background-color: transparent !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
   }
   .pagefind-ui__search-clear:hover {
     color: var(--clear-button-hover) !important;
+    background-color: transparent !important;
+    transform: scale(1.1);
+  }
+  .pagefind-ui__search-clear:active {
+    transform: scale(0.95);
   }
   .pagefind-ui__message {
     padding-block: calc(var(--spacing) * 8);
