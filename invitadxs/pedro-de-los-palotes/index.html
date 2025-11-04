@@ -2802,21 +2802,75 @@ if (typeof initHeaderOnReady === "function") {
 
 
   
+  
 
   
   
+  
+  
 
+  
+  
   
   
     
-    
-
+      
+      
     
   
 
   
-  <div class="pagefind-search-container bg-verde-invitadxs text-white">
-    <div class="pagefind-search-wrapper bg-verde-invitadxs">
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+
+
+  <div
+    class="pagefind-search-container text-white"
+    style="--search-bg: rgb(37, 201, 86);">
+    <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
@@ -2845,19 +2899,16 @@ if (typeof initHeaderOnReady === "function") {
         },
       });
 
-      
       const searchContainer = document.querySelector(
         ".pagefind-search-container"
       );
       const searchInput = document.querySelector(".pagefind-ui__search-input");
 
       if (searchContainer && searchInput) {
-        
         searchInput.addEventListener("focus", () => {
           searchContainer.classList.add("is-active");
         });
 
-        
         searchInput.addEventListener("blur", (e) => {
           setTimeout(() => {
             const hasResults = document.querySelector(".pagefind-ui__results");
@@ -2867,7 +2918,6 @@ if (typeof initHeaderOnReady === "function") {
           }, 200);
         });
 
-        
         document.addEventListener("click", (e) => {
           if (!searchContainer.contains(e.target)) {
             searchContainer.classList.remove("is-active");
