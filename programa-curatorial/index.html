@@ -2984,50 +2984,47 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-  
 
   
   
 
 
   <script src="/kauka-dev/js/pc-bundle.js"></script>
-  <script>
-    
-  window.KAUKA_CONFIG = {
+<script>
+  
+  window.KAUKA_CONFIG = window.KAUKA_CONFIG || {
     baseURL: "https:\/\/relampagoproyecto.github.io\/kauka-dev\/",
     debug:  false 
   };
 
-  
-  console.log('Programa curatorial page initialization triggered from template');
+  Debug.log('[ProgramaCuratorial]', 'Page initialization triggered');
 
   
 
-function initPage() {
-  console.log("[Programa Curatorial] Initializing home page functionality");
+  function initPage() {
+    Debug.log("[ProgramaCuratorial]", "Initializing page functionality");
 
-  
-  window.KAUKA_DEBUG = true;
+    
+    if (typeof initHomeHorizontalScroll === "function") {
+      initHomeHorizontalScroll(
+        "#pc-componentes",
+        "#pc-componentes-container"
+      );
+      Debug.log("[ProgramaCuratorial]", "Horizontal scroll initialized");
+    } else {
+      Debug.warn("[ProgramaCuratorial]", "initHomeHorizontalScroll function not available");
+    }
 
-  
-  if (typeof initHomeHorizontalScroll === "function") {
-    initHomeHorizontalScroll("#pc-componentes",
-          "#pc-componentes-container",);
-  } else {
-    console.warn("[Programa Curatorial] initHomeHorizontalScroll function not available");
+    Debug.log("[ProgramaCuratorial]", "Page initialization complete");
   }
 
-  console.log("[Programa Curatorial] Home page initialization complete");
-}
-
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initPage);
-} else {
-  initPage();
-}
-
-  </script>
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPage);
+  } else {
+    initPage();
+  }
+</script>
 
       </section>
     </main>

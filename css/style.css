@@ -6266,6 +6266,16 @@
     @media (width >= 48rem) {
       display: none;
     }
+    min-height: 640px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #pc-componentes::-webkit-scrollbar {
+    display: none;
   }
   #pc-componentes-container-desktop {
     display: none;
@@ -6273,14 +6283,23 @@
       display: inline-grid;
     }
   }
+  #pc-componentes-container {
+    display: flex;
+    min-height: 640px;
+    @media (width >= 48rem) {
+      display: none;
+    }
+    align-items: center;
+    width: max-content;
+  }
   .pc-componentes-container {
     display: flex;
     min-height: 640px;
     @media (width >= 48rem) {
       display: none;
     }
-    will-change: transform;
-    transform: translateZ(0);
+    align-items: center;
+    width: max-content;
   }
   .pc-componentes-container-desktop {
     grid-column: span 12 / span 12;
