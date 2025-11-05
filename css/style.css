@@ -6105,6 +6105,55 @@
       }
     }
   }
+  .kauka-team-member-additional-names {
+    position: absolute;
+    z-index: 10;
+    text-align: left;
+    font-family: "RigidSquare-Italic", sans-serif;
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+    color: var(--color-dark-forest-green);
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    bottom: calc(var(--spacing) * 0);
+    grid-column: span 3 / span 3;
+    grid-column-start: 9;
+    @media (width >= 48rem) {
+      bottom: calc(var(--spacing) * 0);
+    }
+    @media (width >= 48rem) {
+      grid-column: span 3 / span 3;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 5;
+    }
+    @media (width >= 48rem) {
+      padding-left: 20px;
+    }
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 4;
+    }
+    @media (width >= 64rem) {
+      padding-left: calc(var(--spacing) * 0);
+    }
+  }
+  .kauka-additional-name {
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .kauka-member-odd .kauka-team-member-additional-names {
+    grid-column-start: 2;
+    @media (width >= 48rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 1;
+    }
+  }
   .kauka-rombo-trail {
     display: none;
     @media (width >= 48rem) {
