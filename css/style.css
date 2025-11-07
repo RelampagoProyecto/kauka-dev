@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -6764,8 +6764,8 @@
   .project-list-container {
     grid-column: span 12 / span 12;
     display: grid;
-    grid-template-columns: subgrid;
-    padding-top: calc(var(--spacing) * 10);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: calc(var(--spacing) * 0);
     @media (width >= 48rem) {
       padding-block: 57px;
     }
@@ -6793,9 +6793,6 @@
     @media (width >= 48rem) {
       column-gap: calc(var(--spacing) * 0);
     }
-    @media (width >= 64rem) {
-      column-gap: calc(var(--spacing) * 0);
-    }
     @media (width >= 96rem) {
       grid-column: span 10 / span 10;
     }
@@ -6810,10 +6807,6 @@
     position: relative;
     grid-column: span 10 / span 10;
     margin-bottom: var(--clamp-24-48);
-    display: grid;
-    grid-template-columns: subgrid;
-    place-items: center;
-    gap: calc(var(--spacing) * 0);
     @media (width >= 40rem) {
       margin-bottom: 48px;
     }
@@ -6831,26 +6824,18 @@
     }
   }
   .project-list-project {
-    grid-column: span 10 / span 10;
-    @media (width >= 48rem) {
-      grid-column: span 6 / span 6;
-    }
-    @media (width >= 64rem) {
-      grid-column: span 4 / span 4;
-    }
+    position: relative;
+    width: 100%;
   }
   .project-list-image {
     width: 100%;
-    min-width: 100%;
+    display: block;
   }
   .project-list-info-container {
     position: absolute;
     top: calc(var(--spacing) * 0);
-    right: calc(var(--spacing) * -2);
+    right: calc(var(--spacing) * 0);
     z-index: 20;
-    @media (width >= 40rem) {
-      right: calc(var(--spacing) * 0);
-    }
   }
   .project-list-info-diamond {
     width: 100%;
@@ -6878,17 +6863,12 @@
     inset: calc(var(--spacing) * 0);
     height: calc(1/2 * 100%);
     mix-blend-mode: multiply;
-    @media (width >= 48rem) {
-      top: 0.5px;
-    }
-    @media (width >= 64rem) {
-      top: calc(var(--spacing) * 0);
-    }
+    pointer-events: none;
   }
   .project-list-info-tags {
     position: absolute;
-    top: calc(var(--spacing) * 6);
-    right: calc(var(--spacing) * 5);
+    top: calc(var(--spacing) * 9);
+    right: calc(var(--spacing) * 8);
     z-index: 20;
     font-family: "RigidSquare-Light", sans-serif;
     text-align: right;
@@ -6923,21 +6903,15 @@
     }
   }
   .project-list-title {
-    grid-column: span 10 / span 10;
     margin-top: var(--clamp-12-24);
     margin-bottom: var(--clamp-12-24);
+    width: 100%;
     text-align: center;
     @media (width >= 40rem) {
       margin-block: 24px;
     }
     @media (width >= 48rem) {
-      grid-column: span 6 / span 6;
-    }
-    @media (width >= 48rem) {
       margin-block: 14px;
-    }
-    @media (width >= 64rem) {
-      grid-column: span 4 / span 4;
     }
   }
   .project-list-link {
@@ -7060,16 +7034,20 @@
       grid-column-start: 2;
     }
     @media (width >= 80rem) {
-      grid-column: span 6 / span 6;
+      grid-column: span 4 / span 4;
     }
     @media (width >= 80rem) {
       grid-column-start: 2;
     }
     @media (width >= 96rem) {
-      grid-column: span 6 / span 6;
+      grid-column: span 4 / span 4;
     }
     @media (width >= 96rem) {
       grid-column-start: 3;
+    }
+    @media (width >= 96rem) {
+      --tw-leading: 96px;
+      line-height: 96px;
     }
   }
   .proyecto-titulo-container {
@@ -7118,8 +7096,12 @@
     grid-template-columns: subgrid;
     background-color: var(--color-white);
     color: var(--color-dark-chocolate);
+    overflow: visible;
     @media (width >= 48rem) {
       height: 567px;
+    }
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 0);
     }
     @media (width >= 64rem) {
       height: 523px;
@@ -7137,6 +7119,15 @@
     content: var(--tw-content);
     @media (width >= 40rem) {
       z-index: 0;
+    }
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 0);
+    }
+    @media (width >= 48rem) {
+      grid-column: span 12 / span 12;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 1;
     }
     @media (width >= 48rem) {
       background-size: auto;
@@ -7172,11 +7163,15 @@
   }
   .proyecto-info_desde {
     position: relative;
+    top: -19px;
     grid-column: span 12 / span 12;
     display: grid;
     grid-auto-rows: max-content;
     grid-template-columns: subgrid;
     color: var(--color-dark-chocolate);
+    @media (width >= 64rem) {
+      top: 20px;
+    }
     @media (width >= 64rem) {
       grid-column: span 6 / span 6;
     }
@@ -7189,6 +7184,12 @@
     grid-column: span 12 / span 12;
     display: grid;
     grid-template-columns: subgrid;
+    @media (width >= 48rem) {
+      top: -10px;
+    }
+    @media (width >= 64rem) {
+      top: 20px;
+    }
     @media (width >= 64rem) {
       grid-column: span 6 / span 6;
     }
@@ -7235,6 +7236,9 @@
     mix-blend-mode: multiply;
     --tw-content: "";
     content: var(--tw-content);
+    @media (width >= 64rem) {
+      display: block;
+    }
   }
   .fecha-text {
     position: relative;
@@ -7515,6 +7519,7 @@
     display: grid;
     min-height: calc(var(--spacing) * 60);
     grid-template-columns: subgrid;
+    padding-bottom: 60px;
   }
   .artists-list-label {
     font-family: "RigidSquare-Light", sans-serif;
