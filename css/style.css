@@ -6295,6 +6295,7 @@
   .pc-componentes-container {
     display: flex;
     min-height: 640px;
+    background-color: var(--color-golden-yellow);
     @media (width >= 48rem) {
       display: none;
     }
@@ -6306,6 +6307,12 @@
     display: grid;
     grid-template-columns: subgrid;
     gap: calc(var(--spacing) * 0);
+    @media (width >= 48rem) {
+      padding-bottom: 44px;
+    }
+    @media (width >= 64rem) {
+      padding-bottom: 48px;
+    }
   }
   .pc-componente-base {
     display: flex;
