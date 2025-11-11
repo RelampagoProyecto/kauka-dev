@@ -6296,6 +6296,9 @@
     display: flex;
     min-height: 640px;
     background-color: var(--color-golden-yellow);
+    @media (width >= 40rem) {
+      padding-bottom: 30px;
+    }
     @media (width >= 48rem) {
       display: none;
     }
@@ -6324,14 +6327,23 @@
   .pc-componente {
     width: 320px;
     align-items: center;
+    @media (width >= 40rem) {
+      width: 420px;
+    }
   }
   .pc-componente-first {
     width: 295px;
     align-items: flex-start;
+    @media (width >= 40rem) {
+      width: 387px;
+    }
   }
   .pc-componente-last {
     width: 295px;
     align-items: flex-end;
+    @media (width >= 40rem) {
+      width: 387px;
+    }
   }
   .pc-componente-desktop {
     grid-column: span 11 / span 11;
@@ -6368,7 +6380,7 @@
     justify-content: center;
     mix-blend-mode: multiply;
     @media (width >= 40rem) {
-      height: 744px;
+      height: 488px;
     }
     aspect-ratio: 384/559;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -6404,6 +6416,12 @@
     font-size: 19px;
     color: var(--color-white);
     margin-top: 24px;
+    @media (width >= 40rem) {
+      margin-top: 32px;
+    }
+    @media (width >= 40rem) {
+      font-size: 25px;
+    }
   }
   .pc-componente-link-desktop {
     grid-column: span 12 / span 12;
@@ -6431,10 +6449,16 @@
   }
   .pc-diamond-spacer {
     width: 33px;
+    @media (width >= 40rem) {
+      width: 43px;
+    }
   }
   .pc-diamond-spacer img {
     margin-bottom: 55px;
     width: 100%;
+    @media (width >= 40rem) {
+      margin-bottom: 72px;
+    }
     fill: aqua;
   }
   .asambleas-list-container {
