@@ -67,7 +67,7 @@
   
 
 
-<title>Proyecto Ipsum</title>
+<title>Cuarta exposición - Expositivo Expandido</title>
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-<meta property="og:title" content="Proyecto Ipsum" />
+<meta property="og:title" content="Cuarta exposición - Expositivo Expandido" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/cuarta-exposicion/" />
 
 
-<meta name="twitter:title" content="Proyecto Ipsum" />
+<meta name="twitter:title" content="Cuarta exposición - Expositivo Expandido" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -2520,7 +2520,7 @@ if (typeof initHeaderOnReady === "function") {
     <div
       id="proyecto-titulo"
       class="proyecto-titulo text-deep-pink">
-      Proyecto Ipsum
+      Cuarta exposición - Expositivo Expandido
     </div>
   </div>
 
@@ -2654,8 +2654,8 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/ang%C3%A9lica-ram%C3%ADrez/">
-            Angélica Ramírez
+          <a class="artist-link" href="/kauka-dev/invitadxs/daniela-tovar/">
+            Daniela Tovar
           </a>
         </li>
       
@@ -2670,46 +2670,10 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/colectivo-amapola/">
-            Colectivo Amapola
+          <a class="artist-link" href="/kauka-dev/invitadxs/fabian-moreno/">
+            Fabian Moreno
           </a>
         </li>
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/deifer-ib%C3%A1%C3%B1ez/">
-            Deifer Ibáñez
-          </a>
-        </li>
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
       
     
       
@@ -2721,47 +2685,6 @@ if (typeof initHeaderOnReady === "function") {
             Gabriel Zea
           </a>
         </li>
-      
-    
-      
-      
-      
-      
-        <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/gente-del-eco/">
-            Gente del Eco
-          </a>
-        </li>
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
       
     
       
@@ -2808,8 +2731,8 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/ang%C3%A9lica-ram%C3%ADrez/">
-            Angélica Ramírez
+          <a class="artist-link" href="/kauka-dev/invitadxs/daniela-tovar/">
+            Daniela Tovar
           </a>
         </li>
       
@@ -2824,46 +2747,10 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/colectivo-amapola/">
-            Colectivo Amapola
+          <a class="artist-link" href="/kauka-dev/invitadxs/fabian-moreno/">
+            Fabian Moreno
           </a>
         </li>
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/deifer-ib%C3%A1%C3%B1ez/">
-            Deifer Ibáñez
-          </a>
-        </li>
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
       
     
       
@@ -2875,47 +2762,6 @@ if (typeof initHeaderOnReady === "function") {
             Gabriel Zea
           </a>
         </li>
-      
-    
-      
-      
-      
-      
-        <li class="artist-item">
-          <a class="artist-link" href="/kauka-dev/invitadxs/gente-del-eco/">
-            Gente del Eco
-          </a>
-        </li>
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
       
     
       
@@ -2957,6 +2803,8 @@ if (typeof initHeaderOnReady === "function") {
     <div class="col-span-12">
       
         
+
+
 
 
 
@@ -3379,56 +3227,57 @@ if (typeof initHeaderOnReady === "function") {
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
 
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
 
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1580: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".swiper", {
-      
-      direction: "horizontal",
-      loop: true,
-
-      
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-
-      
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        1024: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        1580: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-      },
-
-      
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      
-      lazy: {
-        loadPrevNext: true,
-      },
+        galleryEl.dataset.swiperInitialized = "true";
+      });
     });
-  });
-</script>
+  </script>
+
 
       
     </div>

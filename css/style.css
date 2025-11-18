@@ -4441,31 +4441,6 @@
     }
     overflow: visible;
   }
-  .asamblea-single-intro-bg-container {
-    position: absolute;
-    inset: calc(var(--spacing) * 0);
-    z-index: 0;
-    grid-column: span 12 / span 12;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .asamblea-single-intro-bg-image {
-    position: absolute;
-    top: calc(var(--spacing) * 0);
-    left: calc(1/2 * 100%);
-    height: auto;
-    width: 100%;
-    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-    object-fit: cover;
-    @media (width >= 48rem) {
-      width: auto;
-    }
-    @media (width >= 48rem) {
-      object-fit: contain;
-    }
-    max-height: 100%;
-  }
   .asamblea-single-intro-content {
     grid-column: span 10 / span 10;
     grid-column-start: 2;
@@ -4550,66 +4525,6 @@
   }
   .asamblea-single-propuestas .asamblea-single-section-content {
     color: var(--color-dark-chocolate);
-  }
-  .asamblea-single-gallery {
-    position: relative;
-    grid-column: span 12 / span 12;
-    display: grid;
-    grid-template-columns: subgrid;
-    row-gap: calc(var(--spacing) * 0);
-    background-color: var(--color-black);
-    padding-block: calc(var(--spacing) * 0);
-    @media (width >= 48rem) {
-      column-gap: calc(var(--spacing) * 0);
-    }
-    @media (width >= 48rem) {
-      row-gap: calc(var(--spacing) * 0);
-    }
-    @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 0);
-    }
-  }
-  .asamblea-single-gallery-image {
-    position: relative;
-    overflow: hidden;
-    grid-column: span 12 / span 12;
-    grid-column-start: 1;
-    height: 372px;
-    @media (width >= 40rem) {
-      height: 744px;
-    }
-    @media (width >= 48rem) {
-      grid-column: span 6 / span 6;
-    }
-    @media (width >= 48rem) {
-      height: 476px;
-    }
-    @media (width >= 64rem) {
-      height: 595px;
-    }
-    @media (width >= 80rem) {
-      height: 744px;
-    }
-    @media (width >= 96rem) {
-      grid-column: span 4 / span 4;
-    }
-    @media (width >= 96rem) {
-      height: 893px;
-    }
-  }
-  .asamblea-single-gallery-image img {
-    position: absolute;
-    top: calc(1/2 * 100%);
-    left: calc(1/2 * 100%);
-    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    min-width: 100%;
-    min-height: 100%;
   }
   .asamblea-info-container {
     position: relative;
@@ -5433,6 +5348,18 @@
   }
   .artista-term-gallery .swiper-button-prev, .artista-term-gallery .swiper-button-next {
     color: var(--color-white);
+  }
+  .artista-term-video {
+    grid-column: span 12 / span 12;
+    aspect-ratio: var(--aspect-video);
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-amber-200);
+    object-fit: cover;
+  }
+  .artista-term-video iframe {
+    height: 100%;
+    width: 100%;
   }
   .artista-term-proyectos {
     grid-column: span 12 / span 12;
@@ -6459,6 +6386,7 @@
     margin-bottom: calc(var(--spacing) * 4);
   }
   #pc-componentes {
+    z-index: 20;
     background-color: var(--color-golden-yellow);
     @media (width >= 48rem) {
       display: none;
@@ -6475,6 +6403,7 @@
     display: none;
   }
   #pc-componentes-container-desktop {
+    z-index: 20;
     display: none;
     background-color: var(--color-golden-yellow);
     @media (width >= 48rem) {
@@ -6532,14 +6461,14 @@
   }
   .pc-componente-first {
     width: 387px;
-    align-items: flex-start;
+    align-items: center;
     @media (width >= 40rem) {
       width: 387px;
     }
   }
   .pc-componente-last {
     width: 387px;
-    align-items: flex-end;
+    align-items: center;
     @media (width >= 40rem) {
       width: 387px;
     }
@@ -7264,7 +7193,7 @@
       grid-column-start: 2;
     }
     @media (width >= 80rem) {
-      grid-column: span 4 / span 4;
+      grid-column: span 6 / span 6;
     }
     @media (width >= 80rem) {
       grid-column-start: 2;
@@ -7792,7 +7721,14 @@
     grid-column: span 12 / span 12;
     margin-bottom: calc(var(--spacing) * 0);
     display: grid;
-    min-height: calc(var(--spacing) * 60);
+    grid-template-columns: subgrid;
+    column-gap: calc(var(--spacing) * 0);
+  }
+  .proyecto-galeria-with-padding {
+    position: relative;
+    grid-column: span 12 / span 12;
+    margin-bottom: calc(var(--spacing) * 0);
+    display: grid;
     grid-template-columns: subgrid;
     column-gap: calc(var(--spacing) * 0);
     padding-bottom: 60px;

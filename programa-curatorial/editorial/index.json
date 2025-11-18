@@ -1,28 +1,28 @@
 
 [{
-  "title": "Proyecto Ipsum",
+  "title": "Cuarta exposición - Expositivo Expandido",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/cuarta-exposicion/",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
   },
   "notas": "Aforo limitado"},{
-  "title": "Proyecto Ipsum",
+  "title": "Primera exposición - Expositivo Expandido",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/primera-exposicion/",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
   },
   "notas": "Aforo limitado"},{
-  "title": "Proyecto Ipsum",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/tercera-exposicion/",
+  "title": "Segunda exposición - Expositivo Expandido",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/segunda-exposicion/",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
   },
   "notas": "Aforo limitado"},{
-  "title": "Proyecto Ipsum 2",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/segunda-exposicion/",
+  "title": "Tercera exposición - Expositivo Expandido",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/tercera-exposicion/",
   "lugar": {
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
