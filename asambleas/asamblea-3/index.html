@@ -2493,43 +2493,206 @@ if (typeof initHeaderOnReady === "function") {
     <main class="">
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
-  <div class="asamblea-single-intro bg-gray-300">
-    <div
-      class="asamblea-single-intro-content text-3xl text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <div
+  id="asamblea-intro-container"
+  class="section-info-container bg-white">
+  <div id="asamblea-intro-bg-img" class="section-info-bg-container">
+    
+    
+      
+      
+        
+        <img
+          src="/images/asambleas/a-bg.svg"
+          alt="Asamblea"
+          class="asamblea-single-intro-section-info-bg-image"
+          loading="lazy" />
+      
+    
+  </div>
+
+  <div class="section-info-content text-dark-brown">
+    <div class="section-info-title">
+      
+        <div class="section-info-orden">
+          3
+        </div>
+      
+      ASAMBLEA
+    </div>
+    <div class="section-info-text-column">
+      
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br /><br /></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br /><br /></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br /><br /></p>
+
       
     </div>
   </div>
+</div>
+
+<script>
+  (function() {
+    const uniqueId = "asamblea-intro";
+
+    function setBgImgHeight() {
+      const sectionContainer = document.getElementById(uniqueId + "-container");
+      if (!sectionContainer) return;
+
+      const sectionInfo = document.querySelector(`#${uniqueId}-container .section-info-content`);
+      const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
+      const adjustedSectionHeight = contentHeight > 0 ? contentHeight : sectionContainer.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
+
+      if (bgImg) {
+        const contentBasedHeight = adjustedSectionHeight + 10;
+        const vwBasedHeight = viewportWidth * 0.95;
+        const finalHeight = Math.min(vwBasedHeight, contentBasedHeight);
+
+        bgImg.style.height = finalHeight + "px";
+        bgImg.style.maxHeight = finalHeight + "px";
+        bgImg.style.objectFit = "cover";
+      }
+    }
+
+    function updateOnScroll() {
+      const bgContainer = document.getElementById(uniqueId + "-bg-img");
+      const sectionContainer = document.getElementById(uniqueId + "-container");
+      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
+
+      if (!bgContainer || !sectionContainer || !bgImg) return;
+
+      const scrollY = window.scrollY || window.pageYOffset;
+      const containerTop = sectionContainer.offsetTop;
+      const containerHeight = sectionContainer.offsetHeight;
+      const containerBottom = containerTop + containerHeight;
+      const imgHeight = bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
+      const margin = 160;
+      const topPosition = "10rem";
+      const scrollThreshold = containerBottom - imgHeight - margin;
+
+      if (scrollY <= containerTop) {
+        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+        bgImg.classList.add("section-info-fixed-top");
+        bgImg.style.position = "fixed";
+        bgImg.style.top = topPosition;
+        bgImg.style.bottom = "auto";
+      } else if (scrollY >= scrollThreshold) {
+        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+        bgImg.style.position = "fixed";
+        const scrollDiff = scrollY - scrollThreshold;
+        const newTopValue = parseFloat(topPosition) - scrollDiff + margin - 10;
+        bgImg.style.top = `${newTopValue}px`;
+        bgImg.style.bottom = "auto";
+      } else {
+        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+        bgImg.classList.add("section-info-fixed-top");
+        bgImg.style.position = "fixed";
+        bgImg.style.top = topPosition;
+        bgImg.style.bottom = "auto";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setBgImgHeight();
+      updateOnScroll();
+    });
+
+    window.addEventListener("resize", () => {
+      setBgImgHeight();
+      updateOnScroll();
+    });
+
+    window.addEventListener("scroll", updateOnScroll);
+  })();
+</script>
+
+
 
   
+  
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
   <div
-    id="info-container"
-    class="asamblea-single-info bg-gray-300">
-    <div class="asamblea-single-fecha">
-      <div class="asamblea-single-fecha-container">
-        <span>
-          03/11/2025
-        </span>
+    id="asamblea-info"
+    class="asamblea-info-container bg-white">
+    
+      <div class="asamblea-info_desde">
+        <div class="asamblea-info-label_hora xl:col-start-3">DESDE:</div>
+        <div class="asamblea-info-fecha_inicio">
+          <div
+            class="asamblea-fecha-text lg:col-start-2 xl:col-span-3 xl:col-start-3">
+            15/09/2025
+          </div>
+        </div>
       </div>
-    </div>
+    
 
-    <div class="asamblea-single-hora-desktop">
-      <div class="asamblea-single-label">Hora</div>
-      <div>7:00 p.m.</div>
-    </div>
+    
+      <div class="asamblea-info_hasta">
+        <div class="asamblea-info-label_hora text-right">HASTA:</div>
+        <div class="asamblea-info-fecha_cierre">
+          <div class="asamblea-fecha-text lg:col-span-5 xl:col-span-4">
+            15/09/2025
+          </div>
+        </div>
+      </div>
+    
 
-    <div class="asamblea-single-lugar">
-      <div class="asamblea-single-label">Sede/lugar</div>
-      Lorem ipsum dolor sit amet<br />
-      Calle 43 # 16 bis 43
-    </div>
 
-    <div class="asamblea-single-hora">
-      <div class="asamblea-single-label">Hora</div>
-      <div>7:00 p.m.</div>
-    </div>
-
-    <div class="asamblea-single-participantes">
+    <div class="asamblea-info-info-container">
       
+        <div class="asamblea-info-hora-desktop">
+          <div class="asamblea-info-info_label">Hora</div>
+          <div class="asamblea-info-hora-lugar">
+            
+            
+            
+              9:00 a.m.
+            
+          </div>
+        </div>
+      
+
+      
+        <div class="asamblea-info-lugar asamblea-info-hora-lugar">
+          <div class="asamblea-info-info_label">Sede/lugar</div>
+          Calle 43 # 16 bis 43<br />
+          Lorem ipsum dolor sit amet
+          
+        </div>
+      
+
+
+      <div class="asamblea-info-hora">
+        
+          <div class="asamblea-info-info_label">Hora</div>
+          <div class="asamblea-info-hora-lugar">
+            
+            
+            
+              9:00 a.m.
+            
+          </div>
+        
+      </div>
+
+      
+
+
+      <div class="asamblea-info-gente-container-desktop">
+        <div class="asamblea-info-gente">
+          
   
 
 
@@ -2695,19 +2858,192 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
+    </div>
+
+    <div class="asamblea-info-gente-container">
+      <div class="asamblea-info-gente">
+        
+  
+
+
+  <div class="artists-list-label">Participantes / autor</div>
+  <ul>
+    
+    
+    
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/adolfo-alb%C3%A1n-achinte/">
+            Adolfo Albán Achinte
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/alicia-castillo/">
+            Alicia Castillo
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/elena-hinestroza/">
+            Elena Hinestroza
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/emelda-jim%C3%A9nez/">
+            Emelda Jiménez
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/jorge-llanos/">
+            Jorge Llanos
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/luis-yonda/">
+            Luis Yonda
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/taita-lorenzo-tunubal%C3%A1-hurtado/">
+            Taita Lorenzo Tunubalá Hurtado
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+        <li class="artist-item">
+          <a class="artist-link" href="/kauka-dev/invitadxs/twiggy-escobar/">
+            Twiggy Escobar
+          </a>
+        </li>
+      
+    
+      
+      
+      
+      
+    
+  </ul>
+
+
+      </div>
     </div>
   </div>
 
   
   
-    <div class="asamblea-links-container">
-      <div class="asamblea-diamonds-left"></div>
-      <div class="asamblea-links-diamond">
+    <div class="asamblea-info-links-container">
+      <div class="asamblea-info-diamonds-left"></div>
+      <div class="asamblea-info-links-diamond">
         
           <a href="/agenda-asamblea-1.pdf">Agenda</a>
         
       </div>
-      <div class="asamblea-links-diamond">
+      <div class="asamblea-info-links-diamond">
         
           <a
             href="https://maps.google.com/?q=Calle&#43;43&#43;16&#43;bis&#43;43"
@@ -2717,7 +3053,7 @@ if (typeof initHeaderOnReady === "function") {
           >
         
       </div>
-      <div class="asamblea-diamonds-right"></div>
+      <div class="asamblea-info-diamonds-right"></div>
     </div>
   
 
@@ -2759,27 +3095,6 @@ if (typeof initHeaderOnReady === "function") {
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
   </div>
-
-  <script>
-    function setBgSvgHeight() {
-      const sectionContainer = document.getElementById("info-container");
-      if (!sectionContainer) return;
-
-      const sectionHeight = sectionContainer.offsetHeight;
-      const viewportWidth = window.innerWidth;
-      const bgImg = document.querySelector("#info-bg-img img");
-
-      if (bgImg) {
-        const vwBasedHeight = viewportWidth * 1;
-        const finalHeight = Math.min(vwBasedHeight, sectionHeight);
-        bgImg.style.height = finalHeight + "px";
-        bgImg.style.objectFit = "cover";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", setBgSvgHeight);
-    window.addEventListener("resize", setBgSvgHeight);
-  </script>
 
       </section>
     </main>

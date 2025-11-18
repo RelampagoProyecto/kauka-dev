@@ -2501,6 +2501,7 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+        
 
 
 
@@ -2581,6 +2582,7 @@ if (typeof initHeaderOnReady === "function") {
 
   <div class="section-info-content text-white">
     <div class="section-info-title">
+      
       EDITORIAL
     </div>
     <div class="section-info-text-column">
@@ -2594,107 +2596,85 @@ Editar voces locales<br /> <br />
 Las publicaciones son espacios de escucha y de reconocimiento de otras historias y de formas de hacer y de pensar otras. Desde las bases territoriales, se escriben textos híbridos que mezclan elementos históricos, autobiográficos, espirituales, documentales, poéticos y ficcionales y así renuevan los referentes nacionales.</p>
 
       
-
     </div>
   </div>
 </div>
 
 <script>
-  
-  function setBgImgHeight() {
-    const sectionContainer = document.getElementById("section-container");
-    if (!sectionContainer) return;
+  (function() {
+    const uniqueId = "section";
 
-    
-    const sectionInfo = document.querySelector(".section-info-content");
-    const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
+    function setBgImgHeight() {
+      const sectionContainer = document.getElementById(uniqueId + "-container");
+      if (!sectionContainer) return;
 
-    
-    const adjustedSectionHeight =
-      contentHeight > 0 ? contentHeight : sectionContainer.offsetHeight;
+      const sectionInfo = document.querySelector(`#${uniqueId}-container .section-info-content`);
+      const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
+      const adjustedSectionHeight = contentHeight > 0 ? contentHeight : sectionContainer.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
 
-    const viewportWidth = window.innerWidth;
-    const bgImg = document.querySelector("#section-bg-img img");
+      if (bgImg) {
+        const contentBasedHeight = adjustedSectionHeight + 10;
+        const vwBasedHeight = viewportWidth * 0.95;
+        const finalHeight = Math.min(vwBasedHeight, contentBasedHeight);
 
-    if (bgImg) {
-      
-      const contentBasedHeight = adjustedSectionHeight + 10; 
-      const vwBasedHeight = viewportWidth * 0.95; 
-
-      
-      const finalHeight = Math.min(vwBasedHeight, contentBasedHeight);
-
-      
-      bgImg.style.height = finalHeight + "px";
-      bgImg.style.maxHeight = finalHeight + "px"; 
-      bgImg.style.objectFit = "cover";
+        bgImg.style.height = finalHeight + "px";
+        bgImg.style.maxHeight = finalHeight + "px";
+        bgImg.style.objectFit = "cover";
+      }
     }
-  }
 
-  function updateOnScroll() {
-    const bgContainer = document.getElementById("section-bg-img");
-    const sectionContainer = document.getElementById("section-container");
-    const bgImg = document.querySelector("#section-bg-img img");
+    function updateOnScroll() {
+      const bgContainer = document.getElementById(uniqueId + "-bg-img");
+      const sectionContainer = document.getElementById(uniqueId + "-container");
+      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
 
-    if (!bgContainer || !sectionContainer || !bgImg) return;
+      if (!bgContainer || !sectionContainer || !bgImg) return;
 
-    const scrollY = window.scrollY || window.pageYOffset;
-    const containerTop = sectionContainer.offsetTop;
-    const containerHeight = sectionContainer.offsetHeight;
-    const containerBottom = containerTop + containerHeight;
-    const imgHeight =
-      bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
-    const margin = 160; 
-    const topPosition = "10rem";
+      const scrollY = window.scrollY || window.pageYOffset;
+      const containerTop = sectionContainer.offsetTop;
+      const containerHeight = sectionContainer.offsetHeight;
+      const containerBottom = containerTop + containerHeight;
+      const imgHeight = bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
+      const margin = 160;
+      const topPosition = "10rem";
+      const scrollThreshold = containerBottom - imgHeight - margin;
 
-    
-    const scrollThreshold = containerBottom - imgHeight - margin;
-
-    
-
-    if (scrollY <= containerTop) {
-      
-      bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
-      bgImg.classList.add("section-info-fixed-top");
-      bgImg.style.position = "fixed";
-      bgImg.style.top = topPosition;
-      bgImg.style.bottom = "auto"; 
-    } else if (scrollY >= scrollThreshold) {
-      
-      bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
-      bgImg.style.position = "fixed";
-
-      
-      const scrollDiff = scrollY - scrollThreshold;
-      const newTopValue = parseFloat(topPosition) - scrollDiff + margin - 10;
-
-      
-      bgImg.style.top = `${newTopValue}px`;
-      bgImg.style.bottom = "auto"; 
-    } else {
-      
-      bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
-      bgImg.classList.add("section-info-fixed-top");
-      bgImg.style.position = "fixed";
-      bgImg.style.top = topPosition;
-      bgImg.style.bottom = "auto"; 
+      if (scrollY <= containerTop) {
+        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+        bgImg.classList.add("section-info-fixed-top");
+        bgImg.style.position = "fixed";
+        bgImg.style.top = topPosition;
+        bgImg.style.bottom = "auto";
+      } else if (scrollY >= scrollThreshold) {
+        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+        bgImg.style.position = "fixed";
+        const scrollDiff = scrollY - scrollThreshold;
+        const newTopValue = parseFloat(topPosition) - scrollDiff + margin - 10;
+        bgImg.style.top = `${newTopValue}px`;
+        bgImg.style.bottom = "auto";
+      } else {
+        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
+        bgImg.classList.add("section-info-fixed-top");
+        bgImg.style.position = "fixed";
+        bgImg.style.top = topPosition;
+        bgImg.style.bottom = "auto";
+      }
     }
-  }
 
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    setBgImgHeight();
-    updateOnScroll(); 
-  });
+    document.addEventListener("DOMContentLoaded", () => {
+      setBgImgHeight();
+      updateOnScroll();
+    });
 
-  
-  window.addEventListener("resize", () => {
-    setBgImgHeight();
-    updateOnScroll(); 
-  });
+    window.addEventListener("resize", () => {
+      setBgImgHeight();
+      updateOnScroll();
+    });
 
-  
-  window.addEventListener("scroll", updateOnScroll);
+    window.addEventListener("scroll", updateOnScroll);
+  })();
 </script>
 
 
