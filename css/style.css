@@ -5043,34 +5043,39 @@
     z-index: 0;
     grid-column: span 12 / span 12;
     grid-column-start: 1;
-    display: grid;
-    grid-template-columns: subgrid;
   }
-  .invitadxs-bg-image {
-    grid-column: span 12 / span 12;
-    height: auto;
-    max-height: 100vh;
-    object-fit: cover;
+  .invitadxs-bg-container::before {
+    position: absolute;
+    inset: calc(var(--spacing) * 0);
+    --tw-content: '';
+    content: var(--tw-content);
     opacity: 0.4;
+    background-image: url("/images/invitadxs/invitadxs-A.svg");
+    background-repeat: no-repeat;
+    background-size: 130% auto;
+    background-position: center center;
   }
-  .invitadxs-bg-image--left {
-    @media (width >= 64rem) {
-      grid-column: span 6 / span 6;
-    }
-    @media (width >= 64rem) {
-      grid-column-start: 1;
+  @media (min-width: 768px) {
+    .invitadxs-bg-container::before {
+      background-size: 130% 125%;
     }
   }
-  .invitadxs-bg-image--right {
-    display: none;
-    @media (width >= 64rem) {
-      grid-column: span 6 / span 6;
+  @media (min-width: 1024px) {
+    .invitadxs-bg-container::before {
+      background-size: 120% 140%;
+      background-position: center center;
     }
-    @media (width >= 64rem) {
-      grid-column-start: 7;
+  }
+  @media (min-width: 1280px) {
+    .invitadxs-bg-container::before {
+      background-size: 110% 150%;
+      background-position: center center;
     }
-    @media (width >= 64rem) {
-      display: block;
+  }
+  @media (min-width: 1536px) {
+    .invitadxs-bg-container::before {
+      background-size: 100% 150%;
+      background-position: center center;
     }
   }
   .invitadxs-sidebar {
