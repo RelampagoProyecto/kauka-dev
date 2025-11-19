@@ -5036,46 +5036,39 @@
       padding-block: calc(var(--spacing) * 6);
     }
   }
-  .invitadxs-bg-container {
+  .invitadxs-bg-letter {
     pointer-events: none;
     position: fixed;
     inset: calc(var(--spacing) * 0);
     z-index: 0;
-    grid-column: span 12 / span 12;
-    grid-column-start: 1;
-  }
-  .invitadxs-bg-container::before {
-    position: absolute;
-    inset: calc(var(--spacing) * 0);
-    --tw-content: '';
-    content: var(--tw-content);
-    opacity: 0.4;
-    background-image: url("/images/invitadxs/invitadxs-A.svg");
-    background-repeat: no-repeat;
-    background-size: 130% auto;
-    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "kauka", sans-serif;
+    color: var(--color-dark-forest-green);
+    opacity: 40%;
+    font-size: 280vw;
+    line-height: 0.7;
+    transform: translateY(-2%);
   }
   @media (min-width: 768px) {
-    .invitadxs-bg-container::before {
-      background-size: 130% 125%;
+    .invitadxs-bg-letter {
+      font-size: 130vw;
     }
   }
   @media (min-width: 1024px) {
-    .invitadxs-bg-container::before {
-      background-size: 120% 140%;
-      background-position: center center;
+    .invitadxs-bg-letter {
+      font-size: 120vw;
     }
   }
   @media (min-width: 1280px) {
-    .invitadxs-bg-container::before {
-      background-size: 110% 150%;
-      background-position: center center;
+    .invitadxs-bg-letter {
+      font-size: 110vw;
     }
   }
   @media (min-width: 1536px) {
-    .invitadxs-bg-container::before {
-      background-size: 100% 150%;
-      background-position: center center;
+    .invitadxs-bg-letter {
+      font-size: 100vw;
     }
   }
   .invitadxs-sidebar {
@@ -5234,6 +5227,23 @@
     overflow-wrap: break-word;
     color: var(--color-verde-invitadxs);
   }
+  .asambleario-categorias-container {
+    grid-column: span 12 / span 12;
+    margin-bottom: calc(var(--spacing) * 5);
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: var(--color-dark-chocolate);
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .asambleario-categorias {
+    grid-column: span 9 / span 9;
+    grid-column-start: 2;
+    text-align: right;
+    font-family: "RigidSquare-Light", sans-serif;
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+    color: var(--color-white);
+  }
   .artista-term-content {
     grid-column: span 12 / span 12;
     background-color: var(--color-verde-invitadxs);
@@ -5281,6 +5291,17 @@
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
     color: var(--color-white);
+  }
+  .artista-term-bio::before, .asamblearios-term-bio::before {
+    position: absolute;
+    inset: calc(var(--spacing) * 0);
+    z-index: 0;
+    --tw-content: '';
+    content: var(--tw-content);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 195.34'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %231a1a1a; %7D %3C/style%3E%3C/defs%3E%3Cg id='Contenido'%3E%3Cpolygon class='cls-1' points='320 121.9 302.21 97.43 302.16 97.49 266.7 48.73 266.62 48.84 231.11 0 195.52 48.94 195.54 48.96 160.13 97.65 159.99 97.46 159.86 97.65 124.28 48.73 124.2 48.84 88.69 0 53.11 48.94 53.12 48.96 17.83 97.49 17.79 97.43 0 121.9 17.72 146.26 0 170.63 17.79 195.1 35.58 170.63 17.87 146.26 35.45 122.08 53.29 146.61 88.78 97.78 124.28 146.61 124.42 146.42 159.99 195.34 195.57 146.42 195.7 146.61 231.2 97.78 266.7 146.61 284.54 122.07 302.13 146.26 284.42 170.63 302.21 195.1 320 170.63 302.28 146.26 320 121.9'/%3E%3C/g%3E%3C/svg%3E");
   }
   .artista-term-redes {
     grid-column: span 5 / span 5;
@@ -5357,10 +5378,8 @@
   .artista-term-video {
     grid-column: span 12 / span 12;
     aspect-ratio: var(--aspect-video);
-    height: 100%;
     width: 100%;
     background-color: var(--color-amber-200);
-    object-fit: cover;
   }
   .artista-term-video iframe {
     height: 100%;

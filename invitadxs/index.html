@@ -2761,7 +2761,7 @@ if (typeof initHeaderOnReady === "function") {
 
   <div class="invitadxs-grid">
     
-    <div class="invitadxs-bg-container"></div>
+    <div id="invitadxs-bg-letter" class="invitadxs-bg-letter">A</div>
 
     
     <div class="invitadxs-sidebar">
@@ -2908,8 +2908,15 @@ if (typeof initHeaderOnReady === "function") {
 
     
     const linkKeys = document.querySelectorAll(".link-key");
+    const bgLetter = document.getElementById("invitadxs-bg-letter");
+
     linkKeys.forEach((toggler) => {
       toggler?.addEventListener("click", (e) => {
+        
+        if (bgLetter) {
+          bgLetter.textContent = e.target.textContent.trim();
+        }
+
         
         e.target.classList.toggle("text-white");
         e.target.classList.toggle("opacity-100");
