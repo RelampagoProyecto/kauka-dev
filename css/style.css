@@ -42,6 +42,7 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
@@ -5210,17 +5211,11 @@
   }
   .artista-term-title-primary {
     grid-column: span 12 / span 12;
-    margin-top: 30px;
-    margin-bottom: calc(var(--spacing) * 0);
     display: grid;
     grid-template-columns: subgrid;
+    padding-top: calc(var(--spacing) * 5);
+    padding-bottom: calc(var(--spacing) * 0);
     font-family: "kauka", sans-serif;
-    @media (width >= 40rem) {
-      margin-bottom: 5px;
-    }
-    @media (width >= 64rem) {
-      margin-bottom: 20px;
-    }
   }
   .artista-term-title-secondary {
     grid-column: span 12 / span 12;
@@ -5291,34 +5286,30 @@
   .artista-term-bio {
     position: relative;
     grid-column: span 12 / span 12;
-    margin-top: 30px;
+    margin-top: calc(var(--spacing) * 0);
     margin-bottom: calc(var(--spacing) * 0);
-    height: 100%;
-    min-height: 216px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: subgrid;
+    aspect-ratio: 320/195.34;
+    margin: 0 !important;
   }
   .artista-term-bio-ciudad {
-    grid-column: span 6 / span 6;
+    grid-column: span 7 / span 7;
     grid-column-start: 2;
     font-family: "RigidSquare-SemiBold", sans-serif;
+    font-size: var(--text-5xl);
+    line-height: calc(var(--spacing) * 10);
     color: var(--color-verde-invitadxs);
-    font-size: 48px;
-    --tw-leading: 40px;
-    line-height: 40px;
-    @media (width >= 48rem) {
-      grid-column: span 5 / span 5;
-    }
-    @media (width >= 48rem) {
-      grid-column-start: 2;
-    }
   }
-  .artista-term-bio-año {
-    grid-column: span 3 / span 3;
+  .artista-term-bio-year {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    color: var(--color-verde-invitadxs);
+    grid-column: span 2 / span 2;
     grid-column-end: 12;
     max-width: 100%;
     text-align: right;
     overflow-wrap: break-word;
-    font-family: "RigidSquare-SemiBold", sans-serif;
-    color: var(--color-verde-invitadxs);
     font-size: 48px;
     --tw-leading: 48px;
     line-height: 48px;
@@ -5339,30 +5330,30 @@
     grid-column-end: 12;
     text-align: right;
     font-family: "RigidSquare-SemiBold", sans-serif;
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+    --tw-leading: calc(var(--spacing) * 7);
+    line-height: calc(var(--spacing) * 7);
     color: var(--color-verde-invitadxs);
-    font-size: 56px;
-    --tw-leading: 28px;
-    line-height: 28px;
-    @media (width >= 64rem) {
-      grid-column-end: 12;
-    }
-    @media (width >= 80rem) {
-      grid-column-end: 11;
-    }
   }
-  .artista-term-bio::before, .asamblearios-term-bio::before {
+  .artista-term-bio::before {
+    content: "";
     position: absolute;
     inset: calc(var(--spacing) * 0);
     z-index: 0;
-    --tw-content: '';
-    content: var(--tw-content);
     background-position: center;
     background-repeat: no-repeat;
+    grid-column: 1 / span 12;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 195.34'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %231a1a1a; %7D %3C/style%3E%3C/defs%3E%3Cg id='Contenido'%3E%3Cpolygon class='cls-1' points='320 121.9 302.21 97.43 302.16 97.49 266.7 48.73 266.62 48.84 231.11 0 195.52 48.94 195.54 48.96 160.13 97.65 159.99 97.46 159.86 97.65 124.28 48.73 124.2 48.84 88.69 0 53.11 48.94 53.12 48.96 17.83 97.49 17.79 97.43 0 121.9 17.72 146.26 0 170.63 17.79 195.1 35.58 170.63 17.87 146.26 35.45 122.08 53.29 146.61 88.78 97.78 124.28 146.61 124.42 146.42 159.99 195.34 195.57 146.42 195.7 146.61 231.2 97.78 266.7 146.61 284.54 122.07 302.13 146.26 284.42 170.63 302.21 195.1 320 170.63 302.28 146.26 320 121.9'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 195.34' opacity='0.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %2326c755; %7D %3C/style%3E%3C/defs%3E%3Cg id='Contenido'%3E%3Cpolygon class='cls-1' points='320 121.9 302.21 97.43 302.16 97.49 266.7 48.73 266.62 48.84 231.11 0 195.52 48.94 195.54 48.96 160.13 97.65 159.99 97.46 159.86 97.65 124.28 48.73 124.2 48.84 88.69 0 53.11 48.94 53.12 48.96 17.83 97.49 17.79 97.43 0 121.9 17.72 146.26 0 170.63 17.79 195.1 35.58 170.63 17.87 146.26 35.45 122.08 53.29 146.61 88.78 97.78 124.28 146.61 124.42 146.42 159.99 195.34 195.57 146.42 195.7 146.61 231.2 97.78 266.7 146.61 284.54 122.07 302.13 146.26 284.42 170.63 302.21 195.1 320 170.63 302.28 146.26 320 121.9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  @media (min-width: 1024px) {
+    .artista-term-bio::before {
+      grid-column: 2 / span 10;
+    }
   }
   .artista-term-redes {
-    grid-column: span 7 / span 7;
+    grid-column: span 5 / span 5;
     grid-column-start: 2;
   }
   .artista-term-redes-label {
@@ -5396,7 +5387,7 @@
     margin-top: calc(var(--spacing) * 4);
     display: inline-block;
     border-radius: calc(infinity * 1px);
-    background-color: var(--color-burnt-orange);
+    background-color: var(--color-coffee-brown);
     padding-inline: calc(var(--spacing) * 4);
     padding-block: calc(var(--spacing) * 2);
     font-family: "RigidSquare-Bold", sans-serif;
@@ -5419,7 +5410,9 @@
   }
   .artista-term-gallery {
     grid-column: span 12 / span 12;
+    margin-bottom: calc(var(--spacing) * 0);
     background-color: var(--color-dark-forest-green);
+    padding-bottom: calc(var(--spacing) * 0);
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -5446,7 +5439,6 @@
   .artista-term-video iframe {
     height: 100%;
     width: 100%;
-    display: block !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -5588,6 +5580,8 @@
     margin-bottom: calc(var(--spacing) * 0);
     height: 100%;
     min-height: 216px;
+    display: grid;
+    grid-template-columns: subgrid;
   }
   .asamblearios-term-bio-ciudad {
     grid-column: span 6 / span 6;
@@ -5604,8 +5598,8 @@
       grid-column-start: 2;
     }
   }
-  .asamblearios-term-bio-año {
-    grid-column: span 3 / span 3;
+  .asamblearios-term-bio-year {
+    grid-column: span 2 / span 2;
     grid-column-end: 12;
     max-width: 100%;
     text-align: right;
@@ -5643,16 +5637,21 @@
       grid-column-end: 11;
     }
   }
-  .artista-term-bio::before, .asamblearios-term-bio::before {
+  .asamblearios-term-bio::before {
+    content: "";
     position: absolute;
     inset: calc(var(--spacing) * 0);
     z-index: 0;
-    --tw-content: '';
-    content: var(--tw-content);
     background-position: center;
     background-repeat: no-repeat;
+    grid-column: 1 / span 12;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 195.34'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %231a1a1a; %7D %3C/style%3E%3C/defs%3E%3Cg id='Contenido'%3E%3Cpolygon class='cls-1' points='320 121.9 302.21 97.43 302.16 97.49 266.7 48.73 266.62 48.84 231.11 0 195.52 48.94 195.54 48.96 160.13 97.65 159.99 97.46 159.86 97.65 124.28 48.73 124.2 48.84 88.69 0 53.11 48.94 53.12 48.96 17.83 97.49 17.79 97.43 0 121.9 17.72 146.26 0 170.63 17.79 195.1 35.58 170.63 17.87 146.26 35.45 122.08 53.29 146.61 88.78 97.78 124.28 146.61 124.42 146.42 159.99 195.34 195.57 146.42 195.7 146.61 231.2 97.78 266.7 146.61 284.54 122.07 302.13 146.26 284.42 170.63 302.21 195.1 320 170.63 302.28 146.26 320 121.9'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 195.34' opacity='0.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23442308; %7D %3C/style%3E%3C/defs%3E%3Cg id='Contenido'%3E%3Cpolygon class='cls-1' points='320 121.9 302.21 97.43 302.16 97.49 266.7 48.73 266.62 48.84 231.11 0 195.52 48.94 195.54 48.96 160.13 97.65 159.99 97.46 159.86 97.65 124.28 48.73 124.2 48.84 88.69 0 53.11 48.94 53.12 48.96 17.83 97.49 17.79 97.43 0 121.9 17.72 146.26 0 170.63 17.79 195.1 35.58 170.63 17.87 146.26 35.45 122.08 53.29 146.61 88.78 97.78 124.28 146.61 124.42 146.42 159.99 195.34 195.57 146.42 195.7 146.61 231.2 97.78 266.7 146.61 284.54 122.07 302.13 146.26 284.42 170.63 302.21 195.1 320 170.63 302.28 146.26 320 121.9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  @media (min-width: 1024px) {
+    .asamblearios-term-bio::before {
+      grid-column: 2 / span 10;
+    }
   }
   .asamblearios-term-redes {
     grid-column: span 7 / span 7;
