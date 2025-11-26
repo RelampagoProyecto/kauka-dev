@@ -5162,6 +5162,8 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: 200ms;
     transition-duration: 200ms;
+    scroll-margin-top: 120px;
+    animation: slideUpIn 0.4s ease-out;
   }
   .invitadxs-artist-link {
     display: block;
@@ -5213,9 +5215,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  .invitadxs-artists-group {
-    animation: slideUpIn 0.4s ease-out;
   }
   .artista-info-wrapper {
     grid-column: span 12 / span 12;
