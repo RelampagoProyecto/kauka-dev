@@ -2601,19 +2601,39 @@ if (typeof initHeaderOnReady === "function") {
   (function() {
     const uniqueId = "asamblea-intro";
 
+    
+    function getConfig() {
+      const width = window.innerWidth;
+      if (width < 640) {
+        
+        return { sizeMultiplier: 1.45, margin: 100, minContentHeight: 400 };
+      } else if (width < 768) {
+        
+        return { sizeMultiplier: 1.05, margin: 120, minContentHeight: 450 };
+      } else {
+        
+        return { sizeMultiplier: 0.95, margin: 160, minContentHeight: 500 };
+      }
+    }
+
     function setBgImgHeight() {
       const sectionContainer = document.getElementById(uniqueId + "-container");
       if (!sectionContainer) return;
 
+      const config = getConfig();
       const sectionInfo = document.querySelector(`#${uniqueId}-container .section-info-content`);
       const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
-      const adjustedSectionHeight = contentHeight > 0 ? contentHeight : sectionContainer.offsetHeight;
+
+      
+      const effectiveContentHeight = Math.max(contentHeight, config.minContentHeight);
+      const adjustedSectionHeight = effectiveContentHeight > 0 ? effectiveContentHeight : sectionContainer.offsetHeight;
+
       const viewportWidth = window.innerWidth;
       const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
 
       if (bgImg) {
         const contentBasedHeight = adjustedSectionHeight + 10;
-        const vwBasedHeight = viewportWidth * 0.95;
+        const vwBasedHeight = viewportWidth * config.sizeMultiplier;
         const finalHeight = Math.min(vwBasedHeight, contentBasedHeight);
 
         bgImg.style.height = finalHeight + "px";
@@ -2629,14 +2649,17 @@ if (typeof initHeaderOnReady === "function") {
 
       if (!bgContainer || !sectionContainer || !bgImg) return;
 
+      const config = getConfig();
       const scrollY = window.scrollY || window.pageYOffset;
       const containerTop = sectionContainer.offsetTop;
       const containerHeight = sectionContainer.offsetHeight;
       const containerBottom = containerTop + containerHeight;
       const imgHeight = bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
-      const margin = 160;
+      const margin = config.margin;
       const topPosition = "10rem";
-      const scrollThreshold = containerBottom - imgHeight - margin;
+
+      
+      const scrollThreshold = Math.max(containerTop + 50, containerBottom - imgHeight - margin);
 
       if (scrollY <= containerTop) {
         bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");

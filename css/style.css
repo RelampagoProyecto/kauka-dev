@@ -4447,6 +4447,10 @@
     }
     overflow: visible;
   }
+  .asamblea-single-intro-bg-image {
+    pointer-events: none;
+    transition: top 0.05s ease-out;
+  }
   .asamblea-single-intro-content {
     grid-column: span 10 / span 10;
     grid-column-start: 2;
