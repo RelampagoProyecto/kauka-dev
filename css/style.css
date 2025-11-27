@@ -8775,6 +8775,24 @@
       grid-column-start: 4;
     }
   }
+  #pedagogias-section-info-container {
+    padding-top: 72px;
+    @media (width >= 40rem) {
+      padding-top: 144px;
+    }
+    @media (width >= 48rem) {
+      padding-top: 174px;
+    }
+    @media (width >= 64rem) {
+      padding-top: 232px;
+    }
+    @media (width >= 80rem) {
+      padding-top: 288px;
+    }
+    @media (width >= 96rem) {
+      padding-top: 348px;
+    }
+  }
 }
 .img {
   max-width: 100%;
