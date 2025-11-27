@@ -5078,7 +5078,7 @@
   }
   @media (min-width: 1536px) {
     .invitadxs-bg-letter {
-      font-size: 95vw;
+      font-size: 55vw;
     }
   }
   .invitadxs-sidebar {
@@ -5094,8 +5094,8 @@
       font-size: 64px;
     }
     @media (width >= 64rem) {
-      --tw-leading: calc(var(--spacing) * 8);
-      line-height: calc(var(--spacing) * 8);
+      --tw-leading: calc(var(--spacing) * 6);
+      line-height: calc(var(--spacing) * 6);
     }
   }
   .invitadxs-letter-item {
