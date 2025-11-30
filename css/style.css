@@ -841,6 +841,9 @@
   .bg-residencias {
     background-color: var(--color-teal);
   }
+  .bg-teal-500 {
+    background-color: var(--color-teal-500);
+  }
   .bg-verde-invitadxs {
     background-color: var(--color-verde-invitadxs);
   }
@@ -4325,51 +4328,78 @@
     margin-left: 30px !important;
   }
   .fc-header-toolbar {
-    margin-bottom: 0px !important;
+    margin-bottom: calc(var(--spacing) * 0) !important;
+    flex-wrap: wrap !important;
+    gap: calc(var(--spacing) * 4) !important;
+    background-color: var(--color-white);
   }
   .fc .fc-button-primary {
     --tw-border-style: none;
     border-style: none;
-    background-color: transparent;
+    background-color: transparent !important;
     color: var(--color-dark-chocolate) !important;
+    --tw-shadow: 0 0 #0000 !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+  }
+  .fc .fc-button-primary:not(:disabled):active, .fc .fc-button-primary:not(:disabled).fc-button-active {
+    --tw-border-style: none !important;
+    border-style: none !important;
+    background-color: transparent !important;
+    color: var(--color-dark-chocolate) !important;
+    --tw-shadow: 0 0 #0000 !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+  }
+  .fc .fc-button-primary:hover {
+    --tw-border-style: none !important;
+    border-style: none !important;
+    background-color: transparent !important;
+    color: var(--color-dark-chocolate) !important;
+    --tw-shadow: 0 0 #0000 !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
   }
   .fc .fc-button {
     --tw-border-style: none !important;
     border-style: none !important;
     padding: calc(var(--spacing) * 0) !important;
+    --tw-shadow: 0 0 #0000 !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
   }
   .fc-icon {
-    width: 6px !important;
+    height: auto !important;
+    width: auto !important;
+    font-size: 2em !important;
   }
-  .fc-icon-chevron-left::before {
-    display: inline-block;
-    width: 6px;
-    text-align: left;
+  .fc-icon svg {
+    display: none;
   }
   .fc-next-button {
-    margin-left: 15px !important;
+    margin-left: calc(var(--spacing) * 10) !important;
   }
   .fc-prev-button {
-    margin-left: 30px !important;
+    margin-left: calc(var(--spacing) * 6) !important;
   }
   .fc-listWeek-button {
     margin-top: 15px !important;
-    margin-left: 150px !important;
+    margin-left: 120px !important;
+    background-color: transparent !important;
     font-family: "RigidSquare-SemiBold", sans-serif !important;
-    font-size: 12px !important;
+    font-size: 14px !important;
+    color: var(--color-dark-chocolate) !important;
   }
   .fc-listMonth-button {
     margin-top: 15px !important;
-    margin-left: 15px !important;
+    margin-left: 20px !important;
+    background-color: transparent !important;
     font-family: "RigidSquare-SemiBold", sans-serif !important;
-    font-size: 12px !important;
+    font-size: 14px !important;
+    color: var(--color-dark-chocolate) !important;
   }
   .agenda-principal {
     & .fc-listWeek-view {
       background-color: var(--color-burnt-orange) !important;
     }
     & .fc-cell-shaded {
-      background-color: var(--color-dark-cyan) !important;
+      background-color: var(--color-deep-pink) !important;
     }
     & .fc-list-event {
       background-color: var(--color-burnt-orange) !important;
@@ -4383,18 +4413,18 @@
     & .fc-listWeek-view {
       background-color: var(--color-teal-500) !important;
     }
+    & .fc-list-day-cushion, & .fc-cell-shaded {
+      background-color: var(--color-deep-pink) !important;
+    }
     & .fc-list-event {
-      background-color: var(--color-bright-green) !important;
+      background-color: var(--color-dark-forest-green) !important;
     }
     & .fc-list-event:hover td {
       background-color: var(--color-burnt-orange) !important;
     }
   }
   .fc-theme-standard {
-    & td, & th {
-      border: none !important;
-    }
-    & .fc-list {
+    & .fc-list, & .fc-list td, & .fc-list th {
       border: none !important;
     }
   }
@@ -4409,11 +4439,13 @@
   }
   .fc-list-event-title {
     font-family: "RigidSquare-SemiBold", sans-serif !important;
-    font-size: 12px;
+    font-size: 14px;
+    --tw-leading: 14px;
+    line-height: 14px;
   }
   .fc-list-day-text {
-    font-family: "RigidSquare-Italic", sans-serif !important;
-    font-size: 12px;
+    font-family: "RigidSquare-LightItalic", sans-serif !important;
+    font-size: 14px;
   }
   .fc-list-event-graphic {
     display: none !important;
@@ -4423,12 +4455,71 @@
     font-size: 48px;
     --tw-leading: 45px;
     line-height: 45px;
+    @media (width >= 40rem) {
+      font-size: 96px;
+    }
+    @media (width >= 40rem) {
+      --tw-leading: 90px;
+      line-height: 90px;
+    }
+    @media (width >= 48rem) {
+      font-size: 72px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: 68px;
+      line-height: 68px;
+    }
+    @media (width >= 80rem) {
+      font-size: 96px;
+    }
+    @media (width >= 80rem) {
+      --tw-leading: 90px;
+      line-height: 90px;
+    }
   }
   .agenda-month {
     font-family: "RigidSquare-SemiBold", sans-serif;
     font-size: 48px;
     --tw-leading: 45px;
     line-height: 45px;
+    @media (width >= 40rem) {
+      font-size: 96px;
+    }
+    @media (width >= 40rem) {
+      --tw-leading: 90px;
+      line-height: 90px;
+    }
+    @media (width >= 48rem) {
+      font-size: 72px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: 68px;
+      line-height: 68px;
+    }
+    @media (width >= 80rem) {
+      font-size: 96px;
+    }
+    @media (width >= 80rem) {
+      --tw-leading: 90px;
+      line-height: 90px;
+    }
+  }
+  .fc-list-table {
+    margin-bottom: 50px !important;
+    @media (width >= 40rem) {
+      margin-bottom: 48px !important;
+    }
+    @media (width >= 48rem) {
+      margin-bottom: 44px !important;
+    }
+  }
+  .fc-icon-chevron-left::before, .fc-icon-chevron-right::before {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .asamblea-single-intro {
     position: relative;

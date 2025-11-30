@@ -64,7 +64,36 @@ function updateTitle(element, context) {
 }
 
 function renderAgenda() {
+  // Debug logs for dependencies and versions
+  console.log("[Agenda] Starting renderAgenda");
+  console.log(
+    "[Agenda] FullCalendar defined:",
+    typeof FullCalendar !== "undefined"
+  );
+  if (typeof FullCalendar !== "undefined") {
+    console.log("[Agenda] FullCalendar version:", FullCalendar.version);
+  }
+  console.log("[Agenda] Luxon defined:", typeof luxon !== "undefined");
+  if (typeof luxon !== "undefined") {
+    console.log("[Agenda] Luxon version:", luxon.VERSION);
+  }
+  console.log(
+    "[Agenda] KAUKA_CONFIG events defined:",
+    typeof window.KAUKA_CONFIG !== "undefined" &&
+      typeof window.KAUKA_CONFIG.events !== "undefined"
+  );
+
+  if (typeof FullCalendar === "undefined" || typeof luxon === "undefined") {
+    console.error("[Agenda] Critical dependencies missing. Aborting render.");
+    return;
+  }
+
   var calendarEl = document.getElementById("calendar");
+  if (!calendarEl) {
+    console.error("[Agenda] Calendar element #calendar not found");
+    return;
+  }
+
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "listWeek",
     timeZone: "America/Bogota",
@@ -80,6 +109,7 @@ function renderAgenda() {
       week: "semana",
       day: "día",
       listMonth: "mes",
+      dayGridMonth: "mes",
     },
     // Listday config
     listDayFormat: { weekday: "long", day: "numeric" },
