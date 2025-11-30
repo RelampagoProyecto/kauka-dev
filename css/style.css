@@ -4374,25 +4374,64 @@
   }
   .fc-next-button {
     margin-left: calc(var(--spacing) * 10) !important;
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 20) !important;
+    }
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 40) !important;
+    }
   }
   .fc-prev-button {
     margin-left: calc(var(--spacing) * 6) !important;
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 10) !important;
+    }
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 20) !important;
+    }
   }
   .fc-listWeek-button {
     margin-top: 15px !important;
-    margin-left: 120px !important;
     background-color: transparent !important;
     font-family: "RigidSquare-SemiBold", sans-serif !important;
-    font-size: 14px !important;
     color: var(--color-dark-chocolate) !important;
+    font-size: 14px !important;
+    @media (width >= 40rem) {
+      font-size: 28px !important;
+    }
+    margin-left: 120px !important;
+    @media (width >= 40rem) {
+      margin-left: 295px !important;
+    }
+    @media (width >= 48rem) {
+      margin-left: 380px !important;
+    }
+    @media (width >= 64rem) {
+      margin-left: 400px !important;
+    }
+    @media (width >= 80rem) {
+      margin-left: 500px !important;
+    }
+    @media (width >= 96rem) {
+      margin-left: 650px !important;
+    }
   }
   .fc-listMonth-button {
     margin-top: 15px !important;
     margin-left: 20px !important;
     background-color: transparent !important;
     font-family: "RigidSquare-SemiBold", sans-serif !important;
-    font-size: 14px !important;
     color: var(--color-dark-chocolate) !important;
+    font-size: 14px !important;
+    @media (width >= 40rem) {
+      font-size: 28px !important;
+    }
+    @media (width >= 40rem) {
+      margin-left: 35px !important;
+    }
+    @media (width >= 64rem) {
+      margin-left: 80px !important;
+    }
   }
   .agenda-principal {
     & .fc-listWeek-view {
@@ -4520,6 +4559,12 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  @media (min-width: 640px) {
+    .fc-icon-chevron-left::before, .fc-icon-chevron-right::before {
+      width: 10px;
+      height: 10px;
+    }
   }
   .asamblea-single-intro {
     position: relative;
