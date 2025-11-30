@@ -6391,16 +6391,47 @@
   .section-info-bg-container {
     position: absolute;
     inset: calc(var(--spacing) * 0);
-    z-index: 0;
     display: flex;
     height: 100%;
     align-items: flex-start;
     justify-content: center;
     padding-top: calc(var(--spacing) * 10);
+    z-index: 0;
   }
   .section-info-bg-image, .asamblea-single-intro-bg-image {
     position: fixed;
     top: calc(var(--spacing) * 17);
+    height: var(--section-bg-height, 500px);
+    max-height: var(--section-bg-height, 500px);
+    object-fit: cover;
+  }
+  :root {
+    --section-bg-height: 850px;
+  }
+  @media (min-width: 640px) {
+    :root {
+      --section-bg-height: 950px;
+    }
+  }
+  @media (min-width: 768px) {
+    :root {
+      --section-bg-height: 950px;
+    }
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --section-bg-height: 950px;
+    }
+  }
+  @media (min-width: 1280px) {
+    :root {
+      --section-bg-height: 900px;
+    }
+  }
+  @media (min-width: 1538px) {
+    :root {
+      --section-bg-height: 950px;
+    }
   }
   .section-info-content {
     position: relative;
@@ -7420,6 +7451,7 @@
     }
   }
   .asambleas-list-grid-desktop {
+    z-index: 20;
     display: none;
     @media (width >= 48rem) {
       grid-column: span 12 / span 12;
@@ -7970,6 +8002,7 @@
     @media (width >= 64rem) {
       height: 523px;
     }
+    z-index: 20;
   }
   .proyecto-info-container::before {
     position: absolute;
@@ -8475,6 +8508,8 @@
     column-gap: calc(var(--spacing) * 1);
     position: relative;
     overflow: hidden;
+    z-index: 20;
+    background-color: var(--color-teal);
   }
   .pedagogias-semillero-section {
     grid-column: span 12 / span 12;
@@ -8927,6 +8962,32 @@
     }
     @media (width >= 96rem) {
       padding-top: 348px;
+    }
+    --section-bg-height: 750px;
+  }
+  @media (min-width: 640px) {
+    #pedagogias-section-info-container {
+      --section-bg-height: 1000px;
+    }
+  }
+  @media (min-width: 768px) {
+    #pedagogias-section-info-container {
+      --section-bg-height: 1000px;
+    }
+  }
+  @media (min-width: 1024px) {
+    #pedagogias-section-info-container {
+      --section-bg-height: 1300px;
+    }
+  }
+  @media (min-width: 1280px) {
+    #pedagogias-section-info-container {
+      --section-bg-height: 1300px;
+    }
+  }
+  @media (min-width: 1538px) {
+    #pedagogias-section-info-container {
+      --section-bg-height: 1600px;
     }
   }
 }

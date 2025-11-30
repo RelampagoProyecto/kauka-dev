@@ -2598,99 +2598,19 @@ if (typeof initHeaderOnReady === "function") {
   (function() {
     const uniqueId = "recorridos-intro";
 
-    
-    function getConfig() {
-      const width = window.innerWidth;
-      if (width < 640) {
-        
-        return { sizeMultiplier: 1.45, margin: 100, minContentHeight: 400 };
-      } else if (width < 768) {
-        
-        return { sizeMultiplier: 1.05, margin: 120, minContentHeight: 450 };
-      } else {
-        
-        return { sizeMultiplier: 0.95, margin: 160, minContentHeight: 500 };
-      }
-    }
-
-    function setBgImgHeight() {
-      const sectionContainer = document.getElementById(uniqueId + "-container");
-      if (!sectionContainer) return;
-
-      const config = getConfig();
-      const sectionInfo = document.querySelector(`#${uniqueId}-container .section-info-content`);
-      const contentHeight = sectionInfo ? sectionInfo.offsetHeight : 0;
-
-      
-      const effectiveContentHeight = Math.max(contentHeight, config.minContentHeight);
-      const adjustedSectionHeight = effectiveContentHeight > 0 ? effectiveContentHeight : sectionContainer.offsetHeight;
-
-      const viewportWidth = window.innerWidth;
-      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
-
-      if (bgImg) {
-        const contentBasedHeight = adjustedSectionHeight + 10;
-        const vwBasedHeight = viewportWidth * config.sizeMultiplier;
-        const finalHeight = Math.min(vwBasedHeight, contentBasedHeight);
-
-        bgImg.style.height = finalHeight + "px";
-        bgImg.style.maxHeight = finalHeight + "px";
-        bgImg.style.objectFit = "cover";
-      }
-    }
-
     function updateOnScroll() {
-      const bgContainer = document.getElementById(uniqueId + "-bg-img");
-      const sectionContainer = document.getElementById(uniqueId + "-container");
       const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
-
-      if (!bgContainer || !sectionContainer || !bgImg) return;
-
-      const config = getConfig();
-      const scrollY = window.scrollY || window.pageYOffset;
-      const containerTop = sectionContainer.offsetTop;
-      const containerHeight = sectionContainer.offsetHeight;
-      const containerBottom = containerTop + containerHeight;
-      const imgHeight = bgImg.offsetHeight || parseInt(bgImg.style.height, 10) || 0;
-      const margin = config.margin;
-      const topPosition = "10rem";
+      if (!bgImg) return;
 
       
-      const scrollThreshold = Math.max(containerTop + 50, containerBottom - imgHeight - margin);
-
-      if (scrollY <= containerTop) {
-        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
-        bgImg.classList.add("section-info-fixed-top");
-        bgImg.style.position = "fixed";
-        bgImg.style.top = topPosition;
-        bgImg.style.bottom = "auto";
-      } else if (scrollY >= scrollThreshold) {
-        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
-        bgImg.style.position = "fixed";
-        const scrollDiff = scrollY - scrollThreshold;
-        const newTopValue = parseFloat(topPosition) - scrollDiff + margin - 10;
-        bgImg.style.top = `${newTopValue}px`;
-        bgImg.style.bottom = "auto";
-      } else {
-        bgImg.className = bgImg.className.replace(/section-info-\w+-\w+/g, "");
-        bgImg.classList.add("section-info-fixed-top");
-        bgImg.style.position = "fixed";
-        bgImg.style.top = topPosition;
-        bgImg.style.bottom = "auto";
-      }
+      
+      bgImg.style.position = "fixed";
+      bgImg.style.top = "10rem";
+      bgImg.style.bottom = "auto";
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      setBgImgHeight();
-      updateOnScroll();
-    });
-
-    window.addEventListener("resize", () => {
-      setBgImgHeight();
-      updateOnScroll();
-    });
-
-    window.addEventListener("scroll", updateOnScroll);
+    
+    document.addEventListener("DOMContentLoaded", updateOnScroll);
   })();
 </script>
 
