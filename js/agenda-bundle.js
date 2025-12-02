@@ -27,15 +27,20 @@ function updateTitle(element, context) {
       const isSameMonth = startDate.hasSame(endDate, "month");
       Debug.info(`[Agenda] isSameMonth: ${isSameMonth}`);
 
+      // Helper to capitalize first letter
+      const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
       // Build the HTML template for the title
       let titleTemplate = "";
       if (isSameMonth) {
         titleTemplate = `
-            <div class="agenda-days">${startDate.toFormat("d")} - ${endDate.toFormat("d")}</div>  
+            <div class="agenda-days">${startDate.toFormat("d")} - ${endDate.toFormat("d")}</div>
             <div class="agenda-month">${startDate.toFormat("LLLL")}</div>`;
       } else {
+        const startMonth = capitalize(startDate.toFormat("LLL"));
+        const endMonth = capitalize(endDate.toFormat("LLL"));
         titleTemplate = `
-            <div class="agenda-days">${startDate.toFormat("d")} de ${startDate.toFormat("LLLL")} - ${endDate.toFormat("d")} de ${endDate.toFormat("LLLL")}</div>`;
+            <div class="agenda-days">${startDate.toFormat("d")} ${startMonth} - ${endDate.toFormat("d")} ${endMonth}</div>`;
       }
       const formattedTitle = titleTemplate;
       titleEl.innerHTML = formattedTitle; // Set the custom HTML as the title

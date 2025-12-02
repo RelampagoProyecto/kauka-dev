@@ -193,6 +193,7 @@ function initializeNavOverlayHover() {
 function initializeDropdownToggle() {
   const diamonds = document.querySelectorAll(".nav-link-diamond");
   const navbar = document.querySelector(".navbar");
+  const defaultNavHeight = navbar ? navbar.offsetHeight : 54;
 
   Debug.log("[Header] Found diamonds:", diamonds.length);
 
@@ -216,8 +217,6 @@ function initializeDropdownToggle() {
       if (dropdownList) {
         // Toggle the lg:flex class for desktop dropdown visibility
         const isCurrentlyVisible = dropdownList.classList.contains("block");
-        // get navbar height
-        const navInitialH = 54;
 
         // First close all other dropdowns
         const allDropdowns = document.querySelectorAll(".nav-dropdown-list");
@@ -227,13 +226,13 @@ function initializeDropdownToggle() {
             dropdown.classList.remove("block");
             dropdown.classList.remove("lg:flex");
             dropdown.classList.add("hidden");
-            navbar.style.height = `${navInitialH}px`;
+            navbar.style.height = `${defaultNavHeight}px`;
           }
         });
 
         // Then toggle the current dropdown
         if (isCurrentlyVisible) {
-          navbar.style.height = `${navInitialH}px`;
+          navbar.style.height = `${defaultNavHeight}px`;
           dropdownList.classList.remove("block");
           dropdownList.classList.remove("lg:flex");
           dropdownList.classList.add("hidden");
@@ -266,9 +265,7 @@ function initializeDropdownToggle() {
   document.addEventListener("click", function (e) {
     if (!e.target.closest(".nav-dropdown")) {
       const allDropdowns = document.querySelectorAll(".nav-dropdown-list");
-      // get navbar height
-      const navInitialH = 54;
-      navbar.style.height = `${navInitialH}px`;
+      navbar.style.height = `${defaultNavHeight}px`;
       allDropdowns.forEach((dropdown) => {
         dropdown.classList.remove("lg:flex");
         dropdown.classList.add("hidden");
