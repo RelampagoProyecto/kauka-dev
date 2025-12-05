@@ -7123,10 +7123,11 @@
   }
   .swiper-button-next, .swiper-button-prev {
     position: absolute;
-    top: var(--swiper-navigation-top-offset, 90%) !important;
+    top: auto !important;
+    bottom: 5px;
     width: calc(var(--swiper-navigation-size) / 44 * 27);
     height: var(--swiper-navigation-size);
-    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    margin-top: 0;
     z-index: 10;
     cursor: pointer;
     display: flex;
@@ -9004,7 +9005,7 @@
     display: flex;
     flex-direction: row;
     background-color: var(--color-golden-yellow);
-    height: var(--clamp-88-178);
+    height: 100px;
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 0);
     }
@@ -9021,7 +9022,10 @@
   .proyecto-links-diamond {
     place-content: center;
     background-image: url("data:image/svg+xml;utf8,<svg height='100%' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 454.15 624.6'><polygon points='227.08 0 0 312.3 227.08 624.6 454.15 312.3 227.08 0' fill='rgb(255,255,255)'/></svg>");
-    width: var(--clamp-64-131);
+    width: 72px;
+    @media (width >= 40rem) {
+      width: 128px;
+    }
     @media (width >= 48rem) {
       width: 82px;
     }
