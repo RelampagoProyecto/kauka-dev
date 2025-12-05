@@ -4271,6 +4271,39 @@
   .agenda-container.visible::before {
     opacity: 100%;
   }
+  .encuentros-text {
+    grid-column: span 12 / span 12;
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: var(--color-white);
+    padding-block: --clamp-24-48;
+  }
+  .encuentros-text-inner {
+    grid-column: span 10 / span 10;
+    grid-column-start: 2;
+    font-family: "RigidSquare-Light", sans-serif;
+    font-size: var(--clamp-12-24);
+    line-height: 1.3;
+  }
+  .encuentros-text-secondary {
+    background-color: var(--color-white);
+  }
+  @media (min-width: 1024px) {
+    .encuentros-text-inner {
+      @media (width >= 64rem) {
+        grid-column: span 8 / span 8;
+      }
+      @media (width >= 64rem) {
+        grid-column-start: 2;
+      }
+      @media (width >= 96rem) {
+        grid-column: span 6 / span 6;
+      }
+      @media (width >= 96rem) {
+        grid-column-start: 3;
+      }
+    }
+  }
   .agenda-principal::before {
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 288.7 413.01'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B isolation: isolate; %7D .cls-2 %7B mix-blend-mode: multiply; %7D .cls-3 %7B fill: %23d5a24a; %7D %3C/style%3E%3C/defs%3E%3Cg class='cls-1'%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Figuras'%3E%3Cg class='cls-2'%3E%3Cpath class='cls-3' d='M20.62,171.45h247.46l20.62,28.87H0l20.62-28.87ZM0,212.69h288.7l-20.62,28.87H20.62L0,212.69ZM54.2,124.32l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM54.2,289.29l30.64-41.83,29.46,41.83-29.46,40.65-30.64-40.65ZM110.77,47.13h67.76l21.21,29.46h-110.18l21.21-29.46ZM89.56,336.42h110.18l-21.21,29.46h-67.76l-21.21-29.46ZM114.3,124.32l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM114.3,289.29l30.05-41.83,29.46,41.83-29.46,40.65-30.05-40.65ZM144.94,0l25.33,35.35h-51.26L144.94,0ZM119.01,377.66h51.26l-25.33,35.35-25.93-35.35ZM173.81,124.32l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65ZM173.81,289.29l30.05-41.83,30.64,41.83-30.64,40.65-30.05-40.65Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
@@ -5216,9 +5249,9 @@
     grid-column: span 1 / span 1;
     grid-column-start: 2;
     left: calc((100vw / 12) * 1);
-    font-size: 8px;
-    --tw-leading: calc(var(--spacing) * 6);
-    line-height: calc(var(--spacing) * 6);
+    font-size: 7px;
+    --tw-leading: 19px;
+    line-height: 19px;
     @media (width >= 64rem) {
       font-size: 64px;
     }
@@ -5288,7 +5321,7 @@
   }
   .invitadxs-artists-group {
     display: grid;
-    row-gap: calc(var(--spacing) * 2);
+    row-gap: 3px;
     font-family: "RigidSquare-Regular", sans-serif;
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));

@@ -4066,9 +4066,7 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="">
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
-        
-  
-  <div
+        <div
   id="encuentros-intro-container"
   class="section-info-container bg-white">
   <div id="encuentros-intro-bg-img" class="section-info-bg-container">
@@ -4162,9 +4160,35 @@ if (typeof initHeaderOnReady === "function") {
     </div>
     <div class="section-info-text-column">
       
-        <p>Los Encuentros de mundos posibles tienen el objetivo común de evidenciar la multidimensionalidad de los saberes y los procesos territoriales o artísticos, así como las diferentes herramientas organizativas y estrategias que han surgido en sus luchas jurídicas y activismos. Si bien son conversaciones arraigadas en el presente, dan cuenta de cómo la ancestralidad o la práctica artística implican un régimen sensorial y existencial diferenciado desde los cuales es posible habitar el presente e imaginar el futuro. Son conversaciones y acciones que convergen con potencia en el Cauca, pero son reflejo del pensamiento del sur global. <br><br></p>
-<h2 id="kauka-asamblea-de-mundos-posibles">KAUKA: Asamblea de Mundos Posibles</h2>
-<p>47 Salón Nacional de Artistas - Encuentros de Mundos Posibles<br><br></p>
+        Los Encuentros de mundos posibles tienen el objetivo común de evidenciar la multidimensionalidad de los saberes y los procesos territoriales o artísticos, así como las diferentes herramientas organizativas y estrategias que han surgido en sus luchas jurídicas y activismos. Si bien son conversaciones arraigadas en el presente, dan cuenta de cómo la ancestralidad o la práctica artística implican un régimen sensorial y existencial diferenciado desde los cuales es posible habitar el presente e imaginar el futuro. Son conversaciones y acciones que convergen con potencia en el Cauca, pero son reflejo del pensamiento del sur global. <br><br>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const uniqueId = "encuentros-intro";
+
+    function updateOnScroll() {
+      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
+      if (!bgImg) return;
+
+      
+      
+      bgImg.style.position = "fixed";
+      bgImg.style.top = "10rem";
+      bgImg.style.bottom = "auto";
+    }
+
+    
+    document.addEventListener("DOMContentLoaded", updateOnScroll);
+  })();
+</script>
+<div class="encuentros-text encuentros-text-secondary">
+      <div class="encuentros-text-inner">
+        <h2 id="kauka-asamblea-de-mundos-posibles">KAUKA: Asamblea de Mundos Posibles</h2>
+<p><strong>47 Salón Nacional de Artistas - Encuentros de Mundos Posibles</strong><br><br></p>
 <h3 id="sedes">Sedes <br><br></h3>
 <p><strong>Popayán:</strong> <br></p>
 <ul>
@@ -4198,34 +4222,8 @@ if (typeof initHeaderOnReady === "function") {
 </li>
 </ul>
 
-      
-    </div>
-  </div>
-</div>
-
-<script>
-  (function() {
-    const uniqueId = "encuentros-intro";
-
-    function updateOnScroll() {
-      const bgImg = document.querySelector(`#${uniqueId}-bg-img img`);
-      if (!bgImg) return;
-
-      
-      
-      bgImg.style.position = "fixed";
-      bgImg.style.top = "10rem";
-      bgImg.style.bottom = "auto";
-    }
-
-    
-    document.addEventListener("DOMContentLoaded", updateOnScroll);
-  })();
-</script>
-
-
-
-  <div id="calendar" class="agenda-container agenda-encuentros"></div>
+      </div>
+    </div><div id="calendar" class="agenda-container agenda-encuentros"></div>
 
   
 
