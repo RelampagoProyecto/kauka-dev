@@ -7411,6 +7411,40 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+      
+      
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
     
     
   
@@ -8436,6 +8470,10 @@ if (typeof initHeaderOnReady === "function") {
                 Payan Ya Casa Payán
               </a>
             
+              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/pedagogia-1/">
+                Pedagogia 1
+              </a>
+            
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/piyapm%C9%B5sik-casa-del-sueno/">
                 PiyapMɵsik Casa del Sueño
               </a>
@@ -8454,6 +8492,10 @@ if (typeof initHeaderOnReady === "function") {
             
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/procesos-autonomos-de-investigacion-creacion-pai/">
                 Procesos Autónomos de Investigación-Creación PAI
+              </a>
+            
+              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/produccion-1/">
+                Producción 1
               </a>
             
           </div>
@@ -9324,58 +9366,65 @@ if (typeof initHeaderOnReady === "function") {
 
 
   <script>
-    
-    const artistLinks = document.querySelectorAll(".invitadxs-artist-link");
+    document.addEventListener("DOMContentLoaded", () => {
+      const artistLinks = Array.from(
+        document.querySelectorAll(".invitadxs-artist-link")
+      );
+      const linkKeys = Array.from(document.querySelectorAll(".link-key"));
+      const bgLetter = document.getElementById("invitadxs-bg-letter");
 
-    
-    if (artistLinks.length > 0) {
-      const randomArtistLink =
-        artistLinks[Math.floor(Math.random() * artistLinks.length)];
-      randomArtistLink.classList.add("kauka-text");
-    }
-
-    
-    const linkKeys = document.querySelectorAll(".link-key");
-    const bgLetter = document.getElementById("invitadxs-bg-letter");
-
-    
-    const scrollOffset = 120;
-
-    linkKeys.forEach((toggler) => {
-      toggler?.addEventListener("click", (e) => {
-        e.preventDefault(); 
-
-        
+      
+      const setActiveLetter = (letter) => {
+        const normalized = letter.trim().toUpperCase();
         if (bgLetter) {
-          bgLetter.textContent = e.target.textContent.trim();
+          bgLetter.textContent = normalized;
         }
-
-        
-        e.target.classList.toggle("text-white");
-        e.target.classList.toggle("opacity-100");
-
-        
         linkKeys.forEach((link) => {
-          if (link !== e.target) {
-            link.classList.remove("text-white");
-            link.classList.remove("opacity-100");
+          const isMatch = link.textContent.trim().toUpperCase() === normalized;
+          link.classList.toggle("text-white", isMatch);
+          link.classList.toggle("opacity-100", isMatch);
+        });
+      };
+
+      
+      if (artistLinks.length > 0) {
+        const randomArtistLink =
+          artistLinks[Math.floor(Math.random() * artistLinks.length)];
+        randomArtistLink.classList.add("kauka-text");
+
+        const artistText = randomArtistLink.textContent.trim();
+        if (artistText.length > 0) {
+          const firstLetter = artistText[0].toUpperCase();
+          setActiveLetter(firstLetter);
+
+          
+          setTimeout(() => {
+            randomArtistLink.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "nearest",
+            });
+          }, 150);
+        }
+      }
+
+      
+      linkKeys.forEach((toggler) => {
+        toggler?.addEventListener("click", (e) => {
+          e.preventDefault();
+          const letter = e.target.textContent;
+          setActiveLetter(letter);
+
+          const targetId = e.target.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
+            });
           }
         });
-
-        
-        const targetId = e.target.getAttribute("href").substring(1); 
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition =
-            elementPosition + window.pageYOffset - scrollOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
       });
     });
   </script>
