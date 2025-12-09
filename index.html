@@ -212,22 +212,22 @@
 <style>
   :root {
      
-    --mobile-menu-color: #ffffff;
+    --mobile-menu-color: ZgotmplZ;
 
      
-    --submenu-indicator-color: #ffffff;
+    --submenu-indicator-color: ZgotmplZ;
 
      
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: #ffffff;
-    --search-text: #000000;
+    --search-bg: var(--color-burnt-orange);
+    --search-text: rgb(68, 34, 8);
     --search-input-bg: transparent;
-    --search-input-text: #000000;
-    --search-results-bg: #ffffff;
-    --search-highlight-color: #000000;
-    --search-border-color: #000000;
+    --search-input-text: rgb(68, 34, 8);
+    --search-results-bg: var(--color-burnt-orange);
+    --search-highlight-color: rgb(68, 34, 8);
+    --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
   }
 </style>
@@ -269,16 +269,16 @@
 
 
 
-<header id="nav" class="header bg-gray-950 text-white">
+<header id="nav" class="header bg-editorial text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-bright-green nav-overlay"></div>
+  <div id="nav-overlay" class="bg-home nav-overlay"></div>
   
   
-  <nav class="navbar bg-gray-950 text-white">
+  <nav class="navbar bg-editorial text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -5304,7 +5304,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-gray-950 text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-editorial text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -5606,7 +5606,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-gray-950 text-white">
+  <div class="navbar-search-bar bg-editorial text-white">
     
 
 
@@ -5633,7 +5633,7 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: #ffffff; --search-text: #000000; --search-input-bg: transparent; --search-input-text: #000000; --search-results-bg: #ffffff; --search-highlight-color: #000000; --search-border-color: #000000; --search-font: &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-burnt-orange); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-burnt-orange); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
@@ -9365,9 +9365,16 @@ if (typeof initHeaderOnReady === "function") {
       </div>
     </section>
     <div class="home-artists-list-background-md"></div>
-    <div class="home-footer-md">
-      <div class="home-footer-md-content">
-        
+  </div>
+
+  
+  <footer class="home-footer-wrapper">
+    
+    <div class="home-footer-visuals">
+      
+      <div class="home-footer-desktop hidden md:grid">
+        <div class="home-footer-md-content">
+          
 
 
 
@@ -9431,7 +9438,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-image hidden md:block lg:hidden img"
+        class="home-footer-visual-image hidden md:block lg:hidden img"
         width=""
         height="" />
     
@@ -9442,7 +9449,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-        
+          
 
 
 
@@ -9506,7 +9513,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-image hidden lg:block xl:hidden img"
+        class="home-footer-visual-image hidden lg:block xl:hidden img"
         width=""
         height="" />
     
@@ -9517,7 +9524,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-        
+          
 
 
 
@@ -9581,7 +9588,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-image hidden xl:block 2xl:hidden img"
+        class="home-footer-visual-image hidden xl:block 2xl:hidden img"
         width=""
         height="" />
     
@@ -9592,7 +9599,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-        
+          
 
 
 
@@ -9656,7 +9663,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-image hidden 2xl:block img"
+        class="home-footer-visual-image hidden 2xl:block img"
         width=""
         height="" />
     
@@ -9667,30 +9674,14 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
+        </div>
+        <div class="home-footer-md-down"></div>
       </div>
-      <div class="home-footer-md-down"></div>
-    </div>
-  </div>
 
-  
-  
-
-
-<footer class="home-footer-logos">
-  <div class="home-footer-image-container">
-    <img
-      src="/kauka-dev/img/footer/pata-logos_web2.png"
-      alt="47 Salón Nacional de Artistas - Logos Institucionales"
-      class="home-footer-image"
-      loading="lazy" />
-  </div>
-</footer>
-
-
-
-  <div class="home-footer-container">
-    <div class="home-footer-content">
       
+      <div class="home-footer-mobile md:hidden">
+        <div class="home-footer-content">
+          
 
 
 
@@ -9754,7 +9745,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-image sm:hidden img"
+        class="home-footer-visual-image sm:hidden img"
         width=""
         height="" />
     
@@ -9765,7 +9756,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-      
+          
 
 
 
@@ -9829,7 +9820,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-image hidden sm:block lg:hidden img"
+        class="home-footer-visual-image hidden sm:block lg:hidden img"
         width=""
         height="" />
     
@@ -9840,9 +9831,60 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
+        </div>
+        <div class="home-footer-mask"></div>
+      </div>
     </div>
-    <div class="home-footer-mask"></div>
-  </div>
+
+    
+    <div class="home-footer-logos">
+      <div class="home-footer-image-container">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <img
+    loading=""
+    decoding="async"
+    src="https://relampagoproyecto.github.io/kauka-dev/img/footer/pata-logos_web2.png"
+    alt=""
+    class="home-footer-image img"
+    height=""
+    width="" />
+
+
+      </div>
+    </div>
+  </footer>
 
   
   

@@ -192,8 +192,10 @@ function initializeNavOverlayHover() {
  */
 function initializeDropdownToggle() {
   const diamonds = document.querySelectorAll(".nav-link-diamond");
-  const navbar = document.querySelector(".navbar");
-  const defaultNavHeight = navbar ? navbar.offsetHeight : 54;
+  const header = document.getElementById("nav");
+  const basePaddingBottom = header
+    ? parseFloat(getComputedStyle(header).paddingBottom) || 0
+    : 0;
 
   Debug.log("[Header] Found diamonds:", diamonds.length);
 
@@ -215,42 +217,36 @@ function initializeDropdownToggle() {
       Debug.log("[Header] Dropdown list:", dropdownList);
 
       if (dropdownList) {
-        // Toggle the lg:flex class for desktop dropdown visibility
-        const isCurrentlyVisible = dropdownList.classList.contains("block");
-
         // First close all other dropdowns
         const allDropdowns = document.querySelectorAll(".nav-dropdown-list");
         Debug.log("[Header] closing all dropdownList");
         allDropdowns.forEach((dropdown) => {
           if (dropdown !== dropdownList) {
-            dropdown.classList.remove("block");
-            dropdown.classList.remove("lg:flex");
+            dropdown.classList.remove("block", "lg:flex");
             dropdown.classList.add("hidden");
-            navbar.style.height = `${defaultNavHeight}px`;
           }
         });
+        if (header) {
+          header.style.paddingBottom = `${basePaddingBottom}px`;
+        }
 
         // Then toggle the current dropdown
+        const isCurrentlyVisible = !dropdownList.classList.contains("hidden");
         if (isCurrentlyVisible) {
-          navbar.style.height = `${defaultNavHeight}px`;
-          dropdownList.classList.remove("block");
-          dropdownList.classList.remove("lg:flex");
+          dropdownList.classList.remove("block", "lg:flex");
           dropdownList.classList.add("hidden");
-
           Debug.log("[Header] Hiding dropdown");
+          if (header) {
+            header.style.paddingBottom = `${basePaddingBottom}px`;
+          }
         } else {
-          dropdownList.classList.add("block");
-          dropdownList.classList.add("lg:flex");
           dropdownList.classList.remove("hidden");
-
-          const listH = dropdownList.offsetHeight;
-          Debug.log("[Header] listH:", listH);
-          Debug.log("[Header] navInitialH:", navInitialH);
-          const newH = navInitialH + listH;
-          Debug.log("[Header] newH:", newH);
-
-          navbar.style.height = `${newH}px`;
-
+          dropdownList.classList.add("block", "lg:flex");
+          if (header) {
+            const listH = dropdownList.offsetHeight;
+            header.style.paddingBottom = `${basePaddingBottom + listH}px`;
+            Debug.log("[Header] Applied paddingBottom:", header.style.paddingBottom);
+          }
           Debug.log("[Header] Showing dropdown");
         }
       }
@@ -265,11 +261,13 @@ function initializeDropdownToggle() {
   document.addEventListener("click", function (e) {
     if (!e.target.closest(".nav-dropdown")) {
       const allDropdowns = document.querySelectorAll(".nav-dropdown-list");
-      navbar.style.height = `${defaultNavHeight}px`;
       allDropdowns.forEach((dropdown) => {
-        dropdown.classList.remove("lg:flex");
+        dropdown.classList.remove("block", "lg:flex");
         dropdown.classList.add("hidden");
       });
+      if (header) {
+        header.style.paddingBottom = `${basePaddingBottom}px`;
+      }
     }
   });
 }
