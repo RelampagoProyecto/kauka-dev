@@ -2638,6 +2638,12 @@
     height: auto;
     display: block;
   }
+  .home-footer-wrapper .kauka-footer-link {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
   @media (max-width: 639px) {
     .home-footer-image-container {
       grid-column: span 12 / span 12;
@@ -4262,6 +4268,85 @@
     @media (width >= 48rem) {
       padding-bottom: calc(var(--spacing) * 6);
     }
+  }
+  .kauka-footer .home-footer-desktop {
+    background-color: var(--color-teal);
+  }
+  .kauka-footer .home-footer-md-down {
+    background-color: var(--color-teal);
+  }
+  .kauka-footer .home-footer-mobile, .kauka-footer .home-footer-content {
+    background-color: var(--color-teal);
+  }
+  .kauka-footer .home-footer-logos {
+    background-color: var(--color-burnt-orange);
+  }
+  .kauka-footer {
+    --kauka-footer-bar-1-height: 18px;
+    --kauka-footer-bar-2-height: 12px;
+    --kauka-footer-bar-1-color: rgba(
+    72,
+    166,
+    193,
+    0.18
+  );
+    --kauka-footer-bar-2-color: rgba(
+    52,
+    4,
+    0,
+    0.28
+  );
+  }
+  @media (min-width: 768px) {
+    .kauka-footer {
+      --kauka-footer-bar-1-height: 48px;
+      --kauka-footer-bar-2-height: 30px;
+      --kauka-footer-bar-1-color: rgba(230, 165, 65, 0.4);
+      --kauka-footer-bar-2-color: rgba(217, 78, 48, 0.4);
+    }
+  }
+  @media (min-width: 1280px) {
+    .kauka-footer {
+      --kauka-footer-bar-1-height: 28px;
+      --kauka-footer-bar-2-height: 18px;
+    }
+  }
+  .kauka-footer .home-footer-visuals {
+    position: relative;
+    overflow: hidden;
+  }
+  .kauka-footer .kauka-footer-stripe {
+    position: absolute;
+    inset-inline: calc(var(--spacing) * 0);
+    z-index: 40;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  .kauka-footer .kauka-footer-stripe-1 {
+    bottom: 0;
+    height: var(--kauka-footer-bar-1-height);
+    background: var(--kauka-footer-bar-1-color);
+  }
+  .kauka-footer .kauka-footer-stripe-2 {
+    bottom: 0;
+    height: var(--kauka-footer-bar-2-height);
+    background: var(--kauka-footer-bar-2-color);
+  }
+  .kauka-footer .home-footer-visual-image {
+    filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
+  }
+  @media (max-width: 767px) {
+    .kauka-footer .home-footer-visual-image {
+      filter: brightness(0) invert(1) saturate(0.9);
+      -webkit-filter: brightness(0) invert(1) saturate(0.9);
+    }
+  }
+  .kauka-footer .kauka-footer-link {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
   }
   .agenda-container {
     position: relative;
