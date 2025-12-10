@@ -2510,11 +2510,11 @@
   @layer components {
     :root {
       --footer-bar-1-height: 35px;
-      --footer-bar-2-height: 28px;
+      --footer-bar-2-height: 10px;
     }
     @media (min-width: 768px) {
       :root {
-        --footer-bar-1-height: 48px;
+        --footer-bar-1-height: 100px;
         --footer-bar-2-height: 30px;
       }
     }
@@ -2602,7 +2602,7 @@
       width: clamp(209px, 65.3125vw, 418px);
       object-fit: contain;
       @media (width >= 48rem) {
-        width: 800px;
+        width: 600px;
       }
       @media (width >= 64rem) {
         width: 750px;
@@ -2612,6 +2612,9 @@
       }
       @media (width >= 96rem) {
         width: 1100px;
+      }
+      @media (width >= 48rem) {
+        margin-bottom: 80px;
       }
     }
     .home-footer-logos {
@@ -2625,23 +2628,8 @@
       padding-bottom: var(--clamp-48-96);
     }
     .home-footer-image-container {
-      grid-column: span 10 / span 10;
-      grid-column-start: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      @media (width >= 48rem) {
-        grid-column: span 10 / span 10;
-      }
-      @media (width >= 48rem) {
-        grid-column-start: 2;
-      }
-      @media (width >= 64rem) {
-        grid-column: span 8 / span 8;
-      }
-      @media (width >= 64rem) {
-        grid-column-start: 3;
-      }
+      grid-column: span 12 / span 12;
+      grid-column-start: 1;
     }
     .home-footer-image {
       width: 100%;
@@ -2652,37 +2640,36 @@
     }
     .home-footer-wrapper .kauka-footer-link {
       position: relative;
-      z-index: 30;
+      z-index: 20;
       display: block;
       height: 100%;
       width: 100%;
     }
-    .kauka-footer-stripe {
-      display: none;
-    }
-    .home-footer-stripes {
-      position: relative;
-      z-index: 25;
-      display: block;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: calc(var(--footer-bar-1-height) + var(--footer-bar-2-height));
+    .footer-overlay-bars-container {
       pointer-events: none;
-      background: linear-gradient( to top, var(--footer-stripe-2, rgba(217, 78, 48, 0.45)) 0, var(--footer-stripe-2, rgba(217, 78, 48, 0.45)) var(--footer-bar-2-height), var(--footer-stripe-1, rgba(230, 165, 65, 0.45)) var(--footer-bar-2-height), var(--footer-stripe-1, rgba(230, 165, 65, 0.45)) calc(var(--footer-bar-2-height) + var(--footer-bar-1-height)) );
-      border: 1px solid red;
+      position: absolute;
+      inset: calc(var(--spacing) * 0);
+      z-index: 20;
     }
-    .kauka-footer-stripe-1 {
+    .footer-overlay-bar {
+      position: absolute;
+      right: calc(var(--spacing) * 0);
+      left: calc(var(--spacing) * 0);
+      width: 100%;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 1;
+    }
+    .footer-overlay-bar.bar-top {
       bottom: 0;
       height: var(--footer-bar-1-height);
-      background: var(--footer-stripe-1);
+      background-color: var(--footer-stripe-1, rgb(230, 165, 65));
     }
-    .kauka-footer-stripe-2 {
+    .footer-overlay-bar.bar-bottom {
       bottom: 0;
       height: var(--footer-bar-2-height);
-      background: var(--footer-stripe-2);
+      background-color: var(--footer-stripe-2, rgb(217, 78, 48));
     }
     @media (max-width: 639px) {
       .home-footer-image-container {
@@ -2693,15 +2680,12 @@
     }
     @media (min-width: 640px) and (max-width: 1023px) {
       .home-footer-image-container {
-        grid-column: span 10 / span 10;
-        grid-column-start: 2;
+        grid-column: span 12 / span 12;
+        grid-column-start: 1;
+        padding-inline: calc(var(--spacing) * 4);
       }
     }
     @media (min-width: 1024px) {
-      .home-footer-image-container {
-        grid-column: span 8 / span 8;
-        grid-column-start: 3;
-      }
       .home-footer-image {
         max-width: 1200px;
       }
