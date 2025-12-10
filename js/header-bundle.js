@@ -86,6 +86,7 @@ function initHeaderToggle() {
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("navbar-menu-container");
   const navOverlay = document.getElementById("nav-overlay");
+  const body = document.body;
 
   // Handle click events for menu toggle
   // UPDATED: Enhanced to coordinate nav overlay visibility with menu state
@@ -106,6 +107,7 @@ function initHeaderToggle() {
         navOverlay.classList.remove("hidden");
         navOverlay.classList.add("block");
         navOverlay.classList.add("h-dvh");
+        body.classList.add("overflow-hidden");
         Debug.log("[Header] Mobile menu shown");
       } else {
         // Hide mobile menu
@@ -114,6 +116,7 @@ function initHeaderToggle() {
         navOverlay.classList.remove("h-dvh");
         navOverlay.classList.remove("block");
         navOverlay.classList.add("hidden");
+        body.classList.remove("overflow-hidden");
         Debug.log("[Header] Mobile menu hidden");
       }
     }
