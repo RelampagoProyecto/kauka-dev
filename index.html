@@ -212,10 +212,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: #ffffff;
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: #ffffff;
 
      
     --mobile-home-color: #ffffff;
@@ -229,6 +229,10 @@
     --search-highlight-color: rgb(68, 34, 8);
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
+
+     
+    --footer-stripe-1: ZgotmplZ;
+    --footer-stripe-2: ZgotmplZ;
   }
 </style>
 
@@ -269,16 +273,16 @@
 
 
 
-<header id="nav" class="header bg-editorial text-white">
+<header id="nav" class="header bg-home text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-home nav-overlay"></div>
+  <div id="nav-overlay" class="bg-bright-green nav-overlay"></div>
   
   
-  <nav class="navbar bg-editorial text-white">
+  <nav class="navbar bg-home text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -5304,7 +5308,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-editorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-home text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -5606,7 +5610,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-editorial text-white">
+  <div class="navbar-search-bar bg-home text-white">
     
 
 
@@ -9370,12 +9374,20 @@ if (typeof initHeaderOnReady === "function") {
   
   <footer class="home-footer-wrapper kauka-footer">
     
-    <div class="home-footer-visuals">
-      <a class="kauka-footer-link" href="/">
+    
+
+
+
+
+
+<div class="home-footer-visuals">
+  <a class="kauka-footer-link" href="/">
+    <div class="kauka-footer-stripe kauka-footer-stripe-1"></div>
+    <div class="kauka-footer-stripe kauka-footer-stripe-2"></div>
+
+    <div class="home-footer-desktop hidden md:grid bg-deep-pink">
+      <div class="home-footer-md-content">
         
-        <div class="home-footer-desktop hidden md:grid">
-          <div class="home-footer-md-content">
-            
 
 
 
@@ -9450,7 +9462,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -9525,7 +9537,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -9600,7 +9612,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -9675,14 +9687,13 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-          </div>
-          <div class="home-footer-md-down"></div>
-        </div>
+      </div>
+      <div class="home-footer-md-down bg-deep-pink"></div>
+    </div>
 
+    <div class="home-footer-mobile md:hidden bg-deep-pink">
+      <div class="home-footer-content bg-deep-pink">
         
-        <div class="home-footer-mobile md:hidden">
-          <div class="home-footer-content">
-            
 
 
 
@@ -9757,7 +9768,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -9832,16 +9843,14 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-          </div>
-          <div class="home-footer-mask"></div>
-        </div>
-      </a>
+      </div>
     </div>
+  </a>
+</div>
 
+<div class="home-footer-logos bg-dark-forest-green">
+  <div class="home-footer-image-container">
     
-    <div class="home-footer-logos">
-      <div class="home-footer-image-container">
-        
 
 
 
@@ -9884,8 +9893,9 @@ if (typeof initHeaderOnReady === "function") {
     width="" />
 
 
-      </div>
-    </div>
+  </div>
+</div>
+
   </footer>
 
   

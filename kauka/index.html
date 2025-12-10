@@ -228,6 +228,10 @@
     --search-highlight-color: rgb(68, 34, 8);
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
+
+     
+    --footer-stripe-1: ZgotmplZ;
+    --footer-stripe-2: ZgotmplZ;
   }
 </style>
 
@@ -5469,16 +5473,20 @@ if (typeof initHeaderOnReady === "function") {
   
   <footer class="home-footer-wrapper kauka-footer">
     
-    <div class="home-footer-visuals">
-      <a class="kauka-footer-link" href="/">
-        
-        <div class="kauka-footer-stripe kauka-footer-stripe-1"></div>
-        <div class="kauka-footer-stripe kauka-footer-stripe-2"></div>
+    
 
+
+
+
+
+<div class="home-footer-visuals">
+  <a class="kauka-footer-link" href="/">
+    <div class="kauka-footer-stripe kauka-footer-stripe-1"></div>
+    <div class="kauka-footer-stripe kauka-footer-stripe-2"></div>
+
+    <div class="home-footer-desktop hidden md:grid bg-dark-forest-green">
+      <div class="home-footer-md-content">
         
-        <div class="home-footer-desktop hidden md:grid">
-          <div class="home-footer-md-content">
-            
 
 
 
@@ -5553,7 +5561,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -5628,7 +5636,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -5703,7 +5711,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -5778,14 +5786,13 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-          </div>
-          <div class="home-footer-md-down"></div>
-        </div>
+      </div>
+      <div class="home-footer-md-down bg-dark-forest-green"></div>
+    </div>
 
+    <div class="home-footer-mobile md:hidden bg-dark-forest-green">
+      <div class="home-footer-content bg-dark-forest-green">
         
-        <div class="home-footer-mobile md:hidden">
-          <div class="home-footer-content">
-            
 
 
 
@@ -5860,7 +5867,7 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-            
+        
 
 
 
@@ -5935,16 +5942,14 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
-          </div>
-          <div class="home-footer-md-down"></div>
-        </div>
-      </a>
+      </div>
     </div>
+  </a>
+</div>
 
+<div class="home-footer-logos bg-home">
+  <div class="home-footer-image-container">
     
-    <div class="home-footer-logos">
-      <div class="home-footer-image-container">
-        
 
 
 
@@ -5987,8 +5992,9 @@ if (typeof initHeaderOnReady === "function") {
     width="" />
 
 
-      </div>
-    </div>
+  </div>
+</div>
+
   </footer>
 
       </section>
