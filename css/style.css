@@ -2332,10 +2332,7 @@
     background-color: var(--search-bg);
     color: var(--search-input-text);
     border-top: 1px solid var(--search-border-color);
-    box-shadow: 0 -6px 18px var(--search-border-color);
-    @supports (color: color-mix(in lab, red, red)) {
-      box-shadow: 0 -6px 18px color-mix(in srgb, var(--search-border-color) 35%, transparent);
-    }
+    box-shadow: none;
     min-height: var(--pagefind-bar-height-sm);
   }
   .pagefind-search-wrapper {
@@ -2438,10 +2435,7 @@
     padding: 12px 0;
     background: var(--pagefind-ui-background) !important;
     border: none !important;
-    box-shadow: 0 -12px 26px var(--pagefind-ui-border);
-    @supports (color: color-mix(in lab, red, red)) {
-      box-shadow: 0 -12px 26px color-mix(in srgb, var(--pagefind-ui-border) 45%, transparent);
-    }
+    box-shadow: none;
     max-height: 60vh !important;
     overflow-y: auto !important;
     z-index: 80;
@@ -8773,6 +8767,7 @@
     top: calc(var(--spacing) * 0);
     grid-column: span 3 / span 3;
     grid-column-start: 9;
+    padding-right: calc(var(--spacing) * 2);
     @media (width >= 48rem) {
       top: auto;
     }
@@ -8822,7 +8817,7 @@
     --tw-leading: var(--leading-tight);
     line-height: var(--leading-tight);
     color: var(--color-dark-forest-green);
-    font-size: 12px;
+    font-size: var(--clamp-12-24);
     letter-spacing: 0.05em;
     bottom: calc(var(--spacing) * 0);
     grid-column: span 3 / span 3;
@@ -9379,6 +9374,7 @@
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: calc(var(--spacing) * 0);
+    padding-top: var(--clamp-24-48);
     @media (width >= 48rem) {
       padding-block: 57px;
     }
@@ -9404,8 +9400,8 @@
     grid-column: span 12 / span 12;
     display: grid;
     grid-template-columns: subgrid;
-    padding-top: var(--clamp-48-96);
-    padding-bottom: var(--clamp-48-96);
+    padding-top: var(--clamp-24-48);
+    padding-bottom: var(--clamp-24-48);
   }
   .project-list-text-inner {
     grid-column: span 10 / span 10;
