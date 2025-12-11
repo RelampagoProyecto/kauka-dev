@@ -22,6 +22,12 @@
 
 
 
+<meta name="pagefind:weight" content="1" />
+
+
+
+
+
 
 
 
@@ -220,12 +226,12 @@
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-burnt-orange);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-dark-chocolate);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-burnt-orange);
-    --search-highlight-color: rgb(68, 34, 8);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-dark-chocolate);
+    --search-highlight-color: #ffffff;
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
 
@@ -4001,7 +4007,7 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-burnt-orange); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-burnt-orange); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-dark-chocolate); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-dark-chocolate); --search-highlight-color: #ffffff; --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
@@ -4011,27 +4017,43 @@
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", (event) => {
-      new PagefindUI({
-        element: "#search",
-        showSubResults: true,
-        translations: {
-          placeholder: "Buscar...",
-          clear_search: "X",
-          load_more: "Cargar más resultados",
-          search_label: "Buscar en este sitio",
-          filters_label: "Filtros",
-          zero_results: "No se encontraron resultados para [SEARCH_TERM]",
-          many_results: "[COUNT] resultados para [SEARCH_TERM]",
-          one_result: "[COUNT] resultado para [SEARCH_TERM]",
-          alt_search:
-            "No se encontraron resultados para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] en su lugar",
-          search_suggestion:
-            "No se encontraron resultados para [SEARCH_TERM]. Intenta una de las siguientes búsquedas:",
-          searching: "Buscando [SEARCH_TERM]...",
-        },
-      });
+    window.addEventListener("DOMContentLoaded", () => {
+      const searchElement = document.querySelector("#search");
+      if (!searchElement) {
+        console.warn("[Pagefind] No se encontró el elemento #search.");
+        return;
+      }
+      if (typeof window.PagefindUI !== "function") {
+        console.warn(
+          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+        );
+        return;
+      }
 
+      try {
+        new PagefindUI({
+          element: "#search",
+          pageSize: 3,
+          showSubResults: true,
+          translations: {
+            placeholder: "Buscar...",
+            clear_search: "X",
+            load_more: "Cargar más resultados",
+            search_label: "Buscar en este sitio",
+            filters_label: "Filtros",
+            zero_results: "No se encontraron resultados para [SEARCH_TERM]",
+            many_results: "[COUNT] resultados para [SEARCH_TERM]",
+            one_result: "[COUNT] resultado para [SEARCH_TERM]",
+            alt_search:
+              "No se encontraron resultados para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] en su lugar",
+            search_suggestion:
+              "No se encontraron resultados para [SEARCH_TERM]. Intenta una de las siguientes búsquedas:",
+            searching: "Buscando [SEARCH_TERM]...",
+          },
+        });
+      } catch (err) {
+        console.error("[Pagefind] Error al inicializar PagefindUI:", err);
+      }
     });
   </script>
 
