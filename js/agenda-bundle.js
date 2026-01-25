@@ -99,7 +99,18 @@ function renderAgenda() {
     return;
   }
 
-  var calendar = new FullCalendar.Calendar(calendarEl, {
+  var isEncuentros = calendarEl.classList.contains("agenda-encuentros");
+  var isPrincipal = calendarEl.classList.contains("agenda-principal");
+  var encuentrosRange = {
+    start: "2025-11-25",
+    end: "2025-12-08", // FullCalendar end is exclusive; 12/08 keeps 12/07 visible.
+  };
+  var principalRange = {
+    start: "2025-10-24",
+    end: "2025-12-16", // FullCalendar end is exclusive; 12/16 keeps 12/15 visible.
+  };
+
+  var calendarOptions = {
     initialView: "listWeek",
     timeZone: "America/Bogota",
     locale: "es",
@@ -145,7 +156,17 @@ function renderAgenda() {
         eventTimeFormat: "hh:mm a",
       },
     },
-  });
+  };
+
+  if (isEncuentros) {
+    calendarOptions.initialDate = encuentrosRange.start;
+    calendarOptions.validRange = encuentrosRange;
+  } else if (isPrincipal) {
+    calendarOptions.initialDate = principalRange.start;
+    calendarOptions.validRange = principalRange;
+  }
+
+  var calendar = new FullCalendar.Calendar(calendarEl, calendarOptions);
   calendar.render();
 }
 
