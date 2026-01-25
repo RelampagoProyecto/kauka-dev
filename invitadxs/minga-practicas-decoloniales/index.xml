@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Minga Prácticas Decoloniales on KAUKA</title>
+    <title>Minga Prácticas De-coloniales on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-practicas-decoloniales/</link>
-    <description>Recent content in Minga Prácticas Decoloniales on KAUKA</description>
+    <description>Recent content in Minga Prácticas De-coloniales on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
+    <lastBuildDate>Thu, 11 Dec 2025 23:33:33 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-practicas-decoloniales/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Secuestro cultural por la dignidad caucana: Nuyxisa Lechekwe, un gobierno chiquito, propio</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-25-secuestro-cultural/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-25-secuestro-cultural/</guid>
+      <description>&lt;p&gt;Actividad a cargo del Colectivo Minga Prácticas Decoloniales en el marco de los Encuentros de Mundos Posibles del 47 Salón Nacional de Artistas.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

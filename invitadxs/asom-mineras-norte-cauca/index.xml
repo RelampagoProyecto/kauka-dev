@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Asom (Mineras Norte del Cauca) on KAUKA</title>
+    <title>Asom Mineras Norte Cauca on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/asom-mineras-norte-cauca/</link>
-    <description>Recent content in Asom (Mineras Norte del Cauca) on KAUKA</description>
+    <description>Recent content in Asom Mineras Norte Cauca on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 00:19:09 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/asom-mineras-norte-cauca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extractivismo y artificialidad</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-extractivismo/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-extractivismo/</guid>
+      <description>&lt;p&gt;Conversatorio sobre extractivismo y artificialidad con perspectivas desde el territorio caucano.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
