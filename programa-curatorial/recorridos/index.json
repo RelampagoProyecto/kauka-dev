@@ -42,13 +42,6 @@
     "direccion": "Calle 43 # 16 bis 43"
   },
   "notas": "Aforo limitado"},{
-  "title": "Primer Comadreo",
-  "url": "/kauka-dev/programa-curatorial/vivencial/primer-comadreo/",
-  "lugar": {
-    "nombre": "Lorem ipsum dolor sit amet",
-    "direccion": "Calle 43 # 16 bis 43"
-  },
-  "notas": "Aforo limitado"},{
   "title": "Primer recorrido",
   "url": "/kauka-dev/programa-curatorial/recorridos/primer-recorrido/",
   "lugar": {
@@ -62,4 +55,10 @@
     "nombre": "Lorem ipsum dolor sit amet",
     "direccion": "Calle 43 # 16 bis 43"
   },
-  "notas": "Aforo limitado"}]
+  "notas": "Aforo limitado"},{
+  "title": "Primera asamblea de mundos posibles",
+  "url": "/kauka-dev/programa-curatorial/vivencial/primera-asamblea-munods-posibles/",
+  "lugar": {
+    "nombre": "Ala Kusreik Ya Misak Universidad",
+    "direccion": ""
+  }}]
