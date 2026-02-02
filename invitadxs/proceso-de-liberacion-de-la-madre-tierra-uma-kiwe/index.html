@@ -4158,6 +4158,174 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+    <div class="artista-term-gallery">
+      
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_51ff92b2a124a847.webp 320w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_dad76d401fd795c9.webp 640w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_d9408f529bc52563.webp 768w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_636570b5f8021c29.webp 1024w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_f93bac341d235c1d.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01.webp"
+              
+                srcset="/kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_2cf8afbb423563d8.webp 320w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_dedc827e9be0cc82.webp 640w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_c90158be4545adee.webp 768w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_f837029375712b4d.webp 1024w, /kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01_hu_c9e62c871ced485a.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe-01.webp"
+              loading="lazy"
+              width="2400"
+              height="3316" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
+    </div>
+  
 
   
   
