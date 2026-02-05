@@ -68,6 +68,64 @@ function updateTitle(element, context) {
   }
 }
 
+function buildEventRanges(events, zone) {
+  if (!Array.isArray(events)) return [];
+  return events
+    .map((event) => {
+      if (!event || !event.start) return null;
+      const start = luxon.DateTime.fromISO(event.start, { zone });
+      if (!start.isValid) return null;
+
+      let end = event.end ? luxon.DateTime.fromISO(event.end, { zone }) : null;
+      if (!end || !end.isValid) {
+        end = start;
+      }
+
+      if (event.allDay) {
+        if (end <= start) {
+          end = start.plus({ days: 1 });
+        } else if (typeof event.end === "string" && event.end.length === 10) {
+          // Treat date-only end as inclusive for all-day events.
+          end = end.plus({ days: 1 });
+        }
+      } else if (end <= start) {
+        end = start.plus({ minutes: 1 });
+      }
+
+      return { start, end };
+    })
+    .filter(Boolean);
+}
+
+function getEventBounds(ranges) {
+  if (!ranges || ranges.length === 0) return null;
+  let minStart = ranges[0].start;
+  let maxEnd = ranges[0].end;
+  ranges.forEach((range) => {
+    if (range.start < minStart) minStart = range.start;
+    if (range.end > maxEnd) maxEnd = range.end;
+  });
+  return { start: minStart, end: maxEnd };
+}
+
+function hasEventsInRange(ranges, rangeStart, rangeEnd) {
+  return ranges.some((range) => range.start < rangeEnd && range.end > rangeStart);
+}
+
+function findNextEventDate(ranges, afterDate) {
+  for (const range of ranges) {
+    if (range.start >= afterDate) return range.start;
+  }
+  return null;
+}
+
+function findPrevEventDate(ranges, beforeDate) {
+  for (let i = ranges.length - 1; i >= 0; i -= 1) {
+    if (ranges[i].start < beforeDate) return ranges[i].start;
+  }
+  return null;
+}
+
 function renderAgenda() {
   // Debug logs for dependencies and versions
   console.log("[Agenda] Starting renderAgenda");
@@ -106,9 +164,19 @@ function renderAgenda() {
     end: "2025-12-08", // FullCalendar end is exclusive; 12/08 keeps 12/07 visible.
   };
   var principalRange = {
-    start: "2025-10-24",
-    end: "2025-12-16", // FullCalendar end is exclusive; 12/16 keeps 12/15 visible.
+    start: "2025-05-01",
+    end: "2026-01-01", // FullCalendar end is exclusive; 2026-01-01 keeps all 2025 visible.
   };
+
+  var events = Array.isArray(window.KAUKA_CONFIG?.events)
+    ? window.KAUKA_CONFIG.events
+    : [];
+  var eventRanges = buildEventRanges(events, "America/Bogota");
+  var sortedRanges = eventRanges.slice().sort((a, b) => a.start.toMillis() - b.start.toMillis());
+  var bounds = getEventBounds(eventRanges);
+  var lastViewStart = null;
+  var lastViewType = null;
+  var isAutoNavigating = false;
 
   var calendarOptions = {
     initialView: "listWeek",
@@ -137,6 +205,42 @@ function renderAgenda() {
     datesSet: function (info) {
       Debug.info("[Agenda] datesSet call");
       updateTitle(".fc-toolbar-title", info);
+
+      if (!eventRanges.length) {
+        return;
+      }
+
+      if (lastViewType && lastViewType !== info.view.type) {
+        lastViewStart = null;
+      }
+      lastViewType = info.view.type;
+
+      if (isAutoNavigating) {
+        isAutoNavigating = false;
+        lastViewStart = luxon.DateTime.fromJSDate(info.view.currentStart, { zone: "America/Bogota" });
+        return;
+      }
+
+      if (info.view.type === "listWeek" || info.view.type === "listMonth") {
+        const viewStart = luxon.DateTime.fromJSDate(info.view.currentStart, { zone: "America/Bogota" });
+        const viewEnd = luxon.DateTime.fromJSDate(info.view.currentEnd, { zone: "America/Bogota" });
+
+        if (!hasEventsInRange(eventRanges, viewStart, viewEnd)) {
+          const direction =
+            lastViewStart && viewStart.toMillis() < lastViewStart.toMillis() ? -1 : 1;
+          const target = direction === -1
+            ? findPrevEventDate(sortedRanges, viewStart)
+            : findNextEventDate(sortedRanges, viewEnd);
+
+          if (target) {
+            isAutoNavigating = true;
+            info.view.calendar.gotoDate(target.toISODate());
+            return;
+          }
+        }
+
+        lastViewStart = viewStart;
+      }
     },
     // Move all-day section to bottom in timeGridDay
     viewDidMount: function (info) {
@@ -150,7 +254,7 @@ function renderAgenda() {
       calendar.changeView("listDay", info.date);
     },
     // Add events from your Hugo content
-    events: window.KAUKA_CONFIG.events,
+    events,
     views: {
       listWeek: {
         eventTimeFormat: "hh:mm a",
@@ -159,11 +263,28 @@ function renderAgenda() {
   };
 
   if (isEncuentros) {
-    calendarOptions.initialDate = encuentrosRange.start;
-    calendarOptions.validRange = encuentrosRange;
+    if (!bounds) {
+      calendarOptions.initialDate = encuentrosRange.start;
+      calendarOptions.validRange = encuentrosRange;
+    }
   } else if (isPrincipal) {
-    calendarOptions.initialDate = principalRange.start;
-    calendarOptions.validRange = principalRange;
+    if (!bounds) {
+      calendarOptions.initialDate = principalRange.start;
+      calendarOptions.validRange = principalRange;
+    }
+  }
+
+  if (bounds) {
+    const rangeStart = bounds.start.startOf("day");
+    let rangeEnd = bounds.end.startOf("day");
+    if (bounds.end > rangeEnd) {
+      rangeEnd = rangeEnd.plus({ days: 1 });
+    }
+    calendarOptions.initialDate = rangeStart.toISODate();
+    calendarOptions.validRange = {
+      start: rangeStart.toISODate(),
+      end: rangeEnd.toISODate(),
+    };
   }
 
   var calendar = new FullCalendar.Calendar(calendarEl, calendarOptions);

@@ -9609,6 +9609,20 @@
   .page-content-text p {
     margin-bottom: calc(var(--spacing) * 4);
   }
+  .page-content-text blockquote {
+    text-align: right;
+    font-style: italic;
+    line-height: var(--clamp-12-24);
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+    @media (width >= 64rem) {
+      justify-self: flex-end;
+    }
+  }
+  .page-content-text blockquote p {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
   .asambleas-list-container {
     grid-column: span 12 / span 12;
     display: grid;

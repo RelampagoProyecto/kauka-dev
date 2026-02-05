@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Luis Hernández Mellizo y Lina Bolaños (Sindicato Mutar) on KAUKA</title>
+    <title>Luis Hernández Mellizo Y Lina Bolaños (Sindicato Mutar) on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/luis-hernandez-mellizo-y-lina-bolanos-sindicato-mutar/</link>
-    <description>Recent content in Luis Hernández Mellizo y Lina Bolaños (Sindicato Mutar) on KAUKA</description>
+    <description>Recent content in Luis Hernández Mellizo Y Lina Bolaños (Sindicato Mutar) on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
+    <lastBuildDate>Mon, 02 Feb 2026 00:00:00 -0500</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/luis-hernandez-mellizo-y-lina-bolanos-sindicato-mutar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autonomías políticas en el arte</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/vivencial/autonomias-politicas-en-el-arte/</link>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/vivencial/autonomias-politicas-en-el-arte/</guid>
+      <description>&lt;p&gt;Ante la falta de garantías para el acceso a la cultura y a derechos diferenciados para lxs trabajadores del arte, existen formas de cooperación, autogestión, trabajo en red, colectivización y autonomías artísticas que han hecho frente a esta situación.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
