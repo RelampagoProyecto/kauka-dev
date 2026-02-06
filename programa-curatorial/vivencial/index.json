@@ -55,6 +55,12 @@
     "nombre": "Calles de Santander de Quilichao / Calles de Popayán y MAMPO - Casa Arte",
     "direccion": "Santander de Quilichao, Popayán"
   }},{
+  "title": "EL MUNDO AL REVÉS",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/",
+  "lugar": {
+    "nombre": "Casa Museo Guillermo León Valencia",
+    "direccion": "Calle 5 # 9-82, Centro histórico, Popayán"
+  }},{
   "title": "Encuentro de Guardias",
   "url": "/kauka-dev/programa-curatorial/vivencial/encuentro-de-guardias/",
   "lugar": {
@@ -66,12 +72,6 @@
   "lugar": {
     "nombre": "Casa de Franz Faust",
     "direccion": "Casa del artista, Popayán"
-  }},{
-  "title": "Exposición: El mundo al revés",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/",
-  "lugar": {
-    "nombre": "Casa Museo Guillermo León Valencia",
-    "direccion": "Calle 5 # 9-82, Centro histórico, Popayán"
   }},{
   "title": "Exposición: Guardias del fuego compartido",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/",
