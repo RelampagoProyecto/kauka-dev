@@ -6,7 +6,7 @@
     <description>Recent content in Encuentros on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:45:25 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 02:24:26 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/componentes/encuentros/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Activación: Al Aire Libre, Mesa de Radio Itinerante</title>
@@ -20,7 +20,7 @@
       <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-arrullo-villa-rica/</link>
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-arrullo-villa-rica/</guid>
-      <description>&lt;p&gt;Arrullo por las calles de Villa Rica a cargo de Sandrio Cándido e invitadxs. Cierre musical de los Encuentros de Mundos Posibles.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recorrido de arrullo por Villa Rica a cargo de Sandrio Cándido e invitadxs. Cierre musical de los Encuentros de Mundos Posibles.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Autonomías políticas en el arte</title>
@@ -70,6 +70,13 @@
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-residencias-popayork/</guid>
       <description>&lt;p&gt;4:00 pm.: Inauguración de exposición, lanzamiento de Fanzine Corinto.&#xA;6:00 p.m.: Minga de alimentos.&#xA;7:00 p.m.: Minga de la palabra alrededor del fuego hasta el amanecer (traer kit minguero: carpa, plato y cuchara).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>K’obomanik ch’ab’el - ofrenda con palabras Edgar Calel</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-performance-edgar-calel/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-performance-edgar-calel/</guid>
+      <description>&lt;p&gt;Performance&#xA;2025&lt;/p&gt;&#xA;&lt;aside class=&#34;frase-categoria frase-derecha&#34;&gt;&#xA;  &lt;p&gt;*De vez en cuando&lt;/p&gt;&#xA;&lt;p&gt;camino al revés:&lt;/p&gt;</description>
     </item>
     <item>
       <title>La coca, la palabra, la imagen: sacralidades, usos y resistencias</title>
@@ -147,13 +154,6 @@
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-26-pedagogias-espirales/</guid>
       <description>&lt;p&gt;Encuentro entre UAIIN-CRIC, UACO y Paris 8 sobre pedagogías espirales y educación intercultural.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Performance de Edgar Calel</title>
-      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-performance-edgar-calel/</link>
-      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-performance-edgar-calel/</guid>
-      <description>&lt;p&gt;Performance de Edgar Calel en la Capilla Santa Bárbara de Dominguillo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Performance: Cantos ancestrales, memoria vibracional</title>

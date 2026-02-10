@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Deifer-Ibanez on KAUKA</title>
+    <title>Deifer Ibañez on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/deifer-ibanez/</link>
-    <description>Recent content in Deifer-Ibanez on KAUKA</description>
+    <description>Recent content in Deifer Ibañez on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate>Tue, 18 Nov 2025 15:37:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 03:45:49 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/deifer-ibanez/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Asamblea</title>
-      <link>https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-3/</link>
-      <pubDate>Wed, 23 Jul 2025 18:49:55 -0500</pubDate>
-      <guid>https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-3/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;</description>
+      <title>Exposición: Guardias del fuego compartido</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/</link>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/</guid>
+      <description>&lt;div class=&#34;break-inside-avoid mb-8&#34;&gt;&#xA;&lt;p&gt;Las guardias —indígena, cimarrona y campesina— presentes en el Cauca son formas propias, autónomas y pacíficas de cuidado y protección de la vida y del territorio. Como sistemas comunitarios de cuidado, anteponen el bienestar colectivo al interés individual, un principio que desborda la lógica de lo privado y lo exclusivamente propio. Saben que cuidar la semilla es cuidar la montaña entera.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
