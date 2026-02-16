@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Licenciado en Ciencias Sociales y Magíster en Historia Andina. Intelectual, historiador y líder del pueblo indígena Yanacona en Colombia. Su trayectoria se ha consolidado en los campos de la investigación histórica, la educación intercultural y el liderazgo comunitario, con un énfasis particular en los procesos políticos, sociales y territoriales del departamento del Cauca.</p>
 <p>Su labor investigativa se ha centrado en el análisis de la participación de los pueblos indígenas en los conflictos históricos del país, destacándose su estudio sobre las montoneras y las deserciones de los pueblos yanacona y nasa (paeces) durante la Guerra de los Mil Días. Sus investigaciones abordan de manera crítica temas como la pluralidad cultural, la justicia histórica, la construcción de paz y la memoria colectiva de las minorías étnicas en el suroccidente colombiano, aportando a la comprensión de los procesos de resistencia y agencia indígena en la historia nacional. Ha contribuido de manera significativa al fortalecimiento del Sistema Educativo Propio Intercultural Yanacona (SEPIY), promoviendo la pedagogización del territorio y el rescate de los saberes ancestrales relacionados con la crianza, el ciclo vital y la cosmovisión del runa yanacona. Se ha desempeñado como director del Departamento de Planta Física e Infraestructura de la Universidad Autónoma de Occidente, desde donde ha articulado su experiencia académica con una visión de responsabilidad social y territorial.</p>
 <p>Es una voz activa en la defensa de los derechos territoriales, la autonomía indígena y la protección de la vida. Ha participado en pronunciamientos públicos y espacios de diálogo junto a otros docentes e intelectuales, posicionándose frente a las problemáticas sociales, ambientales y políticas que afectan a los pueblos originarios. Su labor se articula estrechamente con los procesos organizativos del Consejo Regional Indígena del Cauca (CRIC) y con otras iniciativas colectivas orientadas a la justicia social y la paz territorial.</p>
@@ -4187,6 +4216,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4200,7 +4231,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4228,84 +4259,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4342,6 +4295,74 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -4525,128 +4546,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4663,6 +4563,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4714,6 +4619,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Ary Campo Chicangana</p>
+
+    
+  
+</div>
+
 
     
     

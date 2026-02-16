@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Espacio comunitario y pedagógico de cuidado, hospitalidad y creación colectiva ubicado en el territorio de Piscitau, donde se promueven la convivencia armónica, el cuidado del territorio y la educación desde la cosmovisión Misak. Este lugar se ha consolidado como un punto de encuentro intercultural dedicado a la memoria, el aprendizaje colectivo y la práctica de la paz cotidiana.</p>
 <p>En el marco del 47 Salón Nacional de Artistas, la ecoaldea asumió el rol de anfitriona de una residencia artística, abriendo su hogar, su fogón y su territorio como lugar de encuentro donde el arte se entrelazó con la vida cotidiana, la alimentación consciente y los saberes ancestrales. Desde el fogón ancestral, la residencia se transformó en una minga de pensamiento y acción en la que caminar el territorio, cultivar la tierra, sembrar y compartir la palabra fueron prácticas centrales. El proceso propició intercambios entre saberes comunitarios, prácticas de cuidado y experiencias artísticas diversas, reafirmando el arte como un ejercicio de crianza mutua y de cuidado de la vida.</p>
 <p>Este espacio se consolidó como refugio, escuela y territorio de resistencia, demostrando que la construcción de mundos posibles comienza en los gestos cotidianos: el cuidado del alimento, la relación con la tierra y la vida compartida en comunidad.</p>
@@ -4172,6 +4201,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4185,7 +4216,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4213,84 +4244,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4394,6 +4347,94 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -4486,14 +4527,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -4515,141 +4555,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -4744,6 +4649,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Ecoaldea Mama Pascuala</p>
+
+    
+  
+</div>
+
 
     
     

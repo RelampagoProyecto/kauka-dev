@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4916,66 +4929,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
         
         
   
@@ -4994,6 +4947,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -5013,7 +4982,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Vilma, mujer nasa-misak, escritora y comunicadora, camina la palabra desde tejedurías comunitarias, memoria de mujeres y espiritualidad ancestral. Manuel, médico y pensador político, ha acompañado durante décadas procesos de resistencia indígena y popular en el Cauca. Juntos conciben la palabra como acción y la acción como siembra, una pedagogía del caminar donde el pensamiento se construye con los pueblos y no sobre ellos.</p>
 <p>Forman parte del proceso Pueblos en Camino, una articulación de pensadores, educadores y caminantes que tejen resistencias desde los pueblos y territorios de Abya Yala. Su trabajo colectivo surge del diálogo entre palabra insurgente y lucha por la vida, autonomía y defensa territorial, frente a violencias coloniales, patriarcales y capitalistas.</p>
 
@@ -5049,6 +5018,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -5062,7 +5033,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -5090,6 +5061,21 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
       
       
@@ -5172,11 +5158,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
-    
-      
-      
-      
-      
         
       
     
@@ -5371,14 +5352,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -5400,141 +5380,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -5545,6 +5390,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5553,9 +5404,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5565,8 +5413,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5583,11 +5430,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -5597,8 +5447,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5613,11 +5462,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -5627,8 +5479,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5643,11 +5494,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -5657,8 +5511,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5673,11 +5526,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -5687,8 +5543,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5701,6 +5556,18 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -5708,41 +5575,29 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
+          <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/conversatorio-palestina-desde-el-rio-hasta-el-mar/">Conversatorio Palestina: Desde el río hasta el mar</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-28-palestina/">Conversatorio Palestina: Desde el río hasta el mar</a>
             </div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/extractivismo-y-artificialidad/">Extractivismo y artificialidad</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-28-extractivismo/">Extractivismo y artificialidad</a>
             </div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/minga-de-procesos-de-autonomia-alimentaria/">Minga de procesos de autonomía alimentaria</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-28-minga-autonomia/">Minga de procesos de autonomía alimentaria</a>
             </div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/mundos-posibles-por-venir-afrika-y-abya-yala/">Mundos posibles por venir: Afrika y Abya Yala</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-afrika-abya-yala/">Mundos posibles por venir: Afrika y Abya Yala</a>
             </div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/soberania-autonomia-territorio-y-hoja-de-coca/">Soberanía, autonomía, territorio y hoja de coca</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-26-soberania-hoja-coca/">Soberanía, autonomía, territorio y hoja de coca</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -5765,6 +5620,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Vilma Almendra &amp; Manuel Rozental</p>
+
+    
+  
+</div>
+
 
     
     

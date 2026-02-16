@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Es a la vez un bosque en regeneración y un centro de formación, investigación y creación ubicado en las cercanías de Bogotá, que se dedica a tejer procesos y pedagogías interculturales para reconectar cuerpo, territorio y comunidad a partir de la convergencia entre saberes ancestrales y prácticas contemporáneas.</p>
 <p>Sus metodologías ponen en primer plano la reparación, el cuidado y la resiliencia ecológica. Su enfoque integra la construcción con tierra, la permacultura, las prácticas artísticas y las cosmovisiones indígenas, desarrollando espacios y dispositivos que funcionan como arquitecturas de cuidado, ámbitos simbólicos y restaurativos donde se ejercitan prácticas devocionales y de escucha profunda, se experimenta la interdependencia y se generan procesos de armonización colectiva.</p>
 <p>Con la instalación Vessel for Liminal Dialogues: A Woven Sanctuary for Transformative Encounters, participaron en la Bienal de Arquitectura de Venecia Intelligens. Natural. Artificial. Collective (2025)</p>
@@ -4172,6 +4201,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4185,7 +4216,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4213,84 +4244,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4327,6 +4280,74 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -4510,128 +4531,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4648,6 +4548,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4699,6 +4604,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Organizmo</p>
+
+    
+  
+</div>
+
 
     
     

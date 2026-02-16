@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,24 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
+  
+    <div
+      class="proyecto-categorias-container  bg-burnt-orange">
+      <div id="proyecto-categorias" class="proyecto-categorias">
+        
+        
+        
+      </div>
     </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,20 +4139,34 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>La Ecoaldea Mamá Pascuala, ubicada en el resguardo indígena Misak de Piscitau, Cauca, fue la sede de esta residencia, propuesta cocreada entre el comité curatorial del 47 SNA y la Asamblea de la Comunidad afropatiana de El Tuno. La anfitriona, Mamá Pascuala Chuchillo Ussa, recibió en su hogar a dos “caminantes de saberes” provenientes de distintos territorios de Colombia, propiciando un intercambio cultural y de conocimiento a través de mingas de pensamiento alrededor del Nak Chak, el fogón y otros espacios sagrados del pueblo Misak.</p>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p>La Ecoaldea Mamá Pascuala, ubicada en el resguardo indígena Misak de Piscitau, Cauca, fue la sede de esta residencia, propuesta cocreada entre el comité curatorial del 47 SNA y la Asamblea de la Comunidad afropatiana de El Tuno. La anfitriona, Mamá Pascuala Chuchillo Ussa, recibió en su hogar a dos “caminantes de saberes” provenientes de distintos territorios de Colombia, propiciando un intercambio cultural y de conocimiento a través de mingas de pensamiento alrededor del Nak Chak, el fogón y otros espacios sagrados del pueblo Misak.</p>
 <p>El propósito fue conectar al Mayor Virgilio Llanos, médico tradicional afro y sabedor de secreto, con el espacio de mama Pascuala y con la mediación pedagógica de Edgar Julián Santa, integrante del Colectivo Ambiente Tabanoy y originario de Muykatá - Altiplano Cundiboyacense. El proceso se centró en el diálogo entre botánica, plantas medicinales y saberes propios. A través de actividades como la siembra de semillas y el intercambio de conocimientos en el territorio, la residencia fortaleció dinámicas colaborativas interculturales que entienden el arte como una práctica para la vida, más allá de los espacios expositivos, y como una forma de encuentro entre comunidades y mundos posibles.</p>
-
-  </div>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4150,7 +4183,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
 
   
   
@@ -4201,7 +4233,9 @@ if (typeof initHeaderOnReady === "function") {
             Residencia Ecoaldea Mama Pascuala
           
           
-            <div class="proyecto-info-lugar-direccion">Piendamó, Cauca</div>
+            <div class="proyecto-info-lugar-direccion">
+              Piendamó, Cauca
+            </div>
           
           
           
@@ -4216,16 +4250,16 @@ if (typeof initHeaderOnReady === "function") {
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4268,13 +4302,13 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4317,15 +4351,16 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-11-15" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4631,8 +4666,44 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Residencia Ecoaldea Mama Pascuala</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Ecoaldea Mama Pascuala</li>
+            
+              <li>Edgar Julián Santa – Colectivo Ambiente Tabanoy</li>
+            
+              <li>Mayor Virgilio Llanos</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

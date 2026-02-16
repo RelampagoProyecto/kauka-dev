@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,8 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Encuentro artístico Tonga: Manifiesta afroindígena con artistas invitadas.</p>
-
-  </div>
+  <div class="page-content-text"><p>Encuentro artístico Tonga: Manifiesta afroindígena con artistas invitadas.</p>
+</div>
 </div>
 
     </div>
@@ -4274,6 +4287,18 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-26" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4729,6 +4754,42 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Tonga: Manifiesta afroindígena</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Isabella Londoño Parra</li>
+            
+              <li>María del Mar Vanín</li>
+            
+              <li>Paola-Charry</li>
+            
+              <li>Guadalupe Errazuriz</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

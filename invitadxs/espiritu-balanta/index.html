@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Agrupación de música tradicional del Pacífico colombiano, originaria del municipio de Santa Bárbara de Timbiquí, Cauca, profundamente arraigada a la memoria ancestral afrodescendiente de la región. Se trata de un proyecto musical de carácter familiar, liderado por hermanos de la familia Balanta, portadores de un legado transmitido por sus ancestros y sostenido a lo largo de varias generaciones.</p>
 <p>Los integrantes mayores del grupo, reconocidos como “los viejos”, han sido quienes han desarrollado y conservado la música tradicional heredada, manteniendo viva la raíz cultural del territorio. Desde esta base ancestral, Espíritu Balanta no solo interpreta géneros como el currulao, los arrullos y las jugas, sino que cumple un papel fundamental como escuela viva, compartiendo saberes con personas interesadas en aprender. De este proceso formativo han surgido muchos de los músicos que hoy son referentes en Timbiquí.</p>
 <p>La agrupación ha llevado su música más allá de su región de origen, presentándose en escenarios como el Teatro Colón de Bogotá, donde compartieron la riqueza de su legado con audiencias urbanas, consolidándose como referentes de la identidad sonora afrocolombiana y defensores de la herencia cultural del Pacífico sur.</p>
@@ -4170,6 +4199,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4183,7 +4214,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4211,84 +4242,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4325,6 +4278,74 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -4508,128 +4529,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4646,6 +4546,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4697,6 +4602,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Espíritu Balanta</p>
+
+    
+  
+</div>
+
 
     
     

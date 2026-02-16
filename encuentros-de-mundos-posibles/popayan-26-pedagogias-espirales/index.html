@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,8 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Encuentro entre UAIIN-CRIC, UACO y Paris 8 sobre pedagogías espirales y educación intercultural.</p>
-
-  </div>
+  <div class="page-content-text"><p>Este encuentro entre la Universidad Auntónoma Indígena Intercultural UAIIN-CRIC, UACO y Paris 8 entreteje epistemologías comunales e indígenas y prácticas de investigación/creación, proyectando un programa de maestría compartido.</p>
+</div>
 </div>
 
     </div>
@@ -4162,8 +4175,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            UAIIN La Aldea<br />
-            Popayán
+            Universidad Autónoma Indígena Intercultural – UAIIN - CRIC, sede La Aldea<br />
+            La Aldea, Popayán
           
 
           
@@ -4201,8 +4214,48 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/universidad-autonoma-indigena-intercultural-del-consejo-regional-indigena-del-cauca-uaiin/">
-                      Universidad-Autonoma-Indigena-Intercultural-Del-Consejo-Regional-Indigena-Del-Cauca-Uaiin
+                    <a href="/kauka-dev/invitadxs/arturo-escobar/">
+                      Arturo Escobar
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/universidad-autonoma-comunal-de-oaxaca-uaco/">
+                      Universidad Autónoma Comunal De Oaxaca (UACO)
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/hugo-jamioy-juagibioy/">
+                      Hugo Jamioy Juagibioy
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/tejido-vitalizacion-de-espacios-de-arquitectura-propia/">
+                      Tejido Vitalización De Espacios De Arquitectura Propia
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/universidad-paris-8-vincennessaint-denis/">
+                      Universidad Paris 8 Vincennes–Saint-Denis
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/universidad-de-melbourne/">
+                      Universidad de Melbourne
                     </a>
                   
                 </li>
@@ -4222,8 +4275,48 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/universidad-autonoma-indigena-intercultural-del-consejo-regional-indigena-del-cauca-uaiin/">
-                    Universidad-Autonoma-Indigena-Intercultural-Del-Consejo-Regional-Indigena-Del-Cauca-Uaiin
+                  <a href="/kauka-dev/invitadxs/arturo-escobar/">
+                    Arturo Escobar
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/universidad-autonoma-comunal-de-oaxaca-uaco/">
+                    Universidad Autónoma Comunal De Oaxaca (UACO)
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/hugo-jamioy-juagibioy/">
+                    Hugo Jamioy Juagibioy
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/tejido-vitalizacion-de-espacios-de-arquitectura-propia/">
+                    Tejido Vitalización De Espacios De Arquitectura Propia
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/universidad-paris-8-vincennessaint-denis/">
+                    Universidad Paris 8 Vincennes–Saint-Denis
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/universidad-de-melbourne/">
+                    Universidad de Melbourne
                   </a>
                 
               </li>
@@ -4236,29 +4329,70 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-26" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
     <div class="col-span-12">
-      
-        
-
-
-
-
-
-
-
-
-
-
-
       
     </div>
   </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Pedagogías espirales</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Arturo Escobar</li>
+            
+              <li>Universidad Autónoma Comunal De Oaxaca (UACO)</li>
+            
+              <li>Hugo Jamioy Juagibioy</li>
+            
+              <li>Tejido Vitalización De Espacios De Arquitectura Propia</li>
+            
+              <li>Universidad Paris 8 Vincennes–Saint-Denis</li>
+            
+              <li>Universidad de Melbourne</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

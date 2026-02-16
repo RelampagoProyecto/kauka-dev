@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,19 +4130,29 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>El lanzamiento del 47 Salón Nacional de Artistas – KAUKA, asamblea de mundos posibles, se llevó a cabo como un encuentro vivo y colectivo que dio inicio a esta edición del Salón, profundamente enraizada en el territorio del Cauca. Durante la jornada se presentó el proyecto curatorial, lxs artistas invitadxs y los lugares y fechas clave del proceso, destacando su enfoque afectivo, comunitario y crítico, abierto al diálogo con prácticas artísticas dentro y fuera de la región. El evento estuvo acompañado por un performance participativo a cargo de Eider Yangana, junto a músicas Misak, caucana y del Pacífico, que activaron el espacio desde el cuerpo, el sonido y la participación del público, reafirmando el carácter territorial y plural de esta asamblea de mundos posibles.</p>
-
-  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p>El lanzamiento del 47 Salón Nacional de Artistas – KAUKA, asamblea de mundos posibles, se llevó a cabo como un encuentro vivo y colectivo que dio inicio a esta edición del Salón, profundamente enraizada en el territorio del Cauca. Durante la jornada se presentó el proyecto curatorial, lxs artistas invitadxs y los lugares y fechas clave del proceso, destacando su enfoque afectivo, comunitario y crítico, abierto al diálogo con prácticas artísticas dentro y fuera de la región. El evento estuvo acompañado por un performance participativo a cargo de Eider Yangana, junto a músicas Misak, caucana y del Pacífico, que activaron el espacio desde el cuerpo, el sonido y la participación del público, reafirmando el carácter territorial y plural de esta asamblea de mundos posibles.</p>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4149,7 +4169,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
 
   
   
@@ -4200,7 +4219,9 @@ if (typeof initHeaderOnReady === "function") {
             Centro Nacional de las Artes Delia Zapata Olivella
           
           
-            <div class="proyecto-info-lugar-direccion">Bogotá D.C.</div>
+            <div class="proyecto-info-lugar-direccion">
+              Bogotá D.C.
+            </div>
           
           
           
@@ -4215,16 +4236,16 @@ if (typeof initHeaderOnReady === "function") {
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4249,13 +4270,13 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4280,15 +4301,16 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-09-17" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -5135,7 +5157,7 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_e0074107e1cb158.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_82a15f7630e740ca.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_489073171de3bc05.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_35ae2765476b1e4f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_9f954b931799b10f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_df00262ed3068769.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_53240fd8149f97fe.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_49eaddaef04ca4c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_be6940712df85007.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_4bf3725428de177d.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
@@ -5144,7 +5166,7 @@ if (typeof initHeaderOnReady === "function") {
             <img
               src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_5e31e0f41adc3344.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_b69a2c9dda04e85.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_ecfa0e4614ded764.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_2acdbb8369563809.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_25dfe59a74448699.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_250c67d2b09bb252.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_6f7a615435a45402.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_cb0421ff7cbb7717.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_f4384a0d463dddfd.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_9ebf48b340cb54dc.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09.webp"
@@ -5228,7 +5250,7 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_df00262ed3068769.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_53240fd8149f97fe.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_49eaddaef04ca4c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_be6940712df85007.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_4bf3725428de177d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_9fb3c313f0b76754.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_11d21e92a98d29d9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_61963aa37ba6eba0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_17abd7c993f54247.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_c7f8a0a554d550a1.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
@@ -5237,103 +5259,10 @@ if (typeof initHeaderOnReady === "function") {
             <img
               src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_250c67d2b09bb252.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_6f7a615435a45402.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_cb0421ff7cbb7717.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_f4384a0d463dddfd.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_9ebf48b340cb54dc.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_ae928ca1d9c8b46.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_f1e64d347261310c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_65775710bcacce4a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_d2f2e1178a8539c7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_6711876bbf2d964f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10.webp"
-              loading="lazy"
-              width="2400"
-              height="1600" />
-          </picture>
-        </div>
-      
-        <div class="swiper-slide">
-          
-          
-          
-          
-          
-
-          
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-
-          
-          
-          
-
-
-          <picture>
-            
-            
-              <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_9fb3c313f0b76754.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_11d21e92a98d29d9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_61963aa37ba6eba0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_17abd7c993f54247.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_c7f8a0a554d550a1.webp 1280w"
-                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-                type="image/webp" />
-            
-
-            
-            <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11.webp"
-              
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_ae928ca1d9c8b46.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_f1e64d347261310c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_65775710bcacce4a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_d2f2e1178a8539c7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_6711876bbf2d964f.webp 1280w"
-              
-              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5402,8 +5331,40 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Lanzamiento del 47 Salón Nacional de Artistas - KAUKA, asamblea de mundos posibles</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Comité Curatorial</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

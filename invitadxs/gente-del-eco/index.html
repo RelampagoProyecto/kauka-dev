@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Proyecto de creación artística colaborativa conformado por sabedoras y sabedores ancestrales, junto con profesionales y académicos, quienes desarrollan una propuesta estética sostenida por las relaciones ecológicas y culturales más-que-humanas. Recientemente ha recibido becas del Programa Nacional de Estímulos del Ministerio de las Culturas, las Artes y los Saberes de Colombia para los proyectos: Descolonización de la mirada: creación y reflexión sobre la Colección Quimbaya (2025); Proyecto de curaduría colaborativa (2024). Fue ganador de Proyecto Conversaciones en Kioscos. Arte, Derechos, Verdad, Universidad de York, Reino Unido (2023).</p>
 <p>Coordinador general: Mauricio Rivera Henao.<br>
 Coinvestigadores: Johanna Drews, Blanquita Richter, Fabián Gíl, Ana Bilbao.<br>
@@ -4732,6 +4761,8 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
   
 
   
+
+  
   
 
   
@@ -4745,7 +4776,7 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4773,86 +4804,6 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4889,6 +4840,76 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -5072,128 +5093,7 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5210,6 +5110,11 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -5304,6 +5209,25 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Gente del Eco</p>
+
+    
+  
+</div>
+
 
     
     

@@ -22,7 +22,8 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+<meta name="pagefind:weight" content="2" />
 
 
 
@@ -4029,10 +4030,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4088,7 +4101,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <section>
@@ -4144,15 +4157,15 @@ if (typeof initHeaderOnReady === "function") {
   
   
   <h4 class="mb-3">
-    <a href="/kauka-dev/asambleas/asamblea-1/">
-      Asamblea
+    <a href="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/">
+      Primera asamblea de mundos posibles
     </a>
   </h4>
   
   
-  <p class="mb-6">La Primera Asamblea de mundos posibles, apeló a las propias metodologías del espacio que la recibió, la Alak Kusrey Ya Misak Universidad, en donde toda el aula de clase se encuentra en torno a la Tulpa, al fuego sagrado que orienta la conversación. El palabreo posibilitó reunir la palabra de las personas involucradas.
+  <p class="mb-6">La Primera Asamblea de mundos posibles, apeló a las propias metodologías del espacio que la recibió, la Ala Kusreik Ya Misak Universidad, en donde toda el aula de clase se encuentra en torno a la Tulpa, al fuego sagrado que orienta la conversación. El palabreo posibilitó reunir la palabra de las personas involucradas.
 </p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/asamblea-1/">
+  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/">
     Leer más
   </a>
 </div>
@@ -4164,35 +4177,35 @@ if (typeof initHeaderOnReady === "function") {
   
   
   <h4 class="mb-3">
-    <a href="/kauka-dev/asambleas/asamblea-3/">
-      Asamblea
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/asamblea-3/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/asambleas/asamblea-2/">
-      Asamblea-2
+    <a href="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/">
+      Segunda asamblea de mundos posibles
     </a>
   </h4>
   
   
   <p class="mb-6">A partir del trabajo de memoria que realiza La Casa del Cacao desde el liderazgo de la maestra Alicia Castillo y el maestro Miguel Laurido, quienes fueron lxs anfitrionxs de la Segunda Asamblea de mundos posibles, se propuso como tema los Sistemas de Participación, entendiendo que cada una de las dinámicas y memorias territoriales de las personas asistentes a la asamblea son en sí sistemas propios.
 </p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/asamblea-2/">
+  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/">
+    Leer más
+  </a>
+</div>
+
+              </div>
+            
+              <div class="md:col-6 mb-14">
+                <div>
+  
+  
+  <h4 class="mb-3">
+    <a href="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/">
+      Tercera asamblea de mundos posibles
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6">La Tercera Asamblea de mundos posibles se realizó en La Tulpa de la UAINN - CRIC (Universidad Autónoma Indígena Intercultural del CRIC), que al ser un lugar de espiritualidad propia permitió gestar la conversación alrededor del fuego, y colocar la palabra y modular la escucha con plantas, remedios y elementos propios del territorio.
+</p>
+  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/">
     Leer más
   </a>
 </div>
@@ -4207,6 +4220,21 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+</div>
+
 
     
     

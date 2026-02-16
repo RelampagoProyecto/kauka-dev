@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,27 +4130,94 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>“La oscuridad del monte ahuyentó a los esclavistas.”
-Diane Palacios</p>
-<p>“¡Soy un cimarrón y me voy pa&rsquo;l monte!”
-Canción de Robe L Ninho</p>
-<p>Monte Oscuro se ubica en el fértil valle del río Cauca, en el norte de lo que en la actualidad se conoce como departamento del Cauca. Se formó cerca de la confluencia de los ríos Palo y Paila, un espacio geográfico al que hoy en día se le llama Puerto Tejada. La tradición oral y los estudios históricos indican que el antiguo palenque ocupaba específicamente las áreas rurales que ahora llevan los nombres de veredas Vuelta Larga y Bocas del Palo, en la periferia de Puerto Tejada. Esta localización estratégica, en medio de la espesura de un monte húmedo tropical, ofrecía un refugio natural: la densa vegetación y la oscuridad del bosque, que servían de barrera frente a incursiones enemigas, y dieron origen al nombre “Monte Oscuro&quot;.</p>
-<p>Los montes fueron los primeros territorios libres de América. En ellos, lxs cimarronxs fundaron palenques, pero también templos invisibles. Conjuraron una espiritualidad que no pudo ser encadenada. Cada fuga fue un acto de fe. Cada secreto, una ofrenda. Proteger el saber fue tan importante como saber empuñar el machete. El monte, entonces, no era solo geografía: era lenguaje cifrado, altar y defensa.
-Ser cimarronx significó no solo escapar físicamente de la opresión, sino también huir cultural y espiritualmente del dominio colonial. La resistencia no siempre empuñó un machete: muchas prácticas ancestrales prohibidas sobrevivieron a plena vista, ocultas tras devociones católicas. Esa preservación clandestina de cantos, conjuros y orishas fue un cimarronaje espiritual, un refugio interior donde persistió la dignidad y el vínculo con lxs ancestrxs.</p>
-<p>Monte Adentro convoca estos hilos históricos, espirituales y afectivos para señalar que el cimarronaje no es solo una historia pasada, sino una práctica que perdura, en las corporalidades negras, en los rituales, en los saberes. Esta exposición propone una inmersión en los umbrales del monte: ese territorio que protege el secreto, que guarda lo no dicho como potencia política. En tiempos de despojo, racismo estructural y blanqueamiento simbólico, volver al monte es un acto urgente. Por eso esta exposición no se camina, se atraviesa con el cuerpo y la memoria.</p>
-<p>Laura Campaz</p>
-
-  </div>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p align="right"><em>"La oscuridad del monte ahuyentó a los esclavistas."</em><br>Diane Palacios</p>
+<p align="right"><em>"¡Soy un cimarrón y me voy pa'l monte!"</em><br>Canción de Robe L Ninho</p>
+<p>Monte Oscuro se ubica en el fértil valle del río Cauca, en el norte de lo que en la actualidad se conoce como departamento del Cauca. Se formó cerca de la confluencia de los ríos Palo y Paila, un espacio geográfico al que hoy en día se le llama Puerto Tejada. La tradición oral y los estudios históricos indican que el antiguo palenque ocupaba específicamente las áreas rurales que ahora llevan los nombres de veredas Vuelta Larga y Bocas del Palo, en la periferia de Puerto Tejada. Esta localización estratégica, en medio de la espesura de un monte húmedo tropical, ofrecía un refugio natural: la densa vegetación y la oscuridad del bosque, que servían de barrera frente a incursiones enemigas, y dieron origen al nombre &ldquo;Monte Oscuro&rdquo;.</p>
+<p>Los montes fueron los primeros territorios libres de América. En ellos, lxs cimarronxs fundaron palenques, pero también templos invisibles. Conjuraron una espiritualidad que no pudo ser encadenada. Cada fuga fue un acto de fe. Cada secreto, una ofrenda. Proteger el saber fue tan importante como saber empuñar el machete. El monte, entonces, no era solo geografía: era lenguaje cifrado, altar y defensa.</p>
+<p>Ser cimarronx significó no solo escapar físicamente de la opresión, sino también huir cultural y espiritualmente del dominio colonial. La resistencia no siempre empuñó un machete: muchas prácticas ancestrales prohibidas sobrevivieron a plena vista, ocultas tras devociones católicas. Esa preservación clandestina de cantos, conjuros y orishas fue un cimarronaje espiritual, un refugio interior donde persistió la dignidad y el vínculo con lxs ancestrxs.</p>
+<p><em>Monte Adentro</em> convoca estos hilos históricos, espirituales y afectivos para señalar que el cimarronaje no es solo una historia pasada, sino una práctica que perdura, en las corporalidades negras, en los rituales, en los saberes. Esta exposición propone una inmersión en los umbrales del monte: ese territorio que protege el secreto, que guarda lo no dicho como potencia política. En tiempos de despojo, racismo estructural y blanqueamiento simbólico, volver al monte es un acto urgente. Por eso esta exposición no se camina, se atraviesa con el cuerpo y la memoria.</p>
+<p align="right">Laura Campaz</p>
+<h2 id="mal-querer"><em>Mal querer</em></h2>
+<p><strong>Joyce Rivas</strong><br>
+Escanografías y cerámica
+<br> 2025</p>
+<p>La obra revela prácticas de magia amorosa registradas en archivos inquisitoriales coloniales que provocaban aversión, rechazo o ruptura de vínculos afectivos. A través de conjuros, amuletos, rezos y untos (ungüentos) elaborados con hierbas, papel y objetos cotidianos, estas prácticas rituales se convirtieron en estrategias de resistencia empleadas por mujeres africanas y afrodescendientes en contextos de violencia, dominación y abuso. En la Cartagena de Indias del siglo XVII (al igual que en zonas rurales del Caribe) muchas esclavizadas recurrieron a estos &ldquo;conjuros de mal querer&rdquo; como medio para protegerse de amos y agresores; buscaban, por ejemplo, que un hombre las aborreciera o perdiera el deseo por ellas, rompiendo así la dinámica de sometimiento. En un mundo que las cosificaba y las subordinaba a la voluntad ajena, la práctica de la magia les ofreció no solo defensa personal, sino también un modo de subvertir las jerarquías coloniales.</p>
+<p>La obra fue realizada mediante escanografía, una técnica que consiste en digitalizar objetos directamente sobre un escáner, capturando sus detalles y texturas sin mediación fotográfica. Los objetos fueron seleccionados a partir de distintos conjuros, y cada imagen corresponde a uno diferente. Dispuestos sobre un fondo negro, los elementos parecen flotar, envueltos en un aura de misterio que remite a la alquimia, al rito y a la palabra como formas de subversión, a los saberes perseguidos por el orden colonial y a las estrategias con las que las mujeres negras protegieron y reclamaron que el deseo y el cuerpo no son dominios colonizados, sino territorios de autonomía. Allí donde el poder colonial buscó poseer y disciplinar, el conjuro aparece como un gesto poético y radical, un lenguaje político capaz de desarticular la lógica de la dominación desde lo invisible.</p>
+<p><strong>Presencias humanas:</strong><br>
+<br />
+Joyce Rivas.</p>
+<p><strong>Presencias más que humanas:</strong><br>
+<br />
+Plantas, raíces, flores, aceites, mantos, piedras, agua bendita, santos, espíritus y deidades africanas que se manifiestan en cada conjuro.</p>
+<p><strong>Territorios:</strong><br>
+<br />
+Caribe colonial.</p>
+<p>Colonias españolas: Cuba, La Española (parte oriental de la actual República Dominicana), Puerto Rico, Jamaica, Trinidad, Islas Caimán, Costa Caribe de la Nueva Granada (Cartagena, Santa Marta, Riohacha, Darién), Costa Caribe de Venezuela (Coro, Maracaibo, Cumaná), Yucatán, Honduras, Nicaragua y Costa Rica.</p>
+<p>Colonias francesas: Haití (Saint-Domingue), Martinica, Guadalupe, Santa Lucía, otras Antillas Menores.</p>
+<h2 id="pataki-oggún-desde-monte-oscuro-hasta-puerto-tejada"><em>Pataki: Oggún desde Monte Oscuro hasta Puerto Tejada</em></h2>
+<p><strong>Alexandra Idrobo</strong><br>
+Videoperformance <br>
+2025</p>
+<h2 id="yo-no-me-paro-en-peligro"><em>Yo no me paro en peligro</em></h2>
+<p><strong>Alexandra Idrobo</strong><br>
+Fotografía digital <br>
+2025</p>
+<p>En este proyecto, Alexandra realizó una video performance y una serie de fotografías impresas en tela a gran formato, desarrolladas en Puerto Tejada, Cauca, antiguo palenque de Monte Oscuro, un territorio atravesado por las memorias de la diáspora africana y por la persistencia de las raíces culturales y espirituales que permanecen vivas. Desde este contexto, la artista exploró la relación entre las personas negras, el monte, las plantas, el agua y la espiritualidad como espacios de fuerza y resistencia, encarnando a Oggún, un guerrero yoruba que se manifiesta en múltiples caminos: guerrero, herrero y protector del monte. Algunos de esos caminos revelan una dimensión fuerte y activa que dialoga con lo femenino, encarnando el coraje, la firmeza y el empoderamiento. Oggún, orisha yoruba del hierro y del monte, espíritu guerrero de protección y de defensa.</p>
+<p>A través de un vestuario propio del orixá, Alexandra recorrió distintos lugares de Puerto Tejada realizando paradas de esgrima de machete y bordón. Esta acción reivindicó el machete no solo como arma, sino como símbolo de conexión ancestral, poder y protección, situando a las mujeres y a las personas feminizadas como portadoras de una memoria viva.</p>
+<p>Monte Oscuro aparece como un territorio cimarrón que fue habitado por sabedoras del arte de la esgrima de machete y bordón, quienes portaban estas prácticas guiadas por Oggún, afirmando una historia viva que continúa hoy en quienes sostienen estas prácticas sincréticas y espirituales de matriz africana en el norte del Cauca.</p>
+<h2 id="hábitat-etnoficción-dioses-encarnados-y-estética-de-la-resistencia"><em>Hábitat: etnoficción, dioses encarnados y estética de la resistencia</em></h2>
+<p><strong>Shirlene Malambo</strong><br>
+Fotografía e instalación <br>
+2024</p>
+<h2 id="adn-del-aguacero-memorias-entrelazadas"><em>ADN del aguacero: memorias entrelazadas</em></h2>
+<p><strong>Shirlene Malambo</strong><br>
+Instalación <br>
+2024</p>
+<p>Hábitat es una serie de fotografías en las que aparecen seres que representan personajes o entes híbridos vinculados a lo sagrado afrocaribeño. A través de la puesta en escena, el vestuario y el uso de materiales como fibras, cabellos y materia orgánica, las imágenes evocan el tránsito entre vida, muerte y espíritu. Estos personajes funcionan como dioses encarnados, presencias que habitan el umbral entre lo visible y lo invisible, y que reconfiguran las cosmologías afrocaribeñas desde una estética de resistencia. La serie confronta las narrativas coloniales sobre el cuerpo, la espiritualidad y la identidad, afirmando estas cosmologías como un sistema epistemológico propio y vigente.</p>
+<p><em>ADN del aguacero: memorias entrelazadas</em> es una instalación realizada con cabello que cuelga del techo. El cabello, trenzado y dispuesto de forma vertical, evoca raíces que descienden y se entrelazan en el espacio. Las trenzas remiten a prácticas ancestrales de cuidado preservadas por comunidades africanas y afrodescendientes como actos de juntanza, afirmación y resistencia histórica. Durante la trata esclavista, las trenzas funcionaron como archivo y mapa, trazando rutas de escape, mensajes cifrados, lugar para guardar oro, semillas y coordenadas hacia la libertad. En la instalación, este gesto de trenzar se manifiesta como un tejido que enlaza cuerpos, memorias, afectos y territorios, revelando una sabiduría que persiste y se activa en el presente.</p>
+<p><strong>Presencias humanas:</strong><br>
+<br />
+Shirlene Malambo.</p>
+<p><strong>Presencias más que humanas:</strong><br>
+<br />
+Energía de Oyá y de otros orishas. Energía del agua y del aguacero como pulsación vital. Fuerzas del monte, espíritus de las raíces y de la tierra húmeda, memorias ancestrales que habitan las fibras, el cabello y la máscara. Corrientes invisibles que danzan entre lo natural y lo espiritual.</p>
+<p>El cabello aparece como semilla de memoria: cada trenza guarda voces, genealogías y saberes que respiran a través del tiempo, evocando el linaje afro y la fuerza creadora de lo femenino ancestral.</p>
+<p><strong>Territorios:</strong><br>
+<br />
+El cuerpo como extensión del paisaje y del rito. El entrelazado como territorio simbólico donde lo individual y lo colectivo se funden. El monte, el jardín y la casa como espacios sagrados donde la materia y el espíritu se entrelazan. La obra encarna un ADN espiritual que conecta la memoria afrocolombiana con los ciclos de la naturaleza, afirmando territorios donde lo visible y lo invisible coexisten como formas vivas de conocimiento.</p>
+<h2 id="albor"><em>ALBOR</em></h2>
+<p><strong>Shirlene Malambo</strong><br>
+Cuadro vivo / instalación <br>
+2025</p>
+<p>Los cuadros vivos son una manifestación cultural donde la comunidad representa escenas estáticas de mitos, leyendas o la vida cotidiana, convirtiendo las calles o espacios en una galería viviente. Inspirada en esta tradición propia de su territorio, Shirlene crea un cuadro vivo en el que Oyá, la orisha de los vientos y del cementerio, es representada no por la artista misma, sino por Dariana Mulato, artista de Santander de Quilichao.</p>
+<p>En este cuadro, Oyá aparece vestida de vino tinto y negro, con un atuendo hecho de cabello sintético y trenzas de kanekalon que ascienden como relámpagos y raíces. Su cuerpo en movimiento convoca el afefé, ese soplo que revela lo oculto y purifica, mientras danza entre el humo y los sonidos, se divide entre lo visible y lo que apenas se revela. Junto a ella, un altar de cantos, flores, frutas, velas, semillas y huesos recrea un espacio ritual donde la vida y la muerte se reconocen.</p>
+<p>En este acto, se invoca al viento que entra y sacude: "Agúzate que te están velando". La aparición de Oyá no es una simple representación, sino un llamado y una ofrenda. Este cuadro vivo preserva la continuidad de aquello que se niega a desaparecer, recordando que en la sombra habita la revelación, y que lo que no se ve sostiene lo que aún respira.</p>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4157,7 +4234,6 @@ Ser cimarronx significó no solo escapar físicamente de la opresión, sino tamb
   
   
   
-
 
   
   
@@ -4208,7 +4284,9 @@ Ser cimarronx significó no solo escapar físicamente de la opresión, sino tamb
             Escuela Taller del Norte del Cauca
           
           
-            <div class="proyecto-info-lugar-direccion">Barrio las Dos Aguas, Puerto Tejada</div>
+            <div class="proyecto-info-lugar-direccion">
+              Barrio las Dos Aguas, Puerto Tejada
+            </div>
           
           
           
@@ -4223,16 +4301,16 @@ Ser cimarronx significó no solo escapar físicamente de la opresión, sino tamb
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4275,13 +4353,13 @@ Ser cimarronx significó no solo escapar físicamente de la opresión, sino tamb
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4324,15 +4402,16 @@ Ser cimarronx significó no solo escapar físicamente de la opresión, sino tamb
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-10-27" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4347,11 +4426,771 @@ Ser cimarronx significó no solo escapar físicamente de la opresión, sino tamb
   <div id="proyecto-galeria" class="proyecto-galeria">
     <div class="col-span-12">
       
+        
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_f24477354ba1c1f2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_4c8a4828d0ebeb3b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_32840132ced6a8c2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_c5166c54c7364545.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_2a27a45a483c62a2.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_d2eee6401300feed.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_da2adf316b1cf617.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_f3a218de5d28dc82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_c37f9e0bbfcb2a68.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_64cfc2c511662abc.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-01.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_b1f585a2d290f3f9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_8806319fd5b0d0d4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_535b2f10c66497b4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_d794e728051b8efa.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_11e0d679beeefd24.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_867133146689b45d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_b25a51d06189c515.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_86dd0f5c63cc5e8f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_5d00d198be6f689f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_ec7061b1b3e84bbc.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-02.webp"
+              loading="lazy"
+              width="1600"
+              height="1069" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_9515563ccf9c595.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_b1af711b3e68a0d0.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_61a6e438fc4410a2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_81bf777f473f62ef.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_2f4ccf153845ce54.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_17bfe263207ef980.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_7e5241dce10c3d51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_73ec444856b6a100.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_2865c6b482372327.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_6c3fcba5976a0078.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-03.webp"
+              loading="lazy"
+              width="1600"
+              height="1231" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_eb285427abf00b38.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_f77a3692ef20b947.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_947d5a0a56e5cb1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_a9e23c39178b0bf2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_9139a5c6bd1b329d.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_b72cafd4bd74aeb9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_d6e85112724d2e47.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_cd896c0df20cebb5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_c3c9735f35d09a9f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_331207d677cbf45e.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-04.webp"
+              loading="lazy"
+              width="1600"
+              height="1011" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_71f8a0a74b98ff5.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_5bb00c04fa9945ac.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_117d3d080e4bb18e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_da2372502b821a39.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_231d750817b52d2b.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_b2488f0cc48af54.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_e4faf4949c76e4a1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_64af4fbea1cab01e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_c20983e91b5a1973.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_d0ecfa9c0fc88d87.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-05.webp"
+              loading="lazy"
+              width="1600"
+              height="972" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_255ee20bf6604fa1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_5a3b9f8fa5838000.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_35555d8b701908d2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_af0fcc9bb14a1ee2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_9e8f0e4f280a59ce.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_c881d039bc2f0b94.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_c8a6e65e7f360493.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_faf5fbd786043298.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_19ecd6b78b34a112.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_7f1d64a180c2f3b3.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-06.webp"
+              loading="lazy"
+              width="2400"
+              height="2225" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_7137dc8c6b6c70b1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_de2d0dc14fca6e4a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_95aa8f34f0063e8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_adbdc79867946e3e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_e7ea0542825d79ba.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_c5bc0ca61268f3d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_aa4601b073f209c6.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_ac3df6075b0aac82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_5d22f068600d7691.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_77a0af2498a8a43e.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-monte-adentro-07.webp"
+              loading="lazy"
+              width="2400"
+              height="1679" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
+      
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Exposición: Monte Adentro</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Alexandra Idrobo</li>
+            
+              <li>Joyce Rivas</li>
+            
+              <li>Shirlene Malambo</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

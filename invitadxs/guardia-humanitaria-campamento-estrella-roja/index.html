@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4926,66 +4939,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
   
   
 
@@ -5003,6 +4956,18 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      
 
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
@@ -5030,6 +4995,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -5043,7 +5010,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -5071,86 +5038,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5187,6 +5074,76 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -5370,128 +5327,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5508,6 +5344,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -5518,6 +5359,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5526,9 +5373,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5538,8 +5382,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5554,6 +5397,18 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -5561,25 +5416,13 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
+          <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/encuentro-de-guardias/">Encuentro de Guardias</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-encuentro-guardias/">Encuentro de Guardias</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -5602,6 +5445,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Guardia Humanitaria Campamento Estrella Roja</p>
+
+    
+  
+</div>
+
 
     
     

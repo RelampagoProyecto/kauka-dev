@@ -22,6 +22,9 @@
 
 
 
+
+  
+
 <meta name="pagefind:weight" content="1" />
 
 
@@ -4031,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <div
@@ -5055,8 +5070,515 @@ if (typeof initHeaderOnReady === "function") {
   </script>
 
 
+  
+  <footer class="home-footer-wrapper recorridos-footer">
+    
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+
+
+
+
+<div class="home-footer-visuals bg-recorridos">
+  <a class="kauka-footer-link" href="/">
+    <div class="home-footer-desktop hidden md:grid">
+      <div class="home-footer-md-content">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/home/h-footer-md.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="home-footer-visual-image hidden md:block lg:hidden img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/home/h-footer-lg.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="home-footer-visual-image hidden lg:block xl:hidden img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/home/h-footer-xl.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="home-footer-visual-image hidden xl:block 2xl:hidden img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/home/h-footer-2xl.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="home-footer-visual-image hidden 2xl:block img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+      </div>
+      <div class="home-footer-md-down"></div>
+    </div>
+
+    <div class="home-footer-mobile md:hidden">
+      <div class="home-footer-content">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/home/h-footer-all.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="home-footer-visual-image home-footer-visual-image-mobile-all sm:hidden img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/home/h-footer-sm.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="home-footer-visual-image home-footer-visual-image-mobile-sm hidden sm:block lg:hidden img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+      </div>
+    </div>
+  </a>
+  <div class="footer-overlay-bars-container">
+    <div class="footer-overlay-bar bar-top"></div>
+    <div class="footer-overlay-bar bar-bottom"></div>
+  </div>
+</div>
+
+
+
+  </footer>
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+</div>
+
 
     
     

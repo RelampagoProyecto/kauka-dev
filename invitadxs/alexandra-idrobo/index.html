@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Artista visual. Sus acciones por medio de la fotografía, la pintura y el video performance, responden a preguntas personales sobre la identidad negra de Monte Oscuro, los vacíos históricos, la recuperación del poder y la riqueza, el respeto a la autonomía, el cuidado, la representación y las dinámicas territoriales como consecuencias del colonialismo y sus múltiples transformaciones en el tiempo.</p>
 <p>Recientemente participó de las exposiciones colectivas: A la Sombra del Monte (2024); Desafiar. Atravesar el Sol desde un Gran Pacífico en el Museo de Arte Moderno de Medellín (2024), y Tecnologías Metafísicas Negras (2023). Hizo parte de El Archivo de Artistas Lesbianas y Disidentes de Género (2020). Fue par local de la Escuela Itinerante de Artes Plásticas y Visuales en el nodo Puerto Tejada en 2024 y en el marco del mismo proyecto, en el 2025, hizo parte del equipo de coordinación general. Recientemente participa como líder de plan del nodo Litoral y Norte del Cauca.</p>
 
@@ -4618,6 +4647,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4631,7 +4662,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4659,6 +4690,21 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
       
       
@@ -4734,11 +4780,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
-    
-      
-      
-      
-      
         
       
     
@@ -4755,26 +4796,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4958,128 +4979,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5096,6 +4996,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -5190,6 +5095,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Alexandra Idrobo</p>
+
+    
+  
+</div>
+
 
     
     

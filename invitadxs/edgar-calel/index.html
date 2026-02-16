@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Artista visual y poeta guatemalteco de origen maya kaqchikel, reconocido por integrar la cosmovisión, la espiritualidad y los rituales de su pueblo en el campo del arte contemporáneo internacional. Se formó en la Escuela Nacional de Artes Plásticas de la Ciudad de Guatemala. Su práctica artística se fundamenta en lo que denomina Naoj —conocimiento o sabiduría—, una forma de pensamiento y creación arraigada en la vida comunitaria y en la resistencia cultural frente a los procesos históricos de exclusión de los pueblos indígenas. Desarrolla una obra interdisciplinar que articula instalación, performance, poesía y acción ritual. Sus piezas incorporan materiales naturales y efímeros como piedras, frutas, fuego, tierra y maíz, utilizados para construir espacios de ofrenda, memoria y conexión espiritual.</p>
 <p>La obra de Calel explora la relación con los ancestros, la cotidianidad de su comunidad y el vínculo entre cuerpo y espíritu, particularmente a través de los sueños como territorio de conocimiento. Un rasgo central de su práctica es la participación activa de su familia y de la comunidad en los procesos de creación, cuestionando los modelos occidentales de autoría individual y reafirmando el arte como ejercicio colectivo, vivo y relacional.</p>
 
@@ -4802,6 +4831,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4815,7 +4846,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4843,84 +4874,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4941,39 +4894,90 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4999,6 +5003,23 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
       
     
       
@@ -5144,132 +5165,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
         
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5286,6 +5182,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -5295,68 +5196,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-        
-      
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
     
       
 
@@ -5433,19 +5272,6 @@ if (typeof initHeaderOnReady === "function") {
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/k-obomanik-ch-ab-el-ofrenda-con-palabras-edgar-calel/">K’obomanik ch’ab’el - ofrenda con palabras Edgar Calel</a>
-            </div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/minga-de-intercambio-de-semillas-sabores-y-poderes/">Minga de intercambio de semillas, sabores y poderes</a>
-            </div>
-          
-        </div>
       
     
       
@@ -5487,14 +5313,31 @@ if (typeof initHeaderOnReady === "function") {
     
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Edgar Calel</p>
+
+    
+  
+</div>
+
 
     
     

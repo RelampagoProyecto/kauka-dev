@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,24 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
+  
+    <div
+      class="proyecto-categorias-container  bg-burnt-orange">
+      <div id="proyecto-categorias" class="proyecto-categorias">
+        
+        
+        
+      </div>
     </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,21 +4139,35 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Con la Fundación Alto Canal como anfitrión y la coreógrafa afrocolombiana Andrea Bonilla, maestra en Artes Escénicas con énfasis en Danza Contemporánea y magíster en Estudios Culturales, como invitada, se construyo un espacio de conocimiento basado en la escucha, el cuidado y la cohabitación temporal junto a lxs bailarinxs de la Corporación Artística y Cultural Los Navegantes de Santa Bárbara de Timbiquí, por medio del proyecto Mientras río, el lugar que sostiene.</p>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p>Con la Fundación Alto Canal como anfitrión y la coreógrafa afrocolombiana Andrea Bonilla, maestra en Artes Escénicas con énfasis en Danza Contemporánea y magíster en Estudios Culturales, como invitada, se construyo un espacio de conocimiento basado en la escucha, el cuidado y la cohabitación temporal junto a lxs bailarinxs de la Corporación Artística y Cultural Los Navegantes de Santa Bárbara de Timbiquí, por medio del proyecto Mientras río, el lugar que sostiene.</p>
 <p>Este proceso partió del reconocimiento del río Timbiquí como un ser social y un cuerpo vivo que organiza la vida cotidiana, cultural y espiritual de las comunidades del Pacífico. Más que agua en movimiento, el río se reveló como territorio, alimento, sonido, memoria y hogar; como narrador y guardián de historias, cantos, luchas y celebraciones. La residencia propuso un cruce entre la danza afro contemporánea y la danza tradicional del Pacífico colombiano, no para jerarquizarlas ni fusionarlas, sino para ponerlas en relación. El objetivo no fue preservar ni actualizar formas, sino activar un espacio donde el movimiento se convirtiera en pregunta y posibilidad. Un espacio transformador donde el cuerpo, al moverse, volviera a escuchar al territorio y a producir sentido desde la experiencia compartida.</p>
 <p>Desde un interés sostenido por generar encuentros entre disciplinas artísticas, el proyecto se sostuvo en una comprensión de la interculturalidad como acción viva. No se trató de reemplazar saberes ni de intervenir el territorio, sino de permitir que las prácticas se afectaran mutuamente, ampliando el conocimiento sin perder sus particularidades. El laboratorio indagó el agua como presencia simbólica, política y vital, enlazada a la potencia del hacer afro. Los ejercicios corporales, sonoros y visuales activaron relatos, gestos y prácticas donde el agua apareció como memoria en tensión: lo que nutre y lo que duele, lo que falta y lo que aún sostiene. La presentación de cierre del proceso, compartido en la clausura con la balsada en Guapi, fortaleció el sentido de pertenencia y reconocimiento de las y los jóvenes, quienes asumieron su participación no como un hecho aislado, sino como parte de un entramado cultural más amplio.</p>
-
-  </div>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4151,7 +4184,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
 
   
   
@@ -4202,7 +4234,9 @@ if (typeof initHeaderOnReady === "function") {
             Residencia Fundación Alto Canal
           
           
-            <div class="proyecto-info-lugar-direccion">Santa María de Timbiqui, Cauca</div>
+            <div class="proyecto-info-lugar-direccion">
+              Santa María de Timbiqui, Cauca
+            </div>
           
           
           
@@ -4217,16 +4251,16 @@ if (typeof initHeaderOnReady === "function") {
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4260,13 +4294,13 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4300,15 +4334,16 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-12-03" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4771,8 +4806,42 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Residencia Fundación Alto Canal</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Andrea Bonilla</li>
+            
+              <li>Fundación Alto Canal</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

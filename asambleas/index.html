@@ -22,6 +22,9 @@
 
 
 
+
+  
+
 <meta name="pagefind:weight" content="1" />
 
 
@@ -4031,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <div
@@ -4241,7 +4256,9 @@ if (typeof initHeaderOnReady === "function") {
         
         
 
-        <section class="asambleas-text-block bg-editorial col-span-12 ">
+
+        <section
+          class="asambleas-text-block bg-editorial col-span-12 ">
           <div class="asambleas-text-inner text-white">
             <p>Un ejercicio de reconocimiento de la palabra y la acción comunitaria como semillas de pensamiento, vehículos de memoria y herramientas de resistencia, que busca revalorizar los sistemas de conocimiento de los diversos pueblos, como referentes de mundos posibles.</p>
 <p>El fuego, como símbolo de encuentro, calor humano y sabiduría ancestral, se convierte en la metáfora central para propiciar espacios de confianza, respeto y horizontalidad donde diversas voces puedan resonar y unirse en acción.</p>
@@ -4272,8 +4289,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <div class="asambleas-list-image">
                 <img
-                  src="/kauka-dev/asambleas/asamblea-1/asamblea_1.webp"
-                  alt="Asamblea"
+                  src="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/portada.webp"
+                  alt="Primera asamblea de mundos posibles"
                   loading="lazy" />
               </div>
             
@@ -4282,20 +4299,20 @@ if (typeof initHeaderOnReady === "function") {
             <div class="asambleas-list-item_content">
               <header class="asambleas-list-header">
                 <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-1/" class="asambleas-list-link">
+                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/" class="asambleas-list-link">
                     
                       <span class="asambleas-list-orden"
                         > 1</span
                       >
                     
-                    <span class="asambleas-list-titulo">Asamblea</span>
+                    <span class="asambleas-list-titulo">Primera asamblea de mundos posibles</span>
                   </a>
                 </h3>
               </header>
 
               
                 <p class="asambleas-list-summary">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                  La Primera Asamblea apeló a las metodologías del espacio que la recibió, la Ala Kusreik Ya Misak Universidad, en torno a la Tulpa, al fuego sagrado que orienta la conversación.
                 </p>
                 <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
               
@@ -4317,8 +4334,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <div class="asambleas-list-image">
                 <img
-                  src="/kauka-dev/asambleas/asamblea-2/asamblea_2.webp"
-                  alt="Asamblea-2"
+                  src="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/portada.webp"
+                  alt="Segunda asamblea de mundos posibles"
                   loading="lazy" />
               </div>
             
@@ -4327,20 +4344,20 @@ if (typeof initHeaderOnReady === "function") {
             <div class="asambleas-list-item_content">
               <header class="asambleas-list-header">
                 <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-2/" class="asambleas-list-link">
+                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/" class="asambleas-list-link">
                     
                       <span class="asambleas-list-orden"
                         > 2</span
                       >
                     
-                    <span class="asambleas-list-titulo">Asamblea-2</span>
+                    <span class="asambleas-list-titulo">Segunda asamblea de mundos posibles</span>
                   </a>
                 </h3>
               </header>
 
               
                 <p class="asambleas-list-summary">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                  A partir del trabajo de memoria de La Casa del Cacao, se propuso como tema los Sistemas de Participación, compartiendo con el público por medio de espirales de saberes.
                 </p>
                 <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
               
@@ -4362,8 +4379,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <div class="asambleas-list-image">
                 <img
-                  src="/kauka-dev/asambleas/asamblea-3/asamblea_3.webp"
-                  alt="Asamblea"
+                  src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/portada.webp"
+                  alt="Tercera asamblea de mundos posibles"
                   loading="lazy" />
               </div>
             
@@ -4372,20 +4389,20 @@ if (typeof initHeaderOnReady === "function") {
             <div class="asambleas-list-item_content">
               <header class="asambleas-list-header">
                 <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-3/" class="asambleas-list-link">
+                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/" class="asambleas-list-link">
                     
                       <span class="asambleas-list-orden"
                         > 3</span
                       >
                     
-                    <span class="asambleas-list-titulo">Asamblea</span>
+                    <span class="asambleas-list-titulo">Tercera asamblea de mundos posibles</span>
                   </a>
                 </h3>
               </header>
 
               
                 <p class="asambleas-list-summary">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                  La Tercera Asamblea se realizó en La Tulpa de la UAIIN-CRIC, donde la espiritualidad propia permitió gestar la conversación alrededor del fuego y los remedios propios del territorio.
                 </p>
                 <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
               
@@ -4420,20 +4437,20 @@ if (typeof initHeaderOnReady === "function") {
 
             <h3 class="asambleas-list-titulo-desktop">
               <a
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-1/"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/"
                 class="transition-colors duration-200 hover:text-white/70">
-                Asamblea
+                Primera asamblea de mundos posibles
               </a>
             </h3>
 
             
               <p class="asambleas-list-resumen-desktop">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                La Primera Asamblea apeló a las metodologías del espacio que la recibió, la Ala Kusreik Ya Misak Universidad, en torno a la Tulpa, al fuego sagrado que orienta la conversación.
                 
               </p>
 
               <a
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-1/"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/"
                 class="asambleas-list-arrow-desktop">
                 <span class="asambleas-list-arrow-text" aria-hidden="true"
                   >→</span
@@ -4446,8 +4463,8 @@ if (typeof initHeaderOnReady === "function") {
           <div class="asambleas-list-image-col">
             
               <img
-                src="/kauka-dev/asambleas/asamblea-1/asamblea_1.webp"
-                alt="Asamblea"
+                src="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/portada.webp"
+                alt="Primera asamblea de mundos posibles"
                 class="asambleas-list-image-desktop"
                 loading="lazy" />
             
@@ -4475,20 +4492,20 @@ if (typeof initHeaderOnReady === "function") {
 
             <h3 class="asambleas-list-titulo-desktop">
               <a
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-2/"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/"
                 class="transition-colors duration-200 hover:text-white/70">
-                Asamblea-2
+                Segunda asamblea de mundos posibles
               </a>
             </h3>
 
             
               <p class="asambleas-list-resumen-desktop">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                A partir del trabajo de memoria de La Casa del Cacao, se propuso como tema los Sistemas de Participación, compartiendo con el público por medio de espirales de saberes.
                 
               </p>
 
               <a
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-2/"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/"
                 class="asambleas-list-arrow-desktop">
                 <span class="asambleas-list-arrow-text" aria-hidden="true"
                   >→</span
@@ -4501,8 +4518,8 @@ if (typeof initHeaderOnReady === "function") {
           <div class="asambleas-list-image-col">
             
               <img
-                src="/kauka-dev/asambleas/asamblea-2/asamblea_2.webp"
-                alt="Asamblea-2"
+                src="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/portada.webp"
+                alt="Segunda asamblea de mundos posibles"
                 class="asambleas-list-image-desktop"
                 loading="lazy" />
             
@@ -4530,20 +4547,20 @@ if (typeof initHeaderOnReady === "function") {
 
             <h3 class="asambleas-list-titulo-desktop">
               <a
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-3/"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/"
                 class="transition-colors duration-200 hover:text-white/70">
-                Asamblea
+                Tercera asamblea de mundos posibles
               </a>
             </h3>
 
             
               <p class="asambleas-list-resumen-desktop">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                La Tercera Asamblea se realizó en La Tulpa de la UAIIN-CRIC, donde la espiritualidad propia permitió gestar la conversación alrededor del fuego y los remedios propios del territorio.
                 
               </p>
 
               <a
-                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/asamblea-3/"
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/"
                 class="asambleas-list-arrow-desktop">
                 <span class="asambleas-list-arrow-text" aria-hidden="true"
                   >→</span
@@ -4556,8 +4573,8 @@ if (typeof initHeaderOnReady === "function") {
           <div class="asambleas-list-image-col">
             
               <img
-                src="/kauka-dev/asambleas/asamblea-3/asamblea_3.webp"
-                alt="Asamblea"
+                src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/portada.webp"
+                alt="Tercera asamblea de mundos posibles"
                 class="asambleas-list-image-desktop"
                 loading="lazy" />
             
@@ -4570,6 +4587,17 @@ if (typeof initHeaderOnReady === "function") {
   
   <footer class="home-footer-wrapper asambleas-footer">
     
+
+
+
+
+  
+    
+  
+  
+    
+  
+
 
 
 
@@ -4949,7 +4977,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-visual-image sm:hidden img"
+        class="home-footer-visual-image home-footer-visual-image-mobile-all sm:hidden img"
         width=""
         height="" />
     
@@ -5024,7 +5052,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-visual-image hidden sm:block lg:hidden img"
+        class="home-footer-visual-image home-footer-visual-image-mobile-sm hidden sm:block lg:hidden img"
         width=""
         height="" />
     
@@ -5044,8 +5072,13 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 </div>
 
-<div class="home-footer-logos bg-bright-green">
-  <div class="home-footer-image-container">
+
+
+  </footer>
+
+      </section>
+    </main>
+
     
 
 
@@ -5053,49 +5086,13 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <img
-    loading=""
-    decoding="async"
-    src="https://relampagoproyecto.github.io/kauka-dev/img/footer/footer.png"
-    alt=""
-    class="home-footer-image img"
-    height=""
-    width="" />
-
-
-  </div>
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
 </div>
 
-  </footer>
-
-      </section>
-    </main>
 
     
     

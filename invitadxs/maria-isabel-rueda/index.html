@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4826,75 +4839,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
         
         
   
@@ -4913,6 +4857,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -4932,7 +4892,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Artista plástica, curadora y gestora cultural. Sus proyectos marcan un importante avance hacia un antropomorfismo invertido, o la idea de que la vida humana comparte todo lo contenido o innato en el mundo animal, vegetal y mineral. Su práctica se ejemplifica, entre otros, por la imaginación recurrente de seres mitad humanos mitad animales en sus dibujos o la representación del mundo natural como una fuerza que evidencia la interconexión creativa de las construcciones hechas por el hombre y el movimiento de la naturaleza. A estos se puede agregar el reino de lo sobrenatural que, podría decirse, pertenece a una epistemología no antropocéntrica, comprometida con relaciones multiespecies que incluyen a todo, a través de una práctica artística social y ecológicamente comprometida. Sus proyectos involucran la fotografía, el dibujo, el video, los procesos sonoros, los actos en vivo, las operaciones de montaje de documentos, archivos y ficciones. Actualmente, su trabajo está orientado a la exploración de relatos de ciencia ficción en el Caribe Colombiano.</p>
 <p>Además de trabajar como artista desde finales de los años 1990, con múltiples exposiciones colectivas e individuales, ha sido un agente activo en la escena artística de Colombia. Integró el espacio artístico El Bodegón, que sirvió como punto de encuentro durante la segunda mitad de la década de 2010. En los últimos años codirigió el proyecto independiente La Usurpadora en Puerto Colombia y actualmente colabora junto con Julian Chams y Juan Betancourt en La Casa de Meira, antigua casa de la poeta Meira Delmar ahora activa como un espacio de experimentación ubicado en la ciudad de Barranquilla.</p>
 <ol start="2021">
@@ -5515,6 +5475,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -5528,7 +5490,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -5556,86 +5518,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5672,6 +5554,76 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -5855,128 +5807,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5993,6 +5824,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -6087,6 +5923,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>María Isabel Rueda</p>
+
+    
+  
+</div>
+
 
     
     

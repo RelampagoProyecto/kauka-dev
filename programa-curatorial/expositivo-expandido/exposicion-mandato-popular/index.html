@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,13 +4130,26 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p><strong>&ldquo;MANDATO POPULAR*&rdquo;</strong></p>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p><strong>&ldquo;MANDATO POPULAR*&rdquo;</strong></p>
 <p>El jefe Seattle (pueblos Suquamish y Duwamish) dice: “La tierra no pertenece a los humanos, los humanos pertenecen a la tierra”.</p>
 <p>La exposición configuró un diálogo entre dos arquitecturas comunitarias: el cambuche, que resguarda al proyecto Zapantera Negra y, en el exterior, la casa palafítica. Ambas emergen de tradiciones de construcción popular y de una capacidad político-organizativa que, por décadas, ha sostenido formas de vida diferentes a los modelos hegemónicos de propiedad, desarrollo y ciudadanía. Su encuentro enlaza genealogías de resistencia: la lucha y los saberes zapatistas, y el legado de las Panteras Negras; el Proceso de Liberación de la Madre Tierra en el norte del Cauca, y las resistencias afrodescendientes.</p>
 <p>En este marco, la casa palafítica de José Manuel Cuesta, desde la autoconstrucción y las formas de vida del litoral pacifico, nos adentra en una arquitectura situada, que corresponde a la geografía, al clima, al uso de materiales locales y a la memoria ancestral. Esta autoconstrucción fue intervenida por Nandy Mondragón (Nandy) y Diana Tenorio (Teca), quienes activaron la superficie con elementos gráficos que evocan esa juntanza afroindígena. En el cambuche (junto a la casa palafítica), Zapantera Negra, proceso de arte político, pedagógico y comunitario activado desde 2012 por EDELO, convoca un intercambio transnacional entre procesos políticos, poniendo en conversación la gráfica y la organización autónoma zapatista con la tradición político-cultural de las Panteras Negras: educación popular, comunicación visual estratégica, cuidados colectivos y defensa comunitaria.</p>
@@ -4134,12 +4157,13 @@ if (typeof initHeaderOnReady === "function") {
 <ul>
 <li>“Mandato popular” es una frase que resultó de Chuzo Resistencia, en colaboración con Mandato Popular CO, en el marco de varias estampatones callejeras. Además, formó parte de otras frases y gráficas que se estamparon en la inauguración del Salón, en las que participaron Gerson Vargas, Chuzo Resistencia y C.E.R.O.</li>
 </ul>
-
-  </div>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4156,7 +4180,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
 
   
   
@@ -4207,7 +4230,9 @@ if (typeof initHeaderOnReady === "function") {
             Secretaría de Educación y Cultura de Santander de Quilichao, Salón de la Excelencia
           
           
-            <div class="proyecto-info-lugar-direccion">Santander de Quilichao</div>
+            <div class="proyecto-info-lugar-direccion">
+              Santander de Quilichao
+            </div>
           
           
           
@@ -4222,16 +4247,16 @@ if (typeof initHeaderOnReady === "function") {
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4274,13 +4299,13 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4323,15 +4348,16 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-10-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4786,8 +4812,44 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Exposición: Mandato Popular</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>José Manuel Cuesta Sinisterra</li>
+            
+              <li>Proceso De Liberación De La Madre Tierra —Uma Kiwe</li>
+            
+              <li>Colectivo Edelo</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

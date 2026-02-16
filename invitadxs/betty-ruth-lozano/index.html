@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Socióloga, intelectual y activista afrocolombiana, reconocida como una de las voces más influyentes del feminismo negro y decolonial en Colombia. Su trabajo se sitúa en la intersección entre raza, género y colonialidad, con especial énfasis en las experiencias, resistencias y formas de organización de las mujeres negras del Pacífico colombiano.</p>
 <p>A lo largo de su trayectoria académica se ha desempeñado como docente e investigadora y ha ocupado roles de dirección de investigación en instituciones como la Fundación Universitaria Bautista de Cali y la Universidad del Valle. Su labor académica está estrechamente vinculada al activismo social. Es socia cofundadora de la Fundación Akina Zaji Sauda (Conexión de Mujeres Negras), organización dedicada a la defensa de los derechos humanos y a la lucha contra el racismo estructural en ciudades como Cali y Buenaventura.</p>
 <p>En el ámbito teórico cuestiona los enfoques del feminismo eurocéntrico y norteamericano, señalando su carácter colonial y su incapacidad para dar cuenta de las realidades del Sur Global. Desde allí propone un feminismo negro decolonial, anclado en el legado histórico de las ancestras cimarronas y palenqueras, e incorpora los saberes de parteras, curanderas y yerbateras como fuentes legítimas de pensamiento crítico. Uno de los ejes centrales de su análisis es la relación entre cuerpo y territorio. En este marco, examina la violencia ejercida contra las mujeres negras —particularmente en contextos como Buenaventura— no solo como una problemática doméstica, sino como una estrategia de despojo y “neoconquista” orientada al desplazamiento de comunidades de territorios estratégicos para el capitalismo global.</p>
@@ -4172,6 +4201,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4185,7 +4216,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4213,84 +4244,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4356,8 +4309,59 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
       
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
     
       
       
@@ -4377,6 +4381,23 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
       
     
       
@@ -4512,128 +4533,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4650,6 +4550,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4660,6 +4565,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -4668,9 +4579,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -4680,8 +4588,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -4696,6 +4603,18 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -4703,25 +4622,13 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
+          <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/mundos-posibles-por-venir-afrika-y-abya-yala/">Mundos posibles por venir: Afrika y Abya Yala</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-afrika-abya-yala/">Mundos posibles por venir: Afrika y Abya Yala</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -4744,6 +4651,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Betty Ruth Lozano</p>
+
+    
+  
+</div>
+
 
     
     

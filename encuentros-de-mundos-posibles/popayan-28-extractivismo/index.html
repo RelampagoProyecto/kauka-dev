@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,8 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>En este espacio se reflexiona sobre la artificialidad y el extractivismo en el horizonte neoliberal, donde la mineralidad, despojada de su vitalidad relacional, se torna objeto fascinante bajo la promesa de lo nuevo.</p>
-
-  </div>
+  <div class="page-content-text"><p>En este espacio se reflexiona sobre la artificialidad y el extractivismo en el horizonte neoliberal, donde la mineralidad, despojada de su vitalidad relacional, se torna objeto fascinante bajo la promesa de lo nuevo.</p>
+</div>
 </div>
 
     </div>
@@ -4162,8 +4175,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            UNICAUCA / Casa Rosada<br />
-            Calle 4 # 3-79
+            Auditorio Casa Rosada - Universidad del Cauca<br />
+            Popayán
           
 
           
@@ -4191,32 +4204,8 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/asom-mineras-norte-cauca/">
-                      Asom-Mineras-Norte-Cauca
-                    </a>
-                  
-                </li>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/vilma-almendra/">
-                      Vilma-Almendra
-                    </a>
-                  
-                </li>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/manuel-rozental/">
-                      Manuel-Rozental
-                    </a>
-                  
-                </li>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/felipe-guerra/">
-                      Felipe Guerra (COOPIA)
+                    <a href="/kauka-dev/invitadxs/vilma-almendra--manuel-rozental/">
+                      Vilma Almendra &amp; Manuel Rozental
                     </a>
                   
                 </li>
@@ -4231,8 +4220,8 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/maria-campo/">
-                      Maria-Campo
+                    <a href="/kauka-dev/invitadxs/felipe-guerra-coopia/">
+                      Felipe Guerra (COOPIA)
                     </a>
                   
                 </li>
@@ -4252,32 +4241,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/asom-mineras-norte-cauca/">
-                    Asom-Mineras-Norte-Cauca
-                  </a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/vilma-almendra/">
-                    Vilma-Almendra
-                  </a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/manuel-rozental/">
-                    Manuel-Rozental
-                  </a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/felipe-guerra/">
-                    Felipe Guerra (COOPIA)
+                  <a href="/kauka-dev/invitadxs/vilma-almendra--manuel-rozental/">
+                    Vilma Almendra &amp; Manuel Rozental
                   </a>
                 
               </li>
@@ -4292,8 +4257,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/maria-campo/">
-                    Maria-Campo
+                  <a href="/kauka-dev/invitadxs/felipe-guerra-coopia/">
+                    Felipe Guerra (COOPIA)
                   </a>
                 
               </li>
@@ -4306,6 +4271,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-28" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4575,6 +4554,40 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Extractivismo y artificialidad</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Vilma Almendra &amp; Manuel Rozental</li>
+            
+              <li>Arturo Escobar</li>
+            
+              <li>Felipe Guerra (COOPIA)</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

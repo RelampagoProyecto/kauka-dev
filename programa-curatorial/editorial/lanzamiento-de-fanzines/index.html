@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,26 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
+  
+    <div
+      class="proyecto-categorias-container  bg-burnt-orange">
+      <div id="proyecto-categorias" class="proyecto-categorias">
+        
+        
+        
+          Encuentros de Mundos Posibles
+        
+      </div>
     </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,13 +4141,26 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p><strong>Fanzines hechos por mujeres y personas AFAN</strong></p>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p><strong>Fanzines hechos por mujeres y personas AFAN</strong></p>
 <p><em>Así se hace la historia</em>
 <br />
 Isabella Londoño</p>
@@ -4134,12 +4168,13 @@ Isabella Londoño</p>
 <br /> María del Mar Vanín y Paola Charry</p>
 <p><em>Futuro (acción performática)</em>
 <br /> Guadalupe Errázuriz</p>
-
-  </div>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4156,7 +4191,6 @@ Isabella Londoño</p>
   
   
   
-
 
   
   
@@ -4207,7 +4241,9 @@ Isabella Londoño</p>
             MAMPO - Casa Arte
           
           
-            <div class="proyecto-info-lugar-direccion">Barrio La Pamba, Popayán</div>
+            <div class="proyecto-info-lugar-direccion">
+              Barrio La Pamba, Popayán
+            </div>
           
           
           
@@ -4222,16 +4258,16 @@ Isabella Londoño</p>
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4283,13 +4319,13 @@ Isabella Londoño</p>
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4341,15 +4377,16 @@ Isabella Londoño</p>
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-11-26" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4905,8 +4942,46 @@ Isabella Londoño</p>
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Lanzamiento de Fanzines</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Isabella Londoño Parra</li>
+            
+              <li>María Del Mar Vanín</li>
+            
+              <li>Paola Andrea Charry</li>
+            
+              <li>Guadalupe Errazuriz</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,11 +4140,9 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Este encuentro propuso un recorrido por lo visual y lo sonoro desde miradas afro, transitando entre los espacios comunitarios de Palenque, las apuestas por estéticas contemporáneas en curaduría y las pedagogías artísticas en el suroccidente colombiano. Realizado en la FUP de Santander de Quilichao, el espacio reunió voces diversas que han reflexionado sobre la representación de lo negro en la cultura y las artes contemporáneas en Colombia.</p>
-<p>La conversación inició con el maestro Juan Carlos Romero, quien presentó un panorama del cine contemporáneo del occidente colombiano, cuestionando cómo se construye la representación de lo negro en lo visual: entre la identidad y el lugar común. Desde las artes plásticas, Beatriz Balanta compartió la experiencia de Blackgroundlab como laboratorio de prácticas afrocentradas en Cali, mientras que Mercedes Angola abordó su trabajo investigativo y curatorial sobre las migraciones negras hacia Bogotá y las violencias epistémicas persistentes en el acceso al reconocimiento social. El encuentro cerró con las sonoridades de Keiler Manuel Valdés (Palenque) y Nassym Gregory (Cali–Barbacoas), quienes, desde músicas ancestrales y experimentaciones contemporáneas, activaron el canto, el ritual y nuevas pedagogías sonoras ligadas a los tambores del Pacífico colombiano.</p>
-
-  </div>
+  <div class="page-content-text"><p>Este encuentro propuso un recorrido por lo visual y lo sonoro desde miradas afro, transitando entre los espacios comunitarios de Palenque, las apuestas por estéticas contemporáneas en curaduría y las pedagogías artísticas en el suroccidente colombiano. Realizado en la FUP de Santander de Quilichao, el espacio reunió voces diversas que han reflexionado sobre la representación de lo negro en la cultura y las artes contemporáneas en Colombia.
+La conversación inició con el maestro Juan Carlos Romero, quien presentó un panorama del cine contemporáneo del occidente colombiano, cuestionando cómo se construye la representación de lo negro en lo visual: entre la identidad y el lugar común. Desde las artes plásticas, Beatriz Balanta compartió la experiencia de Blackgroundlab como laboratorio de prácticas afrocentradas en Cali, mientras que Mercedes Angola abordó su trabajo investigativo y curatorial sobre las migraciones negras hacia Bogotá y las violencias epistémicas persistentes en el acceso al reconocimiento social. El encuentro cerró con las sonoridades de Keiler Manuel Valdés (Palenque) y Nassym Gregory (Cali–Barbacoas), quienes, desde músicas ancestrales y experimentaciones contemporáneas, activaron el canto, el ritual y nuevas pedagogías sonoras ligadas a los tambores del Pacífico colombiano.</p>
+</div>
 </div>
 
     </div>
@@ -4163,8 +4176,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Auditorio de la FUP<br />
-            Santander de Quilichao, Norte del Cauca
+            Auditorio Fundación Universitaria de Popayán, sede Santander de Quilichao<br />
+            Santander de Quilichao
           
 
           
@@ -4208,7 +4221,7 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/mercedes-angola/">
+                    <a href="/kauka-dev/invitadxs/mercedes-angola-rossi/">
                       Mercedes Angola Rossi
                     </a>
                   
@@ -4232,8 +4245,8 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/adolfo-alban-achinte/">
-                      Adolfo Albán Achinte
+                    <a href="/kauka-dev/invitadxs/catherine-dunga--kitambo/">
+                      Catherine Dunga – Kitambo
                     </a>
                   
                 </li>
@@ -4269,7 +4282,7 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/mercedes-angola/">
+                  <a href="/kauka-dev/invitadxs/mercedes-angola-rossi/">
                     Mercedes Angola Rossi
                   </a>
                 
@@ -4293,8 +4306,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/adolfo-alban-achinte/">
-                    Adolfo Albán Achinte
+                  <a href="/kauka-dev/invitadxs/catherine-dunga--kitambo/">
+                    Catherine Dunga – Kitambo
                   </a>
                 
               </li>
@@ -4307,26 +4320,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
-    <div class="encuentro-info-links-container">
-      <div class="encuentro-info-diamonds-left"></div>
-      <div class="encuentro-info-links-diamond">
-        
-          <a href="/agenda">Agenda</a>
-        
-      </div>
-      <div class="encuentro-info-links-diamond">
-        
-          <a
-            href="https://maps.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Mapa</a
-          >
-        
-      </div>
-      <div class="encuentro-info-diamonds-right"></div>
-    </div>
   
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-30" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4875,6 +4882,46 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Visualidades y sonoridades afro, indígenas y campesinas</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Keiler Valdés</li>
+            
+              <li>Juan Carlos Romero</li>
+            
+              <li>Mercedes Angola Rossi</li>
+            
+              <li>Nassyn Gregory</li>
+            
+              <li>Beatriz Balanta</li>
+            
+              <li>Catherine Dunga – Kitambo</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

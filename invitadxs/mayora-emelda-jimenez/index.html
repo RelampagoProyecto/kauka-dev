@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,82 +4103,13 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
   
   
   
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
     
       
       
@@ -4931,6 +4875,22 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper asamblearios-term-info-wrapper">
     
@@ -4948,7 +4908,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="asamblearios-term-content">
+      <div class="asamblearios-term-content invitadx-rich-content">
         <p>Mayora y sabedora indígena colombiana, lideresa del pueblo Emberá Chamí y figura fundamental en los procesos de defensa territorial y restitución de derechos colectivos en su comunidad. Es reconocida por su experiencia y su profundo conocimiento ancestral, tanto dentro de su pueblo como en escenarios más amplios de diálogo intercultural. Ha desempeñado un papel clave en la lucha por la restitución de los derechos territoriales del resguardo indígena de Papallacta, proceso que culminó en 2023 con su reconocimiento como la primera comunidad indígena víctima del conflicto armado interno en Colombia en lograr la restitución de sus tierras. Este hito representa un precedente histórico en la garantía de los derechos de los pueblos indígenas.</p>
 <p>La labor de Emelda Jiménez se centra en la defensa y recuperación de la memoria ancestral, la identidad cultural y las prácticas tradicionales del pueblo Emberá Chamí, promoviendo la pervivencia de sus valores espirituales, sociales y territoriales. Asimismo, ha sido destacada por su trabajo en la construcción de paz y la protección de la biodiversidad, especialmente en territorios como el Urabá antioqueño, donde su liderazgo articula el cuidado de la vida, el territorio y la reconciliación. Su trayectoria encarna la resistencia y la lucha de las mujeres indígenas en Colombia por la dignidad, la autonomía y la permanencia de sus comunidades y territorios.</p>
 
@@ -4984,6 +4944,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4997,7 +4959,7 @@ if (typeof initHeaderOnReady === "function") {
   asamblearios-term-proyectos">
 
   <div class="asamblearios-term-proyectos-arrow">↘</div>
-  <div class="asamblearios-term-proyectos-list">
+  <div class="asamblearios-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -5025,86 +4987,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5205,6 +5087,94 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
         
       
     
@@ -5304,14 +5274,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -5333,141 +5302,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -5478,6 +5312,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5486,9 +5326,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5498,8 +5335,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5516,11 +5352,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -5530,8 +5369,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5546,11 +5384,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -5560,38 +5401,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
-      
-      
-
-      
-      
-      
-      
-    
-      
-
-      
-      
         
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
       
       
 
@@ -5604,6 +5414,21 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -5611,40 +5436,21 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="asamblearios-term-componente-group">
-          <div class="asamblearios-term-componente-label">vivencial:</div>
+          <div class="asamblearios-term-componente-label">asambleas:</div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/cuarta-asamblea-de-mundos-posibles/">Cuarta asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/">Primera asamblea de mundos posibles</a>
             </div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/primera-asamblea-de-mundos-posibles/">Primera asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/">Segunda asamblea de mundos posibles</a>
             </div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/segunda-asamblea-de-mundos-posibles/">Segunda asamblea de mundos posibles</a>
-            </div>
-          
-            <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/tercera-asamblea-de-mundos-posibles/">Tercera asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/">Tercera asamblea de mundos posibles</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -5664,6 +5470,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Mayora Emelda Jiménez</p>
+
+    
+  
+</div>
+
 
     
     

@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Territorio expandido: academia, arte y gestión cultural</title>
+<title>Territorio expandido: academia, arte y gestión cultural desde experiencias afro</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Territorio expandido: academia, arte y gestión cultural" />
+<meta property="og:title" content="Territorio expandido: academia, arte y gestión cultural desde experiencias afro" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-29-territorio-expandido/" />
 
 
-<meta name="twitter:title" content="Territorio expandido: academia, arte y gestión cultural" />
+<meta name="twitter:title" content="Territorio expandido: academia, arte y gestión cultural desde experiencias afro" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,16 +4135,14 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Territorio expandido: academia, arte y gestión cultural
+      Territorio expandido: academia, arte y gestión cultural desde experiencias afro
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>La gestión y la autogestión desde las artes ¿Cómo están las afro-colectividades artísticas organizadas/agremiadas? Desde espacios como Kitambo, o Black ground Lab se establecerá una conversa sobre las experiencias desde lugares situados en lo afro.</p>
+  <div class="page-content-text"><p>La gestión y la autogestión desde las artes ¿Cómo están las afro-colectividades artísticas organizadas/agremiadas? Desde espacios como Kitambo, o Black ground Lab se establecerá una conversa sobre las experiencias desde lugares situados en lo afro.</p>
 <p>Para este encuentro tuvimos la oportunidad y fortuna de escuchar voces de mujeres negras, con un pensamiento situado tanto desde sus prácticas como de su lugar de enunciación: Beatriz Balanta con la potencia de su voz y de su pensamiento contemporáneo fugitivo entre Norteamérica y Cali, la firmeza y dulzura de la Maestra Mary Grueso y el mundo de la gestión afro-centrada desde dos orillas de Catherine Dunga (Kitambo). El conversatorio arrojó luces sobre la gestión y autogestión de espacios culturales, pero así mismo dejó inquietudes entre los presentes sobre cómo organizarse y la fuerza de lo colectivo para afrontar retos culturales en un país como Colombia. Es de vital importancia desde la pedagogía, crear dichos espacios, entender las dinámicas de las instituciones pero así mismo agremiarse de manera independiente para resonar en las comunidades y dar cabida a sus procesos, que como nos demostró el presente Salon Nacional, es en la escucha colectiva donde encontraremos el valor de la vida humana y no-humana.</p>
-
-  </div>
+</div>
 </div>
 
     </div>
@@ -4163,8 +4176,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Casa del Cacao<br />
-            Puerto Tejada, Norte del Cauca
+            Escuela Taller del Norte del Cauca<br />
+            Barrio las Dos Aguas, Puerto Tejada
           
 
           
@@ -4200,7 +4213,7 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/catherine-dunga/">
+                    <a href="/kauka-dev/invitadxs/catherine-dunga--kitambo/">
                       Catherine Dunga – Kitambo
                     </a>
                   
@@ -4237,7 +4250,7 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/catherine-dunga/">
+                  <a href="/kauka-dev/invitadxs/catherine-dunga--kitambo/">
                     Catherine Dunga – Kitambo
                   </a>
                 
@@ -4259,6 +4272,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-29" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4520,6 +4547,40 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Territorio expandido: academia, arte y gestión cultural desde experiencias afro</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Beatriz Balanta</li>
+            
+              <li>Catherine Dunga – Kitambo</li>
+            
+              <li>Mary Grueso</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,24 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
+  
+    <div
+      class="proyecto-categorias-container  bg-burnt-orange">
+      <div id="proyecto-categorias" class="proyecto-categorias">
+        
+        
+        
+      </div>
     </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,20 +4139,34 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>La residencia de Allpamama Wawakuna en el espacio de Yanacroma, en Río Blanco, Sotará, tuvo como propósito gestionar los permisos territoriales, comunitarios y espirituales, guiados por lxs Yachakuna del territorio, para recoger el barro de los Urku-Nina, los volcanes Puracé y Sotará, que tomó posteriormente la forma de un frailejón, guardián del pagamento; un símbolo sembrado en el territorio sagrado de la Pirámide de Tulcán (Kuta Inti) en diálogo con la artista misak Julieth Morales.</p>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p>La residencia de Allpamama Wawakuna en el espacio de Yanacroma, en Río Blanco, Sotará, tuvo como propósito gestionar los permisos territoriales, comunitarios y espirituales, guiados por lxs Yachakuna del territorio, para recoger el barro de los Urku-Nina, los volcanes Puracé y Sotará, que tomó posteriormente la forma de un frailejón, guardián del pagamento; un símbolo sembrado en el territorio sagrado de la Pirámide de Tulcán (Kuta Inti) en diálogo con la artista misak Julieth Morales.</p>
 <p>El material fue obtenido en una caminata hasta los volcanes donde fue tomado en préstamo para dar forma a este monumento efímero destinado a regresar a la tierra con la lluvia, reactivando así el pensamiento ancestral del ciclo y encarnando el espíritu de la Madre Agua. El monumento se asentó finalmente en la pileta a los pies del Kuta Inti, donde, mediante un cierre ceremonial junto a las comunidades, se dio inicio al pagamento colectivo Kaukagua: ofrenda efímera.</p>
-
-  </div>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4150,7 +4183,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
 
   
   
@@ -4194,7 +4226,9 @@ if (typeof initHeaderOnReady === "function") {
             Yanacroma
           
           
-            <div class="proyecto-info-lugar-direccion">Río Blanco, Sotará</div>
+            <div class="proyecto-info-lugar-direccion">
+              Río Blanco, Sotará
+            </div>
           
           
           
@@ -4202,16 +4236,16 @@ if (typeof initHeaderOnReady === "function") {
       
 
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4236,13 +4270,13 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4267,15 +4301,16 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-11-17" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4293,8 +4328,40 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Residencia Yanacroma II</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Asociación Cultural Allpamama Wawakuna</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

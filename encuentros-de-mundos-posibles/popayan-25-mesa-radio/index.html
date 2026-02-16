@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,8 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Activación de radio itinerante a cargo de DACMI en el marco de los Encuentros de Mundos Posibles del 47 Salón Nacional de Artistas.</p>
-
-  </div>
+  <div class="page-content-text"><p>En articulación con la Dirección de Medios Audiovisuales del Ministerio de las Culturas, las Artes y los Saberes (DACMI), se desarrollaron dos activaciones de radio con radios locales y procesos de radio comunitaria y universitaria del Cauca. En estos espacios se conversó sobre mujeres, arte y paz junto a la Emisora Comunitaria La Voz 97.1 FM y el portal Cauca Noticias, y en torno a la educación desde múltiples perspectivas, voces y saberes con la Universidad Autónoma Indígena Intercultural UAIIN - CRIC, en el marco de pedagogías espirales.</p>
+</div>
 </div>
 
     </div>
@@ -4153,7 +4166,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          5:00 p.m. - 6:00 p.m.
+          5:00 p.m. - 4:00 p.m.
         </div>
       </div>
 
@@ -4162,8 +4175,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            MAMPO - Casa Arte<br />
-            Calle 4 #1-14, Barrio La Pamba
+            MAMPO - Casa Arte / Universidad Autónoma Indígena Intercultural UAIIN - CRIC, sede La Aldea<br />
+            
           
 
           
@@ -4175,7 +4188,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          5:00 p.m. - 6:00 p.m.
+          5:00 p.m. - 4:00 p.m.
         </div>
       </div>
 
@@ -4187,17 +4200,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-gente">
           <div class="artists-list-label">Invitadxs</div>
           
-            <ul>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/dacmi/">
-                      Dacmi
-                    </a>
-                  
-                </li>
-              
-            </ul>
+            <p>--</p>
           
         </div>
       </div>
@@ -4208,17 +4211,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-gente">
         <div class="artists-list-label">Invitadxs:</div>
         
-          <ul>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/dacmi/">
-                    Dacmi
-                  </a>
-                
-              </li>
-            
-          </ul>
+          <p>--</p>
         
       </div>
     </div>
@@ -4226,16 +4219,589 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
     <div class="col-span-12">
+      
+        
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_65a11d8614a70b14.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_1a4d20fcca9c2389.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_9851d837cf53b343.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_c1d4601688a5da75.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_3799b14e99fabe3f.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_a642364a7ab69d14.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_f997b2fa9fe7048b.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_3cb0e32592d9a0f3.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_20b413d9046bcc79.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-01_hu_d7bfca4f6455c793.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_popayan-25-mesa-radio-01.webp"
+              loading="lazy"
+              width="2400"
+              height="1401" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_d436e498df67541.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_eb11fba5e13af2da.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_90c0749b99ff691.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_c40c826bd825cf20.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_85c35cd0fa9550d7.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_3e2f985cce1a3ac.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_192306276a426e71.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_fec578a2e61f454c.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_cf824ac4334ca2c1.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-02_hu_54dd9b8bd907d504.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_popayan-25-mesa-radio-02.webp"
+              loading="lazy"
+              width="2400"
+              height="1800" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_8b39fc249eff9774.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_e9ce53eaa2a3fb38.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_a2e3c999d5b3ab54.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_8b44e8045d150e48.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_90db588be9b90c6f.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_edde9aa371941054.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_cd40f8db47d8b4e7.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_802a1242060b85d6.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_7b34c61fd971ba61.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-03_hu_35274258d52d7e86.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_popayan-25-mesa-radio-03.webp"
+              loading="lazy"
+              width="1280"
+              height="960" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_12f63dbac35c61fc.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_3a0cd957427e4a56.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_a170bf4740e6739c.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_9f704a76596e09a0.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_fb452688ccc28697.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_76033b20636a245d.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_30708db7239e99ef.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_e626ee3e2f1eaff8.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_57a6526b5127d42c.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-04_hu_900a82b02d2fecb4.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_popayan-25-mesa-radio-04.webp"
+              loading="lazy"
+              width="1280"
+              height="960" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_e1104ba3a43735a4.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_afdc9a100ec59474.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_ed8def41fc0a6266.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_7014990e19f92c7a.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_9d2824ca01d6e932.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_ff5880d7a67ff36f.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_184095042a028e1a.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_4ec595a9c0580b15.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_cfc91d4702d8d821.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/popayan-25-mesa-radio/galeria/enc_popayan-25-mesa-radio-05_hu_ef5302efbfed559b.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_popayan-25-mesa-radio-05.webp"
+              loading="lazy"
+              width="1600"
+              height="1200" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
       
     </div>
   </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Activación: Al Aire Libre, Mesa de Radio Itinerante</p>
+
+    
+      
+    
+  
+</div>
+
 
     
     

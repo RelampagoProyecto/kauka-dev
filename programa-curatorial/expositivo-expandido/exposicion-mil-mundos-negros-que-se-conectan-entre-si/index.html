@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,13 +4130,26 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>MIL MUNDOS NEGROS QUE SE CONECTAN ENTRE SÍ*</p>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p>MIL MUNDOS NEGROS QUE SE CONECTAN ENTRE SÍ*</p>
 <p>La oscuridad es la lengua de los cuerpos que no se dejan traducir. Ahí, los encuentros se afirman como tejido comunitario vivo y se separan del régimen de la visibilidad colonial. Desde allí se reclama el derecho a la opacidad propuesto por Édouard Glissant, no para esconderse, sino para existir sin ser reducidxs y para tejer vínculos que no deban rendirse a la claridad hegemónica. La penumbra aloja tecnologías metafísicas negras: rezos que curan, plantas que enseñan, ancestrxs que convocan y constelaciones que orientan. La oscuridad no equivale a ceguera, más bien nombra políticas de conspiración y pedagogías de transmisión de saberes.
 El ennegrecimiento posee rutas propias, se alía con las sombras, aparta la visibilidad forzada y, como una estrategia de reapropiación temporal y espiritual, desdobla el tiempo lineal. Cuando una planta dicta su receta, cuando el nombre de una persona negra irrumpe en el archivo, cuando una estrella enlaza hemisferios, los mundos negros se reconocen, se llaman y se conectan. Estas rutas, saberes y gestos son desarrollados y materializados por lxs artistas que integran esta exposición, cuyas prácticas encarnan la oscuridad.
 Los proyectos reunidos en la exposición no buscan representar la oscuridad, sino operar desde ella como método estético, político y epistemológico. A través de archivos híbridos, diagramas cósmicos, conjuros y recetas con plantas, estas prácticas parten de una desconfianza de la transparencia y proponen, en cambio, modos de relación basados en la opacidad, la escucha y la co-presencia. Así, la exposición se configura como un espacio en el que no se revela todo, sino donde se resguardan y se conectan mundos posibles que continúan desarrollándose en la oscuridad.</p>
@@ -4134,12 +4157,13 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
 <p>INVITADXS</p>
 <p>Salón de la Excelencia - Secretaría de Educación y Cultura, Santander de Quilichao: Astrid González y Nolan Oswald Dennis.</p>
 <p>Capilla Santa Bárbara de Dominguillo, vereda Dominguillo, Santander de Quilichao: Alejandra Sánchez y Joyce Rivas.</p>
-
-  </div>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4156,7 +4180,6 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
   
   
   
-
 
   
   
@@ -4207,7 +4230,9 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             Secretaría de Educación y Cultura de Santander de Quilichao, Salón de la Excelencia
           
           
-            <div class="proyecto-info-lugar-direccion">Santander de Quilichao</div>
+            <div class="proyecto-info-lugar-direccion">
+              Santander de Quilichao
+            </div>
           
           
           
@@ -4222,16 +4247,16 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4292,13 +4317,13 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4359,15 +4384,16 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-10-27" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -5109,8 +5135,48 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Exposición: Mil mundos negros que se conectan entre sí</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Fotos Generales Expo</li>
+            
+              <li>Astrid González</li>
+            
+              <li>Nolan Oswald Dennis</li>
+            
+              <li>María Alejandra Sánchez</li>
+            
+              <li>Joyce Rivas</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

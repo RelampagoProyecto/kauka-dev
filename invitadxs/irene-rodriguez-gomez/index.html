@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Artista transdisciplinar, cantante y terapeuta vocal que trabaja en la intersección entre el arte sonoro, las prácticas somáticas comunitarias y el performance relacional. Bajo el nombre de IRAKARA, crea obras que combinan técnicas vocales extendidas, investigación de la voz encarnada y ecología sonora, para reimaginar la voz como una herramienta de percepción, sanación y transformación social. Su práctica se centra en la voz como un medio sensorial y colectivo que conecta la creación artística con marcos terapéuticos y pedagógicos.</p>
 <p>Ha presentado obras originales y dirigido laboratorios de creación en plataformas como Global Artivism en Sudáfrica (2024) y Brasil (2025). Realizó la residencia Reactivating Exile Capacities R.E.C., Portugal (2024). Participó en el 45 Salón Nacional de Artistas: El revés de la trama, Bogotá (2019), el 46 Salón Nacional de Artistas: Inaudito Magdalena, Magdalena (2023), y Experimenta Sur – Plataforma Internacional de Artes Vivas.
 Como compositora e intérprete, ha creado bandas sonoras originales para cine, teatro y arte en vivo, integrando la resonancia corporal y la improvisación en su música. Ha desarrollado metodologías propias que combinan la musicoterapia con prácticas contemporáneas de performance y arte relacional.</p>
@@ -4171,6 +4200,8 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
   
 
   
+
+  
   
 
   
@@ -4184,7 +4215,7 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4212,84 +4243,6 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4326,6 +4279,74 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
       
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -4509,128 +4530,7 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4647,6 +4547,11 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4698,6 +4603,25 @@ Como compositora e intérprete, ha creado bandas sonoras originales para cine, t
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Irene Rodríguez Gómez</p>
+
+    
+  
+</div>
+
 
     
     

@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,16 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Performance de Lukas Avendaño &ldquo;Réquiem para un alcaraván&rdquo; en el Teatro Municipal Guillermo Valencia.</p>
-
-  </div>
+  <div class="page-content-text"><h2 id="réquiem-para-un-alcaraván">Réquiem para un alcaraván</h2>
+<p><strong>Lukas Avendaño</strong>
+Performance
+Teatro Municipal Guillermo Valencia
+2011–2025</p>
+<p align="right"><em>(...) pero, sobre todo, estoy más conmovido por la gente que no ha pasado por este escenario, por quienes nunca habían ocupado esta casa. Seguramente cuando se construyó este edificio no se pensó que la comunidad, los homosexuales, los indios, los prietos, los negros, los campesinos y las personas de la ruralidad, tendrían pretensiones artísticas y llegarían a habitar este espacio. Por la memoria de ellas, ellos y elles: que hoy nuestras presencias y nuestras existencias sean un tributo, un homenaje.</em><br>Lukas Avendaño, 26 de noviembre de 2025. Popayán</p>
+<p>Asistimos a una boda que poco a poco se transforma en una ceremonia dedicada a la virgen y que, finalmente, adquiere la forma de un funeral. <em>Réquiem para un alcaraván</em> es una danza performativa que nace de la exclusión de lxs muxes —como Lukas— de las festividades del istmo de Tehuantepec, en el estado de Oaxaca. Allí, Lukas protagoniza un ritual en el que entrelaza realidad y ficción para resignificar su muxeidad, confrontar la velada aceptación social de la identidad muxe y celebrar aquello que aún es considerado una transgresión.</p>
+<p>Un muxe, en la cultura zapoteca, es una persona asignada hombre al nacer que asume roles culturalmente asociados a lo femenino —en lo laboral, afectivo, emocional y sexual—, configurando una experiencia mucho más compleja que la categoría occidental de “hombre gay” o cualquier otro adjetivo binario que intente nombrarles.</p>
+<p>En el marco del 47 Salón Nacional de Artistas, la obra se presentó en el Teatro Municipal Guillermo Valencia de Popayán, desbordando los límites entre el escenario y el público, y procurando su participación en el ritual. Género, etnicidad y sexualidad se entrelazan para confrontar a lxs espectadorxs con una pregunta insistente: ¿a quién estamos viendo? ¿A un hombre, una mujer, unx campesinx, unx bailarinx, unx antropólogx, unx artista, unx activista, un gay, un indígena, unx profesorx, unx marica, unx trans, unx líder social, un monstruo, unx poeta? Lukas es todxs ellxs y, a la vez, ningunx.</p>
+</div>
 </div>
 
     </div>
@@ -4153,7 +4174,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          7:00 p.m. - 9:00 p.m.
+          7:00 p.m. - 7:00 p.m.
         </div>
       </div>
 
@@ -4163,7 +4184,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-hora-lugar">
           
             Teatro Municipal Guillermo Valencia<br />
-            Popayán
+            Centro historico, Popayán
           
 
           
@@ -4175,7 +4196,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          7:00 p.m. - 9:00 p.m.
+          7:00 p.m. - 7:00 p.m.
         </div>
       </div>
 
@@ -4226,6 +4247,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-26" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4774,6 +4809,36 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Performance: Réquiem para un alcaraván</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Lukas Avendaño</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

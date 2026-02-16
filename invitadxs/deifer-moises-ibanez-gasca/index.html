@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4580,6 +4593,21 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
         
         
   
@@ -4598,6 +4626,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -4617,9 +4661,8 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
-        <p>Ha crecido en el resguardo Jácome y empezó su camino como ilustrador con un mural hecho en el colegio Mama Bwé Reojaché. Posteriormente fue elegido como el ilustrador de la comunidad y ha realizado trabajos como Semillas y chagra, del proyecto Cuidadoras de la Amazonia (2019-2021) y Restaurando las orillas de la quebrada Jácome (2025), del que fue ilustrador del equipo de investigación e implementación del proyecto comunitario de adaptación al cambio climático. Ha participado en diversos colectivos y grupos de jóvenes indígenas interesados en el tema ambiental. Participó en la COP16 en Cali, intervino en la Maloca de la OPIAC y fue convocado al comité de jóvenes del Panel Científico Amazónico (SPA) en preparación de un manifiesto para la COP30 de Belén de Pará. Es seguidor de la medicina tradicional, está aprendiendo de los mayores las técnicas de tejido como texto ancestral y usa el arte y la ilustración como una manera de comunicar la visión del mundo Korebajū.</p>
-
+      <div class="artista-term-content invitadx-rich-content">
+        Ha crecido en el resguardo Jácome y empezó su camino como ilustrador con un mural hecho en el colegio Mama Bwé Reojaché. Posteriormente fue elegido como el ilustrador de la comunidad y ha realizado trabajos como Semillas y chagra, del proyecto Cuidadoras de la Amazonia (2019-2021) y Restaurando las orillas de la quebrada Jácome (2025), del que fue ilustrador del equipo de investigación e implementación del proyecto comunitario de adaptación al cambio climático. Ha participado en diversos colectivos y grupos de jóvenes indígenas interesados en el tema ambiental. Participó en la COP16 en Cali, intervino en la Maloca de la OPIAC y fue convocado al comité de jóvenes del Panel Científico Amazónico (SPA) en preparación de un manifiesto para la COP30 de Belén de Pará. Es seguidor de la medicina tradicional, está aprendiendo de los mayores las técnicas de tejido como texto ancestral y usa el arte y la ilustración como una manera de comunicar la visión del mundo Korebajū.
       </div>
     
 
@@ -5194,6 +5237,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -5207,7 +5252,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -5235,84 +5280,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5416,6 +5383,94 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -5508,14 +5563,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -5537,141 +5591,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -5766,6 +5685,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Deifer Moisés Ibáñez Gasca</p>
+
+    
+  
+</div>
+
 
     
     

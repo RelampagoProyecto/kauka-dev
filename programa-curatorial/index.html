@@ -22,6 +22,9 @@
 
 
 
+
+  
+
 <meta name="pagefind:weight" content="1" />
 
 
@@ -4031,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <div
@@ -4549,11 +4564,20 @@ if (typeof initHeaderOnReady === "function") {
   } else {
     initPage();
   }
-</script>
-
-  
+</script> 
   <footer class="home-footer-wrapper programa-footer">
     
+
+
+
+
+  
+    
+  
+  
+    
+  
+
 
 
 
@@ -4933,7 +4957,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-visual-image sm:hidden img"
+        class="home-footer-visual-image home-footer-visual-image-mobile-all sm:hidden img"
         width=""
         height="" />
     
@@ -5008,7 +5032,7 @@ if (typeof initHeaderOnReady === "function") {
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-visual-image hidden sm:block lg:hidden img"
+        class="home-footer-visual-image home-footer-visual-image-mobile-sm hidden sm:block lg:hidden img"
         width=""
         height="" />
     
@@ -5028,8 +5052,13 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 </div>
 
-<div class="home-footer-logos bg-dark-forest-green">
-  <div class="home-footer-image-container">
+
+
+  </footer>
+
+      </section>
+    </main>
+
     
 
 
@@ -5037,49 +5066,13 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <img
-    loading=""
-    decoding="async"
-    src="https://relampagoproyecto.github.io/kauka-dev/img/footer/footer.png"
-    alt=""
-    class="home-footer-image img"
-    height=""
-    width="" />
-
-
-  </div>
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
 </div>
 
-  </footer>
-
-      </section>
-    </main>
 
     
     

@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -74,10 +75,8 @@
 
 
 
-  
 
-
-<title>Lukas Avendaño</title>
+<title>KAUKA</title>
 
 
 
@@ -141,13 +140,13 @@
 
 
 
-<meta property="og:title" content="Lukas Avendaño" />
+<meta property="og:title" content="KAUKA" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/invitadxs/lukas-avendano/" />
 
 
-<meta name="twitter:title" content="Lukas Avendaño" />
+<meta name="twitter:title" content="KAUKA" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,13 +4103,739 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
   
   
   
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+        
+        
+  
   
 
   
@@ -4114,6 +4851,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -4133,7 +4886,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Artista de performance y antropólogo que se asume como muxe del istmo de Tehuantepec; pertenece a la cultura ancestral zapoteca. Estudió la Licenciatura en Antropología y cursó estudios en la Facultad de Danza de la Universidad Veracruzana, así como en la Especialidad de Creación Dancística del CICO-INBA. Ha sido capacitado por The National Dance Institute’s Teaching Artist Training Program in New York 2008.</p>
 <p>Cohabita el cuerpo-territorio que enuncia “un ecosistema cultural”, dónde se develan y desdoblan las nociones de sexualidad, género y raza en intersección con la identidad “muxe”. Avendaño describe &ldquo;los muxerismos como un hecho social total, protagonizado por personas nacidas con un sistema reproductor dotado de testículos y pene, que optan por roles sociales, culturales y sexo afectivos que distan de la masculinidad tradicional u ortodoxa&rdquo;. Aunque sería fácil hacer una equivalencia entre gay y muxe, o transgénero y muxe, se puede describir los muxerismos como una identidad y práctica cultural singular en el contexto de México, decolonial y anti patriarcal.
 Se ha posicionado en la escena local-regional, de donde es originario, así como en la escena nacional  e internacional. Recibió el Premio Travesías Escénicas, que otorga la compañía Barro Rojo Arte Escénica; el Premio a la Identidad Indígena, FICWALMAPU, Temuco, Chile; el Premio Fundación Threshold, Estados Unidos y Canadá, y el Premio de la Audiencia del Zurcher Theater Spektakel, Zúrich, Suiza. Fue homenajeado por la Compañía Danza Universitaria de la Universidad de Costa Rica, a quien dedica la quinta edición del Festival Paréntesis Espacio de Danza, así como por la X Muestra Internacional de las Artes Escénicas Movimiento Continuo, Bogotá, Colombia.</p>
@@ -4710,6 +5463,8 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
   
 
   
+
+  
   
 
   
@@ -4723,7 +5478,7 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4751,86 +5506,6 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4876,10 +5551,7 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
       
       
-    
-      
-      
-      
+        
       
     
       
@@ -4924,9 +5596,35 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
     
       
       
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
       
       
         
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
       
     
       
@@ -5030,8 +5728,6 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
       
       
-        
-      
     
       
       
@@ -5043,68 +5739,6 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
       
     
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
       
       
       
@@ -5125,39 +5759,6 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
       
         
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
       
     
       
@@ -5196,6 +5797,30 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
       
         
+      
+      
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
+      
+      
+        
+      
+      
+      
+      
+    
       
       
         
@@ -5205,98 +5830,6 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
     
     
 
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-        
-      
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
     
       
 
@@ -5364,6 +5897,38 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
       
     
+      
+
+      
+      
+        
+        
+      
+
+      
+      
+        
+        
+          
+          
+          
+        
+      
+
+      
+      
+
+      
+      
+        
+      
+      
+
+      
+      
+      
+      
+    
 
     
     
@@ -5373,23 +5938,6 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/colonialidad-de-genero-recorrido-a-cargo-de-furiamarika-y-transaliades-activacion-de-polifonias-indociles/">Colonialidad de género: recorrido a cargo de FuriaMarika y Transaliades (Activación de Polifonías indóciles)</a>
-            </div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/performance-requiem-para-un-alcaravan/">Performance: Réquiem para un alcaraván</a>
-            </div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/tonga-manifiesta-afroindigena/">Tonga: Manifiesta afroindígena</a>
-            </div>
-          
-        </div>
       
     
       
@@ -5407,11 +5955,15 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
           <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-28-colonialidad-genero/">Colonialidad de género: recorrido</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-28-colonialidad-genero/">Colonialidad de género: recorrido a cargo de FuriaMarika y Transaliades (Activación de Polifonías indóciles)</a>
             </div>
           
             <div class="artista-term-componente-link">
               <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-26-requiem-alcaravan/">Performance: Réquiem para un alcaraván</a>
+            </div>
+          
+            <div class="artista-term-componente-link">
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/">Tonga: Manifiesta afroindígena</a>
             </div>
           
         </div>
@@ -5431,14 +5983,31 @@ Se ha posicionado en la escena local-regional, de donde es originario, así como
     
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Lukas Avendaño</p>
+
+    
+  
+</div>
+
 
     
     

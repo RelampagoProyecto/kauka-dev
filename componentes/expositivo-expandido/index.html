@@ -22,7 +22,8 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+<meta name="pagefind:weight" content="2" />
 
 
 
@@ -4029,10 +4030,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4088,7 +4101,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <section>
@@ -4138,6 +4151,48 @@ if (typeof initHeaderOnReady === "function") {
         
         <div class="lg:col-8">
           <div class="row">
+            
+              <div class="md:col-6 mb-14">
+                <div>
+  
+  
+  <h4 class="mb-3">
+    <a href="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/">
+      El futuro que nunca fue / Performance de Marilyn Boror
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6">Pintura, cemento y acción 2023-2025
+El futuro que nunca fue es un conjunto de cuatro retratos de mujeres del Cauca; tres de ellas, Elena Hinestroza, Carmelina Yule, Agustina Yalanda, ejemplos de lucha cuya memoria es importante para nuestros territorios, y el cuarto, el de una mujer indígena no identificada de San Juan Sacatepéquez, Guatemala.
+</p>
+  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/">
+    Leer más
+  </a>
+</div>
+
+              </div>
+            
+              <div class="md:col-6 mb-14">
+                <div>
+  
+  
+  <h4 class="mb-3">
+    <a href="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/">
+      La palabra dicha / Performance de Eider Yangana
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6">Performance e instalación 2024-2025
+El artista encarna con su cuerpo la imagen de la escultura en homenaje al cacique Pubén, comisionada en 1939 al artista indigenista Rómulo Rozo. Dicha imagen corresponde al boceto de uno de los monumentos que se proyectaron para conmemorar el cuarto centenario de Popayán, pero que nunca llegó a materializarse; en su lugar fue erigida la estatua de Sebastián de Belalcázar sobre la pirámide de Tulcán.
+</p>
+  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/">
+    Leer más
+  </a>
+</div>
+
+              </div>
             
               <div class="md:col-6 mb-14">
                 <div>
@@ -4211,7 +4266,7 @@ Proyecto ganador de la convocatoria “Curaduría en espacio público”. Motota
   </h4>
   
   
-  <p class="mb-6"> Las guardias —indígena, cimarrona y campesina— presentes en el Cauca son formas propias, autónomas y pacíficas de cuidado y protección de la vida y del territorio. Como sistemas comunitarios de cuidado, anteponen el bienestar colectivo al interés individual, un principio que desborda la lógica de lo privado y lo exclusivamente propio. Saben que cuidar la semilla es cuidar la montaña entera.
+  <p class="mb-6">Las guardias —indígena, cimarrona y campesina— presentes en el Cauca son formas propias, autónomas y pacíficas de cuidado y protección de la vida y del territorio. Como sistemas comunitarios de cuidado, anteponen el bienestar colectivo al interés individual, un principio que desborda la lógica de lo privado y lo exclusivamente propio. Saben que cuidar la semilla es cuidar la montaña entera.
 </p>
   <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/">
     Leer más
@@ -4273,7 +4328,10 @@ La oscuridad es la lengua de los cuerpos que no se dejan traducir. Ahí, los enc
   </h4>
   
   
-  <p class="mb-6">“La oscuridad del monte ahuyentó a los esclavistas.” Diane Palacios
+  <p class="mb-6">"La oscuridad del monte ahuyentó a los esclavistas."
+Diane Palacios
+"¡Soy un cimarrón y me voy pa'l monte!"
+Canción de Robe L Ninho
 </p>
   <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/">
     Leer más
@@ -4329,6 +4387,21 @@ La oscuridad es la lengua de los cuerpos que no se dejan traducir. Ahí, los enc
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+</div>
+
 
     
     

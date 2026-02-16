@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,8 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Intercambio de semillas nativas, saberes ancestrales y prácticas de soberanía alimentaria en el territorio del Resguardo indígena de Puracé.</p>
-
-  </div>
+  <div class="page-content-text"><p>Más que un encuentro, encarna un principio ancestral de la minga, fundamental para los pueblos étnicos y campesinos del país, reuniendo a guardianes de la vida del Abya Yala para visibilizar la defensa de la soberanía alimentaria y cultural.</p>
+</div>
 </div>
 
     </div>
@@ -4163,7 +4176,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-hora-lugar">
           
             Centro Educativo Vueltas de Patico<br />
-            Resguardo indígena de Puracé
+            Resguardo indígena de Puracé, Cauca
           
 
           
@@ -4201,40 +4214,40 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/marcha-de-la-comida/">
-                      Marcha-De-La-Comida
+                    <a href="/kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/">
+                      Proceso De Liberación De La Madre Tierra —Uma Kiwe
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/cosurca/">
-                      Cosurca
+                    <a href="/kauka-dev/invitadxs/yohan-jarvy-ledezma-ausecha/">
+                      Yohan Jarvy Ledezma Ausecha
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/colectivo-ambiente-tabanoy/">
-                      Colectivo-Ambiente-Tabanoy
+                    <a href="/kauka-dev/invitadxs/edgar-julian-santa--colectivo-ambiente-tabanoy/">
+                      Edgar Julián Santa – Colectivo Ambiente Tabanoy
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/ecoaldea-mamita-pascuala/">
-                      Ecoaldea-Mamita-Pascuala
+                    <a href="/kauka-dev/invitadxs/mama-pascuala-chuchillo-ussa/">
+                      Mama Pascuala Chuchillo Ussa
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/casa-mamaru/">
-                      Casa-Mamaru
+                    <a href="/kauka-dev/invitadxs/dalid-rosero--colectivo-casa-mamaru/">
+                      Dalid Rosero – Colectivo Casa Mamaru
                     </a>
                   
                 </li>
@@ -4262,40 +4275,40 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/marcha-de-la-comida/">
-                    Marcha-De-La-Comida
+                  <a href="/kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/">
+                    Proceso De Liberación De La Madre Tierra —Uma Kiwe
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/cosurca/">
-                    Cosurca
+                  <a href="/kauka-dev/invitadxs/yohan-jarvy-ledezma-ausecha/">
+                    Yohan Jarvy Ledezma Ausecha
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/colectivo-ambiente-tabanoy/">
-                    Colectivo-Ambiente-Tabanoy
+                  <a href="/kauka-dev/invitadxs/edgar-julian-santa--colectivo-ambiente-tabanoy/">
+                    Edgar Julián Santa – Colectivo Ambiente Tabanoy
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/ecoaldea-mamita-pascuala/">
-                    Ecoaldea-Mamita-Pascuala
+                  <a href="/kauka-dev/invitadxs/mama-pascuala-chuchillo-ussa/">
+                    Mama Pascuala Chuchillo Ussa
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/casa-mamaru/">
-                    Casa-Mamaru
+                  <a href="/kauka-dev/invitadxs/dalid-rosero--colectivo-casa-mamaru/">
+                    Dalid Rosero – Colectivo Casa Mamaru
                   </a>
                 
               </li>
@@ -4316,6 +4329,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-26" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -5422,6 +5449,46 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Minga de intercambio de semillas, sabores y poderes</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Proceso De Liberación De La Madre Tierra —Uma Kiwe</li>
+            
+              <li>Yohan Jarvy Ledezma Ausecha</li>
+            
+              <li>Edgar Julián Santa – Colectivo Ambiente Tabanoy</li>
+            
+              <li>Mama Pascuala Chuchillo Ussa</li>
+            
+              <li>Dalid Rosero – Colectivo Casa Mamaru</li>
+            
+              <li>Edgar Calel</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Un tejido de visiones: conversación curatorial sobre KAUKA</title>
+<title>Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Un tejido de visiones: conversación curatorial sobre KAUKA" />
+<meta property="og:title" content="Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-26-tejido-visiones/" />
 
 
-<meta name="twitter:title" content="Un tejido de visiones: conversación curatorial sobre KAUKA" />
+<meta name="twitter:title" content="Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,15 +4135,14 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Un tejido de visiones: conversación curatorial sobre KAUKA
+      Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Conversación curatorial sobre KAUKA moderada por Adolfo Albán Achinte.</p>
-
-  </div>
+  <div class="page-content-text"><p>Uno de los momentos fundamentales de esta urdimbre es el proceso de nominación y formación del comité curatorial, una forma de organización que está sucediendo por primera vez en la historia del evento más antiguo del Ministerio de las Culturas, las Artes y los Saberes. El comité curatorial cuenta esta historia, vuelve al principio para narrarse desde el antes de todo esto: el cómo llegaron a la formulación y trama de este gran fogón que desde la ancestralidad de sus corazones urbanxs, rurales, afro, campesinxs
+e indígenas, emergió con el nombre de KAUKA, asamblea de mundos posibles.</p>
+</div>
 </div>
 
     </div>
@@ -4163,7 +4177,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-hora-lugar">
           
             MAMPO - Casa Arte<br />
-            Calle 4 #1-14, Barrio La Pamba
+            Barrio La Pamba, Popayán
           
 
           
@@ -4191,6 +4205,46 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
+                    <a href="/kauka-dev/invitadxs/carolina-chacon-bernal/">
+                      Carolina Chacón Bernal
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/catalina-vargas-tovar/">
+                      Catalina Vargas Tovar
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/consejo-ancestral-willka-yaku-eyder-fabio-calambas-trochez-y-phuyu-uma-jenniffer-avila-jordan/">
+                      Consejo Ancestral Willka Yaku (Eyder Fabio Calambás-Tróchez Y Phuyu Uma Jenniffer Ávila-Jordán)
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/eblin-grueso-cuero/">
+                      Eblin Grueso Cuero
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/laura-campaz-minota/">
+                      Laura Campaz Minota
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
                     <a href="/kauka-dev/invitadxs/adolfo-alban-achinte/">
                       Adolfo Albán Achinte
                     </a>
@@ -4212,6 +4266,46 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
+                  <a href="/kauka-dev/invitadxs/carolina-chacon-bernal/">
+                    Carolina Chacón Bernal
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/catalina-vargas-tovar/">
+                    Catalina Vargas Tovar
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/consejo-ancestral-willka-yaku-eyder-fabio-calambas-trochez-y-phuyu-uma-jenniffer-avila-jordan/">
+                    Consejo Ancestral Willka Yaku (Eyder Fabio Calambás-Tróchez Y Phuyu Uma Jenniffer Ávila-Jordán)
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/eblin-grueso-cuero/">
+                    Eblin Grueso Cuero
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/laura-campaz-minota/">
+                    Laura Campaz Minota
+                  </a>
+                
+              </li>
+            
+              <li>
+                
                   <a href="/kauka-dev/invitadxs/adolfo-alban-achinte/">
                     Adolfo Albán Achinte
                   </a>
@@ -4226,6 +4320,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-26" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4960,6 +5068,46 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Carolina Chacón Bernal</li>
+            
+              <li>Catalina Vargas Tovar</li>
+            
+              <li>Consejo Ancestral Willka Yaku (Eyder Fabio Calambás-Tróchez Y Phuyu Uma Jenniffer Ávila-Jordán)</li>
+            
+              <li>Eblin Grueso Cuero</li>
+            
+              <li>Laura Campaz Minota</li>
+            
+              <li>Adolfo Albán Achinte</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

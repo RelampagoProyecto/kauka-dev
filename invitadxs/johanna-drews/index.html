@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Arquitecta y restauradora de las universidades Pontificia Universidad Javeriana de Bogotá y la Universidad Alcalá de Henares, Madrid (1992-1998). Es la representante legal de la Fundación Hacienda Castilla de Pereira, y lidera y acompaña proyectos de conservación, reforestación, educación ambiental y recuperación de prácticas ancestrales.</p>
 <p>Es Mujer líder de la Búsqueda de Visión de KAUKITÁ (2023 - 2025), en el Bosque KAUKITÁ: referente en la región y el país por la biodiversidad de especies no humanas protegidas, entre ellas: mamíferos, aves, mariposas, árboles, flores, plantas, minerales y quebradas que guían sus senderos ecológicos. Es tambien custodia del Altar del Temazcal (2012-2025).</p>
 
@@ -4171,6 +4200,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4184,7 +4215,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4212,84 +4243,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4393,6 +4346,94 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -4485,14 +4526,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -4514,143 +4554,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -4660,38 +4563,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-        
-      
     
       
 
@@ -4736,15 +4607,6 @@ if (typeof initHeaderOnReady === "function") {
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/soberania-autonomia-territorio-y-hoja-de-coca/">Soberanía, autonomía, territorio y hoja de coca</a>
-            </div>
-          
-        </div>
       
     
       
@@ -4782,14 +4644,31 @@ if (typeof initHeaderOnReady === "function") {
     
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Johanna Drews</p>
+
+    
+  
+</div>
+
 
     
     

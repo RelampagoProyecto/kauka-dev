@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4700,6 +4713,144 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
         
         
   
@@ -4718,6 +4869,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -4737,7 +4904,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Artista Plástica de la Universidad Nacional de Colombia con Maestría en Artes Plásticas y Visuales en la Universidad Nacional Autónoma de México. Es docente e investigadora. Estuvo vinculada como docente a la Escuela de Artes Plásticas de la Universidad Nacional de Colombia desde 1997 hasta el 2021. Su trabajo artístico, de investigación incluye instalaciones, objetos, fotografía, dibujo y curadurías.</p>
 <p>Ha participado en exposiciones individuales y colectivas en Colombia y fuera del país. Es integrante del grupo de investigación de Estudios sobre Migraciones y Desplazamientos de la Facultad de Derecho y Ciencia Políticas de la Universidad Nacional de Colombia. Actualmente está desarrollando una línea de investigación sobre estéticas y representaciones visuales de la gente negra en el arte colombiano del siglo XX-XXI y sobre imaginarios de la presencia africana en relación con la construcción de identidades en contextos urbanos colombianos.</p>
 
@@ -4790,6 +4957,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4803,7 +4972,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4831,84 +5000,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5012,6 +5103,94 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -5104,14 +5283,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -5133,141 +5311,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -5278,6 +5321,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5286,9 +5335,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5298,8 +5344,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5314,6 +5359,18 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -5321,25 +5378,13 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
+          <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/visualidades-y-sonoridades-afro-indigenas-y-campesinas/">Visualidades y sonoridades afro, indígenas y campesinas</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-visualidades/">Visualidades y sonoridades afro, indígenas y campesinas</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -5362,6 +5407,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Mercedes Angola Rossi</p>
+
+    
+  
+</div>
+
 
     
     

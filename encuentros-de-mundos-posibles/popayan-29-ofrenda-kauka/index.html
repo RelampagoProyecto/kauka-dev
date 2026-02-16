@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Ofrenda Kauka/Agua y Muestra Residencia Yanacroma</title>
+<title>Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Ofrenda Kauka/Agua y Muestra Residencia Yanacroma" />
+<meta property="og:title" content="Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-29-ofrenda-kauka/" />
 
 
-<meta name="twitter:title" content="Ofrenda Kauka/Agua y Muestra Residencia Yanacroma" />
+<meta name="twitter:title" content="Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,20 +4135,12 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Ofrenda Kauka/Agua y Muestra Residencia Yanacroma
+      Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p><strong>Kaukagua: ofrenda efímera
-Julieth Morales y Asociación Cultural Allpamama Wawakuna</strong></p>
-<p>Instalación en espacio ancestral
-Fuente en la base de la Pirámide de Tulcán, Popayán</p>
-<p>Tras el juicio espiritual al conquistador Sebastián de Belalcázar por parte de la comunidad Misak en 2021, que resultó en el derribamiento de su monumento en la Pirámide de Tulcán (Kuta Inti), se iniciaron una serie de celebraciones como los Inti Raymi, otras formas de comprender el paso del tiempo desde las cosmovisiones andinas. Lideradas por Allpamama Wawakuna, estas celebraciones estuvieron atravesadas por el sueño de sembrar un símbolo en este territorio sagrado: una forma capaz de abrazar la unidad en la diferencia que habita el Cauca. En diálogo con la artista misak Julieth Morales —quien ya proyectaba un homenaje al espíritu Madre Agua— y acompañada por Yazmín Muñoz y Hana Valentina, esta visión tomó la forma de un frailejón, guardián del pagamento, modelado con barro de los Urku-Nina, los volcanes Puracé y Sotará.</p>
-<p>Para esto, se realizó una articulación con la residencia de Allpamama Wawakuna en el espacio de Yanacroma, en Río Blanco, Sotará, con el propósito de gestionar los permisos territoriales, comunitarios y espirituales, guiados por lxs Yachakuna del territorio. El material fue obtenido en una caminata hasta los volcanes, donde fue tomado en préstamo para dar forma a un monumento efímero destinado a regresar a la tierra con la lluvia, reactivando así el pensamiento ancestral del ciclo y encarnando el espíritu de la Madre Agua. El monumento se asentó finalmente en la pileta a los pies del Kuta Inti, donde, mediante un cierre ceremonial junto a las comunidades, se dio inicio al pagamento colectivo Kaukagua: ofrenda efímera.</p>
-
-  </div>
+  <div class="page-content-text"></div>
 </div>
 
     </div>
@@ -4158,7 +4165,7 @@ Fuente en la base de la Pirámide de Tulcán, Popayán</p>
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          5:00 p.m. - 7:00 p.m.
+          5:00 p.m. - 5:00 p.m.
         </div>
       </div>
 
@@ -4167,8 +4174,8 @@ Fuente en la base de la Pirámide de Tulcán, Popayán</p>
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Costado del Kuta Inti (Pirámide de Tulcán)<br />
-            Popayán
+            Kuta Inti (Pirámide de Tulcán)<br />
+            Costado del kuta Inti (Pirámide de Tulcán), Popayán
           
 
           
@@ -4180,7 +4187,7 @@ Fuente en la base de la Pirámide de Tulcán, Popayán</p>
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          5:00 p.m. - 7:00 p.m.
+          5:00 p.m. - 5:00 p.m.
         </div>
       </div>
 
@@ -4247,6 +4254,20 @@ Fuente en la base de la Pirámide de Tulcán, Popayán</p>
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-29" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4702,6 +4723,38 @@ Fuente en la base de la Pirámide de Tulcán, Popayán</p>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Julieth Morales</li>
+            
+              <li>Asociación Cultural Allpamama Wawakuna</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

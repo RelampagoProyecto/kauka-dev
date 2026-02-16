@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Secuestro cultural por la dignidad caucana: Nuyxisa Lechekwe, un gobierno chiquito, propio</title>
+<title>Secuestro cultural por la dignidad caucana Nuyxisa Lechekwe. Un gobierno chiquito, propio</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Secuestro cultural por la dignidad caucana: Nuyxisa Lechekwe, un gobierno chiquito, propio" />
+<meta property="og:title" content="Secuestro cultural por la dignidad caucana Nuyxisa Lechekwe. Un gobierno chiquito, propio" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-25-secuestro-cultural/" />
 
 
-<meta name="twitter:title" content="Secuestro cultural por la dignidad caucana: Nuyxisa Lechekwe, un gobierno chiquito, propio" />
+<meta name="twitter:title" content="Secuestro cultural por la dignidad caucana Nuyxisa Lechekwe. Un gobierno chiquito, propio" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4110,8 +4125,8 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-categorias" class="encuentro-categorias">
       
         
-          <a href="/encuentros/">
-            Encuentros
+          <a href="/vivencial/">
+            Vivencial
             
           </a>
         
@@ -4120,15 +4135,29 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Secuestro cultural por la dignidad caucana: Nuyxisa Lechekwe, un gobierno chiquito, propio
+      Secuestro cultural por la dignidad caucana Nuyxisa Lechekwe. Un gobierno chiquito, propio
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Actividad a cargo del Colectivo Minga Prácticas Decoloniales en el marco de los Encuentros de Mundos Posibles del 47 Salón Nacional de Artistas.</p>
-
-  </div>
+  <div class="page-content-text"><p><strong>Minga Prácticas Decoloniales</strong>
+<br />
+<em>Videoinstalación: alambre de púas, monumento colonial en bronce, banderas, videos, escultura arcilla, urnas</em>
+<br />
+2012-2025</p>
+<p>Esta videoinstalación presenta un plan de vida impulsado por comunidades Nasa, Pijao, Misak, Yanakuna y Kimbaya, a la vez que visibiliza la lucha histórica entre comuneros indígenas y terratenientes del Cauca, encarnada en figuras como Manuel Quintín Lame Chantre (1880–1967) y su denuncia al despojo de tierras por parte de la familia Valencia Muñoz.</p>
+<p>En esta instalación confluyen elementos de profundo valor simbólico: la firma del mayor Manuel Quintín Lame Chantre, elaborada en un alambre de púas obtenido al desalambrar una de las haciendas; los registros del juicio simbólico realizado por médicos tradicionales Nasa, Pijao y Misak al busto del expresidente Guillermo León Valencia —rescatado por el colectivo tras haber sido derribado de su pedestal en Popayán durante el estallido social de 2021—, y una animación que propone un memorial futuro en ofrenda al mayor Manuel Quintín Lame Chantre, concebido como un gesto de reparación espiritual y colectiva. La instalación se completa con urnas destinadas a reunir objetos para ese futuro memorial.</p>
+<p>En el marco del 47 Salón Nacional de Artistas se activó un plan de vida que honra las re-existencias históricas a través de la Minga. Las acciones incluyeron rituales como el traslado colectivo del busto del patriarca —cargado y arrastrado— desde el Puente del Humilladero hasta su casa, la Casa Museo Guillermo León Valencia, luego de su armonización —la de su espíritu y su legado familiar— en el tránsito por los territorios. Este ritual de justicia simbólica se acompañó de la lectura del Manifiesto de las Mujeres Indígenas de Colombia de 1927, en un acto de justicia, memoria y sanación colectiva.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Minga Prácticas Decoloniales, Popayork; Enmingada (Edinson Quiñones Falla, Estefanía García Pineda y Emiliano Çxayu&rsquo;çe Quiñones García). Acompañados por Lorenzo Tunubalá Hurtado, Jair Méndez Guetia y Miller Muñoz.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Abuelos y abuelas de cerámica, piedra, oro y tumbaga; montañas, ríos, mares y espíritus animales, cuya presencia orienta el pensamiento y la práctica, y las plantas que guían el caminar, especialmente la coca que es esencial.</p>
+<p><strong>Territorios:</strong>
+<br />
+Su labor se enraíza en la zona rural de Popayán. Desde hace unos nueve años tejen caminos junto a comunidades de los Andes colombianos, principalmente entre el Kauka y el Kumanday.</p>
+</div>
 </div>
 
     </div>
@@ -4163,7 +4192,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-hora-lugar">
           
             Casa Museo Guillermo León Valencia<br />
-            Calle 5 #9-82
+            Calle 5 #9-82, Popayán, Cauca
           
 
           
@@ -4191,8 +4220,8 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/minga-practicas-decoloniales/">
-                      Minga Prácticas De-coloniales
+                    <a href="/kauka-dev/invitadxs/minga-practicas-de-coloniales/">
+                      Minga Prácticas De-Coloniales
                     </a>
                   
                 </li>
@@ -4212,8 +4241,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/minga-practicas-decoloniales/">
-                    Minga Prácticas De-coloniales
+                  <a href="/kauka-dev/invitadxs/minga-practicas-de-coloniales/">
+                    Minga Prácticas De-Coloniales
                   </a>
                 
               </li>
@@ -4226,6 +4255,18 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4867,6 +4908,36 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Secuestro cultural por la dignidad caucana Nuyxisa Lechekwe. Un gobierno chiquito, propio</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Minga Prácticas De-Coloniales</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

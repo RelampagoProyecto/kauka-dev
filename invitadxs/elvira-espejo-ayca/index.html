@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,9 +4162,8 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
-        <p>Artista plástica, tejedora y narradora de la tradición oral de su lugar de origen y Directora del Museo Nacional de Etnografía y Folklore (MUSEF), La Paz, Bolivia. Es hablante de las lenguas aymara y quechua. Autora de la publicación Sawutuq parla (2006) y los libros de poemas Phaqar kirki – T’ikha takiy – Canto a las flores (2006), por el cual recibió el Premio a la Poetisa Internacional en el 4º Festival Mundial de Poesía en Venezuela (2007) y Kaypi Jaqhaypi – Por aquí, por allá (2018). Es coautora de Hilos sueltos: Los Andes desde el textil (2007), Ciencia de las mujeres: Experiencias en la cadena textil desde los ayllus de Challapata (2010), Ciencia de tejer en los Andes: Estructuras y técnicas de faz de urdimbre (2012), El textil tridimensional: El tejido como objeto y como sujeto (2013) y Tejiendo la vida: la colección textil del Museo Nacional de Etnografía y Folklore, según la cadena de producción (2013). En colaboración con el músico boliviano Álvaro Montenegro, produjo los DVD de música contemporánea: Thakhi – La Senda. Canciones a los animales (2007) y Utachk kirki – Canto a las casas (2011). Ganó el 1er Premio Eduardo Avaroa en Artes, en la especialidad Textiles Originarios, La Paz, Bolivia (2013); el 1er Premio Fomento a la Creación Nativa en Literatura, en la especialidad Poesía, en el marco del V Festival de Arte Sur Andino Arica Barroca, Chile (2018), y fue distinguida con la Medalla Goethe-Institut por el Gobierno Federal de Alemania (2020) por su valiosa labor de mediación cultural entre América Latina y Europa, y entre sus propias tradiciones indígenas y otras culturas.</p>
-
+      <div class="artista-term-content invitadx-rich-content">
+        Artista plástica, tejedora y narradora de la tradición oral de su lugar de origen y Directora del Museo Nacional de Etnografía y Folklore (MUSEF), La Paz, Bolivia. Es hablante de las lenguas aymara y quechua. Autora de la publicación Sawutuq parla (2006) y los libros de poemas Phaqar kirki – T’ikha takiy – Canto a las flores (2006), por el cual recibió el Premio a la Poetisa Internacional en el 4º Festival Mundial de Poesía en Venezuela (2007) y Kaypi Jaqhaypi – Por aquí, por allá (2018). Es coautora de Hilos sueltos: Los Andes desde el textil (2007), Ciencia de las mujeres: Experiencias en la cadena textil desde los ayllus de Challapata (2010), Ciencia de tejer en los Andes: Estructuras y técnicas de faz de urdimbre (2012), El textil tridimensional: El tejido como objeto y como sujeto (2013) y Tejiendo la vida: la colección textil del Museo Nacional de Etnografía y Folklore, según la cadena de producción (2013). En colaboración con el músico boliviano Álvaro Montenegro, produjo los DVD de música contemporánea: Thakhi – La Senda. Canciones a los animales (2007) y Utachk kirki – Canto a las casas (2011). Ganó el 1er Premio Eduardo Avaroa en Artes, en la especialidad Textiles Originarios, La Paz, Bolivia (2013); el 1er Premio Fomento a la Creación Nativa en Literatura, en la especialidad Poesía, en el marco del V Festival de Arte Sur Andino Arica Barroca, Chile (2018), y fue distinguida con la Medalla Goethe-Institut por el Gobierno Federal de Alemania (2020) por su valiosa labor de mediación cultural entre América Latina y Europa, y entre sus propias tradiciones indígenas y otras culturas.
       </div>
     
 
@@ -4183,6 +4211,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4196,7 +4226,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4224,84 +4254,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4405,6 +4357,94 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -4497,14 +4537,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -4526,143 +4565,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -4672,38 +4574,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-        
-      
     
       
 
@@ -4748,15 +4618,6 @@ if (typeof initHeaderOnReady === "function") {
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/yanak-uywana-la-crianza-mutua-de-las-artes/">YANAK UYWAÑA La crianza mutua de las artes</a>
-            </div>
-          
-        </div>
       
     
       
@@ -4774,7 +4635,7 @@ if (typeof initHeaderOnReady === "function") {
           <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-yanak-uywana/">YANAK UYWAÑA: La crianza mutua de las artes</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-yanak-uywana/">YANAK UYWAÑA La crianza mutua de las artes</a>
             </div>
           
         </div>
@@ -4794,14 +4655,31 @@ if (typeof initHeaderOnReady === "function") {
     
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Elvira Espejo Ayca</p>
+
+    
+  
+</div>
+
 
     
     

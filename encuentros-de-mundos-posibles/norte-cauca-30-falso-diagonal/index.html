@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Performance: Falso diagonal</title>
+<title>Performance: Falso diagonal Mara Bravo</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Performance: Falso diagonal" />
+<meta property="og:title" content="Performance: Falso diagonal Mara Bravo" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-30-falso-diagonal/" />
 
 
-<meta name="twitter:title" content="Performance: Falso diagonal" />
+<meta name="twitter:title" content="Performance: Falso diagonal Mara Bravo" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,15 +4135,12 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Performance: Falso diagonal
+      Performance: Falso diagonal Mara Bravo
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Performance &ldquo;Falso diagonal&rdquo; de Mara Bravo en espacio público de Villa Rica.</p>
-
-  </div>
+  <div class="page-content-text"></div>
 </div>
 
     </div>
@@ -4162,8 +4174,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Villa Rica (Espacio público)<br />
-            Villa Rica, Norte del Cauca
+            Parque principal de Villa Rica<br />
+            Espacio público, Villa Rica
           
 
           
@@ -4226,6 +4238,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-30" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4236,6 +4262,36 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Performance: Falso diagonal Mara Bravo</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Mara Bravo Rodríguez</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

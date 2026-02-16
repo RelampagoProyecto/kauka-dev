@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4631,6 +4644,66 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
         
         
   
@@ -4649,6 +4722,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -4668,9 +4757,8 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
-        <p>Nacen en 2017 entre círculos de palabras y el compartir de las medicinas ancestrales andinas y amazónicas, y se conforman como asociación en 2024. Es un equipo de trabajo intercultural integrado por talentos de diversas disciplinas y experiencias, orientado a  exaltar y fortalecer valores culturales propios que reafirman la identidad y el sentido de pertenencia al reconocer nuestras sus raíces: el mestizaje y las realidades sociales diversas que propician espacios para la interculturalidad. Proponen aportar mediante diferentes manifestaciones artísticas y culturales al fortalecimiento de procesos sociales y comunitarios de una forma creativa que permita expresar nuestras realidades, reafirmar nuestra identidad cultural, cosmovisiones y espiritualidades mediante signos de vida y esperanza.</p>
-
+      <div class="artista-term-content invitadx-rich-content">
+        Nacen en 2017 entre círculos de palabras y el compartir de las medicinas ancestrales andinas y amazónicas, y se conforman como asociación en 2024. Es un equipo de trabajo intercultural integrado por talentos de diversas disciplinas y experiencias, orientado a  exaltar y fortalecer valores culturales propios que reafirman la identidad y el sentido de pertenencia al reconocer nuestras sus raíces: el mestizaje y las realidades sociales diversas que propician espacios para la interculturalidad. Proponen aportar mediante diferentes manifestaciones artísticas y culturales al fortalecimiento de procesos sociales y comunitarios de una forma creativa que permita expresar nuestras realidades, reafirmar nuestra identidad cultural, cosmovisiones y espiritualidades mediante signos de vida y esperanza.
       </div>
     
 
@@ -4720,6 +4808,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4733,7 +4823,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4761,84 +4851,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4864,104 +4876,85 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5048,38 +5041,7 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
-        
-      
     
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
       
       
       
@@ -5112,32 +5074,6 @@ if (typeof initHeaderOnReady === "function") {
         
       
     
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
       
       
       
@@ -5204,6 +5140,30 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
+      
+      
+        
+      
+      
+      
+      
+    
       
       
         
@@ -5214,6 +5174,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5222,9 +5188,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5234,8 +5197,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5278,72 +5240,6 @@ if (typeof initHeaderOnReady === "function") {
         
       
     
-      
-
-      
-      
-        
-        
-      
-
-      
-      
-        
-        
-          
-          
-          
-        
-      
-
-      
-      
-
-      
-      
-        
-      
-      
-
-      
-      
-      
-      
-        
-      
-    
-      
-
-      
-      
-        
-        
-      
-
-      
-      
-        
-        
-          
-          
-          
-        
-      
-
-      
-      
-
-      
-      
-        
-      
-      
-
-      
-      
-      
-      
-    
 
     
     
@@ -5353,15 +5249,6 @@ if (typeof initHeaderOnReady === "function") {
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/kaukagua-ofrenda-efimera-julieth-morales-y-asociacion-cultural-allpamama-wawakuna/">Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna</a>
-            </div>
-          
-        </div>
       
     
       
@@ -5388,11 +5275,7 @@ if (typeof initHeaderOnReady === "function") {
           <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-encuentro-guardias/">Encuentro de Guardias (Indígena, Cimarrona, Campesina, Trans)</a>
-            </div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-ofrenda-kauka/">Ofrenda Kauka/Agua y Muestra Residencia Yanacroma</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-ofrenda-kauka/">Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna</a>
             </div>
           
         </div>
@@ -5414,14 +5297,31 @@ if (typeof initHeaderOnReady === "function") {
         
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Asociación Cultural Allpamama Wawakuna</p>
+
+    
+  
+</div>
+
 
     
     

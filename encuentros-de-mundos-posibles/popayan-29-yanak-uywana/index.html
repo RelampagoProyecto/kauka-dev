@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>YANAK UYWAÑA: La crianza mutua de las artes</title>
+<title>YANAK UYWAÑA La crianza mutua de las artes</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="YANAK UYWAÑA: La crianza mutua de las artes" />
+<meta property="og:title" content="YANAK UYWAÑA La crianza mutua de las artes" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-29-yanak-uywana/" />
 
 
-<meta name="twitter:title" content="YANAK UYWAÑA: La crianza mutua de las artes" />
+<meta name="twitter:title" content="YANAK UYWAÑA La crianza mutua de las artes" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,15 +4135,13 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      YANAK UYWAÑA: La crianza mutua de las artes
+      YANAK UYWAÑA La crianza mutua de las artes
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>En el marco del 47 Salón Nacional de Artistas, esta charla, Elvira Espejo Ayca se centra en los cambios de paradigma pensados desde las propias terminologías lingüísticas de las comunidades indígenas en Bolivia a través de la creación de unos bienes culturales y recursos informativos que contribuyen a comprender yanak uywañ, la crianza mutua de la artes como una nueva visión de la vida y valorizan unos conocimientos que, transmitidos de generación en generación, constituyen un bagaje de sabiduría y también un medio de resistencia anticolonial. Esta charla da continuidad al intercambio iniciado entre la comunidad textilera del departamento de Oruro, en los Andes bolivianos y comunidad Misak del departamento del Cauca en Colombia.&quot;</p>
-
-  </div>
+  <div class="page-content-text"><p>En el marco del 47 Salón Nacional de Artistas, esta charla, Elvira Espejo Ayca se centra en los cambios de paradigma pensados desde las propias terminologías lingüísticas de las comunidades indígenas en Bolivia a través de la creación de unos bienes culturales y recursos informativos que contribuyen a comprender yanak uywañ, la crianza mutua de la artes como una nueva visión de la vida y valorizan unos conocimientos que, transmitidos de generación en generación, constituyen un bagaje de sabiduría y también un medio de resistencia anticolonial. Esta charla da continuidad al intercambio iniciado entre la comunidad textilera del departamento de Oruro, en los Andes bolivianos y comunidad Misak del departamento del Cauca en Colombia.&quot;</p>
+</div>
 </div>
 
     </div>
@@ -4162,8 +4175,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            UNICAUCA / Facultad de Artes<br />
-            Carrera 6 #3-14
+            Auditorio Facultad de Artes - Universidad del Cauca<br />
+            Popayán
           
 
           
@@ -4197,6 +4210,14 @@ if (typeof initHeaderOnReady === "function") {
                   
                 </li>
               
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/carolina-chacon-bernal/">
+                      Carolina Chacón Bernal
+                    </a>
+                  
+                </li>
+              
             </ul>
           
         </div>
@@ -4218,6 +4239,14 @@ if (typeof initHeaderOnReady === "function") {
                 
               </li>
             
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/carolina-chacon-bernal/">
+                    Carolina Chacón Bernal
+                  </a>
+                
+              </li>
+            
           </ul>
         
       </div>
@@ -4226,6 +4255,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-29" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4774,6 +4817,38 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>YANAK UYWAÑA La crianza mutua de las artes</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Elvira Espejo Ayca</li>
+            
+              <li>Carolina Chacón Bernal</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

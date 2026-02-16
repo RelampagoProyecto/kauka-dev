@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Tonga: Manifiesta afroindígena - Puerto Tejada</title>
+<title>Tonga: Manifiesta afroindígena</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Tonga: Manifiesta afroindígena - Puerto Tejada" />
+<meta property="og:title" content="Tonga: Manifiesta afroindígena" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/" />
 
 
-<meta name="twitter:title" content="Tonga: Manifiesta afroindígena - Puerto Tejada" />
+<meta name="twitter:title" content="Tonga: Manifiesta afroindígena" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,15 +4135,13 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Tonga: Manifiesta afroindígena - Puerto Tejada
+      Tonga: Manifiesta afroindígena
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Tonga: Manifiesta afroindígena en la Escuela Taller de Puerto Tejada.</p>
-
-  </div>
+  <div class="page-content-text"><p>El laboratorio de manifiesta o antimanifiesta plantea una reflexión sobre la autorrepresentación y el derecho de lxs artistas racializadxs a narrar sus propias historias.</p>
+</div>
 </div>
 
     </div>
@@ -4162,8 +4175,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Escuela Taller<br />
-            Puerto Tejada, Norte del Cauca
+            Escuela Taller del Norte del Cauca<br />
+            Barrio las Dos Aguas, Puerto Tejada
           
 
           
@@ -4191,24 +4204,56 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/jimena-andrade/">
-                      Jimena Andrade
+                    <a href="/kauka-dev/invitadxs/astrid-gonzalez/">
+                      Astrid González
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/miguel-angel-abadia/">
-                      Miguel Ángel Abadía
+                    <a href="/kauka-dev/invitadxs/diego-mendoza-imbachi/">
+                      Diego Mendoza Imbachí
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/asoparupa/">
-                      Asoparupa
+                    <a href="/kauka-dev/invitadxs/fabian-villegas/">
+                      Fabián Villegas
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/johan-samboni/">
+                      Johan Samboní
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/jota-mombaca/">
+                      Jota Mombaça
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/lukas-avendano/">
+                      Lukas Avendaño
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/paula-diaz/">
+                      Paula Díaz
                     </a>
                   
                 </li>
@@ -4228,24 +4273,56 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/jimena-andrade/">
-                    Jimena Andrade
+                  <a href="/kauka-dev/invitadxs/astrid-gonzalez/">
+                    Astrid González
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/miguel-angel-abadia/">
-                    Miguel Ángel Abadía
+                  <a href="/kauka-dev/invitadxs/diego-mendoza-imbachi/">
+                    Diego Mendoza Imbachí
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/asoparupa/">
-                    Asoparupa
+                  <a href="/kauka-dev/invitadxs/fabian-villegas/">
+                    Fabián Villegas
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/johan-samboni/">
+                    Johan Samboní
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/jota-mombaca/">
+                    Jota Mombaça
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/lukas-avendano/">
+                    Lukas Avendaño
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/paula-diaz/">
+                    Paula Díaz
                   </a>
                 
               </li>
@@ -4258,16 +4335,517 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
     <div class="col-span-12">
+      
+        
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_5a59342766bf6316.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_69cd23b7f3eb368b.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_40f84286576ae29a.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_dbeb0c1432cd29d8.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_4860e76e54519cf3.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_ac48a05f6de0d522.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_d925232e8c3c5927.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_7256fa452d227644.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_4a084d0caf0e4b26.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-01_hu_873cbbd96440bc7c.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_norte-cauca-25-tonga-manifiesta-01.webp"
+              loading="lazy"
+              width="2400"
+              height="1347" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_46f98ced829621f1.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_2f1c8f3c1059ff04.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_fbd4ecee0c2d8052.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_88f74a2e9bc64a49.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_42bf4ac93a76de1c.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_44903ca47a477799.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_21c22ab8119c962c.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_7b2d4cfe2496a42f.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_99abf6dca68dd82a.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-02_hu_9b6e32b5ee02ead1.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_norte-cauca-25-tonga-manifiesta-02.webp"
+              loading="lazy"
+              width="2400"
+              height="1532" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_b683268fd147c49f.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_ba402d8c21cba196.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_4493235ca1f5b0f7.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_4e7d7b24066fb9d8.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_c5db4cc72b4e83ec.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_d04ec9565aa1130d.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_866e76425b8329bf.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_d7f9353667dd4ce1.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_8308168cd699d5ec.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-03_hu_6b6e5b087261e302.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_norte-cauca-25-tonga-manifiesta-03.webp"
+              loading="lazy"
+              width="2400"
+              height="1347" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_99e5f5295f23bfbc.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_a139ea89eccc6a9f.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_24ada96a9478c1af.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_d00a456f66e5b4b8.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_20953ea82f9c7b7.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_8e8901d5d6d8ed5.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_6efb1d3dd7beecbd.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_b97f211719ceb24b.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_130ecd4d2f55d913.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/norte-cauca-25-tonga-manifiesta/galeria/enc_norte-cauca-25-tonga-manifiesta-04_hu_c604e2d608ee4db1.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_norte-cauca-25-tonga-manifiesta-04.webp"
+              loading="lazy"
+              width="2400"
+              height="1347" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
       
     </div>
   </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Tonga: Manifiesta afroindígena</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Astrid González</li>
+            
+              <li>Diego Mendoza Imbachí</li>
+            
+              <li>Fabián Villegas</li>
+            
+              <li>Johan Samboní</li>
+            
+              <li>Jota Mombaça</li>
+            
+              <li>Lukas Avendaño</li>
+            
+              <li>Paula Díaz</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

@@ -1,10 +1,22 @@
 
 [{
-  "title": "Activación: Al Aire Libre, Mesa de Radio Itinerante",
-  "url": "/kauka-dev/programa-curatorial/vivencial/activacion-al-aire-libre-mesa-de-radio-itinerante/",
+  "title": "El futuro que nunca fue / Performance de Marilyn Boror",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/",
   "lugar": {
-    "nombre": "MAMPO - Casa Arte / Universidad Autónoma Indígena Intercultural UAIIN - CRIC, sede La Aldea",
-    "direccion": "<no value>"
+    "nombre": "Centro de Memoria Panteón de los Próceres",
+    "direccion": "Popayán, Cauca"
+  }},{
+  "title": "Fiesta popular en el centro de Popayán",
+  "url": "/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/",
+  "lugar": {
+    "nombre": "Parque Claustro Santo Domingo",
+    "direccion": "Popayán, Cauca"
+  }},{
+  "title": "La palabra dicha / Performance de Eider Yangana",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/",
+  "lugar": {
+    "nombre": "Parque Caldas",
+    "direccion": "Popayán, Cauca"
   }},{
   "title": "Alfabeto natural en el espacio público con el Colectivo Cenzontle",
   "url": "/kauka-dev/programa-curatorial/editorial/alfabeto-natural-en-el-espacio-publico-con-el-colectivo-cenzontle/",
@@ -17,12 +29,6 @@
   "lugar": {
     "nombre": "Calles de Villa Rica",
     "direccion": "Espacio público"
-  }},{
-  "title": "Autonomías políticas en el arte",
-  "url": "/kauka-dev/programa-curatorial/vivencial/autonomias-politicas-en-el-arte/",
-  "lugar": {
-    "nombre": "MAMPO - Casa Arte",
-    "direccion": "Barrio La Pamba, Popayán"
   }},{
   "title": "Balsada de cierre del 47SNA "Alumbrar el río Guapi"",
   "url": "/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/",
@@ -37,24 +43,6 @@
     "direccion": "Centro histórico, Popayán"
   },
   "notas": "Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m."},{
-  "title": "Colonialidad de género: recorrido a cargo de FuriaMarika y Transaliades (Activación de Polifonías indóciles)",
-  "url": "/kauka-dev/programa-curatorial/vivencial/colonialidad-de-genero-recorrido-a-cargo-de-furiamarika-y-transaliades-activacion-de-polifonias-indociles/",
-  "lugar": {
-    "nombre": "Parque Caldas",
-    "direccion": "Centro histórico, Popayán"
-  }},{
-  "title": "Conversatorio Palestina: Desde el río hasta el mar",
-  "url": "/kauka-dev/programa-curatorial/vivencial/conversatorio-palestina-desde-el-rio-hasta-el-mar/",
-  "lugar": {
-    "nombre": "Auditorio Casa Rosada - Universidad del Cauca, Popayán",
-    "direccion": "<no value>"
-  }},{
-  "title": "Cuarta asamblea de mundos posibles",
-  "url": "/kauka-dev/programa-curatorial/vivencial/cuarta-asamblea-de-mundos-posibles/",
-  "lugar": {
-    "nombre": "Teatrino, Santa María de Timbiquí",
-    "direccion": "Timbiquí"
-  }},{
   "title": "Curaduría: Polifonías indóciles",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/",
   "lugar": {
@@ -65,12 +53,6 @@
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/",
   "lugar": {
     "nombre": "Casa Museo Guillermo León Valencia",
-    "direccion": "Centro histórico, Popayán"
-  }},{
-  "title": "Encuentro de Guardias",
-  "url": "/kauka-dev/programa-curatorial/vivencial/encuentro-de-guardias/",
-  "lugar": {
-    "nombre": "Kuta Inti (Pirámide de Tulcán)",
     "direccion": "Centro histórico, Popayán"
   }},{
   "title": "Exposición: Ascender a lo hondo: dibujos, acuarelas, montañas y cosmogramas de Franz Xaver Faust",
@@ -103,36 +85,6 @@
     "nombre": "Escuela Taller del Norte del Cauca",
     "direccion": "Barrio las Dos Aguas, Puerto Tejada"
   }},{
-  "title": "Extractivismo y artificialidad",
-  "url": "/kauka-dev/programa-curatorial/vivencial/extractivismo-y-artificialidad/",
-  "lugar": {
-    "nombre": "Auditorio Casa Rosada - Universidad del Cauca",
-    "direccion": "Popayán"
-  }},{
-  "title": "Huertas del cuidado, prácticas ancestrales afro",
-  "url": "/kauka-dev/programa-curatorial/vivencial/huertas-del-cuidado-practicas-ancestrales-afro/",
-  "lugar": {
-    "nombre": "Escuela Taller del Norte del Cauca",
-    "direccion": "Barrio las Dos Aguas, Puerto Tejada"
-  }},{
-  "title": "Inauguración de exposición 'Residencias Artísticas Popayork en Minga' y lanzamiento de Fanzine 'Corinto'",
-  "url": "/kauka-dev/programa-curatorial/vivencial/inauguracion-de-exposicion-residencias-artisticas-popayork-en-minga-y-lanzamiento-de-fanzine-corinto/",
-  "lugar": {
-    "nombre": "Residencia artística POPAYORK y Hogar Minga Prácticas Decoloniales",
-    "direccion": "Vereda Clarete Bajo, Popayán"
-  }},{
-  "title": "K’obomanik ch’ab’el - ofrenda con palabras Edgar Calel",
-  "url": "/kauka-dev/programa-curatorial/vivencial/k-obomanik-ch-ab-el-ofrenda-con-palabras-edgar-calel/",
-  "lugar": {
-    "nombre": "Capilla Santa Bárbara de Dominguillo",
-    "direccion": "Vereda Dominguillo, Santander de Quilichao"
-  }},{
-  "title": "Kaukagua: ofrenda efímera Julieth Morales y Asociación Cultural Allpamama Wawakuna",
-  "url": "/kauka-dev/programa-curatorial/vivencial/kaukagua-ofrenda-efimera-julieth-morales-y-asociacion-cultural-allpamama-wawakuna/",
-  "lugar": {
-    "nombre": "Kuta Inti (Pirámide de Tulcán)",
-    "direccion": "Costado del kuta Inti (Pirámide de Tulcán), Popayán"
-  }},{
   "title": "Lanzamiento de Fanzines",
   "url": "/kauka-dev/programa-curatorial/editorial/lanzamiento-de-fanzines/",
   "lugar": {
@@ -157,71 +109,11 @@
     "nombre": "Museo Arquidiocesano de Arte Religioso de Popayán",
     "direccion": "Popayán"
   }},{
-  "title": "Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística",
-  "url": "/kauka-dev/programa-curatorial/vivencial/lenguas-madre-lenguas-bosque-rituales-de-escucha-por-la-diversidad-linguistica/",
-  "lugar": {
-    "nombre": "MAMPO - Casa Arte",
-    "direccion": "Barrio La Pamba, Popayán"
-  }},{
-  "title": "Minga de intercambio de semillas, sabores y poderes",
-  "url": "/kauka-dev/programa-curatorial/vivencial/minga-de-intercambio-de-semillas-sabores-y-poderes/",
-  "lugar": {
-    "nombre": "Centro Educativo Vueltas de Patico",
-    "direccion": "Resguardo indígena de Puracé, Cauca"
-  }},{
-  "title": "Minga de procesos de autonomía alimentaria",
-  "url": "/kauka-dev/programa-curatorial/vivencial/minga-de-procesos-de-autonomia-alimentaria/",
-  "lugar": {
-    "nombre": "Campamento La Estrella Roja",
-    "direccion": "Campamento La Estrella Roja, Popayán"
-  }},{
-  "title": "Mundos posibles por venir: Afrika y Abya Yala",
-  "url": "/kauka-dev/programa-curatorial/vivencial/mundos-posibles-por-venir-afrika-y-abya-yala/",
-  "lugar": {
-    "nombre": "Auditorio Casa Rosada - Universidad del Cauca",
-    "direccion": "Popayán"
-  }},{
-  "title": "Mundos posibles por venir: imaginación radical afrocuir",
-  "url": "/kauka-dev/programa-curatorial/vivencial/mundos-posibles-por-venir-imaginacion-radical-afrocuir/",
-  "lugar": {
-    "nombre": "Auditorio Coomeva",
-    "direccion": "Popayán"
-  }},{
-  "title": "Pedagogías espirales",
-  "url": "/kauka-dev/programa-curatorial/vivencial/pedagogias-espirales/",
-  "lugar": {
-    "nombre": "Universidad Autónoma Indígena Intercultural – UAIIN - CRIC, sede La Aldea",
-    "direccion": "La Aldea, Popayán"
-  }},{
   "title": "Performance: ALBO",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/",
   "lugar": {
     "nombre": "Escuela Taller del Norte del Cauca",
     "direccion": "Barrio las Dos Aguas, Puerto Tejada"
-  }},{
-  "title": "Performance: Cantos ancestrales, memoria vibracional",
-  "url": "/kauka-dev/programa-curatorial/vivencial/performance-cantos-ancestrales-memoria-vibracional/",
-  "lugar": {
-    "nombre": "MAMPO - Casa Arte",
-    "direccion": "Barrio La Pamba, Popayán"
-  }},{
-  "title": "Performance: Falso diagonal Mara Bravo",
-  "url": "/kauka-dev/programa-curatorial/vivencial/performance-falso-diagonal-mara-bravo/",
-  "lugar": {
-    "nombre": "Parque principal de Villa Rica",
-    "direccion": "Espacio público, Villa Rica"
-  }},{
-  "title": "Performance: Réquiem para un alcaraván",
-  "url": "/kauka-dev/programa-curatorial/vivencial/performance-requiem-para-un-alcaravan/",
-  "lugar": {
-    "nombre": "Teatro Municipal Guillermo Valencia",
-    "direccion": "Centro historico, Popayán"
-  }},{
-  "title": "Primera asamblea de mundos posibles",
-  "url": "/kauka-dev/programa-curatorial/vivencial/primera-asamblea-de-mundos-posibles/",
-  "lugar": {
-    "nombre": "Ala Kusreik Ya Misak Universidad",
-    "direccion": "Territorio indígena Misak de Wampia, Cauca"
   }},{
   "title": "Residencia Consejo Comunitario El Tuno",
   "url": "/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/",
@@ -259,59 +151,11 @@
     "nombre": "Yanacroma",
     "direccion": "Río Blanco, Sotará"
   }},{
-  "title": "Segunda asamblea de mundos posibles",
-  "url": "/kauka-dev/programa-curatorial/vivencial/segunda-asamblea-de-mundos-posibles/",
-  "lugar": {
-    "nombre": "Casa del Cacao e Instituto Municipal de Cultura y Turismo",
-    "direccion": "Barrio El Centro, Puerto Tejada"
-  }},{
-  "title": "Soberanía, autonomía, territorio y hoja de coca",
-  "url": "/kauka-dev/programa-curatorial/vivencial/soberania-autonomia-territorio-y-hoja-de-coca/",
-  "lugar": {
-    "nombre": "MAMPO - Casa Arte",
-    "direccion": "Barrio La Pamba, Popayán"
-  }},{
-  "title": "Tercera asamblea de mundos posibles",
-  "url": "/kauka-dev/programa-curatorial/vivencial/tercera-asamblea-de-mundos-posibles/",
-  "lugar": {
-    "nombre": "Universidad Autónoma Indígena Intercultural – UAIIN - CRIC, sede La Aldea",
-    "direccion": "La Aldea, Popayán"
-  }},{
-  "title": "Territorio expandido: academia, arte y gestión cultural desde experiencias afro",
-  "url": "/kauka-dev/programa-curatorial/vivencial/territorio-expandido-academia-arte-y-gestion-cultural-desde-experiencias-afro/",
-  "lugar": {
-    "nombre": "Escuela Taller del Norte del Cauca",
-    "direccion": "Barrio las Dos Aguas, Puerto Tejada"
-  }},{
   "title": "Tonga por las dos aguas / Recorrido por Monte Oscuro",
   "url": "/kauka-dev/programa-curatorial/recorridos/tonga-por-las-dos-aguas-recorrido-por-monte-oscuro/",
   "lugar": {
     "nombre": "Cancha del Barrio las Dos Aguas",
     "direccion": "Barrio las Dos Aguas, Puerto Tejada"
-  }},{
-  "title": "Tonga: Manifiesta afroindígena",
-  "url": "/kauka-dev/programa-curatorial/vivencial/tonga-manifiesta-afroindigena/",
-  "lugar": {
-    "nombre": "Escuela Taller del Norte del Cauca",
-    "direccion": "Barrio las Dos Aguas, Puerto Tejada"
-  }},{
-  "title": "Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles",
-  "url": "/kauka-dev/programa-curatorial/vivencial/un-tejido-de-visiones-conversacion-curatorial-sobre-kauka-asamblea-de-mundos-posibles/",
-  "lugar": {
-    "nombre": "MAMPO - Casa Arte",
-    "direccion": "Barrio La Pamba, Popayán"
-  }},{
-  "title": "Visualidades y sonoridades afro, indígenas y campesinas",
-  "url": "/kauka-dev/programa-curatorial/vivencial/visualidades-y-sonoridades-afro-indigenas-y-campesinas/",
-  "lugar": {
-    "nombre": "Auditorio Fundación Universitaria de Popayán, sede Santander de Quilichao",
-    "direccion": "Santander de Quilichao"
-  }},{
-  "title": "YANAK UYWAÑA La crianza mutua de las artes",
-  "url": "/kauka-dev/programa-curatorial/vivencial/yanak-uywana-la-crianza-mutua-de-las-artes/",
-  "lugar": {
-    "nombre": "Auditorio Facultad de Artes - Universidad del Cauca",
-    "direccion": "Popayán"
   }},{
   "title": "Residencia PIYAPMƟSIK - Casa del Sueño",
   "url": "/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/",

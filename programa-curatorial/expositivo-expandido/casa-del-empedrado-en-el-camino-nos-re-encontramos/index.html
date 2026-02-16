@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,32 +4130,42 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>PAI (Procesos Autónomos de Investigación–Creación Cauca)**
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      
+        <div
+  class="pc-sections-container
+    pc-sections--component-expositivo-expandido
+  "><section class="pc-section-band pc-section-band-intro">
+          <div class="pc-section-content"><p>PAI (Procesos Autónomos de Investigación–Creación Cauca)**
 Dimensiones variables
 Instalación, mural y cerámica artesanal.
 2025</p>
 <p>Con el ánimo de establecer alianzas y apoyar la apertura de nuevos espacios para el arte en Popayán, una de las sedes expositivas fue la naciente Casa del Empedrado, un proyecto de cocreación, espacio de talleres, lugar de encuentro y cruces entre artes, saberes populares y aprendizajes colectivos. Una iniciativa de artistas y docentes locales que, en adelante, espera mantenerse abierta a la comunidad, bajo principios de intercambio, diversidad, afectos y creación.</p>
-<p>En este espacio, se presenta una pieza de cerámica artesanal estampadas con las huellas de compañerxs, habitantes y familiares en los territorios recorridos. Son los rastros de quienes han contribuido a tejer nuestro hacer y que permanecen en nuestro caminar hacia el futuro. Estas cerámicas fueron elaboradas en distintos territorios con arcillas propias de las montañas del Cauca y cocidas mediante procesos de quema artesanal.</p>
-<p>Son producto de las reflexiones que surgieron en recorridos y encuentros con diversos territorios, sus dinámicas particulares y los diálogos que se tejieron en comunidad. De esta juntanza nos interesaba resaltar el concepto de huella, entendida como camino, memoria y presencia. Trabajar la huella en barro resulta pertinente, pues ambas emergen de la tierra que habitamos y nos sostiene.</p>
-<p>En la pieza, la materia prima es más que un insumo: la cerámica artesanal, ahumada y quemada con leña del territorio, es transformada por el fuego, y las cicatrices del proceso se asumen como parte esencial de su naturaleza.</p>
-<p><strong>Presencias humanas:</strong>
-Elsa Melipsa Ordoñez Mellizo, Sebastián David Guerrero Patiño, Diego Antonio Mendoza Imbachí, Alexander Rodríguez Vélez, Juan Camilo Pajajoy Pajajoy, Doreiby Perafán Imbachí, Sharon Daihan Sánchez Pinilla, Wilian Alexis Araujo Muñoz, Juan Manuel Valencia Meneses, Néstor Javier Muelas Calambás, Valentina Quintín López, Rosa María Vega Pechene, Angy Paola Gómez Sua, Camilo Ernesto López Saavedra Roy, Kebinn Roheimer Hoyos Gutiérrez, Isabela Méndez Astudillo, Lesly Yareth Orozco Zuñiga, Elian Alexander Bastidas Moncayo, Alexandra Romero Patiño, Camilo Ernesto Quintana Salazar, Joan Sebastian Cabuyales Cardona y Fady Alejandro Acosta Zúñiga.</p>
-<p><strong>Presencias más que humanas:</strong>
-Víveres, habitares y recorridos en el territorio.</p>
-<p><strong>Territorios:</strong>
-Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: la Facultad de Artes de la Universidad del Cauca; el Territorio Indígena Ancestral Misak Nuyapalø, ubicado en el municipio de Silvia y en el corregimiento Los Milagros en el municipio de Bolívar.</p>
+<p>En este espacio, se presenta una pieza de cerámica artesanal estampadas con las huellas de compañerxs, habitantes y familiares en los territorios recorridos. Son los rastros de quienes han contribuido a tejer nuestro hacer y que permanecen en nuestro caminar hacia el futuro. Estas cerámicas fueron elaboradas en distintos territorios con arcillas propias de las montañas del Cauca y cocidas mediante procesos de quema artesanal.</p></div>
+        </section></div>
 
-  </div>
-</div>
-
+      
     </div>
-  </div>
+  
+
 
   
   
@@ -4162,7 +4182,6 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
   
   
   
-
 
   
   
@@ -4213,11 +4232,14 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
             Casa del Empedrado
           
           
-            <div class="proyecto-info-lugar-direccion">Centro histórico, Popayán</div>
+            <div class="proyecto-info-lugar-direccion">
+              Centro histórico, Popayán
+            </div>
           
           
             <div class="proyecto-info-notas-desktop">
-              <span class="font-kauka">e</span> Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
+              <span class="font-kauka">e</span>
+              Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
             </div>
           
           
@@ -4232,20 +4254,21 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
           </div>
         </div>
       
-  
-    <div class="proyecto-info-notas">
-      <span class="font-kauka">e</span> Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
-    </div>
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+        <div class="proyecto-info-notas">
+          <span class="font-kauka">e</span>
+          Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
+        </div>
+      
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4270,13 +4293,13 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4301,15 +4324,16 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-10-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4772,8 +4796,65 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
     </div>
   </div>
 
+  
+    <div class="proyecto-contenido-container">
+      <div
+  class="pc-sections-container
+    pc-sections--component-expositivo-expandido
+  pc-sections--after-gallery"><section
+          class="pc-section-band section-1
+            section-propuestas
+          
+            pc-stage-propuestas
+          ">
+          <div class="pc-section-content"><p>Son producto de las reflexiones que surgieron en recorridos y encuentros con diversos territorios, sus dinámicas particulares y los diálogos que se tejieron en comunidad. De esta juntanza nos interesaba resaltar el concepto de huella, entendida como camino, memoria y presencia. Trabajar la huella en barro resulta pertinente, pues ambas emergen de la tierra que habitamos y nos sostiene.</p>
+<p>En la pieza, la materia prima es más que un insumo: la cerámica artesanal, ahumada y quemada con leña del territorio, es transformada por el fuego, y las cicatrices del proceso se asumen como parte esencial de su naturaleza.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Elsa Melipsa Ordoñez Mellizo, Sebastián David Guerrero Patiño, Diego Antonio Mendoza Imbachí, Alexander Rodríguez Vélez, Juan Camilo Pajajoy Pajajoy, Doreiby Perafán Imbachí, Sharon Daihan Sánchez Pinilla, Wilian Alexis Araujo Muñoz, Juan Manuel Valencia Meneses, Néstor Javier Muelas Calambás, Valentina Quintín López, Rosa María Vega Pechene, Angy Paola Gómez Sua, Camilo Ernesto López Saavedra Roy, Kebinn Roheimer Hoyos Gutiérrez, Isabela Méndez Astudillo, Lesly Yareth Orozco Zuñiga, Elian Alexander Bastidas Moncayo, Alexandra Romero Patiño, Camilo Ernesto Quintana Salazar, Joan Sebastian Cabuyales Cardona y Fady Alejandro Acosta Zúñiga.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Víveres, habitares y recorridos en el territorio.</p>
+<p><strong>Territorios:</strong>
+<br />
+Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: la Facultad de Artes de la Universidad del Cauca; el Territorio Indígena Ancestral Misak Nuyapalø, ubicado en el municipio de Silvia y en el corregimiento Los Milagros en el municipio de Bolívar.</p></div>
+        </section></div>
+
+    </div>
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Casa del Empedrado ¡En el camino nos re-encontramos!</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Procesos Autónomos De Investigación-Creación (PAI)</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

@@ -22,6 +22,9 @@
 
 
 
+
+  
+
 <meta name="pagefind:weight" content="1" />
 
 
@@ -4031,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   <div
@@ -4261,8 +4276,1318 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
   
 
   
+  
+  
+  
+  
   <div class="project-list-container bg-expositivo">
     <div class="project-list-column">
+      
+        
+        
+        
+
+        
+        
+        
+          
+        
+        
+
+        
+          
+          <section class="project-list-project-container">
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/"
+              class="project-list-project-link"
+              aria-label="Ver actividad: El futuro que nunca fue / Performance de Marilyn Boror">
+              <div class="project-list-project">
+                <div class="project-list-media-frame">
+                  
+                    <div class="project-list-image-slider swiper">
+                      <div class="swiper-wrapper">
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_990fcecc87f1c0bc.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_990fcecc87f1c0bc.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_f71ef887c3475d5f.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_67ba05fec4a1f5a2.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_ae6b7f2e4ddb02a0.webp"
+            class=" project-list-image img"
+            alt="El futuro que nunca fue / Performance de Marilyn Boror"
+            width="2400"
+            height="1551" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_532ce3b1c86ca3c5.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_532ce3b1c86ca3c5.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_9164884ffc61ad63.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_52cbd5d06ed75324.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_2ad3687aaea28204.webp"
+            class=" project-list-image img"
+            alt="El futuro que nunca fue / Performance de Marilyn Boror"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_a5b6ddb4bff166d6.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_a5b6ddb4bff166d6.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_59b0ad92424fecb7.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_deefd9a32d0abc1a.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_722c56240f9de3d5.webp"
+            class=" project-list-image img"
+            alt="El futuro que nunca fue / Performance de Marilyn Boror"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_b983daee09f5714c.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_b983daee09f5714c.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_9d52d88fc7b10040.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_15f5d6a513591f93.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_252a0ba6f244f982.webp"
+            class=" project-list-image img"
+            alt="El futuro que nunca fue / Performance de Marilyn Boror"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_6d5742401a4fd56f.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_6d5742401a4fd56f.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_45c14053ccaf59d0.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_1716f04b7f9dcc00.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_89d0277e9f55cde.webp"
+            class=" project-list-image img"
+            alt="El futuro que nunca fue / Performance de Marilyn Boror"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_950a8846fce1ca1c.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_950a8846fce1ca1c.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_339f6be2f0a554eb.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_9833c21f36a2f271.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_3af3b647c59e3eaf.webp"
+            class=" project-list-image img"
+            alt="El futuro que nunca fue / Performance de Marilyn Boror"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="project-list-info-container">
+                  <div class="project-list-info-diamond">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/programa-curatorial/pc-project-diamond.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class=" img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+                  </div>
+                </div>
+                
+              </div>
+            </a>
+            <div class="project-list-title">
+              <span class="">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/" class="project-list-link">
+                  El futuro que nunca fue / Performance de Marilyn Boror
+                </a>
+              </span>
+            </div>
+          </section>
+        
+      
+        
+        
+        
+          
+        
+
+        
+        
+        
+          
+        
+        
+
+        
+          
+          <section class="project-list-project-container">
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/"
+              class="project-list-project-link"
+              aria-label="Ver actividad: La palabra dicha / Performance de Eider Yangana">
+              <div class="project-list-project">
+                <div class="project-list-media-frame">
+                  
+                    <div class="project-list-image-slider swiper">
+                      <div class="swiper-wrapper">
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_4e64735edb6e6988.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_4e64735edb6e6988.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_a7e80b7e14263705.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_6851cd57a4a3ba89.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_a452e5bafecabee1.webp"
+            class=" project-list-image img"
+            alt="La palabra dicha / Performance de Eider Yangana"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_3f82765341470496.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_3f82765341470496.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_1418f1bbf31dd4d2.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_216cb55f8bd9a35d.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_40e048dcc816d78b.webp"
+            class=" project-list-image img"
+            alt="La palabra dicha / Performance de Eider Yangana"
+            width="2400"
+            height="1376" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_3a2d4228d84b34c5.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_3a2d4228d84b34c5.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_cf43f370e1fb0b9b.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_5467e0f7f4113278.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_b76dec4962bfe997.webp"
+            class=" project-list-image img"
+            alt="La palabra dicha / Performance de Eider Yangana"
+            width="2400"
+            height="1528" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="project-list-info-container">
+                  <div class="project-list-info-diamond">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/programa-curatorial/pc-project-diamond.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class=" img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+                  </div>
+                </div>
+                
+              </div>
+            </a>
+            <div class="project-list-title">
+              <span class="">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/" class="project-list-link">
+                  La palabra dicha / Performance de Eider Yangana
+                </a>
+              </span>
+            </div>
+          </section>
+        
       
         
         
@@ -4766,7 +6091,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                     </div>
                   
                 </div>
-
 
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
@@ -5953,7 +7277,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                   
                 </div>
 
-
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
                     
@@ -6055,6 +7378,8 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         
         
         
+          
+        
         
 
         
@@ -6067,7 +7392,11 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
               <div class="project-list-project">
                 <div class="project-list-media-frame">
                   
-                    
+                    <div class="project-list-image-slider swiper">
+                      <div class="swiper-wrapper">
+                        
+                          <div class="swiper-slide">
+                            
 
 
 
@@ -6146,31 +7475,31 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         <picture>
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/portada_hu_e6f09eaf1309ae0e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_93960e765ae313bd.webp"
             
             media="(max-width: 575px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/portada_hu_e6f09eaf1309ae0e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_93960e765ae313bd.webp"
             
             media="(max-width: 767px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/portada_hu_150368044990d357.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_5aed6659544417c5.webp"
             
             media="(max-width: 991px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/portada_hu_45a56a5050719133.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_83ab055bd5791a98.webp"
              />
           <img
             
               loading="lazy" decoding="async"
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/portada_hu_394c51b86ed6c9e8.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_997275071c1b2d14.webp"
             class=" project-list-image img"
             alt="EL MUNDO AL REVÉS"
-            width="556"
-            height="799" />
+            width="2400"
+            height="1600" />
         </picture>
       
       
@@ -6182,9 +7511,602 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
   
 
 
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_c9a63be9d33ac1dd.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_c9a63be9d33ac1dd.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_af322319fa323fb9.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_1f544923972d69db.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_5d0524e8c8ee482b.webp"
+            class=" project-list-image img"
+            alt="EL MUNDO AL REVÉS"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_de4bf7a0c7566b44.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_de4bf7a0c7566b44.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_cc0b7aeb1494bb31.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_a9a49107cd7ec4e3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_fd2b0559b21520d3.webp"
+            class=" project-list-image img"
+            alt="EL MUNDO AL REVÉS"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_3b0f8f75088b8d67.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_3b0f8f75088b8d67.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_5553ef704d7d3d2b.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_ef2b7897d724a4a3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_a4f6277f854195f8.webp"
+            class=" project-list-image img"
+            alt="EL MUNDO AL REVÉS"
+            width="2400"
+            height="1559" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_9dc0d81e46a7e121.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_9dc0d81e46a7e121.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_5ea0eeaddbe78395.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_34f1b8a7719a5a96.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_48c574410d3a7d7c.webp"
+            class=" project-list-image img"
+            alt="EL MUNDO AL REVÉS"
+            width="1280"
+            height="854" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_546fa5a20bc5502c.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_546fa5a20bc5502c.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_4f17b5d2f56d9db8.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_5e82ec8158b6c90.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_9955007c0a2be697.webp"
+            class=" project-list-image img"
+            alt="EL MUNDO AL REVÉS"
+            width="1280"
+            height="854" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                      </div>
+                    </div>
                   
                 </div>
-
 
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
@@ -7489,7 +9411,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                   
                 </div>
 
-
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
                     
@@ -8084,7 +10005,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                     </div>
                   
                 </div>
-
 
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
@@ -9035,7 +10955,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                   
                 </div>
 
-
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
                     
@@ -9137,6 +11056,8 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         
         
         
+          
+        
         
 
         
@@ -9149,7 +11070,11 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
               <div class="project-list-project">
                 <div class="project-list-media-frame">
                   
-                    
+                    <div class="project-list-image-slider swiper">
+                      <div class="swiper-wrapper">
+                        
+                          <div class="swiper-slide">
+                            
 
 
 
@@ -9228,31 +11153,31 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         <picture>
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/portada_hu_e6f09eaf1309ae0e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_54b3217cd0b65d59.webp"
             
             media="(max-width: 575px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/portada_hu_e6f09eaf1309ae0e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_54b3217cd0b65d59.webp"
             
             media="(max-width: 767px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/portada_hu_150368044990d357.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_489962cc4e73e119.webp"
             
             media="(max-width: 991px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/portada_hu_45a56a5050719133.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_fc3a209333eb834f.webp"
              />
           <img
             
               loading="lazy" decoding="async"
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/portada_hu_394c51b86ed6c9e8.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_93cd5fbc8986bd13.webp"
             class=" project-list-image img"
             alt="Exposición: Monte Adentro"
-            width="556"
-            height="799" />
+            width="2400"
+            height="1600" />
         </picture>
       
       
@@ -9264,9 +11189,720 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
   
 
 
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_7e5c7073bfa7ec5.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_7e5c7073bfa7ec5.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_b86b5ffc969ce918.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_38b8a38e5cff6881.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_48175b9eb51b91e9.webp"
+            class=" project-list-image img"
+            alt="Exposición: Monte Adentro"
+            width="1600"
+            height="1069" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_184e1ad9757e7923.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_184e1ad9757e7923.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_e588aa385649f9a4.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_6f814dbc28e5e645.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_2cb96e3b3ad647d5.webp"
+            class=" project-list-image img"
+            alt="Exposición: Monte Adentro"
+            width="1600"
+            height="1231" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_807c5497afb1a106.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_807c5497afb1a106.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_742eda3ec6f1b181.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_2e15cb596250eff6.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_f4615b66b0690413.webp"
+            class=" project-list-image img"
+            alt="Exposición: Monte Adentro"
+            width="1600"
+            height="1011" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_3b36b3833ccb6e16.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_3b36b3833ccb6e16.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_87f90a74b8022b9.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_918a3b2cd159fa8b.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_d92826bc9ef0eb81.webp"
+            class=" project-list-image img"
+            alt="Exposición: Monte Adentro"
+            width="1600"
+            height="972" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_1c45bc4af1943e06.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_1c45bc4af1943e06.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_f638506bf12eafd7.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_1b8c48a0a68cacd7.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_e1e6ef60a1ed8ba9.webp"
+            class=" project-list-image img"
+            alt="Exposición: Monte Adentro"
+            width="2400"
+            height="2225" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_b14d7ef8b9fc8314.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_b14d7ef8b9fc8314.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_4f96c97c7b939aa8.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_aaa16027cf8808d1.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_af3a59d60747b9ab.webp"
+            class=" project-list-image img"
+            alt="Exposición: Monte Adentro"
+            width="2400"
+            height="1679" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                      </div>
+                    </div>
                   
                 </div>
-
 
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
@@ -10410,27 +13046,27 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         <picture>
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_4bb059d50f98cdde.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_6b2c1f3c21fb63e.webp"
             
             media="(max-width: 575px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_4bb059d50f98cdde.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_6b2c1f3c21fb63e.webp"
             
             media="(max-width: 767px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_9617095e86197d8.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_7dd580afbbb6f57b.webp"
             
             media="(max-width: 991px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_b0eeaf9afc905b6c.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_79fbd656298f6657.webp"
              />
           <img
             
               loading="lazy" decoding="async"
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_2fcb2dd8bb69e08.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-09_hu_29a7165556cc7dd0.webp"
             class=" project-list-image img"
             alt="Lanzamiento del 47 Salón Nacional de Artistas - KAUKA, asamblea de mundos posibles"
             width="2400"
@@ -10528,145 +13164,27 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         <picture>
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_6b2c1f3c21fb63e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_c909829aa8b3bcc1.webp"
             
             media="(max-width: 575px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_6b2c1f3c21fb63e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_c909829aa8b3bcc1.webp"
             
             media="(max-width: 767px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_7dd580afbbb6f57b.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_b55d51a0efc07e66.webp"
             
             media="(max-width: 991px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_79fbd656298f6657.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_23c89935b16543a2.webp"
              />
           <img
             
               loading="lazy" decoding="async"
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_29a7165556cc7dd0.webp"
-            class=" project-list-image img"
-            alt="Lanzamiento del 47 Salón Nacional de Artistas - KAUKA, asamblea de mundos posibles"
-            width="2400"
-            height="1600" />
-        </picture>
-      
-      
-    
-    
-  
-
-
-  
-
-
-                          </div>
-                        
-                          <div class="swiper-slide">
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-    
-      
-    
-
-
-    
-    
-
-
-    
-    
-      
-      
-    
-    
-    
-
-
-    
-    
-      
-      
-        
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        
-
-
-        <picture>
-          <source
-            
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_c909829aa8b3bcc1.webp"
-            
-            media="(max-width: 575px)" />
-          <source
-            
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_c909829aa8b3bcc1.webp"
-            
-            media="(max-width: 767px)" />
-          <source
-            
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_b55d51a0efc07e66.webp"
-            
-            media="(max-width: 991px)" />
-          <source
-            
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_23c89935b16543a2.webp"
-             />
-          <img
-            
-              loading="lazy" decoding="async"
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-11_hu_c9f4087aedeb48ff.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles/galeria/exp_lanzamiento-del-47-salon-nacional-de-artistas-kauka-asamblea-de-mundos-posibles-10_hu_c9f4087aedeb48ff.webp"
             class=" project-list-image img"
             alt="Lanzamiento del 47 Salón Nacional de Artistas - KAUKA, asamblea de mundos posibles"
             width="2400"
@@ -10688,7 +13206,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                     </div>
                   
                 </div>
-
 
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
@@ -11403,7 +13920,6 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
                   
                 </div>
 
-
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
                     
@@ -11505,6 +14021,8 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         
         
         
+          
+        
         
 
         
@@ -11517,7 +14035,11 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
               <div class="project-list-project">
                 <div class="project-list-media-frame">
                   
-                    
+                    <div class="project-list-image-slider swiper">
+                      <div class="swiper-wrapper">
+                        
+                          <div class="swiper-slide">
+                            
 
 
 
@@ -11596,31 +14118,31 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         <picture>
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/portada_hu_e6f09eaf1309ae0e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_5884b886c86b3e84.webp"
             
             media="(max-width: 575px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/portada_hu_e6f09eaf1309ae0e.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_5884b886c86b3e84.webp"
             
             media="(max-width: 767px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/portada_hu_150368044990d357.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_c9c377744cff5d4b.webp"
             
             media="(max-width: 991px)" />
           <source
             
-              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/portada_hu_45a56a5050719133.webp"
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_233d0a276275ee90.webp"
              />
           <img
             
               loading="lazy" decoding="async"
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/portada_hu_394c51b86ed6c9e8.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_8b639c4aee964703.webp"
             class=" project-list-image img"
             alt="Performance: ALBO"
-            width="556"
-            height="799" />
+            width="2400"
+            height="3754" />
         </picture>
       
       
@@ -11632,9 +14154,484 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
   
 
 
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_54b3217cd0b65d59.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_54b3217cd0b65d59.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_489962cc4e73e119.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_fc3a209333eb834f.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_93cd5fbc8986bd13.webp"
+            class=" project-list-image img"
+            alt="Performance: ALBO"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_143fcf4d03fe3fc0.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_143fcf4d03fe3fc0.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_a35c87244e14392a.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_97912d6eee31b157.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_44a06a2a85e54b30.webp"
+            class=" project-list-image img"
+            alt="Performance: ALBO"
+            width="2400"
+            height="3425" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_a9e524062447a52c.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_a9e524062447a52c.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_3bbe80d3b0286520.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_89f3dec33447b130.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_31ec213a298407d1.webp"
+            class=" project-list-image img"
+            alt="Performance: ALBO"
+            width="2400"
+            height="1600" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_c710b3d597bd107c.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_c710b3d597bd107c.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_7447ecf5092a1795.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_653014b590442490.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_26cde5b7e98a21b5.webp"
+            class=" project-list-image img"
+            alt="Performance: ALBO"
+            width="2400"
+            height="3472" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                      </div>
+                    </div>
                   
                 </div>
-
 
                 <div class="project-list-info-container">
                   <div class="project-list-info-diamond">
@@ -11731,27 +14728,14 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
       
       
       
-        
-        
-          
-  <div class="project-list-project-container bg-expositivo project-list-extra-lg-up">
-    <div class="project-list-diamond bg-expositivo project-list-extra-lg-up"></div>
-  </div>
-
-        
-          
-  <div class="project-list-project-container bg-expositivo project-list-extra-lg-up">
-    <div class="project-list-diamond bg-expositivo project-list-extra-lg-up"></div>
-  </div>
-
-        
-      
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const sliders = document.querySelectorAll(".project-list-image-slider.swiper");
+      const sliders = document.querySelectorAll(
+        ".project-list-image-slider.swiper"
+      );
       sliders.forEach((sliderEl) => {
         if (sliderEl.dataset.swiperInitialized === "true") {
           return;
@@ -11787,6 +14771,17 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
   
   <footer class="home-footer-wrapper programa-footer">
     
+
+
+
+
+  
+    
+  
+  
+    
+  
+
 
 
 
@@ -12166,7 +15161,7 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-visual-image sm:hidden img"
+        class="home-footer-visual-image home-footer-visual-image-mobile-all sm:hidden img"
         width=""
         height="" />
     
@@ -12241,7 +15236,7 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
         loading="lazy"
         decoding="async"
         alt=""
-        class="home-footer-visual-image hidden sm:block lg:hidden img"
+        class="home-footer-visual-image home-footer-visual-image-mobile-sm hidden sm:block lg:hidden img"
         width=""
         height="" />
     
@@ -12261,8 +15256,13 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
   </div>
 </div>
 
-<div class="home-footer-logos bg-expositivo">
-  <div class="home-footer-image-container">
+
+
+  </footer>
+
+      </section>
+    </main>
+
     
 
 
@@ -12270,49 +15270,13 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <img
-    loading=""
-    decoding="async"
-    src="https://relampagoproyecto.github.io/kauka-dev/img/footer/footer.png"
-    alt=""
-    class="home-footer-image img"
-    height=""
-    width="" />
-
-
-  </div>
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
 </div>
 
-  </footer>
-
-      </section>
-    </main>
 
     
     

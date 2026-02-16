@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4746,247 +4759,8 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
     
     
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
   
     
     
@@ -5088,12 +4862,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -5620,27 +5391,8 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
       
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
-    
-
-    
-    
-    
     
     
     
@@ -5705,9 +5457,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
-    
     
     
   
@@ -5970,29 +5719,10 @@ if (typeof initHeaderOnReady === "function") {
     
     
       
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
     
-
-    
-    
-
-    
-    
     
     
-    
-    
   
     
     
@@ -6006,12 +5736,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -6904,29 +6631,10 @@ if (typeof initHeaderOnReady === "function") {
     
     
       
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
-    
-
     
     
     
-    
-    
-    
   
     
     
@@ -6944,11 +6652,8 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
     
     
-    
   
     
     
@@ -7076,30 +6781,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
       
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
-    
-
-    
-    
     
     
     
-    
   
     
     
@@ -7135,12 +6821,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -7733,25 +7416,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
       
       
     
@@ -7774,30 +7438,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
       
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
-    
-
-    
-    
     
     
     
-    
   
     
     
@@ -7811,12 +7456,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -7881,9 +7523,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
-    
     
     
   
@@ -8080,29 +7719,10 @@ if (typeof initHeaderOnReady === "function") {
     
     
       
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
     
-
-    
-    
-
-    
-    
     
     
-    
-    
   
     
     
@@ -8160,12 +7780,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -9995,29 +9612,10 @@ if (typeof initHeaderOnReady === "function") {
     
     
       
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
-    
-
     
     
     
-    
-    
-    
   
     
     
@@ -10035,11 +9633,8 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
     
     
-    
   
     
     
@@ -10233,30 +9828,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
       
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
-    
-
-    
-    
     
     
     
-    
   
     
     
@@ -10270,12 +9846,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -10933,17 +10506,9 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
 
             
             
-            
-              
             
               
             
@@ -10956,12 +10521,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/vilma-almendra-manuel-rozental/">
                 
                 Vilma Almendra &amp; Manuel Rozental
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/vilma-almendra/">
-                
-                Vilma-Almendra
               </a>
             
               
@@ -11047,17 +10606,9 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
 
             
             
-            
-              
             
               
             
@@ -11124,12 +10675,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/universidad-paris-8-vincennes-saint-denis/">
                 
                 Universidad Paris 8 Vincennes–Saint-Denis
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/universidad-autonoma-indigena-intercultural-del-consejo-regional-indigena-del-cauca-uaiin/">
-                
-                Universidad-Autonoma-Indigena-Intercultural-Del-Consejo-Regional-Indigena-Del-Cauca-Uaiin
               </a>
             
           </div>
@@ -11843,11 +11388,7 @@ if (typeof initHeaderOnReady === "function") {
                 
                 
                 
-                  
-                
 
-                
-                  
                 
               
             
@@ -11961,12 +11502,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -11974,12 +11509,6 @@ if (typeof initHeaderOnReady === "function") {
 
                 
                   
-                
-              
-            
-              
-              
-              
                 
               
             
@@ -12050,12 +11579,6 @@ if (typeof initHeaderOnReady === "function") {
 
                 
                   
-                
-              
-            
-              
-              
-              
                 
               
             
@@ -12208,12 +11731,6 @@ if (typeof initHeaderOnReady === "function") {
 
             
             
-            
-              
-            
-              
-            
-              
             
               
             
@@ -12277,21 +11794,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/manuel-rozental/">
-                
-                Manuel-Rozental
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/mara-bravo-rodriguez/">
                 
                 Mara Bravo Rodríguez
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/marcha-de-la-comida/">
-                
-                Marcha-De-La-Comida
               </a>
             
               
@@ -12334,12 +11839,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/maria-teresa-findji-fundacion-colombia-nuestra/">
                 
                 María Teresa Findji - Fundación Colombia Nuestra
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/maria-campo/">
-                
-                Maria-Campo
               </a>
             
               
@@ -12493,18 +11992,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -12524,10 +12011,6 @@ if (typeof initHeaderOnReady === "function") {
 
             
             
-            
-              
-            
-              
             
               
             
@@ -12583,12 +12066,6 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/lina-bolanos/">
-                
-                Lina-Bolanos
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/lorena-hurtado/">
                 
                 Lorena Hurtado
@@ -12604,12 +12081,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/luis-hernandez-mellizo-y-lina-bolanos-sindicato-mutar/">
                 
                 Luis Hernández Mellizo Y Lina Bolaños (Sindicato Mutar)
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/luis-hernandez/">
-                
-                Luis-Hernandez
               </a>
             
               
@@ -13747,12 +13218,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -13810,8 +13275,6 @@ if (typeof initHeaderOnReady === "function") {
 
             
             
-            
-              
             
               
             
@@ -13844,12 +13307,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/ecoaldea-mama-pascuala/">
                 
                 Ecoaldea Mama Pascuala
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/ecoaldea-mamita-pascuala/">
-                
-                Ecoaldea-Mamita-Pascuala
               </a>
             
               
@@ -13913,12 +13370,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -14009,18 +13460,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -14053,20 +13492,8 @@ if (typeof initHeaderOnReady === "function") {
             
               
             
-              
-            
-              
-            
-              
-            
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/dacmi/">
-                
-                Dacmi
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/dalid-rosero-colectivo-casa-mamaru/">
@@ -14102,18 +13529,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/deifer-moises-ibanez-gasca/">
                 
                 Deifer Moisés Ibáñez Gasca
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/deifer-ibanez/">
-                
-                Deifer-Ibanez
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/denise-ferreira-da-silva/">
-                
-                Denise-Ferreira-Da-Silva
               </a>
             
               
@@ -14203,12 +13618,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -14335,35 +13744,9 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
 
             
             
-            
-              
-            
-              
-            
-              
-            
-              
             
               
             
@@ -14435,12 +13818,6 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/casa-mamaru/">
-                
-                Casa-Mamaru
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/catalina-vargas-tovar/">
                 
                 Catalina Vargas Tovar
@@ -14477,12 +13854,6 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colective-transaliades/">
-                
-                Colective-Transaliades
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectivo-amapola/">
                 
                 Colectivo Amapola
@@ -14498,12 +13869,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectivo-tul-lecxkwe/">
                 
                 Colectivo Tul Lécxkwe
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectivo-ambiente-tabanoy/">
-                
-                Colectivo-Ambiente-Tabanoy
               </a>
             
               
@@ -14546,12 +13911,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/corporacion-manglaria/">
                 
                 Corporación Manglaria
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/cosurca/">
-                
-                Cosurca
               </a>
             
               
@@ -14769,62 +14128,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
                 
                 
                   
@@ -14873,19 +14176,35 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
+              
+              
+              
+                
+              
+            
+              
+              
+              
+                
+              
+            
+              
+              
+              
+                
+                
+                
+                  
+                
+
+                
+                  
+                
+              
+            
 
             
             
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
             
               
             
@@ -14983,9 +14302,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/alexandra-idrobo-aritsta-de-monte-oscuro/">
+              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/alexandra-idrobo-artista-de-monte-oscuro/">
                 
-                Alexandra Idrobo (Aritsta De Monte Oscuro)
+                Alexandra Idrobo (Artista De Monte Oscuro)
               </a>
             
               
@@ -15013,12 +14332,6 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/andres-maiz/">
-                
-                Andres-Maiz
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/angelica-maria-ramirez-mendoza/">
                 
                 Angélica María Ramírez Mendoza
@@ -15031,21 +14344,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/angelica-ramirez/">
-                
-                Angelica-Ramirez
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/anyi-ballesteros-llanten/">
                 
                 Anyi Ballesteros Llantén
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/anyi-ballesteros/">
-                
-                Anyi-Ballesteros
               </a>
             
               
@@ -15073,21 +14374,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/asom-mineras-norte-cauca/">
-                
-                Asom-Mineras-Norte-Cauca
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/asomanuelitas-la-trocha-sentires-de-la-montana/">
                 
                 Asomanuelitas - La Trocha sentires de la montaña
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/asoparupa/">
-                
-                Asoparupa
               </a>
             
               
@@ -15172,6 +14461,21 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+</div>
+
 
     
     

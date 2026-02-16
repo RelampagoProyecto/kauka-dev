@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,9 +4162,8 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
-        <p>Artista jujeña, investigadora y docente de la Universidad Nacional de las Artes, en el Área de Folklore y Artes Visuales. Se especializó en técnicas de grabado, pintura, escultura y arte prehispánico americano. Complementó su formación con estudios y prácticas en danzas tradicionales argentinas y latinoamericanas, desarrolladas a través de un extenso trabajo de campo en comunidades originarias del continente. Ha desarrollado una trayectoria que vincula arte, educación intercultural y descolonización del pensamiento. Desde la Universidad Nacional de las Artes, donde enseña desde hace más de una década, impulsa procesos que integran creación, medicina ancestral y pedagogías comunitarias. Es autora de Ritos, ceremonias andinas en torno a la vida y la muerte (Biblos, 2020) y Sabidurías Ancestrales I. Medicina Tradicional, Educación y Espiritualidad Originaria (Biblos, 2025).</p>
-
+      <div class="artista-term-content invitadx-rich-content">
+        Artista jujeña, investigadora y docente de la Universidad Nacional de las Artes, en el Área de Folklore y Artes Visuales. Se especializó en técnicas de grabado, pintura, escultura y arte prehispánico americano. Complementó su formación con estudios y prácticas en danzas tradicionales argentinas y latinoamericanas, desarrolladas a través de un extenso trabajo de campo en comunidades originarias del continente. Ha desarrollado una trayectoria que vincula arte, educación intercultural y descolonización del pensamiento. Desde la Universidad Nacional de las Artes, donde enseña desde hace más de una década, impulsa procesos que integran creación, medicina ancestral y pedagogías comunitarias. Es autora de Ritos, ceremonias andinas en torno a la vida y la muerte (Biblos, 2020) y Sabidurías Ancestrales I. Medicina Tradicional, Educación y Espiritualidad Originaria (Biblos, 2025).
       </div>
     
 
@@ -4183,6 +4211,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4196,7 +4226,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4224,84 +4254,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4352,9 +4304,60 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
-        
+    
+      
+      
+      
       
     
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
       
       
       
@@ -4410,6 +4413,23 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
       
     
       
@@ -4525,132 +4545,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4667,6 +4562,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4676,68 +4576,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-        
-      
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
     
       
 
@@ -4814,19 +4652,6 @@ if (typeof initHeaderOnReady === "function") {
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/lenguas-madre-lenguas-bosque-rituales-de-escucha-por-la-diversidad-linguistica/">Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</a>
-            </div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/performance-cantos-ancestrales-memoria-vibracional/">Performance: Cantos ancestrales, memoria vibracional</a>
-            </div>
-          
-        </div>
       
     
       
@@ -4844,7 +4669,7 @@ if (typeof initHeaderOnReady === "function") {
           <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-27-lenguas-madre/">Lenguas madre, lenguas bosque: rituales de escucha</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-27-lenguas-madre/">Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</a>
             </div>
           
             <div class="artista-term-componente-link">
@@ -4868,14 +4693,31 @@ if (typeof initHeaderOnReady === "function") {
     
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Amalia Vargas</p>
+
+    
+  
+</div>
+
 
     
     

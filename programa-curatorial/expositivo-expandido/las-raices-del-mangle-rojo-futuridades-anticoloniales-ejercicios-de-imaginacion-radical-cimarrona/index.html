@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,19 +4130,33 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <p><strong>Participantes del laboratorio:</strong> Adri Capote Romero, Ángela Rodríguez, Cris Agredo, Duvan Saggnia, Flor Bárcenas Johan Mijail, Keyla Mariana Duffont, Lucas Loaiza (Lulo), María Alejandra Sánchez, Mother Star Nicki Brown, Pilar Madrid, Sirena Caicedo.</p>
-
-  </div>
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      <div
+        id="proyecto-contenido"
+        class="proyecto-contenido text-deep-pink">
+        <div class="page-content-container ">
+  <div class="page-content-text"><p><strong>Participantes del laboratorio:</strong> Adri Capote Romero, Ángela Rodríguez, Cris Agredo, Duvan Saggnia, Flor Bárcenas Johan Mijail, Keyla Mariana Duffont, Lucas Loaiza (Lulo), María Alejandra Sánchez, Mother Star Nicki Brown, Pilar Madrid, Sirena Caicedo.</p>
+</div>
 </div>
 
+      </div>
     </div>
-  </div>
+  
+
 
   
   
@@ -4149,7 +4173,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
 
   
   
@@ -4164,7 +4187,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="proyecto-info-label_hora xl:col-start-3">DESDE:</div>
         <div class="proyecto-info-fecha_inicio">
           <div class="fecha-text lg:col-start-2 xl:col-span-3 xl:col-start-3">
-            11/11/2024
+            11/11/2025
           </div>
         </div>
       </div>
@@ -4174,7 +4197,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="proyecto-info-label_hora text-right">HASTA:</div>
         <div class="proyecto-info-fecha_cierre">
           <div class="fecha-text lg:col-span-5 xl:col-span-4">
-            12/11/2024
+            12/11/2025
           </div>
         </div>
       </div>
@@ -4200,7 +4223,9 @@ if (typeof initHeaderOnReady === "function") {
             Museo Arquidiocesano de Arte Religioso de Popayán
           
           
-            <div class="proyecto-info-lugar-direccion">Popayán</div>
+            <div class="proyecto-info-lugar-direccion">
+              Popayán
+            </div>
           
           
           
@@ -4215,16 +4240,16 @@ if (typeof initHeaderOnReady === "function") {
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4249,13 +4274,13 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4280,15 +4305,16 @@ if (typeof initHeaderOnReady === "function") {
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-11-11" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4844,8 +4870,40 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   </div>
 
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Las raíces del mangle rojo, futuridades anticoloniales: ejercicios de imaginación radical cimarrona</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Iki Yos Piña Narváez</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

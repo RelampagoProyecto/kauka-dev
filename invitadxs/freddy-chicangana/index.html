@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4116,6 +4129,22 @@ if (typeof initHeaderOnReady === "function") {
   
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
@@ -4133,7 +4162,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Su nombre en lengua indígena es Wiñay Mallki (Raíz que permanece en el tiempo). Escritor y poeta Quechua de la Nación Yanakuna Mitmak del Cauca. Con su trabajo literario ha venido participando activamente en el fortalecimiento de la cultura de su pueblo, siendo miembro fundador y representante del grupo Yanamauta, que es conocimiento y saberes Yanakuna.</p>
 <p>Sus poemas han sido publicados en revistas y periódicos nacionales e internacionales, entre los que destacan: Revista Etnografist (Suecia); Kontakt (Dinamarca); Poetry internacional (Holanda); Magazín del Espectador; Magazín de El Tiempo y Casa Silva de Poesía, (Colombia). Ha participado en encuentros continentales de Escritores en Lenguas Indígenas en México, Venezuela, Chile, Ecuador, entre otros.</p>
 <p>Entre sus publicaciones destacan: Kentipay Llattantutamanta/El colibrí de la noche desnuda (2008); Samay Pisccok pponccopi muschcoypa/Espiritu de pájaro en pozos del ensueño (2010), y El circulo de la palabra (2011). Obtuvo los premios de poesía Humanidad y Palabra de la Universidad Nacional de Colombia (2003) y el premio Nosside de Poesía Global Multilingüe, otorgado en Italia (2008). Logró la recuperación y construcción del espacio sagrado Yachay Wassi (casa del saber y la palabra) y es impulsor de la “oralitura”.</p>
@@ -4187,6 +4216,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4200,7 +4231,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4228,84 +4259,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4356,8 +4309,74 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
       
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
     
       
       
@@ -4377,6 +4396,8 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+      
+        
       
     
       
@@ -4527,128 +4548,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -4665,6 +4565,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -4675,6 +4580,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -4683,9 +4594,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -4695,8 +4603,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -4711,6 +4618,18 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -4718,25 +4637,13 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
+          <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/lenguas-madre-lenguas-bosque-rituales-de-escucha-por-la-diversidad-linguistica/">Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-27-lenguas-madre/">Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -4759,6 +4666,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Fredy Chikangana</p>
+
+    
+  
+</div>
+
 
     
     

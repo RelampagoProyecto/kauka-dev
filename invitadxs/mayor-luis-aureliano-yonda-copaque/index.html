@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4126,6 +4139,22 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper asamblearios-term-info-wrapper">
     
@@ -4143,7 +4172,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="asamblearios-term-content">
+      <div class="asamblearios-term-content invitadx-rich-content">
         <p>Tiene su cordón umbilical sembrado en la tulpa de Palo Sol, en el Alto Naya. Ha sido secretario del Cabildo Mayor del Resguardo de Vitoncó (1998–1999) y de la Asociación Nasa Çxhâçxha en Páez (2000– 2002). Se desempeñó como promotor político en el área de capacitación del CRIC (2003–2005) y como coordinador político del proyecto político del CRIC (2006–2008). Acompañó el área de comunicaciones del CRIC (2009–2010) y coordinó el área de medicina tradicional (2011–2012). Fue autoridad Ne’jwesx del Resguardo Indígena La Mercedes (2015–2016).</p>
 <p>Desde 2010 trabaja en la reactivación de los ocho rituales sagrados del pueblo Nasa en el resguardo Kweth Ki’na.
 Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misael Tumbo. Actualmente acompaña el proceso del Programa de Educación Bilingüe Intercultural - PEBI en el CRIC, y es uno de los sabedores del proceso del Consejo de Abuelos y Abuelas de los 9 Picos Nevados.</p>
@@ -4180,6 +4209,8 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
   
 
   
+
+  
   
 
   
@@ -4193,7 +4224,7 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
   asamblearios-term-proyectos">
 
   <div class="asamblearios-term-proyectos-arrow">↘</div>
-  <div class="asamblearios-term-proyectos-list">
+  <div class="asamblearios-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4221,86 +4252,6 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4401,6 +4352,94 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
       
       
       
+    
+      
+      
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
         
       
     
@@ -4500,14 +4539,13 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -4529,141 +4567,6 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -4674,6 +4577,12 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -4682,9 +4591,6 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
         
           
           
-            
-            
-            
           
         
       
@@ -4694,8 +4600,7 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
 
       
       
-
-      
+        
       
       
 
@@ -4712,11 +4617,14 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -4726,8 +4634,7 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
 
       
       
-
-      
+        
       
       
 
@@ -4742,11 +4649,14 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -4756,38 +4666,7 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
 
       
       
-
-      
-      
-      
-
-      
-      
-      
-      
-    
-      
-
-      
-      
         
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
       
       
 
@@ -4800,6 +4679,21 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -4807,40 +4701,21 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
       
       
         <div class="asamblearios-term-componente-group">
-          <div class="asamblearios-term-componente-label">vivencial:</div>
+          <div class="asamblearios-term-componente-label">asambleas:</div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/cuarta-asamblea-de-mundos-posibles/">Cuarta asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/">Primera asamblea de mundos posibles</a>
             </div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/primera-asamblea-de-mundos-posibles/">Primera asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/">Segunda asamblea de mundos posibles</a>
             </div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/segunda-asamblea-de-mundos-posibles/">Segunda asamblea de mundos posibles</a>
-            </div>
-          
-            <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/tercera-asamblea-de-mundos-posibles/">Tercera asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/">Tercera asamblea de mundos posibles</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -4860,6 +4735,25 @@ Recibió enseñanzas en medicina tradicional del mayor y sabedor espiritual Misa
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Mayor Luis Aureliano Yonda Copaque</p>
+
+    
+  
+</div>
+
 
     
     

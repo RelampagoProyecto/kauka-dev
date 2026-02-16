@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4033,10 +4034,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4105,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4126,6 +4139,22 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper asamblearios-term-info-wrapper">
     
@@ -4143,9 +4172,8 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="asamblearios-term-content">
-        <p>Magister en educación de la Pontificia Universidad Javeriana. Consultiva departamental afro, coordinadora del grupo de Vigías de Patrimonio del norte del Cauca, autoridad tradicional del consejo comunitario Cuenca Rio Palo y la Paila de Puerto Tejada, salvaguarda de patrimonio culturales, y creadora del Festival de Esgrima de Machete y Bordón. Ha participado en múltiples espacios culturales, pedagógicos y artísticos en el Norte del Cauca y a nivel nacional e internacional, compartiendo el conocimiento tradicional del municipio.</p>
-
+      <div class="asamblearios-term-content invitadx-rich-content">
+        Magister en educación de la Pontificia Universidad Javeriana. Consultiva departamental afro, coordinadora del grupo de Vigías de Patrimonio del norte del Cauca, autoridad tradicional del consejo comunitario Cuenca Rio Palo y la Paila de Puerto Tejada, salvaguarda de patrimonio culturales, y creadora del Festival de Esgrima de Machete y Bordón. Ha participado en múltiples espacios culturales, pedagógicos y artísticos en el Norte del Cauca y a nivel nacional e internacional, compartiendo el conocimiento tradicional del municipio.
       </div>
     
 
@@ -4195,6 +4223,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4208,7 +4238,7 @@ if (typeof initHeaderOnReady === "function") {
   asamblearios-term-proyectos">
 
   <div class="asamblearios-term-proyectos-arrow">↘</div>
-  <div class="asamblearios-term-proyectos-list">
+  <div class="asamblearios-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4236,86 +4266,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4416,6 +4366,94 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
         
       
     
@@ -4513,14 +4551,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -4542,141 +4579,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -4687,6 +4589,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -4695,9 +4603,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -4707,8 +4612,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -4725,11 +4629,14 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
+      
+
+      
+      
+        
+        
           
           
-            
-            
-            
           
         
       
@@ -4739,38 +4646,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
-      
-      
-
-      
-      
-      
-      
-    
-      
-
-      
-      
         
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
       
       
 
@@ -4783,6 +4659,21 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -4790,36 +4681,17 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="asamblearios-term-componente-group">
-          <div class="asamblearios-term-componente-label">vivencial:</div>
+          <div class="asamblearios-term-componente-label">asambleas:</div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/cuarta-asamblea-de-mundos-posibles/">Cuarta asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/">Primera asamblea de mundos posibles</a>
             </div>
           
             <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/primera-asamblea-de-mundos-posibles/">Primera asamblea de mundos posibles</a>
-            </div>
-          
-            <div class="asamblearios-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/segunda-asamblea-de-mundos-posibles/">Segunda asamblea de mundos posibles</a>
+              <a href="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/">Segunda asamblea de mundos posibles</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -4839,6 +4711,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Alicia Castillo</p>
+
+    
+  
+</div>
+
 
     
     

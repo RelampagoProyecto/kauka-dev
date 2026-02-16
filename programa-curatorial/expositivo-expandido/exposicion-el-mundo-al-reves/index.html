@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4095,20 +4110,15 @@ if (typeof initHeaderOnReady === "function") {
     <main class="
   
   bg-white
-">
+" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
 
 
   
-  <div
-    class="proyecto-categorias-container bg-burnt-orange">
-    <div id="proyecto-categorias" class="proyecto-categorias">
-      
-      
-    </div>
-  </div>
+  
+
 
   
   <div class="proyecto-titulo-container">
@@ -4120,127 +4130,98 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="proyecto-contenido-container">
-    <div
-      id="proyecto-contenido"
-      class="proyecto-contenido text-deep-pink">
-      <div class="page-content-container ">
-  <div class="page-content-text">
-    <div class="break-inside-avoid mb-8">
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+  
+    
+      
+    
+  
+  
+  
+    <div class="proyecto-contenido-container">
+      
+        <div
+  class="pc-sections-container
+    pc-sections--component-expositivo-expandido
+  "><section class="pc-section-band pc-section-band-intro">
+          <div class="pc-section-content"><div class="break-inside-avoid mb-8">
 ¿Quiénes tienen derecho a la memoria? La historia, anclada en el culto al ídolo y en la permanencia de los monumentos, reclama ser reinterpretada y diversificada, abrirse a nuevas formas de representación y a otras agencias en los espacios públicos.
 <p>    Esta exposición reúne procesos situados en el suroccidente del país y algunos ecos del territorio maya; una serie de obras y acciones cuyos principios políticos se enraízan en las autonomías territoriales, las soberanías políticas y las acciones colectivas orientadas a la justicia y al derecho propio. Aquí, frente a la narración histórica unificada, se proponen fugas desde la imaginación política hacia la sanación y la reparación histórica y simbólica.</p>
 <p>    El título <em>El mundo al revés</em> alude a un documento del cronista quechua Felipe Guamán Poma de Ayala, quien, en 1615, buscó denunciar ante el rey de España los abusos, las injusticias y el mal gobierno ejercido por europeos y criollos en Abya Yala durante la colonia. A lo largo de más de 1100 páginas y 397 ilustraciones, el autor registró las violencias sufridas por su pueblo, con la esperanza de que el monarca, al conocerlas, evitara que se perpetuaran.</p>
 <p>    El texto nunca llegó a manos del rey, y el mal gobierno de la sociedad colonial —reinventado en las repúblicas— persiste hasta hoy. La historia de las luchas y las resistencias en el Cauca comparte las mismas raíces de violencia que se replican, a distintas escalas, en las geografías del sur global. Son violencias que heredan de la colonialidad imaginarios jerárquicos: el control sobre la tierra y el territorio; la opresión de unos cuerpos sobre otros; la explotación, el saqueo, el empobrecimiento, la desigualdad, el racismo y la muerte. Urgen las reescrituras del mundo, necesarias para habitar dignamente otros mundos ya presentes.</p>
 </div>
-<div class="break-inside-avoid mb-8">
-<p><strong>La palabra dicha</strong>
-<strong>Eider Yangana</strong>
-Performance e instalación</p>
-<p>2024-2025</p>
-</div>
-<div class="break-inside-avoid mb-8">
-El artista encarna con su cuerpo la imagen de la escultura en homenaje al cacique Pubén, comisionada en 1939 al artista indigenista Rómulo Rozo. Dicha imagen corresponde al boceto de uno de los monumentos que se proyectaron para conmemorar el cuarto centenario de Popayán, pero que nunca llegó a materializarse; en su lugar fue erigida la estatua de Sebastián de Belalcázar sobre la pirámide de Tulcán.
-<p>Mediante la performance, en la que hace uso del archivo histórico, del registro fotográfico de la escultura y de una exploración sonora, Eider se inserta en la dinámica de las estatuas vivientes callejeras en el espacio público de Popayán, recorriendo los lugares en los que su aparición, evocando la imagen de héroe indígena, plantea preguntas sobre la monumentalización de la memoria.</p>
-<p>En La palabra dicha, la imagen del líder indígena de la Confederación Pubenense, el cacique Payán, aparece de forma fantasmagórica y se resiste a desaparecer, como un gesto de reivindicación de la memoria colectiva de los pueblos indígenas y campesinos. Al mismo tiempo, su presencia retorna a la enunciación de una historia móvil y maleable, entendida como una construcción permanente desde el presente. Para el artista comunero del pueblo Yanakuna, de Rioblanco, Sotará, esta acción cuestiona las formas de representación de la memoria, más allá del monumento sólido, al alternar, a contrapelo, la pose heroica con el gesto del trabajo: agacharse y cincelar el pedestal. La obra señala así un problema estructural: qué se entiende por “indígena” y cómo los pueblos indígenas son vistos y representados desde miradas externas.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias humanas:</strong>
-Eider Yangana. Agradecimientos: John James, Ana Guerrero, Orlando Jiménez, Centro de Investigaciones Históricas José María Arboleda Llorente (Archivo Histórico de la Universidad del Cauca), comité curatorial del 47 SNA y colectivo NOMÁSMETÁFORAS.</p>
-<p><strong>Presencias más que humanas:</strong>
-Cacique Pubén y piedra.</p>
-<p><strong>Territorios:</strong>
-Valle de Pubén y ciudad de Popayán.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Memorias en disputa: justicia epistémica desde el Gran Kauka</strong>
-<strong>Tatiana Bachiller y Johnny Calderón</strong>
-Instalación y archivo vivo (elementos visuales, memoria comunitaria y espiritual, palabra y sueños)
-2020-2025</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Nuyapalø, la casa grande donde el espíritu femenino germina y resuena</strong>
-<strong>Néstor Muelas</strong>
-Pintura con pigmentos naturales (arcillas)</p>
-<p>1.6 x 6.5 m</p>
-<p>2025</p>
-</div>
-<p>En el espacio de exposición se reunieron trabajos investigativos, arquitectónicos y artísticos articulados por una visión común: la urgencia de reivindicar los conocimientos propios frente a la violencia colonial y patriarcal que ha marcado la historia fundacional de Popayán.</p>
-<p>    Tatiana Bachiller plantea momentos clave en la disputa por la memoria, superponiendo lenguas y memorias a través de una narrativa visual: un archivo vivo en disputa en el que se reterritorializa el gesto de la caída de la estatua del conquistador Sebastián de Belalcázar (2021). El juicio popular al conquistador español, realizado por el pueblo Misak en 2020 como acto de justicia simbólica, fue narrado aquí de distintas maneras: a través de inscripciones en español y namtrik sobre la imagen del monumento del conquistador restaurado y haciendo uso de elementos rituales que sostuvieron la acción colectiva.</p>
-<p>    Tatiana también retoma la investigación de Johnny Calderón y la articula en un diálogo con el artista misak Néstor Muelas, cuya pintura Nuyapalø representa a la mujer como origen de la vida: es ella quien enseña sobre la semilla y la dispersa por el territorio, para germinar a las gentes, el espíritu de lucha y las construcciones piramidales que conectan la tierra con el cosmos.</p>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias humanas</strong>
-Investigación: Tatiana Bachiller y Johnny Calderón. Pintura: Néstor Muelas.
-Traducción al namtrik: Lucy Tunubala.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias más que humanas:</strong>
-Pirámides del territorio, espíritus tutelares, ancestras que protegen la memoria, tabaco, chirrincho, pishinkalu, maíz blanco, chumbes, arcillas, ciudad ancestral, fuerzas que cuidan el sueño y la palabra.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Territorios</strong>
-Tatiana Bachiller: Bogotá y Cabildo Misak de Wampia. Néstor Muelas: Comunidad Misak Nuyapalø (Silvia, Cauca).
-Johnny Calderón: Cabildo Misak de Guambia (2020).</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Secuestro cultural por la dignidad caucana: Nuyxisa lechekwe. Un gobierno chiquito “propio”</strong>
-<strong>Minga Prácticas Decoloniales</strong>
-Videoinstalación: alambre de púas, monumento colonial en bronce, banderas, videos, escultura arcilla, urnas</p>
-<p>2012-2025</p>
-</div>
-Esta videoinstalación presenta un plan de vida impulsado por comunidades Nasa, Pijao, Misak, Yanakuna y Kimbaya, a la vez que visibiliza la lucha histórica entre comuneros indígenas y terratenientes del Cauca, encarnada en figuras como Manuel Quintín Lame Chantre (1880–1967) y su denuncia al despojo de tierras por parte de la familia Valencia Muñoz.
-<p>     En esta instalación confluyen elementos de profundo valor simbólico: la firma del mayor Manuel Quintín Lame Chantre, elaborada en un alambre de púas obtenido al desalambrar una de las haciendas; los registros del juicio simbólico realizado por médicos tradicionales Nasa, Pijao y Misak al busto del expresidente Guillermo León Valencia —rescatado por el colectivo tras haber sido derribado de su pedestal en Popayán durante el estallido social de 2021—, y una animación que propone un memorial futuro en ofrenda al mayor Manuel Quintín Lame Chantre, concebido como un gesto de reparación espiritual y colectiva. La instalación se completa con urnas destinadas a reunir objetos para ese futuro memorial.</p>
-<p>    En el marco del 47 Salón Nacional de Artistas se activó un plan de vida que honra las re-existencias históricas a través de la Minga. Las acciones incluyeron rituales como el traslado colectivo del busto del patriarca —cargado y arrastrado— desde el Puente del Humilladero hasta su casa, la Casa Museo Guillermo León Valencia, luego de su armonización —la de su espíritu y su legado familiar— en el tránsito por los territorios. Este ritual de justicia simbólica se acompañó de la lectura del Manifiesto de las Mujeres Indígenas de Colombia de 1927, en un acto de justicia, memoria y sanación colectiva.</p>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias humanas:</strong>
-Minga Prácticas Decoloniales, Popayork; Enmingada (Edinson Quiñones Falla, Estefanía García Pineda y Emiliano Çxayu&rsquo;çe Quiñones García). Acompañados por Lorenzo Tunubalá Hurtado, Jair Méndez Guetia y Miller Muñoz.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias más que humanas:</strong>
-Abuelos y abuelas de cerámica, piedra, oro y tumbaga; montañas, ríos, mares y espíritus animales, cuya presencia orienta el pensamiento y la práctica, y las plantas que guían el caminar, especialmente la coca que es esencial.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Territorios:</strong>
-Su labor se enraíza en la zona rural de Popayán. Desde hace unos nueve años tejen caminos junto a comunidades de los Andes colombianos, principalmente entre el Kauka y el Kumanday.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Memoria en asamblea: Archivo Histórico de Puerto Resistencia.</strong>
-Asamblea Popular de Puerto Resistencia</p>
-<p>Instalación de archivo comunitario</p>
-<p>2019-2025</p>
-</div>
-<p>El Archivo Histórico de Puerto Resistencia es una memoria viva de la autonomía y la re-existencia, una afirmación del derecho al territorio desde la acción y la palabra propias. Creado por la Asamblea Popular de Puerto Resistencia, junto a familias y colectivos del barrio, este archivo reúne objetos y testimonios en torno a la construcción del monumento como obra colectiva que materializa el reclamo de justicia, reparación y memoria de los muertos, desaparecidos, presos, lesionados y quienes finalmente tuvieron que recurrir al exilio.</p>
-<p>     Esta constelación de objetos, imágenes y huellas constituye un fractal de un mundo que revela sus rostros en La mano. Este contramonumento (o antimonumento) autoconstruido por iniciativa comunitaria de las Comunas 11 y 16 del Distrito de Aguablanca, al oriente de Cali, encarna un gesto colectivo de memoria viva. Como lo expresan sus creadorxs: “En lugar de ser una estructura fija y estática, se transforma continuamente para incorporar y reflejar problemáticas más recientes, subrayando la idea de que la resistencia y la memoria son dinámicas y están en constante evolución”.</p>
-<p>     Desde esta perspectiva, se reconoce una forma de soberanía curatorial guiada por la comunidad, tanto en la gestión, selección y préstamo de los objetos, como en la definición de categorías propias para narrarse a sí mismxs. El archivo presentado se organizó en tres momentos: “Monumento”, “Elementos del paro” y “Mensajes y ecos del paro”. Finalmente, una línea de tiempo recogió las muertes, las masacres y las persecuciones, como un recordatorio de la búsqueda de justicia y del esclarecimiento de la verdad.</p>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias humanas:</strong>
-Primeras Líneas, Mamá de la Olla Comunitaria, huerterxs, artistas, niñxs y personas del común que, desde el afecto y la organización (cuerpos que siembran), resisten y sostienen el territorio.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Presencias más que humanas:</strong>
-Carteles, camisetas, maquetas, bocetos, renders, grabados, fotografías, cascos, banderas, libros, consignas, gritos de lucha, prendas, recortes de prensa: objetos que resguardan la memoria colectiva.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Territorios:</strong>
-Puerto Resistencia, anclaje del oriente de la ciudad de Cali y puerta de entrada al Distrito de Aguablanca, Santiago de Cali; espacio comunitario donde las memorias, las vidas y sus voces se reúnen, crean y sostienen mundos posibles.</p>
-</div>
-<div class="break-inside-avoid mb-8">
-<p><strong>Sobre el espacio</strong>
-<strong>Casa Museo Guillermo León Valencia</strong></p>
-</div>
-<p>La Casa Museo Guillermo León Valencia es una de las casas museales adscritas al Museo Nacional de Colombia, entidad perteneciente al Ministerio de Cultura. El inmueble, de carácter privado hasta la década de 1970, fue adquirido por la Nación en 1973 mediante la Ley 70 de ese mismo año, sancionada por el entonces presidente conservador Misael Pastrana Borrero, con el propósito de honrar la memoria del expresidente, también conservador, Guillermo León Valencia (1962–1966). En cumplimiento de dicha ley, la Nación destinó la casa en Popayán como sede del actual museo en el 2008. Allí reposan sus restos y los de su esposa, junto a un conjunto de objetos, fotografías, escudos y condecoraciones que articulan un relato centrado en el linaje familiar, aspectos de su vida personal y su trayectoria política.</p>
-<p>     El guion museológico ha privilegiado una narrativa que presenta a Guillermo León Valencia bajo la denominación de “presidente de la paz”, sin problematizar de manera suficiente las tensiones y controversias de su mandato ni las de su linaje familiar. Esta lectura omite, entre otros aspectos, el contexto en el que, durante su gobierno, se consolidaron las insurgencias armadas del ELN y las FARC, así como las implicaciones del Decreto 3398 de 1965, que otorgó sustento legal a la conformación de estructuras de autodefensa que, con el tiempo, derivarían en el fenómeno del paramilitarismo en Colombia.</p>
-<p>     Actualmente, este museo —al igual que otros adscritos al Museo Nacional de Colombia— se encuentra en proceso de renovación de su guion museológico, en respuesta a las definiciones contemporáneas de los museos y a normativas vigentes que cuestionan la rigidez y la rápida pérdida de vigencia de las salas “permanentes” y promueven el concepto de salas de larga duración. Este enfoque enfatiza la movilidad de las interpretaciones históricas, la constante investigación de las colecciones, la inclusión y la participación de comunidades, así como la reflexión crítica sobre los relatos que se construyen en torno al pasado, tal como lo sugiere la definición actual de museo del ICOM (Consejo Internacional de Museos).</p>
-<div class="break-inside-avoid mb-8">
-<p><strong>(Panteón de los próceres)</strong>
-Construido en 1940, bajo el mismo espíritu conmemorativo del monumento a Sebastián de Belalcázar, en honor a los 400 años de la fundación de la ciudad de Popayán, el Centro de Memoria Panteón de los Próceres funciona como un espacio de consagración de la memoria oficial, destinado a preservar los restos de los llamados “personajes ilustres” de la ciudad. En su salón principal reposan urnas y placas conmemorativas dedicadas, en su mayoría, a hombres criollos —militares, políticos y letrados— que, en su excepcionalidad masculina, ocuparon posiciones centrales en los procesos de independencia y consolidación del Estado-nación: Camilo Torres, Joaquín Mosquera, José María Obando, Tomás Cipriano de Mosquera, José Hilario López, Francisco José de Caldas, Julio Arboleda, entre otros.
-Este espacio ejerce una política de la memoria selectiva, consagrando una versión hegemónica de la historia que excluye sistemáticamente a las mujeres, a los pueblos indígenas, a las comunidades afrodescendientes, a los sectores populares y a los cuerpos racializados que sostuvieron —y padecieron— los procesos de conquista, colonia, independencia y formación del Estado.
-En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Próceres—, el problema radica en la monumentalización de una sola versión de la historia y en que reproducen un orden jerárquico que decide cuáles vidas merecen ser recordadas, veneradas y transmitidas como legado. En este sentido, funcionan como relatos y arquitecturas del poder que fijan la memoria en clave patriarcal, colonial y elitista, reforzando una genealogía de la nación construida desde la exclusión.</p>
+<h2 id="actividades-y-contenidos-relacionados">Actividades y contenidos relacionados</h2>
+<ul>
+<li><a href="/programa-curatorial/expositivo-expandido/la-palabra-dicha/"
 
-  </div>
-</div>
 
+
+ 
+
+
+>La palabra dicha / Performance de Eider Yangana</a>
+<br /> <br /></li>
+<li><a href="/programa-curatorial/expositivo-expandido/memorias-en-disputa-justicia-epistemica-desde-el-gran-kauka/"
+
+
+
+ 
+
+
+>Memorias en disputa: justicia epistémica desde el Gran Kauka</a>
+<br /> <br /></li>
+<li><a href="/encuentros-de-mundos-posibles/popayan-25-secuestro-cultural/"
+
+
+
+ 
+
+
+>Secuestro cultural por la dignidad caucana: Nuyxisa Lechekwe, un gobierno chiquito, propio</a>
+<br /> <br /></li>
+<li><a href="/programa-curatorial/expositivo-expandido/memoria-en-asamblea-archivo-historico-de-puerto-resistencia/"
+
+
+
+ 
+
+
+>Memoria en asamblea: Archivo Histórico de Puerto Resistencia</a>
+<br /> <br /></li>
+<li><a href="/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/"
+
+
+
+ 
+
+
+>El futuro que nunca fue / Performance de Marilyn Boror</a>
+<br /> <br /></li>
+<li><a href="/programa-curatorial/expositivo-expandido/sobre-el-espacio-casa-museo-guillermo-leon-valencia-y-panteon-de-los-proceres/"
+
+
+
+ 
+
+
+>Sobre el espacio: Casa Museo Guillermo León Valencia y Panteón de los Próceres</a></li>
+</ul></div>
+        </section></div>
+
+      
     </div>
-  </div>
+  
+
 
   
   
@@ -4257,7 +4238,6 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
   
   
   
-
 
   
   
@@ -4308,7 +4288,9 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
             Casa Museo Guillermo León Valencia
           
           
-            <div class="proyecto-info-lugar-direccion">Centro histórico, Popayán</div>
+            <div class="proyecto-info-lugar-direccion">
+              Centro histórico, Popayán
+            </div>
           
           
           
@@ -4323,16 +4305,16 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
           </div>
         </div>
       
-  
-  
-  
-  
-  
-    
-  
-  <div class="proyecto-info-gente-container-desktop">
-    <div class="proyecto-info-gente">
       
+      
+      
+      
+      
+        
+      
+      <div class="proyecto-info-gente-container-desktop">
+        <div class="proyecto-info-gente">
+          
   
   
   <div class="artists-list-label">
@@ -4344,15 +4326,6 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
   
 
   <ul>
-    
-      
-      <li class="artist-item">
-        
-          <a class="artist-link" href="/kauka-dev/invitadxs/fotos-generales-expo/">
-            Fotos Generales Expo
-          </a>
-        
-      </li>
     
       
       <li class="artist-item">
@@ -4411,13 +4384,13 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
   </ul>
 
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proyecto-info-gente-container">
-  <div class="proyecto-info-gente">
-    
+    <div class="proyecto-info-gente-container">
+      <div class="proyecto-info-gente">
+        
   
   
   <div class="artists-list-label">
@@ -4429,15 +4402,6 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
   
 
   <ul>
-    
-      
-      <li class="artist-item">
-        
-          <a class="artist-link" href="/kauka-dev/invitadxs/fotos-generales-expo/">
-            Fotos Generales Expo
-          </a>
-        
-      </li>
     
       
       <li class="artist-item">
@@ -4496,15 +4460,16 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
   </ul>
 
 
-  </div>
-</div>
+      </div>
+    </div>
   </div>
   
     <div class="proyecto-links-container">
       <div class="diamonds-left"></div>
       <div class="proyecto-links-diamond">
         
-          <a href="/agenda">Agenda</a>
+          <a href="/agenda?fecha=2025-10-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
         
       </div>
       <div class="proyecto-links-diamond">
@@ -4519,11 +4484,712 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
   <div id="proyecto-galeria" class="proyecto-galeria">
     <div class="col-span-12">
       
+        
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_a05d331d61bd1766.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_6f3fe0b85aa814e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_a7af0b353db5ceee.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_80da400eeb404c67.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_d15e30fb1cefdbc7.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_aa0788a07a7b775f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_20ff19a8b0ad8eed.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_692b36c2131cdb2c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_7f758e742b683240.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-01_hu_7a0d310152a37b09.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-el-mundo-al-reves-01.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_e2287e3957aace7f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_d9e7ad23a295dfd2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_252c940c76a6177b.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_22b0aa4e056a5320.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_55edad6afd1509db.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_3fd6f80ca204cf3d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_555f4f89bba496dc.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_58042e6fde9cd35f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_f35e0485241ef3f9.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-02_hu_becf25a41a6c2780.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-el-mundo-al-reves-02.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_3cd7e97d66df47fc.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_c9f725cac1680fe9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_b5dc4cd17412f5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_1c214ecc3c6a8b8c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_b0453b6bbc8cbc6.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_ff90f8b820ae0245.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_526722333ec3cbfa.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_c072952338e26689.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_dd541449118a4606.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-03_hu_8c67eb3ac08f0b99.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-el-mundo-al-reves-03.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_28e15b341fa0bbf9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_12bb7bbfef020541.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_ce68255c0471b0d0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_222cb9c9d4fcfd8d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_4fd95c347b8d2db5.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_5483206fa3c9543.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_45137bef1ad0c76e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_2a0530c353b183b.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_ce6f173d4015b175.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-04_hu_e9a642de94b8d1fc.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-el-mundo-al-reves-04.webp"
+              loading="lazy"
+              width="2400"
+              height="1559" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_2e38a33eb2c0f2b6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_14d014f37fea41af.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_ef06642a993d93ed.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_b88f2e4d2691a3e7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_f13a263f5d90e365.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_26dd04f7f8122056.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_afdf4ff49e8d9b1c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_80c47dc02564d4e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_17d71a9fe6dd63c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-05_hu_4e09df56cb10b040.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-el-mundo-al-reves-05.webp"
+              loading="lazy"
+              width="1280"
+              height="854" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_416f6d7fae5d2d82.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_6c461b7366704315.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_e2542dae694dc50a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_885224c307e84b1d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_3a22a0724df2dbcd.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_8323b8b3bf426b10.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_616a69b345269dd7.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_564acbcfe7f12a6d.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_5c1ded7aab650ff9.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/galeria/exp_exposicion-el-mundo-al-reves-06_hu_dbf7a82a93a741df.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_exposicion-el-mundo-al-reves-06.webp"
+              loading="lazy"
+              width="1280"
+              height="854" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
+      
     </div>
   </div>
 
+  
+    <div class="proyecto-contenido-container">
+      <div
+  class="pc-sections-container
+    pc-sections--component-expositivo-expandido
+  pc-sections--after-gallery"><section
+          class="pc-section-band section-1
+            section-propuestas
+          
+            pc-stage-propuestas
+          ">
+          <div class="pc-section-content"><p><strong>Casa Museo Guillermo León Valencia</strong></p>
+<p>La Casa Museo Guillermo León Valencia es una de las casas museales adscritas al Museo Nacional de Colombia, entidad perteneciente al Ministerio de Cultura. El inmueble, de carácter privado hasta la década de 1970, fue adquirido por la Nación en 1973 mediante la Ley 70 de ese mismo año, sancionada por el entonces presidente conservador Misael Pastrana Borrero, con el propósito de honrar la memoria del expresidente, también conservador, Guillermo León Valencia (1962–1966). En cumplimiento de dicha ley, la Nación destinó la casa en Popayán como sede del actual museo en el 2008. Allí reposan sus restos y los de su esposa, junto a un conjunto de objetos, fotografías, escudos y condecoraciones que articulan un relato centrado en el linaje familiar, aspectos de su vida personal y su trayectoria política.
+El guion museológico ha privilegiado una narrativa que presenta a Guillermo León Valencia bajo la denominación de “presidente de la paz”, sin problematizar de manera suficiente las tensiones y controversias de su mandato ni las de su linaje familiar. Esta lectura omite, entre otros aspectos, el contexto en el que, durante su gobierno, se consolidaron las insurgencias armadas del ELN y las FARC, así como las implicaciones del Decreto 3398 de 1965, que otorgó sustento legal a la conformación de estructuras de autodefensa que, con el tiempo, derivarían en el fenómeno del paramilitarismo en Colombia.
+Actualmente, este museo —al igual que otros adscritos al Museo Nacional de Colombia— se encuentra en proceso de renovación de su guion museológico, en respuesta a las definiciones contemporáneas de los museos y a normativas vigentes que cuestionan la rigidez y la rápida pérdida de vigencia de las salas “permanentes” y promueven el concepto de salas de larga duración. Este enfoque enfatiza la movilidad de las interpretaciones históricas, la constante investigación de las colecciones, la inclusión y la participación de comunidades, así como la reflexión crítica sobre los relatos que se construyen en torno al pasado, tal como lo sugiere la definición actual de museo del ICOM (Consejo Internacional de Museos).</p></div>
+        </section><section
+          class="pc-section-band section-2
+            section-desarrollo
+          
+            pc-stage-desarrollo
+          ">
+          <div class="pc-section-content"><p><strong>Centro de Memoria Panteón de los Próceres, Unicauca, Popayán</strong></p>
+<p>Construido en 1940, bajo el mismo espíritu conmemorativo del monumento a Sebastián de Belalcázar, en honor a los 400 años de la fundación de la ciudad de Popayán, el Centro de Memoria Panteón de los Próceres funciona como un espacio de consagración de la memoria oficial, destinado a preservar los restos de los llamados “personajes ilustres” de la ciudad. En su salón principal reposan urnas y placas conmemorativas dedicadas, en su mayoría, a hombres criollos —militares, políticos y letrados— que, en su excepcionalidad masculina, ocuparon posiciones centrales en los procesos de independencia y consolidación del Estado-nación: Camilo Torres, Joaquín Mosquera, José María Obando, Tomás Cipriano de Mosquera, José Hilario López, Francisco José de Caldas, Julio Arboleda, entre otros.
+Este espacio ejerce una política de la memoria selectiva, consagrando una versión hegemónica de la historia que excluye sistemáticamente a las mujeres, a los pueblos indígenas, a las comunidades afrodescendientes, a los sectores populares y a los cuerpos racializados que sostuvieron —y padecieron— los procesos de conquista, colonia, independencia y formación del Estado.
+En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Próceres—, el problema radica en la monumentalización de una sola versión de la historia y en que reproducen un orden jerárquico que decide cuáles vidas merecen ser recordadas, veneradas y transmitidas como legado. En este sentido, funcionan como relatos y arquitecturas del poder que fijan la memoria en clave patriarcal, colonial y elitista, reforzando una genealogía de la nación construida desde la exclusión.</p></div>
+        </section></div>
+
+    </div>
+  
+
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>EL MUNDO AL REVÉS</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Minga Prácticas De-Coloniales</li>
+            
+              <li>Asamblea Popular de Puerto Resistencia</li>
+            
+              <li>Eider Yangana</li>
+            
+              <li>Tatiana Bachiller</li>
+            
+              <li>Néstor Muelas Calambás</li>
+            
+              <li>Marilyn Boror Bor</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

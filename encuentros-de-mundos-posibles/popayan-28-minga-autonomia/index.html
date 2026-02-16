@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4125,10 +4140,8 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>El Campamento Estrella Roja, en articulación a la colectiva &lsquo;Pueblos en Camino&rsquo; propusieron un encuentro alrededor del &lsquo;Museo vivo de la Memoria&rsquo; y una olla comunitaria en donde la autonomía es el horizonte estructural sobre el cuál imaginar las formas de habitar y compartir.</p>
-
-  </div>
+  <div class="page-content-text"><p>El Campamento Estrella Roja, en articulación a la colectiva &lsquo;Pueblos en Camino&rsquo; propusieron un encuentro alrededor del &lsquo;Museo vivo de la Memoria&rsquo; y una olla comunitaria en donde la autonomía es el horizonte estructural sobre el cuál imaginar las formas de habitar y compartir.</p>
+</div>
 </div>
 
     </div>
@@ -4163,7 +4176,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-hora-lugar">
           
             Campamento La Estrella Roja<br />
-            Popayán
+            Campamento La Estrella Roja, Popayán
           
 
           
@@ -4191,24 +4204,24 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/andres-maiz/">
-                      Andres-Maiz
+                    <a href="/kauka-dev/invitadxs/campamento-estrella-roja-y-andres-maiz/">
+                      Campamento Estrella Roja Y Andrés Maíz
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/vilma-almendra/">
-                      Vilma-Almendra
+                    <a href="/kauka-dev/invitadxs/vilma-almendra--manuel-rozental/">
+                      Vilma Almendra &amp; Manuel Rozental
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/manuel-rozental/">
-                      Manuel-Rozental
+                    <a href="/kauka-dev/invitadxs/mikaelah-drullard/">
+                      Mikaelah Drullard
                     </a>
                   
                 </li>
@@ -4228,24 +4241,24 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/andres-maiz/">
-                    Andres-Maiz
+                  <a href="/kauka-dev/invitadxs/campamento-estrella-roja-y-andres-maiz/">
+                    Campamento Estrella Roja Y Andrés Maíz
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/vilma-almendra/">
-                    Vilma-Almendra
+                  <a href="/kauka-dev/invitadxs/vilma-almendra--manuel-rozental/">
+                    Vilma Almendra &amp; Manuel Rozental
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/manuel-rozental/">
-                    Manuel-Rozental
+                  <a href="/kauka-dev/invitadxs/mikaelah-drullard/">
+                    Mikaelah Drullard
                   </a>
                 
               </li>
@@ -4258,6 +4271,20 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-28" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4899,6 +4926,40 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Minga de procesos de autonomía alimentaria</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Campamento Estrella Roja Y Andrés Maíz</li>
+            
+              <li>Vilma Almendra &amp; Manuel Rozental</li>
+            
+              <li>Mikaelah Drullard</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

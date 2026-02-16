@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,7 +4103,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4640,6 +4653,63 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
         
         
   
@@ -4658,6 +4728,22 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
   
 
 
@@ -4677,7 +4763,7 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="artista-term-content">
+      <div class="artista-term-content invitadx-rich-content">
         <p>Lingüista, docente y traductora colombiana perteneciente al pueblo Misak, cuya trayectoria ha sido fundamental para el reconocimiento, la preservación y la dignificación de las lenguas y saberes indígenas en Colombia. Fue una de las primeras mujeres Misak en acceder a la educación superior, graduándose en Educación Primaria en la Universidad del Valle. Desde entonces, ha dedicado su vida a la enseñanza, la investigación lingüística y la defensa del Namtrik (guambiano), lengua ancestral de su pueblo.</p>
 <p>Entre sus aportes más significativos se encuentra la traducción del capítulo étnico de la Constitución Política de Colombia de 1991 al Namtrik, un hito histórico en el reconocimiento de los derechos de los pueblos originarios y en la construcción de una ciudadanía intercultural. Actualmente continúa trabajando en la elaboración del primer diccionario bilingüe español–Namtrik, una iniciativa clave para la preservación y revitalización de su idioma materno. En 2024, se convirtió en la primera mujer indígena en ser nombrada miembro de la Academia Colombiana de la Lengua desde su fundación en 1871. Su posesión oficial tuvo lugar en junio de 2025, marcando un acontecimiento histórico para los pueblos indígenas del país.</p>
 <p>La labor de Bárbara Muelas Hurtado es reconocida como un acto de justicia lingüística y cultural, y como un paso fundamental para romper el silencio histórico impuesto a los saberes indígenas, afirmando su lugar en la vida académica, política y cultural de Colombia.</p>
@@ -4731,6 +4817,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4744,7 +4832,7 @@ if (typeof initHeaderOnReady === "function") {
   artista-term-proyectos">
 
   <div class="artista-term-proyectos-arrow">↘</div>
-  <div class="artista-term-proyectos-list">
+  <div class="artista-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4772,84 +4860,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -4900,8 +4910,74 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
         
       
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
     
       
       
@@ -4921,6 +4997,8 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
+      
+        
       
     
       
@@ -5071,130 +5149,7 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
         
-      
-      
-      
-      
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
       
       
       
@@ -5211,6 +5166,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
         
@@ -5220,38 +5180,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
-      
-
-      
-      
-        
-        
-          
-          
-            
-            
-            
-          
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-      
-        
-      
     
       
 
@@ -5296,15 +5224,6 @@ if (typeof initHeaderOnReady === "function") {
       
     
       
-      
-        <div class="artista-term-componente-group">
-          <div class="artista-term-componente-label">vivencial:</div>
-          
-            <div class="artista-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/lenguas-madre-lenguas-bosque-rituales-de-escucha-por-la-diversidad-linguistica/">Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</a>
-            </div>
-          
-        </div>
       
     
       
@@ -5322,7 +5241,7 @@ if (typeof initHeaderOnReady === "function") {
           <div class="artista-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="artista-term-componente-link">
-              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-27-lenguas-madre/">Lenguas madre, lenguas bosque: rituales de escucha</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-27-lenguas-madre/">Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</a>
             </div>
           
         </div>
@@ -5342,14 +5261,31 @@ if (typeof initHeaderOnReady === "function") {
     
       
         
-      
-        
   </div>
   
 </div>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Bárbara Muelas</p>
+
+    
+  
+</div>
+
 
     
     

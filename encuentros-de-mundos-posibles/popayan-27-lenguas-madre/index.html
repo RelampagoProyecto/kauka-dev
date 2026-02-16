@@ -22,7 +22,10 @@
 
 
 
-<meta name="pagefind:weight" content="1" />
+
+  
+
+<meta name="pagefind:weight" content="12" />
 
 
 
@@ -75,7 +78,7 @@
   
 
 
-<title>Lenguas madre, lenguas bosque: rituales de escucha</title>
+<title>Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</title>
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Lenguas madre, lenguas bosque: rituales de escucha" />
+<meta property="og:title" content="Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-27-lenguas-madre/" />
 
 
-<meta name="twitter:title" content="Lenguas madre, lenguas bosque: rituales de escucha" />
+<meta name="twitter:title" content="Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4033,10 +4036,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4092,7 +4107,7 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
@@ -4120,16 +4135,14 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Lenguas madre, lenguas bosque: rituales de escucha
+      Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       <div class="page-content-container ">
-  <div class="page-content-text">
-    <p>Con esta experiencia de escucha desde los activismos por las lenguas propias, promover reflexiones sobre la pluralidad de visiones y formas de vida que guardan las lenguas indígenas y afro tejiendo redes para enfrentar el riesgo constante que tienen de desaparecer.
+  <div class="page-content-text"><p>Con esta experiencia de escucha desde los activismos por las lenguas propias, promover reflexiones sobre la pluralidad de visiones y formas de vida que guardan las lenguas indígenas y afro tejiendo redes para enfrentar el riesgo constante que tienen de desaparecer.
 Performance a cargo de Mayora Amalia Vargas</p>
-
-  </div>
+</div>
 </div>
 
     </div>
@@ -4154,7 +4167,7 @@ Performance a cargo de Mayora Amalia Vargas</p>
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          5:30 p.m. - 8:30 p.m.
+          6:00 p.m. - 8:30 p.m.
         </div>
       </div>
 
@@ -4164,7 +4177,7 @@ Performance a cargo de Mayora Amalia Vargas</p>
         <div class="encuentro-info-hora-lugar">
           
             MAMPO - Casa Arte<br />
-            Calle 4 #1-14, Barrio La Pamba
+            Barrio La Pamba, Popayán
           
 
           
@@ -4176,7 +4189,7 @@ Performance a cargo de Mayora Amalia Vargas</p>
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          5:30 p.m. - 8:30 p.m.
+          6:00 p.m. - 8:30 p.m.
         </div>
       </div>
 
@@ -4216,7 +4229,7 @@ Performance a cargo de Mayora Amalia Vargas</p>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/freddy-chicangana/">
+                    <a href="/kauka-dev/invitadxs/fredy-chikangana/">
                       Fredy Chikangana
                     </a>
                   
@@ -4277,7 +4290,7 @@ Performance a cargo de Mayora Amalia Vargas</p>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/freddy-chicangana/">
+                  <a href="/kauka-dev/invitadxs/fredy-chikangana/">
                     Fredy Chikangana
                   </a>
                 
@@ -4307,6 +4320,20 @@ Performance a cargo de Mayora Amalia Vargas</p>
 
   
   
+  
+    
+  
+  <div class="encuentro-info-links-container">
+    <div class="encuentro-info-diamonds-left"></div>
+    <div class="encuentro-info-links-diamond">
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-27" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+
+    </div>
+    <div class="encuentro-info-links-diamond">
+      
+    </div>
+    <div class="encuentro-info-diamonds-right"></div>
+  </div>
 
   
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
@@ -4855,6 +4882,46 @@ Performance a cargo de Mayora Amalia Vargas</p>
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Lenguas madre, lenguas bosque: rituales de escucha por la diversidad lingüística</p>
+
+    
+      
+        
+        
+          <ul>
+            
+              <li>Amalia Vargas</li>
+            
+              <li>Keiler Valdés</li>
+            
+              <li>Dani Zelko</li>
+            
+              <li>Fredy Chikangana</li>
+            
+              <li>Mary Grueso</li>
+            
+              <li>Bárbara Muelas</li>
+            
+          </ul>
+        
+      
+    
+  
+</div>
+
 
     
     

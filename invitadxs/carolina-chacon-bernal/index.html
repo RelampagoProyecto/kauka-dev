@@ -22,9 +22,10 @@
 
 
 
+
   
 
-<meta name="pagefind:weight" content="10" />
+<meta name="pagefind:weight" content="5" />
 
 
 
@@ -4031,10 +4032,22 @@
       }
 
       try {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const normalizeSearchTerm = (term) => {
+          if (typeof term !== "string") return "";
+          return term
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        };
+
         new PagefindUI({
           element: "#search",
-          pageSize: 3,
-          showSubResults: true,
+          pageSize: isMobile ? 5 : 7,
+          showSubResults: false,
+          processTerm: normalizeSearchTerm,
           translations: {
             placeholder: "Buscar...",
             clear_search: "X",
@@ -4090,88 +4103,13 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
-    <main class="">
+    <main class="" data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
   
   
   
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
     
       
       
@@ -4814,6 +4752,22 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   
 
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
 
   <div class="artista-info-wrapper curatorial-term-info-wrapper">
     
@@ -4831,9 +4785,8 @@ if (typeof initHeaderOnReady === "function") {
 
     
     
-      <div class="curatorial-term-content">
-        <p>Docente y curadora, su trabajo aborda la curaduría como una práctica performativa y situada desde el trabajo colaborativo, poniendo en tensión las narrativas de los museos y la producción cultural hegemónica.</p>
-
+      <div class="curatorial-term-content invitadx-rich-content">
+        Docente y curadora, su trabajo aborda la curaduría como una práctica performativa y situada desde el trabajo colaborativo, poniendo en tensión las narrativas de los museos y la producción cultural hegemónica.
       </div>
     
 
@@ -4866,6 +4819,8 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+
+  
   
 
   
@@ -4879,7 +4834,7 @@ if (typeof initHeaderOnReady === "function") {
   curatorial-term-proyectos">
 
   <div class="curatorial-term-proyectos-arrow">↘</div>
-  <div class="curatorial-term-proyectos-list">
+  <div class="curatorial-term-proyectos-list" data-pagefind-ignore>
     
     
     
@@ -4907,84 +4862,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5088,6 +4965,94 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -5182,14 +5147,13 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
       
       
-    
+        
       
       
-      
-      
-    
+        
       
       
       
@@ -5211,141 +5175,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
     
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-        
       
       
         
@@ -5356,6 +5185,12 @@ if (typeof initHeaderOnReady === "function") {
     
 
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5364,9 +5199,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5376,8 +5208,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5388,6 +5219,12 @@ if (typeof initHeaderOnReady === "function") {
         
       
     
+      
+
+      
+      
+        
+        
       
 
       
@@ -5396,9 +5233,6 @@ if (typeof initHeaderOnReady === "function") {
         
           
           
-            
-            
-            
           
         
       
@@ -5408,8 +5242,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
       
-
-      
+        
       
       
 
@@ -5422,6 +5255,18 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
       
@@ -5429,29 +5274,17 @@ if (typeof initHeaderOnReady === "function") {
       
       
         <div class="curatorial-term-componente-group">
-          <div class="curatorial-term-componente-label">vivencial:</div>
+          <div class="curatorial-term-componente-label">encuentros de mundos posibles:</div>
           
             <div class="curatorial-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/un-tejido-de-visiones-conversacion-curatorial-sobre-kauka-asamblea-de-mundos-posibles/">Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-26-tejido-visiones/">Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles</a>
             </div>
           
             <div class="curatorial-term-componente-link">
-              <a href="/kauka-dev/programa-curatorial/vivencial/yanak-uywana-la-crianza-mutua-de-las-artes/">YANAK UYWAÑA La crianza mutua de las artes</a>
+              <a href="/kauka-dev/encuentros-de-mundos-posibles/popayan-29-yanak-uywana/">YANAK UYWAÑA La crianza mutua de las artes</a>
             </div>
           
         </div>
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
       
     
       
@@ -5474,6 +5307,25 @@ if (typeof initHeaderOnReady === "function") {
 
       </section>
     </main>
+
+    
+
+
+
+
+
+
+<div
+  data-pagefind-body
+  style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
+  aria-hidden="true">
+  
+    <p>Carolina Chacón Bernal</p>
+
+    
+  
+</div>
+
 
     
     
