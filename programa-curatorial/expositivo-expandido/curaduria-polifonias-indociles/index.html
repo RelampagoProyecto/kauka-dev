@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4478,19 +4476,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_4b1d902500ca3105.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_6b2208eb1717ef8.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_60355842473a5f41.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_8f189efa0fffda8b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_5d966257bd59ae95.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_4b1d902500ca3105.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_6b2208eb1717ef8.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_60355842473a5f41.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_8f189efa0fffda8b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_5d966257bd59ae95.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_16e0af6225362929.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_baa1e8ad059848f9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_565739bc2d3e2ff4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_dcf005c8768f78a9.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-01_hu_9522be35b869440e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_16e0af6225362929.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_baa1e8ad059848f9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_565739bc2d3e2ff4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_dcf005c8768f78a9.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-1_hu_9522be35b869440e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-01.webp"
+              alt="galeria/exp_cura-polifonias-i-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4571,19 +4569,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_da49a6b42c39e930.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_3c4ba88aeaab3722.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_56da0730874d5027.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_427ae1248d199a9c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_a14e0f46aacae70e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_da49a6b42c39e930.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_3c4ba88aeaab3722.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_56da0730874d5027.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_427ae1248d199a9c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_a14e0f46aacae70e.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_42e130963294d82.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_bebcb48e2568a2af.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_9cc3b914e0e7bb37.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_dc07be3606b65ef0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-02_hu_30135c9dc4d70425.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_42e130963294d82.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_bebcb48e2568a2af.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_9cc3b914e0e7bb37.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_dc07be3606b65ef0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-2_hu_30135c9dc4d70425.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-02.webp"
+              alt="galeria/exp_cura-polifonias-i-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4664,19 +4662,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_38faaf0c4d959368.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_1e221f3787228b67.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_95ced1734bf1f452.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_c1d91da5c1e41379.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_45be14ef07ed6c9c.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_38faaf0c4d959368.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_1e221f3787228b67.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_95ced1734bf1f452.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_c1d91da5c1e41379.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_45be14ef07ed6c9c.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_763130d67e7ec6e5.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_fe240e25debe0530.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_4b790304adc7d0d8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_eb6a942833084773.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-03_hu_b569ca3c78f2cd21.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_763130d67e7ec6e5.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_fe240e25debe0530.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_4b790304adc7d0d8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_eb6a942833084773.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-3_hu_b569ca3c78f2cd21.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-03.webp"
+              alt="galeria/exp_cura-polifonias-i-3.webp"
               loading="lazy"
               width="2400"
               height="1604" />
@@ -4757,19 +4755,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_2f488ac2de30eebd.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_c88fccaf6694ee22.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_6170466f0c0c2be.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_4d9831d948707db6.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_d3d655281e67aeb0.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_2f488ac2de30eebd.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_c88fccaf6694ee22.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_6170466f0c0c2be.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_4d9831d948707db6.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_d3d655281e67aeb0.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_2f8409ea2c560332.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_e597919979786124.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_4d0edc34cf8297a6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_97ef302f051955d3.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-04_hu_29815502a9cb4c3d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_2f8409ea2c560332.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_e597919979786124.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_4d0edc34cf8297a6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_97ef302f051955d3.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-4_hu_29815502a9cb4c3d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-04.webp"
+              alt="galeria/exp_cura-polifonias-i-4.webp"
               loading="lazy"
               width="2400"
               height="1599" />
@@ -4850,19 +4848,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_8de68318626c2204.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_c42de25d4d19af04.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_af6a6f983198cd9d.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_79c6b4039e16b352.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_f63975fc4ad07ba5.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_8de68318626c2204.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_c42de25d4d19af04.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_af6a6f983198cd9d.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_79c6b4039e16b352.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_f63975fc4ad07ba5.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_38d8dc99c8a25c70.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_d34857ca5d57ae2c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_45ac183eabf63653.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_1a343854e8b01648.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-05_hu_d80fcb88bc67ad2d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_38d8dc99c8a25c70.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_d34857ca5d57ae2c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_45ac183eabf63653.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_1a343854e8b01648.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-5_hu_d80fcb88bc67ad2d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-05.webp"
+              alt="galeria/exp_cura-polifonias-i-5.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4943,19 +4941,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_4aa81d75b082d18b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_ebdd5cad81702747.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_202a5dcb58b7e55c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_b54cb8a8d2dcbf31.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_f4f94b734c102d25.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_4aa81d75b082d18b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_ebdd5cad81702747.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_202a5dcb58b7e55c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_b54cb8a8d2dcbf31.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_f4f94b734c102d25.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_69826201d38b8b8d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_61811b651e5422e8.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_e2fd0a9fabfe2091.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_ee267c265430e63.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-06_hu_7208664e57fb9221.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_69826201d38b8b8d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_61811b651e5422e8.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_e2fd0a9fabfe2091.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_ee267c265430e63.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-6_hu_7208664e57fb9221.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-06.webp"
+              alt="galeria/exp_cura-polifonias-i-6.webp"
               loading="lazy"
               width="2400"
               height="1596" />
@@ -5036,19 +5034,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_afc491c2c541ee88.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_99a9160a2babfc7d.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_4203c2d61d3a40b1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_4e1fca5b763a568e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_40d462a5282f1098.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_afc491c2c541ee88.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_99a9160a2babfc7d.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_4203c2d61d3a40b1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_4e1fca5b763a568e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_40d462a5282f1098.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_b8124e8a9f74a60b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_f9c6da383906a942.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_900988949f680cff.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_e40e999a5a195650.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-07_hu_54a9e6fecfe0475d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_b8124e8a9f74a60b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_f9c6da383906a942.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_900988949f680cff.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_e40e999a5a195650.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-7_hu_54a9e6fecfe0475d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-07.webp"
+              alt="galeria/exp_cura-polifonias-i-7.webp"
               loading="lazy"
               width="2400"
               height="1663" />
@@ -5129,19 +5127,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_2bb27a2c51eaf40f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_90387ab7d49619c3.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_24630f52666e6f88.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_194212104245ee.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_23fdcb3acba2e409.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_2bb27a2c51eaf40f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_90387ab7d49619c3.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_24630f52666e6f88.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_194212104245ee.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_23fdcb3acba2e409.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_d9fe68d4164d0881.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_8c4cf335d98fc0ca.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_33186ebc3e2f39a6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_de8a8e09387d8069.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-08_hu_f0760e752cc712af.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_d9fe68d4164d0881.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_8c4cf335d98fc0ca.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_33186ebc3e2f39a6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_de8a8e09387d8069.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-8_hu_f0760e752cc712af.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-08.webp"
+              alt="galeria/exp_cura-polifonias-i-8.webp"
               loading="lazy"
               width="2400"
               height="1493" />
@@ -5222,19 +5220,19 @@ Santander de Quilichao y Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_c257566d518701d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_572c97bd36c7fb7.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_a2d2d7b795e59704.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_233fb17c447a5a92.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_c7442f69a7f3c3ec.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_c257566d518701d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_572c97bd36c7fb7.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_a2d2d7b795e59704.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_233fb17c447a5a92.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_c7442f69a7f3c3ec.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_3fb62fb8ae9b02b3.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_e3377a72838457ee.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_4ed7dce6ecb24fb8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_799bdb40c78c2c39.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_curaduria-polifonias-indociles-09_hu_99b9d6780bab9a40.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_3fb62fb8ae9b02b3.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_e3377a72838457ee.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_4ed7dce6ecb24fb8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_799bdb40c78c2c39.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/galeria/exp_cura-polifonias-i-9_hu_99b9d6780bab9a40.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_curaduria-polifonias-indociles-09.webp"
+              alt="galeria/exp_cura-polifonias-i-9.webp"
               loading="lazy"
               width="1300"
               height="1732" />

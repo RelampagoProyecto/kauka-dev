@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4142,17 +4143,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4467,19 +4465,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_722280409571a496.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_2d936e43a1fbf588.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_b18fb8a7fdc58a96.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_c57c9c9edf43f6e9.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_853053dee4f29e56.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_722280409571a496.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_2d936e43a1fbf588.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_b18fb8a7fdc58a96.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_c57c9c9edf43f6e9.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_853053dee4f29e56.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_432d2cad15b5100a.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_b4eb2947073f02e5.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_d6408afb6f7dfac6.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_e80bd419771578d9.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01_hu_b06b0535938566c0.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_432d2cad15b5100a.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_b4eb2947073f02e5.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_d6408afb6f7dfac6.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_e80bd419771578d9.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-1_hu_b06b0535938566c0.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-01.webp"
+              alt="galeria/rec_bals-de-cd4aerg-1.webp"
               loading="lazy"
               width="2400"
               height="1443" />
@@ -4560,19 +4558,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_918d645952598f99.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_b9b6c80fcd30988f.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_e30b9d97790a9f19.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_7e7ccbd2ff3b5618.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_71cd388b4913fc93.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_918d645952598f99.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_b9b6c80fcd30988f.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_e30b9d97790a9f19.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_7e7ccbd2ff3b5618.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_71cd388b4913fc93.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_980924c9d5cd7ce7.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_31b68124a5dbe959.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_5e1a234e2d0cfb8b.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_e3964b83f25084f.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02_hu_4a1fc72c85b6682.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_980924c9d5cd7ce7.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_31b68124a5dbe959.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_5e1a234e2d0cfb8b.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_e3964b83f25084f.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-2_hu_4a1fc72c85b6682.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-02.webp"
+              alt="galeria/rec_bals-de-cd4aerg-2.webp"
               loading="lazy"
               width="2400"
               height="1507" />
@@ -4653,19 +4651,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_39daa4fdb740f264.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_c5817ce484d2fd7d.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_70efd68a7d509656.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_9146b5caa4dc312b.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_f8826b4253fcaae3.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_39daa4fdb740f264.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_c5817ce484d2fd7d.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_70efd68a7d509656.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_9146b5caa4dc312b.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_f8826b4253fcaae3.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_7db64139f82895f8.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_953f34f88090cdeb.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_b7a37878950135ac.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_ab4edd24091357ac.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03_hu_657bc028685daf56.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_7db64139f82895f8.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_953f34f88090cdeb.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_b7a37878950135ac.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_ab4edd24091357ac.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-3_hu_657bc028685daf56.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-03.webp"
+              alt="galeria/rec_bals-de-cd4aerg-3.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4746,19 +4744,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_5832d2079aabb79e.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_ff2351f4a4375039.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_bbc57fd787ad9271.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_8b624eaa4c258172.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_4aec2b3cf3c6613c.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_5832d2079aabb79e.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_ff2351f4a4375039.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_bbc57fd787ad9271.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_8b624eaa4c258172.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_4aec2b3cf3c6613c.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_7059c202225e98e1.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_6b6950a32ac8d.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_366c956902d25f5e.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_a2a075d27be10706.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04_hu_5a28a79f53f59a04.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_7059c202225e98e1.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_6b6950a32ac8d.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_366c956902d25f5e.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_a2a075d27be10706.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-4_hu_5a28a79f53f59a04.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-04.webp"
+              alt="galeria/rec_bals-de-cd4aerg-4.webp"
               loading="lazy"
               width="2400"
               height="1349" />
@@ -4839,19 +4837,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_561c7406e114811b.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_4a581db1d8dbe6d6.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_501eaf35fd14d7de.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_8081f6290225891c.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_36c77da2aaf9293e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_561c7406e114811b.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_4a581db1d8dbe6d6.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_501eaf35fd14d7de.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_8081f6290225891c.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_36c77da2aaf9293e.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_62b1a6945192cf3c.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_33ed5a2a2e83f767.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_8360fbd40e618679.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_f732b558fc74b958.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05_hu_4be16cd9e63d1860.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_62b1a6945192cf3c.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_33ed5a2a2e83f767.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_8360fbd40e618679.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_f732b558fc74b958.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-5_hu_4be16cd9e63d1860.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-05.webp"
+              alt="galeria/rec_bals-de-cd4aerg-5.webp"
               loading="lazy"
               width="2400"
               height="3625" />
@@ -4932,19 +4930,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_1e1e05c5f56925a4.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_c7a28e7a0376d2c8.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_ec296e79dfae771a.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_689eedc28cf30edf.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_417f0cab90520d90.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_1e1e05c5f56925a4.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_c7a28e7a0376d2c8.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_ec296e79dfae771a.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_689eedc28cf30edf.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_417f0cab90520d90.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_b82fd69c5469aa3d.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_e3247de5b1a29815.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_fc2798d26b0037d5.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_951d09d37159f451.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06_hu_287902f3c8ed8ffb.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_b82fd69c5469aa3d.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_e3247de5b1a29815.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_fc2798d26b0037d5.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_951d09d37159f451.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-6_hu_287902f3c8ed8ffb.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-06.webp"
+              alt="galeria/rec_bals-de-cd4aerg-6.webp"
               loading="lazy"
               width="2400"
               height="1349" />
@@ -5025,19 +5023,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_1ba33cbc26a2e785.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_d87bb1be2317cae.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_24b4829ff81c660f.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_c9562aaee301f49f.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_ecb271fd1cff8204.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_1ba33cbc26a2e785.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_d87bb1be2317cae.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_24b4829ff81c660f.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_c9562aaee301f49f.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_ecb271fd1cff8204.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_36c625137e54a6e9.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_287d9c981d4c0ef1.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_c16fa2b2ec0e310b.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_8ee21a769777bfe9.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07_hu_51f11e4f986f4976.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_36c625137e54a6e9.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_287d9c981d4c0ef1.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_c16fa2b2ec0e310b.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_8ee21a769777bfe9.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-7_hu_51f11e4f986f4976.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-07.webp"
+              alt="galeria/rec_bals-de-cd4aerg-7.webp"
               loading="lazy"
               width="2400"
               height="1349" />
@@ -5118,19 +5116,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_9b53f0fe95d922b3.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_f6744dff9dab9ad.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_8878009419139a.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_f51e770ee2a2f970.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_37c6a0218f01e473.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_9b53f0fe95d922b3.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_f6744dff9dab9ad.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_8878009419139a.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_f51e770ee2a2f970.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_37c6a0218f01e473.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08.webp"
+              src="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8.webp"
               
-                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_326fc9131181a72f.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_74b48edcbdfbe3f8.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_f2a1bc2fbbb61c27.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_60ee222ad9f13864.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08_hu_381e241d119062ac.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_326fc9131181a72f.webp 320w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_74b48edcbdfbe3f8.webp 640w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_f2a1bc2fbbb61c27.webp 768w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_60ee222ad9f13864.webp 1024w, /kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/galeria/rec_bals-de-cd4aerg-8_hu_381e241d119062ac.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/rec_balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi-08.webp"
+              alt="galeria/rec_bals-de-cd4aerg-8.webp"
               loading="lazy"
               width="2400"
               height="1474" />

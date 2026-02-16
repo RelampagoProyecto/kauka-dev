@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Manuel-Rozental on KAUKA</title>
+    <title>Manuel Rozental on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/manuel-rozental/</link>
-    <description>Recent content in Manuel-Rozental on KAUKA</description>
+    <description>Recent content in Manuel Rozental on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate>Tue, 03 Feb 2026 00:11:41 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/manuel-rozental/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Extractivismo y artificialidad</title>
-      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-extractivismo/</link>
-      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-extractivismo/</guid>
-      <description>&lt;p&gt;En este espacio se reflexiona sobre la artificialidad y el extractivismo en el horizonte neoliberal, donde la mineralidad, despojada de su vitalidad relacional, se torna objeto fascinante bajo la promesa de lo nuevo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Minga de procesos de autonomía alimentaria</title>
-      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-minga-autonomia/</link>
-      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-28-minga-autonomia/</guid>
-      <description>&lt;p&gt;El Campamento Estrella Roja, en articulación a la colectiva &amp;lsquo;Pueblos en Camino&amp;rsquo; propusieron un encuentro alrededor del &amp;lsquo;Museo vivo de la Memoria&amp;rsquo; y una olla comunitaria en donde la autonomía es el horizonte estructural sobre el cuál imaginar las formas de habitar y compartir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Soberanía, autonomía, territorio y hoja de coca</title>
-      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-26-soberania-hoja-coca/</link>
-      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/popayan-26-soberania-hoja-coca/</guid>
-      <description>&lt;p&gt;Conversatorio sobre soberanía, autonomía, territorio y la hoja de coca como parte del patrimonio cultural.&lt;/p&gt;</description>
+      <title>Palestina: desde el río hasta el mar</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/conversatorio-palestina-desde-el-rio-hasta-el-mar/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/conversatorio-palestina-desde-el-rio-hasta-el-mar/</guid>
+      <description>&lt;p&gt;En medio del dolor y la resistencia, esta conversación conecta las luchas del pueblo palestino con las resistencias territoriales en el Cauca, tejiendo solidaridades globales.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

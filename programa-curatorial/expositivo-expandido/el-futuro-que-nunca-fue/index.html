@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,23 +4134,20 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
         class="proyecto-contenido text-deep-pink">
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Pintura, cemento y acción
+  <div class="page-content-text"><p><strong>Pintura, cemento y acción</strong>
 <br />
 2023-2025</p>
 <p>El futuro que nunca fue es un conjunto de cuatro retratos de mujeres del Cauca; tres de ellas, Elena Hinestroza, Carmelina Yule, Agustina Yalanda, ejemplos de lucha cuya memoria es importante para nuestros territorios, y el cuarto, el de una mujer indígena no identificada de San Juan Sacatepéquez, Guatemala.</p>
@@ -4418,19 +4416,19 @@ Este proyecto es un encuentro entre Marilyn Boror Bor, artista maya-kaqchikel qu
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_c607baae86031393.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_3dbb135eeea03cce.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_a29c49661358c708.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_bfb80d9c048c04f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_75229382711ab421.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_c607baae86031393.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_3dbb135eeea03cce.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_a29c49661358c708.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_bfb80d9c048c04f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_75229382711ab421.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_d9a820fd50b17337.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_46e3a3385880e11c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_f2c2e05379b8ebfa.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_87eacdf8003482db.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-01_hu_6ceb505771d9e806.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_d9a820fd50b17337.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_46e3a3385880e11c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_f2c2e05379b8ebfa.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_87eacdf8003482db.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-1_hu_6ceb505771d9e806.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_el-futuro-que-nunca-fue-01.webp"
+              alt="galeria/exp_el-futuro-qnf-1.webp"
               loading="lazy"
               width="2400"
               height="1551" />
@@ -4511,19 +4509,19 @@ Este proyecto es un encuentro entre Marilyn Boror Bor, artista maya-kaqchikel qu
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_2e2555d1fe5b8d43.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_b752da82c95c2f8a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_8775d0b618c25a8a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_ba1a5c52447db6e0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_784a6efa19051f58.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_2e2555d1fe5b8d43.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_b752da82c95c2f8a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_8775d0b618c25a8a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_ba1a5c52447db6e0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_784a6efa19051f58.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_45867616bbba5184.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_4b3bdc2efe651665.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_b1de8bf3c43ea5b9.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_a51b45cbd1dfae13.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-02_hu_b8e0613815a517f3.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_45867616bbba5184.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_4b3bdc2efe651665.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_b1de8bf3c43ea5b9.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_a51b45cbd1dfae13.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-2_hu_b8e0613815a517f3.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_el-futuro-que-nunca-fue-02.webp"
+              alt="galeria/exp_el-futuro-qnf-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4604,19 +4602,19 @@ Este proyecto es un encuentro entre Marilyn Boror Bor, artista maya-kaqchikel qu
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_62e445222df0c2dd.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_51e3952964be63ed.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_371f63686434f0be.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_26a33887270dabbf.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_d593fc0c422865e8.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_62e445222df0c2dd.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_51e3952964be63ed.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_371f63686434f0be.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_26a33887270dabbf.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_d593fc0c422865e8.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_45f7c15adf7e4a7a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_1667cbd6980ffa1b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_cabca7782707cc0e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_279800885cae37c8.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-03_hu_af0413fc62052728.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_45f7c15adf7e4a7a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_1667cbd6980ffa1b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_cabca7782707cc0e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_279800885cae37c8.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-3_hu_af0413fc62052728.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_el-futuro-que-nunca-fue-03.webp"
+              alt="galeria/exp_el-futuro-qnf-3.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4697,19 +4695,19 @@ Este proyecto es un encuentro entre Marilyn Boror Bor, artista maya-kaqchikel qu
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_581bdb93274a24de.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_da751ded548f3640.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_be44e4c00041b98f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_bab5a472894fbacd.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_947a9b0523fb7acd.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_581bdb93274a24de.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_da751ded548f3640.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_be44e4c00041b98f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_bab5a472894fbacd.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_947a9b0523fb7acd.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_e7ba1ed9ab315beb.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_87cbcd83e87cd5f9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_ffdc0cc2a815463a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_cdad1fef9a5dbc63.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-04_hu_e3030d099c63f1fb.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_e7ba1ed9ab315beb.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_87cbcd83e87cd5f9.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_ffdc0cc2a815463a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_cdad1fef9a5dbc63.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-4_hu_e3030d099c63f1fb.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_el-futuro-que-nunca-fue-04.webp"
+              alt="galeria/exp_el-futuro-qnf-4.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4790,19 +4788,19 @@ Este proyecto es un encuentro entre Marilyn Boror Bor, artista maya-kaqchikel qu
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_7463a938ba9f721f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_5bdd92ca6a117724.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_371f8af8e6727446.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_7bcb966d198efef6.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_de959fc7464c1f38.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_7463a938ba9f721f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_5bdd92ca6a117724.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_371f8af8e6727446.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_7bcb966d198efef6.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_de959fc7464c1f38.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_979402bce4c0eca0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_3e18fc249263a1a0.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_7dad20222cb3824c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_e202dba5360999ca.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-05_hu_c0cd31e0aca561e5.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_979402bce4c0eca0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_3e18fc249263a1a0.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_7dad20222cb3824c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_e202dba5360999ca.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-5_hu_c0cd31e0aca561e5.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_el-futuro-que-nunca-fue-05.webp"
+              alt="galeria/exp_el-futuro-qnf-5.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4883,19 +4881,19 @@ Este proyecto es un encuentro entre Marilyn Boror Bor, artista maya-kaqchikel qu
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_adfc311c53dd780a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_7e76b7400c2a75ef.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_96d3d26cbe8a294f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_b13e502f360578ad.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_61a66a55dd100033.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_adfc311c53dd780a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_7e76b7400c2a75ef.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_96d3d26cbe8a294f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_b13e502f360578ad.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_61a66a55dd100033.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_d9c8030bceb6f78.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_6e3353e11078e924.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_799d4b53fcc2be75.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_2b010634a7d9fa71.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-que-nunca-fue-06_hu_c376dd3c058a901e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_d9c8030bceb6f78.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_6e3353e11078e924.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_799d4b53fcc2be75.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_2b010634a7d9fa71.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/galeria/exp_el-futuro-qnf-6_hu_c376dd3c058a901e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_el-futuro-que-nunca-fue-06.webp"
+              alt="galeria/exp_el-futuro-qnf-6.webp"
               loading="lazy"
               width="2400"
               height="1600" />

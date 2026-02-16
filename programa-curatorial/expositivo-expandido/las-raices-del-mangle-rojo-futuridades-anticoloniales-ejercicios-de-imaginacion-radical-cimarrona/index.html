@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4417,19 +4415,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_21baaff0f9905a13.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_19b2f980fd327eba.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_b078a875d622194.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_d8a8521e0a193563.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_4ec200ff95d47b34.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_21baaff0f9905a13.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_19b2f980fd327eba.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_b078a875d622194.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_d8a8521e0a193563.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_4ec200ff95d47b34.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_8942fd1d2e4ecb41.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_d81587cee66cfbc5.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_20022be2650009d0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_85ed3901b968df1c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01_hu_bede1b24ece46f03.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_8942fd1d2e4ecb41.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_d81587cee66cfbc5.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_20022be2650009d0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_85ed3901b968df1c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-1_hu_bede1b24ece46f03.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-01.webp"
+              alt="galeria/exp_las-raices-dmrfaedirc-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4510,19 +4508,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_29db023060e0ddd6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_c09df5470489aceb.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_c8baadfddb1992f5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_f53a74ac7fb13812.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_6dfa35e303f36a5a.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_29db023060e0ddd6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_c09df5470489aceb.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_c8baadfddb1992f5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_f53a74ac7fb13812.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_6dfa35e303f36a5a.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_12ef121e40fa9640.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_7470146590932e22.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_b70ced1242dce3d7.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_2cd315fa8c8926d5.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02_hu_54db97fc614859f2.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_12ef121e40fa9640.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_7470146590932e22.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_b70ced1242dce3d7.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_2cd315fa8c8926d5.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-2_hu_54db97fc614859f2.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-02.webp"
+              alt="galeria/exp_las-raices-dmrfaedirc-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4603,19 +4601,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_3cd080536af9451b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_a1cd4dc0d0de4203.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_e02003f401c6a607.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_afbccf47cdff145.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_9b10f3d0d5e95c4d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_3cd080536af9451b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_a1cd4dc0d0de4203.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_e02003f401c6a607.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_afbccf47cdff145.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_9b10f3d0d5e95c4d.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_445664d2a15c7abd.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_bd25390e5ef59754.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_8d547f49f2799658.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_49a8172f4b758d22.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03_hu_ef7f9c819bf2662.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_445664d2a15c7abd.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_bd25390e5ef59754.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_8d547f49f2799658.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_49a8172f4b758d22.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-3_hu_ef7f9c819bf2662.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-03.webp"
+              alt="galeria/exp_las-raices-dmrfaedirc-3.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4696,19 +4694,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_b0e9f0e5c775919e.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_888e11865f6e1a15.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_5447af6f759474d0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_6cc63766ebde8435.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_41190b587aea0eae.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_b0e9f0e5c775919e.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_888e11865f6e1a15.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_5447af6f759474d0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_6cc63766ebde8435.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_41190b587aea0eae.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_e46fdd2ab040a5ab.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_67e9ca88881e22d2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_996d8067f563ca61.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_5481e3c26500930d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04_hu_aa6b0bb6d8cfd13a.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_e46fdd2ab040a5ab.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_67e9ca88881e22d2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_996d8067f563ca61.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_5481e3c26500930d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-4_hu_aa6b0bb6d8cfd13a.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-04.webp"
+              alt="galeria/exp_las-raices-dmrfaedirc-4.webp"
               loading="lazy"
               width="2400"
               height="1699" />
@@ -4789,19 +4787,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_8a2b52dbe9ad939d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_1f45eef83adeaf93.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_11b5f6dd7d92bfec.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_2a0d49113e8eb3ab.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_7e5908d92a0852dd.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_8a2b52dbe9ad939d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_1f45eef83adeaf93.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_11b5f6dd7d92bfec.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_2a0d49113e8eb3ab.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_7e5908d92a0852dd.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_f952d03a118b5b39.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_d298dd56befe0553.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_e4b4942dea598431.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_ffcdc8022ae343bd.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05_hu_ad11c55e07a57d4f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_f952d03a118b5b39.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_d298dd56befe0553.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_e4b4942dea598431.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_ffcdc8022ae343bd.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/galeria/exp_las-raices-dmrfaedirc-5_hu_ad11c55e07a57d4f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona-05.webp"
+              alt="galeria/exp_las-raices-dmrfaedirc-5.webp"
               loading="lazy"
               width="2400"
               height="1600" />

@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4142,17 +4143,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4413,19 +4411,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_e7559869e0b46ee7.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_e92b0061816ee6ea.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_2982c207520ec708.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_161d19d2a1b7ed5a.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_c0a01899d5250839.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_e7559869e0b46ee7.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_e92b0061816ee6ea.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_2982c207520ec708.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_161d19d2a1b7ed5a.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_c0a01899d5250839.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_72dc66e30b8a114b.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_9ef18bf3e886e700.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_c1c2d6e3b56eb52c.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_144dc82134f96947.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-01_hu_b130ad416c5d5a91.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_72dc66e30b8a114b.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_9ef18bf3e886e700.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_c1c2d6e3b56eb52c.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_144dc82134f96947.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-1_hu_b130ad416c5d5a91.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-01.webp"
+              alt="galeria/res_resi-piyapmosik-cds-1.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4506,19 +4504,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_b235229e53fb5385.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_65c8a307dc78e3a7.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_31350eec8cdc11c6.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_b2c8031ff7bad595.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_7fad04f82a2b0e9e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_b235229e53fb5385.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_65c8a307dc78e3a7.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_31350eec8cdc11c6.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_b2c8031ff7bad595.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_7fad04f82a2b0e9e.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_77c5e25df706190b.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_99094b2f20131d4b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_51ed754139365e88.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_2882e3fd18984720.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-02_hu_8b456723866aa549.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_77c5e25df706190b.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_99094b2f20131d4b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_51ed754139365e88.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_2882e3fd18984720.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-2_hu_8b456723866aa549.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-02.webp"
+              alt="galeria/res_resi-piyapmosik-cds-2.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4599,19 +4597,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_52f4776112103867.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_ee7a039f1dc1de2f.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_e0e8209e6ba5987c.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_29dbf312f1692ecc.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_ed4f957bdac1acd0.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_52f4776112103867.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_ee7a039f1dc1de2f.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_e0e8209e6ba5987c.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_29dbf312f1692ecc.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_ed4f957bdac1acd0.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_1125c3415588c07e.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_ef00863bb49de32.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_96708ed5da5d5975.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_64ebac242d4a1768.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-03_hu_b5c8dfe5e537535f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_1125c3415588c07e.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_ef00863bb49de32.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_96708ed5da5d5975.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_64ebac242d4a1768.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-3_hu_b5c8dfe5e537535f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-03.webp"
+              alt="galeria/res_resi-piyapmosik-cds-3.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4692,19 +4690,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_cf9799c28cfd69e8.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_bb70f1a1097a96af.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_89ef6d9285ee4861.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_fb858ffc7998188c.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_5ec3bfed136efa66.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_cf9799c28cfd69e8.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_bb70f1a1097a96af.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_89ef6d9285ee4861.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_fb858ffc7998188c.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_5ec3bfed136efa66.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_ae31dd2d45da679a.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_389eb31b6aed0bc0.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_b01e714cd9373aed.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_b98c3ad3907db131.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-04_hu_821dd43bb90a586f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_ae31dd2d45da679a.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_389eb31b6aed0bc0.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_b01e714cd9373aed.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_b98c3ad3907db131.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-4_hu_821dd43bb90a586f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-04.webp"
+              alt="galeria/res_resi-piyapmosik-cds-4.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4785,19 +4783,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_4fca942bb63def55.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_8a20895a02010ebf.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_5a03ddf50ead7b03.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_7606198d72baf9ca.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_13eee392aae7e824.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_4fca942bb63def55.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_8a20895a02010ebf.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_5a03ddf50ead7b03.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_7606198d72baf9ca.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_13eee392aae7e824.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_172923c7a46130de.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_4df322b23d20568e.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_36d3d04c73b42e40.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_29863e66c91e722d.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-05_hu_68623c7b115f6020.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_172923c7a46130de.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_4df322b23d20568e.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_36d3d04c73b42e40.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_29863e66c91e722d.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-5_hu_68623c7b115f6020.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-05.webp"
+              alt="galeria/res_resi-piyapmosik-cds-5.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4878,19 +4876,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_d8bc2642e9bde6fd.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_3f8a919b6b6c257c.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_26e65d9a3cecf530.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_cfe07f26ad5bfca4.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_9f702a47e0034320.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_d8bc2642e9bde6fd.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_3f8a919b6b6c257c.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_26e65d9a3cecf530.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_cfe07f26ad5bfca4.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_9f702a47e0034320.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_486492f7e75e3ef5.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_a09952b8de92e6a3.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_5fac9c35bf4c12da.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_fcf04a3315680dc7.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-06_hu_1b88a2481cfb383c.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_486492f7e75e3ef5.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_a09952b8de92e6a3.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_5fac9c35bf4c12da.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_fcf04a3315680dc7.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-6_hu_1b88a2481cfb383c.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-06.webp"
+              alt="galeria/res_resi-piyapmosik-cds-6.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4971,19 +4969,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_111a9e0d3576125d.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_8b0bc702e79364c3.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_689b34629a7f7e78.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_bca2241ce85fea3.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_327f3fab64671f0b.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_111a9e0d3576125d.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_8b0bc702e79364c3.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_689b34629a7f7e78.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_bca2241ce85fea3.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_327f3fab64671f0b.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_f5a5d45266dde43.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_525ed87d63706a31.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_f6c10ff15f328e7.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_d104d444a108b571.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-07_hu_b6140e37e2494a4d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_f5a5d45266dde43.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_525ed87d63706a31.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_f6c10ff15f328e7.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_d104d444a108b571.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-7_hu_b6140e37e2494a4d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-07.webp"
+              alt="galeria/res_resi-piyapmosik-cds-7.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -5064,19 +5062,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_a4e23595d3a565da.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_754eeca24e9db0dd.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_21f26ba4f8636cc9.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_10ccc234ce165def.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_4002ad9528840b75.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_a4e23595d3a565da.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_754eeca24e9db0dd.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_21f26ba4f8636cc9.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_10ccc234ce165def.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_4002ad9528840b75.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_ed415a345fa2ca7b.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_def7b326bc085198.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_b5d9a944e6c9e16f.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_f0c0529afcfa503.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-08_hu_a6c137c8b60f1fd5.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_ed415a345fa2ca7b.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_def7b326bc085198.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_b5d9a944e6c9e16f.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_f0c0529afcfa503.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-8_hu_a6c137c8b60f1fd5.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-08.webp"
+              alt="galeria/res_resi-piyapmosik-cds-8.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -5157,19 +5155,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_2bae2c8baf18b311.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_8d409cf79d5e03bd.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_7e3655a1a07cb2c.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_4c0395d7579871d7.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_a482bfbeb8d7b4e1.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_2bae2c8baf18b311.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_8d409cf79d5e03bd.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_7e3655a1a07cb2c.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_4c0395d7579871d7.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_a482bfbeb8d7b4e1.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_38506e3f96a17956.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_c1cb82c3efc1f653.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_f900d99b3d9c4dd5.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_b689bc4cff4a6397.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_residencia-piyapmosik-casa-del-sueno-09_hu_30425f33d22f4f93.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_38506e3f96a17956.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_c1cb82c3efc1f653.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_f900d99b3d9c4dd5.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_b689bc4cff4a6397.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-piyapmosik-casa-del-sueno/galeria/res_resi-piyapmosik-cds-9_hu_30425f33d22f4f93.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-piyapmosik-casa-del-sueno-09.webp"
+              alt="galeria/res_resi-piyapmosik-cds-9.webp"
               loading="lazy"
               width="2400"
               height="3200" />

@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4431,19 +4429,19 @@ Valle de Pubén y ciudad de Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_c6f2e01f00cdf85b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_20e432cf416f553e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_8b655a6aad9b9889.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_77765e3e3342d90e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_d7e7aa9aaeab145f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_c6f2e01f00cdf85b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_20e432cf416f553e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_8b655a6aad9b9889.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_77765e3e3342d90e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_d7e7aa9aaeab145f.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_a0a4cbdcd9b3eb9f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_b99e50b065bf83c4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_6e201dbe1b6768c0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_e27e6c6979a5196c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-01_hu_49cf74d28cbae467.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_a0a4cbdcd9b3eb9f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_b99e50b065bf83c4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_6e201dbe1b6768c0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_e27e6c6979a5196c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-1_hu_49cf74d28cbae467.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_la-palabra-dicha-01.webp"
+              alt="galeria/exp_la-palabra-d-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4524,19 +4522,19 @@ Valle de Pubén y ciudad de Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_79c9bafd1c5959e4.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_f3c2a777825cb51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_55b98eb942e9ee81.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_e8c276510824985c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_644c3cf22ea515dd.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_79c9bafd1c5959e4.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_f3c2a777825cb51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_55b98eb942e9ee81.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_e8c276510824985c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_644c3cf22ea515dd.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_c8f07da138060ce6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_d8000b5a8e66265b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_15b574c7fddcc137.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_7ca2aa694f8f3567.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-02_hu_2944f6633a99944f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_c8f07da138060ce6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_d8000b5a8e66265b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_15b574c7fddcc137.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_7ca2aa694f8f3567.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-2_hu_2944f6633a99944f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_la-palabra-dicha-02.webp"
+              alt="galeria/exp_la-palabra-d-2.webp"
               loading="lazy"
               width="2400"
               height="1376" />
@@ -4617,19 +4615,19 @@ Valle de Pubén y ciudad de Popayán.</p>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_970786fb0b80450e.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_1ba3c2318737121f.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_55b18f67444ae55a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_6d54c3d29d1e80c2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_1244a264d992dd6b.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_970786fb0b80450e.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_1ba3c2318737121f.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_55b18f67444ae55a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_6d54c3d29d1e80c2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_1244a264d992dd6b.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_510853e7289371ec.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_f81af91abc2ae98.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_8752251d8d74f16a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_7b7ecf66c3351bea.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-dicha-03_hu_1d234558779a921.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_510853e7289371ec.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_f81af91abc2ae98.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_8752251d8d74f16a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_7b7ecf66c3351bea.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/galeria/exp_la-palabra-d-3_hu_1d234558779a921.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_la-palabra-dicha-03.webp"
+              alt="galeria/exp_la-palabra-d-3.webp"
               loading="lazy"
               width="2400"
               height="1528" />

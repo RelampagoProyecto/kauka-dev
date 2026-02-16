@@ -1086,6 +1086,9 @@
     --tw-leading: var(--leading-tight);
     line-height: var(--leading-tight);
   }
+  .leading-clamp-12-24 {
+    line-height: var(--clamp-12-24);
+  }
   .leading-clamp-16-32 {
     line-height: var(--clamp-16-32);
   }
@@ -2554,14 +2557,15 @@
     --tw-duration: 200ms;
     transition-duration: 200ms;
     font-family: var(--search-font, "kauka", sans-serif) !important;
-    font-size: var(--clamp-12-24) !important;
-    line-height: 1.4 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
     color: var(--pagefind-ui-primary) !important;
   }
   .pagefind-ui__result-excerpt {
     margin-top: calc(var(--spacing) * 2);
     font-family: var(--search-font, "kauka", sans-serif) !important;
-    font-size: var(--clamp-12-24) !important;
+    font-size: 0.9rem !important;
     line-height: 1.5 !important;
     color: var(--pagefind-ui-text) !important;
     @supports (color: color-mix(in lab, red, red)) {
@@ -5406,6 +5410,30 @@
     }
     z-index: 20;
   }
+  .encuentro-info-bg-container {
+    position: absolute;
+    inset: calc(var(--spacing) * 0);
+    z-index: 0;
+    grid-column: span 12 / span 12;
+    overflow: hidden;
+    pointer-events: none;
+    background-size: auto 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  @media (min-width: 768px) {
+    .encuentro-info-bg-container {
+      background-size: 50% 100%;
+      background-repeat: repeat-x;
+    }
+  }
+  @media (min-width: 1024px) {
+    .encuentro-info-bg-container {
+      background-size: auto 100%;
+      background-repeat: repeat-x;
+      background-position: center top;
+    }
+  }
   .encuentro-info-container::before {
     position: absolute;
     inset: calc(var(--spacing) * 0);
@@ -5463,6 +5491,9 @@
       background-position: -137px;
     }
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 438.93'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2 %7B fill: %2329c856; %7D .cls-1, .cls-3 %7B opacity: .25; %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Figuras'%3E%3Cg class='cls-3'%3E%3Cpolygon class='cls-2' points='53.4 73.26 53.33 73.17 0 146.52 53.04 219.47 0 292.41 53.33 365.76 53.4 365.67 106.67 438.93 160 365.58 106.67 292.23 106.6 292.32 53.63 219.47 106.6 146.61 106.67 146.7 160 73.35 106.67 0 53.4 73.26'/%3E%3Cpolygon class='cls-2' points='266.67 73.17 266.6 73.26 213.33 0 160 73.35 213.33 146.7 213.4 146.61 266.67 219.87 320 146.52 266.67 73.17'/%3E%3C/g%3E%3Cpolygon class='cls-1' points='320 292.41 266.67 219.06 213.4 292.32 213.33 292.23 160 365.58 213.33 438.93 266.6 365.67 266.67 365.76 320 292.41'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .encuentro-info-container:has(.encuentro-info-bg-container)::before {
+    display: none;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
     .encuentro-info-container::before {
@@ -9765,6 +9796,48 @@
       padding-bottom: 40px;
     }
   }
+  .as-intro {
+    grid-column: span 10 / span 10;
+    grid-column-start: 2;
+    @media (width >= 48rem) {
+      grid-column: span 8 / span 8;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 64rem) {
+      grid-column: span 8 / span 8;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 80rem) {
+      grid-column: span 8 / span 8;
+    }
+    @media (width >= 80rem) {
+      grid-column-start: 3;
+    }
+    @media (width >= 96rem) {
+      grid-column: span 6 / span 6;
+    }
+    @media (width >= 96rem) {
+      grid-column-start: 4;
+    }
+  }
+  .as-sections-post-gallery {
+    grid-column: span 12 / span 12;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  .as-sections-post-gallery .pc-section-band:last-child {
+    padding-bottom: 24px;
+    @media (width >= 48rem) {
+      padding-bottom: 32px;
+    }
+    @media (width >= 64rem) {
+      padding-bottom: 40px;
+    }
+  }
   .pc-section-band {
     grid-column: span 12 / span 12;
     display: grid;
@@ -9821,6 +9894,16 @@
     word-break: normal;
     text-wrap: pretty;
     column-count: 1;
+  }
+  .pc-section-band:not(.pc-section-band-intro) .pc-section-content {
+    font-family: "RigidSquare-Light", sans-serif;
+  }
+  .pc-section-band:not(.pc-section-band-intro) .pc-section-content strong {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-weight: normal;
+  }
+  .pc-section-band:not(.pc-section-band-intro) .pc-section-content :is( .pc-tool-section, .pc-tool-cita, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer ) {
+    font-family: "RigidSquare-Light", sans-serif;
   }
   .page-content-text {
     grid-column: span 10 / span 10;
@@ -9983,6 +10066,41 @@
     vertical-align: super;
     margin-left: 0.06em;
   }
+  :is(.page-content-text, .pc-section-content) .pc-tool-page-footer {
+    font-family: "RigidSquare-Light", sans-serif;
+    margin-top: 1.5rem;
+    padding: 0.75rem 0 0.85rem;
+    font-size: 0.82em;
+    line-height: 1.4;
+    border-top: 1px solid currentColor;
+    opacity: 0.94;
+  }
+  :is(.page-content-text, .pc-section-content) .pc-tool-page-footer p {
+    margin-bottom: calc(var(--spacing) * 2);
+    &:last-child {
+      margin-bottom: calc(var(--spacing) * 0);
+    }
+    text-indent: 0;
+  }
+  :is(.page-content-text, .pc-section-content) .pc-tool-page-footer ol {
+    list-style-type: decimal;
+    padding-left: 1.4rem;
+  }
+  :is(.page-content-text, .pc-section-content) .pc-tool-page-footer ul {
+    list-style-type: disc;
+    padding-left: 1.4rem;
+  }
+  :is(.page-content-text, .pc-section-content) .pc-tool-page-footer li {
+    margin-bottom: calc(var(--spacing) * 1);
+    &:last-child {
+      margin-bottom: calc(var(--spacing) * 0);
+    }
+    text-indent: 0;
+  }
+  :is(.page-content-text, .pc-section-content) .pc-tool-page-footer strong {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-weight: normal;
+  }
   .page-content-text .pc-tool-section.section-vivencial, .page-content-text .pc-tool-section.section-1 {
     background-color: var(--color-dark-forest-green);
     color: var(--color-white);
@@ -10103,14 +10221,14 @@
     background-color: var(--color-burnt-orange);
     color: var(--color-white);
   }
-  :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p {
+  :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p {
     margin-bottom: calc(var(--spacing) * 4);
     text-indent: 0;
   }
-  :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p.sangria {
+  :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p.sangria {
     text-indent: 2em;
   }
-  :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p[align="right"], :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p[align="right"] + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> strong:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> em:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> b:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> i:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> strong:first-child) + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> em:first-child) + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> b:first-child) + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes) > p:has(> i:first-child) + p {
+  :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p[align="right"], :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p[align="right"] + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> strong:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> em:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> b:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> i:first-child), :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> strong:first-child) + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> em:first-child) + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> b:first-child) + p, :is(.page-content-text, .pc-section-content) :is(.pc-tool-section, .pc-tool-note, .pc-tool-footnotes, .pc-tool-page-footer) > p:has(> i:first-child) + p {
     text-indent: 0;
   }
   :is(.page-content-text, .pc-section-content) .frase-categoria {
@@ -10137,7 +10255,7 @@
       break-inside: avoid-column;
       page-break-inside: avoid;
     }
-    .page-content-text > .pc-tool-section, .page-content-text > .pc-tool-note, .page-content-text > .pc-tool-footnotes {
+    .page-content-text > .pc-tool-section, .page-content-text > .pc-tool-note, .page-content-text > .pc-tool-footnotes, .page-content-text > .pc-tool-page-footer {
       break-inside: auto;
       page-break-inside: auto;
     }

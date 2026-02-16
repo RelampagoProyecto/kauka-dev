@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,24 +4134,17 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
-      
-        <div
-  class="pc-sections-container
-    pc-sections--component-expositivo-expandido
-  "><section class="pc-section-band pc-section-band-intro">
-          <div class="pc-section-content"><p>Las guardias —indígena, cimarrona y campesina— presentes en el Cauca son formas propias, autónomas y pacíficas de cuidado y protección de la vida y del territorio. Como sistemas comunitarios de cuidado, anteponen el bienestar colectivo al interés individual, un principio que desborda la lógica de lo privado y lo exclusivamente propio. Saben que cuidar la semilla es cuidar la montaña entera.</p>
+      <section class="pc-section-band pc-section-band-intro text-deep-pink">
+        <div class="pc-section-content"><p>Las guardias —indígena, cimarrona y campesina— presentes en el Cauca son formas propias, autónomas y pacíficas de cuidado y protección de la vida y del territorio. Como sistemas comunitarios de cuidado, anteponen el bienestar colectivo al interés individual, un principio que desborda la lógica de lo privado y lo exclusivamente propio. Saben que cuidar la semilla es cuidar la montaña entera.</p>
 <p>El fuego ha ocupado un lugar central en la vida comunitaria de muchos pueblos. En la tulpa, en el Cauca, el fuego congrega, equilibra, limpia y transforma. A su alrededor se ofrenda y se convoca a los espíritus y a quienes estuvieron antes que nosotrxs: compartimos el mismo fuego. Sus señas ascienden desde el fondo de la tierra en forma de volcán, hasta los fogones. Sus mensajes, custodios de la comunidad, solo se revelan para quienes sepan prestar atención.</p>
 <p>De las guardias aprendemos que guardar el mundo de viejos y nuevos extractivismos sigue siendo urgente. Aquí, guardar no significa acumular, sino cuidar. En esta distorsión radica el problema: nos han saqueado el agua, los bosques, las montañas, las piedras, los objetos sagrados y los conocimientos. La acumulación ha estado sostenida por la explotación de las vidas y los territorios. Pero el mundo no es una cosa que se posee: es un cuerpo vivo que nos contiene. No solo los humanos modificamos el territorio, el territorio y todos sus seres también nos moldean en un ejercicio infinito de reciprocidad y transformación.</p>
 <p>En los procesos reunidos en esta exposición, unos seres ya no dominan sobre otros: persisten los ensayos para derrocar las jerarquías que justifican cualquier tipo de violencia. Aquí, las relaciones binarias impuestas por la colonialidad se vuelven porosas, se desdibujan en un solo cuerpo-territorio donde, a pesar del miedo, la vida se entrelaza sin centro ni borde.</p>
@@ -4214,11 +4208,12 @@ Aliados: Programa Nacional de Estímulos del Ministerio de las Culturas, las Art
 <p><strong>Presencias más que humanas:</strong>
 Colecciones Quimbaya, seres vegetales y animales.</p>
 <p><strong>Territorios:</strong>
-El trabajo de Gente del ECO es antecedido por un proceso de búsqueda de visión en el Bosque KAUKITÁ, en Pereira, y específicamente este proyecto se ha desarrollado en las ciudades de Pereira (Risaralda), Medellín (Antioquia) y Wampia (Cauca).</p></div>
-        </section><section
-          class="pc-section-band section-1
-            section-1
-          ">
+El trabajo de Gente del ECO es antecedido por un proceso de búsqueda de visión en el Bosque KAUKITÁ, en Pereira, y específicamente este proyecto se ha desarrollado en las ciudades de Pereira (Risaralda), Medellín (Antioquia) y Wampia (Cauca).</p>
+</div>
+      </section>
+    </div>
+    
+      <section class="pc-section-band pc-stage-desarrollo section-1 bg-dark-forest-green text-white">
           <div class="pc-section-content"><p><strong>Gente del ECO Quimbaya</strong>
 <br /></p>
 <p>Propone una ruta para descolonizar la Colección Quimbaya, un legado cultural orfebre probablemente producido entre los siglos IV y V d. C., enmarcado en un periodo más amplio de producción denominado Quimbaya temprano, datado entre los siglos III a. C. y III d. C. La Colección fue sustraída del actual departamento de Quindío a finales del siglo XIX.</p>
@@ -4226,8 +4221,7 @@ El trabajo de Gente del ECO es antecedido por un proceso de búsqueda de visión
 <p>Nos acercamos a algunas de las piezas salvaguardadas en el Museo de América y a otras de la Sala Arqueológica de la Fundación Hacienda Castilla, en Pereira, Colombia, la cual ha adelantado procesos de rematriación y cuenta con una colección significativa de piezas cerámicas quimbaya (datadas de los siglos VII a XVI), cerca al sitio del despojo de los ajuares funerarios en Filandia y Quimbaya.</p>
 <p>La guía de los sabedores y sabedoras, bajo la Ley de Origen, conduce a sembrar gentes, con el fin de armonizar las relaciones y restituir el sutil tejido de significados de las piezas que componen la colección. Descolonizar la Colección Quimbaya supone transitar al pensamiento vegetal, en consonancia con la Ley de Origen, como respuesta al momento en que la transfiguración del metal para fines rituales se convirtió en “extractivismo” de la colección. Esta muestra contribuye desde la práctica artística al mandato de rematriación.</p>
 <div style="text-align: right;">Gente del ECO</div>
-
-<br /><br />
+<p><br /><br /></p>
 <p><strong>Estructura para hacer montaña</strong>
 <br />
 <strong>Luz Adriana Vera</strong>
@@ -4626,11 +4620,10 @@ Víctor Hugo Narváez (dibujo de mural) y Erika Uza (cuidado y asistencia).</p>
 <p><strong>Presencias más que humanas:</strong>
 Piedras de la colección de geología del Museo de Historia Natural de la Universidad del Cauca. Bosques transformados: papel, vitrinas, suelos, techos, puertas, ventanas.</p>
 <p><strong>Territorios:</strong>
-Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto desplaza una serie de operaciones artísticas realizadas en otros territorios para situar su investigación en el territorio del Cauca.</p></div>
-        </section></div>
-
-      
-    </div>
+Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto desplaza una serie de operaciones artísticas realizadas en otros territorios para situar su investigación en el territorio del Cauca.</p>
+</div>
+        </section>
+    
   
 
 
@@ -5303,19 +5296,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_388243f5832371dc.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_e869fc7d9be42ad3.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_2a38e691c6b0ce25.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_eb633f9ec65e07d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_cdad96af19125570.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_388243f5832371dc.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_e869fc7d9be42ad3.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_2a38e691c6b0ce25.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_eb633f9ec65e07d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_cdad96af19125570.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_d577e7024ee80172.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_e0e03c8c5892a15b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_c56bfc4ecec2bcb9.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_cd6a161b6a99648b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-01_hu_20715d2f9be72ba0.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_d577e7024ee80172.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_e0e03c8c5892a15b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_c56bfc4ecec2bcb9.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_cd6a161b6a99648b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-1_hu_20715d2f9be72ba0.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-01.webp"
+              alt="galeria/exp_expo-guardias-dfc-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5396,19 +5389,112 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_967e73d14d7a19f0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_76715912a1371f1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_2600ebc2ca646231.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_4f0d8c9fbfb0ca9.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_1f24820c570527c.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_5fe7fdb51c0391c2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_c1a2c54a7d475d63.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_475fa264fe87f54b.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_14d4864fd78fd35a.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_64b9e597f1802d04.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_f5fb5e6e25f3750a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_5edd40c4b07a7d0f.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_6a88df3211a667ec.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_57c7150b08076fce.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-02_hu_e41792665d1bd379.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_d7f90134bacd8eb0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_3b560c9d379df51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_ca1cf32b94b8544d.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_611e214178e779b6.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-10_hu_86fa4e74d56f1c33.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-02.webp"
+              alt="galeria/exp_expo-guardias-dfc-10.webp"
+              loading="lazy"
+              width="2400"
+              height="1619" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_967e73d14d7a19f0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_76715912a1371f1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_2600ebc2ca646231.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_4f0d8c9fbfb0ca9.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_1f24820c570527c.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2.webp"
+              
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_f5fb5e6e25f3750a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_5edd40c4b07a7d0f.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_6a88df3211a667ec.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_57c7150b08076fce.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-2_hu_e41792665d1bd379.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/exp_expo-guardias-dfc-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5489,19 +5575,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_825f0992928fdb0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_1456ab0fc0e413f.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_ff0e84e3d52d1d96.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_c5542483bd1b9938.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_9ef58564d4d3ac39.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_825f0992928fdb0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_1456ab0fc0e413f.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_ff0e84e3d52d1d96.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_c5542483bd1b9938.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_9ef58564d4d3ac39.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_ab4694cf9c61ee03.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_daca53c423414b94.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_adf384fadfb4d6e8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_1a0e0e7362fefb98.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-03_hu_1c34c89731480e10.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_ab4694cf9c61ee03.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_daca53c423414b94.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_adf384fadfb4d6e8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_1a0e0e7362fefb98.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-3_hu_1c34c89731480e10.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-03.webp"
+              alt="galeria/exp_expo-guardias-dfc-3.webp"
               loading="lazy"
               width="2400"
               height="1555" />
@@ -5582,19 +5668,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_f6ebcf2a5d06146.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_d48e141f40bff31a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_c05b279ea2eafff0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_f8ff4a47db52115c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_4e6a2ce310161bce.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_f6ebcf2a5d06146.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_d48e141f40bff31a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_c05b279ea2eafff0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_f8ff4a47db52115c.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_4e6a2ce310161bce.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_61b1a35977a90617.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_5567f2d44cae4981.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_3c31beb1888dee1e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_b210c1d1767d789.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-04_hu_ef6ae0b2ffa67089.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_61b1a35977a90617.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_5567f2d44cae4981.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_3c31beb1888dee1e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_b210c1d1767d789.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-4_hu_ef6ae0b2ffa67089.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-04.webp"
+              alt="galeria/exp_expo-guardias-dfc-4.webp"
               loading="lazy"
               width="2400"
               height="3600" />
@@ -5675,19 +5761,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_79681f01c1024b9a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_7d731212d016475e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_ce547f569d93f00c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_d9803f49012d065f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_7e99cb6f572b16b2.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_79681f01c1024b9a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_7d731212d016475e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_ce547f569d93f00c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_d9803f49012d065f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_7e99cb6f572b16b2.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_3079f476953f1719.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_6492b10b95ef923.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_4e24d1f46b9537e0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_6ebc17268caf555b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-05_hu_125a277d64a15af5.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_3079f476953f1719.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_6492b10b95ef923.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_4e24d1f46b9537e0.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_6ebc17268caf555b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-5_hu_125a277d64a15af5.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-05.webp"
+              alt="galeria/exp_expo-guardias-dfc-5.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5768,19 +5854,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_afce4ad4b8455398.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_cbf5b4f6a74775e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_f134847b32e733ca.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_3d9c5a4880b5cd65.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_cc0bbbc1d7589381.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_afce4ad4b8455398.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_cbf5b4f6a74775e.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_f134847b32e733ca.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_3d9c5a4880b5cd65.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_cc0bbbc1d7589381.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_6093b1e973030d4b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_f0947f4544ad9992.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_8d1e82fa3689b0b7.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_e82f7be67835cd24.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-06_hu_1bbfdedc23e69f60.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_6093b1e973030d4b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_f0947f4544ad9992.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_8d1e82fa3689b0b7.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_e82f7be67835cd24.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-6_hu_1bbfdedc23e69f60.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-06.webp"
+              alt="galeria/exp_expo-guardias-dfc-6.webp"
               loading="lazy"
               width="2400"
               height="1789" />
@@ -5861,19 +5947,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_c12c45513bb74d0a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_1a807671a9b77861.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_bad74d00f7336aee.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_9a589be709f0ce7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_eac6ea6125ffd67b.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_c12c45513bb74d0a.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_1a807671a9b77861.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_bad74d00f7336aee.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_9a589be709f0ce7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_eac6ea6125ffd67b.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_33ac50e575b8fbf1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_d5e4a91efb7a84ce.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_cceb968648fac2d3.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_45f5e2215210c4e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-07_hu_29744de5d89fc95a.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_33ac50e575b8fbf1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_d5e4a91efb7a84ce.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_cceb968648fac2d3.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_45f5e2215210c4e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-7_hu_29744de5d89fc95a.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-07.webp"
+              alt="galeria/exp_expo-guardias-dfc-7.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5954,19 +6040,19 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_b2c38ec34429a7d7.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_f9a3e2a79552cc72.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_de297792ed3c3e90.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_2053def24045a1a0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_c4e1719037af8092.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_b2c38ec34429a7d7.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_f9a3e2a79552cc72.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_de297792ed3c3e90.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_2053def24045a1a0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_c4e1719037af8092.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_6cbf8d6b08259dc2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_a490f0f53dc956d4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_33547e12799b3dc6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_2b938098532056eb.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-08_hu_a2a0a562aede00f6.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_6cbf8d6b08259dc2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_a490f0f53dc956d4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_33547e12799b3dc6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_2b938098532056eb.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-8_hu_a2a0a562aede00f6.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-08.webp"
+              alt="galeria/exp_expo-guardias-dfc-8.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -6047,115 +6133,22 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_bd60eb10fb78628d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_1a3c6df6ee055bc3.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_fb5fba7a38dfb70e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_f2d88a8555ad1b2d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_bdf9de653d0493ec.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_bd60eb10fb78628d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_1a3c6df6ee055bc3.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_fb5fba7a38dfb70e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_f2d88a8555ad1b2d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_bdf9de653d0493ec.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_45859d4174c2ea83.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_85639be72b641209.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_9bc540af926d544a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_24c110d959f0d661.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-09_hu_b805a67e4790d771.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_45859d4174c2ea83.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_85639be72b641209.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_9bc540af926d544a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_24c110d959f0d661.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_expo-guardias-dfc-9_hu_b805a67e4790d771.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-09.webp"
+              alt="galeria/exp_expo-guardias-dfc-9.webp"
               loading="lazy"
               width="2400"
               height="3604" />
-          </picture>
-        </div>
-      
-        <div class="swiper-slide">
-          
-          
-          
-          
-          
-
-          
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-            
-            
-              
-              
-              
-
-              
-              
-              
-            
-          
-
-          
-          
-          
-
-
-          <picture>
-            
-            
-              <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_5fe7fdb51c0391c2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_c1a2c54a7d475d63.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_475fa264fe87f54b.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_14d4864fd78fd35a.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_64b9e597f1802d04.webp 1280w"
-                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-                type="image/webp" />
-            
-
-            
-            <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10.webp"
-              
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_d7f90134bacd8eb0.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_3b560c9d379df51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_ca1cf32b94b8544d.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_611e214178e779b6.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/galeria/exp_exposicion-guardias-del-fuego-compartido-10_hu_86fa4e74d56f1c33.webp 1280w"
-              
-              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-guardias-del-fuego-compartido-10.webp"
-              loading="lazy"
-              width="2400"
-              height="1619" />
           </picture>
         </div>
       
@@ -6221,6 +6214,8 @@ Sandra nace en Perú, vive y trabaja en Madrid, España. En este proyecto despla
     </div>
   </div>
 
+  
+    
   
 
       </section>

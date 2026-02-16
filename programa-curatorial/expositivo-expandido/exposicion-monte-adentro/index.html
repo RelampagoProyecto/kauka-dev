@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4514,19 +4512,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_f24477354ba1c1f2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_4c8a4828d0ebeb3b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_32840132ced6a8c2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_c5166c54c7364545.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_2a27a45a483c62a2.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_f24477354ba1c1f2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_4c8a4828d0ebeb3b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_32840132ced6a8c2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_c5166c54c7364545.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_2a27a45a483c62a2.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_d2eee6401300feed.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_da2adf316b1cf617.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_f3a218de5d28dc82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_c37f9e0bbfcb2a68.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-01_hu_64cfc2c511662abc.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_d2eee6401300feed.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_da2adf316b1cf617.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_f3a218de5d28dc82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_c37f9e0bbfcb2a68.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-1_hu_64cfc2c511662abc.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-01.webp"
+              alt="galeria/exp_expo-monte-a-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4607,19 +4605,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_b1f585a2d290f3f9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_8806319fd5b0d0d4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_535b2f10c66497b4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_d794e728051b8efa.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_11e0d679beeefd24.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_b1f585a2d290f3f9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_8806319fd5b0d0d4.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_535b2f10c66497b4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_d794e728051b8efa.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_11e0d679beeefd24.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_867133146689b45d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_b25a51d06189c515.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_86dd0f5c63cc5e8f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_5d00d198be6f689f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-02_hu_ec7061b1b3e84bbc.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_867133146689b45d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_b25a51d06189c515.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_86dd0f5c63cc5e8f.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_5d00d198be6f689f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-2_hu_ec7061b1b3e84bbc.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-02.webp"
+              alt="galeria/exp_expo-monte-a-2.webp"
               loading="lazy"
               width="1600"
               height="1069" />
@@ -4700,19 +4698,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_9515563ccf9c595.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_b1af711b3e68a0d0.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_61a6e438fc4410a2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_81bf777f473f62ef.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_2f4ccf153845ce54.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_9515563ccf9c595.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_b1af711b3e68a0d0.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_61a6e438fc4410a2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_81bf777f473f62ef.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_2f4ccf153845ce54.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_17bfe263207ef980.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_7e5241dce10c3d51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_73ec444856b6a100.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_2865c6b482372327.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-03_hu_6c3fcba5976a0078.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_17bfe263207ef980.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_7e5241dce10c3d51.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_73ec444856b6a100.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_2865c6b482372327.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-3_hu_6c3fcba5976a0078.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-03.webp"
+              alt="galeria/exp_expo-monte-a-3.webp"
               loading="lazy"
               width="1600"
               height="1231" />
@@ -4793,19 +4791,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_eb285427abf00b38.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_f77a3692ef20b947.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_947d5a0a56e5cb1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_a9e23c39178b0bf2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_9139a5c6bd1b329d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_eb285427abf00b38.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_f77a3692ef20b947.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_947d5a0a56e5cb1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_a9e23c39178b0bf2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_9139a5c6bd1b329d.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_b72cafd4bd74aeb9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_d6e85112724d2e47.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_cd896c0df20cebb5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_c3c9735f35d09a9f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-04_hu_331207d677cbf45e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_b72cafd4bd74aeb9.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_d6e85112724d2e47.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_cd896c0df20cebb5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_c3c9735f35d09a9f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-4_hu_331207d677cbf45e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-04.webp"
+              alt="galeria/exp_expo-monte-a-4.webp"
               loading="lazy"
               width="1600"
               height="1011" />
@@ -4886,19 +4884,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_71f8a0a74b98ff5.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_5bb00c04fa9945ac.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_117d3d080e4bb18e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_da2372502b821a39.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_231d750817b52d2b.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_71f8a0a74b98ff5.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_5bb00c04fa9945ac.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_117d3d080e4bb18e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_da2372502b821a39.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_231d750817b52d2b.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_b2488f0cc48af54.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_e4faf4949c76e4a1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_64af4fbea1cab01e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_c20983e91b5a1973.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-05_hu_d0ecfa9c0fc88d87.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_b2488f0cc48af54.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_e4faf4949c76e4a1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_64af4fbea1cab01e.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_c20983e91b5a1973.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-5_hu_d0ecfa9c0fc88d87.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-05.webp"
+              alt="galeria/exp_expo-monte-a-5.webp"
               loading="lazy"
               width="1600"
               height="972" />
@@ -4979,19 +4977,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_255ee20bf6604fa1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_5a3b9f8fa5838000.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_35555d8b701908d2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_af0fcc9bb14a1ee2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_9e8f0e4f280a59ce.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_255ee20bf6604fa1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_5a3b9f8fa5838000.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_35555d8b701908d2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_af0fcc9bb14a1ee2.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_9e8f0e4f280a59ce.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_c881d039bc2f0b94.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_c8a6e65e7f360493.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_faf5fbd786043298.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_19ecd6b78b34a112.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-06_hu_7f1d64a180c2f3b3.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_c881d039bc2f0b94.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_c8a6e65e7f360493.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_faf5fbd786043298.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_19ecd6b78b34a112.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-6_hu_7f1d64a180c2f3b3.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-06.webp"
+              alt="galeria/exp_expo-monte-a-6.webp"
               loading="lazy"
               width="2400"
               height="2225" />
@@ -5072,19 +5070,19 @@ Cuadro vivo / instalación <br>
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_7137dc8c6b6c70b1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_de2d0dc14fca6e4a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_95aa8f34f0063e8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_adbdc79867946e3e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_e7ea0542825d79ba.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_7137dc8c6b6c70b1.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_de2d0dc14fca6e4a.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_95aa8f34f0063e8.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_adbdc79867946e3e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_e7ea0542825d79ba.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_c5bc0ca61268f3d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_aa4601b073f209c6.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_ac3df6075b0aac82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_5d22f068600d7691.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_exposicion-monte-adentro-07_hu_77a0af2498a8a43e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_c5bc0ca61268f3d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_aa4601b073f209c6.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_ac3df6075b0aac82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_5d22f068600d7691.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/galeria/exp_expo-monte-a-7_hu_77a0af2498a8a43e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-monte-adentro-07.webp"
+              alt="galeria/exp_expo-monte-a-7.webp"
               loading="lazy"
               width="2400"
               height="1679" />

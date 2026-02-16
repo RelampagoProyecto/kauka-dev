@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4142,17 +4143,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4445,19 +4443,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_8d91367a135bf85.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_3d4474e1acf14280.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_dc315199dc3e1ecb.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_72521c1f7f2a7c9.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_3926ac907d331967.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_8d91367a135bf85.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_3d4474e1acf14280.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_dc315199dc3e1ecb.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_72521c1f7f2a7c9.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_3926ac907d331967.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_7ae687e469877047.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_a57517d823045142.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_a797eeca18f1d8c7.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_e8f22cab8b8a5c93.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-01_hu_2a42293c2bc88038.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_7ae687e469877047.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_a57517d823045142.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_a797eeca18f1d8c7.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_e8f22cab8b8a5c93.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-1_hu_2a42293c2bc88038.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-consejo-comunitario-el-tuno-01.webp"
+              alt="galeria/res_resi-consejo-cet-1.webp"
               loading="lazy"
               width="2400"
               height="1537" />
@@ -4538,19 +4536,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_aab380bad895f894.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_54e53ab5ea49c2a9.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_a65a4e86e783685f.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_96bcb27ff166290e.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_312036a09c44c33f.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_aab380bad895f894.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_54e53ab5ea49c2a9.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_a65a4e86e783685f.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_96bcb27ff166290e.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_312036a09c44c33f.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_8a58965272b61f8.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_f81ef4a5d5f48fe3.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_4904e3ffe9fc1577.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_1726dffb723fcee7.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-02_hu_7d0c4300cce9e195.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_8a58965272b61f8.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_f81ef4a5d5f48fe3.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_4904e3ffe9fc1577.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_1726dffb723fcee7.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-2_hu_7d0c4300cce9e195.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-consejo-comunitario-el-tuno-02.webp"
+              alt="galeria/res_resi-consejo-cet-2.webp"
               loading="lazy"
               width="2400"
               height="2082" />
@@ -4631,19 +4629,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_753d35fb58712a7e.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_875b56f8e30fb868.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_4f3c6ce11497251b.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_28ac032fe2755b01.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_714dc94cc29c1508.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_753d35fb58712a7e.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_875b56f8e30fb868.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_4f3c6ce11497251b.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_28ac032fe2755b01.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_714dc94cc29c1508.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_5539798b926356b4.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_5c027b822b8fab5b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_d6a0ec78f243b662.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_ee9db0e128d139bd.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-03_hu_843aae6804dda3af.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_5539798b926356b4.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_5c027b822b8fab5b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_d6a0ec78f243b662.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_ee9db0e128d139bd.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-3_hu_843aae6804dda3af.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-consejo-comunitario-el-tuno-03.webp"
+              alt="galeria/res_resi-consejo-cet-3.webp"
               loading="lazy"
               width="1280"
               height="963" />
@@ -4724,19 +4722,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_b1c87beef7bb08d6.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_a36a3354b646bbc1.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_6aa913245a1b3e2a.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_73807b68aa0cc2f8.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_4c089a5f28f8d7a3.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_b1c87beef7bb08d6.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_a36a3354b646bbc1.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_6aa913245a1b3e2a.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_73807b68aa0cc2f8.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_4c089a5f28f8d7a3.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_bdab8b55470737a1.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_4c79c7a2447a8d15.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_294efea449fe6fc8.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_a7cfac38e7be6630.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-04_hu_87848daae98602d8.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_bdab8b55470737a1.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_4c79c7a2447a8d15.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_294efea449fe6fc8.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_a7cfac38e7be6630.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-4_hu_87848daae98602d8.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-consejo-comunitario-el-tuno-04.webp"
+              alt="galeria/res_resi-consejo-cet-4.webp"
               loading="lazy"
               width="1280"
               height="963" />
@@ -4817,19 +4815,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_2266ced6b6c6961f.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_31ec4d7cab16087b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_51d8cee507fcc252.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_70486501f11c066c.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_87536262bc08470a.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_2266ced6b6c6961f.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_31ec4d7cab16087b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_51d8cee507fcc252.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_70486501f11c066c.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_87536262bc08470a.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_2cbf45c976622315.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_bf49be91aac456c0.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_2f5d2b5983611e34.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_9c4897c9ffb1bed4.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-05_hu_72528b928574a9c8.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_2cbf45c976622315.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_bf49be91aac456c0.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_2f5d2b5983611e34.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_9c4897c9ffb1bed4.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-5_hu_72528b928574a9c8.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-consejo-comunitario-el-tuno-05.webp"
+              alt="galeria/res_resi-consejo-cet-5.webp"
               loading="lazy"
               width="2400"
               height="1849" />
@@ -4910,19 +4908,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_4926ecbcdff6bed7.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_e188c708f0ed963b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_8e2500de7704af2b.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_db4a40bff17b17e6.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_c40a61d756f2d206.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_4926ecbcdff6bed7.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_e188c708f0ed963b.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_8e2500de7704af2b.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_db4a40bff17b17e6.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_c40a61d756f2d206.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06.webp"
+              src="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_921144258448e90f.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_9530cf7e23ea1310.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_69871edce4017607.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_a0508bcab8b96016.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_residencia-consejo-comunitario-el-tuno-06_hu_d0a1e85cd9609b61.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_921144258448e90f.webp 320w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_9530cf7e23ea1310.webp 640w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_69871edce4017607.webp 768w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_a0508bcab8b96016.webp 1024w, /kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/galeria/res_resi-consejo-cet-6_hu_d0a1e85cd9609b61.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/res_residencia-consejo-comunitario-el-tuno-06.webp"
+              alt="galeria/res_resi-consejo-cet-6.webp"
               loading="lazy"
               width="2400"
               height="3200" />

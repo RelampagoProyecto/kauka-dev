@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4460,19 +4458,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_1a3105e806dcd405.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_2885fba03771ff24.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_12af351e47a8311b.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_43a1ffb670f04efa.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_da101954308b3ba1.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_1a3105e806dcd405.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_2885fba03771ff24.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_12af351e47a8311b.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_43a1ffb670f04efa.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_da101954308b3ba1.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_7d42ab74477e9652.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_38525f7e156e0211.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_bf03d5d46b5fe052.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_94635615afffff5f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-01_hu_65633f59d3033aea.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_7d42ab74477e9652.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_38525f7e156e0211.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_bf03d5d46b5fe052.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_94635615afffff5f.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-1_hu_65633f59d3033aea.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mandato-popular-01.webp"
+              alt="galeria/exp_expo-mandato-p-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4553,19 +4551,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_f23d206649595025.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_48d9413c9cac40e5.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_ec53b4bf6dd55794.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_de3461810b5fdda7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_98c970f841aa1ad9.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_f23d206649595025.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_48d9413c9cac40e5.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_ec53b4bf6dd55794.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_de3461810b5fdda7.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_98c970f841aa1ad9.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_4bc6e0ff0d56388f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_6c5d38896b80ffb1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_6d4f4b0bc261e497.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_ad46b37805cfefae.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-02_hu_9715cd95155bfcee.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_4bc6e0ff0d56388f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_6c5d38896b80ffb1.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_6d4f4b0bc261e497.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_ad46b37805cfefae.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-2_hu_9715cd95155bfcee.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mandato-popular-02.webp"
+              alt="galeria/exp_expo-mandato-p-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4646,19 +4644,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_9ac03906d56c6138.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_6766a42680289c84.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_96672e19d23694d2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_ab771af2a837ae5b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_ff9c9ef2ad582600.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_9ac03906d56c6138.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_6766a42680289c84.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_96672e19d23694d2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_ab771af2a837ae5b.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_ff9c9ef2ad582600.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_198767e79629cf67.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_3173378eb3583cbd.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_2e99aabb407a22dc.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_af1c009381e3b209.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-03_hu_507245cc7e45f2da.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_198767e79629cf67.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_3173378eb3583cbd.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_2e99aabb407a22dc.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_af1c009381e3b209.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-3_hu_507245cc7e45f2da.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mandato-popular-03.webp"
+              alt="galeria/exp_expo-mandato-p-3.webp"
               loading="lazy"
               width="2400"
               height="3200" />
@@ -4731,19 +4729,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_3b4ed13b1df60a87.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_fa3bbd1ffe4013e8.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_343992f8e1f702ca.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_a2a8564fa7c8a494.webp 1024w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_3b4ed13b1df60a87.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_fa3bbd1ffe4013e8.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_343992f8e1f702ca.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_a2a8564fa7c8a494.webp 1024w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_8f53049c863b0f3b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_ce06b4c023ee880c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_19906b154166d9af.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_exposicion-mandato-popular-04_hu_a21938c686ddf350.webp 1024w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_8f53049c863b0f3b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_ce06b4c023ee880c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_19906b154166d9af.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/galeria/exp_expo-mandato-p-4_hu_a21938c686ddf350.webp 1024w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mandato-popular-04.webp"
+              alt="galeria/exp_expo-mandato-p-4.webp"
               loading="lazy"
               width="1142"
               height="956" />

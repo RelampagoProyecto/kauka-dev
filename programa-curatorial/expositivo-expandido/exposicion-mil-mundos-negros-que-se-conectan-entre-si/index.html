@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4496,19 +4494,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_a88c286f1f5ba652.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_fc6f456bac53d702.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_38a6c674e649db82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_c4e484615c088e85.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_4208eecef5708c61.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_a88c286f1f5ba652.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_fc6f456bac53d702.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_38a6c674e649db82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_c4e484615c088e85.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_4208eecef5708c61.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_36879315443aa2d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_bfb73855ea0c9016.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_e3943e34d1f5f063.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_82f976fe667a7a0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01_hu_f3cebeb84873cee6.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_36879315443aa2d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_bfb73855ea0c9016.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_e3943e34d1f5f063.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_82f976fe667a7a0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-1_hu_f3cebeb84873cee6.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-01.webp"
+              alt="galeria/exp_expo-mil-mnqsces-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4589,19 +4587,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_edce8fbbb543be3.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_352047ff4c11aace.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_7e761053a5af8d0a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_5d083b248f05f473.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_cec152df2ff5e7bf.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_edce8fbbb543be3.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_352047ff4c11aace.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_7e761053a5af8d0a.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_5d083b248f05f473.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_cec152df2ff5e7bf.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_36791d7441220363.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_fbc1b46de0ee4999.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_d693fdb9b1f1e967.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_19f3828244ffcaa3.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02_hu_8168e60aa03d3ba0.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_36791d7441220363.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_fbc1b46de0ee4999.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_d693fdb9b1f1e967.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_19f3828244ffcaa3.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-2_hu_8168e60aa03d3ba0.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-02.webp"
+              alt="galeria/exp_expo-mil-mnqsces-2.webp"
               loading="lazy"
               width="2400"
               height="1619" />
@@ -4682,19 +4680,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_73676969b3f653fa.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_ee9b7f73d9637991.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_c445fc1415fcac93.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_561a38e05a4c404a.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_13d2397c10f58ca.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_73676969b3f653fa.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_ee9b7f73d9637991.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_c445fc1415fcac93.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_561a38e05a4c404a.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_13d2397c10f58ca.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_7eeb1a6b670ba218.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_3425849617606bd2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_e7962633f9ac4ba4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_72f0ab6fd2a2fd86.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03_hu_64d6112ad042280e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_7eeb1a6b670ba218.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_3425849617606bd2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_e7962633f9ac4ba4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_72f0ab6fd2a2fd86.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-3_hu_64d6112ad042280e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-03.webp"
+              alt="galeria/exp_expo-mil-mnqsces-3.webp"
               loading="lazy"
               width="1600"
               height="1057" />
@@ -4775,19 +4773,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_81c933b9862359d3.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_c12ddc89e987b028.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_3b593515c025f528.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_4651908c2c0d60b8.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_bc6d620535cc396e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_81c933b9862359d3.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_c12ddc89e987b028.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_3b593515c025f528.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_4651908c2c0d60b8.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_bc6d620535cc396e.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_4b2278fa5f97d92d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_d0b27097d6bf4fbe.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_3f6217c074ca956c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_5712a45c458a8804.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04_hu_9f52857aa5af4d1e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_4b2278fa5f97d92d.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_d0b27097d6bf4fbe.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_3f6217c074ca956c.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_5712a45c458a8804.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-4_hu_9f52857aa5af4d1e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-04.webp"
+              alt="galeria/exp_expo-mil-mnqsces-4.webp"
               loading="lazy"
               width="2400"
               height="2027" />
@@ -4868,19 +4866,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_e1921327d895d698.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_111e9e8a1a17b656.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_77ae03b16eadf729.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_2221b6ada2bf8d7d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_55dbf8d01fab8cf6.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_e1921327d895d698.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_111e9e8a1a17b656.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_77ae03b16eadf729.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_2221b6ada2bf8d7d.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_55dbf8d01fab8cf6.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_db21e10f54a93962.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_8ed2153aff7b9f8c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_72b46168b0ebfdad.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_622fc895da59d0af.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05_hu_a3b65322e98a469.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_db21e10f54a93962.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_8ed2153aff7b9f8c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_72b46168b0ebfdad.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_622fc895da59d0af.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-5_hu_a3b65322e98a469.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-05.webp"
+              alt="galeria/exp_expo-mil-mnqsces-5.webp"
               loading="lazy"
               width="2400"
               height="1809" />
@@ -4961,19 +4959,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_c7f964f9ca29ccdb.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_daa0baf4e99aa68b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_4c3da7e1eba389a4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_95425caa1eda2235.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_c2047828c8aad1e6.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_c7f964f9ca29ccdb.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_daa0baf4e99aa68b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_4c3da7e1eba389a4.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_95425caa1eda2235.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_c2047828c8aad1e6.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_7e59d696ad50e02b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_7be11aaf8f16d037.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_19eddd04bea6fbf6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_724400c66058f3c4.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06_hu_76487c26bb7f175e.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_7e59d696ad50e02b.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_7be11aaf8f16d037.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_19eddd04bea6fbf6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_724400c66058f3c4.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-6_hu_76487c26bb7f175e.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-06.webp"
+              alt="galeria/exp_expo-mil-mnqsces-6.webp"
               loading="lazy"
               width="2400"
               height="1800" />
@@ -5054,19 +5052,19 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_80edbf06efcd5d06.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_2d05313706e08e71.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_18e7f23d6d659409.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_eeceec7810137f52.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_54e5dcf17bd76a99.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_80edbf06efcd5d06.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_2d05313706e08e71.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_18e7f23d6d659409.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_eeceec7810137f52.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_54e5dcf17bd76a99.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_6973e164b0a58961.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_ff87209d9255037c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_246079b6686574d6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_15094a7ad17dfbc8.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07_hu_f36c4f2dca184bd5.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_6973e164b0a58961.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_ff87209d9255037c.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_246079b6686574d6.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_15094a7ad17dfbc8.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/galeria/exp_expo-mil-mnqsces-7_hu_f36c4f2dca184bd5.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_exposicion-mil-mundos-negros-que-se-conectan-entre-si-07.webp"
+              alt="galeria/exp_expo-mil-mnqsces-7.webp"
               loading="lazy"
               width="1600"
               height="1066" />

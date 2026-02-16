@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: var(--color-golden-yellow);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: var(--color-golden-yellow);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4327,6 +4328,7 @@ if (typeof initHeaderOnReady === "function") {
 
       
 
+
       <div class="asamblea-info-gente-container-desktop">
         <div class="asamblea-info-gente">
           
@@ -4534,13 +4536,9 @@ if (typeof initHeaderOnReady === "function") {
 
 
   
-  
-    <div class="asamblea-single-section asamblea-single-desarrollo">
-      <div class="asamblea-single-section-content">
-        La conversación permitió reconocer los mundos posibles que ya existen: planes de vida, luchas y proyectos de cada una de las personas asamblearias y afirmar el título del salón no como una metáfora, una idea poética o un horizonte de posibilidades, sino como una realidad de muchos territorios, comunidades y personas que habitan el Cauca.
-      </div>
-    </div>
-  
+  <section class="pc-section-band pc-stage-desarrollo bg-asambleas-list text-white">
+          <div class="pc-section-content">La conversación permitió reconocer los mundos posibles que ya existen: planes de vida, luchas y proyectos de cada una de las personas asamblearias y afirmar el título del salón no como una metáfora, una idea poética o un horizonte de posibilidades, sino como una realidad de muchos territorios, comunidades y personas que habitan el Cauca.</div>
+        </section>
 
 
   
@@ -4635,19 +4633,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_ae67955af90ab4e2.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_338bae977c68a845.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_a92ba5f9e3ad4631.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_5e52b768fd000c33.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_b5eddc4d80734942.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_ae67955af90ab4e2.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_338bae977c68a845.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_a92ba5f9e3ad4631.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_5e52b768fd000c33.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_b5eddc4d80734942.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_89a0a62269c12225.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_6c463336b49c3db9.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_c326c8de4b44d4bd.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_2c6deb8d6caf4d6d.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-01_hu_2e3b62232e90d59d.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_89a0a62269c12225.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_6c463336b49c3db9.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_c326c8de4b44d4bd.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_2c6deb8d6caf4d6d.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-1_hu_2e3b62232e90d59d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-01.webp"
+              alt="galeria/asa_terc-asamblea-dmp-1.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4728,19 +4726,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_2c4205624efbd6c2.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_9b72b7729ca7fde7.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_12de7ed5da87f263.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_99bd95a6d7709231.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_914adb190b29cc1e.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_2c4205624efbd6c2.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_9b72b7729ca7fde7.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_12de7ed5da87f263.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_99bd95a6d7709231.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_914adb190b29cc1e.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_84facedd2774349a.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_1d4ecc1805058b61.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_49d1b39add5fc9da.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_f1e2bc062aa9aec1.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-02_hu_f199c40662ca4298.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_84facedd2774349a.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_1d4ecc1805058b61.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_49d1b39add5fc9da.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_f1e2bc062aa9aec1.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-2_hu_f199c40662ca4298.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-02.webp"
+              alt="galeria/asa_terc-asamblea-dmp-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4821,19 +4819,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_95151e7858376f61.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_7b35fc33819e94ea.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_a80855a32c116aaa.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_18b00fe1c54542f5.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_eb5a23711048d95d.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_95151e7858376f61.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_7b35fc33819e94ea.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_a80855a32c116aaa.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_18b00fe1c54542f5.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_eb5a23711048d95d.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_df895051ee254d88.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_684a1eb93f6ae01b.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_8e1234e709bb9520.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_d8b7679f4c0d878.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-03_hu_baa53b187573739f.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_df895051ee254d88.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_684a1eb93f6ae01b.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_8e1234e709bb9520.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_d8b7679f4c0d878.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-3_hu_baa53b187573739f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-03.webp"
+              alt="galeria/asa_terc-asamblea-dmp-3.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4914,19 +4912,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_6808675e464f301d.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_7199ce9bdda8713f.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_3b575cccdd673dfe.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_e3d19259ecabbd38.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_9cca31b7941fac23.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_6808675e464f301d.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_7199ce9bdda8713f.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_3b575cccdd673dfe.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_e3d19259ecabbd38.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_9cca31b7941fac23.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_e5e33bcfe9a96078.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_ba87abe4ffbb320f.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_64f3eafff9012ea4.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_201061e9e91cfeca.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-04_hu_c9ed9438d3ec6d7a.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_e5e33bcfe9a96078.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_ba87abe4ffbb320f.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_64f3eafff9012ea4.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_201061e9e91cfeca.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-4_hu_c9ed9438d3ec6d7a.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-04.webp"
+              alt="galeria/asa_terc-asamblea-dmp-4.webp"
               loading="lazy"
               width="2400"
               height="1603" />
@@ -5007,19 +5005,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_242f881a4b651c3e.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_60739168d84c8d63.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_ce19a2f9accc4d6a.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_43fb50eeb09e92f6.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_4954ef47e8777f5c.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_242f881a4b651c3e.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_60739168d84c8d63.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_ce19a2f9accc4d6a.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_43fb50eeb09e92f6.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_4954ef47e8777f5c.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_5b7e571afdcf98cf.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_a7e9df4fc922a89f.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_798f8615332d9e7b.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_30da1cda38fe3c59.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-05_hu_e2adffaac24fa46d.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_5b7e571afdcf98cf.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_a7e9df4fc922a89f.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_798f8615332d9e7b.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_30da1cda38fe3c59.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-5_hu_e2adffaac24fa46d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-05.webp"
+              alt="galeria/asa_terc-asamblea-dmp-5.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5100,19 +5098,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_a1ed745a735659b8.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_73c98a2c461808ba.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_4f61b588be6469e5.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_4879fdf1f47ab164.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_58ce5ad59f47f67f.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_a1ed745a735659b8.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_73c98a2c461808ba.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_4f61b588be6469e5.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_4879fdf1f47ab164.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_58ce5ad59f47f67f.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_a24a1152bdb6355a.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_420aa03278235c26.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_f53b0cc29ee94c22.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_bee513bfc3cbcafe.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-06_hu_5682ce222c05ee1f.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_a24a1152bdb6355a.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_420aa03278235c26.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_f53b0cc29ee94c22.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_bee513bfc3cbcafe.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6_hu_5682ce222c05ee1f.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-06.webp"
+              alt="galeria/asa_terc-asamblea-dmp-6.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5193,19 +5191,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_1afc866c63fbf5e.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_348ffcf23fa8cc23.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_5c5c92d59fb13801.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_bb1fb7c50764de88.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_b9fb2704d63086c9.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_1afc866c63fbf5e.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_348ffcf23fa8cc23.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_5c5c92d59fb13801.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_bb1fb7c50764de88.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_b9fb2704d63086c9.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07.webp"
+              src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7.webp"
               
-                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_9297a6e45da28007.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_3ae9abdb0d76e843.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_c6d326ed142c1956.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_537d2610ed37b831.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_tercera-asamblea-de-mundos-posibles-07_hu_f1d027fbdbee3af2.webp 1280w"
+                srcset="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_9297a6e45da28007.webp 320w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_3ae9abdb0d76e843.webp 640w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_c6d326ed142c1956.webp 768w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_537d2610ed37b831.webp 1024w, /kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-7_hu_f1d027fbdbee3af2.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/asa_tercera-asamblea-de-mundos-posibles-07.webp"
+              alt="galeria/asa_terc-asamblea-dmp-7.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -5275,13 +5273,9 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  
-    <div class="asamblea-single-section asamblea-single-propuestas">
-      <div class="asamblea-single-section-content">
-        En este espacio, abierto al público, se realizó también un ejercicio de escucha colectiva de una pieza sonora realizada con fragmentos de audios que lxs integrantes del equipo curatorial, pedagógico y de mediación hizo, dirigiendo un mensaje a unx mayorx o líder/lideresa de la asamblea sobre cómo su orientación se veía reflejadas en la programación o configuración de esta versión del Salón Nacional.
-      </div>
-    </div>
-  
+  <div class="as-sections-post-gallery"><section class="pc-section-band pc-stage-propuestas bg-programa-curatorial text-dark-brown">
+              <div class="pc-section-content">En este espacio, abierto al público, se realizó también un ejercicio de escucha colectiva de una pieza sonora realizada con fragmentos de audios que lxs integrantes del equipo curatorial, pedagógico y de mediación hizo, dirigiendo un mensaje a unx mayorx o líder/lideresa de la asamblea sobre cómo su orientación se veía reflejadas en la programación o configuración de esta versión del Salón Nacional.</div>
+            </section></div>
 
       </section>
     </main>

@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4144,17 +4145,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4500,19 +4498,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_39c704a47fd1cf34.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_ff4760130c0ec6f6.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_4c682ad94b9a9b3a.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_f411858322e2900f.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_71b93786a9687a4.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_39c704a47fd1cf34.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_ff4760130c0ec6f6.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_4c682ad94b9a9b3a.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_f411858322e2900f.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_71b93786a9687a4.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01.webp"
+              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_2577932fef7d5b55.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_74c766ad8c86be9a.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_dc39de9a3d11220b.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_c2700e57ff698fd9.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-01_hu_4a1d05d05dc1f008.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_2577932fef7d5b55.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_74c766ad8c86be9a.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_dc39de9a3d11220b.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_c2700e57ff698fd9.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-1_hu_4a1d05d05dc1f008.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/viv_fiesta-popular-en-el-centro-de-popayan-01.webp"
+              alt="galeria/viv_fies-popular-eecdp-1.webp"
               loading="lazy"
               width="2400"
               height="1757" />
@@ -4593,19 +4591,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_ece19993764156ef.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_88a717e80adab0d5.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_75cc47d75dbe1223.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_d318f4be41dd90c9.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_a63ba46face3fce6.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_ece19993764156ef.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_88a717e80adab0d5.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_75cc47d75dbe1223.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_d318f4be41dd90c9.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_a63ba46face3fce6.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02.webp"
+              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_5e38b013fd608e9b.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_4f559bfd2a1c3b98.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_db770ba8a00403d9.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_c458ef5995955498.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-02_hu_b25c7dc1e69c14d9.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_5e38b013fd608e9b.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_4f559bfd2a1c3b98.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_db770ba8a00403d9.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_c458ef5995955498.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-2_hu_b25c7dc1e69c14d9.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/viv_fiesta-popular-en-el-centro-de-popayan-02.webp"
+              alt="galeria/viv_fies-popular-eecdp-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4686,19 +4684,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_513084ca0f420ef1.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_813543d723d13f67.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_2135cd00081fa2de.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_51bd5120579764bc.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_936e906e28b1cce4.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_513084ca0f420ef1.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_813543d723d13f67.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_2135cd00081fa2de.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_51bd5120579764bc.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_936e906e28b1cce4.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03.webp"
+              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_d0cd428f870d6fc.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_6e167bfe635b002b.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_850f905d9932f923.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_260a93aa5efd1e9f.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-03_hu_ebe0862a40cfe74d.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_d0cd428f870d6fc.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_6e167bfe635b002b.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_850f905d9932f923.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_260a93aa5efd1e9f.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-3_hu_ebe0862a40cfe74d.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/viv_fiesta-popular-en-el-centro-de-popayan-03.webp"
+              alt="galeria/viv_fies-popular-eecdp-3.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4779,19 +4777,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_cacb340365d8c566.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_99357a930f8bc3d1.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_fb485f5453638ee8.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_9e59b65c6c4eef67.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_d8d1dfe08c787706.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_cacb340365d8c566.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_99357a930f8bc3d1.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_fb485f5453638ee8.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_9e59b65c6c4eef67.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_d8d1dfe08c787706.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04.webp"
+              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_3124071f97227e25.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_31476b9ee0b6952e.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_81e3db169506e443.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_3e666ebbd6ffa868.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-04_hu_1944d1a8f394681a.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_3124071f97227e25.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_31476b9ee0b6952e.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_81e3db169506e443.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_3e666ebbd6ffa868.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-4_hu_1944d1a8f394681a.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/viv_fiesta-popular-en-el-centro-de-popayan-04.webp"
+              alt="galeria/viv_fies-popular-eecdp-4.webp"
               loading="lazy"
               width="2400"
               height="1668" />
@@ -4872,19 +4870,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_91f64af50293e758.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_a956f7eac7163b8a.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_a9af052d3dd783ae.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_2d17bce4fedd27a1.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_e949cac7c8cce042.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_91f64af50293e758.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_a956f7eac7163b8a.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_a9af052d3dd783ae.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_2d17bce4fedd27a1.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_e949cac7c8cce042.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05.webp"
+              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_141e01c5de71388f.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_5a78e6776d277c23.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_1af5a2c88b974784.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_db880e9018e4f9e3.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-05_hu_22b255a3d4a9fc9a.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_141e01c5de71388f.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_5a78e6776d277c23.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_1af5a2c88b974784.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_db880e9018e4f9e3.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-5_hu_22b255a3d4a9fc9a.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/viv_fiesta-popular-en-el-centro-de-popayan-05.webp"
+              alt="galeria/viv_fies-popular-eecdp-5.webp"
               loading="lazy"
               width="2400"
               height="1507" />
@@ -4965,19 +4963,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_6037eb78f89657a3.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_b987975cdaafe87f.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_22c0ac817a8957b0.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_461ae0a5d2dc9082.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_3892920a6b0745ac.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_6037eb78f89657a3.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_b987975cdaafe87f.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_22c0ac817a8957b0.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_461ae0a5d2dc9082.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_3892920a6b0745ac.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06.webp"
+              src="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6.webp"
               
-                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_15f50e19ab82fde2.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_2843ca56cdbb62d7.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_4fef2387e91b9da9.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_2566e36ebf7c116a.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fiesta-popular-en-el-centro-de-popayan-06_hu_57532b552d58404.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_15f50e19ab82fde2.webp 320w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_2843ca56cdbb62d7.webp 640w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_4fef2387e91b9da9.webp 768w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_2566e36ebf7c116a.webp 1024w, /kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/galeria/viv_fies-popular-eecdp-6_hu_57532b552d58404.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/viv_fiesta-popular-en-el-centro-de-popayan-06.webp"
+              alt="galeria/viv_fies-popular-eecdp-6.webp"
               loading="lazy"
               width="2400"
               height="1600" />

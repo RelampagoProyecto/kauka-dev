@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: rgb(68, 34, 8);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: rgb(68, 34, 8);
 
      
     --mobile-home-color: #ffffff;
@@ -4049,7 +4049,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4133,17 +4134,14 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+
   
+  
+  
+  
+
   
     
-      
-    
-  
-  
-  
-  
-  
-  
     <div class="proyecto-contenido-container">
       <div
         id="proyecto-contenido"
@@ -4416,19 +4414,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_78b09c1738faac05.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_2fba5ddb620918fe.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_f13d3eee31272abc.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_761c7536f7ea7c40.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_2428ee312e427910.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_78b09c1738faac05.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_2fba5ddb620918fe.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_f13d3eee31272abc.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_761c7536f7ea7c40.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_2428ee312e427910.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_2e7784de991803f6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_887c08c823cfc692.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_6180f2f070152105.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_2423d3d281971dc3.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-01_hu_7fc9df22df4fc27b.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_2e7784de991803f6.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_887c08c823cfc692.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_6180f2f070152105.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_2423d3d281971dc3.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-1_hu_7fc9df22df4fc27b.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_performance-albo-01.webp"
+              alt="galeria/exp_perf-albo-1.webp"
               loading="lazy"
               width="2400"
               height="3754" />
@@ -4509,19 +4507,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_f24477354ba1c1f2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_4c8a4828d0ebeb3b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_32840132ced6a8c2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_c5166c54c7364545.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_2a27a45a483c62a2.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_f24477354ba1c1f2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_4c8a4828d0ebeb3b.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_32840132ced6a8c2.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_c5166c54c7364545.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_2a27a45a483c62a2.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_d2eee6401300feed.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_da2adf316b1cf617.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_f3a218de5d28dc82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_c37f9e0bbfcb2a68.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-02_hu_64cfc2c511662abc.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_d2eee6401300feed.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_da2adf316b1cf617.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_f3a218de5d28dc82.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_c37f9e0bbfcb2a68.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-2_hu_64cfc2c511662abc.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_performance-albo-02.webp"
+              alt="galeria/exp_perf-albo-2.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4602,19 +4600,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_e60e7e80d611353e.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_6daf23c14e8403ba.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_73ea56c5e52e25e1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_c1c93b5105280145.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_6a3267a7eb6752c5.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_e60e7e80d611353e.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_6daf23c14e8403ba.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_73ea56c5e52e25e1.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_c1c93b5105280145.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_6a3267a7eb6752c5.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_5604fc1b0c59ef84.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_f2ac43f85b1c2b17.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_2bd55074dcfcb9d5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_136b79a99d0db38e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-03_hu_ab813983680f0f95.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_5604fc1b0c59ef84.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_f2ac43f85b1c2b17.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_2bd55074dcfcb9d5.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_136b79a99d0db38e.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-3_hu_ab813983680f0f95.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_performance-albo-03.webp"
+              alt="galeria/exp_perf-albo-3.webp"
               loading="lazy"
               width="2400"
               height="3425" />
@@ -4695,19 +4693,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_1120307a7f8bb00f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_4dcb09de6c48bd52.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_727568aa59936190.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_b06ddd8dc1b58220.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_28e6030ffcfb55de.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_1120307a7f8bb00f.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_4dcb09de6c48bd52.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_727568aa59936190.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_b06ddd8dc1b58220.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_28e6030ffcfb55de.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_a95e8e4e7f7c11d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_3eea8ad815ae9d6.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_ed0a6a994de9d490.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_e9e03ca6a054bac0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-04_hu_a49368df6b1a16de.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_a95e8e4e7f7c11d2.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_3eea8ad815ae9d6.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_ed0a6a994de9d490.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_e9e03ca6a054bac0.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-4_hu_a49368df6b1a16de.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_performance-albo-04.webp"
+              alt="galeria/exp_perf-albo-4.webp"
               loading="lazy"
               width="2400"
               height="1600" />
@@ -4788,19 +4786,19 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_6ddbfe9517cb8c96.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_de7cdb7cb8bef0f2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_73cc755779d0ceef.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_f292fee794811897.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_34c65b35f6cc6d17.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_6ddbfe9517cb8c96.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_de7cdb7cb8bef0f2.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_73cc755779d0ceef.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_f292fee794811897.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_34c65b35f6cc6d17.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05.webp"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5.webp"
               
-                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_1ab5b5f5713aab00.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_cebf10e84974fb70.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_af12561b91fb0e47.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_bc9e901954e6d53a.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_performance-albo-05_hu_9a2645e379f33465.webp 1280w"
+                srcset="/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_1ab5b5f5713aab00.webp 320w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_cebf10e84974fb70.webp 640w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_af12561b91fb0e47.webp 768w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_bc9e901954e6d53a.webp 1024w, /kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/galeria/exp_perf-albo-5_hu_9a2645e379f33465.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt="galeria/exp_performance-albo-05.webp"
+              alt="galeria/exp_perf-albo-5.webp"
               loading="lazy"
               width="2400"
               height="3472" />

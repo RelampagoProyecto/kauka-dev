@@ -220,10 +220,10 @@
 <style>
   :root {
      
-    --mobile-menu-color: ZgotmplZ;
+    --mobile-menu-color: var(--color-golden-yellow);
 
      
-    --submenu-indicator-color: ZgotmplZ;
+    --submenu-indicator-color: var(--color-golden-yellow);
 
      
     --mobile-home-color: #ffffff;
@@ -4047,7 +4047,8 @@
 
         new PagefindUI({
           element: "#search",
-          pageSize: isMobile ? 5 : 7,
+          pageSize: isMobile ? 1 : 3,
+          debounceTimeout: 500,
           showSubResults: false,
           processTerm: normalizeSearchTerm,
           translations: {
@@ -4410,6 +4411,51 @@ if (typeof initHeaderOnReady === "function") {
           </div>
         </article>
       
+        
+        
+        
+
+
+        <article class="asambleas-list-item">
+          
+          
+
+
+          <div class="asambleas-list-item_gallery">
+            
+              <div class="asambleas-list-image">
+                <img
+                  src="/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/portada.webp"
+                  alt="Cuarta asamblea de mundos posibles"
+                  loading="lazy" />
+              </div>
+            
+            <div class="asambleas-list-item_content"></div>
+
+            <div class="asambleas-list-item_content">
+              <header class="asambleas-list-header">
+                <h3 class="asambleas-list-title">
+                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/" class="asambleas-list-link">
+                    
+                      <span class="asambleas-list-orden"
+                        > 4</span
+                      >
+                    
+                    <span class="asambleas-list-titulo">Cuarta asamblea de mundos posibles</span>
+                  </a>
+                </h3>
+              </header>
+
+              
+                <p class="asambleas-list-summary">
+                  La Asamblea de cierre se realizó en el litoral pacífico caucano, recibida por la mayora Elena Hinestroza y el curador Eblin Grueso, con el objetivo de construir los Mandatos del 47 SNA.
+                </p>
+                <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
+              
+            </div>
+          </div>
+        </article>
+      
     </div>
 
     
@@ -4575,6 +4621,61 @@ if (typeof initHeaderOnReady === "function") {
               <img
                 src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/portada.webp"
                 alt="Tercera asamblea de mundos posibles"
+                class="asambleas-list-image-desktop"
+                loading="lazy" />
+            
+          </div>
+        </article>
+      
+        
+        
+        
+        
+        
+        
+        
+
+
+        <article class="asambleas-list-item-desktop">
+          
+          <div class="asambleas-list-content-col bg-asamblea-gallery_2">
+            
+              <div class="asambleas-list-orden-desktop">
+                 4
+              </div>
+            
+
+
+            <h3 class="asambleas-list-titulo-desktop">
+              <a
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/"
+                class="transition-colors duration-200 hover:text-white/70">
+                Cuarta asamblea de mundos posibles
+              </a>
+            </h3>
+
+            
+              <p class="asambleas-list-resumen-desktop">
+                La Asamblea de cierre se realizó en el litoral pacífico caucano, recibida por la mayora Elena Hinestroza y el curador Eblin Grueso, con el objetivo de construir los Mandatos del 47 SNA.
+                
+              </p>
+
+              <a
+                href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/"
+                class="asambleas-list-arrow-desktop">
+                <span class="asambleas-list-arrow-text" aria-hidden="true"
+                  >→</span
+                >
+              </a>
+            
+          </div>
+
+          
+          <div class="asambleas-list-image-col">
+            
+              <img
+                src="/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/portada.webp"
+                alt="Cuarta asamblea de mundos posibles"
                 class="asambleas-list-image-desktop"
                 loading="lazy" />
             

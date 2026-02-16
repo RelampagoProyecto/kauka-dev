@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guardia Indigena on KAUKA</title>
+    <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/guardia-indigena/</link>
+    <description>Recent content in Guardia Indigena on KAUKA</description>
+    <generator>Hugo</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/guardia-indigena/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Encuentro de Guardias. Cimarrona, Indigena y Campesina</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/encuentro-de-guardias/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/encuentro-de-guardias/</guid>
+      <description>&lt;p&gt;Espacio de diálogo y fortalecimiento entre las guardias cimarrona, indígena y campesina, pilares de la protección territorial y la autonomía comunitaria.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
