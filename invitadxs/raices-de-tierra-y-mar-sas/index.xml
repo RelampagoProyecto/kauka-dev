@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raíces De Tierra Y Mar SAS on KAUKA</title>
+    <title>Raíces de Tierra y Mar SAS on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/raices-de-tierra-y-mar-sas/</link>
-    <description>Recent content in Raíces De Tierra Y Mar SAS on KAUKA</description>
+    <description>Recent content in Raíces de Tierra y Mar SAS on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate>Tue, 10 Feb 2026 15:54:33 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/raices-de-tierra-y-mar-sas/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Balsada de cierre del 47SNA &#34;Alumbrar el río Guapi&#34;</title>
-      <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/</link>
-      <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
-      <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/</guid>
-      <description>&lt;p&gt;La balsada es una manifestación cultural comunitaria del Pacífico colombiano. En Guapi, es referente y acontecimiento mayor: su escala, su carácter nocturno y su relación íntima con el calendario ritual convierten el río en un espacio de celebración colectiva.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
