@@ -78,7 +78,7 @@
   
 
 
-<title>Inauguración Exposicion: &#39;Residencias artísticas Popayork en Minga&#39; y Lanzamiento fanzine: &#39;Corinto: estamos aquí, estamos vivos, resistimos&#39;</title>
+<title>Inauguración de exposición &#39;Residencias Artísticas Popayork en Minga&#39; y lanzamiento de Fanzine &#39;Corinto&#39;</title>
 
 
 
@@ -142,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Inauguración Exposicion: &#39;Residencias artísticas Popayork en Minga&#39; y Lanzamiento fanzine: &#39;Corinto: estamos aquí, estamos vivos, resistimos&#39;" />
+<meta property="og:title" content="Inauguración de exposición &#39;Residencias Artísticas Popayork en Minga&#39; y lanzamiento de Fanzine &#39;Corinto&#39;" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/inauguracion-exposicion-residencias-artisticas-popayork-en-minga-y-lanzamiento-fanzine-corinto/" />
 
 
-<meta name="twitter:title" content="Inauguración Exposicion: &#39;Residencias artísticas Popayork en Minga&#39; y Lanzamiento fanzine: &#39;Corinto: estamos aquí, estamos vivos, resistimos&#39;" />
+<meta name="twitter:title" content="Inauguración de exposición &#39;Residencias Artísticas Popayork en Minga&#39; y lanzamiento de Fanzine &#39;Corinto&#39;" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,22 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4132,15 +4188,8 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-categorias" class="encuentro-categorias">
       
         
-          <a href="/expositivo/">
-            Expositivo
-            
-              ,
-            
-          </a>
-        
-          <a href="/editorial/">
-            Editorial
+          <a href="/vivencial/">
+            Vivencial
             
           </a>
         
@@ -4149,13 +4198,13 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Inauguración Exposicion: &#39;Residencias artísticas Popayork en Minga&#39; y Lanzamiento fanzine: &#39;Corinto: estamos aquí, estamos vivos, resistimos&#39;
+      Inauguración de exposición &#39;Residencias Artísticas Popayork en Minga&#39; y lanzamiento de Fanzine &#39;Corinto&#39;
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Muestra de resultados de las residencias artísticas que exploran las tensiones y potencias de Popayán, junto al lanzamiento del fanzine creado por jóvenes de Corinto como testimonio de vida y resistencia.</p>
+  <div class="page-content-text"><p>Actividad vinculada a la Residencia artística POPAYORK y Hogar Minga Prácticas Decoloniales.</p>
 </div>
 </div>
 
@@ -4179,11 +4228,10 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
             28/11/2025
           </div>
@@ -4192,12 +4240,23 @@ if (typeof initHeaderOnReady === "function") {
     </div>
 
     
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            28/11/2025
+          </div>
+        </div>
+      </div>
+    
+
+    
     <div class="encuentro-info-info-container">
       
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          6:30 p.m. - 9:00 p.m.
+          4:00 p.m. - 11:59 p.m.
         </div>
       </div>
 
@@ -4206,11 +4265,16 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Casa Albán<br />
-            Popayán
+            Residencia artística POPAYORK y Hogar Minga Prácticas Decoloniales<br />
+            
           
 
           
+          
+            <div class="encuentro-info-notas-desktop">
+              •
+              4:00 p.m. - amanecer.
+            </div>
           
         </div>
       </div>
@@ -4219,11 +4283,16 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          6:30 p.m. - 9:00 p.m.
+          4:00 p.m. - 11:59 p.m.
         </div>
       </div>
 
       
+      
+        <div class="encuentro-info-notas">
+          •
+          4:00 p.m. - amanecer.
+        </div>
       
 
       
@@ -4235,16 +4304,16 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/artistas-residentes-popayork/">
-                      Artistas Residentes Popayork
+                    <a href="/kauka-dev/invitadxs/popayork-residencia-artistica/">
+                      Popayork Residencia Artística
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/colectivos-juveniles-de-corinto/">
-                      Colectivos Juveniles De Corinto
+                    <a href="/kauka-dev/invitadxs/minga-practicas-decoloniales/">
+                      Minga Prácticas De-coloniales
                     </a>
                   
                 </li>
@@ -4264,16 +4333,16 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/artistas-residentes-popayork/">
-                    Artistas Residentes Popayork
+                  <a href="/kauka-dev/invitadxs/popayork-residencia-artistica/">
+                    Popayork Residencia Artística
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/colectivos-juveniles-de-corinto/">
-                    Colectivos Juveniles De Corinto
+                  <a href="/kauka-dev/invitadxs/minga-practicas-decoloniales/">
+                    Minga Prácticas De-coloniales
                   </a>
                 
               </li>
@@ -4766,12 +4835,16 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
-    <p>Inauguración Exposicion: &#39;Residencias artísticas Popayork en Minga&#39; y Lanzamiento fanzine: &#39;Corinto: estamos aquí, estamos vivos, resistimos&#39;</p>
+    <p data-pagefind-meta="title">Inauguración de exposición &#39;Residencias Artísticas Popayork en Minga&#39; y lanzamiento de Fanzine &#39;Corinto&#39;</p>
+    <p>Inauguración de exposición &#39;Residencias Artísticas Popayork en Minga&#39; y lanzamiento de Fanzine &#39;Corinto&#39;</p>
 
     
       
@@ -4779,9 +4852,9 @@ if (typeof initHeaderOnReady === "function") {
         
           <ul>
             
-              <li>Artistas Residentes Popayork</li>
+              <li>Popayork Residencia Artística</li>
             
-              <li>Colectivos Juveniles De Corinto</li>
+              <li>Minga Prácticas De-coloniales</li>
             
           </ul>
         

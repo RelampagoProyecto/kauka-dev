@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4145,6 +4185,20 @@ if (typeof initHeaderOnReady === "function") {
       
     
   
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
 
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
@@ -4165,12 +4219,12 @@ if (typeof initHeaderOnReady === "function") {
     
       <div class="artista-term-content invitadx-rich-content">
         <p>Proyecto de creación artística colaborativa conformado por sabedoras y sabedores ancestrales, junto con profesionales y académicos, quienes desarrollan una propuesta estética sostenida por las relaciones ecológicas y culturales más-que-humanas. Recientemente ha recibido becas del Programa Nacional de Estímulos del Ministerio de las Culturas, las Artes y los Saberes de Colombia para los proyectos: Descolonización de la mirada: creación y reflexión sobre la Colección Quimbaya (2025); Proyecto de curaduría colaborativa (2024). Fue ganador de Proyecto Conversaciones en Kioscos. Arte, Derechos, Verdad, Universidad de York, Reino Unido (2023).</p>
-<p>Coordinador general: Mauricio Rivera Henao.<br>
-Coinvestigadores: Johanna Drews, Blanquita Richter, Fabián Gíl, Ana Bilbao.<br>
-Asistentes de investigación y creación: Duván Rivera Arcila, Eki Virto Drews, <br>
+<p><strong>Coordinador general:</strong> Mauricio Rivera Henao.<br>
+<strong>Coinvestigadores:</strong> Johanna Drews, Blanquita Richter, Fabián Gíl, Ana Bilbao.<br>
+<strong>Asistentes de investigación y creación:</strong> Duván Rivera Arcila, Eki Virto Drews, <br>
 Ana Cristina Zuleta, Camilo Calad, Fernando Hidalgo y Manuel Narváez.<br>
-Realización audiovisual: Beto Briceño, Andrea Cardona y Melissa Castro.<br>
-Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castaño, Coro, Camilo Jaramillo Pérez y María Paulina López Pérez.</p>
+<strong>Realización audiovisual:</strong> Beto Briceño, Andrea Cardona y Melissa Castro.<br>
+<strong>Agradecimientos especiales:</strong> Mauricio Vásquez, Natalia Largo, Juan Pablo Castaño, Coro, Camilo Jaramillo Pérez y María Paulina López Pérez.</p>
 
       </div>
     
@@ -4762,6 +4816,54 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
   
 
   
+    <div class="invitadx-secondary-sections">
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="gente-del-eco-quimbaya">Gente del ECO Quimbaya</h3>
+<p><em>Gente del ECO</em>
+<br>
+<em>Instalación y video</em>
+<br>
+<em>2025</em></p>
+<p>Cada pueblo, en cada geografía, encuentra su propia forma de vincularse con sus ancestros. Este proyecto tejió una espiral de ideas, palabras y acciones que, al concentrarse, emitieron un sonido capaz de trascender la reclamación para enraizarse en una concepción nueva y situada de la descolonización de la colección Quimbaya: los abuelos que reposaban bajo el “cuidado” del Museo de América en Madrid fueron guiados por el algodón en su camino de regreso a casa.</p>
+<p>La propuesta buscó restablecer una trama de resonancias temporales entre pasado, presente y futuro. En este sentido, el Bosque Kaukita (Risaralda) se configuró como un vórtice que, en sus entrañas, acogió el rezo de quienes habitaron el presente y convocó las voces del pasado. Por ello, quienes hicieron parte de este proceso se nombraron “Gente del ECO”. Este gesto constituyó uno de los pasos de un camino de sabiduría que entrelazó conocimientos de distintos pueblos, gentes, cordilleras y valles, en cuya memoria permanecieron el oro, lo funerario y el verdadero tesoro: el territorio.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Coordinador general: Mauricio Rivera Henao.
+<br /><br />
+Coinvestigadores: Johanna Drews, Blanquita Richter, Fabián Gíl, Ana Bilbao.
+<br /><br />
+Asistentes de investigación y creación: Duván Rivera Arcila, Eki Virto Drews, Ana Cristina Zuleta, Camilo Calad, Fernando Hidalgo y Manuel Narváez.
+<br /><br />
+Realización audiovisual: Beto Briceño, Andrea Cardona y Melissa Castro.
+<br /><br />
+Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castaño, Coro, Camilo Jaramillo Pérez y María Paulina López Pérez.
+<br /><br />
+Aliados: Programa Nacional de Estímulos del Ministerio de las Culturas, las Artes y los Saberes de Colombia. Beca Descolonización de la mirada: creación y reflexión sobre la Colección Quimbaya, 2025; Museo Nacional de Colombia; Universidad de York en el Reino Unido - Art Rights Truth; Bosque KAUKITÁ; Sala Arqueológica de la Fundación Hacienda Castilla de Pereira, y Comfenalco Antioquia.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Colecciones Quimbaya, seres vegetales y animales.</p>
+<p><strong>Territorios:</strong>
+<br />
+El trabajo de Gente del ECO es antecedido por un proceso de búsqueda de visión en el Bosque KAUKITÁ, en Pereira, y específicamente este proyecto se ha desarrollado en las ciudades de Pereira (Risaralda), Medellín (Antioquia) y Wampia (Cauca).</p>
+
+          </div>
+        </section>
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="gente-del-eco-quimbaya">Gente del ECO Quimbaya</h3>
+<p>Propone una ruta para descolonizar la Colección Quimbaya, un legado cultural orfebre probablemente producido entre los siglos IV y V d. C., enmarcado en un periodo más amplio de producción denominado Quimbaya temprano, datado entre los siglos III a. C. y III d. C. La Colección fue sustraída del actual departamento de Quindío a finales del siglo XIX.</p>
+<p>El Museo de América, en Madrid, España, ha preservado la Colección Quimbaya y enriquecido la mirada sobre ella a través del análisis y el estudio de las piezas, aun cuando su impronta las haya descontextualizado de la trama sutil de significados a la que pertenecieron. Por su parte, el Museo Nacional de Colombia ha buscado desde hace 135 años la protección de la colección, y desde hace cinco décadas se han propuesto múltiples intenciones de restitución al país por parte de diversas entidades colombianas.</p>
+<p>Nos acercamos a algunas de las piezas salvaguardadas en el Museo de América y a otras de la Sala Arqueológica de la Fundación Hacienda Castilla, en Pereira, Colombia, la cual ha adelantado procesos de rematriación y cuenta con una colección significativa de piezas cerámicas quimbaya (datadas de los siglos VII a XVI), cerca al sitio del despojo de los ajuares funerarios en Filandia y Quimbaya.</p>
+<p>La guía de los sabedores y sabedoras, bajo la Ley de Origen, conduce a sembrar gentes, con el fin de armonizar las relaciones y restituir el sutil tejido de significados de las piezas que componen la colección. Descolonizar la Colección Quimbaya supone transitar al pensamiento vegetal, en consonancia con la Ley de Origen, como respuesta al momento en que la transfiguración del metal para fines rituales se convirtió en “extractivismo” de la colección. Esta muestra contribuye desde la práctica artística al mandato de rematriación.</p>
+<div style="text-align: right;">Gente del ECO</div>
+          </div>
+        </section>
+      
+    </div>
+  
 
   
   
@@ -4905,6 +5007,11 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
     
       
       
+      
+      
+    
+      
+      
         
       
       
@@ -5135,14 +5242,6 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5152,6 +5251,11 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
       
       
         
+      
+      
+      
+      
+    
       
       
       
@@ -5259,11 +5363,21 @@ Agradecimientos especiales: Mauricio Vásquez, Natalia Largo, Juan Pablo Castañ
 
 
 
+
+
+  
+  
+  
+  
+  
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Gente del Eco</p>
     <p>Gente del Eco</p>
 
     

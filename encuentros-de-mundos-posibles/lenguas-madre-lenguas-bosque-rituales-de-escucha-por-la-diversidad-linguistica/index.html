@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,34 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4132,8 +4200,8 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-categorias" class="encuentro-categorias">
       
         
-          <a href="/academico/">
-            Academico
+          <a href="/vivencial/">
+            Vivencial
             
           </a>
         
@@ -4148,7 +4216,9 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-contenido" class="encuentro-contenido">
       
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Un círculo de palabra que explora la conexión vital entre lengua y territorio, resonando como un ritual de escucha y pervivencia cultural.</p>
+  <div class="page-content-text"><p>Con esta experiencia de escucha desde los activismos por las lenguas propias, promover reflexiones sobre la pluralidad de visiones y formas de vida que guardan las lenguas indígenas y afro tejiendo redes para enfrentar el riesgo constante que tienen de desaparecer.
+<br> <br>
+Performance a cargo de Mayora Amalia Vargas</p>
 </div>
 </div>
 
@@ -4172,17 +4242,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
-            28/11/2025
+            27/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            27/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4190,7 +4270,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          10:00 a.m. - 12:00 p.m.
+          6:00 p.m. - 8:30 p.m.
         </div>
       </div>
 
@@ -4212,7 +4292,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          10:00 a.m. - 12:00 p.m.
+          6:00 p.m. - 8:30 p.m.
         </div>
       </div>
 
@@ -4228,24 +4308,48 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/miguel-rocha-vivas/">
-                      Miguel Rocha Vivas
+                    <a href="/kauka-dev/invitadxs/amalia-vargas/">
+                      Amalia Vargas
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/clemencia-gomez/">
-                      Clemencia Gómez
+                    <a href="/kauka-dev/invitadxs/keiler-valdes/">
+                      Keiler Valdés
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/graciela-bolanos/">
-                      Graciela Bolaños
+                    <a href="/kauka-dev/invitadxs/dani-zelko/">
+                      Dani Zelko
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/fredy-chikangana/">
+                      Fredy Chikangana
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/mary-grueso/">
+                      Mary Grueso
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/barbara-muelas/">
+                      Bárbara Muelas
                     </a>
                   
                 </li>
@@ -4265,24 +4369,48 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/miguel-rocha-vivas/">
-                    Miguel Rocha Vivas
+                  <a href="/kauka-dev/invitadxs/amalia-vargas/">
+                    Amalia Vargas
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/clemencia-gomez/">
-                    Clemencia Gómez
+                  <a href="/kauka-dev/invitadxs/keiler-valdes/">
+                    Keiler Valdés
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/graciela-bolanos/">
-                    Graciela Bolaños
+                  <a href="/kauka-dev/invitadxs/dani-zelko/">
+                    Dani Zelko
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/fredy-chikangana/">
+                    Fredy Chikangana
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/mary-grueso/">
+                    Mary Grueso
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/barbara-muelas/">
+                    Bárbara Muelas
                   </a>
                 
               </li>
@@ -4301,7 +4429,7 @@ if (typeof initHeaderOnReady === "function") {
   <div class="encuentro-info-links-container">
     <div class="encuentro-info-diamonds-left"></div>
     <div class="encuentro-info-links-diamond">
-      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-28" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-27" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
 
     </div>
     <div class="encuentro-info-links-diamond">
@@ -4868,11 +4996,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Lenguas Madre, Lenguas Bosque. Rituales de escucha por la diversidad lingüística</p>
     <p>Lenguas Madre, Lenguas Bosque. Rituales de escucha por la diversidad lingüística</p>
 
     
@@ -4881,11 +5013,17 @@ if (typeof initHeaderOnReady === "function") {
         
           <ul>
             
-              <li>Miguel Rocha Vivas</li>
+              <li>Amalia Vargas</li>
             
-              <li>Clemencia Gómez</li>
+              <li>Keiler Valdés</li>
             
-              <li>Graciela Bolaños</li>
+              <li>Dani Zelko</li>
+            
+              <li>Fredy Chikangana</li>
+            
+              <li>Mary Grueso</li>
+            
+              <li>Bárbara Muelas</li>
             
           </ul>
         

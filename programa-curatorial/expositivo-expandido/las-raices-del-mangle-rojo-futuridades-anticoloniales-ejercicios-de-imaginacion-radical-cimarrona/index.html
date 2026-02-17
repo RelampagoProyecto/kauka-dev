@@ -229,18 +229,18 @@
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-golden-yellow);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-deep-pink);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-golden-yellow);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-deep-pink);
     --search-highlight-color: rgb(68, 34, 8);
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
 
      
-    --footer-stripe-1: rgba(230, 165, 65);
-    --footer-stripe-2: rgba(208, 69, 128);
+    --footer-stripe-1: rgba(230, 165, 65, 0.45);
+    --footer-stripe-2: rgba(2, 144, 173, 0.45);
   }
 </style>
 
@@ -281,16 +281,16 @@
 
 
 
-<header id="nav" class="header bg-programa-curatorial text-white">
+<header id="nav" class="header bg-expositivo text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-residencias nav-overlay"></div>
+  <div id="nav-overlay" class="bg-dark-cyan nav-overlay"></div>
   
   
-  <nav class="navbar bg-programa-curatorial text-white">
+  <nav class="navbar bg-expositivo text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -3683,7 +3683,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-programa-curatorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-expositivo text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -3985,7 +3985,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-programa-curatorial text-white">
+  <div class="navbar-search-bar bg-expositivo text-white">
     
 
 
@@ -4012,30 +4012,70 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-golden-yellow); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-golden-yellow); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-deep-pink); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-deep-pink); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4110,13 +4150,37 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
   bg-white
 " data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
 
 
+  
+  
   
   
 
@@ -4143,16 +4207,26 @@ if (typeof initHeaderOnReady === "function") {
   
     
     <div class="proyecto-contenido-container">
-      <div
-        id="proyecto-contenido"
-        class="proyecto-contenido text-deep-pink">
-        <div class="page-content-container ">
-  <div class="page-content-text"><p><strong>Participantes del laboratorio:</strong> Adri Capote Romero, Ángela Rodríguez, Cris Agredo, Duvan Saggnia, Flor Bárcenas Johan Mijail, Keyla Mariana Duffont, Lucas Loaiza (Lulo), María Alejandra Sánchez, Mother Star Nicki Brown, Pilar Madrid, Sirena Caicedo.</p>
+      <section
+        class="pc-section-band pc-section-band-intro
+          text-deep-pink
+        ">
+        <div class="pc-section-content"><p><strong>Laboratorio dirigido por</strong>
+<br>
+Iki Yos Piña Narváez
+<br>
+<strong>Pieza sonora, fotografía y textos</strong>
+<br>
+2025</p>
+<p>El laboratorio realizado en el Museo Arquidiocesano de Arte Religioso de Popayán se configuró como un espacio de imaginación radical travesti cimarrona, en el que se abrieron portales hacia tecnologías ancestrales de fuga y ruptura del tiempo colonial. Bajo la guía de Iki Yos Piña Narváez, este encuentro propuso habitar el quiebre como territorio fértil para la creación de ficciones especulativas que desafían las imposiciones estéticas coloniales y las formas contemporáneas de despojo. Desde la memoria de lxs ancestrxs, lxs participantes invocaron saberes fronterizos, abrazos de manglar, susurros del mar y cartografías imposibles que desbordaron el canon museal.</p>
+<p>Durante las sesiones se trabajó con diversos referentes que invitan a repensar la materia, los museos y las genealogías de los “condenados de la Tierra”. En la primera jornada, un jam literario permitió que lxs asistentes jugaran con las palabras, reescribieran textos y activaran colectivamente el poder de la voz, a veces entretejida con los cantos de Iki. En la segunda, se imaginaron dispositivos de camuflaje y trajes de invisibilidad creados con telas, flores artificiales, antifaces, gafas, coronas y otros elementos, reflexionando sobre qué cuerpos son vigilados y cómo reclamar la opacidad como derecho y estrategia política.</p>
+<p>El laboratorio reunió a integrantes de Furia Marika, En Boca Chiquita, Mariposas Negras, la Kiki House of Brown de Buenaventura, así como a lideresas trans y no binaries. Juntxs, activaron una atmósfera de futuro improbable, donde la ficción contracolonial se convirtió en herramienta de resistencia, cuidado y florecimiento colectivo.</p>
 </div>
-</div>
-
-      </div>
+      </section>
     </div>
+    
+      
+    
   
 
 
@@ -4873,6 +4947,23 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+              <div class="pc-section-content"><h3 id="presencias-humanas">Presencias humanas</h3>
+<p><strong>Participantes del laboratorio:</strong> Adri Capote Romero, Ángela Rodríguez, Cris Agredo, Duvan Saggnia, Flor Bárcenas, Johan Mijail, Keyla Mariana Duffont, Lucas Loaiza (Lulo), María Alejandra Sánchez, Mother Star Nicki Brown, Pilar Madrid y Sirena Caicedo.
+<br />
+<strong>Asistencia y producción:</strong> Daniela Tobar y Karen Torres.
+<br />
+<strong>Fotografías:</strong> Esmeralda Álvarez.
+<br />
+<strong>Registro en audio:</strong> Cine Cultivo.</p>
+<h3 id="presencias-más-que-humanas">Presencias más que humanas</h3>
+<p><strong>Altar:</strong> flores, fuego, amuletos, cacao, cauris y agua, entre otrxs.</p>
+<h3 id="territorios">Territorios</h3>
+<p>Venezuela, Barcelona, España, Popayán, Cauca, Colombia, Cali y Valle del Cauca.</p>
+</div>
+            </section></div>
+  
 
       </section>
     </main>
@@ -4884,11 +4975,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Las raíces del mangle rojo, futuridades anticoloniales: ejercicios de imaginación radical cimarrona</p>
     <p>Las raíces del mangle rojo, futuridades anticoloniales: ejercicios de imaginación radical cimarrona</p>
 
     

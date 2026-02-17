@@ -6,7 +6,7 @@
     <description>Recent content in Expositivo Expandido on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate>Tue, 17 Feb 2026 02:47:50 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 16:47:10 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/componentes/expositivo-expandido/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Encuentro en la casa Zapantera Negra</title>
@@ -83,7 +83,7 @@
       <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/</link>
       <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;&amp;ldquo;MANDATO POPULAR*&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;El jefe Seattle (pueblos Suquamish y Duwamish) dice: “La tierra no pertenece a los humanos, los humanos pertenecen a la tierra”.&lt;/p&gt;</description>
+      <description>&lt;p&gt;El jefe Seattle (pueblos Suquamish y Duwamish) dice: “La tierra no pertenece a los humanos, los humanos pertenecen a la tierra”.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exposición: Mil mundos negros que se conectan entre sí</title>
@@ -104,7 +104,7 @@
       <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/</link>
       <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Participantes del laboratorio:&lt;/strong&gt; Adri Capote Romero, Ángela Rodríguez, Cris Agredo, Duvan Saggnia, Flor Bárcenas Johan Mijail, Keyla Mariana Duffont, Lucas Loaiza (Lulo), María Alejandra Sánchez, Mother Star Nicki Brown, Pilar Madrid, Sirena Caicedo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Laboratorio dirigido por&lt;/strong&gt;&#xA;&lt;br&gt;&#xA;Iki Yos Piña Narváez&#xA;&lt;br&gt;&#xA;&lt;strong&gt;Pieza sonora, fotografía y textos&lt;/strong&gt;&#xA;&lt;br&gt;&#xA;2025&lt;/p&gt;</description>
     </item>
     <item>
       <title>Performance: ALBO</title>
@@ -112,6 +112,13 @@
       <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
       <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Desde el horizonte</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/</link>
+      <pubDate>Sun, 24 Nov 2024 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Corporación Manglaria&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Las proyecciones realizadas en el Parque del Samán en Santander de Quilichao y en MAMPO – Casa Arte en Popayán, hicieron parte de la curaduría audiovisual &lt;em&gt;Desde el horizonte&lt;/em&gt;, desarrollada en el marco del componente expositivo. Se configuraron como espacios de encuentro entre producciones audiovisuales y de conversaciones con sus realizadorxs, quienes compartieron los procesos de creación, los contextos territoriales y las decisiones narrativas que atraviesan sus producciones. De este modo, las proyecciones trascendieron el formato de exhibición para activarse como instancias de escucha, reflexión y construcción colectiva de sentido en diálogo con los públicos locales.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

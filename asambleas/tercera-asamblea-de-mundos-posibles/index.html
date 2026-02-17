@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4554,7 +4594,8 @@ if (typeof initHeaderOnReady === "function") {
 
 
   
-  <section class="pc-section-band pc-stage-desarrollo bg-asambleas-list text-white">
+  <section
+          class="pc-section-band pc-stage-desarrollo bg-asambleas-list text-white">
           <div class="pc-section-content">La conversación permitió reconocer los mundos posibles que ya existen: planes de vida, luchas y proyectos de cada una de las personas asamblearias y afirmar el título del salón no como una metáfora, una idea poética o un horizonte de posibilidades, sino como una realidad de muchos territorios, comunidades y personas que habitan el Cauca.</div>
         </section>
 
@@ -5291,7 +5332,8 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="as-sections-post-gallery"><section class="pc-section-band pc-stage-propuestas bg-programa-curatorial text-dark-brown">
+  <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-propuestas bg-programa-curatorial text-dark-brown">
               <div class="pc-section-content">En este espacio, abierto al público, se realizó también un ejercicio de escucha colectiva de una pieza sonora realizada con fragmentos de audios que lxs integrantes del equipo curatorial, pedagógico y de mediación hizo, dirigiendo un mensaje a unx mayorx o líder/lideresa de la asamblea sobre cómo su orientación se veía reflejadas en la programación o configuración de esta versión del Salón Nacional.</div>
             </section></div>
 
@@ -5305,11 +5347,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Tercera asamblea de mundos posibles</p>
     <p>Tercera asamblea de mundos posibles</p>
 
     

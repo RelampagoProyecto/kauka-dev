@@ -229,18 +229,18 @@
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-golden-yellow);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-deep-pink);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-golden-yellow);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-deep-pink);
     --search-highlight-color: rgb(68, 34, 8);
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
 
      
-    --footer-stripe-1: rgba(230, 165, 65);
-    --footer-stripe-2: rgba(208, 69, 128);
+    --footer-stripe-1: rgba(230, 165, 65, 0.45);
+    --footer-stripe-2: rgba(2, 144, 173, 0.45);
   }
 </style>
 
@@ -281,16 +281,16 @@
 
 
 
-<header id="nav" class="header bg-programa-curatorial text-white">
+<header id="nav" class="header bg-expositivo text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-residencias nav-overlay"></div>
+  <div id="nav-overlay" class="bg-dark-cyan nav-overlay"></div>
   
   
-  <nav class="navbar bg-programa-curatorial text-white">
+  <nav class="navbar bg-expositivo text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -3683,7 +3683,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-programa-curatorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-expositivo text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -3985,7 +3985,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-programa-curatorial text-white">
+  <div class="navbar-search-bar bg-expositivo text-white">
     
 
 
@@ -4012,30 +4012,70 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-golden-yellow); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-golden-yellow); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-deep-pink); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-deep-pink); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4110,13 +4150,37 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
   bg-white
 " data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
 
 
+  
+  
   
   
 
@@ -4147,7 +4211,10 @@ if (typeof initHeaderOnReady === "function") {
   
     
     <div class="proyecto-contenido-container">
-      <section class="pc-section-band pc-section-band-intro text-deep-pink">
+      <section
+        class="pc-section-band pc-section-band-intro
+          text-deep-pink
+        ">
         <div class="pc-section-content"><div class="break-inside-avoid mb-8">
 ¿Quiénes tienen derecho a la memoria? La historia, anclada en el culto al ídolo y en la permanencia de los monumentos, reclama ser reinterpretada y diversificada, abrirse a nuevas formas de representación y a otras agencias en los espacios públicos.
 <p>    Esta exposición reúne procesos situados en el suroccidente del país y algunos ecos del territorio maya; una serie de obras y acciones cuyos principios políticos se enraízan en las autonomías territoriales, las soberanías políticas y las acciones colectivas orientadas a la justicia y al derecho propio. Aquí, frente a la narración histórica unificada, se proponen fugas desde la imaginación política hacia la sanación y la reparación histórica y simbólica.</p>
@@ -5127,14 +5194,20 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-    <section class="pc-section-band pc-stage-propuestas section-propuestas bg-expositivo text-white">
+    <section
+          class="pc-section-band pc-stage-propuestas
+            section-propuestas
+           bg-expositivo text-white">
           <div class="pc-section-content"><p><strong>Casa Museo Guillermo León Valencia</strong></p>
 <p>La Casa Museo Guillermo León Valencia es una de las casas museales adscritas al Museo Nacional de Colombia, entidad perteneciente al Ministerio de Cultura. El inmueble, de carácter privado hasta la década de 1970, fue adquirido por la Nación en 1973 mediante la Ley 70 de ese mismo año, sancionada por el entonces presidente conservador Misael Pastrana Borrero, con el propósito de honrar la memoria del expresidente, también conservador, Guillermo León Valencia (1962–1966). En cumplimiento de dicha ley, la Nación destinó la casa en Popayán como sede del actual museo en el 2008. Allí reposan sus restos y los de su esposa, junto a un conjunto de objetos, fotografías, escudos y condecoraciones que articulan un relato centrado en el linaje familiar, aspectos de su vida personal y su trayectoria política.
 El guion museológico ha privilegiado una narrativa que presenta a Guillermo León Valencia bajo la denominación de “presidente de la paz”, sin problematizar de manera suficiente las tensiones y controversias de su mandato ni las de su linaje familiar. Esta lectura omite, entre otros aspectos, el contexto en el que, durante su gobierno, se consolidaron las insurgencias armadas del ELN y las FARC, así como las implicaciones del Decreto 3398 de 1965, que otorgó sustento legal a la conformación de estructuras de autodefensa que, con el tiempo, derivarían en el fenómeno del paramilitarismo en Colombia.
 Actualmente, este museo —al igual que otros adscritos al Museo Nacional de Colombia— se encuentra en proceso de renovación de su guion museológico, en respuesta a las definiciones contemporáneas de los museos y a normativas vigentes que cuestionan la rigidez y la rápida pérdida de vigencia de las salas “permanentes” y promueven el concepto de salas de larga duración. Este enfoque enfatiza la movilidad de las interpretaciones históricas, la constante investigación de las colecciones, la inclusión y la participación de comunidades, así como la reflexión crítica sobre los relatos que se construyen en torno al pasado, tal como lo sugiere la definición actual de museo del ICOM (Consejo Internacional de Museos).</p>
 </div>
         </section>
-    <div class="as-sections-post-gallery"><section class="pc-section-band pc-stage-desarrollo section-desarrollo bg-dark-forest-green text-white">
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo
+                section-desarrollo
+               bg-dark-forest-green text-white">
               <div class="pc-section-content"><p><strong>Centro de Memoria Panteón de los Próceres, Unicauca, Popayán</strong></p>
 <p>Construido en 1940, bajo el mismo espíritu conmemorativo del monumento a Sebastián de Belalcázar, en honor a los 400 años de la fundación de la ciudad de Popayán, el Centro de Memoria Panteón de los Próceres funciona como un espacio de consagración de la memoria oficial, destinado a preservar los restos de los llamados “personajes ilustres” de la ciudad. En su salón principal reposan urnas y placas conmemorativas dedicadas, en su mayoría, a hombres criollos —militares, políticos y letrados— que, en su excepcionalidad masculina, ocuparon posiciones centrales en los procesos de independencia y consolidación del Estado-nación: Camilo Torres, Joaquín Mosquera, José María Obando, Tomás Cipriano de Mosquera, José Hilario López, Francisco José de Caldas, Julio Arboleda, entre otros.
 Este espacio ejerce una política de la memoria selectiva, consagrando una versión hegemónica de la historia que excluye sistemáticamente a las mujeres, a los pueblos indígenas, a las comunidades afrodescendientes, a los sectores populares y a los cuerpos racializados que sostuvieron —y padecieron— los procesos de conquista, colonia, independencia y formación del Estado.
@@ -5153,11 +5226,15 @@ En ambos casos —la Casa Museo Guillermo León Valencia y el Panteón de los Pr
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">EL MUNDO AL REVÉS</p>
     <p>EL MUNDO AL REVÉS</p>
 
     

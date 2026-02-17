@@ -220,27 +220,27 @@
 <style>
   :root {
      
-    --mobile-menu-color: rgb(68, 34, 8);
+    --mobile-menu-color: #ffffff;
 
      
-    --submenu-indicator-color: rgb(68, 34, 8);
+    --submenu-indicator-color: #ffffff;
 
      
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-golden-yellow);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-teal);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-golden-yellow);
-    --search-highlight-color: rgb(68, 34, 8);
-    --search-border-color: rgb(68, 34, 8);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-teal);
+    --search-highlight-color: #ffffff;
+    --search-border-color: #ffffff;
     --search-overlay: rgba(0, 0, 0, 0.6);
 
      
-    --footer-stripe-1: rgba(230, 165, 65);
-    --footer-stripe-2: rgba(208, 69, 128);
+    --footer-stripe-1: rgba(230, 165, 65, 0.45);
+    --footer-stripe-2: rgba(68, 34, 8, 0.45);
   }
 </style>
 
@@ -281,16 +281,16 @@
 
 
 
-<header id="nav" class="header bg-programa-curatorial text-white">
+<header id="nav" class="header bg-residencias text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-residencias nav-overlay"></div>
+  <div id="nav-overlay" class="bg-dark-cyan nav-overlay"></div>
   
   
-  <nav class="navbar bg-programa-curatorial text-white">
+  <nav class="navbar bg-residencias text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -3683,7 +3683,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-programa-curatorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-residencias text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -3985,7 +3985,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-programa-curatorial text-white">
+  <div class="navbar-search-bar bg-residencias text-white">
     
 
 
@@ -4012,30 +4012,70 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-golden-yellow); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-golden-yellow); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-teal); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-teal); --search-highlight-color: #ffffff; --search-border-color: #ffffff; --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4110,21 +4150,44 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
   bg-white
 " data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
 
 
+  
+  
   
   
     <div
       class="proyecto-categorias-container  bg-burnt-orange">
       <div id="proyecto-categorias" class="proyecto-categorias">
         
-        
-        
+        N.A
       </div>
     </div>
   
@@ -4156,7 +4219,7 @@ if (typeof initHeaderOnReady === "function") {
         id="proyecto-contenido"
         class="proyecto-contenido text-deep-pink">
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Con la Fundación Alto Canal como anfitrión y la coreógrafa afrocolombiana Andrea Bonilla, maestra en Artes Escénicas con énfasis en Danza Contemporánea y magíster en Estudios Culturales, como invitada, se construyo un espacio de conocimiento basado en la escucha, el cuidado y la cohabitación temporal junto a lxs bailarinxs de la Corporación Artística y Cultural Los Navegantes de Santa Bárbara de Timbiquí, por medio del proyecto Mientras río, el lugar que sostiene.</p>
+  <div class="page-content-text"><p>Con la Fundación Alto Canal como anfitrión y la coreógrafa afrocolombiana Andrea Bonilla, maestra en Artes Escénicas con énfasis en Danza Contemporánea y magíster en Estudios Culturales, como invitada, se construyó un espacio de conocimiento basado en la escucha, el cuidado y la cohabitación temporal junto a lxs bailarinxs de la Corporación Artística y Cultural Los Navegantes de Santa Bárbara de Timbiquí, por medio del proyecto <em>Mientras río, el lugar que sostiene</em>.</p>
 <p>Este proceso partió del reconocimiento del río Timbiquí como un ser social y un cuerpo vivo que organiza la vida cotidiana, cultural y espiritual de las comunidades del Pacífico. Más que agua en movimiento, el río se reveló como territorio, alimento, sonido, memoria y hogar; como narrador y guardián de historias, cantos, luchas y celebraciones. La residencia propuso un cruce entre la danza afro contemporánea y la danza tradicional del Pacífico colombiano, no para jerarquizarlas ni fusionarlas, sino para ponerlas en relación. El objetivo no fue preservar ni actualizar formas, sino activar un espacio donde el movimiento se convirtiera en pregunta y posibilidad. Un espacio transformador donde el cuerpo, al moverse, volviera a escuchar al territorio y a producir sentido desde la experiencia compartida.</p>
 <p>Desde un interés sostenido por generar encuentros entre disciplinas artísticas, el proyecto se sostuvo en una comprensión de la interculturalidad como acción viva. No se trató de reemplazar saberes ni de intervenir el territorio, sino de permitir que las prácticas se afectaran mutuamente, ampliando el conocimiento sin perder sus particularidades. El laboratorio indagó el agua como presencia simbólica, política y vital, enlazada a la potencia del hacer afro. Los ejercicios corporales, sonoros y visuales activaron relatos, gestos y prácticas donde el agua apareció como memoria en tensión: lo que nutre y lo que duele, lo que falta y lo que aún sostiene. La presentación de cierre del proceso, compartido en la clausura con la balsada en Guapi, fortaleció el sentido de pertenencia y reconocimiento de las y los jóvenes, quienes asumieron su participación no como un hecho aislado, sino como parte de un entramado cultural más amplio.</p>
 </div>
@@ -4822,11 +4885,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Residencia Fundación Alto Canal</p>
     <p>Residencia Fundación Alto Canal</p>
 
     

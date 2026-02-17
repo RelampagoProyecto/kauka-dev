@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,19 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4147,15 +4200,33 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       
-        <div class="page-content-container ">
-  <div class="page-content-text"></div>
+        
+        <section
+        class="pc-section-band pc-section-band-intro
+          text-dark-forest-green
+        ">
+        <div class="pc-section-content"><p><strong>Lukas Avendaño</strong><br>
+Performance<br>
+Teatro Municipal Guillermo Valencia<br>
+2011-2025</p>
+<p align="right"><em>(...) pero, sobre todo, estoy más conmovido por la gente que no ha pasado<br />
+por este escenario, por quienes nunca habían ocupado esta casa.<br />
+Seguramente cuando se construyó este edificio no se pensó que la comunidad, los<br />
+homosexuales, los indios, los prietos, los negros, los campesinos y las personas de la<br />
+ruralidad, tendrían pretensiones artísticas y llegarían a habitar este espacio. Por la<br />
+memoria de ellas, ellos y elles: que hoy nuestras presencias y nuestras existencias<br />
+sean un tributo, un homenaje.<br />
+- Lukas Avendaño, 26 de noviembre de 2025. Popayán</em></p>
+<p>Asistimos a una boda que poco a poco se transforma en una ceremonia dedicada a la virgen y que, finalmente, adquiere la forma de un funeral. <em>Réquiem para un alcaraván</em> es una danza performativa que nace de la exclusión de lxs muxes -como Lukas- de las festividades del istmo de Tehuantepec, en el estado de Oaxaca. Allí, Lukas protagoniza un ritual en el que entrelaza realidad y ficción para resignificar su muxeidad, confrontar la velada aceptación social de la identidad muxe y celebrar aquello que aún es considerado una transgresión.</p>
 </div>
-
+      </section>
       
     </div>
   </section>
 
   
+  
+    
   
   <div id="encuentro-metadata" class="encuentro-info-container">
     
@@ -4171,17 +4242,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
             26/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            26/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4824,6 +4905,13 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+              <div class="pc-section-content"><p>Un muxe, en la cultura zapoteca, es una persona asignada hombre al nacer que asume roles culturalmente asociados a lo femenino -en lo laboral, afectivo, emocional y sexual-, configurando una experiencia mucho más compleja que la categoría occidental de &ldquo;hombre gay&rdquo; o cualquier otro adjetivo binario que intente nombrarles.</p>
+<p>En el marco del 47 Salón Nacional de Artistas, la obra se presentó en el Teatro Municipal Guillermo Valencia de Popayán, desbordando los límites entre el escenario y el público, y procurando su participación en el ritual. Género, etnicidad y sexualidad se entrelazan para confrontar a lxs espectadorxs con una pregunta insistente: ¿a quién estamos viendo? ¿A un hombre, una mujer, unx campesinx, unx bailarinx, unx antropólogx, unx artista, unx activista, un gay, un indígena, unx profesorx, unx marica, unx trans, unx líder social, un monstruo, unx poeta? Lukas es todxs ellxs y, a la vez, ningunx.</p>
+</div>
+            </section></div>
+  
 
       </section>
     </main>
@@ -4835,11 +4923,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Performance: Réquiem para un alcaraván</p>
     <p>Performance: Réquiem para un alcaraván</p>
 
     

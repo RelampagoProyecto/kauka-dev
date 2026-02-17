@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4260,17 +4300,57 @@ if (typeof initHeaderOnReady === "function") {
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
+            
+              
+              
+              
+
+              
+              
+              
             
           
 
@@ -4281,17 +4361,24 @@ if (typeof initHeaderOnReady === "function") {
 
           <picture>
             
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-1_hu_2c4205624efbd6c2.webp 320w, /kauka-dev/kauka/galeria/con_kauk-1_hu_9b72b7729ca7fde7.webp 640w, /kauka-dev/kauka/galeria/con_kauk-1_hu_12de7ed5da87f263.webp 768w, /kauka-dev/kauka/galeria/con_kauk-1_hu_99bd95a6d7709231.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-1_hu_914adb190b29cc1e.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
             
 
             
             <img
               src="/kauka-dev/kauka/galeria/con_kauk-1.webp"
               
+                srcset="/kauka-dev/kauka/galeria/con_kauk-1_hu_84facedd2774349a.webp 320w, /kauka-dev/kauka/galeria/con_kauk-1_hu_1d4ecc1805058b61.webp 640w, /kauka-dev/kauka/galeria/con_kauk-1_hu_49d1b39add5fc9da.webp 768w, /kauka-dev/kauka/galeria/con_kauk-1_hu_f1e2bc062aa9aec1.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-1_hu_f199c40662ca4298.webp 1280w"
+              
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/con_kauk-1.webp"
               loading="lazy"
-              width="296"
-              height="466" />
+              width="2400"
+              height="1600" />
           </picture>
         </div>
       
@@ -4306,17 +4393,57 @@ if (typeof initHeaderOnReady === "function") {
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
+            
+              
+              
+              
+
+              
+              
+              
             
           
 
@@ -4327,17 +4454,954 @@ if (typeof initHeaderOnReady === "function") {
 
           <picture>
             
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-10_hu_4aa3f80314f4f4f9.webp 320w, /kauka-dev/kauka/galeria/con_kauk-10_hu_12c277019e8375f5.webp 640w, /kauka-dev/kauka/galeria/con_kauk-10_hu_46e40eb3bd6e0b8c.webp 768w, /kauka-dev/kauka/galeria/con_kauk-10_hu_1edb9b1b80b77e82.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-10_hu_2436ce677118fd77.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-10.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-10_hu_3b22ffeed44ffb5c.webp 320w, /kauka-dev/kauka/galeria/con_kauk-10_hu_a96876247b83b587.webp 640w, /kauka-dev/kauka/galeria/con_kauk-10_hu_a05a94e4294fb618.webp 768w, /kauka-dev/kauka/galeria/con_kauk-10_hu_14cab30d48f440a5.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-10_hu_bd878d932816da3f.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-10.webp"
+              loading="lazy"
+              width="2400"
+              height="1145" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-11_hu_8c1a03a11db701ce.webp 320w, /kauka-dev/kauka/galeria/con_kauk-11_hu_4df24eefa023c4a9.webp 640w, /kauka-dev/kauka/galeria/con_kauk-11_hu_a4d6c72203369246.webp 768w, /kauka-dev/kauka/galeria/con_kauk-11_hu_1edead0f4d52954d.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-11_hu_a6d5f91ea7712cb4.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-11.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-11_hu_b0eee4d8dd3cc19a.webp 320w, /kauka-dev/kauka/galeria/con_kauk-11_hu_1d1b538edaf88db8.webp 640w, /kauka-dev/kauka/galeria/con_kauk-11_hu_85c40cf81d725055.webp 768w, /kauka-dev/kauka/galeria/con_kauk-11_hu_534138e86828cdc0.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-11_hu_93bc76ee34727f65.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-11.webp"
+              loading="lazy"
+              width="2400"
+              height="1733" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-12_hu_bb0caf8b57b5c4bd.webp 320w, /kauka-dev/kauka/galeria/con_kauk-12_hu_6b5999cc908269b8.webp 640w, /kauka-dev/kauka/galeria/con_kauk-12_hu_cbec33a85fffbd72.webp 768w, /kauka-dev/kauka/galeria/con_kauk-12_hu_332849f14ca7b9b1.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-12_hu_720a22853758d86d.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-12.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-12_hu_d306f103f7f76373.webp 320w, /kauka-dev/kauka/galeria/con_kauk-12_hu_25cb26677b2ac0f2.webp 640w, /kauka-dev/kauka/galeria/con_kauk-12_hu_9afb406bd2508a5e.webp 768w, /kauka-dev/kauka/galeria/con_kauk-12_hu_d76c26581560ae15.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-12_hu_c5085af10a224835.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-12.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-13_hu_d039f290e9e46dba.webp 320w, /kauka-dev/kauka/galeria/con_kauk-13_hu_9ee27db146464dca.webp 640w, /kauka-dev/kauka/galeria/con_kauk-13_hu_b630d5213c07973c.webp 768w, /kauka-dev/kauka/galeria/con_kauk-13_hu_949eb79be84326e5.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-13_hu_758a3e670eb1b664.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-13.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-13_hu_4b7fc8a0f6c5e9fc.webp 320w, /kauka-dev/kauka/galeria/con_kauk-13_hu_f94b2c1453bec314.webp 640w, /kauka-dev/kauka/galeria/con_kauk-13_hu_bf2e597c78e719ad.webp 768w, /kauka-dev/kauka/galeria/con_kauk-13_hu_3949b9a26e3cb50f.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-13_hu_539aa916b07ecede.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-13.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-14_hu_5832d2079aabb79e.webp 320w, /kauka-dev/kauka/galeria/con_kauk-14_hu_ff2351f4a4375039.webp 640w, /kauka-dev/kauka/galeria/con_kauk-14_hu_bbc57fd787ad9271.webp 768w, /kauka-dev/kauka/galeria/con_kauk-14_hu_8b624eaa4c258172.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-14_hu_4aec2b3cf3c6613c.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-14.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-14_hu_7059c202225e98e1.webp 320w, /kauka-dev/kauka/galeria/con_kauk-14_hu_6b6950a32ac8d.webp 640w, /kauka-dev/kauka/galeria/con_kauk-14_hu_366c956902d25f5e.webp 768w, /kauka-dev/kauka/galeria/con_kauk-14_hu_a2a075d27be10706.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-14_hu_5a28a79f53f59a04.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-14.webp"
+              loading="lazy"
+              width="2400"
+              height="1349" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-15_hu_914dff2f8026bb3a.webp 320w, /kauka-dev/kauka/galeria/con_kauk-15_hu_5b4626c423429563.webp 640w, /kauka-dev/kauka/galeria/con_kauk-15_hu_bfbe5d14c067de02.webp 768w, /kauka-dev/kauka/galeria/con_kauk-15_hu_3248645ea687dc6a.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-15_hu_471de7f7b42b219f.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-15.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-15_hu_633d96dbdf2729bf.webp 320w, /kauka-dev/kauka/galeria/con_kauk-15_hu_a5a9553658991ed6.webp 640w, /kauka-dev/kauka/galeria/con_kauk-15_hu_6237d29703cf3734.webp 768w, /kauka-dev/kauka/galeria/con_kauk-15_hu_c02c3f531889ceb8.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-15_hu_4f37f5e4d208dcd3.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-15.webp"
+              loading="lazy"
+              width="2400"
+              height="1381" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-16_hu_3cd080536af9451b.webp 320w, /kauka-dev/kauka/galeria/con_kauk-16_hu_a1cd4dc0d0de4203.webp 640w, /kauka-dev/kauka/galeria/con_kauk-16_hu_e02003f401c6a607.webp 768w, /kauka-dev/kauka/galeria/con_kauk-16_hu_afbccf47cdff145.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-16_hu_9b10f3d0d5e95c4d.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-16.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-16_hu_445664d2a15c7abd.webp 320w, /kauka-dev/kauka/galeria/con_kauk-16_hu_bd25390e5ef59754.webp 640w, /kauka-dev/kauka/galeria/con_kauk-16_hu_8d547f49f2799658.webp 768w, /kauka-dev/kauka/galeria/con_kauk-16_hu_49a8172f4b758d22.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-16_hu_ef7f9c819bf2662.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-16.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-17_hu_99e5f5295f23bfbc.webp 320w, /kauka-dev/kauka/galeria/con_kauk-17_hu_a139ea89eccc6a9f.webp 640w, /kauka-dev/kauka/galeria/con_kauk-17_hu_24ada96a9478c1af.webp 768w, /kauka-dev/kauka/galeria/con_kauk-17_hu_d00a456f66e5b4b8.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-17_hu_20953ea82f9c7b7.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-17.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-17_hu_8e8901d5d6d8ed5.webp 320w, /kauka-dev/kauka/galeria/con_kauk-17_hu_6efb1d3dd7beecbd.webp 640w, /kauka-dev/kauka/galeria/con_kauk-17_hu_b97f211719ceb24b.webp 768w, /kauka-dev/kauka/galeria/con_kauk-17_hu_130ecd4d2f55d913.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-17_hu_c604e2d608ee4db1.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-17.webp"
+              loading="lazy"
+              width="2400"
+              height="1347" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-18_hu_54c972cfac658388.webp 320w, /kauka-dev/kauka/galeria/con_kauk-18_hu_15c7a01c71a08cd5.webp 640w, /kauka-dev/kauka/galeria/con_kauk-18_hu_746bdd284c728e5f.webp 768w, /kauka-dev/kauka/galeria/con_kauk-18_hu_5ffc8df6cc67ed1f.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-18_hu_e2703631a297e987.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-18.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-18_hu_666d5dace987cd23.webp 320w, /kauka-dev/kauka/galeria/con_kauk-18_hu_705132c8ca2abac5.webp 640w, /kauka-dev/kauka/galeria/con_kauk-18_hu_1aa3e057b35dd38e.webp 768w, /kauka-dev/kauka/galeria/con_kauk-18_hu_3799c2c486f7fa33.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-18_hu_13cecbbd151930a0.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-18.webp"
+              loading="lazy"
+              width="2400"
+              height="2400" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-19_hu_1afc866c63fbf5e.webp 320w, /kauka-dev/kauka/galeria/con_kauk-19_hu_348ffcf23fa8cc23.webp 640w, /kauka-dev/kauka/galeria/con_kauk-19_hu_5c5c92d59fb13801.webp 768w, /kauka-dev/kauka/galeria/con_kauk-19_hu_bb1fb7c50764de88.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-19_hu_b9fb2704d63086c9.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-19.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-19_hu_9297a6e45da28007.webp 320w, /kauka-dev/kauka/galeria/con_kauk-19_hu_3ae9abdb0d76e843.webp 640w, /kauka-dev/kauka/galeria/con_kauk-19_hu_c6d326ed142c1956.webp 768w, /kauka-dev/kauka/galeria/con_kauk-19_hu_537d2610ed37b831.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-19_hu_f1d027fbdbee3af2.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-19.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-2_hu_4959b1e51ef12db0.webp 320w, /kauka-dev/kauka/galeria/con_kauk-2_hu_5ff75e091b9f6408.webp 640w, /kauka-dev/kauka/galeria/con_kauk-2_hu_fa6a5fc8cee881d3.webp 768w, /kauka-dev/kauka/galeria/con_kauk-2_hu_f3d1818020f29047.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-2_hu_b72912ba6ff6823a.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
             
 
             
             <img
               src="/kauka-dev/kauka/galeria/con_kauk-2.webp"
               
+                srcset="/kauka-dev/kauka/galeria/con_kauk-2_hu_3e5f6c3517f908ef.webp 320w, /kauka-dev/kauka/galeria/con_kauk-2_hu_4ee793cb7864cf12.webp 640w, /kauka-dev/kauka/galeria/con_kauk-2_hu_4f2ac9f2cccbba51.webp 768w, /kauka-dev/kauka/galeria/con_kauk-2_hu_8dfb01dd9e23778f.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-2_hu_d7341d0ee4fa7640.webp 1280w"
+              
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/con_kauk-2.webp"
               loading="lazy"
-              width="296"
-              height="466" />
+              width="2400"
+              height="1600" />
           </picture>
         </div>
       
@@ -4352,17 +5416,57 @@ if (typeof initHeaderOnReady === "function") {
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
+            
+              
+              
+              
+
+              
+              
+              
             
           
 
@@ -4373,17 +5477,117 @@ if (typeof initHeaderOnReady === "function") {
 
           <picture>
             
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-20_hu_4232aa37a136c7da.webp 320w, /kauka-dev/kauka/galeria/con_kauk-20_hu_5c30c081559bf2d5.webp 640w, /kauka-dev/kauka/galeria/con_kauk-20_hu_adadb8a318e5a8c6.webp 768w, /kauka-dev/kauka/galeria/con_kauk-20_hu_60da591ef9238d3.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-20_hu_64aa465597b0e422.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-20.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-20_hu_25169d48bdb9c5f8.webp 320w, /kauka-dev/kauka/galeria/con_kauk-20_hu_b438915dfc41ea6a.webp 640w, /kauka-dev/kauka/galeria/con_kauk-20_hu_d92c6f5b2c136ff2.webp 768w, /kauka-dev/kauka/galeria/con_kauk-20_hu_59b3efece409997d.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-20_hu_3c23f3217a249ea8.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-20.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-3_hu_39c704a47fd1cf34.webp 320w, /kauka-dev/kauka/galeria/con_kauk-3_hu_ff4760130c0ec6f6.webp 640w, /kauka-dev/kauka/galeria/con_kauk-3_hu_4c682ad94b9a9b3a.webp 768w, /kauka-dev/kauka/galeria/con_kauk-3_hu_f411858322e2900f.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-3_hu_71b93786a9687a4.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
             
 
             
             <img
               src="/kauka-dev/kauka/galeria/con_kauk-3.webp"
               
+                srcset="/kauka-dev/kauka/galeria/con_kauk-3_hu_2577932fef7d5b55.webp 320w, /kauka-dev/kauka/galeria/con_kauk-3_hu_74c766ad8c86be9a.webp 640w, /kauka-dev/kauka/galeria/con_kauk-3_hu_dc39de9a3d11220b.webp 768w, /kauka-dev/kauka/galeria/con_kauk-3_hu_c2700e57ff698fd9.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-3_hu_4a1d05d05dc1f008.webp 1280w"
+              
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/con_kauk-3.webp"
               loading="lazy"
-              width="296"
-              height="466" />
+              width="2400"
+              height="1757" />
           </picture>
         </div>
       
@@ -4398,17 +5602,57 @@ if (typeof initHeaderOnReady === "function") {
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
+            
+              
+              
+              
+
+              
+              
+              
             
           
 
@@ -4419,17 +5663,24 @@ if (typeof initHeaderOnReady === "function") {
 
           <picture>
             
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-4_hu_7dece352e1102acb.webp 320w, /kauka-dev/kauka/galeria/con_kauk-4_hu_873b10defe8c3037.webp 640w, /kauka-dev/kauka/galeria/con_kauk-4_hu_eb96d48ab6a53c3b.webp 768w, /kauka-dev/kauka/galeria/con_kauk-4_hu_47ac8213a0ba7ce5.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-4_hu_dbdbfbb2e662cdd8.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
             
 
             
             <img
               src="/kauka-dev/kauka/galeria/con_kauk-4.webp"
               
+                srcset="/kauka-dev/kauka/galeria/con_kauk-4_hu_b78633f2619f1e3.webp 320w, /kauka-dev/kauka/galeria/con_kauk-4_hu_c9324516ab86df87.webp 640w, /kauka-dev/kauka/galeria/con_kauk-4_hu_c31e1e363ba0b4f.webp 768w, /kauka-dev/kauka/galeria/con_kauk-4_hu_8377e173b955644e.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-4_hu_a56f84054776158e.webp 1280w"
+              
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/con_kauk-4.webp"
               loading="lazy"
-              width="296"
-              height="466" />
+              width="2400"
+              height="2282" />
           </picture>
         </div>
       
@@ -4444,17 +5695,57 @@ if (typeof initHeaderOnReady === "function") {
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
             
+              
+              
+              
+
+              
+              
+              
+            
           
             
+            
+              
+              
+              
+
+              
+              
+              
             
           
 
@@ -4466,16 +5757,395 @@ if (typeof initHeaderOnReady === "function") {
           <picture>
             
             
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-5_hu_3e715be9c9e8b51.webp 320w, /kauka-dev/kauka/galeria/con_kauk-5_hu_9ce82774cd6b0d42.webp 640w, /kauka-dev/kauka/galeria/con_kauk-5_hu_df42eda45536f64.webp 768w, /kauka-dev/kauka/galeria/con_kauk-5_hu_37d4034d70de1c4c.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-5_hu_697a135bea1f1eed.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
 
             
             <img
               src="/kauka-dev/kauka/galeria/con_kauk-5.webp"
               
+                srcset="/kauka-dev/kauka/galeria/con_kauk-5_hu_921e02aa7283211f.webp 320w, /kauka-dev/kauka/galeria/con_kauk-5_hu_805137b06cb05d7f.webp 640w, /kauka-dev/kauka/galeria/con_kauk-5_hu_f0f44cc3174a28ae.webp 768w, /kauka-dev/kauka/galeria/con_kauk-5_hu_3bf0d4776539cbbf.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-5_hu_8da5194390c20121.webp 1280w"
+              
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/con_kauk-5.webp"
               loading="lazy"
-              width="296"
-              height="466" />
+              width="2400"
+              height="1323" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-6_hu_adfc311c53dd780a.webp 320w, /kauka-dev/kauka/galeria/con_kauk-6_hu_7e76b7400c2a75ef.webp 640w, /kauka-dev/kauka/galeria/con_kauk-6_hu_96d3d26cbe8a294f.webp 768w, /kauka-dev/kauka/galeria/con_kauk-6_hu_b13e502f360578ad.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-6_hu_61a66a55dd100033.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-6.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-6_hu_d9c8030bceb6f78.webp 320w, /kauka-dev/kauka/galeria/con_kauk-6_hu_6e3353e11078e924.webp 640w, /kauka-dev/kauka/galeria/con_kauk-6_hu_799d4b53fcc2be75.webp 768w, /kauka-dev/kauka/galeria/con_kauk-6_hu_2b010634a7d9fa71.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-6_hu_c376dd3c058a901e.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-6.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-7_hu_a05d331d61bd1766.webp 320w, /kauka-dev/kauka/galeria/con_kauk-7_hu_6f3fe0b85aa814e.webp 640w, /kauka-dev/kauka/galeria/con_kauk-7_hu_a7af0b353db5ceee.webp 768w, /kauka-dev/kauka/galeria/con_kauk-7_hu_80da400eeb404c67.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-7_hu_d15e30fb1cefdbc7.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-7.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-7_hu_aa0788a07a7b775f.webp 320w, /kauka-dev/kauka/galeria/con_kauk-7_hu_20ff19a8b0ad8eed.webp 640w, /kauka-dev/kauka/galeria/con_kauk-7_hu_692b36c2131cdb2c.webp 768w, /kauka-dev/kauka/galeria/con_kauk-7_hu_7f758e742b683240.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-7_hu_7a0d310152a37b09.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-7.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-8_hu_aec00573591c0814.webp 320w, /kauka-dev/kauka/galeria/con_kauk-8_hu_db905f47d44b202d.webp 640w, /kauka-dev/kauka/galeria/con_kauk-8_hu_58a7d50752b1dfef.webp 768w, /kauka-dev/kauka/galeria/con_kauk-8_hu_4ea013f7fdea429e.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-8_hu_2a78fb130030be30.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-8.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-8_hu_cd1f764ccd6b3fd1.webp 320w, /kauka-dev/kauka/galeria/con_kauk-8_hu_e192da35e4057acf.webp 640w, /kauka-dev/kauka/galeria/con_kauk-8_hu_917cb7d9518e738d.webp 768w, /kauka-dev/kauka/galeria/con_kauk-8_hu_e034d1e5e5f413e7.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-8_hu_1d3feb267ee009f9.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-8.webp"
+              loading="lazy"
+              width="2400"
+              height="1647" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/kauka/galeria/con_kauk-9_hu_931dce2deed5cda9.webp 320w, /kauka-dev/kauka/galeria/con_kauk-9_hu_bc62978602ceec90.webp 640w, /kauka-dev/kauka/galeria/con_kauk-9_hu_d3e308b60c22a2e4.webp 768w, /kauka-dev/kauka/galeria/con_kauk-9_hu_ec9c01cb080495a0.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-9_hu_29b9a31ec3479c49.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/kauka/galeria/con_kauk-9.webp"
+              
+                srcset="/kauka-dev/kauka/galeria/con_kauk-9_hu_973fcb7b6025ad3b.webp 320w, /kauka-dev/kauka/galeria/con_kauk-9_hu_121bf93b83e77b5f.webp 640w, /kauka-dev/kauka/galeria/con_kauk-9_hu_a9f30697651217e8.webp 768w, /kauka-dev/kauka/galeria/con_kauk-9_hu_85fa6d578380b99b.webp 1024w, /kauka-dev/kauka/galeria/con_kauk-9_hu_b9025610d39cf2e4.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/con_kauk-9.webp"
+              loading="lazy"
+              width="2400"
+              height="1167" />
           </picture>
         </div>
       
@@ -6736,6 +8406,9 @@ if (typeof initHeaderOnReady === "function") {
     </main>
 
     
+
+
+
 
 
 

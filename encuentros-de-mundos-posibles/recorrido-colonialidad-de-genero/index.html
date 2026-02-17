@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,25 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4148,7 +4207,8 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-contenido" class="encuentro-contenido">
       
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Caminata crítica que deconstruye las marcas coloniales del género en el espacio urbano y en los cuerpos que lo habitan.</p>
+  <div class="page-content-text"><p>Furia Marica y le Colective TransAliades crearon un recorrido por emplazamientos clandestinos que han sido lugares de vital importancia como puntos de encuentro para lxs cuerpxs diversxs en resistencia. Si bien muchos de estos lugares de homosocialización están ubicados en las periferias de la ciudad, muchos otros son espacios públicos del centro.</p>
+<p>Así se configuró el recorrido acompañado de arengas, performances y un mapa que sirvió como herramienta para contextualizar y contar su historia. Esta ruta interactiva de memorias y la cartografía afectiva problematizó la marginación de personas LGBTIQ+ en la narrativa oficial y visibilizó sus territorios de existencia vitales, eróticos y políticos.</p>
 </div>
 </div>
 
@@ -4172,17 +4232,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
-            25/11/2025
+            28/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            28/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4190,7 +4260,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          2:00 p.m. - 4:00 p.m.
+          5:30 p.m. - 8:00 p.m.
         </div>
       </div>
 
@@ -4199,7 +4269,7 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Centro Cultural Banco de la República<br />
+            Parque Claustro Santo Domingo<br />
             Popayán
           
 
@@ -4212,7 +4282,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          2:00 p.m. - 4:00 p.m.
+          5:30 p.m. - 8:00 p.m.
         </div>
       </div>
 
@@ -4228,8 +4298,24 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/ochy-curiel/">
-                      Ochy Curiel
+                    <a href="/kauka-dev/invitadxs/furia-marica/">
+                      Colective Transfeminista Furia Marica
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/transaliades/">
+                      TransAliades
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/lukas-avendano/">
+                      Lukas Avendaño
                     </a>
                   
                 </li>
@@ -4249,8 +4335,24 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/ochy-curiel/">
-                    Ochy Curiel
+                  <a href="/kauka-dev/invitadxs/furia-marica/">
+                    Colective Transfeminista Furia Marica
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/transaliades/">
+                    TransAliades
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/lukas-avendano/">
+                    Lukas Avendaño
                   </a>
                 
               </li>
@@ -4269,7 +4371,7 @@ if (typeof initHeaderOnReady === "function") {
   <div class="encuentro-info-links-container">
     <div class="encuentro-info-diamonds-left"></div>
     <div class="encuentro-info-links-diamond">
-      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-25" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-28" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
 
     </div>
     <div class="encuentro-info-links-diamond">
@@ -4836,11 +4938,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Recorrido: Colonialidad de Género</p>
     <p>Recorrido: Colonialidad de Género</p>
 
     
@@ -4849,7 +4955,11 @@ if (typeof initHeaderOnReady === "function") {
         
           <ul>
             
-              <li>Ochy Curiel</li>
+              <li>Colective Transfeminista Furia Marica</li>
+            
+              <li>TransAliades</li>
+            
+              <li>Lukas Avendaño</li>
             
           </ul>
         

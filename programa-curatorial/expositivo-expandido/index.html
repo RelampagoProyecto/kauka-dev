@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -16152,17 +16192,607 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
           </section>
         
       
-      
-      
-      
+        
+        
+        
+
+        
         
         
           
-  <div class="project-list-project-container bg-expositivo project-list-extra-lg-up">
-    <div class="project-list-diamond bg-expositivo project-list-extra-lg-up"></div>
-  </div>
+        
+        
 
         
+          
+          <section class="project-list-project-container">
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/"
+              class="project-list-project-link"
+              aria-label="Ver actividad: Desde el horizonte">
+              <div class="project-list-project">
+                <div class="project-list-media-frame">
+                  
+                    <div class="project-list-image-slider swiper">
+                      <div class="swiper-wrapper">
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-1_hu_876140c68ab308e5.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-1_hu_876140c68ab308e5.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-1_hu_38c34d693a47c46.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-1_hu_d9c146f90dab6ce3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-1_hu_607c9b8f17f4fc88.webp"
+            class=" project-list-image img"
+            alt="Desde el horizonte"
+            width="1600"
+            height="982" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-2_hu_c92855253d8626aa.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-2_hu_c92855253d8626aa.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-2_hu_84662190458db2d5.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-2_hu_4cd3d0f564c414c1.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-2_hu_313793365484c6a7.webp"
+            class=" project-list-image img"
+            alt="Desde el horizonte"
+            width="1600"
+            height="1040" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-3_hu_5ddeef6fe804669e.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-3_hu_5ddeef6fe804669e.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-3_hu_30b16b517169082e.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-3_hu_f6d6a82c1c12b5ca.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-3_hu_9e441192ef63d419.webp"
+            class=" project-list-image img"
+            alt="Desde el horizonte"
+            width="1458"
+            height="987" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                          <div class="swiper-slide">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-4_hu_818312e8dad812c9.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-4_hu_818312e8dad812c9.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-4_hu_a5f27a9d1f670438.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-4_hu_3306599e952e3ebe.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/galeria/exp_desd-el-hcm-4_hu_7f6461007757b9cd.webp"
+            class=" project-list-image img"
+            alt="Desde el horizonte"
+            width="1438"
+            height="899" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+                          </div>
+                        
+                      </div>
+                    </div>
+                  
+                </div>
+
+                <div class="project-list-info-container">
+                  <div class="project-list-info-diamond">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      <img
+        src="/kauka-dev/images/programa-curatorial/pc-project-diamond.svg"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class=" img"
+        width=""
+        height="" />
+    
+    
+  
+
+
+  
+
+
+                  </div>
+                </div>
+                
+              </div>
+            </a>
+            <div class="project-list-title">
+              <span class="">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/" class="project-list-link">
+                  Desde el horizonte
+                </a>
+              </span>
+            </div>
+          </section>
+        
+      
+      
+        
+  <div class="project-list-project-container bg-expositivo project-list-extra-md-only">
+    <div class="project-list-diamond bg-expositivo project-list-extra-md-only"></div>
+  </div>
+
+      
+      
       
     </div>
   </div>
@@ -16700,6 +17330,9 @@ No solo los humanos transformamos el territorio, el territorio y sus habitantes 
     </main>
 
     
+
+
+
 
 
 

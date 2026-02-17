@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,25 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4132,8 +4191,8 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-categorias" class="encuentro-categorias">
       
         
-          <a href="/encuentros/">
-            Encuentros
+          <a href="/vivencial/">
+            Vivencial
             
           </a>
         
@@ -4147,16 +4206,23 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       
-        <div class="page-content-container ">
-  <div class="page-content-text"><p>Recorrido por territorio Nasa, campesino y Misak hacia el Parque Arqueológico de Tierradentro.</p>
+        
+        <section
+        class="pc-section-band pc-section-band-intro
+          text-dark-forest-green
+        ">
+        <div class="pc-section-content"><p>El propósito profundo de este recorrido fue reactivar el encuentro entre tres pueblos cuyas geografías están interconectadas y que históricamente han tenido armonías y tensiones debido a reivindicaciones identitarias, territoriales y políticas propias a sus procesos culturales. Este recorrido fue una oportunidad más para el reconocimiento, el respeto y la reconciliación.</p>
+<p>En chiva, transporte tradicional del territorio, inició el trayecto que salió de Popayán hacia San Andrés de Pisimbalá en Tierradentro, sede de las obras de ingeniería ancestral. Allí, en la casa de pensamiento Nasa, el Thë&rsquo;wala Larry Jeromito Oino recibió a la comitiva con una armonización que llevaba tres días realizando, intencionada al cuidado de lxs participantes durante el recorrido debido a los problemas de orden público que se presentaban en ese momento y a pedir permiso espiritual para entrar a los lugares sagrados.</p>
+<p>En el Alto de Segovia, uno de los espacios del Parque Arqueológico de Tierradentro, lxs participantes asistieron al encuentro con lxs &ldquo;Hijos de la Estrella&rdquo;, como les nombra el Mayor Larry; entre otrxs, la Cacica Angelina Guyumus, quienes comparten hoy el sentir del &ldquo;secuestro&rdquo; hecho por la museificación de este territorio pero también las intuiciones que posibilitan reformular el acceso, uso y prácticas espirituales en estos sitios rituales. Lo que la antropología ha definido como hipogeos, para el pueblo nasa es el mundo de abajo, el vientre de la tierra, y lo que conocen los Misak como Pirøunbusre y Yanakuna, el Uku Pacha, son centros para la consulta, la medicina, la investigación espiritual, el despliegue de la vida y la muerte, y el encuentro con los seres espirituales del interior de la tierra.</p>
 </div>
-</div>
-
+      </section>
       
     </div>
   </section>
 
   
+  
+    
   
   <div id="encuentro-metadata" class="encuentro-info-container">
     
@@ -4172,11 +4238,10 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
             27/11/2025
           </div>
@@ -4185,12 +4250,23 @@ if (typeof initHeaderOnReady === "function") {
     </div>
 
     
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            28/11/2025
+          </div>
+        </div>
+      </div>
+    
+
+    
     <div class="encuentro-info-info-container">
       
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          Todo el día
+          8:00 a.m. - 7:00 p.m.
         </div>
       </div>
 
@@ -4199,16 +4275,11 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Parque Arqueológico de Tierradentro<br />
-            Punto de encuentro: MAMPO - Casa Arte
+            Parque Arqueológico de Tierradentro / Biblioteca Casa del Pueblo de Guanacas / Casa Payán<br />
+            
           
 
           
-          
-            <div class="encuentro-info-notas-desktop">
-              •
-              Salida hacia Parque Arqueológico de Tierradentro. Requiere inscripción.
-            </div>
           
         </div>
       </div>
@@ -4217,16 +4288,11 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          Todo el día
+          8:00 a.m. - 7:00 p.m.
         </div>
       </div>
 
       
-      
-        <div class="encuentro-info-notas">
-          •
-          Salida hacia Parque Arqueológico de Tierradentro. Requiere inscripción.
-        </div>
       
 
       
@@ -4234,7 +4300,33 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-gente">
           <div class="artists-list-label">Invitadxs</div>
           
-            <p>--</p>
+            <ul>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/larry-b-jeromito-oino-the-wala/">
+                      Larry B. Jeromito Oino (Thë&#39;wala)
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/biblioteca-publica-la-casa-del-pueblo-de-guanacas/">
+                      Biblioteca Pública La Casa del Pueblo de Guanacas
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/clementina-trochez-tombe/">
+                      Mama Clementina Tróchez Tombé
+                    </a>
+                  
+                </li>
+              
+            </ul>
           
         </div>
       </div>
@@ -4245,7 +4337,33 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-gente">
         <div class="artists-list-label">Invitadxs:</div>
         
-          <p>--</p>
+          <ul>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/larry-b-jeromito-oino-the-wala/">
+                    Larry B. Jeromito Oino (Thë&#39;wala)
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/biblioteca-publica-la-casa-del-pueblo-de-guanacas/">
+                    Biblioteca Pública La Casa del Pueblo de Guanacas
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/clementina-trochez-tombe/">
+                    Mama Clementina Tróchez Tombé
+                  </a>
+                
+              </li>
+            
+          </ul>
         
       </div>
     </div>
@@ -4253,6 +4371,8 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+  
+    
   
   <div class="encuentro-info-links-container">
     <div class="encuentro-info-diamonds-left"></div>
@@ -4275,6 +4395,14 @@ if (typeof initHeaderOnReady === "function") {
 
   
   
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+              <div class="pc-section-content"><p>En la mañana del segundo día lxs participantes se encaminaron al territorio campesino donde la comunidad edificó la Biblioteca Casa del Pueblo de Guanacas. Bajo la protección de la guadua y el adobe atendieron la palabra de Duvan Morales y otrxs líderes y lideresas campesinxs que han asumido la continuidad y cuidado de esta obra colectiva, quienes relataron cómo, desde la organización comunitaria, en el año 2004 se decidió construir una biblioteca en lugar de una cancha de fútbol. Este espacio no se limita a una colección de libros dispuestos para la consulta, sino que es sede de asambleas comunitarias, espacio de paz y diálogos que determinan el rumbo de la comunidad campesina.</p>
+<p>Su objetivo es que lxs jóvenes regresen al territorio, que su ombligo campesino no se rompa y se vinculen al proceso de reivindicación histórica lograda en el Acto Legislativo 01 de 2023 en el que se modifica el Artículo 64 de la Constitución Política de Colombia, reconociendo que &ldquo;El campesinado es sujeto de derechos y de especial protección, tiene un particular relacionamiento con la tierra basado en la producción de alimentos en garantía de la soberanía alimentaria, sus formas de territorialidad campesina, condiciones geográficas, demográficas, organizativas y culturales que lo distingue de otros grupos sociales&rdquo;.</p>
+<p>En la tarde, después de pasar por Totoró, el recorrido continuó hacia el territorio Misak de Wampia, en el municipio de Silvia. La orientación a través de los tres pisos que conforman el espacio de pensamiento ancestral propio Payan Ya y la síntesis de todo el Recorrido territorial nasa, campesino, misak, estuvo a cargo de Mama Clementina Tróchez. El palabreo final giró en torno a la historia y lugar de las mujeres Misak en la pervivencia de su pueblo, como custodias del Deber y Derecho Mayor, y como participantes en el contexto de las recuperaciones de tierras que se realizaron en la década del 80; evidenciando la dimensión de una Política Mayor también construida por cuerpos femeninos.</p>
+</div>
+            </section></div>
+  
 
       </section>
     </main>
@@ -4286,14 +4414,31 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Recorrido Nasa, campesino y Misak</p>
     <p>Recorrido Nasa, campesino y Misak</p>
 
     
+      
+        
+        
+          <ul>
+            
+              <li>Larry B. Jeromito Oino (Thë&#39;wala)</li>
+            
+              <li>Biblioteca Pública La Casa del Pueblo de Guanacas</li>
+            
+              <li>Mama Clementina Tróchez Tombé</li>
+            
+          </ul>
+        
       
     
   

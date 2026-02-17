@@ -75,8 +75,10 @@
 
 
 
+  
 
-<title>KAUKA</title>
+
+<title>Daniela Tobar</title>
 
 
 
@@ -140,13 +142,13 @@
 
 
 
-<meta property="og:title" content="KAUKA" />
+<meta property="og:title" content="Daniela Tobar" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/invitadxs/daniela-tobar/" />
 
 
-<meta name="twitter:title" content="KAUKA" />
+<meta name="twitter:title" content="Daniela Tobar" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4015,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4111,651 +4153,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-        
-        
-  
   
 
   
@@ -4780,6 +4177,13 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -4931,16 +4335,16 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_4b77f94c4b500fe8.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_29c3534fc8ad0d96.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_81ae1949662696d7.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_476b1d5f2c099994.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_17244e2932a1eb06.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_4b77f94c4b500fe8.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_29c3534fc8ad0d96.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_81ae1949662696d7.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_476b1d5f2c099994.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_17244e2932a1eb06.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01.webp"
+              src="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01.webp"
               
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_ef8727625234c4c3.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_b0e474c7398281c1.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_6ceb94d9cbfa1af9.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_200b5df846aba26.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-01_hu_95d9a41d357f08e4.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_ef8727625234c4c3.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_b0e474c7398281c1.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_6ceb94d9cbfa1af9.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_200b5df846aba26.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-01_hu_95d9a41d357f08e4.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/daniela-tovar-01.webp"
@@ -5024,16 +4428,16 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_bb3da68e87e59b41.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_fcc36ca5db503a9f.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_58a9053f8e4f8e20.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_d580ba70f5318e70.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_b595d4317a561e10.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_bb3da68e87e59b41.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_fcc36ca5db503a9f.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_58a9053f8e4f8e20.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_d580ba70f5318e70.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_b595d4317a561e10.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02.webp"
+              src="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02.webp"
               
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_a79250c8f1756926.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_fe8caef823b17d69.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_def3bb8063aaf472.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_c0f273a09f078d6f.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-02_hu_4b3997ffdeb099d1.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_a79250c8f1756926.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_fe8caef823b17d69.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_def3bb8063aaf472.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_c0f273a09f078d6f.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-02_hu_4b3997ffdeb099d1.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/daniela-tovar-02.webp"
@@ -5117,16 +4521,16 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_b74da077166c370f.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_c9d0019c3f3b0577.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_2ddabddc1cf04b3e.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_9293eff01233dca5.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_f9141e4264e78b9d.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_b74da077166c370f.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_c9d0019c3f3b0577.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_2ddabddc1cf04b3e.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_9293eff01233dca5.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_f9141e4264e78b9d.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03.webp"
+              src="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03.webp"
               
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_8352270c9e29b218.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_14046946cdd895a5.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_c9a05cb391f55620.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_5740f51aaef04464.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-03_hu_4fcf02161030b365.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_8352270c9e29b218.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_14046946cdd895a5.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_c9a05cb391f55620.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_5740f51aaef04464.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-03_hu_4fcf02161030b365.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/daniela-tovar-03.webp"
@@ -5210,16 +4614,16 @@ if (typeof initHeaderOnReady === "function") {
             
             
               <source
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_aed5deaf4bfd2f03.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_c1bdb02e4ef86839.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_4855ef829ec71ae.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_906eb7f2da7acfcf.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_68020a7366d9cc00.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_aed5deaf4bfd2f03.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_c1bdb02e4ef86839.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_4855ef829ec71ae.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_906eb7f2da7acfcf.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_68020a7366d9cc00.webp 1280w"
                 sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
                 type="image/webp" />
             
 
             
             <img
-              src="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04.webp"
+              src="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04.webp"
               
-                srcset="/kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_25be9dddd0b82ac7.webp 320w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_d946d50a2f912d1f.webp 640w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_a88e308703e97477.webp 768w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_d5e106699c41ed19.webp 1024w, /kauka-dev/invitadxs/daniela-tovar/galeria/daniela-tovar-04_hu_a96e4bd5f8566b84.webp 1280w"
+                srcset="/kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_25be9dddd0b82ac7.webp 320w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_d946d50a2f912d1f.webp 640w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_a88e308703e97477.webp 768w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_d5e106699c41ed19.webp 1024w, /kauka-dev/invitadxs/daniela-tobar/galeria/daniela-tovar-04_hu_a96e4bd5f8566b84.webp 1280w"
               
               sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
               alt="galeria/daniela-tovar-04.webp"
@@ -5290,6 +4694,33 @@ if (typeof initHeaderOnReady === "function") {
     </div>
   
 
+  
+    <div class="invitadx-secondary-sections">
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="chaiidi-matriz">Chaiidi (Matriz)</h3>
+<p><em>Daniela Tobar, Asociación Tau P&rsquo;irra - Mujeres Artesanas Sia</em>
+<br>
+<em>17 tejidos en fibras naturales (tetera, chocolatillo y yaré)</em>
+<br>
+<em>2022-2024</em></p>
+<p>La conexión entre los ríos y la vida es inevitable. Estos tejidos fueron elaborados por Daniela Tobar y un grupo de mujeres de la Asociación Tau P&rsquo;irra - Mujeres Artesanas Sia. Ante el dolor de ver su río contaminado por la minería y el procesamiento de la coca, cada una de ellas elaboró —como manifestación de poder y resistencia— una representación de su útero: centro de la vida, la menstruación, la gestación y la pleno-pausia. Se trata de momentos mediados por la <strong>Chaiidi</strong>, o matriz, que derivan en fluidos, misterio y un ritual que se conecta con el río.</p>
+<p>El agua vincula sus cuerpos al territorio y, como ellas, ha sido afectada por prácticas violentas y colonizadoras. Desde la “Conquista” se asoció lo femenino a la naturaleza y, debido a esto, cuerpos y territorios feminizados fueron subordinados y declarados objetos de control y dominio patriarcal. Al tener un útero, estas mujeres han estado atravesadas constantemente por el dolor, uno que está ligado a la vida, a la posibilidad de crearla y de cuidarla.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Daniela Tobar y Asociación Tau P&rsquo;irra - Mujeres Artesanas Sia: Ernestina Tobar, Florentina Mejía, Olga Málaga, Ligia Chirimía, Carmelina Chiripúa, Gloria Quiro, Mónica Chiripúa, Aura Gonzáles, Tachi nawe Lucita, Listinia Hueso, Listinia Barqueño, Gabriela Barqueño, Luz Marina Málaga, Encarnación Hueso, Cruz María González.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Arena del río Saija.</p>
+<p><strong>Territorios:</strong>
+<br />
+Resguardo Calle Santa Rosa y Pueblo Eperãra Siapidaarã, Timbiquí, Cauca.</p>
+
+          </div>
+        </section>
+      
+    </div>
   
 
   
@@ -5434,6 +4865,11 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+      
+      
+    
+      
+      
         
       
       
@@ -5664,14 +5100,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5681,6 +5109,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
       
@@ -5788,11 +5221,21 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+  
+  
+  
+  
+  
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Daniela Tobar</p>
     <p>Daniela Tobar</p>
 
     

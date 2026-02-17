@@ -4015,23 +4015,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4112,362 +4152,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
     
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
     
       
       
@@ -5035,12 +4719,11 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+        
+
     
-      
-      
     
-      
-      
     
   
   
@@ -5070,33 +4753,752 @@ if (typeof initHeaderOnReady === "function") {
   
     
     
+    
+    
       
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
 
 
   <div class="artista-info-wrapper artista-term-info-wrapper">
     
     <div class="artista-term-title-primary relative">
       <div class="artista-term-title-text-rombo">
-        Un Río Cauca, Muchos Mundos
+        Un Río Cauca Muchos Mundos
       </div>
     </div>
 
     <div class="artista-term-title-secondary">
       <div class="artista-term-title-text">
-        Un Río Cauca, Muchos Mundos
+        Un Río Cauca Muchos Mundos
       </div>
     </div>
 
     
     
+      <div class="artista-term-content invitadx-rich-content">
+        <p>Colectivo que articula saberes y acciones para promover el diseño de transiciones sistémicas justas, relacionales y pluriversales, comprometidas con las autonomías territoriales y sustentadas en un enfoque antirracista, antipatriarcal y anticapitalista, y orientadas hacia la paz territorial pluriversal.</p>
+<p>Desde 2018 viene gestando un tejido junto a otrxs transicionantes de la biorregión del valle geográfico del río Cauca. En 2023 afianzó su trabajo con la participación de 18 alternativas transformadoras de Suárez, Villa Rica y el oriente de Cali, y a través de la campaña <em>Un Río Cauca, Muchos Mundos</em>, que agrupa contenidos, acciones y propuestas para configurar narrativas contrahegemónicas y ejercicios de codiseño territorial.</p>
+<p>Este tejido está integrado por activistas-intelectuales del pueblo negro-afrodescendiente, feministas, ambientalistas y académicxs. Reúne experiencias en diseño para las transiciones, análisis interseccional, ecología política, producción audiovisual, análisis del discurso, cartografías críticas, ordenamiento territorial, justicias en plural y políticas de la diferencia, entre otros campos de investigación-acción-creación.</p>
+
+      </div>
+    
 
     
+    
+      
+      
+      
+      
+      <div id="bio-container" class="artista-term-bio">
+        <div class="artista-term-bio-ciudad">
+          Valle geográfico del río Cauca
+        </div>
+        <div class="artista-term-bio-year">
+          2018
+        </div>
+        <div class="artista-term-bio-separator">-</div>
+        <div class="artista-term-redes">
+          
+
+          
+
+          
+        </div>
+      </div>
     
   </div>
 
   
   
+    <div class="artista-term-gallery">
+      
 
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_9aa4e62aa2b28a06.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_d027db8a186fd6a1.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_848e92e1db53deae.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_19f81b6625516f3b.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_bc0d0a36ba7db3ee.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01.webp"
+              
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_8f763d459f52f3bb.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_f8c568e3400dbe93.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_31e97a996c1235f0.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_2ffe0a2bd6383136.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-01_hu_ae53c9005be6a888.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/un-rio-cauca-muchos-mundos-01.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_de992f8d049d3f7b.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_d7e53876e656f032.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_ffe24b8c38ff900c.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_ba004ce6eabc757f.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_261e27d7678f2498.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02.webp"
+              
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_49a5f2d2e6da2b02.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_6261be5fe023381e.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_22c1a3fede289923.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_86442cda21df703c.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-02_hu_de4f6110ad07ca25.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/un-rio-cauca-muchos-mundos-02.webp"
+              loading="lazy"
+              width="2400"
+              height="3194" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_4aa1d16657bd1a0c.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_1d23db99ee0c7a59.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_6c279666871a94d4.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_3fc277aca9e9e612.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_a90c4e217d01f7b1.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03.webp"
+              
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_59a09ccef515708a.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_901863ee0d5e903.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_dd42b23c96e4d113.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_5128467a9e3bef1b.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-03_hu_55128a865ab8b78d.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/un-rio-cauca-muchos-mundos-03.webp"
+              loading="lazy"
+              width="2400"
+              height="3600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_9b1947160655611a.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_df995ab85c1fb735.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_1d0b03ca609911fa.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_58759fc7011aac29.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_6ce706910ff98e34.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04.webp"
+              
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_927624b576908c4c.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_821a30b874258b24.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_8dd7c20ec79cc8fd.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_8a646bd60d16d2c.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-04_hu_6ee8c40d191dbad.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/un-rio-cauca-muchos-mundos-04.webp"
+              loading="lazy"
+              width="2400"
+              height="3600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_3e72d40cd0f76e9.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_90bf33f6f95a7c14.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_19f1542ff83255f7.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_1d0707897400d334.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_973ff22475447cb1.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05.webp"
+              
+                srcset="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_870ddd8b683a0d2c.webp 320w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_ce80e4b255c7016a.webp 640w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_bb55855b9ce6e993.webp 768w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_2e76211d5d82f077.webp 1024w, /kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/galeria/un-rio-cauca-muchos-mundos-05_hu_464ce83201bd4b70.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/un-rio-cauca-muchos-mundos-05.webp"
+              loading="lazy"
+              width="2400"
+              height="1955" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
+    </div>
+  
+
+  
+    <div class="invitadx-secondary-sections">
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="un-río-cauca-muchos-mundos-4-cartografías">UN RÍO CAUCA, MUCHOS MUNDOS (4 CARTOGRAFÍAS)</h3>
+<p><em>Se encharca arriba, se deseca abajo</em><br>
+<em>Nos encharcaron el río</em><br>
+<em>Cali deseca, Cali seca</em><br>
+<em>Camina el territorio del sur del valle alto del río Cauca</em></p>
+<p>Una serie de cuatro cartografías críticas que conecta memorias comunitarias, archivo territorial y análisis del despojo hídrico en el valle alto del río Cauca.</p>
+
+          </div>
+        </section>
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="se-encharca-arriba-se-deseca-abajo">Se encharca arriba, se deseca abajo</h3>
+<p><em>Tejido de Transicionantes por el Valle Geográfico del Río Cauca</em><br>
+<em>Colaboratorio de cartografías críticas y codiseño territorial</em><br>
+<em>Cartografía</em><br>
+<em>2025</em></p>
+<p>De arriba a abajo, de sur a norte, el río Cauca atraviesa la planicie del valle alto de su cuenca. A su paso se va encontrando con otros, hijos también de los bosques andinos y los páramos de las cordilleras Central y Occidental. Cada uno, en un rincón de este valle, llega a nutrir al Cauca con sedimentos, minerales y tantísimos seres vivos que son uno con el agua.</p>
+<p>Desde 1979, en un punto previo a que las cordilleras empiecen a separarse para dar forma al valle alto, el fluir de las aguas del río Cauca ha sido alterado por la construcción y el funcionamiento de la represa e hidroeléctrica Salvajina, ubicada entre los municipios de Morales y Suárez, en el departamento del Cauca. Esta se impuso en el paisaje como un enorme charco destinado a contener el agua que &ldquo;sobraba&rdquo; abajo, en el valle, y que desde inicios del siglo XX empezó a controlarse mediante múltiples obras hidráulicas que habilitaron más tierras para actividades agrícolas y de urbanización. En este contexto se fue fortaleciendo el monocultivo de la caña de azúcar, con sus dramáticos impactos: destrucción del bosque seco tropical, alteración del cauce del río, desecación de humedales, ciénagas, madres viejas, zanjones y caños y, por supuesto, daños severos a la vida propia de estos ecosistemas acuáticos.</p>
+<p><strong>Capas de lectura:</strong>
+<br />
+El agua.
+<br />
+Obras hidráulicas.
+<br />
+Lo desaparecido o alterado.
+<br />
+Lo urbanizado.</p>
+<p><strong>Fuentes de datos:</strong>
+<br />
+Inventario de humedales lénticos del corredor del río Cauca, CVC, 2019; Corredor río Cauca-Valle del Cauca, CVC, 2013; <em>Tras las huellas de los humedales</em>, Calidris, 2022; Base vectorial IGAC, 2022.</p>
+
+          </div>
+        </section>
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="nos-encharcaron-el-río">Nos encharcaron el río</h3>
+<p><em>Tejido de Transicionantes por el Valle Geográfico del Río Cauca</em><br>
+<em>Colaboratorio de cartografías críticas y codiseño territorial</em><br>
+<em>Cartografía</em><br>
+<em>2024</em></p>
+<p>La construcción de represas en los ríos de este planeta tiene un drama intrínseco: la drástica transformación de los hábitats de miles de seres, entre ellos el río. Sin importar el tamaño del proyecto, las afectaciones difícilmente son equilibradas con los beneficios, y el caso de Salvajina, o la salvajada, como la llaman muchas personas de Suárez, repite el patrón. Las represas son una de las obras que expresan con mayor elocuencia la mentalidad del modelo de desarrollo actual: acumulador, de crecimiento y expansión sin límites e impositivo y violento con la vida.</p>
+<p>El saldo en rojo que deja la construcción, operación y mantenimiento de Salvajina para las comunidades y pueblos pobladores del río es alto: desplazamiento forzoso de miles de personas, pérdida de patrimonios familiares por tratos fraudulentos, desaparición de paisajes ancestrales y destrucción de redes de comunicación rural y de formas de vida basadas en la agricultura, la pesca y la minería tradicional.</p>
+<p>La represa Salvajina es un gran charco de 849 millones de metros cúbicos de agua, impuesto sobre un territorio habitado históricamente. Este territorio hoy sumergido puede reconstruirse e imaginarse de manera detallada a partir de documentos regionales y, sobre todo, desde la memoria viva, los reclamos y los recuerdos de las comunidades.</p>
+<p><strong>Capas de lectura:</strong>
+<br />
+El agua.
+<br />
+Lo desaparecido.
+<br />
+Suárez, Cauca.</p>
+<p><strong>Fuentes de datos:</strong>
+<br />
+Base vectorial IGAC 2022; Mapa de índice de vuelos 1960-1971, IGAC, SF; Geoportal IDESc, 2023; archivo sonoro <em>Tejido de Transicionantes por el Valle Geográfico del Río Cauca</em>, 2023-2025.</p>
+
+          </div>
+        </section>
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="cali-deseca-cali-seca">Cali deseca, Cali seca</h3>
+<p><em>Tejido de Transicionantes por el Valle Geográfico del Río Cauca</em><br>
+<em>Colaboratorio de cartografías críticas y codiseño territorial</em><br>
+<em>Cartografía</em><br>
+<em>2024</em></p>
+<p>El valle alto del río Cauca, en un proceso de muy larga duración, se configuró como un territorio de vida anfibia en un entorno de bosques secos tropicales. Estos bosques, secos en términos del clima, se desarrollan en presencia de aguas superficiales y profundas, sobre suelos fertilizados por cenizas y sedimentos que descienden desde las cumbres de las cordilleras y presentan numerosas adaptaciones biológicas que les permiten enfrentar las temporadas secas y de lluvias.</p>
+<p>El entorno del bosque seco tropical, bajo las lógicas del desarrollo, ha sido entendido como propicio para la ganadería, la producción de alimentos y, más recientemente, para la producción de biocombustibles, así como para la urbanización. Esto último responde a una operación del mercado que, dentro de sus lógicas, concibe un producto denominado &ldquo;suelo urbano&rdquo;, altamente rentable frente a la conservación del bosque seco tropical nativo o del suelo rural -de vocación ganadera y agrícola- en el que este bosque fue transformado.</p>
+<p>Desde la inserción de Cali en el comercio exterior a través del puerto de Buenaventura, a inicios del siglo XX, el modelo de ciudad se ha orientado a producir suelo urbano sobre un territorio anfibio. Este territorio, formado por el río Cauca y los ríos que desde los Farallones bajan apresurados hacia la planicie de un valle de bosques inundables, bosques secos tropicales, humedales y antiguos cauces creados por el Cauca en su vida milenaria, ha sido progresivamente consumido por el crecimiento urbano de Cali y sus aspiraciones metropolitanas en el sur del Valle del Cauca y el norte del Cauca.</p>
+<p><strong>Capas de lectura:</strong>
+<br />
+El agua extendida.
+<br />
+El agua que queda.
+<br />
+Cali.</p>
+<p><strong>Fuentes de datos:</strong>
+<br />
+Carta geográfica del Distrito de Cali, Mario de Caicedo, 1937; Plano de la ciudad de Cali, Empresas Municipales, 1937; Paleodrenajes del municipio de Cali, Corporación OSSO, 2013; POT Cali 2014, Geoportal IDESC, 2023; archivo sonoro <em>Tejido de Transicionantes por el Valle Geográfico del Río Cauca</em>, 2023-2025.</p>
+
+          </div>
+        </section>
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="camina-el-territorio-del-sur-del-valle-alto-del-río-cauca">Camina el territorio del sur del valle alto del río Cauca</h3>
+<p><em>Tejido de Transicionantes por el Valle Geográfico del Río Cauca</em><br>
+<em>Colaboratorio Diseño &amp; Sociedad, Universidad del Cauca</em><br>
+<em>Cartografía</em><br>
+<em>2024</em></p>
+<p>En el corazón del Macizo Colombiano, madre compartida con los ríos Magdalena, Patía, Caquetá y Putumayo, cerca de la Laguna del Buey, entre la neblina del páramo de Sotará, territorio habitado por el pueblo Kokonuko, nace el río Cauca. En su trayecto de aproximadamente 1350 km, el río desciende nutriendo los valles de Pubenza y del Cauca, llevando el alimento que fecunda los suelos y sostiene la biodiversidad de una de las cuencas hidrográficas más vitales de Colombia.</p>
+<p>Desde el sur, el río avanza encañonado entre montañas, resguardando en su cauce las memorias de luchas y reexistencia; más adelante, al abrirse paso hacia el norte, se desparrama en la planicie donde confluyen los humedales El Pondaje y Charco Azul. Así, su curso traza una sinuosa corriente de vida que enlaza montañas, planicies, comunidades y pueblos, tejiendo el palpitar de territorios que cantan.</p>
+<p>En el sur del valle alto del río Cauca, pueblos indígenas y negros afrodescendientes han cuidado el territorio desde sus ontologías relacionales del Buen vivir y del Ubuntú, en las que la vida se enraíza como tejido trenzado en reciprocidad. Tulpas, cantos, danzas, comidas, medicinas, cultivos y otras prácticas tradicionales expresan una sabiduría ancestral, creada, recreada y transmitida a lo largo de los siglos, sosteniendo un modo de habitar biocultural en el territorio. Estas ontologías continúan resistiendo a las narrativas hegemónicas capitalistas del despojo, la marginación y el vaciamiento -materializadas en el monocultivo de la caña de azúcar, la central hidroeléctrica Salvajina y la urbanización descontrolada-, disoñando otros presentes y futuros posibles.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Un Río Cauca, Muchos Mundos; Colaboratorio de Cartografías Críticas y Codiseño Territorial; Tejido de Transicionantes por el Valle Geográfico del Río Cauca; habitantes de Suárez, sus familias y ancestros que poblaron las tierras inundadas por la represa Salvajina; habitantes de Cali en el siglo XX; Colaboratorio de Diseño para la Innovación Social: Grupo de investigación Diseño &amp; Sociedad, Universidad del Cauca.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+El río Cauca, encharcado por la construcción de la represa Salvajina, y el ecosistema inundado por ella. Los afluentes que desde las cordilleras Central y Occidental llegan al Cauca entre Salvajina y La Virginia, y los humedales, ciénagas, zanjones, caños, humedales del valle alto. El río Cauca que bordea Cali; los ríos que desde los Farallones, en la cordillera Occidental, bajan a la planicie del valle, y los cientos de ojos y cuerpos de agua -humedales, ciénagas, zanjones- que conformaban el ecosistema acuático de Aguablanca.</p>
+<p><strong>Territorios:</strong>
+<br />
+El entorno drásticamente transformado por la represa Salvajina. La cuenca alta del río Cauca, entre la represa Salvajina (Suárez y Morales, Cauca) y el extenso valle que llega hasta La Virginia, Risaralda. El río Cauca en su paso por Cali. El río Cauca, desde su nacimiento en la Laguna del Buey hasta Cali en el valle alto del río Cauca.</p>
+
+          </div>
+        </section>
+      
+    </div>
   
 
   
@@ -5241,6 +5643,11 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+      
+      
+    
+      
+      
         
       
       
@@ -5471,14 +5878,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5488,6 +5887,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
       
@@ -5595,11 +5999,917 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+  
+  
+  
+  
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+  
+  
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Un Río Cauca, Muchos Mundos</p>
     <p>Un Río Cauca, Muchos Mundos</p>
 
     

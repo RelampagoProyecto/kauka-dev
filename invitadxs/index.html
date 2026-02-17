@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4114,2859 +4154,993 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
-
-  
   
     
   
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
-  
+      
     
   
     
-  
+      
     
   
-  
-
-  
-  
-
-  
     
-    
+  
     
+  
     
+      
     
+  
     
       
-    
-
     
+  
     
-
+      
     
+  
     
+      
     
+  
     
+  
     
+      
     
   
-    
     
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+      
     
+  
     
       
-      
     
+  
     
+      
     
   
     
+  
     
+      
     
+  
     
+  
     
+  
     
       
-    
-
     
-    
-
+  
     
+      
     
+  
     
+  
     
       
-      
-    
     
-    
   
     
+  
     
+      
     
+  
     
+      
     
+  
     
       
-    
-
     
+  
     
-
+  
     
+      
     
+  
     
+  
     
       
-      
     
+  
     
+      
     
   
     
+      
     
+  
     
+  
     
+      
     
+  
     
       
     
-
+  
     
+  
     
-
+  
     
+      
     
+  
     
+  
     
       
+    
+  
+    
       
     
+  
     
+      
     
   
     
+  
     
+      
     
+  
     
+  
     
+  
     
       
     
-
-    
+  
     
-
+      
     
+  
     
+      
     
+  
     
       
-      
-    
     
+  
     
   
     
+  
     
+      
     
+  
     
+  
     
+  
     
       
     
-
+  
     
+      
     
-
+  
     
+  
     
+      
     
+  
     
       
-      
     
+  
     
+      
     
   
     
+      
     
+  
     
+  
     
+      
     
+  
     
       
     
-
+  
     
+      
     
-
+  
     
+      
     
+  
     
+  
     
       
-      
     
+  
     
+  
     
   
     
+      
     
+  
     
+  
     
+      
     
+  
     
       
     
-
+  
     
+  
     
-
+  
     
+      
     
+  
     
+  
     
       
-      
-    
     
-    
   
     
+  
     
+      
     
+  
     
+      
     
+  
     
       
     
-
-    
+  
     
-
+      
     
+  
     
+      
     
+  
     
       
-      
     
+  
     
+  
     
   
     
+  
     
+  
     
+      
     
+  
     
+  
     
-      
+  
     
-
+  
     
+  
     
-
+  
     
+  
     
+      
     
+  
     
-      
-      
+  
     
+  
     
+  
     
   
     
+      
     
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+      
     
+  
     
       
-      
     
+  
     
+  
     
   
+    
+      
     
+  
     
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+      
     
+  
     
       
-      
     
+  
     
+      
     
   
     
+  
     
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+  
     
-    
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
     
-
-    
-    
+  
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
-    
-
-    
-    
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
-    
-
-    
-    
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
     
-
-    
-    
+  
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
+  
     
       
-    
-
-    
-    
-
-    
-    
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
     
-
-    
-    
+  
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
-    
-
-    
-    
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
     
-
+  
     
+  
     
+  
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
-    
-
-    
-    
     
+  
     
-      
       
-    
-    
     
   
-    
-    
-    
-    
     
-    
       
-    
-
-    
     
-
-    
-    
+  
     
+  
     
-      
       
     
+  
     
+      
     
   
     
+  
     
+      
     
+  
     
+  
     
+  
     
       
-    
-
     
+  
     
-
+      
     
+  
     
+  
     
+  
     
-      
       
     
+  
     
+      
     
   
     
-    
+  
     
+  
     
+  
     
+  
     
       
-    
-
-    
     
-
-    
+  
     
+      
     
+  
     
-      
       
     
+  
     
+      
     
   
     
-    
+      
     
+  
     
+      
     
+  
     
       
-    
-
     
+  
     
-
+  
     
+      
     
+  
     
+  
     
-      
       
-    
-    
     
   
     
+  
     
+      
     
+  
     
+      
     
+  
     
       
-    
-
     
+  
     
-
+  
     
+  
     
+      
     
+  
     
-      
       
     
+  
     
+  
     
   
     
+      
     
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+      
     
-
+  
     
+      
     
+  
     
+  
     
-      
       
     
+  
     
+      
     
   
     
-    
+      
     
+  
     
+  
     
+  
     
       
-    
-
     
+  
     
-
+      
     
+  
     
+      
     
+  
     
       
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
     
   
     
-    
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+  
     
+  
     
-      
       
-    
-    
     
   
     
-    
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+  
     
+  
     
-      
       
     
+  
     
+  
     
   
     
+      
+    
+  
     
+  
     
+  
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+      
     
+  
     
-      
       
     
+  
     
+      
     
   
     
+      
     
+  
     
+      
     
+  
     
+  
     
       
     
-
+  
     
+  
     
-
+      
     
+  
     
+  
     
+      
     
+  
     
+      
     
   
-    
     
+      
     
+  
     
+      
     
+  
     
       
-    
-
     
+  
     
-
+  
     
+      
     
+  
     
+  
     
       
-      
-    
     
-    
   
     
+      
     
+  
     
+      
     
+  
     
+  
     
       
-    
-
     
-    
-
+  
     
+      
     
+  
     
+  
     
       
-      
     
+  
     
+      
     
   
     
+      
     
+  
     
+  
     
+      
     
+  
     
       
+    
+  
     
+  
+  
 
+  
+  
     
+  
     
-
+  
     
+  
     
+  
     
+  
     
-      
-      
+  
     
+  
     
+  
     
   
     
+  
     
+  
     
+  
     
+  
     
+  
     
-      
+  
     
-
+  
     
+  
     
-
+  
     
+  
     
+  
     
+  
     
-      
-      
+  
+    
+  
     
+  
     
+  
     
+  
+  
+
   
+  
+
+  
     
     
     
@@ -7174,9 +5348,12 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
     
     
     
+      
+      
     
     
     
@@ -7372,9 +5549,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-    
-      
-      
     
     
     
@@ -7457,12 +5631,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -7835,8 +6006,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+      
+      
     
     
+    
   
     
     
@@ -7850,12 +6024,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -7897,6 +6068,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+    
+      
+      
     
     
     
@@ -8023,12 +6197,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -8137,8 +6308,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+      
+      
     
     
+    
   
     
     
@@ -8218,12 +6392,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -8353,9 +6524,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-    
-      
-      
     
     
     
@@ -8482,12 +6650,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -8530,11 +6695,8 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
     
     
-    
   
     
     
@@ -8636,12 +6798,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -8903,6 +7062,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+    
+      
+      
     
     
     
@@ -9114,12 +7276,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -9140,8 +7299,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+      
+      
     
     
+    
   
     
     
@@ -9287,12 +7449,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -9488,6 +7647,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+    
+      
+      
     
     
     
@@ -9658,9 +7820,12 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
     
     
     
+      
+      
     
     
     
@@ -9725,11 +7890,8 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-      
-      
     
     
-    
   
     
     
@@ -9831,12 +7993,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -9878,9 +8037,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-    
-      
-      
     
     
     
@@ -10051,12 +8207,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -10294,8 +8447,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+      
+      
     
     
+    
   
     
     
@@ -10331,12 +8487,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -10444,9 +8597,6 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
-    
-      
-      
     
     
     
@@ -10507,9 +8657,12 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
+    
     
     
     
+      
+      
     
     
     
@@ -10574,8 +8727,11 @@ if (typeof initHeaderOnReady === "function") {
     
     
     
+      
+      
     
     
+    
   
     
     
@@ -10630,12 +8786,9 @@ if (typeof initHeaderOnReady === "function") {
     
     
 
-    
     
     
     
-      
-      
     
     
     
@@ -10701,34 +8854,13 @@ if (typeof initHeaderOnReady === "function") {
     
     
       
-      
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
       
-    
-
-    
     
-
-    
-    
-    
     
     
-    
   
 
   
-    
-      
     
   
     
@@ -10737,8 +8869,6 @@ if (typeof initHeaderOnReady === "function") {
   
     
   
-    
-      
     
   
     
@@ -10853,27 +8983,9 @@ if (typeof initHeaderOnReady === "function") {
         
         <div class="invitadxs-letter-item">
           <a
-            href="#key-z"
-            class="invitadxs-letter-link link-key">
-            Z
-          </a>
-        </div>
-      
-        
-        <div class="invitadxs-letter-item">
-          <a
             href="#key-y"
             class="invitadxs-letter-link link-key">
             Y
-          </a>
-        </div>
-      
-        
-        <div class="invitadxs-letter-item">
-          <a
-            href="#key-w"
-            class="invitadxs-letter-link link-key">
-            W
           </a>
         </div>
       
@@ -11073,36 +9185,6 @@ if (typeof initHeaderOnReady === "function") {
       
         
         
-          <div id="key-z" class="invitadxs-artists-group">
-            
-            
-            
-              
-              
-              
-                
-              
-            
-
-            
-            
-            
-              
-            
-            
-
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/zapanteras-negras/">
-                
-                Zapanteras Negras
-              </a>
-            
-          </div>
-        
-      
-        
-        
           <div id="key-y" class="invitadxs-artists-group">
             
             
@@ -11131,32 +9213,20 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
               
             
             
@@ -11169,21 +9239,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/yeison-riascos/">
-                
-                Yeison Riascos
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/yohan-jarvy-ledezma-ausecha/">
                 
                 Yohan Jarvy Ledezma Ausecha
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/yohn-alexis-castillo/">
-                
-                Yohn Alexis Castillo
               </a>
             
               
@@ -11196,36 +9254,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/yuliana-ortiz-ruano/">
                 
                 Yuliana Ortiz Ruano
-              </a>
-            
-          </div>
-        
-      
-        
-        
-          <div id="key-w" class="invitadxs-artists-group">
-            
-            
-            
-              
-              
-              
-                
-              
-            
-
-            
-            
-            
-              
-            
-            
-
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/wanuri-kahiu/">
-                
-                Wanuri Kahiu
               </a>
             
           </div>
@@ -11247,20 +9275,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
               
             
 
@@ -11268,7 +9282,9 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
+              
             
+              
               
             
             
@@ -11337,50 +9353,29 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
+              
+            
+              
               
             
             
@@ -11399,15 +9394,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/">
-                
-                Un Río Cauca, Muchos Mundos
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/universidad-autonoma-comunal-de-oaxaca-uaco/">
                 
-                Universidad Autónoma Comunal De Oaxaca (UACO)
+                Universidad Autónoma Comunal de Oaxaca (UACO)
               </a>
             
               
@@ -11453,32 +9442,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
               
             
               
@@ -11504,17 +9467,18 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
+              
+              
+            
+              
               
             
             
@@ -11530,18 +9494,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/tatiana-bachiller/">
                 
                 Tatiana Bachiller
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/tejido-de-salud/">
-                
-                Tejido De Salud
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/tejido-vitalizacion-de-espacios-de-arquitectura-propia/">
-                
-                Tejido Vitalización De Espacios De Arquitectura Propia
               </a>
             
               
@@ -11593,88 +9545,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
               
             
               
@@ -11718,39 +9588,33 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
               
             
             
@@ -11763,21 +9627,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sandra-gamarra-h./">
-                
-                Sandra Gamarra H.
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sandrio-candido/">
                 
                 Sandrio Cândido
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/santiago-rivas/">
-                
-                Santiago Rivas
               </a>
             
               
@@ -11787,39 +9639,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sebastian-terronio/">
-                
-                Sebastián Terronio
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sede-capilla-santa-barbara-de-dominguillo/">
-                
-                Sede: Capilla Santa Bárbara De Dominguillo
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sede-mampo-/-casa-arte/">
-                
-                Sede: MAMPO / Casa Arte
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sede-museo-de-historia-natural-de-unicauca/">
-                
-                Sede: Museo De Historia Natural De Unicauca
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/sede-salon-de-la-excelencia-santander-de-quilichao/">
-                
-                Sede: Salón De La Excelencia, Santander De Quilichao
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/semillero-litoralidades-henry-salazar-y-fabio-melecio/">
                 
-                Semillero Litoralidades (Henry Salazar Y Fabio Melecio)
+                Semillero Litoralidades (Henry Salazar y Fabio Melecio)
               </a>
             
               
@@ -11838,12 +9660,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/shirlene-malambo/">
                 
                 Shirlene Malambo
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/shorouk-swaid-palestina/">
-                
-                Shorouk Swaid (Palestina)
               </a>
             
               
@@ -11891,67 +9707,26 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
               
-            
-              
-            
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/radio-cosmica/">
-                
-                Radio Cósmica
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/raices-de-tierra-y-mar-sas/">
                 
-                Raíces De Tierra Y Mar SAS
+                Raíces de Tierra y Mar SAS
               </a>
             
               
@@ -11961,27 +9736,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/red-de-semillas-del-cauca/">
-                
-                Red De Semillas Del Cauca
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/residencia-casa-del-sueno/">
-                
-                Residencia Casa Del Sueño
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/ruta4-taller/">
                 
                 Ruta4 Taller
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/ruth-elena-lasso/">
-                
-                Ruth Elena Lasso
               </a>
             
           </div>
@@ -12015,70 +9772,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
               
             
               
@@ -12110,27 +9803,27 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
               
             
             
@@ -12140,12 +9833,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/paola-andrea-charry/">
                 
                 Paola Andrea Charry
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/paola-charry/">
-                
-                Paola-Charry
               </a>
             
               
@@ -12173,39 +9860,21 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/portadoras-de-saber-de-villa-rica/">
-                
-                Portadoras De Saber De Villa Rica
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/posa-suto/">
                 
                 Posa Suto
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/proceso-de-la-liberacion-de-la-madre-tierra/">
-                
-                Proceso De La Liberación De La Madre Tierra
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/proceso-de-liberacion-de-la-madre-tierra-uma-kiwe/">
                 
-                Proceso De Liberación De La Madre Tierra —Uma Kiwe
+                Proceso de Liberación de la Madre Tierra —Uma Kiwe
               </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/procesos-autonomos-de-investigacion-creacion-pai/">
                 
-                Procesos Autónomos De Investigación-Creación (PAI)
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/procesos-campesinos-afro-e-indigenas/">
-                
-                Procesos Campesinos, Afro E Indígenas
+                Procesos Autónomos de Investigación-Creación (PAI)
               </a>
             
           </div>
@@ -12229,30 +9898,18 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
+              
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/ochy-curiel/">
-                
-                Ochy Curiel
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/olga-eusse/">
@@ -12303,32 +9960,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
               
             
 
@@ -12336,25 +9967,22 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/nandy-mondragon/">
-                
-                Nandy Mondragón
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/naomi-rincon-gallardo/">
@@ -12383,7 +10011,7 @@ if (typeof initHeaderOnReady === "function") {
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/nomasmetaforas-clara-melniczuk-y-julian-dupont/">
                 
-                Nomasmetaforas (Clara Melniczuk Y Julián Dupont)
+                Nomasmetaforas (Clara Melniczuk y Julián Dupont)
               </a>
             
           </div>
@@ -12405,14 +10033,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
@@ -12424,98 +10044,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
               
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
                 
               
             
@@ -12565,53 +10093,11 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
               
               
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
                 
               
             
@@ -12662,55 +10148,63 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
             
@@ -12726,18 +10220,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/mama-pascuala-chuchillo-ussa/">
                 
                 Mama Pascuala Chuchillo Ussa
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/manuel-rozental/">
-                
-                Manuel Rozental
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/mara-bravo/">
-                
-                Mara Bravo
               </a>
             
               
@@ -12761,19 +10243,7 @@ if (typeof initHeaderOnReady === "function") {
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/maria-del-mar-vanin/">
                 
-                María Del Mar Vanín
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/maria-elvira-solis/">
-                
-                María Elvira Solís
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/maria-fernanda-parra-muntu-bantu/">
-                
-                María Fernanda Parra (Muntú Bantú)
+                María del Mar Vanín
               </a>
             
               
@@ -12849,27 +10319,15 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/miguel-lourido-escuela-de-esgrima-con-machete-y-bordon/">
-                
-                Miguel Lourido (Escuela De Esgrima Con Machete Y Bordón)
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/miguel-rocha-vivas/">
-                
-                Miguel Rocha Vivas
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/mikaelah-drullard/">
                 
                 Mikaelah Drullard
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/minga-practicas-de-coloniales/">
+              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/minga-practicas-decoloniales/">
                 
-                Minga Prácticas De-Coloniales
+                Minga Prácticas De-coloniales
               </a>
             
           </div>
@@ -12929,54 +10387,32 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
+              
+            
+              
               
             
             
@@ -12998,18 +10434,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/laura-campaz-minota/">
                 
                 Laura Campaz Minota
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/legado-nortecaucano/">
-                
-                Legado Nortecaucano
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/leonor-torres/">
-                
-                Leonor Torres
               </a>
             
               
@@ -13063,26 +10487,14 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
 
             
             
             
               
+              
             
+              
               
             
             
@@ -13119,46 +10531,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
@@ -13194,94 +10566,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
               
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
                 
               
             
@@ -13331,13 +10615,17 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
+              
+            
+              
+              
+              
                 
-                
-                  
-                
-
-                
-                  
+              
+            
+              
+              
+              
                 
               
             
@@ -13358,47 +10646,63 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
             
@@ -13408,12 +10712,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/jean-lucumi/">
                 
                 Jean Lucumí
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/jess-rodriguez/">
-                
-                Jess Rodríguez
               </a>
             
               
@@ -13444,12 +10742,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/john-jenner-manunga-balanta/">
                 
                 John Jenner Mañunga Balanta
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/john-ramirez/">
-                
-                John Ramírez
               </a>
             
               
@@ -13567,51 +10859,11 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
               
               
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
                 
               
             
@@ -13620,27 +10872,22 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
+              
+              
+            
+              
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/iconoclasistas/">
-                
-                Iconoclasistas
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/iconoclasistas-julia-risler-y-pablo-ares/">
@@ -13664,12 +10911,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/irene-rodriguez-gomez/">
                 
                 Irene Rodríguez Gómez
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/isabella-londono/">
-                
-                Isabella Londoño
               </a>
             
               
@@ -13699,58 +10940,18 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/horarios-miercoles-a-lunes-martes-cerrado-900-a.m.---500-p.m./">
-                
-                Horarios: Miércoles a Lunes (Martes Cerrado), 9:00 A.m. - 5:00 P.m.
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/horarios-viernes-a-lunes-martes-a-jueves-cerrado-900-a.m.---500-p.m./">
-                
-                Horarios: Viernes a Lunes (Martes a Jueves Cerrado), 9:00 A.m. - 5:00 P.m.
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/hugo-jamioy/">
@@ -13809,98 +11010,26 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
-              
-            
-              
-            
               
             
             
@@ -13931,57 +11060,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/graciela-bolanos/">
-                
-                Graciela Bolaños
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/graciela-larrahondo/">
-                
-                Graciela Larrahondo
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/grafica-pai/">
-                
-                Gráfica PAI
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/griselda-zuniga/">
-                
-                Griselda Zúñiga
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/guadalupe-errazurriz/">
                 
                 Guadalupe Errazuriz
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/guadalupe-errazuriz/">
-                
-                Guadalupe Errázuriz
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/guardia-campesina/">
-                
-                Guardia Campesina
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/guardia-cimarrona/">
-                
-                Guardia Cimarrona
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/guardia-indigena/">
-                
-                Guardia Indigena
               </a>
             
               
@@ -14009,34 +11090,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
@@ -14060,54 +11113,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
               
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
                 
               
             
@@ -14116,17 +11121,21 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
+              
+              
+            
+              
+              
+            
+              
               
             
             
@@ -14148,12 +11157,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/felipe-guerra/">
                 
                 Felipe Guerra (COOPIA)
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/felipe-rivas-san-martin/">
-                
-                Felipe Rivas San Martín
               </a>
             
               
@@ -14223,64 +11226,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
               
             
               
@@ -14300,41 +11245,34 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/eblin-grueso/">
-                
-                Eblin Grueso
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/eblin-grueso-cuero/">
@@ -14349,12 +11287,6 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/ecovida/">
-                
-                Ecovida
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/edgar-calel/">
                 
                 Edgar Calel
@@ -14364,12 +11296,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/edgar-julian-santa-colectivo-ambiente-tabanoy/">
                 
                 Edgar Julián Santa – Colectivo Ambiente Tabanoy
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/edinson-quinones/">
-                
-                Edinson Quiñones
               </a>
             
               
@@ -14397,18 +11323,6 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/escuela-de-musica-de-villa-rica/">
-                
-                Escuela De Música De Villa Rica
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/escuela-itinerante-de-artes-plasticas-y-visuales/">
-                
-                Escuela Itinerante De Artes Plásticas Y Visuales
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/espiritu-balanta/">
                 
                 Espíritu Balanta
@@ -14433,72 +11347,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
@@ -14529,13 +11377,11 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
+              
+            
+              
+              
+              
                 
               
             
@@ -14544,23 +11390,27 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
+              
             
+              
+              
+            
+              
+              
+            
+              
               
             
             
@@ -14585,27 +11435,15 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/daniela-tovar/">
+              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/daniela-tobar/">
                 
                 Daniela Tobar
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/deifer-ibanez/">
-                
-                Deifer Ibañez
               </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/deifer-moises-ibanez-gasca/">
                 
                 Deifer Moisés Ibáñez Gasca
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/diana-tenorio-teca/">
-                
-                Diana Tenorio (Teca)
               </a>
             
               
@@ -14669,94 +11507,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
               
             
               
@@ -14836,74 +11586,66 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/camilo-hoyos/">
-                
-                Camilo Hoyos
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/campamento-estrella-roja-y-andres-maiz/">
                 
                 Campamento Estrella Roja y Andrés Maíz
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/cantoras-de-manato/">
-                
-                Cantoras De Manato
               </a>
             
               
@@ -14916,12 +11658,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/carolina-chacon-bernal/">
                 
                 Carolina Chacón Bernal
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/castiel-vitorino/">
-                
-                Castiel Vitorino
               </a>
             
               
@@ -14949,15 +11685,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/clemencia-gomez/">
+              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectiva-viraje-narrativas-maricas-transfeministas/">
                 
-                Clemencia Gómez
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectiva-viraje.-narrativas-maricas-transfeministas/">
-                
-                Colectiva Viraje. Narrativas Maricas Transfeministas
+                Colectiva Viraje. Narrativas maricas transfeministas
               </a>
             
               
@@ -14979,39 +11709,21 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectivo-mesa/">
-                
-                Colectivo Mesa
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectivo-tul-lecxkwe/">
                 
                 Colectivo Tul Lécxkwe
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/colectivos-juveniles-de-corinto/">
-                
-                Colectivos Juveniles De Corinto
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/comite-curatorial/">
                 
-                Comité Curatorial
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/comunidad-de-santa-rosa/">
-                
-                Comunidad De Santa Rosa
+                Comité curatorial
               </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/consejo-ancestral-willka-yaku-eyder-fabio-calambas-trochez-y-phuyu-uma-jenniffer-avila-jordan/">
                 
-                Consejo Ancestral Willka Yaku (Eyder Fabio Calambás-Tróchez Y Phuyu Uma Jenniffer Ávila-Jordán)
+                Consejo Ancestral Willka Yaku (Eyder Fabio Calambás-Tróchez y Phuyu Uma Jenniffer Ávila-Jordán)
               </a>
             
               
@@ -15071,24 +11783,20 @@ if (typeof initHeaderOnReady === "function") {
                 
               
             
-              
-              
-              
-                
-              
-            
 
             
             
             
               
-            
               
             
               
-            
               
             
+              
+              
+            
+              
               
             
             
@@ -15098,12 +11806,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/barbara-muelas/">
                 
                 Bárbara Muelas
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/barbara-santos/">
-                
-                Bárbara Santos
               </a>
             
               
@@ -15155,14 +11857,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
                 
-                
-                
-                  
-                
-
-                
-                  
-                
               
             
               
@@ -15246,108 +11940,6 @@ if (typeof initHeaderOnReady === "function") {
               
               
               
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-              
-            
-              
-              
-              
-                
-                
-                
-                  
-                
-
-                
-                  
                 
               
             
@@ -15356,84 +11948,66 @@ if (typeof initHeaderOnReady === "function") {
             
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
               
-            
               
             
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
             
 
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/academia-de-esgrima-de-machete-y-bordon-de-puerto-tejada/">
-                
-                Academia De Esgrima De Machete Y Bordón De Puerto Tejada
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/acin/">
-                
-                ACIN
-              </a>
             
               
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/adolfo-alban-achinte/">
                 
                 Adolfo Albán Achinte
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/adolfo-mayor/">
-                
-                Adolfo Mayor
               </a>
             
               
@@ -15446,12 +12020,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/agrupacion-camaron-de-playa-y-ana-iris-orobio/">
                 
                 Agrupación Camarón de Playa y Ana Iris Orobio
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/agrupacion-dejando-huellas/">
-                
-                Agrupación Dejando Huellas
               </a>
             
               
@@ -15470,12 +12038,6 @@ if (typeof initHeaderOnReady === "function") {
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/alexandra-idrobo/">
                 
                 Alexandra Idrobo
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/alexandra-idrobo-artista-de-monte-oscuro/">
-                
-                Alexandra Idrobo (Artista De Monte Oscuro)
               </a>
             
               
@@ -15509,21 +12071,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/angelica-ramirez-diagrama/">
-                
-                Angélica Ramírez (Diagrama)
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/anyi-ballesteros-llanten/">
                 
                 Anyi Ballesteros Llantén
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/artistas-residentes-popayork/">
-                
-                Artistas Residentes Popayork
               </a>
             
               
@@ -15551,21 +12101,9 @@ if (typeof initHeaderOnReady === "function") {
               </a>
             
               
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/asociacion-de-mujeres-defensoras-del-medio-ambiente/">
-                
-                Asociación De Mujeres Defensoras Del Medio Ambiente
-              </a>
-            
-              
               <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/asomanuelitas-la-trocha-sentires-de-la-montana/">
                 
                 Asomanuelitas - La Trocha sentires de la montaña
-              </a>
-            
-              
-              <a class="invitadxs-artist-link" href="/kauka-dev/invitadxs/asprofinca/">
-                
-                ASPROFINCA
               </a>
             
               
@@ -15652,6 +12190,9 @@ if (typeof initHeaderOnReady === "function") {
     </main>
 
     
+
+
+
 
 
 

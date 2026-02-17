@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4137,6 +4177,13 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -4739,6 +4786,35 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+    <div class="invitadx-secondary-sections">
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="residencia-piyapmɵsik---casa-del-sueño">Residencia PIYAPMƟSIK - Casa del Sueño</h3>
+<p><em>Silvia Espejo Ayca, Esperanza Almendra y Mariano Cuchillo</em>
+<br>
+<em>Tejidos misak y aymara</em>
+<br>
+<em>2025</em></p>
+<p>La palabra que emerge del fogón de Piyapmøsik - Casa del Sueño, logra traernos al presente la ancestralidad con palabras dulces como: “En cada hilo y tejido vive la memoria de nuestros shures, en cada color natural resplandece la generosidad de la madre tierra, en cada diseño se cuenta la historia de nuestro pueblo.”</p>
+<p>Para un mundo que solo ha visto la posibilidad mercantil del textil indígena, estas palabras enuncian la vigencia decolonial del tejido, la necesaria re-existencia de cada territorio y la creatividad propia de los pueblos indígenas para luchar por su lugar en el tiempo y el espacio. O, dicho de otro modo: “Cada hilo es una historia, cada nudo un latido”; es decir, cada mundo es un corazón tejido a otro.</p>
+<p>Estos tejidos no pueden dimensionarse únicamente por lo que su apariencia inmóvil revela, sino por el proceso que hizo posible sentar en el territorio de los Wampia a una mujer aymara como Silvia Espejo junto a Mamá Esperanza y el Taita Mariano. Para los pueblos que portan el saber del tejido, que llevan sembrada la raíz de la autonomía, cocrear con otrxs, incluso más allá de su espacio geográfico, forma parte de su cotidianidad, atravesada por lógicas colectivas y múltiples. Sin embargo, el diálogo mostró las complejidades de cocrear entre saberes diversos, dejando al descubierto los tiempos, las distancias y las complejidades que atraviesan los encuentros de este tipo, en el marco de un evento con los límites temporales de un Salón Nacional de Artistas.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Silvia Espejo Ayca, Esperanza Almendra y Mariano Cuchillo.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Lana de oveja, orlón merino, telar horizontal de cintura de madera de pino, eucalipto y hueso de llama, portsi pasrontsik (telar vertical de madera de pino, travesaños de eucalipto, vara de urdimbre de guadua, cuerda de peine de hilo acrílico, macana espada de trama de madera chonta, rueca de madera de aliso y vara de uso de guadua).</p>
+<p><strong>Territorio:</strong>
+<br />
+Territorio Ancestral Misak de Wampia, Silvia, Cauca (Colombia) y Territorio Ancestral Qaqachaka, Oruro (Bolivia).</p>
+<p>Estas piezas fueron las huellas de la Residencia en PIYAPMƟSIK - Casa del Sueño (Territorio Ancestral Misak de Wampia, Silvia, Cauca), parte del componente residencias del 47 Salón Nacional de Artistas.</p>
+
+          </div>
+        </section>
+      
+    </div>
+  
 
   
   
@@ -4882,6 +4958,11 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+      
+      
+    
+      
+      
         
       
       
@@ -5110,14 +5191,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5127,6 +5200,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
       
@@ -5191,11 +5269,21 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+  
+  
+  
+  
+  
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">PiyapMɵsik – Casa del Sueño</p>
     <p>PiyapMɵsik – Casa del Sueño</p>
 
     

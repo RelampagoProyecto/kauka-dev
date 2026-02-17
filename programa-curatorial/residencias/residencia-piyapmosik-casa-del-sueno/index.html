@@ -220,27 +220,27 @@
 <style>
   :root {
      
-    --mobile-menu-color: rgb(68, 34, 8);
+    --mobile-menu-color: #ffffff;
 
      
-    --submenu-indicator-color: rgb(68, 34, 8);
+    --submenu-indicator-color: #ffffff;
 
      
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-golden-yellow);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-teal);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-golden-yellow);
-    --search-highlight-color: rgb(68, 34, 8);
-    --search-border-color: rgb(68, 34, 8);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-teal);
+    --search-highlight-color: #ffffff;
+    --search-border-color: #ffffff;
     --search-overlay: rgba(0, 0, 0, 0.6);
 
      
-    --footer-stripe-1: rgba(230, 165, 65);
-    --footer-stripe-2: rgba(208, 69, 128);
+    --footer-stripe-1: rgba(230, 165, 65, 0.45);
+    --footer-stripe-2: rgba(68, 34, 8, 0.45);
   }
 </style>
 
@@ -281,16 +281,16 @@
 
 
 
-<header id="nav" class="header bg-programa-curatorial text-white">
+<header id="nav" class="header bg-residencias text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-residencias nav-overlay"></div>
+  <div id="nav-overlay" class="bg-dark-cyan nav-overlay"></div>
   
   
-  <nav class="navbar bg-programa-curatorial text-white">
+  <nav class="navbar bg-residencias text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -3683,7 +3683,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-programa-curatorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-residencias text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -3985,7 +3985,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-programa-curatorial text-white">
+  <div class="navbar-search-bar bg-residencias text-white">
     
 
 
@@ -4012,30 +4012,70 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-golden-yellow); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-golden-yellow); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-teal); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-teal); --search-highlight-color: #ffffff; --search-border-color: #ffffff; --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4110,23 +4150,38 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
   bg-white
 " data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
 
 
   
   
-    <div
-      class="proyecto-categorias-container  bg-burnt-orange">
-      <div id="proyecto-categorias" class="proyecto-categorias">
-        
-        
-        
-      </div>
-    </div>
+  
   
 
 
@@ -4152,17 +4207,18 @@ if (typeof initHeaderOnReady === "function") {
   
     
     <div class="proyecto-contenido-container">
-      <div
-        id="proyecto-contenido"
-        class="proyecto-contenido text-deep-pink">
-        <div class="page-content-container ">
-  <div class="page-content-text"><p>Esta residencia artística intercultural, realizada en la Casa del Sueño, en el municipio de Silvia, Cauca, se centró en el tejido tradicional como práctica viva de intercambio. El proceso reunió a la comunidad Misak y a la tejedora boliviana Silvia Espejo, del pueblo Aymara, en un espacio de diálogo entre saberes ancestrales y prácticas contemporáneas, donde el tejido fue punto de encuentro, memoria y lenguaje compartido.</p>
+      <section
+        class="pc-section-band pc-section-band-intro
+          text-deep-pink
+        ">
+        <div class="pc-section-content"><p>Esta residencia artística intercultural, realizada en la Casa del Sueño, en el municipio de Silvia, Cauca, se centró en el tejido tradicional como práctica viva de intercambio. El proceso reunió a la comunidad Misak y a la tejedora boliviana Silvia Espejo, del pueblo Aymara, en un espacio de diálogo entre saberes ancestrales y prácticas contemporáneas, donde el tejido fue punto de encuentro, memoria y lenguaje compartido.</p>
 <p>A lo largo de la residencia se compartieron técnicas, herramientas y formas de organización propias de la comunidad Misak y del pueblo Aymara, combinando el aprendizaje práctico con la reflexión colectiva. De este intercambio surgieron obras que integran símbolos, técnicas y colores de ambas culturas, dando lugar a un proceso colaborativo que fortaleció los vínculos comunitarios y reafirmó el valor del tejido como práctica cultural, pedagógica y territorial.</p>
 </div>
-</div>
-
-      </div>
+      </section>
     </div>
+    
+      
+    
   
 
 
@@ -5241,6 +5297,30 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+              <div class="pc-section-content"><h3 id="residencia-piyapmɵsik---casa-del-sueño">Residencia PIYAPMƟSIK - Casa del Sueño</h3>
+<p><em>Silvia Espejo Ayca, Esperanza Almendra y Mariano Cuchillo</em>
+<br>
+<em>Tejidos misak y aymara</em>
+<br>
+<em>2025</em></p>
+<p>La palabra que emerge del fogón de Piyapmøsik - Casa del Sueño, logra traernos al presente la ancestralidad con palabras dulces como: “En cada hilo y tejido vive la memoria de nuestros shures, en cada color natural resplandece la generosidad de la madre tierra, en cada diseño se cuenta la historia de nuestro pueblo.”</p>
+<p>Para un mundo que solo ha visto la posibilidad mercantil del textil indígena, estas palabras enuncian la vigencia decolonial del tejido, la necesaria re-existencia de cada territorio y la creatividad propia de los pueblos indígenas para luchar por su lugar en el tiempo y el espacio. O, dicho de otro modo: “Cada hilo es una historia, cada nudo un latido”; es decir, cada mundo es un corazón tejido a otro.</p>
+<p>Estos tejidos no pueden dimensionarse únicamente por lo que su apariencia inmóvil revela, sino por el proceso que hizo posible sentar en el territorio de los Wampia a una mujer aymara como Silvia Espejo junto a Mamá Esperanza y el Taita Mariano. Para los pueblos que portan el saber del tejido, que llevan sembrada la raíz de la autonomía, cocrear con otrxs, incluso más allá de su espacio geográfico, forma parte de su cotidianidad, atravesada por lógicas colectivas y múltiples. Sin embargo, el diálogo mostró las complejidades de cocrear entre saberes diversos, dejando al descubierto los tiempos, las distancias y las complejidades que atraviesan los encuentros de este tipo, en el marco de un evento con los límites temporales de un Salón Nacional de Artistas.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Silvia Espejo Ayca, Esperanza Almendra y Mariano Cuchillo.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Lana de oveja, orlón merino, telar horizontal de cintura de madera de pino, eucalipto y hueso de llama, portsi pasrontsik (telar vertical de madera de pino, travesaños de eucalipto, vara de urdimbre de guadua, cuerda de peine de hilo acrílico, macana espada de trama de madera chonta, rueca de madera de aliso y vara de uso de guadua).</p>
+<p><strong>Territorio:</strong>
+<br />
+Territorio Ancestral Misak de Wampia, Silvia, Cauca (Colombia) y Territorio Ancestral Qaqachaka, Oruro (Bolivia).</p>
+<p><strong>Estas piezas fueron las huellas de la Residencia en PIYAPMƟSIK - Casa del Sueño (Territorio Ancestral Misak de Wampia, Silvia, Cauca), parte del componente residencias del 47 Salón Nacional de Artistas.</strong></p>
+</div>
+            </section></div>
+  
 
       </section>
     </main>
@@ -5252,11 +5332,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Residencia PIYAPMƟSIK - Casa del Sueño</p>
     <p>Residencia PIYAPMƟSIK - Casa del Sueño</p>
 
     

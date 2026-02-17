@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4137,6 +4177,13 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -4462,6 +4509,33 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+    <div class="invitadx-secondary-sections">
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="el-futuro-acciones-para-el-presente">El futuro, acciones para el presente</h3>
+<p><em>Gerson Vargas</em>
+<br>
+<em>Serigrafía sobre tela (5.5 x 3.5 m)</em>
+<br>
+<em>2025</em></p>
+<p>El futuro, acciones para el presente es un ejercicio gráfico de memoria viva. El proyecto retoma la frase «El futuro lo construye el trabajo colectivo» —surgida en conversaciones entre el artista y su abuela paterna, Orfilia Chara— para imprimirla en diferentes soportes y activarla en diversos contextos. Orfilia Chara fue partera comunitaria y lideresa; su pensamiento se encarna aquí como un manifiesto que habita en el artista, evocando su forma de ser, sentir, pensar y habitar el mundo. Se trata de un mensaje dirigido al presente, en el que se teje un puente entre la comunidad a la que pertenece, la memoria familiar y la identidad espiritual inscrita en su cuerpo. Son palabras vivas que se materializan en una experiencia visual que llena el espacio como una voz resonante, pronunciada a través del recuerdo, entendido como un territorio presente de lo que se es y de lo que se puede llegar a ser.</p>
+<p>La frase simboliza el espíritu de colectividad, fundamental para la construcción y el sostenimiento de cualquier mundo. En los espacios asamblearios y de encuentro del 47 Salón Nacional de Artistas en donde estuvo presente, esta pieza fue un recordatorio de que las transformaciones sociales y territoriales son posibles gracias a la fuerza colectiva y a la sabiduría comunitaria que Orfilia Chará encarnó.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+Gerson Vargas y Orfilia Chará.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Los cuerpos de agua del oriente de Cali. La palabra, tesoro y dignidad.</p>
+<p><strong>Territorios:</strong>
+<br />
+Gerson nació y creció en el barrio Unión de vivienda popular, al oriente de Cali, fundado por colonos populares asentados allí a principios de la década de los sesenta y donde su familia ayudó a dar forma a las condiciones de vida y organización común.</p>
+
+          </div>
+        </section>
+      
+    </div>
+  
 
   
   
@@ -4522,161 +4596,6 @@ if (typeof initHeaderOnReady === "function") {
       
       
       
-        
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-        
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
-    
-      
-      
-      
-      
     
       
       
@@ -4767,6 +4686,171 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+        
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+        
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
       
       
     
@@ -4840,20 +4924,12 @@ if (typeof initHeaderOnReady === "function") {
         
       
       
-      
-      
-    
+        
       
       
       
       
     
-      
-      
-        
-      
-      
-        
       
       
       
@@ -4995,11 +5071,21 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+  
+  
+  
+  
+  
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Gerson Vargas</p>
     <p>Gerson Vargas</p>
 
     

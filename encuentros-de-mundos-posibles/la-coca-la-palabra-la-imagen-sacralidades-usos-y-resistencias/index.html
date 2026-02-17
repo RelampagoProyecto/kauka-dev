@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,25 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4172,17 +4231,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
             26/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            26/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4314,6 +4383,265 @@ if (typeof initHeaderOnReady === "function") {
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
     <div class="col-span-12">
       
+        
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_5e982c3f13d43384.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_9dbc17af5e203017.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_92688e9b13c961a0.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_18c336668efbacfc.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_55b34348d77033f0.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_3b945d295c67b895.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_de52160798dde898.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_a2925205f983d520.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_22e74530239c75b4.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-1_hu_73e1416e2ae38678.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_la-coca-lplisuyr-1.webp"
+              loading="lazy"
+              width="2400"
+              height="1600" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_b2d554bbe142afaf.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_733c394577904a32.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_646a6a7dbcc13cd2.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_95d385a30ff3d750.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_61cd7a51b1aeeabc.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_4d23e5bcea3f5df7.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_6a12b9824703f3b.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_978637c5d7629ffe.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_d3a13aaf22d51479.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/la-coca-la-palabra-la-imagen-sacralidades-usos-y-resistencias/galeria/enc_la-coca-lplisuyr-2_hu_5c11303f2f8599bf.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_la-coca-lplisuyr-2.webp"
+              loading="lazy"
+              width="2400"
+              height="1779" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
+      
     </div>
   </div>
 
@@ -4330,11 +4658,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">La coca, la palabra, la imagen: sacralidades, usos y resistencias</p>
     <p>La coca, la palabra, la imagen: sacralidades, usos y resistencias</p>
 
     

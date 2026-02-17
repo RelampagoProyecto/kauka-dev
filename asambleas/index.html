@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4271,6 +4311,93 @@ if (typeof initHeaderOnReady === "function") {
   
 
 
+  
+  
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+    
+
+    
+    
+      
+    
+
+    
+
+    
+  
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+    
+
+    
+    
+      
+    
+
+    
+
+    
+  
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+    
+
+    
+    
+      
+    
+
+    
+
+    
+  
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+    
+
+    
+    
+      
+    
+
+    
+
+    
+  
+
   <div
     class="asambleas-list-container bg-asambleas-list">
     
@@ -4279,152 +4406,188 @@ if (typeof initHeaderOnReady === "function") {
         
         
         
-
-
         <article class="asambleas-list-item">
-          
-          
-
-
-          <div class="asambleas-list-item_gallery">
+          <a
+            href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/"
+            class="asambleas-list-image-link"
+            aria-label="Ver Primera asamblea de mundos posibles">
             
-            <div class="asambleas-list-item_content"></div>
+              <div class="asambleas-list-image">
+                <img
+                  src="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/gallery/asa_prim-asamblea-dmp-3.webp"
+                  alt="Primera asamblea de mundos posibles"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+            
+          </a>
 
-            <div class="asambleas-list-item_content">
-              <header class="asambleas-list-header">
-                <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/" class="asambleas-list-link">
-                    
-                      <span class="asambleas-list-orden"
-                        > 1</span
-                      >
-                    
-                    <span class="asambleas-list-titulo">Primera asamblea de mundos posibles</span>
-                  </a>
-                </h3>
-              </header>
+          <div class="asambleas-list-item-content">
+            <header class="asambleas-list-header">
+              <h3 class="asambleas-list-title">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/" class="asambleas-list-link">
+                  
+                    <span class="asambleas-list-orden"
+                      > 1</span
+                    >
+                  
+                  <span class="asambleas-list-titulo">Primera asamblea de mundos posibles</span>
+                </a>
+              </h3>
+            </header>
 
-              
-                <p class="asambleas-list-summary">
-                  La Primera Asamblea apeló a las metodologías del espacio que la recibió, la Ala Kusreik Ya Misak Universidad, en torno a la Tulpa, al fuego sagrado que orienta la conversación.
-                </p>
-                <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
-              
-            </div>
+            
+              <p class="asambleas-list-summary">
+                La Primera Asamblea apeló a las metodologías del espacio que la recibió, la Ala Kusreik Ya Misak Universidad, en torno a la Tulpa, al fuego sagrado que orienta la conversación.
+              </p>
+            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/"
+              class="asambleas-list-link-arrow"
+              aria-label="Abrir Primera asamblea de mundos posibles">
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </article>
       
         
         
         
-
-
         <article class="asambleas-list-item">
-          
-          
-
-
-          <div class="asambleas-list-item_gallery">
+          <a
+            href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/"
+            class="asambleas-list-image-link"
+            aria-label="Ver Segunda asamblea de mundos posibles">
             
-            <div class="asambleas-list-item_content"></div>
+              <div class="asambleas-list-image">
+                <img
+                  src="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/galeria/asa_segu-asamblea-dmp-3.webp"
+                  alt="Segunda asamblea de mundos posibles"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+            
+          </a>
 
-            <div class="asambleas-list-item_content">
-              <header class="asambleas-list-header">
-                <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/" class="asambleas-list-link">
-                    
-                      <span class="asambleas-list-orden"
-                        > 2</span
-                      >
-                    
-                    <span class="asambleas-list-titulo">Segunda asamblea de mundos posibles</span>
-                  </a>
-                </h3>
-              </header>
+          <div class="asambleas-list-item-content">
+            <header class="asambleas-list-header">
+              <h3 class="asambleas-list-title">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/" class="asambleas-list-link">
+                  
+                    <span class="asambleas-list-orden"
+                      > 2</span
+                    >
+                  
+                  <span class="asambleas-list-titulo">Segunda asamblea de mundos posibles</span>
+                </a>
+              </h3>
+            </header>
 
-              
-                <p class="asambleas-list-summary">
-                  A partir del trabajo de memoria de La Casa del Cacao, se propuso como tema los Sistemas de Participación, compartiendo con el público por medio de espirales de saberes.
-                </p>
-                <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
-              
-            </div>
+            
+              <p class="asambleas-list-summary">
+                A partir del trabajo de memoria de La Casa del Cacao, se propuso como tema los Sistemas de Participación, compartiendo con el público por medio de espirales de saberes.
+              </p>
+            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/"
+              class="asambleas-list-link-arrow"
+              aria-label="Abrir Segunda asamblea de mundos posibles">
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </article>
       
         
         
         
-
-
         <article class="asambleas-list-item">
-          
-          
-
-
-          <div class="asambleas-list-item_gallery">
+          <a
+            href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/"
+            class="asambleas-list-image-link"
+            aria-label="Ver Tercera asamblea de mundos posibles">
             
-            <div class="asambleas-list-item_content"></div>
+              <div class="asambleas-list-image">
+                <img
+                  src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6.webp"
+                  alt="Tercera asamblea de mundos posibles"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+            
+          </a>
 
-            <div class="asambleas-list-item_content">
-              <header class="asambleas-list-header">
-                <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/" class="asambleas-list-link">
-                    
-                      <span class="asambleas-list-orden"
-                        > 3</span
-                      >
-                    
-                    <span class="asambleas-list-titulo">Tercera asamblea de mundos posibles</span>
-                  </a>
-                </h3>
-              </header>
+          <div class="asambleas-list-item-content">
+            <header class="asambleas-list-header">
+              <h3 class="asambleas-list-title">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/" class="asambleas-list-link">
+                  
+                    <span class="asambleas-list-orden"
+                      > 3</span
+                    >
+                  
+                  <span class="asambleas-list-titulo">Tercera asamblea de mundos posibles</span>
+                </a>
+              </h3>
+            </header>
 
-              
-                <p class="asambleas-list-summary">
-                  La Tercera Asamblea se realizó en La Tulpa de la UAIIN-CRIC, donde la espiritualidad propia permitió gestar la conversación alrededor del fuego y los remedios propios del territorio.
-                </p>
-                <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
-              
-            </div>
+            
+              <p class="asambleas-list-summary">
+                La Tercera Asamblea se realizó en La Tulpa de la UAIIN-CRIC, donde la espiritualidad propia permitió gestar la conversación alrededor del fuego y los remedios propios del territorio.
+              </p>
+            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/"
+              class="asambleas-list-link-arrow"
+              aria-label="Abrir Tercera asamblea de mundos posibles">
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </article>
       
         
         
         
-
-
         <article class="asambleas-list-item">
-          
-          
-
-
-          <div class="asambleas-list-item_gallery">
+          <a
+            href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/"
+            class="asambleas-list-image-link"
+            aria-label="Ver Cuarta asamblea de mundos posibles">
             
-            <div class="asambleas-list-item_content"></div>
+              <div class="asambleas-list-image">
+                <img
+                  src="/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/galeria/asa_cuar-asamblea-dmp-10.webp"
+                  alt="Cuarta asamblea de mundos posibles"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+            
+          </a>
 
-            <div class="asambleas-list-item_content">
-              <header class="asambleas-list-header">
-                <h3 class="asambleas-list-title">
-                  <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/" class="asambleas-list-link">
-                    
-                      <span class="asambleas-list-orden"
-                        > 4</span
-                      >
-                    
-                    <span class="asambleas-list-titulo">Cuarta asamblea de mundos posibles</span>
-                  </a>
-                </h3>
-              </header>
+          <div class="asambleas-list-item-content">
+            <header class="asambleas-list-header">
+              <h3 class="asambleas-list-title">
+                <a href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/" class="asambleas-list-link">
+                  
+                    <span class="asambleas-list-orden"
+                      > 4</span
+                    >
+                  
+                  <span class="asambleas-list-titulo">Cuarta asamblea de mundos posibles</span>
+                </a>
+              </h3>
+            </header>
 
-              
-                <p class="asambleas-list-summary">
-                  La Asamblea de cierre se realizó en el litoral pacífico caucano, recibida por la mayora Elena Hinestroza y el curador Eblin Grueso, con el objetivo de construir los Mandatos del 47 SNA.
-                </p>
-                <p class="asambleas-list-link_arrow" aria-hidden="true"></p>
-              
-            </div>
+            
+              <p class="asambleas-list-summary">
+                La Asamblea de cierre se realizó en el litoral pacífico caucano, recibida por la mayora Elena Hinestroza y el curador Eblin Grueso, con el objetivo de construir los Mandatos del 47 SNA.
+              </p>
+            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/"
+              class="asambleas-list-link-arrow"
+              aria-label="Abrir Cuarta asamblea de mundos posibles">
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </article>
       
@@ -4433,10 +4596,6 @@ if (typeof initHeaderOnReady === "function") {
     
     <div class="asambleas-list-grid-desktop">
       
-      
-        
-        
-        
         
         
         
@@ -4479,16 +4638,22 @@ if (typeof initHeaderOnReady === "function") {
 
           
           <div class="asambleas-list-image-col">
-            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/"
+              class="asambleas-list-image-link-desktop"
+              aria-label="Ver Primera asamblea de mundos posibles">
               
-              <div class="asambleas-list-image-desktop h-96 bg-gray-400"></div>
-            
+                <img
+                  src="/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/gallery/asa_prim-asamblea-dmp-3.webp"
+                  alt="Primera asamblea de mundos posibles"
+                  class="asambleas-list-image-desktop"
+                  loading="lazy"
+                  decoding="async" />
+              
+            </a>
           </div>
         </article>
       
-        
-        
-        
         
         
         
@@ -4531,16 +4696,22 @@ if (typeof initHeaderOnReady === "function") {
 
           
           <div class="asambleas-list-image-col">
-            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/"
+              class="asambleas-list-image-link-desktop"
+              aria-label="Ver Segunda asamblea de mundos posibles">
               
-              <div class="asambleas-list-image-desktop h-96 bg-gray-400"></div>
-            
+                <img
+                  src="/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/galeria/asa_segu-asamblea-dmp-3.webp"
+                  alt="Segunda asamblea de mundos posibles"
+                  class="asambleas-list-image-desktop"
+                  loading="lazy"
+                  decoding="async" />
+              
+            </a>
           </div>
         </article>
       
-        
-        
-        
         
         
         
@@ -4583,16 +4754,22 @@ if (typeof initHeaderOnReady === "function") {
 
           
           <div class="asambleas-list-image-col">
-            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/"
+              class="asambleas-list-image-link-desktop"
+              aria-label="Ver Tercera asamblea de mundos posibles">
               
-              <div class="asambleas-list-image-desktop h-96 bg-gray-400"></div>
-            
+                <img
+                  src="/kauka-dev/asambleas/tercera-asamblea-de-mundos-posibles/galeria/asa_terc-asamblea-dmp-6.webp"
+                  alt="Tercera asamblea de mundos posibles"
+                  class="asambleas-list-image-desktop"
+                  loading="lazy"
+                  decoding="async" />
+              
+            </a>
           </div>
         </article>
       
-        
-        
-        
         
         
         
@@ -4635,10 +4812,19 @@ if (typeof initHeaderOnReady === "function") {
 
           
           <div class="asambleas-list-image-col">
-            
+            <a
+              href="https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/"
+              class="asambleas-list-image-link-desktop"
+              aria-label="Ver Cuarta asamblea de mundos posibles">
               
-              <div class="asambleas-list-image-desktop h-96 bg-gray-400"></div>
-            
+                <img
+                  src="/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/galeria/asa_cuar-asamblea-dmp-10.webp"
+                  alt="Cuarta asamblea de mundos posibles"
+                  class="asambleas-list-image-desktop"
+                  loading="lazy"
+                  decoding="async" />
+              
+            </a>
           </div>
         </article>
       
@@ -5141,6 +5327,9 @@ if (typeof initHeaderOnReady === "function") {
     </main>
 
     
+
+
+
 
 
 

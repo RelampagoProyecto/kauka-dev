@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clara Melniczuk on KAUKA</title>
+    <title>Clara-Melniczuk on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/clara-melniczuk/</link>
-    <description>Recent content in Clara Melniczuk on KAUKA</description>
+    <description>Recent content in Clara-Melniczuk on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/clara-melniczuk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NOMASMETAFORAS</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/nomasmetaforas/</link>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/nomasmetaforas/</guid>
+      <description>&lt;p&gt;¿Cómo constelar lo que entendemos por arte? ¿Cómo conocemos desde el arte una visión que abraza muchxs mundxs posibles? nomasmetaforas se plantea esta pregunta desde la articulación con organizaciones sociales, en la vitalidad del tiempo lento, y un proceso de varios procesos que atraviesen la pregunta por el soñar, presentir, reparar y curar desde el arte y sus formas de relación en reciprocidad. Las organizaciones matriz que funcionan como nodos en esta exploración son la Universidad Autónoma Indígena Intercultural del CRIC, Ala Kusreik Ya Misak Universidad, Universidad del Macizo, Galería del Barrio Bolívar, Mujeres Firmantes de Paz - Cooperativa las Manuelitas, Transaliades y FuriaMarika.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

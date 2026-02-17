@@ -4017,23 +4017,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4137,6 +4177,13 @@ if (typeof initHeaderOnReady === "function") {
   
   
   
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -4648,6 +4695,55 @@ if (typeof initHeaderOnReady === "function") {
   
 
   
+    <div class="invitadx-secondary-sections">
+      
+        <section class="invitadx-secondary-section">
+          <div class="artista-term-content invitadx-rich-content">
+            <h3 id="la-altura-indefinida">La altura indefinida</h3>
+<p><em>Juan Pablo Gaviria Bedoya</em>
+<br>
+<em>Video instalación</em>
+<br>
+<em>Duración: 18’22”</em>
+<br>
+<em>2024</em></p>
+<p>Revisitando acontecimientos históricos relacionados con las ciencias naturales, La altura indefinida reflexiona sobre la desaparición de los glaciares tropicales a través de una exploración térmica-afectiva del volcán Puracé, alguna vez cubierto de nieves perpetuas. Este ejercicio sensible articula el sonido, la imagen y la palabra a través de un montaje de video multicanal que cuestiona la intención decimonónica de medir el mundo, y encuentra un respiro en la incapacidad de determinar racionalmente la escala de esa desaparición.</p>
+<p>A partir del encuentro del artista con el hipsómetro ideado por el científico Francisco José de Caldas (Popayán, 1768-1816), un aparato para medir la altura de las montañas con base en el cálculo de la temperatura en que ebulle el agua, este proyecto planteó una visita al volcán Puracé, Cauca (lugar que detonó la creación de este aparato), con la intención de apropiarse simbólicamente de la metodología del científico y “medir” metafóricamente, a través del cuerpo, las dimensiones del deshielo de los nevados andinos.</p>
+<p>La temporalidad lineal de la ciencia y del progreso humanos está llevando al planeta a nuevos procesos de extinción; sin embargo, los tiempos de la nieve y del volcán son otros, distintos a las temporalidades coloniales centradas en lo humano. La vida, como siempre lo ha hecho, encontrará nuevas formas de resistir.</p>
+<p>Este proyecto forma parte de Albedo, proyecto ganador de la Beca de Creación Artística 2024, en la categoría Artes Visuales, del Ministerio de las Culturas, las Artes y los Saberes.</p>
+<p><strong>Presencias humanas:</strong>
+<br />
+<strong>Dirección, edición, diseño de sonido y primera cámara:</strong> Juan Pablo Gaviria Bedoya.
+<br />
+<strong>Producción ejecutiva:</strong> abraso.
+<br />
+<strong>Coproducción:</strong> Natalia Ospina.
+<br />
+<strong>Masterización de sonido:</strong> Ricardo Tovar Mateus.
+<br />
+<strong>Segunda cámara:</strong> Kevin Ortiz.
+<br />
+<strong>Producción de Cianotipos:</strong> Camilo Londoño, Natalia Ospina, Gabriela Marulanda, Juan Pablo Gaviria Bedoya.
+<br />
+<strong>Digitalización de cianotipos:</strong> Martín Saldarriaga.
+<br />
+<strong>Agradecimientos al Resguardo de Puracé, especialmente a:</strong> Danilo Bolaños, Nelly Caldón, Liliana Quirá, Jesús Pizo, Yené Victoriano Vargas, Sara Mazabuel, Isaías Isiquita, Aurelio Manquillo, Omar Fernández, Andrés Pizo, Ronaldo Mazabuel, Luz Edith Fernández, Leidy Maquillo y Lizette Pizo.
+<br />
+<strong>Agradecimientos a la Chirimía Tamborá, especialmente a:</strong> Stefan René Conde Villegas, Diana Collazos Cayapú, Daniel Ricardo Moreno Álvarez, Daniel Fernando Cajas Muñoz y Juan Pablo Moreno Álvarez.
+<br />
+<strong>Agradecimientos especiales:</strong> Raúl Bedoya, Juliana Gómez, Christian Benavides y David Medina.</p>
+<p><strong>Presencias más que humanas:</strong>
+<br />
+Volcán Puracé (que para el momento de la exposición pasó de alerta amarilla a alerta naranja), el calor, el Jukas, el sonido indefinido y el sol.</p>
+<p><strong>Territorios:</strong>
+<br />
+Juan Pablo nació en Cali, creció entre Cali, Bucaramanga, Medellín y Bogotá y vive actualmente en Berlín. Este proyecto se desarrolla en los municipios de Puracé y Popayán, en el departamento del Cauca. Desde la base, a unos metros de la cumbre del volcán, divisamos el nevado del Huila, la Cordillera Occidental y parte de la cadena de los Coconucos.</p>
+
+          </div>
+        </section>
+      
+    </div>
+  
 
   
   
@@ -4791,6 +4887,11 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
+      
+      
+    
+      
+      
         
       
       
@@ -5019,14 +5120,6 @@ if (typeof initHeaderOnReady === "function") {
     
       
       
-        
-      
-      
-      
-      
-    
-      
-      
       
       
     
@@ -5036,6 +5129,11 @@ if (typeof initHeaderOnReady === "function") {
       
       
         
+      
+      
+      
+      
+    
       
       
       
@@ -5100,11 +5198,21 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+  
+  
+  
+  
+  
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Juan Pablo Gaviria Bedoya</p>
     <p>Juan Pablo Gaviria Bedoya</p>
 
     

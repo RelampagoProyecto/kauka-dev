@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,22 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4148,7 +4204,10 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-contenido" class="encuentro-contenido">
       
         
-        <section class="pc-section-band pc-section-band-intro text-dark-forest-green">
+        <section
+        class="pc-section-band pc-section-band-intro
+          text-dark-forest-green
+        ">
         <div class="pc-section-content"><h2 id="encuentro-colectivo-edelo-chiapas-y-proceso-de-liberación-de-la-madre-tierra-norte-del-cauca">Encuentro Colectivo EDELO¹ (Chiapas) y Proceso de Liberación de la Madre Tierra (Norte del Cauca)</h2>
 <p><strong>Corinto - Cauca</strong></p>
 <blockquote>
@@ -4172,7 +4231,8 @@ Haciendo eco de una de las conclusiones que surgieron de la Asamblea de mundos p
 
   
   
-    <section class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+    <section
+          class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
           <div class="pc-section-content"><p>A partir de la estética insurgente de las Panteras Negras, la autonomía zapatista y la resistencia radical del pueblo nasa —en tensión permanente con los consejos comunitarios y el pueblo negro del norte del Cauca—, este encuentro da una vuelta más en el tejido de la mochila de los mundos que llevan la innegociable autonomía bajo la piel y que se ha cosechado por varias generaciones en los corazones de los pueblos afro e indígenas.</p>
 <p>Antes de llegar al campo, esta colaboración ya había dejado huella en la sala de exposición. Allí, la gráfica de Zapantera Negra, una iniciativa que fusiona la lucha antirracista estadounidense con el movimiento indígena mexicano, se encontró con la del Proceso de Liberación de la Madre Tierra. Este tejido visual se instaló en el Cambuche y en la Casa Palafito construida por el maestro José Manuel Cuesta y pintados por las maestras muralistas Nandi Mondragón y Diana Teca. La potencia de estas imágenes, que integran también el trabajo de Gerson Vargas, Bawer y Carlitos del Colectivo Chuzo Resistencia, funcionó como una herramienta política para imaginar futuros emancipadores, uniendo movimientos revolucionarios históricos a través de la Estampatón³.</p>
 </div>
@@ -4192,17 +4252,27 @@ Haciendo eco de una de las conclusiones que surgieron de la Asamblea de mundos p
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
             16/12/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            16/12/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4333,7 +4403,8 @@ Haciendo eco de una de las conclusiones que surgieron de la Asamblea de mundos p
 
   
   
-    <div class="as-sections-post-gallery"><section class="pc-section-band pc-stage-propuestas bg-home-artistas text-white">
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-propuestas bg-home-artistas text-white">
               <div class="pc-section-content"><p>Nuestra visita coincidió con las fechas de un paro armado nacional —impuesto, paradójicamente, por el Ejército de Liberación Nacional (ELN)—, lo cual, gracias al cuidado territorial del Gobierno Propio y de los Espíritus Mayores, no mermó nuestra voluntad de realizar el encuentro. Francisco Lion, Gerson Vargas y los curadores Laura Campaz, Eblin Grueso, Eyder Calambás y Phuyu Uma caminamos juntos para sentarnos en territorio liberado.</p>
 <p>La jornada estuvo marcada por la hospitalidad de lxs liberadorxs que han sostenido la lucha por la tierra durante más de veinte años. Alrededor de un sancocho en leña, el Colectivo EDELO y lxs artistas locales compartieron historias de resistencia, intercambiando experiencias sobre la defensa de la vida y el territorio. Esta acción final reafirmó que la verdadera “curaduría” del Salón fue el reconocimiento mutuo; un acto donde la gráfica zapatista y la liberación caucana se reconocieron como una sola lucha, demostrando que el arte tiene el poder de habitar los lugares donde el sistema colonial ha intentado negar la vida.</p>
 <footer class="pc-tool-page-footer" role="contentinfo">
@@ -4356,11 +4427,15 @@ Haciendo eco de una de las conclusiones que surgieron de la Asamblea de mundos p
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Zapantera Negra en tierra liberada</p>
     <p>Zapantera Negra en tierra liberada</p>
 
     

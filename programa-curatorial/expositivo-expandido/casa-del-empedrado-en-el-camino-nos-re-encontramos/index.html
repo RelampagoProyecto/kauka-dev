@@ -229,18 +229,18 @@
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-golden-yellow);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-deep-pink);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-golden-yellow);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-deep-pink);
     --search-highlight-color: rgb(68, 34, 8);
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
 
      
-    --footer-stripe-1: rgba(230, 165, 65);
-    --footer-stripe-2: rgba(208, 69, 128);
+    --footer-stripe-1: rgba(230, 165, 65, 0.45);
+    --footer-stripe-2: rgba(2, 144, 173, 0.45);
   }
 </style>
 
@@ -281,16 +281,16 @@
 
 
 
-<header id="nav" class="header bg-programa-curatorial text-white">
+<header id="nav" class="header bg-expositivo text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-residencias nav-overlay"></div>
+  <div id="nav-overlay" class="bg-dark-cyan nav-overlay"></div>
   
   
-  <nav class="navbar bg-programa-curatorial text-white">
+  <nav class="navbar bg-expositivo text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -3683,7 +3683,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-programa-curatorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-expositivo text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -3985,7 +3985,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-programa-curatorial text-white">
+  <div class="navbar-search-bar bg-expositivo text-white">
     
 
 
@@ -4012,30 +4012,70 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-golden-yellow); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-golden-yellow); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-deep-pink); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-deep-pink); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4110,13 +4150,37 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
   bg-white
 " data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
 
 
+  
+  
   
   
 
@@ -4147,7 +4211,10 @@ if (typeof initHeaderOnReady === "function") {
   
     
     <div class="proyecto-contenido-container">
-      <section class="pc-section-band pc-section-band-intro text-deep-pink">
+      <section
+        class="pc-section-band pc-section-band-intro
+          text-deep-pink
+        ">
         <div class="pc-section-content"><p>PAI (Procesos Autónomos de Investigación–Creación Cauca)**
 Dimensiones variables
 Instalación, mural y cerámica artesanal.
@@ -4232,8 +4299,7 @@ Instalación, mural y cerámica artesanal.
           
           
             <div class="proyecto-info-notas-desktop">
-              <span class="font-kauka">e</span>
-              Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
+              • Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
             </div>
           
           
@@ -4250,8 +4316,7 @@ Instalación, mural y cerámica artesanal.
       
       
         <div class="proyecto-info-notas">
-          <span class="font-kauka">e</span>
-          Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
+          • Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m.
         </div>
       
       
@@ -4795,7 +4860,10 @@ Instalación, mural y cerámica artesanal.
   </div>
 
   
-    <section class="pc-section-band pc-stage-propuestas section-propuestas bg-expositivo text-white">
+    <section
+          class="pc-section-band pc-stage-propuestas
+            section-propuestas
+           bg-expositivo text-white">
           <div class="pc-section-content"><p>Son producto de las reflexiones que surgieron en recorridos y encuentros con diversos territorios, sus dinámicas particulares y los diálogos que se tejieron en comunidad. De esta juntanza nos interesaba resaltar el concepto de huella, entendida como camino, memoria y presencia. Trabajar la huella en barro resulta pertinente, pues ambas emergen de la tierra que habitamos y nos sostiene.</p>
 <p>En la pieza, la materia prima es más que un insumo: la cerámica artesanal, ahumada y quemada con leña del territorio, es transformada por el fuego, y las cicatrices del proceso se asumen como parte esencial de su naturaleza.</p>
 <p><strong>Presencias humanas:</strong>
@@ -4822,11 +4890,15 @@ Los recorridos de PAI para el 47 SNA han tenido lugar en diversos territorios: l
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Casa del Empedrado ¡En el camino nos re-encontramos!</p>
     <p>Casa del Empedrado ¡En el camino nos re-encontramos!</p>
 
     

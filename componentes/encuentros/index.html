@@ -4013,23 +4013,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4198,26 +4238,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/tonga-manifiesta-afroindigena-norte-cauca/">
-      Tonga: Manifiesta afroindígena
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">El laboratorio de manifiesta o antimanifiesta plantea una reflexión sobre la autorrepresentación y el derecho de lxs artistas racializadxs a narrar sus propias historias.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/tonga-manifiesta-afroindigena-norte-cauca/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
     <a href="/kauka-dev/encuentros-de-mundos-posibles/un-tejido-de-visiones-conversacion-curatorial-sobre-kauka-asamblea-de-mundos-posibles/">
       Un tejido de visiones: conversación curatorial sobre KAUKA, asamblea de mundos posibles
     </a>
@@ -4253,46 +4273,6 @@ if (typeof initHeaderOnReady === "function") {
 
               </div>
             
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/yanak-uywana-la-crianza-mutua-de-las-artes/">
-      YANAK UYWAÑA La crianza mutua de las artes
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">En el marco del 47 Salón Nacional de Artistas, esta charla, Elvira Espejo Ayca se centra en los cambios de paradigma pensados desde las propias terminologías lingüísticas de las comunidades indígenas en Bolivia a través de la creación de unos bienes culturales y recursos informativos que contribuyen a comprender yanak uywañ, la crianza mutua de la artes como una nueva visión de la vida y valorizan unos conocimientos que, transmitidos de generación en generación, constituyen un bagaje de sabiduría y también un medio de resistencia anticolonial. Esta charla da continuidad al intercambio iniciado entre la comunidad textilera del departamento de Oruro, en los Andes bolivianos y comunidad Misak del departamento del Cauca en Colombia.&quot;
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/yanak-uywana-la-crianza-mutua-de-las-artes/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/recorrido-nasa-campesino-y-misak/">
-      Recorrido Nasa, campesino y Misak
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Recorrido por territorio Nasa, campesino y Misak hacia el Parque Arqueológico de Tierradentro.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/recorrido-nasa-campesino-y-misak/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
           </div>
         </div>
       </div>
@@ -4303,6 +4283,9 @@ if (typeof initHeaderOnReady === "function") {
     </main>
 
     
+
+
+
 
 
 

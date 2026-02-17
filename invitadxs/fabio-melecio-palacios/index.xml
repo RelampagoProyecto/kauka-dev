@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fabio Melecio Palacios on KAUKA</title>
+    <title>Fabio-Melecio-Palacios on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/fabio-melecio-palacios/</link>
-    <description>Recent content in Fabio Melecio Palacios on KAUKA</description>
+    <description>Recent content in Fabio-Melecio-Palacios on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/fabio-melecio-palacios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Semillero Litoralidades</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/</link>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/</guid>
+      <description>&lt;p&gt;El territorio habla. ¿Lo escuchamos? Para el colectivo Litoralidades es importante todo aquello que atraviesa el territorio, desde lo humano hasta lo no humano. A través de talleres, encuentros, conversatorios y activaciones, estructurados desde un pensamiento situado y colectivo, planteamos los saberes ancestrales como una herramienta expandida y descolonizadora que permite escuchar los mundos posibles que emergen desde el territorio. Son los integrantes de la comunidad quienes se encargan de articular los talleres en diversas poblaciones del Kauka como Puerto Saija, Padilla, Guapi y Santa María de Timbiquí, entre otros.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

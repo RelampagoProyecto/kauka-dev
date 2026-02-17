@@ -229,18 +229,18 @@
     --mobile-home-color: #ffffff;
 
      
-    --search-bg: var(--color-golden-yellow);
-    --search-text: rgb(68, 34, 8);
+    --search-bg: var(--color-deep-pink);
+    --search-text: #ffffff;
     --search-input-bg: transparent;
-    --search-input-text: rgb(68, 34, 8);
-    --search-results-bg: var(--color-golden-yellow);
+    --search-input-text: #ffffff;
+    --search-results-bg: var(--color-deep-pink);
     --search-highlight-color: rgb(68, 34, 8);
     --search-border-color: rgb(68, 34, 8);
     --search-overlay: rgba(0, 0, 0, 0.6);
 
      
-    --footer-stripe-1: rgba(230, 165, 65);
-    --footer-stripe-2: rgba(208, 69, 128);
+    --footer-stripe-1: rgba(230, 165, 65, 0.45);
+    --footer-stripe-2: rgba(2, 144, 173, 0.45);
   }
 </style>
 
@@ -281,16 +281,16 @@
 
 
 
-<header id="nav" class="header bg-programa-curatorial text-white">
+<header id="nav" class="header bg-expositivo text-white">
   
   
   
   
   
-  <div id="nav-overlay" class="bg-residencias nav-overlay"></div>
+  <div id="nav-overlay" class="bg-dark-cyan nav-overlay"></div>
   
   
-  <nav class="navbar bg-programa-curatorial text-white">
+  <nav class="navbar bg-expositivo text-white">
     <input id="nav-toggle" type="checkbox" class="hidden" />
 
     
@@ -3683,7 +3683,7 @@
     
     <div
       id="navbar-menu-container"
-      class="navbar-menu-container bg-programa-curatorial text-white hidden lg:inline-grid">
+      class="navbar-menu-container bg-expositivo text-white hidden lg:inline-grid">
       <ul id="nav-menu" class="navbar-menu">
         
         
@@ -3985,7 +3985,7 @@
       </ul>
     </div>
   </nav>
-  <div class="navbar-search-bar bg-programa-curatorial text-white">
+  <div class="navbar-search-bar bg-expositivo text-white">
     
 
 
@@ -4012,30 +4012,70 @@
 
   <div
     class="pagefind-search-container text-white"
-    style="--search-bg: var(--color-golden-yellow); --search-text: rgb(68, 34, 8); --search-input-bg: transparent; --search-input-text: rgb(68, 34, 8); --search-results-bg: var(--color-golden-yellow); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
+    style="--search-bg: var(--color-deep-pink); --search-text: #ffffff; --search-input-bg: transparent; --search-input-text: #ffffff; --search-results-bg: var(--color-deep-pink); --search-highlight-color: rgb(68, 34, 8); --search-border-color: rgb(68, 34, 8); --search-font: &#39;RigidSquare-Regular&#39;, &#39;kauka&#39;, sans-serif; --input-font: &#39;RigidSquare-Regular&#39;, sans-serif;"
     aria-label="Buscar en el sitio">
     <div class="pagefind-search-wrapper">
       <div id="search" class="pagefind-search-element"></div>
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4110,13 +4150,37 @@ if (typeof initHeaderOnReady === "function") {
 
     <main class="
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
   bg-white
 " data-pagefind-ignore>
       <section class="mp-10 grid grid-cols-12 gap-4 gap-y-0 lg:gap-x-0">
         
   
+  
+    
+      
+    
+  
+  
+  
+  
+  
+  
+  
 
 
+  
+  
   
   
 
@@ -4143,7 +4207,10 @@ if (typeof initHeaderOnReady === "function") {
   
     
     <div class="proyecto-contenido-container">
-      <section class="pc-section-band pc-section-band-intro text-deep-pink">
+      <section
+        class="pc-section-band pc-section-band-intro
+          text-deep-pink
+        ">
         <div class="pc-section-content"><p>MIL MUNDOS NEGROS QUE SE CONECTAN ENTRE SÍ*</p>
 <p>La oscuridad es la lengua de los cuerpos que no se dejan traducir. Ahí, los encuentros se afirman como tejido comunitario vivo y se separan del régimen de la visibilidad colonial. Desde allí se reclama el derecho a la opacidad propuesto por Édouard Glissant, no para esconderse, sino para existir sin ser reducidxs y para tejer vínculos que no deban rendirse a la claridad hegemónica. La penumbra aloja tecnologías metafísicas negras: rezos que curan, plantas que enseñan, ancestrxs que convocan y constelaciones que orientan. La oscuridad no equivale a ceguera, más bien nombra políticas de conspiración y pedagogías de transmisión de saberes.
 El ennegrecimiento posee rutas propias, se alía con las sombras, aparta la visibilidad forzada y, como una estrategia de reapropiación temporal y espiritual, desdobla el tiempo lineal. Cuando una planta dicta su receta, cuando el nombre de una persona negra irrumpe en el archivo, cuando una estrella enlaza hemisferios, los mundos negros se reconocen, se llaman y se conectan. Estas rutas, saberes y gestos son desarrollados y materializados por lxs artistas que integran esta exposición, cuyas prácticas encarnan la oscuridad.
@@ -5210,7 +5277,8 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
   </div>
 
   
-    <div class="as-sections-post-gallery"><section class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
               <div class="pc-section-content"><h2 id="la-capilla-de-santa-bárbara-de-dominguillo">La Capilla de Santa Bárbara de Dominguillo</h2>
 <p>Ubicada a siete kilómetros del casco urbano de Santander de Quilichao, esta edificación fue declarada Monumento Nacional de Colombia en 1984, reconocimiento que la integra al acervo patrimonial y cultural del país. Su existencia está profundamente ligada a la historia de la explotación aurífera en la región durante el período colonial, cuando las minas reales dependían del trabajo forzado de la población africana esclavizada.</p>
 <p>En este contexto surgieron las llamadas “capillas doctrineras”, espacios destinados a la evangelización de los esclavos empleados en las cuadrillas mineras. La Capilla de Dominguillo, construida por la comunidad negra en 1857, destaca por ser la única de estas estructuras que se conserva con su arquitectura original. Su nombre proviene de los “dominguillos”, tiempo de descanso que los esclavizados destinaban los domingos para lavar ropa o mazamorrear en busca del oro con el que, gradualmente, podrían comprar su libertad.</p>
@@ -5236,11 +5304,15 @@ Los proyectos reunidos en la exposición no buscan representar la oscuridad, sin
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Exposición: Mil mundos negros que se conectan entre sí</p>
     <p>Exposición: Mil mundos negros que se conectan entre sí</p>
 
     

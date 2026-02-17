@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,25 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4148,7 +4207,8 @@ if (typeof initHeaderOnReady === "function") {
     <div id="encuentro-contenido" class="encuentro-contenido">
       
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Intercambio de prácticas y saberes agrícolas que fortalecen la soberanía alimentaria como base para la autonomía territorial.</p>
+  <div class="page-content-text"><p>El grupo de participantes, que salió de Popayán hacia el Campamento Humanitario Estrella Roja ubicado en la periferia de Popayán, fue recibido por la guardia del campamento. El recorrido fue guiadx por Andrés Maiz, líder del proceso de “lxs sin techo” que ha luchado desde las periferias de Popayán, habitando un espacio que desafía la normatividad espacial del estatus-quo, en donde cientos de familias viven comunitariamente, compartiendo la siembra, la cosecha y los cuidados del espacio y el compost. Durante la jornada las mujeres que lideran los diferentes procesos comunitarios dentro del campamento contaron sus experiencias.</p>
+<p>El recorrido fue acompañado también por Vilma Almendra y Manuel Rozental, cercanos al proceso, y por la Musea Humanitaria Campamento Estrella Roja que convocó a varias familias a instalar altares frente a sus casas con objetos y elementos de valor para cada una, contando así las historias de sus lugares de proveniencia. El cierre fue alrededor de un almuerzo de pipianes preparado desde la cocina comunitaria para lxs visitantes.</p>
 </div>
 </div>
 
@@ -4172,17 +4232,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
-            29/11/2025
+            28/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            28/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4190,7 +4260,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          10:00 a.m. - 1:00 p.m.
+          9:00 a.m. - 1:00 p.m.
         </div>
       </div>
 
@@ -4212,7 +4282,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          10:00 a.m. - 1:00 p.m.
+          9:00 a.m. - 1:00 p.m.
         </div>
       </div>
 
@@ -4228,48 +4298,24 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/procesos-campesinos-afro-e-indigenas/">
-                      Procesos Campesinos, Afro E Indígenas
+                    <a href="/kauka-dev/invitadxs/campamento-estrella-roja-y-andres-maiz/">
+                      Campamento Estrella Roja Y Andrés Maíz
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/ecovida/">
-                      Ecovida
+                    <a href="/kauka-dev/invitadxs/vilma-almendra--manuel-rozental/">
+                      Vilma Almendra &amp; Manuel Rozental
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/asprofinca/">
-                      ASPROFINCA
-                    </a>
-                  
-                </li>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/tejido-de-salud/">
-                      Tejido De Salud
-                    </a>
-                  
-                </li>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/acin/">
-                      ACIN
-                    </a>
-                  
-                </li>
-              
-                <li>
-                  
-                    <a href="/kauka-dev/invitadxs/red-de-semillas-del-cauca/">
-                      Red De Semillas Del Cauca
+                    <a href="/kauka-dev/invitadxs/mikaelah-drullard/">
+                      Mikaelah Drullard
                     </a>
                   
                 </li>
@@ -4289,48 +4335,24 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/procesos-campesinos-afro-e-indigenas/">
-                    Procesos Campesinos, Afro E Indígenas
+                  <a href="/kauka-dev/invitadxs/campamento-estrella-roja-y-andres-maiz/">
+                    Campamento Estrella Roja Y Andrés Maíz
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/ecovida/">
-                    Ecovida
+                  <a href="/kauka-dev/invitadxs/vilma-almendra--manuel-rozental/">
+                    Vilma Almendra &amp; Manuel Rozental
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/asprofinca/">
-                    ASPROFINCA
-                  </a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/tejido-de-salud/">
-                    Tejido De Salud
-                  </a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/acin/">
-                    ACIN
-                  </a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href="/kauka-dev/invitadxs/red-de-semillas-del-cauca/">
-                    Red De Semillas Del Cauca
+                  <a href="/kauka-dev/invitadxs/mikaelah-drullard/">
+                    Mikaelah Drullard
                   </a>
                 
               </li>
@@ -4347,7 +4369,7 @@ if (typeof initHeaderOnReady === "function") {
   <div class="encuentro-info-links-container">
     <div class="encuentro-info-diamonds-left"></div>
     <div class="encuentro-info-links-diamond">
-      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-29" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-28" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
 
     </div>
     <div class="encuentro-info-links-diamond">
@@ -5007,11 +5029,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Minga de procesos de autonomía alimentaria</p>
     <p>Minga de procesos de autonomía alimentaria</p>
 
     
@@ -5020,17 +5046,11 @@ if (typeof initHeaderOnReady === "function") {
         
           <ul>
             
-              <li>Procesos Campesinos, Afro E Indígenas</li>
+              <li>Campamento Estrella Roja Y Andrés Maíz</li>
             
-              <li>Ecovida</li>
+              <li>Vilma Almendra &amp; Manuel Rozental</li>
             
-              <li>ASPROFINCA</li>
-            
-              <li>Tejido De Salud</li>
-            
-              <li>ACIN</li>
-            
-              <li>Red De Semillas Del Cauca</li>
+              <li>Mikaelah Drullard</li>
             
           </ul>
         

@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4676,7 +4716,8 @@ if (typeof initHeaderOnReady === "function") {
 
 
   
-  <section class="pc-section-band pc-stage-desarrollo bg-asambleas-list text-white">
+  <section
+          class="pc-section-band pc-stage-desarrollo bg-asambleas-list text-white">
           <div class="pc-section-content">Fue una asamblea abierta en la que se compartió con el público participante por medio de espirales de saberes, armando grupos de trabajo integrados por alguien del comité curatorial, un mayor o mayora del círculo de asamblearixs y asistentes. De cada grupo y conversación salió un aporte a la conceptualización sobre los Sistemas de Participación.</div>
         </section>
 
@@ -5320,7 +5361,8 @@ if (typeof initHeaderOnReady === "function") {
   </div>
 
   
-  <div class="as-sections-post-gallery"><section class="pc-section-band pc-stage-propuestas bg-programa-curatorial text-dark-brown">
+  <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-propuestas bg-programa-curatorial text-dark-brown">
               <div class="pc-section-content">Otra parte fundamental de esta asamblea fue la Práctica de la Esgrima con Machete y Bordón, liderada por el maestro Miguel Lourido, que permitió mover lxs cuerpxs en la memoria de la esgrima, entender por qué es importante un sistema de defensa propio y cómo éste, que en su momento era una necesidad vital para la sobrevivencia, se convirtió ahora en una práctica cultura que salvaguarda la memoria y es una semilla para la afirmación de la identidad y la conexión con el territorio.</div>
             </section></div>
 
@@ -5334,11 +5376,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Segunda asamblea de mundos posibles</p>
     <p>Segunda asamblea de mundos posibles</p>
 
     

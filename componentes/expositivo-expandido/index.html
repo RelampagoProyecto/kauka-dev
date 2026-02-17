@@ -4013,23 +4013,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4370,8 +4410,7 @@ Proyecto ganador de la convocatoria “Curaduría en espacio público”. Motota
   </h4>
   
   
-  <p class="mb-6">&ldquo;MANDATO POPULAR*&rdquo;
-El jefe Seattle (pueblos Suquamish y Duwamish) dice: “La tierra no pertenece a los humanos, los humanos pertenecen a la tierra”.
+  <p class="mb-6">El jefe Seattle (pueblos Suquamish y Duwamish) dice: “La tierra no pertenece a los humanos, los humanos pertenecen a la tierra”.
 </p>
   <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/">
     Leer más
@@ -4435,7 +4474,7 @@ Canción de Robe L Ninho
   </h4>
   
   
-  <p class="mb-6">Participantes del laboratorio: Adri Capote Romero, Ángela Rodríguez, Cris Agredo, Duvan Saggnia, Flor Bárcenas Johan Mijail, Keyla Mariana Duffont, Lucas Loaiza (Lulo), María Alejandra Sánchez, Mother Star Nicki Brown, Pilar Madrid, Sirena Caicedo.
+  <p class="mb-6">Laboratorio dirigido por Iki Yos Piña Narváez Pieza sonora, fotografía y textos 2025
 </p>
   <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/las-raices-del-mangle-rojo-futuridades-anticoloniales-ejercicios-de-imaginacion-radical-cimarrona/">
     Leer más
@@ -4463,6 +4502,27 @@ Canción de Robe L Ninho
 
               </div>
             
+              <div class="md:col-6 mb-14">
+                <div>
+  
+  
+  <h4 class="mb-3">
+    <a href="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/">
+      Desde el horizonte
+    </a>
+  </h4>
+  
+  
+  <p class="mb-6">Corporación Manglaria
+Las proyecciones realizadas en el Parque del Samán en Santander de Quilichao y en MAMPO – Casa Arte en Popayán, hicieron parte de la curaduría audiovisual Desde el horizonte, desarrollada en el marco del componente expositivo. Se configuraron como espacios de encuentro entre producciones audiovisuales y de conversaciones con sus realizadorxs, quienes compartieron los procesos de creación, los contextos territoriales y las decisiones narrativas que atraviesan sus producciones. De este modo, las proyecciones trascendieron el formato de exhibición para activarse como instancias de escucha, reflexión y construcción colectiva de sentido en diálogo con los públicos locales.
+</p>
+  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/">
+    Leer más
+  </a>
+</div>
+
+              </div>
+            
           </div>
         </div>
       </div>
@@ -4473,6 +4533,9 @@ Canción de Robe L Ninho
     </main>
 
     
+
+
+
 
 
 

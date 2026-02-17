@@ -60,7 +60,7 @@
     "nombre": "Calles de Villa Rica",
     "direccion": "Espacio público"
   }},{
-  "title": "Balsada de cierre del 47SNA "Alumbrar el río Guapi"",
+  "title": "Balsada de cierre del 47SNA \"Alumbrar el río Guapi\"",
   "url": "/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/",
   "lugar": {
     "nombre": "Parque principal de Guapi",
@@ -77,7 +77,7 @@
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/",
   "lugar": {
     "nombre": "Calles de Santander de Quilichao / Popayán",
-    "direccion": "<no value>"
+    "direccion": null
   }},{
   "title": "EL MUNDO AL REVÉS",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/",
@@ -192,4 +192,10 @@
   "lugar": {
     "nombre": "PIYAPMƟSIK - Casa del Sueño",
     "direccion": "Territorio ancestral Misak de Wampia, Silvia, Cauca"
+  }},{
+  "title": "Desde el horizonte",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/desde-el-horizonte-corporacion-manglaria/",
+  "lugar": {
+    "nombre": "Parque Principal de Santander de Quilichao / MAMPO - Casa Arte",
+    "direccion": "Santander de Quilichao / Popayán"
   }}]

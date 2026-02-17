@@ -78,7 +78,7 @@
   
 
 
-<title>Encuentro de Guardias. Cimarrona, Indigena y Campesina</title>
+<title>Encuentro de Guardias</title>
 
 
 
@@ -142,13 +142,13 @@
 
 
 
-<meta property="og:title" content="Encuentro de Guardias. Cimarrona, Indigena y Campesina" />
+<meta property="og:title" content="Encuentro de Guardias" />
 <meta property="og:description" content="KAUKA - 47sna" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/encuentro-de-guardias/" />
 
 
-<meta name="twitter:title" content="Encuentro de Guardias. Cimarrona, Indigena y Campesina" />
+<meta name="twitter:title" content="Encuentro de Guardias" />
 <meta name="twitter:description" content="KAUKA - 47sna" />
 
 
@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,36 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  
+  
+    
+  
 
   
   
@@ -4142,13 +4212,14 @@ if (typeof initHeaderOnReady === "function") {
   </div>
   <section id="encuentro-detalle" class="encuentro-detalle-container">
     <div id="encuentro-titulo" class="encuentro-titulo">
-      Encuentro de Guardias. Cimarrona, Indigena y Campesina
+      Encuentro de Guardias
     </div>
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       
         <div class="page-content-container ">
-  <div class="page-content-text"><p>Espacio de diálogo y fortalecimiento entre las guardias cimarrona, indígena y campesina, pilares de la protección territorial y la autonomía comunitaria.</p>
+  <div class="page-content-text"><p>La dignidad de los pueblos tomó lugar en la presencia de las guardias indígena, cimarrona, campesina y lxs cuerpxs diversxs en resistencia, para dar lugar a una activación performativa en la Pirámide de Tulcán, un lugar emblemático para los símbolos del poder colonial.</p>
+<p>En la base de la Pirámide de Tulcán lxs participantes recibieron una armonización del Mayor Andrés Mapallo y luego se congregaron en la cima, frente al pedestal que quedó vacío tras el derribamiento del monumento Sebastián de Belalcázar. Desde este espacio, frente a la ciudad, se entregó el micrófono a lxs líderes de cada Guardia, quienes hablaron sobre su contexto y su historia y relataron sus procesos de resistencia. Finalmente, en común acuerdo por las guardias participantes, después de constelar sus cuerpos para una formación compartida, se entonó el himno de la Guardia Indígena y todxs elevaron sus bastones.</p>
 </div>
 </div>
 
@@ -4172,17 +4243,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
-            30/11/2025
+            29/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            29/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4190,7 +4271,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          8:00 a.m. - 2:00 p.m.
+          3:00 p.m. - 6:00 p.m.
         </div>
       </div>
 
@@ -4199,8 +4280,8 @@ if (typeof initHeaderOnReady === "function") {
         <div class="encuentro-info-info_label">Sede/lugar:</div>
         <div class="encuentro-info-hora-lugar">
           
-            Salon comunal brisas - Villa Rica<br />
-            Villa Rica, Norte del Cauca
+            Kuta Inti (Pirámide de Tulcán)<br />
+            Popayán
           
 
           
@@ -4212,7 +4293,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          8:00 a.m. - 2:00 p.m.
+          3:00 p.m. - 6:00 p.m.
         </div>
       </div>
 
@@ -4221,10 +4302,34 @@ if (typeof initHeaderOnReady === "function") {
 
       
       <div class="encuentro-info-gente-container-desktop">
-        <div class="encuentro-info-gente">
+        <div class="encuentro-info-gente encuentro-info-gente--two-cols">
           <div class="artists-list-label">Invitadxs</div>
           
             <ul>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/guardia-indigena-kokonuko---cric/">
+                      Guardia Indígena Kokonuko - CRIC
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/guardia-indigena-pubenence---aiso/">
+                      Guardia Indígena Pubenence - AISO
+                    </a>
+                  
+                </li>
+              
+                <li>
+                  
+                    <a href="/kauka-dev/invitadxs/guardia-campesina-pupsoc/">
+                      Guardia Campesina PUPSOC
+                    </a>
+                  
+                </li>
               
                 <li>
                   
@@ -4236,16 +4341,16 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/guardia-indigena/">
-                      Guardia Indigena
+                    <a href="/kauka-dev/invitadxs/guardia-humanitaria-campamento-estrella-roja/">
+                      Guardia Humanitaria Campamento Estrella Roja
                     </a>
                   
                 </li>
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/guardia-campesina/">
-                      Guardia Campesina
+                    <a href="/kauka-dev/invitadxs/cuerpxs-diversxs-en-resistencia/">
+                      Cuerpxs Diversxs en Resistencia
                     </a>
                   
                 </li>
@@ -4258,10 +4363,34 @@ if (typeof initHeaderOnReady === "function") {
 
     
     <div class="encuentro-info-gente-container">
-      <div class="encuentro-info-gente">
+      <div class="encuentro-info-gente encuentro-info-gente--two-cols">
         <div class="artists-list-label">Invitadxs:</div>
         
           <ul>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/guardia-indigena-kokonuko---cric/">
+                    Guardia Indígena Kokonuko - CRIC
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/guardia-indigena-pubenence---aiso/">
+                    Guardia Indígena Pubenence - AISO
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/kauka-dev/invitadxs/guardia-campesina-pupsoc/">
+                    Guardia Campesina PUPSOC
+                  </a>
+                
+              </li>
             
               <li>
                 
@@ -4273,16 +4402,16 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/guardia-indigena/">
-                    Guardia Indigena
+                  <a href="/kauka-dev/invitadxs/guardia-humanitaria-campamento-estrella-roja/">
+                    Guardia Humanitaria Campamento Estrella Roja
                   </a>
                 
               </li>
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/guardia-campesina/">
-                    Guardia Campesina
+                  <a href="/kauka-dev/invitadxs/cuerpxs-diversxs-en-resistencia/">
+                    Cuerpxs Diversxs en Resistencia
                   </a>
                 
               </li>
@@ -4299,7 +4428,7 @@ if (typeof initHeaderOnReady === "function") {
   <div class="encuentro-info-links-container">
     <div class="encuentro-info-diamonds-left"></div>
     <div class="encuentro-info-links-diamond">
-      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-30" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-29" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
 
     </div>
     <div class="encuentro-info-links-diamond">
@@ -4959,12 +5088,16 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
-    <p>Encuentro de Guardias. Cimarrona, Indigena y Campesina</p>
+    <p data-pagefind-meta="title">Encuentro de Guardias</p>
+    <p>Encuentro de Guardias</p>
 
     
       
@@ -4972,11 +5105,17 @@ if (typeof initHeaderOnReady === "function") {
         
           <ul>
             
+              <li>Guardia Indígena Kokonuko - CRIC</li>
+            
+              <li>Guardia Indígena Pubenence - AISO</li>
+            
+              <li>Guardia Campesina PUPSOC</li>
+            
               <li>Guardia Cimarrona</li>
             
-              <li>Guardia Indigena</li>
+              <li>Guardia Humanitaria Campamento Estrella Roja</li>
             
-              <li>Guardia Campesina</li>
+              <li>Cuerpxs Diversxs en Resistencia</li>
             
           </ul>
         

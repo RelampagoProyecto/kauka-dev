@@ -4013,23 +4013,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4204,7 +4244,7 @@ if (typeof initHeaderOnReady === "function") {
   </h4>
   
   
-  <p class="mb-6">Con la Fundación Alto Canal como anfitrión y la coreógrafa afrocolombiana Andrea Bonilla, maestra en Artes Escénicas con énfasis en Danza Contemporánea y magíster en Estudios Culturales, como invitada, se construyo un espacio de conocimiento basado en la escucha, el cuidado y la cohabitación temporal junto a lxs bailarinxs de la Corporación Artística y Cultural Los Navegantes de Santa Bárbara de Timbiquí, por medio del proyecto Mientras río, el lugar que sostiene.
+  <p class="mb-6">Con la Fundación Alto Canal como anfitrión y la coreógrafa afrocolombiana Andrea Bonilla, maestra en Artes Escénicas con énfasis en Danza Contemporánea y magíster en Estudios Culturales, como invitada, se construyó un espacio de conocimiento basado en la escucha, el cuidado y la cohabitación temporal junto a lxs bailarinxs de la Corporación Artística y Cultural Los Navegantes de Santa Bárbara de Timbiquí, por medio del proyecto Mientras río, el lugar que sostiene.
 </p>
   <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/programa-curatorial/residencias/residencia-fundacion-alto-canal/">
     Leer más
@@ -4303,6 +4343,9 @@ if (typeof initHeaderOnReady === "function") {
     </main>
 
     
+
+
+
 
 
 

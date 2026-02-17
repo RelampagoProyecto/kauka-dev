@@ -4013,23 +4013,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4158,46 +4198,6 @@ if (typeof initHeaderOnReady === "function") {
   
   
   <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/autonomias-politicas-en-el-arte/">
-      Autonomías políticas en el arte
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Una conversación vital sobre cómo las prácticas artísticas construyen autonomía y resistencia en territorios marcados por el conflicto y la exclusión.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/autonomias-politicas-en-el-arte/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/extractivismo-y-artificialidad/">
-      Extractivismo y artificialidad
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Un análisis crítico sobre cómo las tecnologías extractivas y la inteligencia artificial impactan los territorios y las formas de vida, proponiendo resistencias desde el arte y el pensamiento.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/extractivismo-y-artificialidad/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
     <a href="/kauka-dev/encuentros-de-mundos-posibles/kobomanik-chabel-ofrenda-con-palabras-edgar-calel/">
       Kob&#39;omanik ch&#39;a&#39;bel (Ofrenda con palabras): Edgar Calel
     </a>
@@ -4207,106 +4207,6 @@ if (typeof initHeaderOnReady === "function") {
   <p class="mb-6">Conversatorio con el artista maya kaqchikel sobre su práctica artística como ofrenda y conexión espiritual con los ancestros y el territorio.
 </p>
   <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/kobomanik-chabel-ofrenda-con-palabras-edgar-calel/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/lenguas-madre-lenguas-bosque-rituales-de-escucha-por-la-diversidad-linguistica/">
-      Lenguas Madre, Lenguas Bosque. Rituales de escucha por la diversidad lingüística
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Un círculo de palabra que explora la conexión vital entre lengua y territorio, resonando como un ritual de escucha y pervivencia cultural.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/lenguas-madre-lenguas-bosque-rituales-de-escucha-por-la-diversidad-linguistica/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/mundos-posibles-por-venir-afrika-y-abya-yala/">
-      Mundos posibles por venir (Afrika y Abya Yala)
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Una reflexión sobre las visiones de futuro que emergen desde las raíces africanas y del Abya Yala, entrelazando arte, memoria y proyecciones políticas.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/mundos-posibles-por-venir-afrika-y-abya-yala/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/mundos-posibles-por-venir-imaginacion-radical-afrocuir/">
-      Mundos posibles por venir (Imaginación radical afrocuir)
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Diálogo que desafía las fronteras normativas imaginando futuros desde la disidencia sexual y la experiencia afro, como actos de creación política radical.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/mundos-posibles-por-venir-imaginacion-radical-afrocuir/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/palabreo-de-kampa-wam-lenguajes-naturales-pictogramas-petroglifos-y-arqueologias/">
-      Palabreo de KAMPA WAM, lenguajes naturales, pictogramas, petroglifos y arqueologías
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">Exploración de los lenguajes que emergen de la tierra: pictogramas, petroglifos y las voces vivas de los territorios ancestrales.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/palabreo-de-kampa-wam-lenguajes-naturales-pictogramas-petroglifos-y-arqueologias/">
-    Leer más
-  </a>
-</div>
-
-              </div>
-            
-              <div class="md:col-6 mb-14">
-                <div>
-  
-  
-  <h4 class="mb-3">
-    <a href="/kauka-dev/encuentros-de-mundos-posibles/conversatorio-palestina-desde-el-rio-hasta-el-mar/">
-      Palestina: desde el río hasta el mar
-    </a>
-  </h4>
-  
-  
-  <p class="mb-6">En medio del dolor y la resistencia, esta conversación conecta las luchas del pueblo palestino con las resistencias territoriales en el Cauca, tejiendo solidaridades globales.
-</p>
-  <a class="btn btn-outline-primary btn-sm" href="/kauka-dev/encuentros-de-mundos-posibles/conversatorio-palestina-desde-el-rio-hasta-el-mar/">
     Leer más
   </a>
 </div>
@@ -4323,6 +4223,9 @@ if (typeof initHeaderOnReady === "function") {
     </main>
 
     
+
+
+
 
 
 

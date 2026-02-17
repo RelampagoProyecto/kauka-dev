@@ -4019,23 +4019,63 @@
     </div>
   </div>
 
+  
+  
+  
   <link href="/kauka-dev/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script src="/kauka-dev/pagefind/pagefind-ui.js"></script>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", async () => {
       const searchElement = document.querySelector("#search");
+      const pagefindJsURL = "\/kauka-dev\/pagefind\/pagefind-ui.js";
+      const pagefindEntryURL = "\/kauka-dev\/pagefind\/pagefind-entry.json";
+      const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      const showInlineStatus = (message) => {
+        if (!searchElement || !isLocalhost) return;
+        const status = document.createElement("p");
+        status.className = "pagefind-ui__message";
+        status.style.margin = "0";
+        status.textContent = message;
+        searchElement.replaceChildren(status);
+      };
+
       if (!searchElement) {
         console.warn("[Pagefind] No se encontró el elemento #search.");
         return;
       }
+
       if (typeof window.PagefindUI !== "function") {
         console.warn(
-          "[Pagefind] PagefindUI no está disponible. Revisa que /pagefind/pagefind-ui.js cargue correctamente."
+          "[Pagefind] PagefindUI no está disponible. Revisa que pagefind/pagefind-ui.js cargue correctamente.",
+          { script: pagefindJsURL }
+        );
+        showInlineStatus(
+          "Buscador no disponible. Ejecuta 'yarn pagefind' (o 'yarn dev') y recarga."
         );
         return;
       }
 
       try {
+        let hasIndex = false;
+        try {
+          const indexResponse = await fetch(pagefindEntryURL, { cache: "no-store" });
+          hasIndex = indexResponse.ok;
+        } catch (indexError) {
+          hasIndex = false;
+        }
+
+        if (!hasIndex) {
+          console.warn(
+            "[Pagefind] No se encontró el índice de búsqueda. Revisa que pagefind/pagefind-entry.json exista.",
+            { index: pagefindEntryURL }
+          );
+          showInlineStatus(
+            "Indice Pagefind no encontrado. Ejecuta 'yarn pagefind' y recarga."
+          );
+          return;
+        }
+
         const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const normalizeSearchTerm = (term) => {
           if (typeof term !== "string") return "";
@@ -4122,6 +4162,19 @@ if (typeof initHeaderOnReady === "function") {
     
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  
+  
 
   
   
@@ -4147,16 +4200,23 @@ if (typeof initHeaderOnReady === "function") {
 
     <div id="encuentro-contenido" class="encuentro-contenido">
       
-        <div class="page-content-container ">
-  <div class="page-content-text"><p>Una ofrenda sonora que reactiva la memoria espiritual y corporal afrodescendiente a través de la vibración y el canto.</p>
-</div>
-</div>
-
+        
+        <section
+        class="pc-section-band pc-section-band-intro
+          text-dark-forest-green
+        ">
+        <div class="pc-section-content"><strong>Cantos ancestrales, memoria vibracional</strong><br>
+<strong>Amalia N. Vargas</strong></p>
+<p align="right"><em>El canto es una de las formas más antiguas de transmisión de la memoria de los pueblos. En él habitan las lenguas originarias, los nombres del territorio, las historias silenciadas y los saberes que no entraron en los libros. Cantar es una manera de mantener viva la lengua, de permitir que las palabras sigan respirando en el cuerpo y no se conviertan en restos del pasado. [...] Cantar en lengua originaria es un acto político y espiritual: afirma la existencia, rompe el silencio impuesto y devuelve dignidad a los saberes que fueron negados por el sistema colonial y escolar.<br />
+- Amalia N. Vargas<sup>1</sup></em></div>
+      </section>
       
     </div>
   </section>
 
   
+  
+    
   
   <div id="encuentro-metadata" class="encuentro-info-container">
     
@@ -4172,17 +4232,27 @@ if (typeof initHeaderOnReady === "function") {
       
     
     
-    <div class="encuentro-info_desde">
-      <div class="encuentro-info-fecha_inicio">
+    <div class="encuentro-info_desde encuentro-info_desde--split">
+      <div class="encuentro-info-label_hora xl:col-start-3">DESDE:</div>
+      <div class="encuentro-info-fecha_inicio encuentro-info-fecha_inicio--split">
         
-        
-          
           <div class="encuentro-fecha-text">
-            28/11/2025
+            27/11/2025
           </div>
         
       </div>
     </div>
+
+    
+      <div class="encuentro-info_hasta">
+        <div class="encuentro-info-label_hora text-right">HASTA:</div>
+        <div class="encuentro-info-fecha_cierre">
+          <div class="encuentro-fecha-text lg:col-span-5 xl:col-span-4">
+            27/11/2025
+          </div>
+        </div>
+      </div>
+    
 
     
     <div class="encuentro-info-info-container">
@@ -4190,7 +4260,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora-desktop">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          6:00 p.m. - 6:30 p.m.
+          5:30 p.m. - 8:30 p.m.
         </div>
       </div>
 
@@ -4212,7 +4282,7 @@ if (typeof initHeaderOnReady === "function") {
       <div class="encuentro-info-hora">
         <div class="encuentro-info-info_label">Hora:</div>
         <div class="encuentro-info-hora-lugar">
-          6:00 p.m. - 6:30 p.m.
+          5:30 p.m. - 8:30 p.m.
         </div>
       </div>
 
@@ -4228,8 +4298,8 @@ if (typeof initHeaderOnReady === "function") {
               
                 <li>
                   
-                    <a href="/kauka-dev/invitadxs/eblin-grueso/">
-                      Eblin Grueso
+                    <a href="/kauka-dev/invitadxs/amalia-vargas/">
+                      Amalia Vargas
                     </a>
                   
                 </li>
@@ -4249,8 +4319,8 @@ if (typeof initHeaderOnReady === "function") {
             
               <li>
                 
-                  <a href="/kauka-dev/invitadxs/eblin-grueso/">
-                    Eblin Grueso
+                  <a href="/kauka-dev/invitadxs/amalia-vargas/">
+                    Amalia Vargas
                   </a>
                 
               </li>
@@ -4269,7 +4339,7 @@ if (typeof initHeaderOnReady === "function") {
   <div class="encuentro-info-links-container">
     <div class="encuentro-info-diamonds-left"></div>
     <div class="encuentro-info-links-diamond">
-      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-28" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
+      <a href="/encuentros-de-mundos-posibles/?fecha=2025-11-27" class="agenda-action-button agenda-action-button--diamond">Agenda</a>
 
     </div>
     <div class="encuentro-info-links-diamond">
@@ -4282,10 +4352,567 @@ if (typeof initHeaderOnReady === "function") {
   <div id="encuentro-galeria" class="encuentro-galeria-with-padding">
     <div class="col-span-12">
       
+        
+
+
+
+
+
+
+
+
+
+
+  <div class="image-gallery swiper">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_183722c4b9e8d4ca.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_e16b0a409d862c54.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_6a2f60a11313d87c.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_351db0b7b107f8b0.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_2b0c99fdb65bb7ff.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_77553e96ad33ca74.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_bf32bd0f5afa88f6.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_970d199ab47b9581.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_525363ab6b60e3e8.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-1_hu_af89cc22012b4900.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_perf-cantos-amv-1.webp"
+              loading="lazy"
+              width="2400"
+              height="1762" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_eb0934d3c3373219.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_5aa0ca8bdb5f12b5.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_7d450117a2d28f74.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_45ece76fecc910f0.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_2038aab077a2b543.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_fbbbf3263ff1f2db.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_c386dd7e7267dad4.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_5d36bef67ed74529.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_a24d111bab1514ae.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-2_hu_a32796d3d26c5f1d.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_perf-cantos-amv-2.webp"
+              loading="lazy"
+              width="2400"
+              height="1368" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_9572d0b6f0420b8d.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_6414240f78bd2e95.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_c202eceb123c74.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_830f0a3c1d931db9.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_ac737bb9702b8686.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_5824c67b7a4206c3.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_3602a0a14ebbbcd.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_f6dd117b2e45cf1d.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_1aa6906b794b2116.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-3_hu_57f071cb2f97e2f5.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_perf-cantos-amv-3.webp"
+              loading="lazy"
+              width="2400"
+              height="1620" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_71937f0d4b5fc8e4.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_c6e35daa09d45aba.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_96fa097c86ca77ba.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_9ccde39b62e62695.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_b20baf622ad37ce9.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_8cc75fddbe5ec124.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_dfe7451b156a70c2.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_8572ca6c88c2ae13.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_3841bd069f319a7a.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-4_hu_dedde67fb4ab3f24.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_perf-cantos-amv-4.webp"
+              loading="lazy"
+              width="2400"
+              height="1604" />
+          </picture>
+        </div>
+      
+        <div class="swiper-slide">
+          
+          
+          
+          
+          
+
+          
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+            
+            
+              
+              
+              
+
+              
+              
+              
+            
+          
+
+          
+          
+          
+
+
+          <picture>
+            
+            
+              <source
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_162d7799777a930d.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_7b6d3989b502effd.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_fbd321306642da28.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_667dbdf158b93c55.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_fb61ead8b737792f.webp 1280w"
+                sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+                type="image/webp" />
+            
+
+            
+            <img
+              src="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5.webp"
+              
+                srcset="/kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_be396ceca04ca212.webp 320w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_d2d6a1bab8853e3b.webp 640w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_9193a80bd8cdf8a8.webp 768w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_b245195b70d84d48.webp 1024w, /kauka-dev/encuentros-de-mundos-posibles/performance-cantos-ancestrales-memoria-vibracional/galeria/enc_perf-cantos-amv-5_hu_54d35e4765006326.webp 1280w"
+              
+              sizes="(min-width: 1536px) 33vw, (min-width: 768px) 50vw, 100vw"
+              alt="galeria/enc_perf-cantos-amv-5.webp"
+              loading="lazy"
+              width="2400"
+              height="1996" />
+          </picture>
+        </div>
+      
+    </div>
+
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleries = document.querySelectorAll(".image-gallery.swiper");
+      galleries.forEach((galleryEl) => {
+        if (galleryEl.dataset.swiperInitialized === "true") {
+          return;
+        }
+
+        const nextEl = galleryEl.querySelector(".swiper-button-next");
+        const prevEl = galleryEl.querySelector(".swiper-button-prev");
+
+        new Swiper(galleryEl, {
+          direction: "horizontal",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          lazy: {
+            loadPrevNext: true,
+          },
+        });
+
+        galleryEl.dataset.swiperInitialized = "true";
+      });
+    });
+  </script>
+
+
+      
     </div>
   </div>
 
   
+  
+    <div class="as-sections-post-gallery"><section
+              class="pc-section-band pc-stage-desarrollo bg-dark-forest-green text-white">
+              <div class="pc-section-content"><p>El performance <em>Cantos ancestrales, memoria vibracional</em> fue la apertura espiritual de <em>Rituales de escucha: lenguas madre, lenguas bosque</em>. Para la Mayora Amalia Vargas, el canto no es una mera expresión artística, sino una de las formas milenarias de transmisión de la memoria, una medicina sonora donde los idiomas originarios, los nombres propios de los territorios y las historias silenciadas por la colonialidad vuelven a respirar a través de las voces del presente.</p>
+<p>En la propuesta de Amalia, el canto actúa sobre el sonqo y el ajayu<sup>2</sup>, y cantar es &ldquo;llamar al espíritu&rdquo;, una práctica ancestral para recordar la identidad olvidada por la herida colonial. Al manifestarse en idiomas originarios, Amalia no solo pronuncia sonidos, sino que activa un conocimiento heredado, un acto político y espiritual que rompe el silencio sistemático y devuelve la dignidad a los saberes negados por las instituciones educativas coloniales.</p>
+</div>
+            </section><section
+              class="pc-section-band pc-stage-propuestas bg-home-artistas text-white">
+              <div class="pc-section-content"><p>Durante la acción, más de sesenta participantes se sumergieron en una escucha profunda, dejándose envolver por vibraciones que conectaron los cuerpos presentes con los ancestros del Qullasuyu<sup>3</sup>. La mayora tejió un puente sonoro entre el sur del continente y el territorio caucano, integrando el humo de los inciensos con el canto en tres idiomas originarios: quechua, aymara y mapudungun.</p>
+<p>Este performance demostró que las lenguas madre son willka muju<sup>4</sup> que, al vibrar, armonizan y sanan el espíritu y la identidad. Allí donde el canto ancestral circula, la lengua se fortalece y la comunidad se reconoce viva, reafirmando que el arte, en su dimensión más profunda, es territorio, memoria y resistencia.</p>
+<aside class="pc-tool-footnotes" role="doc-endnotes">
+<ol>
+<li>Vargas, Amalia N., <em>Sabidurías ancestrales, medicinas tradicionales y educación intercultural</em>, Editorial Biblos, 2025.</li>
+<li>El &ldquo;corazón&rdquo; y el &ldquo;espíritu&rdquo;, respectivamente, en quechua.</li>
+<li>&ldquo;Región de los Qollas&rdquo; (pueblos indígenas andinos originarios del sur del continente, en quechua).</li>
+<li>&ldquo;Semillas sagradas&rdquo;, en quechua.</li>
+</ol>
+</aside></div>
+            </section></div>
   
 
       </section>
@@ -4298,11 +4925,15 @@ if (typeof initHeaderOnReady === "function") {
 
 
 
+
+
+
 <div
   data-pagefind-body
   style="position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;"
   aria-hidden="true">
   
+    <p data-pagefind-meta="title">Performance - Cantos Ancestrales: Memoria Vibracional</p>
     <p>Performance - Cantos Ancestrales: Memoria Vibracional</p>
 
     
@@ -4311,7 +4942,7 @@ if (typeof initHeaderOnReady === "function") {
         
           <ul>
             
-              <li>Eblin Grueso</li>
+              <li>Amalia Vargas</li>
             
           </ul>
         
