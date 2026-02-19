@@ -673,9 +673,6 @@
   .resize {
     resize: both;
   }
-  .break-inside-avoid {
-    break-inside: avoid;
-  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -10196,9 +10193,10 @@
     font-family: "RigidSquare-Light", sans-serif;
     margin-top: 1rem;
     padding: 0;
+    padding-top: 0.5rem;
     font-size: 1em;
     line-height: inherit;
-    border-top: 0;
+    border-top: 1px solid currentColor;
     background-color: transparent;
   }
   :is(.page-content-text, .pc-section-content) .pc-tool-footnotes ol {
@@ -10422,6 +10420,22 @@
   @media (min-width: 1024px) {
     .page-content-text {
       column-gap: 2.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    :is(.page-content-text, .pc-section-content) ul li {
+      position: relative;
+    }
+    :is(.page-content-text, .pc-section-content) ul li::before {
+      content: "◆";
+      position: absolute;
+      left: -1.2em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    :is(.page-content-text, .pc-section-content) ul li:has(a:hover)::before {
+      opacity: 1;
     }
   }
   .asambleas-list-container {
