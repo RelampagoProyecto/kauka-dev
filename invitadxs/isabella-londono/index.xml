@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Isabella Londoño Parra on KAUKA</title>
+    <title>Isabella Londoño on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/isabella-londono/</link>
-    <description>Recent content in Isabella Londoño Parra on KAUKA</description>
+    <description>Recent content in Isabella Londoño on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/isabella-londono/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
-   <item>
+    <item>
       <title>Lanzamiento de Fanzines</title>
       <link>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/lanzamiento-de-fanzines/</link>
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
