@@ -1109,6 +1109,9 @@
   .text-dark-brown {
     color: var(--color-dark-chocolate);
   }
+  .text-dark-cyan {
+    color: var(--color-dark-cyan);
+  }
   .text-dark-forest-green {
     color: var(--color-dark-forest-green);
   }
@@ -5389,12 +5392,8 @@
     @media (width >= 96rem) {
       grid-column-start: 3;
     }
-    --tw-leading: 43px;
-    line-height: 43px;
-    @media (width >= 40rem) {
-      --tw-leading: 72px;
-      line-height: 72px;
-    }
+    --tw-leading: clamp(45px, 12.5vw, 80px);
+    line-height: clamp(45px, 12.5vw, 80px);
     @media (width >= 48rem) {
       --tw-leading: 56px;
       line-height: 56px;
@@ -12782,12 +12781,59 @@
     height: 100%;
     width: 100%;
   }
+  .pedagogias-list-media-frame--placeholder {
+    position: absolute;
+    inset: calc(var(--spacing) * 0);
+    display: grid;
+    place-items: center;
+  }
+  .pedagogias-list-image-placeholder-diamond {
+    width: 52%;
+    max-width: 260px;
+    mix-blend-mode: multiply;
+    @media (width >= 40rem) {
+      width: 56%;
+    }
+    @media (width >= 40rem) {
+      max-width: 320px;
+    }
+    @media (width >= 48rem) {
+      width: 54%;
+    }
+    @media (width >= 64rem) {
+      width: 58%;
+    }
+    @media (width >= 64rem) {
+      max-width: 360px;
+    }
+    aspect-ratio: 384/559;
+    min-width: 120px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
   .pedagogias-list-info-mask {
     position: absolute;
     inset: calc(var(--spacing) * 0);
     height: calc(1 / 2 * 100%);
     mix-blend-mode: multiply;
     pointer-events: none;
+  }
+  .pedagogias-list-info-badge {
+    position: absolute;
+    top: calc(var(--spacing) * 0);
+    right: calc(var(--spacing) * 0);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(28px, 5.2vw, 48px);
+    height: clamp(24px, 4.4vw, 40px);
+    pointer-events: none;
+  }
+  .pedagogias-list-info-badge-diamond {
+    width: clamp(14px, 2.6vw, 24px);
+    height: clamp(14px, 2.6vw, 24px);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    filter: brightness(0.65) saturate(1.05);
   }
   .pedagogias-list-title {
     margin-top: var(--clamp-12-24);
