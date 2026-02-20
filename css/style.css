@@ -10172,8 +10172,9 @@
   }
   :is(.page-content-text, .pc-section-content) .pc-tool-cita {
     font-family: "RigidSquare-Light", sans-serif;
-    margin: 0.75rem 0;
+    margin: 0.75rem 0 0.75rem auto;
     padding: 0;
+    max-width: 60ch;
   }
   :is(.page-content-text, .pc-section-content) .pc-tool-cita p {
     margin-bottom: calc(var(--spacing) * 0);
