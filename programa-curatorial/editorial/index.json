@@ -48,6 +48,13 @@
     "nombre": "Parque Caldas",
     "direccion": "Popayán, Cauca"
   }},{
+  "title": "¡En el camino nos reencontramos!",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/casa-del-empedrado-en-el-camino-nos-re-encontramos/",
+  "lugar": {
+    "nombre": "Casa del Empedrado",
+    "direccion": "Centro histórico, Popayán"
+  },
+  "notas": "Lunes a sábado: 9:00 a. m. - 12:00 m. y 2:00 p. m. - 6:00 p. m."},{
   "title": "Alfabeto natural en el espacio público con el Colectivo Cenzontle",
   "url": "/kauka-dev/programa-curatorial/editorial/alfabeto-natural-en-el-espacio-publico-con-el-colectivo-cenzontle/",
   "lugar": {
@@ -59,19 +66,6 @@
   "lugar": {
     "nombre": "Parque principal de Guapi",
     "direccion": "Centro, Guapi"
-  }},{
-  "title": "Casa del Empedrado ¡En el camino nos re-encontramos!",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/casa-del-empedrado-en-el-camino-nos-re-encontramos/",
-  "lugar": {
-    "nombre": "Casa del Empedrado",
-    "direccion": "Centro histórico, Popayán"
-  },
-  "notas": "Lunes a sábado: 9:00 a.m. - 12:00 m. y 2:00 p.m. - 6:00 p.m."},{
-  "title": "Curaduría: Polifonías indóciles",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/",
-  "lugar": {
-    "nombre": "Calles de Santander de Quilichao / Popayán",
-    "direccion": null
   }},{
   "title": "El mundo al revés",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-el-mundo-al-reves/",
@@ -90,24 +84,6 @@
   "lugar": {
     "nombre": "MAMPO - Casa Arte",
     "direccion": "Barrio La Pamba, Popayán"
-  }},{
-  "title": "Exposición: Mandato Popular",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/",
-  "lugar": {
-    "nombre": "Secretaría de Educación y Cultura de Santander de Quilichao, Salón de la Excelencia",
-    "direccion": "Santander de Quilichao"
-  }},{
-  "title": "Exposición: Mil mundos negros que se conectan entre sí",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/",
-  "lugar": {
-    "nombre": "Secretaría de Educación y Cultura de Santander de Quilichao, Salón de la Excelencia / Capilla Santa Bárbara de Dominguillo",
-    "direccion": "Santander de Quilichao"
-  }},{
-  "title": "Exposición: Monte Adentro",
-  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/",
-  "lugar": {
-    "nombre": "Escuela Taller del Norte del Cauca",
-    "direccion": "Barrio las Dos Aguas, Puerto Tejada"
   }},{
   "title": "Lanzamiento de Fanzines",
   "url": "/kauka-dev/programa-curatorial/editorial/lanzamiento-de-fanzines/",
@@ -133,11 +109,35 @@
     "nombre": "Museo Arquidiocesano de Arte Religioso de Popayán",
     "direccion": "Popayán"
   }},{
+  "title": "Mandato Popular",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/",
+  "lugar": {
+    "nombre": "Secretaría de Educación y Cultura de Santander de Quilichao, Salón de la Excelencia",
+    "direccion": "Santander de Quilichao"
+  }},{
+  "title": "Mil mundos negros que se conectan entre sí",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/",
+  "lugar": {
+    "nombre": "Secretaría de Educación y Cultura de Santander de Quilichao, Salón de la Excelencia / Capilla Santa Bárbara de Dominguillo",
+    "direccion": "Santander de Quilichao"
+  }},{
+  "title": "Monte Adentro",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/",
+  "lugar": {
+    "nombre": "Escuela Taller del Norte del Cauca",
+    "direccion": "Barrio las Dos Aguas, Puerto Tejada"
+  }},{
   "title": "Performance: ALBO",
   "url": "/kauka-dev/programa-curatorial/expositivo-expandido/performance-albo/",
   "lugar": {
     "nombre": "Escuela Taller del Norte del Cauca",
     "direccion": "Barrio las Dos Aguas, Puerto Tejada"
+  }},{
+  "title": "Polifonías indóciles",
+  "url": "/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/",
+  "lugar": {
+    "nombre": "Calles de Santander de Quilichao / Popayán",
+    "direccion": null
   }},{
   "title": "Residencia Artística y Hogar Minga Prácticas Decoloniales",
   "url": "/kauka-dev/programa-curatorial/residencias/residencia-popayork-residencia-artistica-y-hogar-minga-practicas-decoloniales/",

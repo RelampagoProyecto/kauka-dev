@@ -55,6 +55,7 @@
     --tracking-tight: -0.025em;
     --tracking-wide: 0.025em;
     --leading-tight: 1.25;
+    --leading-snug: 1.375;
     --leading-relaxed: 1.625;
     --radius-sm: 0.25rem;
     --radius-xl: 0.75rem;
@@ -650,6 +651,9 @@
   .max-w-full {
     max-width: 100%;
   }
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
   .min-w-full {
     min-width: 100%;
   }
@@ -749,6 +753,9 @@
   }
   .overflow-visible {
     overflow: visible;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .overflow-x-scroll {
     overflow-x: scroll;
@@ -1335,6 +1342,11 @@
   .md\:min-h-\[350px\] {
     @media (width >= 48rem) {
       min-height: 350px;
+    }
+  }
+  .md\:overflow-visible {
+    @media (width >= 48rem) {
+      overflow: visible;
     }
   }
   .md\:bg-yellow-200 {
@@ -9387,6 +9399,11 @@
     @media (width >= 64rem) {
       padding-top: 38px;
     }
+    min-width: calc(var(--spacing) * 0);
+    overflow-x: hidden;
+    @media (width >= 48rem) {
+      overflow: visible;
+    }
     background-color: var(--color-dark-cyan);
   }
   .kauka-team-title {
@@ -9450,6 +9467,12 @@
     }
     font-size: clamp(18px, 4.5vw, 32px);
     letter-spacing: 0.16em;
+    line-height: 1.2;
+  }
+  @media (max-width: 767px) {
+    .kauka-team-group-title {
+      line-height: 1.35;
+    }
   }
   .kauka-team-group-description {
     grid-column: span 10 / span 10;
@@ -9476,6 +9499,7 @@
   .kauka-team-members {
     grid-column: span 12 / span 12;
     display: grid;
+    min-width: calc(var(--spacing) * 0);
     grid-template-columns: subgrid;
     @media (width >= 48rem) {
       grid-column: span 11 / span 11;
@@ -9514,6 +9538,7 @@
   .kauka-team-member {
     position: relative;
     display: grid;
+    min-width: calc(var(--spacing) * 0);
     grid-column: span 12 / span 12;
     grid-template-columns: subgrid;
     @media (width >= 48rem) {
@@ -9602,9 +9627,9 @@
     color: var(--color-dark-forest-green);
     font-size: 20px;
     letter-spacing: 0.05em;
-    word-spacing: 100vw;
     word-break: normal;
     hyphens: none;
+    word-spacing: 0;
     top: calc(var(--spacing) * 0);
     grid-column: span 3 / span 3;
     grid-column-start: 9;
@@ -9628,10 +9653,31 @@
       bottom: calc(var(--spacing) * 0);
     }
     @media (width >= 64rem) {
-      grid-column: span 2 / span 2;
+      grid-column: span 1 / span 1;
     }
     @media (width >= 64rem) {
       grid-column-start: 1;
+    }
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 1);
+    }
+    @media (width >= 64rem) {
+      padding-left: calc(var(--spacing) * 1);
+    }
+  }
+  .kauka-member--nomasmetaforas .kauka-team-member-name {
+    @media (width >= 64rem) {
+      grid-column: span 1 / span 1;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .kauka-team-member-name {
+      word-spacing: 100vw;
+    }
+  }
+  @media (min-width: 1024px) {
+    .kauka-team-member-name {
+      word-spacing: 0;
     }
   }
   .kauka-member-odd .kauka-team-member-name {
@@ -9643,12 +9689,11 @@
       grid-column-start: 1;
     }
   }
-  @supports (hyphens: auto) {
-    .kauka-team-member-name {
-      @media (width >= 64rem) {
-        -webkit-hyphens: auto;
-        hyphens: auto;
-      }
+  @media (max-width: 767px) {
+    .kauka-member--nomasmetaforas .kauka-team-member-name {
+      overflow-wrap: anywhere;
+      word-break: normal;
+      hyphens: none;
     }
   }
   .kauka-team-member-additional-names {
@@ -9724,6 +9769,56 @@
     }
     @media (width >= 64rem) {
       grid-column-start: 1;
+    }
+  }
+  .kauka-member--nomasmetaforas .kauka-team-member-additional-names {
+    @media (width >= 64rem) {
+      display: none;
+    }
+    @media (width >= 48rem) {
+      top: auto;
+    }
+    @media (width >= 48rem) {
+      bottom: calc(var(--spacing) * 0);
+    }
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 4;
+    }
+    @media (width >= 48rem) {
+      justify-self: flex-end;
+    }
+    @media (width >= 48rem) {
+      padding-right: calc(var(--spacing) * 0);
+    }
+    @media (width >= 48rem) {
+      padding-left: calc(var(--spacing) * 4);
+    }
+    @media (width >= 48rem) {
+      text-align: right;
+    }
+    @media (width >= 48rem) {
+      font-size: 16px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: var(--leading-snug);
+      line-height: var(--leading-snug);
+    }
+    @media (width >= 48rem) {
+      color: var(--color-dark-forest-green);
+    }
+    @media (width >= 48rem) {
+      z-index: 20;
+    }
+    @media (width >= 48rem) {
+      overflow: visible;
+    }
+  }
+  .kauka-member-odd.kauka-member--nomasmetaforas .kauka-team-member-additional-names {
+    @media (width >= 48rem) {
+      grid-column-start: 4;
     }
   }
   .kauka-rombo-trail {
@@ -11499,6 +11594,7 @@
       height: 640px;
     }
     z-index: 20;
+    margin-top: calc(var(--spacing) * 8);
   }
   .proyecto-info-container::before {
     position: absolute;
@@ -11824,6 +11920,26 @@
       grid-column-start: 3;
     }
   }
+  .proyecto-info-lugar--full-width.proyecto-info-lugar--multi {
+    @media (width >= 48rem) {
+      grid-column: span 10 / span 10;
+    }
+    @media (width >= 48rem) {
+      grid-column-start: 2;
+    }
+    @media (width >= 64rem) {
+      grid-column: span 10 / span 10;
+    }
+    @media (width >= 64rem) {
+      grid-column-start: 2;
+    }
+    @media (width >= 80rem) {
+      grid-column: span 10 / span 10;
+    }
+    @media (width >= 80rem) {
+      grid-column-start: 3;
+    }
+  }
   .proyecto-info-lugar-list {
     margin-top: 2px;
     list-style-type: disc;
@@ -12093,6 +12209,17 @@
     }
     @media (width >= 80rem) {
       padding-left: 20px;
+    }
+  }
+  .proyecto-info-gente-container-desktop--below-notes {
+    @media (width >= 48rem) {
+      grid-row-start: 3;
+    }
+    @media (width >= 64rem) {
+      grid-row-start: 3;
+    }
+    @media (width >= 80rem) {
+      grid-row-start: 3;
     }
   }
   .proyecto-info-gente {

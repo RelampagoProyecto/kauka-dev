@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/componentes/</loc>
+    <lastmod>2026-02-26T02:40:16+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/inauguracion-de-exposicion-residencias-artisticas-popayork-en-minga-y-lanzamiento-de-fanzine-corinto/</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/</loc>
-    <lastmod>2026-02-20T02:46:16+00:00</lastmod>
+    <lastmod>2026-02-26T02:40:16+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-practicas-decoloniales/</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/popayork-residencia-artistica/</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/componentes/vivencial/</loc>
+    <lastmod>2026-02-20T02:36:46+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/colectivo-edelo/</loc>
     <lastmod>2026-02-19T17:50:45+00:00</lastmod>
@@ -11,14 +26,11 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/autonomias-politicas-en-el-arte/</loc>
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/componentes/</loc>
-    <lastmod>2026-02-20T02:46:16+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/fabian-villegas/</loc>
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/jota-mombaca/</loc>
-    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
+    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/larry-b-jeromito-oino-the-wala/</loc>
     <lastmod>2026-02-20T02:35:58+00:00</lastmod>
@@ -40,9 +52,6 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/recorrido-nasa-campesino-y-misak/</loc>
     <lastmod>2026-02-17T17:34:34+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/componentes/vivencial/</loc>
-    <lastmod>2026-02-20T02:36:46+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/maria-alejandra-sanchez/</loc>
     <lastmod>2026-02-17T02:37:28+00:00</lastmod>
@@ -96,7 +105,7 @@
     <lastmod>2026-02-19T17:50:53+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/componentes/expositivo-expandido/</loc>
-    <lastmod>2026-02-19T18:31:15+00:00</lastmod>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/extractivismo-y-artificialidad/</loc>
     <lastmod>2026-02-16T00:00:00+00:00</lastmod>
@@ -186,7 +195,7 @@
     <lastmod>2026-02-19T17:50:53+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/</loc>
-    <lastmod>2026-02-20T02:40:39+00:00</lastmod>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/recorrido-colonialidad-de-genero/</loc>
     <lastmod>2026-02-17T18:12:21+00:00</lastmod>
@@ -273,7 +282,7 @@
     <lastmod>2026-02-19T17:06:52+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/el-futuro-que-nunca-fue/</loc>
-    <lastmod>2026-02-19T18:17:20+00:00</lastmod>
+    <lastmod>2026-02-26T02:28:51+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/vivencial/fiesta-popular-en-el-centro-de-popayan/</loc>
     <lastmod>2026-02-15T22:43:51+00:00</lastmod>
@@ -282,10 +291,10 @@
     <lastmod>2026-02-15T22:43:51+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/la-palabra-dicha/</loc>
-    <lastmod>2026-02-16T01:47:45+00:00</lastmod>
+    <lastmod>2026-02-26T02:29:35+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/nomasmetaforas-clara-melniczuk-y-julian-dupont/</loc>
-    <lastmod>2026-02-19T17:45:12+00:00</lastmod>
+    <lastmod>2026-02-26T02:26:13+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/</loc>
     <lastmod>2026-02-10T16:43:48+00:00</lastmod>
@@ -304,6 +313,9 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/nomasmetaforas-clara-melniczuk-y-julian-dupont/</loc>
     <lastmod>2026-02-05T16:37:37+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/casa-del-empedrado-en-el-camino-nos-re-encontramos/</loc>
+    <lastmod>2026-02-16T02:38:10+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/academia-de-esgrima-de-machete-y-bordon-de-puerto-tejada/</loc>
     <lastmod>2026-02-19T17:55:32+00:00</lastmod>
@@ -345,7 +357,7 @@
     <lastmod>2026-02-12T13:27:57+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/astrid-gonzalez/</loc>
-    <lastmod>2026-02-19T18:31:15+00:00</lastmod>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/recorridos/balsada-de-cierre-del-47sna-alumbrar-el-rio-guapi/</loc>
     <lastmod>2026-02-20T02:40:39+00:00</lastmod>
@@ -362,9 +374,6 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/carolina-chacon-bernal/</loc>
     <lastmod>2026-02-10T20:14:09+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/casa-del-empedrado-en-el-camino-nos-re-encontramos/</loc>
-    <lastmod>2026-02-16T02:38:10+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/catalina-vargas-tovar/</loc>
     <lastmod>2026-02-10T20:14:09+00:00</lastmod>
   </url><url>
@@ -373,6 +382,9 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/cenzontle-estudios-creativos/</loc>
     <lastmod>2026-02-10T21:35:48+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/colectivo-edelo-donde-las-naciones-unidas-solian-estar-y-caleb-duarte/</loc>
+    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/comite-curatorial/</loc>
     <lastmod>2026-02-19T16:58:47+00:00</lastmod>
@@ -389,17 +401,11 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/asambleas/cuarta-asamblea-de-mundos-posibles/</loc>
     <lastmod>2026-02-12T13:27:57+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/</loc>
-    <lastmod>2026-02-19T17:58:21+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/dalid-rosero--colectivo-casa-mamaru/</loc>
     <lastmod>2026-02-10T20:06:45+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/deifer-ibanez/</loc>
-    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/deifer-moises-ibanez-gasca/</loc>
-    <lastmod>2026-02-10T04:41:39+00:00</lastmod>
+    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/edgar-julian-santa--colectivo-ambiente-tabanoy/</loc>
     <lastmod>2026-02-10T20:06:45+00:00</lastmod>
@@ -422,15 +428,6 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-guardias-del-fuego-compartido/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/</loc>
-    <lastmod>2026-02-19T17:48:57+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/</loc>
-    <lastmod>2026-02-18T15:41:33+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/</loc>
-    <lastmod>2026-02-19T17:52:23+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/fabian-moreno/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
@@ -443,16 +440,13 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/graciela-larrahondo/</loc>
     <lastmod>2026-02-18T02:31:03+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/grafica-pai/</loc>
-    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/griselda-zuniga/</loc>
     <lastmod>2026-02-18T02:31:03+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/guadalupe-errazuriz/</loc>
     <lastmod>2026-02-10T15:44:53+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/iconoclasistas/</loc>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/iconoclasistas-julia-risler-y-pablo-ares/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/iki-yos-pina-narvaez/</loc>
@@ -479,13 +473,16 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/jorge-eliecer-llanos-dorronsoro/</loc>
     <lastmod>2026-02-19T16:58:47+00:00</lastmod>
   </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/jota-mombaca/</loc>
+    <lastmod>2026-02-19T18:31:15+00:00</lastmod>
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-betancurth/</loc>
     <lastmod>2026-02-19T17:58:21+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-carlos-romero/</loc>
     <lastmod>2026-02-10T20:14:21+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-pablo-gaviria/</loc>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-pablo-gaviria-bedoya/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-sebastian-rosillo/</loc>
@@ -533,11 +530,17 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/mama-pascuala-chuchillo-ussa/</loc>
     <lastmod>2026-02-10T20:06:45+00:00</lastmod>
   </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mandato-popular/</loc>
+    <lastmod>2026-02-19T17:48:57+00:00</lastmod>
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/maria-alejandra-sanchez/</loc>
-    <lastmod>2026-02-18T15:41:33+00:00</lastmod>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/maria-del-mar-vanin/</loc>
     <lastmod>2026-02-20T02:13:55+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/maria-del-pilar-twiggy-escobar/</loc>
+    <lastmod>2026-02-19T16:58:47+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/maria-elvira-solis/</loc>
     <lastmod>2026-02-19T17:55:32+00:00</lastmod>
@@ -569,17 +572,23 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/miguel-lourido-escuela-de-esgrima-con-machete-y-bordon/</loc>
     <lastmod>2026-02-19T16:58:47+00:00</lastmod>
   </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-mil-mundos-negros-que-se-conectan-entre-si/</loc>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/minga-de-intercambio-de-semillas-sabores-y-poderes/</loc>
     <lastmod>2026-02-10T20:06:45+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-practicas-de-coloniales/</loc>
-    <lastmod>2026-02-19T18:13:03+00:00</lastmod>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-de-practicas-decoloniales/</loc>
+    <lastmod>2026-02-19T17:35:05+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/exposicion-monte-adentro/</loc>
+    <lastmod>2026-02-19T17:52:23+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/nassyn-gregory/</loc>
     <lastmod>2026-02-10T20:14:21+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/nolan-oswald-dennis/</loc>
-    <lastmod>2026-02-18T15:41:33+00:00</lastmod>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/paola-andrea-charry/</loc>
     <lastmod>2026-02-10T15:44:53+00:00</lastmod>
@@ -593,14 +602,17 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/performance-requiem-para-un-alcaravan/</loc>
     <lastmod>2026-02-17T17:08:07+00:00</lastmod>
   </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/piyapm%C9%B5sik--casa-del-sueno/</loc>
+    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/expositivo-expandido/curaduria-polifonias-indociles/</loc>
+    <lastmod>2026-02-19T17:58:21+00:00</lastmod>
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/asambleas/primera-asamblea-de-mundos-posibles/</loc>
     <lastmod>2026-02-12T13:28:07+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/proceso-de-la-liberacion-de-la-madre-tierra/</loc>
-    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/procesos-autonomos-de-investigacion-creacion-pai/</loc>
-    <lastmod>2026-02-16T02:38:10+00:00</lastmod>
+    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/raices-de-tierra-y-mar-sas/</loc>
     <lastmod>2026-02-20T02:40:39+00:00</lastmod>
@@ -610,9 +622,6 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/residencias/residencia-popayork-residencia-artistica-y-hogar-minga-practicas-decoloniales/</loc>
     <lastmod>2026-02-19T17:03:08+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/residencia-casa-del-sueno/</loc>
-    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/residencias/residencia-consejo-comunitario-el-tuno/</loc>
     <lastmod>2026-02-10T04:56:01+00:00</lastmod>
@@ -638,7 +647,7 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/ruth-elena-lasso/</loc>
     <lastmod>2026-02-19T17:55:32+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sandra-gamarra-h./</loc>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sandra-gamarra/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sandrio-candido/</loc>
@@ -646,6 +655,9 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/santiago-rodriguez/</loc>
     <lastmod>2026-02-19T17:58:21+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sede-capilla-santa-barbara-de-dominguillo/</loc>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sede-casa-museo-guillermo-leon-valencia/</loc>
     <lastmod>2026-02-19T17:35:05+00:00</lastmod>
@@ -658,6 +670,9 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sede-museo-de-historia-natural-de-unicauca/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sede-secretaria-de-educacion-y-cultura-de-santander-de-quilichao-salon-de-la-excelencia/</loc>
+    <lastmod>2026-02-26T02:34:22+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/asambleas/segunda-asamblea-de-mundos-posibles/</loc>
     <lastmod>2026-02-19T16:58:47+00:00</lastmod>
@@ -686,9 +701,6 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/recorridos/tonga-por-las-dos-aguas-recorrido-por-monte-oscuro/</loc>
     <lastmod>2026-02-19T17:55:32+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/twiggy-escobar/</loc>
-    <lastmod>2026-02-19T16:58:47+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/un-rio-cauca-muchos-mundos/</loc>
     <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
@@ -715,9 +727,6 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/yohn-alexis-castillo/</loc>
     <lastmod>2026-02-19T17:55:32+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/zapanteras-negras/</loc>
-    <lastmod>2026-02-19T17:31:29+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/franz-xaver-faust/</loc>
     <lastmod>2026-02-02T03:50:27+00:00</lastmod>
@@ -786,7 +795,7 @@
     <lastmod>2026-02-19T17:45:42+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/componentes/pedagogias-y-mediaciones/</loc>
-    <lastmod>2026-02-20T02:46:16+00:00</lastmod>
+    <lastmod>2026-02-26T02:40:16+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/colective-transfeminista-furia-marica/</loc>
     <lastmod>2026-02-20T02:46:16+00:00</lastmod>
@@ -836,9 +845,6 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/johan-samboni/</loc>
     <lastmod>2026-02-19T18:31:15+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/jota-mombaca/</loc>
-    <lastmod>2026-02-19T18:31:15+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/lanzamiento-de-fanzines/</loc>
     <lastmod>2026-02-20T02:13:55+00:00</lastmod>
   </url><url>
@@ -879,16 +885,16 @@
     <lastmod>2025-11-20T02:50:08+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/colectivo-tul-lecxkwe/</loc>
-    <lastmod>2026-02-19T17:46:15+00:00</lastmod>
+    <lastmod>2026-02-26T02:40:16+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/diego-henao/</loc>
-    <lastmod>2026-02-19T17:46:07+00:00</lastmod>
+    <lastmod>2026-02-26T02:40:04+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/cartelismo-palabras-que-gritan/</loc>
-    <lastmod>2026-02-19T17:46:07+00:00</lastmod>
+    <lastmod>2026-02-26T02:40:04+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/semillas-del-territorio-memorias-del-futuro/</loc>
-    <lastmod>2026-02-19T17:46:15+00:00</lastmod>
+    <lastmod>2026-02-26T02:40:16+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/karen-fernandez-tovar/</loc>
     <lastmod>2026-02-19T17:51:07+00:00</lastmod>
@@ -896,50 +902,44 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/alumbramientos-textiles-costurero-documental/</loc>
     <lastmod>2026-02-19T17:51:07+00:00</lastmod>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-duran/</loc>
-    <lastmod>2026-02-19T17:51:09+00:00</lastmod>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/arqueologia-de-la-opulencia/</loc>
-    <lastmod>2026-02-19T17:51:09+00:00</lastmod>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/hector-/-hugo/</loc>
-    <lastmod>2026-02-19T17:51:12+00:00</lastmod>
+    <lastmod>2026-02-26T02:14:58+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/escrituras-afrocentradas-del-norte-del-cauca/</loc>
-    <lastmod>2026-02-19T17:51:12+00:00</lastmod>
+    <lastmod>2026-02-26T02:14:58+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/tertulias-poeticas/</loc>
-    <lastmod>2026-02-19T17:51:12+00:00</lastmod>
+    <lastmod>2026-02-26T02:14:58+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/cooperativa-multiactiva-de-mujeres-de-guapi--coopmujeres/</loc>
-    <lastmod>2026-02-19T17:51:17+00:00</lastmod>
+    <lastmod>2026-02-26T02:36:49+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/diego-luis-manunga-balanta/</loc>
-    <lastmod>2026-02-19T17:51:17+00:00</lastmod>
+    <lastmod>2026-02-26T02:36:49+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/taller-saberes-entretejidos/</loc>
-    <lastmod>2026-02-19T17:51:17+00:00</lastmod>
+    <lastmod>2026-02-26T02:36:49+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/carmen-saac/</loc>
-    <lastmod>2026-02-19T17:46:21+00:00</lastmod>
+    <lastmod>2026-02-26T02:36:34+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/lorena-hurtado/</loc>
-    <lastmod>2026-02-19T17:46:21+00:00</lastmod>
+    <lastmod>2026-02-26T02:36:34+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/semillero-litoralidades/taller-bebidas-ancestrales-y-viche/</loc>
-    <lastmod>2026-02-19T17:46:21+00:00</lastmod>
+    <lastmod>2026-02-26T02:36:34+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/residencias/</loc>
     <lastmod>2025-11-06T21:43:24+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/andres-mapallo/</loc>
-    <lastmod>2026-02-19T17:45:34+00:00</lastmod>
+    <lastmod>2026-02-26T02:26:13+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/nomasmetaforas/limpieza-ritual-y-recorrido-por-la-galeria-del-barrio-bolivar/</loc>
-    <lastmod>2026-02-19T17:45:12+00:00</lastmod>
+    <lastmod>2026-02-26T02:26:13+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sofia-olascoaga/</loc>
-    <lastmod>2026-02-19T17:45:28+00:00</lastmod>
+    <lastmod>2026-02-26T02:26:13+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/aiso---autoridades-indigenas-del-sur-occidente/</loc>
     <lastmod>2026-02-19T17:45:34+00:00</lastmod>
@@ -1009,6 +1009,9 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/informacion-general/sobre-el-salon/</loc>
     <lastmod>2025-07-23T17:48:26-05:00</lastmod>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-practicas-de-coloniales/</loc>
+    <lastmod>2026-02-19T18:13:03+00:00</lastmod>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/encuentros-de-mundos-posibles/secuestro-cultural-por-la-dignidad-caucana-nuyxisa-lechekwe-un-gobierno-chiquito-propio/</loc>
     <lastmod>2026-02-19T18:13:03+00:00</lastmod>
@@ -1095,6 +1098,8 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-duran/</loc>
   </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-pablo-gaviria/</loc>
+  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/juan-sebastian-rosillo/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/kauka/</loc>
@@ -1102,6 +1107,8 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/lucas-ospina/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/lugares/</loc>
+  </url><url>
+    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/twiggy-escobar/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/maria-isabel-rueda/</loc>
   </url><url>
@@ -1113,15 +1120,11 @@
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/miguel-lourido/</loc>
   </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/minga-practicas-decoloniales/</loc>
-  </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/naomi-rincon-gallardo/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/paula-diaz/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/payan-ya-casa-payan/</loc>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/popayork-residencia-artistica/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/posa-suto/</loc>
   </url><url>
@@ -1132,8 +1135,6 @@
     <loc>https://relampagoproyecto.github.io/kauka-dev/recorridos/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/red-de-museos-rurales-y-casas-de-la-memoria-del-cauca-y-valle/</loc>
-  </url><url>
-    <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sandra-gamarra/</loc>
   </url><url>
     <loc>https://relampagoproyecto.github.io/kauka-dev/invitadxs/sandrio-candido/</loc>
   </url><url>
