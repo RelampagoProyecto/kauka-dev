@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AISO - Autoridades Indígenas del Sur-Occidente on KAUKA</title>
+    <title>AISO - Autoridades Indígenas del Suroccidente on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/aiso-autoridades-indigenas-del-sur-occidente/</link>
-    <description>Recent content in AISO - Autoridades Indígenas del Sur-Occidente on KAUKA</description>
+    <description>Recent content in AISO - Autoridades Indígenas del Suroccidente on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
+    <lastBuildDate>Thu, 19 Feb 2026 17:45:34 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/aiso-autoridades-indigenas-del-sur-occidente/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Siembra del 47 Salón Nacional de Artistas</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/nomasmetaforas/siembra-del-47-salon-nacional-de-artistas/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/pedagogias-y-mediaciones/nomasmetaforas/siembra-del-47-salon-nacional-de-artistas/</guid>
+      <description>&lt;p&gt;La Siembra del 47 SNA en la Pirámide de Tulcán fue una de las acciones realizadas en el marco de la preinauguración del 47 SNA. Surgió de la conversación de nomasmetaforas con la Ala Kusreik Ya Misak Universidad, a partir de la fuerza de la imagen del pueblo Misak derribando el Monumento de Belalcázar en el año 2020 y, con ella, imaginarios obsoletos. El derribamiento representó para múltiples sectores y diferentes pueblos un grito de dignidad sin precedentes en la ciudad de Popayán y permitió poner en cuestión la visión patrimonial del Estado y sus administraciones locales. Así se identificó la importancia de una movilización hacia la Pirámide de Tulcán como lugar simbólico para activar las relaciones que el 47 SNA buscaba potenciar.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

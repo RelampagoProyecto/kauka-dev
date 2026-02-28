@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Franz Xaver Faust (QEPD) on KAUKA</title>
+    <title>Franz Xaver Faust (q. e. p. d) on KAUKA</title>
     <link>https://relampagoproyecto.github.io/kauka-dev/invitadxs/franz-xaver-faust/</link>
-    <description>Recent content in Franz Xaver Faust (QEPD) on KAUKA</description>
+    <description>Recent content in Franz Xaver Faust (q. e. p. d) on KAUKA</description>
     <generator>Hugo</generator>
     <language>es-co</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 04:30:30 +0000</lastBuildDate>
     <atom:link href="https://relampagoproyecto.github.io/kauka-dev/invitadxs/franz-xaver-faust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ascender a lo hondo: dibujos, acuarelas, montañas y cosmogramas de Franz Xaver Faust</title>
+      <link>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/editorial/exposicion-ascender-a-lo-hondo-dibujos-acuarelas-montanas-y-cosmogramas-de-franz-xaver-faust/</link>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 -0500</pubDate>
+      <guid>https://relampagoproyecto.github.io/kauka-dev/programa-curatorial/editorial/exposicion-ascender-a-lo-hondo-dibujos-acuarelas-montanas-y-cosmogramas-de-franz-xaver-faust/</guid>
+      <description>&lt;p&gt;Exposición a partir del proceso editorial de Franz Xavier Faust &amp;amp; Éricka Flórez (curadora). Proceso realizado en colaboración con lugaradudas&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
