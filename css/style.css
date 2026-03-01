@@ -10062,6 +10062,45 @@
   .kauka-equipo-47sna-subpersona {
     display: block;
   }
+  .kauka-equipo-47sna-seccion {
+    grid-column: span 10 / span 10;
+    margin-top: calc(var(--spacing) * 8);
+    margin-bottom: calc(var(--spacing) * 4);
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .kauka-equipo-47sna-seccion:first-child {
+    margin-top: calc(var(--spacing) * 0);
+  }
+  .kauka-equipo-47sna-seccion-titulo {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    color: var(--color-white);
+    font-size: 20px;
+    --tw-leading: 24px;
+    line-height: 24px;
+    @media (width >= 40rem) {
+      font-size: 24px;
+    }
+    @media (width >= 40rem) {
+      --tw-leading: 28px;
+      line-height: 28px;
+    }
+    @media (width >= 48rem) {
+      font-size: 28px;
+    }
+    @media (width >= 48rem) {
+      --tw-leading: 32px;
+      line-height: 32px;
+    }
+    @media (width >= 64rem) {
+      font-size: 32px;
+    }
+    @media (width >= 64rem) {
+      --tw-leading: 36px;
+      line-height: 36px;
+    }
+  }
   .page-content-container {
     grid-column: span 12 / span 12;
     display: grid;
@@ -10327,6 +10366,21 @@
     .invitadx-rich-content--two-cols {
       column-gap: 2.5rem;
     }
+  }
+  :is(.page-content-text, .pc-section-content) h2 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  :is(.page-content-text, .pc-section-content) h2 em {
+    font-family: "RigidSquare-LightItalic", sans-serif;
+    font-weight: normal;
+    font-style: italic;
+  }
+  :is(.page-content-text, .pc-section-content) em {
+    font-style: italic;
+  }
+  :is(.page-content-text, .pc-section-content) strong {
+    font-family: "RigidSquare-SemiBold", sans-serif;
+    font-weight: normal;
   }
   :is(.page-content-text, .pc-section-content) p {
     margin-bottom: calc(var(--spacing) * 4);
